@@ -166,8 +166,8 @@ namespace wind
             
             // Field name: reference_time
             // Real
-            // Float
-            // FLOAT  min(0) max(4398046511103) span(4398046511104) scaleDivisor(1000.0) dataType(Float)
+            // Double
+            // DOUBLE  min(0) max(4398046511103) span(4398046511104) scaleDivisor(1000.0) dataType(Double)
             uint64_t* _tmp_1595 = (uint64_t*)buffer; buffer += 8;
             ros->payload.management_container.reference_time.value = *_tmp_1595;
             __aux64__ = ros->payload.management_container.reference_time.value;

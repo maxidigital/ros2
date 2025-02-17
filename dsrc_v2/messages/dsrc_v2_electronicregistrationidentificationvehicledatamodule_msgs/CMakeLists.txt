@@ -42,7 +42,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
     msg/EuVehicleCategoryO.msg
     msg/Iso3833VehicleType.msg
     DEPENDENCIES
-	    std_msgs
+    std_msgs
 
 )
 

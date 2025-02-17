@@ -40,20 +40,19 @@
 # ASN.1 Definition:
 # INTEGER { outOfRange(1023), unavailable(1024) }(1..1024) 
 # 
-# Element type: FLOAT
+# Element type: DOUBLE
 #
 # ********** START of VehicleMass **********
 #
 
-float32         value
+float64         value
 
-float32         MIN             = 100000.0
-float32         MAX             = 1.024E8
+float64         MIN             = 100000.00252621254
+float64         MAX             = 1.0240000258684164E8
 float32         SCALAROPERAND   = 1.0E-5
-float32         UNAVAILABLE     = 1.024E8
-float32         OUT_OF_RANGE    = 1.023E8
-
-float32         V_OUT_OF_RANGE  = 1.023E8
-float32         V_UNAVAILABLE   = 1.024E8
+float64         UNAVAILABLE     = 1.0240000258684164E8
+float64         OUT_OF_RANGE    = 1.0230000258431543E8
+float64         V_OUT_OF_RANGE  = 1.0230000258431543E8
+float64         V_UNAVAILABLE   = 1.0240000258684164E8
 
 # ********** END of VehicleMass   **********

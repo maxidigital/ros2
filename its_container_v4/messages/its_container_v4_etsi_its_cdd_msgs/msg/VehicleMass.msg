@@ -32,28 +32,26 @@
 # 
 #  @note:	The empty load vehicle is defined in ISO 1176 [8], clause 4.6.
 # 
+#  unit: 10^5 gramm
 #  @category: Vehicle information
 #  @revision: Description updated in V2.1.1 (the meaning of 1 023 has changed slightly).
 #   
-#  ~~~ Units: gramm ~~~
-# 
 # ASN.1 Definition:
 # INTEGER { outOfRange(1023), unavailable(1024) }(1..1024) 
 # 
-# Element type: FLOAT
+# Element type: INTEGER
 #
 # ********** START of VehicleMass **********
 #
 
-float32         value
+uint16          value
 
-float32         MIN             = 100000.0
-float32         MAX             = 1.024E8
-float32         SCALAROPERAND   = 1.0E-5
-float32         UNAVAILABLE     = 1.024E8
-float32         OUT_OF_RANGE    = 1.023E8
+uint16          MIN             = 1
+uint16          MAX             = 1024
+uint16          UNAVAILABLE     = 1024
+uint16          OUT_OF_RANGE    = 1023
 
-float32         V_OUT_OF_RANGE  = 1.023E8
-float32         V_UNAVAILABLE   = 1.024E8
+uint16          V_OUT_OF_RANGE  = 1023
+uint16          V_UNAVAILABLE   = 1024
 
 # ********** END of VehicleMass   **********

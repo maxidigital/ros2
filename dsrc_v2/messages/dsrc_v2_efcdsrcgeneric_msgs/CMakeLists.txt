@@ -38,7 +38,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
     msg/AttributeIdList.msg
     msg/AttributeIdListElement.msg
     DEPENDENCIES
-	    std_msgs
+    std_msgs
 
 )
 

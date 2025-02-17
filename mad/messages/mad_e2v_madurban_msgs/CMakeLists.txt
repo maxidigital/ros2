@@ -80,7 +80,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
     msg/VelocityComponentRange.msg
     msg/YawAccelerationValue.msg
     DEPENDENCIES
-	    std_msgs
+    std_msgs
         its_container_v4_etsi_its_cdd_msgs
 )
 

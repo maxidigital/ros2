@@ -39,7 +39,7 @@ find_package(its_container_v2_its_container_msgs REQUIRED)
 rosidl_generate_interfaces(${PROJECT_NAME}
     msg/SREM.msg
     DEPENDENCIES
-	    std_msgs
+    std_msgs
         dsrc_v2_electronicregistrationidentificationvehicledatamodule_msgs
         dsrc_v2_dsrc_msgs
         its_container_v2_its_container_msgs

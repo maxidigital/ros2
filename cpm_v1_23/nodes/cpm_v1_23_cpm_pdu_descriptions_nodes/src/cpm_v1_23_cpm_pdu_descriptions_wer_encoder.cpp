@@ -166,13 +166,13 @@ namespace wind
             // Field:  type(TimestampIts) name(reference_time) extGroup(0)
             // Real
             
-            // FLOAT  min(0) max(4398046511103) span(4398046511104) scaleDivisor(1000.0) dataType(Float)
+            // DOUBLE  min(0) max(4398046511103) span(4398046511104) scaleDivisor(1000.0) dataType(Double)
             if(debug) {
                 logger->debug() << "|\033[38;5;94m000828\033[0m| " << tools::getTypeName(ros->payload.management_container.reference_time.value) << 
                              " payload.management_container.reference_time.value: " << ros->payload.management_container.reference_time.value;
             }
             
-            float _tmp_1021 = ros->payload.management_container.reference_time.value;
+            double _tmp_1021 = ros->payload.management_container.reference_time.value;
             _tmp_1021 *= 1000.0;
             __aux64__ = static_cast<uint64_t>(_tmp_1021);
             uint64_t* _tmp_1020 = (uint64_t*) buffer; buffer += 8;

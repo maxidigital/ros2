@@ -44,15 +44,15 @@
 # ASN.1 Definition:
 # INTEGER(0..4398046511103) 
 # 
-# Element type: FLOAT
+# Element type: DOUBLE
 #
 # ********** START of TimestampIts **********
 #
 
-float32         value
+float64         value
 
-float32         MIN             = 0.0
-float32         MAX             = 4.3980467E9
+float64         MIN             = 0.0
+float64         MAX             = 4.398046511103E9
 float32         SCALAROPERAND   = 1000.0
 
 # ********** END of TimestampIts   **********

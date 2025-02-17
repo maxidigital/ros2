@@ -177,7 +177,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
     msg/YawRateConfidence.msg
     msg/YawRateValue.msg
     DEPENDENCIES
-	    std_msgs
+    std_msgs
 
 )
 

@@ -66,12 +66,12 @@ namespace wind
         
         // UINT8  min(0) max(255) span(256) dataType(UInt8)
         if(debug) {
-            logger->debug() << "|\033[38;5;94m006733\033[0m| " << tools::getTypeName(ros->hheader.protocol_version.value) << 
+            logger->debug() << "|\033[38;5;94m000000\033[0m| " << tools::getTypeName(ros->hheader.protocol_version.value) << 
                          " hheader.protocol_version.value: " << static_cast<int>(ros->hheader.protocol_version.value);
         }
         
-        uint8_t* _tmp_7497 = (uint8_t*) buffer++;
-        *_tmp_7497 = ros->hheader.protocol_version.value; 
+        uint8_t* _tmp_1 = (uint8_t*) buffer++;
+        *_tmp_1 = ros->hheader.protocol_version.value; 
         __aux64__ = ros->hheader.protocol_version.value;
         
         // MIN validator
@@ -90,12 +90,12 @@ namespace wind
         
         // UINT8  min(0) max(255) span(256) dataType(UInt8)
         if(debug) {
-            logger->debug() << "|\033[38;5;94m006734\033[0m| " << tools::getTypeName(ros->hheader.message_id.value) << 
+            logger->debug() << "|\033[38;5;94m000001\033[0m| " << tools::getTypeName(ros->hheader.message_id.value) << 
                          " hheader.message_id.value: " << static_cast<int>(ros->hheader.message_id.value);
         }
         
-        uint8_t* _tmp_7498 = (uint8_t*) buffer++;
-        *_tmp_7498 = ros->hheader.message_id.value; 
+        uint8_t* _tmp_2 = (uint8_t*) buffer++;
+        *_tmp_2 = ros->hheader.message_id.value; 
         __aux64__ = ros->hheader.message_id.value;
         
         // MIN validator
@@ -114,12 +114,12 @@ namespace wind
         
         // UINT32  min(0) max(4294967295) span(4294967296) dataType(UInt32)
         if(debug) {
-            logger->debug() << "|\033[38;5;94m006735\033[0m| " << tools::getTypeName(ros->hheader.station_id.value) << 
+            logger->debug() << "|\033[38;5;94m000002\033[0m| " << tools::getTypeName(ros->hheader.station_id.value) << 
                          " hheader.station_id.value: " << ros->hheader.station_id.value;
         }
         
-        uint32_t* _tmp_7499 = (uint32_t*) buffer; buffer += 4;
-        *_tmp_7499 = ros->hheader.station_id.value; 
+        uint32_t* _tmp_3 = (uint32_t*) buffer; buffer += 4;
+        *_tmp_3 = ros->hheader.station_id.value; 
         __aux64__ = ros->hheader.station_id.value;
         
         // MIN validator
@@ -142,26 +142,26 @@ namespace wind
             //  requestor      RequestorDescription              
             //  regional       SignalRequestMessage_regional   OPTIONAL  
             //  ...
-        uint8_t* _ext_flag_3389 = (uint8_t*) buffer++;  // Write extension flag for SignalRequestMessage
-        *_ext_flag_3389 = 0;  
+        uint8_t* _ext_flag_4 = (uint8_t*) buffer++;  // Write extension flag for SignalRequestMessage
+        *_ext_flag_4 = 0;  
         
         // Optional fields bytemap
-        char* _tmp_7500 = (char*) buffer++;
-        *_tmp_7500 = (ros->srm.time_stamp.size() != 0 ? 1 : 0);
+        char* _tmp_4 = (char*) buffer++;
+        *_tmp_4 = (ros->srm.time_stamp.size() != 0 ? 1 : 0);
         if(debug)
-            logger->debug() << "|\033[38;5;94m006736\033[0m| Optional field time_stamp = " << *_tmp_7500;
-        char* _tmp_7501 = (char*) buffer++;
-        *_tmp_7501 = (ros->srm.sequence_number.size() != 0 ? 1 : 0);
+            logger->debug() << "|\033[38;5;94m000003\033[0m| Optional field time_stamp = " << *_tmp_4;
+        char* _tmp_5 = (char*) buffer++;
+        *_tmp_5 = (ros->srm.sequence_number.size() != 0 ? 1 : 0);
         if(debug)
-            logger->debug() << "|\033[38;5;94m006737\033[0m| Optional field sequence_number = " << *_tmp_7501;
-        char* _tmp_7502 = (char*) buffer++;
-        *_tmp_7502 = (ros->srm.requests.size() != 0 ? 1 : 0);
+            logger->debug() << "|\033[38;5;94m000004\033[0m| Optional field sequence_number = " << *_tmp_5;
+        char* _tmp_6 = (char*) buffer++;
+        *_tmp_6 = (ros->srm.requests.size() != 0 ? 1 : 0);
         if(debug)
-            logger->debug() << "|\033[38;5;94m006738\033[0m| Optional field requests = " << *_tmp_7502;
-        char* _tmp_7503 = (char*) buffer++;
-        *_tmp_7503 = (ros->srm.regional.size() != 0 ? 1 : 0);
+            logger->debug() << "|\033[38;5;94m000005\033[0m| Optional field requests = " << *_tmp_6;
+        char* _tmp_7 = (char*) buffer++;
+        *_tmp_7 = (ros->srm.regional.size() != 0 ? 1 : 0);
         if(debug)
-            logger->debug() << "|\033[38;5;94m006739\033[0m| Optional field regional = " << *_tmp_7503;
+            logger->debug() << "|\033[38;5;94m000006\033[0m| Optional field regional = " << *_tmp_7;
         
         if(ros->srm.time_stamp.size() != 0) {
             // Field:  type(MinuteOfTheYear) name(time_stamp) extGroup(0)
@@ -169,12 +169,12 @@ namespace wind
             
             // UINT32  min(0) max(527040) span(527041) dataType(UInt32)
             if(debug) {
-                logger->debug() << "|\033[38;5;94m006740\033[0m| " << tools::getTypeName(ros->srm.time_stamp[0].value) << 
+                logger->debug() << "|\033[38;5;94m000007\033[0m| " << tools::getTypeName(ros->srm.time_stamp[0].value) << 
                              " srm.time_stamp[0].value: " << ros->srm.time_stamp[0].value;
             }
             
-            uint32_t* _tmp_7504 = (uint32_t*) buffer; buffer += 4;
-            *_tmp_7504 = ros->srm.time_stamp[0].value; 
+            uint32_t* _tmp_8 = (uint32_t*) buffer; buffer += 4;
+            *_tmp_8 = ros->srm.time_stamp[0].value; 
             __aux64__ = ros->srm.time_stamp[0].value;
             
             // MIN validator
@@ -194,12 +194,12 @@ namespace wind
         
         // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
         if(debug) {
-            logger->debug() << "|\033[38;5;94m006741\033[0m| " << tools::getTypeName(ros->srm.second.value) << 
+            logger->debug() << "|\033[38;5;94m000008\033[0m| " << tools::getTypeName(ros->srm.second.value) << 
                          " srm.second.value: " << ros->srm.second.value;
         }
         
-        uint16_t* _tmp_7505 = (uint16_t*) buffer; buffer += 2;
-        *_tmp_7505 = ros->srm.second.value; 
+        uint16_t* _tmp_9 = (uint16_t*) buffer; buffer += 2;
+        *_tmp_9 = ros->srm.second.value; 
         __aux64__ = ros->srm.second.value;
         
         // MIN validator
@@ -219,12 +219,12 @@ namespace wind
             
             // UINT8  min(0) max(127) span(128) dataType(UInt8)
             if(debug) {
-                logger->debug() << "|\033[38;5;94m006742\033[0m| " << tools::getTypeName(ros->srm.sequence_number[0].value) << 
+                logger->debug() << "|\033[38;5;94m000009\033[0m| " << tools::getTypeName(ros->srm.sequence_number[0].value) << 
                              " srm.sequence_number[0].value: " << static_cast<int>(ros->srm.sequence_number[0].value);
             }
             
-            uint8_t* _tmp_7506 = (uint8_t*) buffer++;
-            *_tmp_7506 = ros->srm.sequence_number[0].value; 
+            uint8_t* _tmp_10 = (uint8_t*) buffer++;
+            *_tmp_10 = ros->srm.sequence_number[0].value; 
             __aux64__ = ros->srm.sequence_number[0].value;
             
             // MIN validator
@@ -246,12 +246,12 @@ namespace wind
             // SEQUENCE_OF  min(1) max(32) span(32) ext(false)
             __aux64__ = ros->srm.requests[0].elements.size();
             if(__aux64__ > 32) __aux64__ = 32;
-            uint16_t* _tmp_7507 = (uint16_t*)buffer;
+            uint16_t* _tmp_11 = (uint16_t*)buffer;
             buffer += 2;
-            *_tmp_7507 = __aux64__ - 1;
+            *_tmp_11 = __aux64__ - 1;
             
-            int __ifw = __aux64__;
-            for(int w = 0; w < __ifw; w++) { 
+            int __ifa = __aux64__;
+            for(int a = 0; a < __ifa; a++) { 
                 
                     // SignalRequestPackage  SEQUENCE
                         //  request    SignalRequest                     
@@ -260,26 +260,26 @@ namespace wind
                         //  duration   DSecond                         OPTIONAL  
                         //  regional   SignalRequestPackage_regional   OPTIONAL  
                         //  ...
-                    uint8_t* _ext_flag_3393 = (uint8_t*) buffer++;  // Write extension flag for SignalRequestPackage
-                    *_ext_flag_3393 = 0;  
+                    uint8_t* _ext_flag_8 = (uint8_t*) buffer++;  // Write extension flag for SignalRequestPackage
+                    *_ext_flag_8 = 0;  
                     
                     // Optional fields bytemap
-                    char* _tmp_7508 = (char*) buffer++;
-                    *_tmp_7508 = (ros->srm.requests[0].elements[w].minute.size() != 0 ? 1 : 0);
+                    char* _tmp_12 = (char*) buffer++;
+                    *_tmp_12 = (ros->srm.requests[0].elements[a].minute.size() != 0 ? 1 : 0);
                     if(debug)
-                        logger->debug() << "|\033[38;5;94m006744\033[0m| Optional field minute = " << *_tmp_7508;
-                    char* _tmp_7509 = (char*) buffer++;
-                    *_tmp_7509 = (ros->srm.requests[0].elements[w].second.size() != 0 ? 1 : 0);
+                        logger->debug() << "|\033[38;5;94m000011\033[0m| Optional field minute = " << *_tmp_12;
+                    char* _tmp_13 = (char*) buffer++;
+                    *_tmp_13 = (ros->srm.requests[0].elements[a].second.size() != 0 ? 1 : 0);
                     if(debug)
-                        logger->debug() << "|\033[38;5;94m006745\033[0m| Optional field second = " << *_tmp_7509;
-                    char* _tmp_7510 = (char*) buffer++;
-                    *_tmp_7510 = (ros->srm.requests[0].elements[w].duration.size() != 0 ? 1 : 0);
+                        logger->debug() << "|\033[38;5;94m000012\033[0m| Optional field second = " << *_tmp_13;
+                    char* _tmp_14 = (char*) buffer++;
+                    *_tmp_14 = (ros->srm.requests[0].elements[a].duration.size() != 0 ? 1 : 0);
                     if(debug)
-                        logger->debug() << "|\033[38;5;94m006746\033[0m| Optional field duration = " << *_tmp_7510;
-                    char* _tmp_7511 = (char*) buffer++;
-                    *_tmp_7511 = (ros->srm.requests[0].elements[w].regional.size() != 0 ? 1 : 0);
+                        logger->debug() << "|\033[38;5;94m000013\033[0m| Optional field duration = " << *_tmp_14;
+                    char* _tmp_15 = (char*) buffer++;
+                    *_tmp_15 = (ros->srm.requests[0].elements[a].regional.size() != 0 ? 1 : 0);
                     if(debug)
-                        logger->debug() << "|\033[38;5;94m006747\033[0m| Optional field regional = " << *_tmp_7511;
+                        logger->debug() << "|\033[38;5;94m000014\033[0m| Optional field regional = " << *_tmp_15;
                     
                     // Field:  type(SignalRequest) name(request) extGroup(0)
                         // SignalRequest  SEQUENCE
@@ -290,51 +290,51 @@ namespace wind
                             //  outBoundLane IntersectionAccessPoint   OPTIONAL  
                             //  regional     SignalRequest_regional    OPTIONAL  
                             //  ...
-                        uint8_t* _ext_flag_3394 = (uint8_t*) buffer++;  // Write extension flag for SignalRequest
-                        *_ext_flag_3394 = 0;  
+                        uint8_t* _ext_flag_9 = (uint8_t*) buffer++;  // Write extension flag for SignalRequest
+                        *_ext_flag_9 = 0;  
                         
                         // Optional fields bytemap
-                        char* _tmp_7512 = (char*) buffer++;
-                        *_tmp_7512 = (ros->srm.requests[0].elements[w].request.out_bound_lane.size() != 0 ? 1 : 0);
+                        char* _tmp_16 = (char*) buffer++;
+                        *_tmp_16 = (ros->srm.requests[0].elements[a].request.out_bound_lane.size() != 0 ? 1 : 0);
                         if(debug)
-                            logger->debug() << "|\033[38;5;94m006748\033[0m| Optional field out_bound_lane = " << *_tmp_7512;
-                        char* _tmp_7513 = (char*) buffer++;
-                        *_tmp_7513 = (ros->srm.requests[0].elements[w].request.regional.size() != 0 ? 1 : 0);
+                            logger->debug() << "|\033[38;5;94m000015\033[0m| Optional field out_bound_lane = " << *_tmp_16;
+                        char* _tmp_17 = (char*) buffer++;
+                        *_tmp_17 = (ros->srm.requests[0].elements[a].request.regional.size() != 0 ? 1 : 0);
                         if(debug)
-                            logger->debug() << "|\033[38;5;94m006749\033[0m| Optional field regional = " << *_tmp_7513;
+                            logger->debug() << "|\033[38;5;94m000016\033[0m| Optional field regional = " << *_tmp_17;
                         
                         // Field:  type(IntersectionReferenceID) name(id) extGroup(0)
                             // IntersectionReferenceID  SEQUENCE
                                 //  region     RoadRegulatorID   OPTIONAL  
                                 //  id         IntersectionID      
                             // Optional fields bytemap
-                            char* _tmp_7514 = (char*) buffer++;
-                            *_tmp_7514 = (ros->srm.requests[0].elements[w].request.id.region.size() != 0 ? 1 : 0);
+                            char* _tmp_18 = (char*) buffer++;
+                            *_tmp_18 = (ros->srm.requests[0].elements[a].request.id.region.size() != 0 ? 1 : 0);
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m006750\033[0m| Optional field region = " << *_tmp_7514;
+                                logger->debug() << "|\033[38;5;94m000017\033[0m| Optional field region = " << *_tmp_18;
                             
-                            if(ros->srm.requests[0].elements[w].request.id.region.size() != 0) {
+                            if(ros->srm.requests[0].elements[a].request.id.region.size() != 0) {
                                 // Field:  type(RoadRegulatorID) name(region) extGroup(0)
                                 // Integer
                                 
                                 // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m006751\033[0m| " << tools::getTypeName(ros->srm.requests[0].elements[w].request.id.region[0].value) << 
-                                                 " srm.requests[0].elements[w].request.id.region[0].value: " << ros->srm.requests[0].elements[w].request.id.region[0].value;
+                                    logger->debug() << "|\033[38;5;94m000018\033[0m| " << tools::getTypeName(ros->srm.requests[0].elements[a].request.id.region[0].value) << 
+                                                 " srm.requests[0].elements[a].request.id.region[0].value: " << ros->srm.requests[0].elements[a].request.id.region[0].value;
                                 }
                                 
-                                uint16_t* _tmp_7515 = (uint16_t*) buffer; buffer += 2;
-                                *_tmp_7515 = ros->srm.requests[0].elements[w].request.id.region[0].value; 
-                                __aux64__ = ros->srm.requests[0].elements[w].request.id.region[0].value;
+                                uint16_t* _tmp_19 = (uint16_t*) buffer; buffer += 2;
+                                *_tmp_19 = ros->srm.requests[0].elements[a].request.id.region[0].value; 
+                                __aux64__ = ros->srm.requests[0].elements[a].request.id.region[0].value;
                                 
                                 // MIN validator
                                 if (VALIDATORS_ENABLED && __aux64__ < 0) {
-                                    logger->warning() << "Error: Value in 'srm.requests[0].elements[w].request.id.region[0].value' (" << __aux64__ << ") less than (0); message dropped.";
+                                    logger->warning() << "Error: Value in 'srm.requests[0].elements[a].request.id.region[0].value' (" << __aux64__ << ") less than (0); message dropped.";
                                     return -1;
                                 }
                                 // MAX validator
                                 if (VALIDATORS_ENABLED && __aux64__ > 65535) {
-                                    logger->warning() << "Error: Value in 'srm.requests[0].elements[w].request.id.region[0].value' (" << __aux64__ << ") exceeds max allowable (65535); message dropped.";
+                                    logger->warning() << "Error: Value in 'srm.requests[0].elements[a].request.id.region[0].value' (" << __aux64__ << ") exceeds max allowable (65535); message dropped.";
                                     return -1;
                                 }
                             }
@@ -344,22 +344,22 @@ namespace wind
                             
                             // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m006752\033[0m| " << tools::getTypeName(ros->srm.requests[0].elements[w].request.id.id.value) << 
-                                             " srm.requests[0].elements[w].request.id.id.value: " << ros->srm.requests[0].elements[w].request.id.id.value;
+                                logger->debug() << "|\033[38;5;94m000019\033[0m| " << tools::getTypeName(ros->srm.requests[0].elements[a].request.id.id.value) << 
+                                             " srm.requests[0].elements[a].request.id.id.value: " << ros->srm.requests[0].elements[a].request.id.id.value;
                             }
                             
-                            uint16_t* _tmp_7516 = (uint16_t*) buffer; buffer += 2;
-                            *_tmp_7516 = ros->srm.requests[0].elements[w].request.id.id.value; 
-                            __aux64__ = ros->srm.requests[0].elements[w].request.id.id.value;
+                            uint16_t* _tmp_20 = (uint16_t*) buffer; buffer += 2;
+                            *_tmp_20 = ros->srm.requests[0].elements[a].request.id.id.value; 
+                            __aux64__ = ros->srm.requests[0].elements[a].request.id.id.value;
                             
                             // MIN validator
                             if (VALIDATORS_ENABLED && __aux64__ < 0) {
-                                logger->warning() << "Error: Value in 'srm.requests[0].elements[w].request.id.id.value' (" << __aux64__ << ") less than (0); message dropped.";
+                                logger->warning() << "Error: Value in 'srm.requests[0].elements[a].request.id.id.value' (" << __aux64__ << ") less than (0); message dropped.";
                                 return -1;
                             }
                             // MAX validator
                             if (VALIDATORS_ENABLED && __aux64__ > 65535) {
-                                logger->warning() << "Error: Value in 'srm.requests[0].elements[w].request.id.id.value' (" << __aux64__ << ") exceeds max allowable (65535); message dropped.";
+                                logger->warning() << "Error: Value in 'srm.requests[0].elements[a].request.id.id.value' (" << __aux64__ << ") exceeds max allowable (65535); message dropped.";
                                 return -1;
                             }
                         
@@ -368,46 +368,46 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m006753\033[0m| " << tools::getTypeName(ros->srm.requests[0].elements[w].request.request_id.value) << 
-                                         " srm.requests[0].elements[w].request.request_id.value: " << static_cast<int>(ros->srm.requests[0].elements[w].request.request_id.value);
+                            logger->debug() << "|\033[38;5;94m000020\033[0m| " << tools::getTypeName(ros->srm.requests[0].elements[a].request.request_id.value) << 
+                                         " srm.requests[0].elements[a].request.request_id.value: " << static_cast<int>(ros->srm.requests[0].elements[a].request.request_id.value);
                         }
                         
-                        uint8_t* _tmp_7517 = (uint8_t*) buffer++;
-                        *_tmp_7517 = ros->srm.requests[0].elements[w].request.request_id.value; 
-                        __aux64__ = ros->srm.requests[0].elements[w].request.request_id.value;
+                        uint8_t* _tmp_21 = (uint8_t*) buffer++;
+                        *_tmp_21 = ros->srm.requests[0].elements[a].request.request_id.value; 
+                        __aux64__ = ros->srm.requests[0].elements[a].request.request_id.value;
                         
                         // MIN validator
                         if (VALIDATORS_ENABLED && __aux64__ < 0) {
-                            logger->warning() << "Error: Value in 'srm.requests[0].elements[w].request.request_id.value' (" << __aux64__ << ") less than (0); message dropped.";
+                            logger->warning() << "Error: Value in 'srm.requests[0].elements[a].request.request_id.value' (" << __aux64__ << ") less than (0); message dropped.";
                             return -1;
                         }
                         // MAX validator
                         if (VALIDATORS_ENABLED && __aux64__ > 255) {
-                            logger->warning() << "Error: Value in 'srm.requests[0].elements[w].request.request_id.value' (" << __aux64__ << ") exceeds max allowable (255); message dropped.";
+                            logger->warning() << "Error: Value in 'srm.requests[0].elements[a].request.request_id.value' (" << __aux64__ << ") exceeds max allowable (255); message dropped.";
                             return -1;
                         }
                         
                         // Field:  type(PriorityRequestType) name(request_type) extGroup(0)
                         // Enumerated
                         // INT32  min(0) max(3) span(4) dataType(Int32)
-                        uint8_t* _ext_flag_3398 = (uint8_t*) buffer++; // Write extension flag for ros->srm.requests[0].elements[w].request.request_type.
+                        uint8_t* _ext_flag_13 = (uint8_t*) buffer++; // Write extension flag for ros->srm.requests[0].elements[a].request.request_type.
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m006754\033[0m| " << tools::getTypeName(ros->srm.requests[0].elements[w].request.request_type.value) << 
-                                         " srm.requests[0].elements[w].request.request_type.value: " << static_cast<int>(ros->srm.requests[0].elements[w].request.request_type.value);
+                            logger->debug() << "|\033[38;5;94m000021\033[0m| " << tools::getTypeName(ros->srm.requests[0].elements[a].request.request_type.value) << 
+                                         " srm.requests[0].elements[a].request.request_type.value: " << static_cast<int>(ros->srm.requests[0].elements[a].request.request_type.value);
                         }
                         
-                        uint8_t* _tmp_7518 = (uint8_t*)buffer;
+                        uint8_t* _tmp_22 = (uint8_t*)buffer;
                         buffer += 1;
-                        *_tmp_7518 = ros->srm.requests[0].elements[w].request.request_type.value; 
-                        __aux64__ = ros->srm.requests[0].elements[w].request.request_type.value; 
+                        *_tmp_22 = ros->srm.requests[0].elements[a].request.request_type.value; 
+                        __aux64__ = ros->srm.requests[0].elements[a].request.request_type.value; 
                         // MIN validator
                         if (VALIDATORS_ENABLED && __aux64__ < 0) {
-                            logger->warning() << "Error: Value in 'srm.requests[0].elements[w].request.request_type.value' (" << __aux64__ << ") less than (0); message dropped.";
+                            logger->warning() << "Error: Value in 'srm.requests[0].elements[a].request.request_type.value' (" << __aux64__ << ") less than (0); message dropped.";
                             return -1;
                         }
                         // MAX validator
                         if (VALIDATORS_ENABLED && __aux64__ > 3) {
-                            logger->warning() << "Error: Value in 'srm.requests[0].elements[w].request.request_type.value' (" << __aux64__ << ") exceeds max allowable (3); message dropped.";
+                            logger->warning() << "Error: Value in 'srm.requests[0].elements[a].request.request_type.value' (" << __aux64__ << ") exceeds max allowable (3); message dropped.";
                             return -1;
                         }
                         
@@ -416,307 +416,307 @@ namespace wind
                            // #0  lane   LaneID
                            // #1  approach   ApproachID
                            // #2  connection   LaneConnectionID
-                        uint8_t* _ext_flag_3399 = (uint8_t*) buffer; 
+                        uint8_t* _ext_flag_14 = (uint8_t*) buffer; 
                         buffer++;
-                        *_ext_flag_3399 = 0; 
+                        *_ext_flag_14 = 0; 
                         
-                        uint8_t* _choice_247 = (uint8_t*) buffer;
+                        uint8_t* _choice_1 = (uint8_t*) buffer;
                         buffer++;
                         
-                        if(ros->srm.requests[0].elements[w].request.in_bound_lane.lane.size() != 0) {  // CHOICE 0  fieldType(IntersectionAccessPoint) 
-                            *_choice_247 = 0;  // Setting choice selection
+                        if(ros->srm.requests[0].elements[a].request.in_bound_lane.lane.size() != 0) {  // CHOICE 0  fieldType(IntersectionAccessPoint) 
+                            *_choice_1 = 0;  // Setting choice selection
                         
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m006755\033[0m| Choice selection: 0";
+                                logger->debug() << "|\033[38;5;94m000022\033[0m| Choice selection: 0";
                         
                             // Integer
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m006756\033[0m| " << tools::getTypeName(ros->srm.requests[0].elements[w].request.in_bound_lane.lane[0].value) << 
-                                             " srm.requests[0].elements[w].request.in_bound_lane.lane[0].value: " << static_cast<int>(ros->srm.requests[0].elements[w].request.in_bound_lane.lane[0].value);
+                                logger->debug() << "|\033[38;5;94m000023\033[0m| " << tools::getTypeName(ros->srm.requests[0].elements[a].request.in_bound_lane.lane[0].value) << 
+                                             " srm.requests[0].elements[a].request.in_bound_lane.lane[0].value: " << static_cast<int>(ros->srm.requests[0].elements[a].request.in_bound_lane.lane[0].value);
                             }
                             
-                            uint8_t* _tmp_7519 = (uint8_t*) buffer++;
-                            *_tmp_7519 = ros->srm.requests[0].elements[w].request.in_bound_lane.lane[0].value; 
-                            __aux64__ = ros->srm.requests[0].elements[w].request.in_bound_lane.lane[0].value;
+                            uint8_t* _tmp_23 = (uint8_t*) buffer++;
+                            *_tmp_23 = ros->srm.requests[0].elements[a].request.in_bound_lane.lane[0].value; 
+                            __aux64__ = ros->srm.requests[0].elements[a].request.in_bound_lane.lane[0].value;
                             
                             // MIN validator
                             if (VALIDATORS_ENABLED && __aux64__ < 0) {
-                                logger->warning() << "Error: Value in 'srm.requests[0].elements[w].request.in_bound_lane.lane[0].value' (" << __aux64__ << ") less than (0); message dropped.";
+                                logger->warning() << "Error: Value in 'srm.requests[0].elements[a].request.in_bound_lane.lane[0].value' (" << __aux64__ << ") less than (0); message dropped.";
                                 return -1;
                             }
                             // MAX validator
                             if (VALIDATORS_ENABLED && __aux64__ > 255) {
-                                logger->warning() << "Error: Value in 'srm.requests[0].elements[w].request.in_bound_lane.lane[0].value' (" << __aux64__ << ") exceeds max allowable (255); message dropped.";
+                                logger->warning() << "Error: Value in 'srm.requests[0].elements[a].request.in_bound_lane.lane[0].value' (" << __aux64__ << ") exceeds max allowable (255); message dropped.";
                                 return -1;
                             }
                         
                         }
-                        else if(ros->srm.requests[0].elements[w].request.in_bound_lane.approach.size() != 0)  // CHOICE 1  fieldType(IntersectionAccessPoint) 
+                        else if(ros->srm.requests[0].elements[a].request.in_bound_lane.approach.size() != 0)  // CHOICE 1  fieldType(IntersectionAccessPoint) 
                         {
-                            *_choice_247 = 1;  // Setting choice selection
+                            *_choice_1 = 1;  // Setting choice selection
                         
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m006757\033[0m| Choice selection: 1";
+                                logger->debug() << "|\033[38;5;94m000024\033[0m| Choice selection: 1";
                         
                             // Integer
                             
                             // UINT8  min(0) max(15) span(16) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m006758\033[0m| " << tools::getTypeName(ros->srm.requests[0].elements[w].request.in_bound_lane.approach[0].value) << 
-                                             " srm.requests[0].elements[w].request.in_bound_lane.approach[0].value: " << static_cast<int>(ros->srm.requests[0].elements[w].request.in_bound_lane.approach[0].value);
+                                logger->debug() << "|\033[38;5;94m000025\033[0m| " << tools::getTypeName(ros->srm.requests[0].elements[a].request.in_bound_lane.approach[0].value) << 
+                                             " srm.requests[0].elements[a].request.in_bound_lane.approach[0].value: " << static_cast<int>(ros->srm.requests[0].elements[a].request.in_bound_lane.approach[0].value);
                             }
                             
-                            uint8_t* _tmp_7520 = (uint8_t*) buffer++;
-                            *_tmp_7520 = ros->srm.requests[0].elements[w].request.in_bound_lane.approach[0].value; 
-                            __aux64__ = ros->srm.requests[0].elements[w].request.in_bound_lane.approach[0].value;
+                            uint8_t* _tmp_24 = (uint8_t*) buffer++;
+                            *_tmp_24 = ros->srm.requests[0].elements[a].request.in_bound_lane.approach[0].value; 
+                            __aux64__ = ros->srm.requests[0].elements[a].request.in_bound_lane.approach[0].value;
                             
                             // MIN validator
                             if (VALIDATORS_ENABLED && __aux64__ < 0) {
-                                logger->warning() << "Error: Value in 'srm.requests[0].elements[w].request.in_bound_lane.approach[0].value' (" << __aux64__ << ") less than (0); message dropped.";
+                                logger->warning() << "Error: Value in 'srm.requests[0].elements[a].request.in_bound_lane.approach[0].value' (" << __aux64__ << ") less than (0); message dropped.";
                                 return -1;
                             }
                             // MAX validator
                             if (VALIDATORS_ENABLED && __aux64__ > 15) {
-                                logger->warning() << "Error: Value in 'srm.requests[0].elements[w].request.in_bound_lane.approach[0].value' (" << __aux64__ << ") exceeds max allowable (15); message dropped.";
+                                logger->warning() << "Error: Value in 'srm.requests[0].elements[a].request.in_bound_lane.approach[0].value' (" << __aux64__ << ") exceeds max allowable (15); message dropped.";
                                 return -1;
                             }
                         
                         }
-                        else if(ros->srm.requests[0].elements[w].request.in_bound_lane.connection.size() != 0)  // CHOICE 2  fieldType(IntersectionAccessPoint) 
+                        else if(ros->srm.requests[0].elements[a].request.in_bound_lane.connection.size() != 0)  // CHOICE 2  fieldType(IntersectionAccessPoint) 
                         {
-                            *_choice_247 = 2;  // Setting choice selection
+                            *_choice_1 = 2;  // Setting choice selection
                         
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m006759\033[0m| Choice selection: 2";
+                                logger->debug() << "|\033[38;5;94m000026\033[0m| Choice selection: 2";
                         
                             // Integer
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m006760\033[0m| " << tools::getTypeName(ros->srm.requests[0].elements[w].request.in_bound_lane.connection[0].value) << 
-                                             " srm.requests[0].elements[w].request.in_bound_lane.connection[0].value: " << static_cast<int>(ros->srm.requests[0].elements[w].request.in_bound_lane.connection[0].value);
+                                logger->debug() << "|\033[38;5;94m000027\033[0m| " << tools::getTypeName(ros->srm.requests[0].elements[a].request.in_bound_lane.connection[0].value) << 
+                                             " srm.requests[0].elements[a].request.in_bound_lane.connection[0].value: " << static_cast<int>(ros->srm.requests[0].elements[a].request.in_bound_lane.connection[0].value);
                             }
                             
-                            uint8_t* _tmp_7521 = (uint8_t*) buffer++;
-                            *_tmp_7521 = ros->srm.requests[0].elements[w].request.in_bound_lane.connection[0].value; 
-                            __aux64__ = ros->srm.requests[0].elements[w].request.in_bound_lane.connection[0].value;
+                            uint8_t* _tmp_25 = (uint8_t*) buffer++;
+                            *_tmp_25 = ros->srm.requests[0].elements[a].request.in_bound_lane.connection[0].value; 
+                            __aux64__ = ros->srm.requests[0].elements[a].request.in_bound_lane.connection[0].value;
                             
                             // MIN validator
                             if (VALIDATORS_ENABLED && __aux64__ < 0) {
-                                logger->warning() << "Error: Value in 'srm.requests[0].elements[w].request.in_bound_lane.connection[0].value' (" << __aux64__ << ") less than (0); message dropped.";
+                                logger->warning() << "Error: Value in 'srm.requests[0].elements[a].request.in_bound_lane.connection[0].value' (" << __aux64__ << ") less than (0); message dropped.";
                                 return -1;
                             }
                             // MAX validator
                             if (VALIDATORS_ENABLED && __aux64__ > 255) {
-                                logger->warning() << "Error: Value in 'srm.requests[0].elements[w].request.in_bound_lane.connection[0].value' (" << __aux64__ << ") exceeds max allowable (255); message dropped.";
+                                logger->warning() << "Error: Value in 'srm.requests[0].elements[a].request.in_bound_lane.connection[0].value' (" << __aux64__ << ") exceeds max allowable (255); message dropped.";
                                 return -1;
                             }
                         
                         }
                         else
                         {
-                            logger->warning() << "Wrong option (" << static_cast<int>(*_choice_247) << ") selected in CHOICE IntersectionAccessPoint in 'srm.requests[0].elements[w].request.in_bound_lane'; message dropped.";
+                            logger->warning() << "Wrong option (" << static_cast<int>(*_choice_1) << ") selected in CHOICE IntersectionAccessPoint in 'srm.requests[0].elements[a].request.in_bound_lane'; message dropped.";
                             return -1;
                         }
                         
-                        if(ros->srm.requests[0].elements[w].request.out_bound_lane.size() != 0) {
+                        if(ros->srm.requests[0].elements[a].request.out_bound_lane.size() != 0) {
                             // Field:  type(IntersectionAccessPoint) name(out_bound_lane) extGroup(0)
                             // Choice
                                // #0  lane   LaneID
                                // #1  approach   ApproachID
                                // #2  connection   LaneConnectionID
-                            uint8_t* _ext_flag_3403 = (uint8_t*) buffer; 
+                            uint8_t* _ext_flag_18 = (uint8_t*) buffer; 
                             buffer++;
-                            *_ext_flag_3403 = 0; 
+                            *_ext_flag_18 = 0; 
                             
-                            uint8_t* _choice_248 = (uint8_t*) buffer;
+                            uint8_t* _choice_2 = (uint8_t*) buffer;
                             buffer++;
                             
-                            if(ros->srm.requests[0].elements[w].request.out_bound_lane[0].lane.size() != 0) {  // CHOICE 0  fieldType(IntersectionAccessPoint) 
-                                *_choice_248 = 0;  // Setting choice selection
+                            if(ros->srm.requests[0].elements[a].request.out_bound_lane[0].lane.size() != 0) {  // CHOICE 0  fieldType(IntersectionAccessPoint) 
+                                *_choice_2 = 0;  // Setting choice selection
                             
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m006761\033[0m| Choice selection: 0";
+                                    logger->debug() << "|\033[38;5;94m000028\033[0m| Choice selection: 0";
                             
                                 // Integer
                                 
                                 // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m006762\033[0m| " << tools::getTypeName(ros->srm.requests[0].elements[w].request.out_bound_lane[0].lane[0].value) << 
-                                                 " srm.requests[0].elements[w].request.out_bound_lane[0].lane[0].value: " << static_cast<int>(ros->srm.requests[0].elements[w].request.out_bound_lane[0].lane[0].value);
+                                    logger->debug() << "|\033[38;5;94m000029\033[0m| " << tools::getTypeName(ros->srm.requests[0].elements[a].request.out_bound_lane[0].lane[0].value) << 
+                                                 " srm.requests[0].elements[a].request.out_bound_lane[0].lane[0].value: " << static_cast<int>(ros->srm.requests[0].elements[a].request.out_bound_lane[0].lane[0].value);
                                 }
                                 
-                                uint8_t* _tmp_7522 = (uint8_t*) buffer++;
-                                *_tmp_7522 = ros->srm.requests[0].elements[w].request.out_bound_lane[0].lane[0].value; 
-                                __aux64__ = ros->srm.requests[0].elements[w].request.out_bound_lane[0].lane[0].value;
+                                uint8_t* _tmp_26 = (uint8_t*) buffer++;
+                                *_tmp_26 = ros->srm.requests[0].elements[a].request.out_bound_lane[0].lane[0].value; 
+                                __aux64__ = ros->srm.requests[0].elements[a].request.out_bound_lane[0].lane[0].value;
                                 
                                 // MIN validator
                                 if (VALIDATORS_ENABLED && __aux64__ < 0) {
-                                    logger->warning() << "Error: Value in 'srm.requests[0].elements[w].request.out_bound_lane[0].lane[0].value' (" << __aux64__ << ") less than (0); message dropped.";
+                                    logger->warning() << "Error: Value in 'srm.requests[0].elements[a].request.out_bound_lane[0].lane[0].value' (" << __aux64__ << ") less than (0); message dropped.";
                                     return -1;
                                 }
                                 // MAX validator
                                 if (VALIDATORS_ENABLED && __aux64__ > 255) {
-                                    logger->warning() << "Error: Value in 'srm.requests[0].elements[w].request.out_bound_lane[0].lane[0].value' (" << __aux64__ << ") exceeds max allowable (255); message dropped.";
+                                    logger->warning() << "Error: Value in 'srm.requests[0].elements[a].request.out_bound_lane[0].lane[0].value' (" << __aux64__ << ") exceeds max allowable (255); message dropped.";
                                     return -1;
                                 }
                             
                             }
-                            else if(ros->srm.requests[0].elements[w].request.out_bound_lane[0].approach.size() != 0)  // CHOICE 1  fieldType(IntersectionAccessPoint) 
+                            else if(ros->srm.requests[0].elements[a].request.out_bound_lane[0].approach.size() != 0)  // CHOICE 1  fieldType(IntersectionAccessPoint) 
                             {
-                                *_choice_248 = 1;  // Setting choice selection
+                                *_choice_2 = 1;  // Setting choice selection
                             
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m006763\033[0m| Choice selection: 1";
+                                    logger->debug() << "|\033[38;5;94m000030\033[0m| Choice selection: 1";
                             
                                 // Integer
                                 
                                 // UINT8  min(0) max(15) span(16) dataType(UInt8)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m006764\033[0m| " << tools::getTypeName(ros->srm.requests[0].elements[w].request.out_bound_lane[0].approach[0].value) << 
-                                                 " srm.requests[0].elements[w].request.out_bound_lane[0].approach[0].value: " << static_cast<int>(ros->srm.requests[0].elements[w].request.out_bound_lane[0].approach[0].value);
+                                    logger->debug() << "|\033[38;5;94m000031\033[0m| " << tools::getTypeName(ros->srm.requests[0].elements[a].request.out_bound_lane[0].approach[0].value) << 
+                                                 " srm.requests[0].elements[a].request.out_bound_lane[0].approach[0].value: " << static_cast<int>(ros->srm.requests[0].elements[a].request.out_bound_lane[0].approach[0].value);
                                 }
                                 
-                                uint8_t* _tmp_7523 = (uint8_t*) buffer++;
-                                *_tmp_7523 = ros->srm.requests[0].elements[w].request.out_bound_lane[0].approach[0].value; 
-                                __aux64__ = ros->srm.requests[0].elements[w].request.out_bound_lane[0].approach[0].value;
+                                uint8_t* _tmp_27 = (uint8_t*) buffer++;
+                                *_tmp_27 = ros->srm.requests[0].elements[a].request.out_bound_lane[0].approach[0].value; 
+                                __aux64__ = ros->srm.requests[0].elements[a].request.out_bound_lane[0].approach[0].value;
                                 
                                 // MIN validator
                                 if (VALIDATORS_ENABLED && __aux64__ < 0) {
-                                    logger->warning() << "Error: Value in 'srm.requests[0].elements[w].request.out_bound_lane[0].approach[0].value' (" << __aux64__ << ") less than (0); message dropped.";
+                                    logger->warning() << "Error: Value in 'srm.requests[0].elements[a].request.out_bound_lane[0].approach[0].value' (" << __aux64__ << ") less than (0); message dropped.";
                                     return -1;
                                 }
                                 // MAX validator
                                 if (VALIDATORS_ENABLED && __aux64__ > 15) {
-                                    logger->warning() << "Error: Value in 'srm.requests[0].elements[w].request.out_bound_lane[0].approach[0].value' (" << __aux64__ << ") exceeds max allowable (15); message dropped.";
+                                    logger->warning() << "Error: Value in 'srm.requests[0].elements[a].request.out_bound_lane[0].approach[0].value' (" << __aux64__ << ") exceeds max allowable (15); message dropped.";
                                     return -1;
                                 }
                             
                             }
-                            else if(ros->srm.requests[0].elements[w].request.out_bound_lane[0].connection.size() != 0)  // CHOICE 2  fieldType(IntersectionAccessPoint) 
+                            else if(ros->srm.requests[0].elements[a].request.out_bound_lane[0].connection.size() != 0)  // CHOICE 2  fieldType(IntersectionAccessPoint) 
                             {
-                                *_choice_248 = 2;  // Setting choice selection
+                                *_choice_2 = 2;  // Setting choice selection
                             
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m006765\033[0m| Choice selection: 2";
+                                    logger->debug() << "|\033[38;5;94m000032\033[0m| Choice selection: 2";
                             
                                 // Integer
                                 
                                 // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m006766\033[0m| " << tools::getTypeName(ros->srm.requests[0].elements[w].request.out_bound_lane[0].connection[0].value) << 
-                                                 " srm.requests[0].elements[w].request.out_bound_lane[0].connection[0].value: " << static_cast<int>(ros->srm.requests[0].elements[w].request.out_bound_lane[0].connection[0].value);
+                                    logger->debug() << "|\033[38;5;94m000033\033[0m| " << tools::getTypeName(ros->srm.requests[0].elements[a].request.out_bound_lane[0].connection[0].value) << 
+                                                 " srm.requests[0].elements[a].request.out_bound_lane[0].connection[0].value: " << static_cast<int>(ros->srm.requests[0].elements[a].request.out_bound_lane[0].connection[0].value);
                                 }
                                 
-                                uint8_t* _tmp_7524 = (uint8_t*) buffer++;
-                                *_tmp_7524 = ros->srm.requests[0].elements[w].request.out_bound_lane[0].connection[0].value; 
-                                __aux64__ = ros->srm.requests[0].elements[w].request.out_bound_lane[0].connection[0].value;
+                                uint8_t* _tmp_28 = (uint8_t*) buffer++;
+                                *_tmp_28 = ros->srm.requests[0].elements[a].request.out_bound_lane[0].connection[0].value; 
+                                __aux64__ = ros->srm.requests[0].elements[a].request.out_bound_lane[0].connection[0].value;
                                 
                                 // MIN validator
                                 if (VALIDATORS_ENABLED && __aux64__ < 0) {
-                                    logger->warning() << "Error: Value in 'srm.requests[0].elements[w].request.out_bound_lane[0].connection[0].value' (" << __aux64__ << ") less than (0); message dropped.";
+                                    logger->warning() << "Error: Value in 'srm.requests[0].elements[a].request.out_bound_lane[0].connection[0].value' (" << __aux64__ << ") less than (0); message dropped.";
                                     return -1;
                                 }
                                 // MAX validator
                                 if (VALIDATORS_ENABLED && __aux64__ > 255) {
-                                    logger->warning() << "Error: Value in 'srm.requests[0].elements[w].request.out_bound_lane[0].connection[0].value' (" << __aux64__ << ") exceeds max allowable (255); message dropped.";
+                                    logger->warning() << "Error: Value in 'srm.requests[0].elements[a].request.out_bound_lane[0].connection[0].value' (" << __aux64__ << ") exceeds max allowable (255); message dropped.";
                                     return -1;
                                 }
                             
                             }
                             else
                             {
-                                logger->warning() << "Wrong option (" << static_cast<int>(*_choice_248) << ") selected in CHOICE IntersectionAccessPoint in 'srm.requests[0].elements[w].request.out_bound_lane[0]'; message dropped.";
+                                logger->warning() << "Wrong option (" << static_cast<int>(*_choice_2) << ") selected in CHOICE IntersectionAccessPoint in 'srm.requests[0].elements[a].request.out_bound_lane[0]'; message dropped.";
                                 return -1;
                             }
                         }
                         
                         // Field name: regional  // avoided
-                        if(*_ext_flag_3394) {
+                        if(*_ext_flag_9) {
                         }
                     
-                    if(ros->srm.requests[0].elements[w].minute.size() != 0) {
+                    if(ros->srm.requests[0].elements[a].minute.size() != 0) {
                         // Field:  type(MinuteOfTheYear) name(minute) extGroup(0)
                         // Integer
                         
                         // UINT32  min(0) max(527040) span(527041) dataType(UInt32)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m006767\033[0m| " << tools::getTypeName(ros->srm.requests[0].elements[w].minute[0].value) << 
-                                         " srm.requests[0].elements[w].minute[0].value: " << ros->srm.requests[0].elements[w].minute[0].value;
+                            logger->debug() << "|\033[38;5;94m000034\033[0m| " << tools::getTypeName(ros->srm.requests[0].elements[a].minute[0].value) << 
+                                         " srm.requests[0].elements[a].minute[0].value: " << ros->srm.requests[0].elements[a].minute[0].value;
                         }
                         
-                        uint32_t* _tmp_7526 = (uint32_t*) buffer; buffer += 4;
-                        *_tmp_7526 = ros->srm.requests[0].elements[w].minute[0].value; 
-                        __aux64__ = ros->srm.requests[0].elements[w].minute[0].value;
+                        uint32_t* _tmp_30 = (uint32_t*) buffer; buffer += 4;
+                        *_tmp_30 = ros->srm.requests[0].elements[a].minute[0].value; 
+                        __aux64__ = ros->srm.requests[0].elements[a].minute[0].value;
                         
                         // MIN validator
                         if (VALIDATORS_ENABLED && __aux64__ < 0) {
-                            logger->warning() << "Error: Value in 'srm.requests[0].elements[w].minute[0].value' (" << __aux64__ << ") less than (0); message dropped.";
+                            logger->warning() << "Error: Value in 'srm.requests[0].elements[a].minute[0].value' (" << __aux64__ << ") less than (0); message dropped.";
                             return -1;
                         }
                         // MAX validator
                         if (VALIDATORS_ENABLED && __aux64__ > 527040) {
-                            logger->warning() << "Error: Value in 'srm.requests[0].elements[w].minute[0].value' (" << __aux64__ << ") exceeds max allowable (527040); message dropped.";
+                            logger->warning() << "Error: Value in 'srm.requests[0].elements[a].minute[0].value' (" << __aux64__ << ") exceeds max allowable (527040); message dropped.";
                             return -1;
                         }
                     }
                     
-                    if(ros->srm.requests[0].elements[w].second.size() != 0) {
+                    if(ros->srm.requests[0].elements[a].second.size() != 0) {
                         // Field:  type(DSecond) name(second) extGroup(0)
                         // Integer
                         
                         // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m006768\033[0m| " << tools::getTypeName(ros->srm.requests[0].elements[w].second[0].value) << 
-                                         " srm.requests[0].elements[w].second[0].value: " << ros->srm.requests[0].elements[w].second[0].value;
+                            logger->debug() << "|\033[38;5;94m000035\033[0m| " << tools::getTypeName(ros->srm.requests[0].elements[a].second[0].value) << 
+                                         " srm.requests[0].elements[a].second[0].value: " << ros->srm.requests[0].elements[a].second[0].value;
                         }
                         
-                        uint16_t* _tmp_7527 = (uint16_t*) buffer; buffer += 2;
-                        *_tmp_7527 = ros->srm.requests[0].elements[w].second[0].value; 
-                        __aux64__ = ros->srm.requests[0].elements[w].second[0].value;
+                        uint16_t* _tmp_31 = (uint16_t*) buffer; buffer += 2;
+                        *_tmp_31 = ros->srm.requests[0].elements[a].second[0].value; 
+                        __aux64__ = ros->srm.requests[0].elements[a].second[0].value;
                         
                         // MIN validator
                         if (VALIDATORS_ENABLED && __aux64__ < 0) {
-                            logger->warning() << "Error: Value in 'srm.requests[0].elements[w].second[0].value' (" << __aux64__ << ") less than (0); message dropped.";
+                            logger->warning() << "Error: Value in 'srm.requests[0].elements[a].second[0].value' (" << __aux64__ << ") less than (0); message dropped.";
                             return -1;
                         }
                         // MAX validator
                         if (VALIDATORS_ENABLED && __aux64__ > 65535) {
-                            logger->warning() << "Error: Value in 'srm.requests[0].elements[w].second[0].value' (" << __aux64__ << ") exceeds max allowable (65535); message dropped.";
+                            logger->warning() << "Error: Value in 'srm.requests[0].elements[a].second[0].value' (" << __aux64__ << ") exceeds max allowable (65535); message dropped.";
                             return -1;
                         }
                     }
                     
-                    if(ros->srm.requests[0].elements[w].duration.size() != 0) {
+                    if(ros->srm.requests[0].elements[a].duration.size() != 0) {
                         // Field:  type(DSecond) name(duration) extGroup(0)
                         // Integer
                         
                         // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m006769\033[0m| " << tools::getTypeName(ros->srm.requests[0].elements[w].duration[0].value) << 
-                                         " srm.requests[0].elements[w].duration[0].value: " << ros->srm.requests[0].elements[w].duration[0].value;
+                            logger->debug() << "|\033[38;5;94m000036\033[0m| " << tools::getTypeName(ros->srm.requests[0].elements[a].duration[0].value) << 
+                                         " srm.requests[0].elements[a].duration[0].value: " << ros->srm.requests[0].elements[a].duration[0].value;
                         }
                         
-                        uint16_t* _tmp_7528 = (uint16_t*) buffer; buffer += 2;
-                        *_tmp_7528 = ros->srm.requests[0].elements[w].duration[0].value; 
-                        __aux64__ = ros->srm.requests[0].elements[w].duration[0].value;
+                        uint16_t* _tmp_32 = (uint16_t*) buffer; buffer += 2;
+                        *_tmp_32 = ros->srm.requests[0].elements[a].duration[0].value; 
+                        __aux64__ = ros->srm.requests[0].elements[a].duration[0].value;
                         
                         // MIN validator
                         if (VALIDATORS_ENABLED && __aux64__ < 0) {
-                            logger->warning() << "Error: Value in 'srm.requests[0].elements[w].duration[0].value' (" << __aux64__ << ") less than (0); message dropped.";
+                            logger->warning() << "Error: Value in 'srm.requests[0].elements[a].duration[0].value' (" << __aux64__ << ") less than (0); message dropped.";
                             return -1;
                         }
                         // MAX validator
                         if (VALIDATORS_ENABLED && __aux64__ > 65535) {
-                            logger->warning() << "Error: Value in 'srm.requests[0].elements[w].duration[0].value' (" << __aux64__ << ") exceeds max allowable (65535); message dropped.";
+                            logger->warning() << "Error: Value in 'srm.requests[0].elements[a].duration[0].value' (" << __aux64__ << ") exceeds max allowable (65535); message dropped.";
                             return -1;
                         }
                     }
                     
                     // Field name: regional  // avoided
-                    if(*_ext_flag_3393) {
+                    if(*_ext_flag_8) {
                     }
             }
         }
@@ -733,61 +733,61 @@ namespace wind
                 //  transitSchedule  DeltaTime                       OPTIONAL  
                 //  regional         RequestorDescription_regional   OPTIONAL  
                 //  ...
-            uint8_t* _ext_flag_3410 = (uint8_t*) buffer++;  // Write extension flag for RequestorDescription
-            *_ext_flag_3410 = 0;  
+            uint8_t* _ext_flag_25 = (uint8_t*) buffer++;  // Write extension flag for RequestorDescription
+            *_ext_flag_25 = 0;  
             
             // Optional fields bytemap
-            char* _tmp_7530 = (char*) buffer++;
-            *_tmp_7530 = (ros->srm.requestor.type.size() != 0 ? 1 : 0);
+            char* _tmp_34 = (char*) buffer++;
+            *_tmp_34 = (ros->srm.requestor.type.size() != 0 ? 1 : 0);
             if(debug)
-                logger->debug() << "|\033[38;5;94m006770\033[0m| Optional field type = " << *_tmp_7530;
-            char* _tmp_7531 = (char*) buffer++;
-            *_tmp_7531 = (ros->srm.requestor.position.size() != 0 ? 1 : 0);
+                logger->debug() << "|\033[38;5;94m000037\033[0m| Optional field type = " << *_tmp_34;
+            char* _tmp_35 = (char*) buffer++;
+            *_tmp_35 = (ros->srm.requestor.position.size() != 0 ? 1 : 0);
             if(debug)
-                logger->debug() << "|\033[38;5;94m006771\033[0m| Optional field position = " << *_tmp_7531;
-            char* _tmp_7532 = (char*) buffer++;
-            *_tmp_7532 = (ros->srm.requestor.name.size() != 0 ? 1 : 0);
+                logger->debug() << "|\033[38;5;94m000038\033[0m| Optional field position = " << *_tmp_35;
+            char* _tmp_36 = (char*) buffer++;
+            *_tmp_36 = (ros->srm.requestor.name.size() != 0 ? 1 : 0);
             if(debug)
-                logger->debug() << "|\033[38;5;94m006772\033[0m| Optional field name = " << *_tmp_7532;
-            char* _tmp_7533 = (char*) buffer++;
-            *_tmp_7533 = (ros->srm.requestor.route_name.size() != 0 ? 1 : 0);
+                logger->debug() << "|\033[38;5;94m000039\033[0m| Optional field name = " << *_tmp_36;
+            char* _tmp_37 = (char*) buffer++;
+            *_tmp_37 = (ros->srm.requestor.route_name.size() != 0 ? 1 : 0);
             if(debug)
-                logger->debug() << "|\033[38;5;94m006773\033[0m| Optional field route_name = " << *_tmp_7533;
-            char* _tmp_7534 = (char*) buffer++;
-            *_tmp_7534 = (ros->srm.requestor.transit_status.size() != 0 ? 1 : 0);
+                logger->debug() << "|\033[38;5;94m000040\033[0m| Optional field route_name = " << *_tmp_37;
+            char* _tmp_38 = (char*) buffer++;
+            *_tmp_38 = (ros->srm.requestor.transit_status.size() != 0 ? 1 : 0);
             if(debug)
-                logger->debug() << "|\033[38;5;94m006774\033[0m| Optional field transit_status = " << *_tmp_7534;
-            char* _tmp_7535 = (char*) buffer++;
-            *_tmp_7535 = (ros->srm.requestor.transit_occupancy.size() != 0 ? 1 : 0);
+                logger->debug() << "|\033[38;5;94m000041\033[0m| Optional field transit_status = " << *_tmp_38;
+            char* _tmp_39 = (char*) buffer++;
+            *_tmp_39 = (ros->srm.requestor.transit_occupancy.size() != 0 ? 1 : 0);
             if(debug)
-                logger->debug() << "|\033[38;5;94m006775\033[0m| Optional field transit_occupancy = " << *_tmp_7535;
-            char* _tmp_7536 = (char*) buffer++;
-            *_tmp_7536 = (ros->srm.requestor.transit_schedule.size() != 0 ? 1 : 0);
+                logger->debug() << "|\033[38;5;94m000042\033[0m| Optional field transit_occupancy = " << *_tmp_39;
+            char* _tmp_40 = (char*) buffer++;
+            *_tmp_40 = (ros->srm.requestor.transit_schedule.size() != 0 ? 1 : 0);
             if(debug)
-                logger->debug() << "|\033[38;5;94m006776\033[0m| Optional field transit_schedule = " << *_tmp_7536;
-            char* _tmp_7537 = (char*) buffer++;
-            *_tmp_7537 = (ros->srm.requestor.regional.size() != 0 ? 1 : 0);
+                logger->debug() << "|\033[38;5;94m000043\033[0m| Optional field transit_schedule = " << *_tmp_40;
+            char* _tmp_41 = (char*) buffer++;
+            *_tmp_41 = (ros->srm.requestor.regional.size() != 0 ? 1 : 0);
             if(debug)
-                logger->debug() << "|\033[38;5;94m006777\033[0m| Optional field regional = " << *_tmp_7537;
+                logger->debug() << "|\033[38;5;94m000044\033[0m| Optional field regional = " << *_tmp_41;
             
             // Field:  type(VehicleID) name(id) extGroup(0)
             // Choice
                // #0  entityID   TemporaryID
                // #1  stationID   StationID
-            uint8_t* _choice_249 = (uint8_t*) buffer;
+            uint8_t* _choice_3 = (uint8_t*) buffer;
             buffer++;
             
             if(ros->srm.requestor.id.entity_id.size() != 0) {  // CHOICE 0  fieldType(VehicleID) 
-                *_choice_249 = 0;  // Setting choice selection
+                *_choice_3 = 0;  // Setting choice selection
             
                 if(debug)
-                    logger->debug() << "|\033[38;5;94m006778\033[0m| Choice selection: 0";
+                    logger->debug() << "|\033[38;5;94m000045\033[0m| Choice selection: 0";
             
                 // OctetString
                 // OCTET_STRING  min(4) max(4) span(1)
                 
                 if(debug)
-                    logger->debug() << "|\033[38;5;94m006779\033[0m| srm.requestor.id.entity_id[0].values.size(): srm.requestor.id.entity_id[0]" << static_cast<int>(ros->srm.requestor.id.entity_id[0].values.size());
+                    logger->debug() << "|\033[38;5;94m000046\033[0m| srm.requestor.id.entity_id[0].values.size(): srm.requestor.id.entity_id[0]" << static_cast<int>(ros->srm.requestor.id.entity_id[0].values.size());
                 
                 if(ros->srm.requestor.id.entity_id[0].values.size() < 4) {
                     logger->warning() << "Error: Value in 'srm.requestor.id.entity_id[0].value' (" << 
@@ -799,36 +799,36 @@ namespace wind
                                 ros->srm.requestor.id.entity_id[0].values.size() << ") exceeds max allowable (4); message dropped.";
                     return -1;
                 }
-                uint8_t* _tmp_7538 = (uint8_t*)buffer;
+                uint8_t* _tmp_42 = (uint8_t*)buffer;
                 buffer += 1;
                 __aux64__ = ros->srm.requestor.id.entity_id[0].values.size();
                 if(__aux64__ > 4) __aux64__ = 4;
-                *_tmp_7538 = __aux64__ - 4;
+                *_tmp_42 = __aux64__ - 4;
                 
-                int __ifx = __aux64__;
-                for(int x = 0; x < __ifx; x++) {
+                int __ifb = __aux64__;
+                for(int b = 0; b < __ifb; b++) {
                     int8_t* __m__ = (int8_t*)buffer++;
-                    *__m__ = ros->srm.requestor.id.entity_id[0].values[x];
+                    *__m__ = ros->srm.requestor.id.entity_id[0].values[b];
                 }
             
             }
             else if(ros->srm.requestor.id.station_id.size() != 0)  // CHOICE 1  fieldType(VehicleID) 
             {
-                *_choice_249 = 1;  // Setting choice selection
+                *_choice_3 = 1;  // Setting choice selection
             
                 if(debug)
-                    logger->debug() << "|\033[38;5;94m006780\033[0m| Choice selection: 1";
+                    logger->debug() << "|\033[38;5;94m000047\033[0m| Choice selection: 1";
             
                 // Integer
                 
                 // UINT32  min(0) max(4294967295) span(4294967296) dataType(UInt32)
                 if(debug) {
-                    logger->debug() << "|\033[38;5;94m006781\033[0m| " << tools::getTypeName(ros->srm.requestor.id.station_id[0].value) << 
+                    logger->debug() << "|\033[38;5;94m000048\033[0m| " << tools::getTypeName(ros->srm.requestor.id.station_id[0].value) << 
                                  " srm.requestor.id.station_id[0].value: " << ros->srm.requestor.id.station_id[0].value;
                 }
                 
-                uint32_t* _tmp_7539 = (uint32_t*) buffer; buffer += 4;
-                *_tmp_7539 = ros->srm.requestor.id.station_id[0].value; 
+                uint32_t* _tmp_43 = (uint32_t*) buffer; buffer += 4;
+                *_tmp_43 = ros->srm.requestor.id.station_id[0].value; 
                 __aux64__ = ros->srm.requestor.id.station_id[0].value;
                 
                 // MIN validator
@@ -845,7 +845,7 @@ namespace wind
             }
             else
             {
-                logger->warning() << "Wrong option (" << static_cast<int>(*_choice_249) << ") selected in CHOICE VehicleID in 'srm.requestor.id'; message dropped.";
+                logger->warning() << "Wrong option (" << static_cast<int>(*_choice_3) << ") selected in CHOICE VehicleID in 'srm.requestor.id'; message dropped.";
                 return -1;
             }
             
@@ -859,43 +859,43 @@ namespace wind
                         //  hpmsType   VehicleType              OPTIONAL  
                         //  regional   RegionalExtension        OPTIONAL  
                         //  ...
-                    uint8_t* _ext_flag_3413 = (uint8_t*) buffer++;  // Write extension flag for RequestorType
-                    *_ext_flag_3413 = 0;  
+                    uint8_t* _ext_flag_28 = (uint8_t*) buffer++;  // Write extension flag for RequestorType
+                    *_ext_flag_28 = 0;  
                     
                     // Optional fields bytemap
-                    char* _tmp_7540 = (char*) buffer++;
-                    *_tmp_7540 = (ros->srm.requestor.type[0].subrole.size() != 0 ? 1 : 0);
+                    char* _tmp_44 = (char*) buffer++;
+                    *_tmp_44 = (ros->srm.requestor.type[0].subrole.size() != 0 ? 1 : 0);
                     if(debug)
-                        logger->debug() << "|\033[38;5;94m006782\033[0m| Optional field subrole = " << *_tmp_7540;
-                    char* _tmp_7541 = (char*) buffer++;
-                    *_tmp_7541 = (ros->srm.requestor.type[0].request.size() != 0 ? 1 : 0);
+                        logger->debug() << "|\033[38;5;94m000049\033[0m| Optional field subrole = " << *_tmp_44;
+                    char* _tmp_45 = (char*) buffer++;
+                    *_tmp_45 = (ros->srm.requestor.type[0].request.size() != 0 ? 1 : 0);
                     if(debug)
-                        logger->debug() << "|\033[38;5;94m006783\033[0m| Optional field request = " << *_tmp_7541;
-                    char* _tmp_7542 = (char*) buffer++;
-                    *_tmp_7542 = (ros->srm.requestor.type[0].iso3883.size() != 0 ? 1 : 0);
+                        logger->debug() << "|\033[38;5;94m000050\033[0m| Optional field request = " << *_tmp_45;
+                    char* _tmp_46 = (char*) buffer++;
+                    *_tmp_46 = (ros->srm.requestor.type[0].iso3883.size() != 0 ? 1 : 0);
                     if(debug)
-                        logger->debug() << "|\033[38;5;94m006784\033[0m| Optional field iso3883 = " << *_tmp_7542;
-                    char* _tmp_7543 = (char*) buffer++;
-                    *_tmp_7543 = (ros->srm.requestor.type[0].hpms_type.size() != 0 ? 1 : 0);
+                        logger->debug() << "|\033[38;5;94m000051\033[0m| Optional field iso3883 = " << *_tmp_46;
+                    char* _tmp_47 = (char*) buffer++;
+                    *_tmp_47 = (ros->srm.requestor.type[0].hpms_type.size() != 0 ? 1 : 0);
                     if(debug)
-                        logger->debug() << "|\033[38;5;94m006785\033[0m| Optional field hpms_type = " << *_tmp_7543;
-                    char* _tmp_7544 = (char*) buffer++;
-                    *_tmp_7544 = (ros->srm.requestor.type[0].regional.size() != 0 ? 1 : 0);
+                        logger->debug() << "|\033[38;5;94m000052\033[0m| Optional field hpms_type = " << *_tmp_47;
+                    char* _tmp_48 = (char*) buffer++;
+                    *_tmp_48 = (ros->srm.requestor.type[0].regional.size() != 0 ? 1 : 0);
                     if(debug)
-                        logger->debug() << "|\033[38;5;94m006786\033[0m| Optional field regional = " << *_tmp_7544;
+                        logger->debug() << "|\033[38;5;94m000053\033[0m| Optional field regional = " << *_tmp_48;
                     
                     // Field:  type(BasicVehicleRole) name(role) extGroup(0)
                     // Enumerated
                     // INT32  min(0) max(22) span(23) dataType(Int32)
-                    uint8_t* _ext_flag_3414 = (uint8_t*) buffer++; // Write extension flag for ros->srm.requestor.type[0].role.
+                    uint8_t* _ext_flag_29 = (uint8_t*) buffer++; // Write extension flag for ros->srm.requestor.type[0].role.
                     if(debug) {
-                        logger->debug() << "|\033[38;5;94m006787\033[0m| " << tools::getTypeName(ros->srm.requestor.type[0].role.value) << 
+                        logger->debug() << "|\033[38;5;94m000054\033[0m| " << tools::getTypeName(ros->srm.requestor.type[0].role.value) << 
                                      " srm.requestor.type[0].role.value: " << static_cast<int>(ros->srm.requestor.type[0].role.value);
                     }
                     
-                    uint8_t* _tmp_7545 = (uint8_t*)buffer;
+                    uint8_t* _tmp_49 = (uint8_t*)buffer;
                     buffer += 1;
-                    *_tmp_7545 = ros->srm.requestor.type[0].role.value; 
+                    *_tmp_49 = ros->srm.requestor.type[0].role.value; 
                     __aux64__ = ros->srm.requestor.type[0].role.value; 
                     // MIN validator
                     if (VALIDATORS_ENABLED && __aux64__ < 0) {
@@ -913,13 +913,13 @@ namespace wind
                         // Enumerated
                         // INT32  min(0) max(15) span(16) dataType(Int32)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m006788\033[0m| " << tools::getTypeName(ros->srm.requestor.type[0].subrole[0].value) << 
+                            logger->debug() << "|\033[38;5;94m000055\033[0m| " << tools::getTypeName(ros->srm.requestor.type[0].subrole[0].value) << 
                                          " srm.requestor.type[0].subrole[0].value: " << static_cast<int>(ros->srm.requestor.type[0].subrole[0].value);
                         }
                         
-                        uint8_t* _tmp_7546 = (uint8_t*)buffer;
+                        uint8_t* _tmp_50 = (uint8_t*)buffer;
                         buffer += 1;
-                        *_tmp_7546 = ros->srm.requestor.type[0].subrole[0].value; 
+                        *_tmp_50 = ros->srm.requestor.type[0].subrole[0].value; 
                         __aux64__ = ros->srm.requestor.type[0].subrole[0].value; 
                         // MIN validator
                         if (VALIDATORS_ENABLED && __aux64__ < 0) {
@@ -938,13 +938,13 @@ namespace wind
                         // Enumerated
                         // INT32  min(0) max(15) span(16) dataType(Int32)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m006789\033[0m| " << tools::getTypeName(ros->srm.requestor.type[0].request[0].value) << 
+                            logger->debug() << "|\033[38;5;94m000056\033[0m| " << tools::getTypeName(ros->srm.requestor.type[0].request[0].value) << 
                                          " srm.requestor.type[0].request[0].value: " << static_cast<int>(ros->srm.requestor.type[0].request[0].value);
                         }
                         
-                        uint8_t* _tmp_7547 = (uint8_t*)buffer;
+                        uint8_t* _tmp_51 = (uint8_t*)buffer;
                         buffer += 1;
-                        *_tmp_7547 = ros->srm.requestor.type[0].request[0].value; 
+                        *_tmp_51 = ros->srm.requestor.type[0].request[0].value; 
                         __aux64__ = ros->srm.requestor.type[0].request[0].value; 
                         // MIN validator
                         if (VALIDATORS_ENABLED && __aux64__ < 0) {
@@ -964,12 +964,12 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m006790\033[0m| " << tools::getTypeName(ros->srm.requestor.type[0].iso3883[0].value) << 
+                            logger->debug() << "|\033[38;5;94m000057\033[0m| " << tools::getTypeName(ros->srm.requestor.type[0].iso3883[0].value) << 
                                          " srm.requestor.type[0].iso3883[0].value: " << static_cast<int>(ros->srm.requestor.type[0].iso3883[0].value);
                         }
                         
-                        uint8_t* _tmp_7548 = (uint8_t*) buffer++;
-                        *_tmp_7548 = ros->srm.requestor.type[0].iso3883[0].value; 
+                        uint8_t* _tmp_52 = (uint8_t*) buffer++;
+                        *_tmp_52 = ros->srm.requestor.type[0].iso3883[0].value; 
                         __aux64__ = ros->srm.requestor.type[0].iso3883[0].value;
                         
                         // MIN validator
@@ -988,15 +988,15 @@ namespace wind
                         // Field:  type(VehicleType) name(hpms_type) extGroup(0)
                         // Enumerated
                         // INT32  min(0) max(15) span(16) dataType(Int32)
-                        uint8_t* _ext_flag_3418 = (uint8_t*) buffer++; // Write extension flag for ros->srm.requestor.type[0].hpms_type[0].
+                        uint8_t* _ext_flag_33 = (uint8_t*) buffer++; // Write extension flag for ros->srm.requestor.type[0].hpms_type[0].
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m006791\033[0m| " << tools::getTypeName(ros->srm.requestor.type[0].hpms_type[0].value) << 
+                            logger->debug() << "|\033[38;5;94m000058\033[0m| " << tools::getTypeName(ros->srm.requestor.type[0].hpms_type[0].value) << 
                                          " srm.requestor.type[0].hpms_type[0].value: " << static_cast<int>(ros->srm.requestor.type[0].hpms_type[0].value);
                         }
                         
-                        uint8_t* _tmp_7549 = (uint8_t*)buffer;
+                        uint8_t* _tmp_53 = (uint8_t*)buffer;
                         buffer += 1;
-                        *_tmp_7549 = ros->srm.requestor.type[0].hpms_type[0].value; 
+                        *_tmp_53 = ros->srm.requestor.type[0].hpms_type[0].value; 
                         __aux64__ = ros->srm.requestor.type[0].hpms_type[0].value; 
                         // MIN validator
                         if (VALIDATORS_ENABLED && __aux64__ < 0) {
@@ -1011,7 +1011,7 @@ namespace wind
                     }
                     
                     // Field name: regional  // avoided
-                    if(*_ext_flag_3413) {
+                    if(*_ext_flag_28) {
                     }
             }
             
@@ -1022,18 +1022,18 @@ namespace wind
                         //  heading    Angle                  OPTIONAL  
                         //  speed      TransmissionAndSpeed   OPTIONAL  
                         //  ...
-                    uint8_t* _ext_flag_3419 = (uint8_t*) buffer++;  // Write extension flag for RequestorPositionVector
-                    *_ext_flag_3419 = 0;  
+                    uint8_t* _ext_flag_34 = (uint8_t*) buffer++;  // Write extension flag for RequestorPositionVector
+                    *_ext_flag_34 = 0;  
                     
                     // Optional fields bytemap
-                    char* _tmp_7551 = (char*) buffer++;
-                    *_tmp_7551 = (ros->srm.requestor.position[0].heading.size() != 0 ? 1 : 0);
+                    char* _tmp_55 = (char*) buffer++;
+                    *_tmp_55 = (ros->srm.requestor.position[0].heading.size() != 0 ? 1 : 0);
                     if(debug)
-                        logger->debug() << "|\033[38;5;94m006792\033[0m| Optional field heading = " << *_tmp_7551;
-                    char* _tmp_7552 = (char*) buffer++;
-                    *_tmp_7552 = (ros->srm.requestor.position[0].speed.size() != 0 ? 1 : 0);
+                        logger->debug() << "|\033[38;5;94m000059\033[0m| Optional field heading = " << *_tmp_55;
+                    char* _tmp_56 = (char*) buffer++;
+                    *_tmp_56 = (ros->srm.requestor.position[0].speed.size() != 0 ? 1 : 0);
                     if(debug)
-                        logger->debug() << "|\033[38;5;94m006793\033[0m| Optional field speed = " << *_tmp_7552;
+                        logger->debug() << "|\033[38;5;94m000060\033[0m| Optional field speed = " << *_tmp_56;
                     
                     // Field:  type(Position3D) name(position) extGroup(0)
                         // Position3D  SEQUENCE
@@ -1042,34 +1042,34 @@ namespace wind
                             //  elevation  Elevation             OPTIONAL  
                             //  regional   Position3D_regional   OPTIONAL  
                             //  ...
-                        uint8_t* _ext_flag_3420 = (uint8_t*) buffer++;  // Write extension flag for Position3D
-                        *_ext_flag_3420 = 0;  
+                        uint8_t* _ext_flag_35 = (uint8_t*) buffer++;  // Write extension flag for Position3D
+                        *_ext_flag_35 = 0;  
                         
                         // Optional fields bytemap
-                        char* _tmp_7553 = (char*) buffer++;
-                        *_tmp_7553 = (ros->srm.requestor.position[0].position.elevation.size() != 0 ? 1 : 0);
+                        char* _tmp_57 = (char*) buffer++;
+                        *_tmp_57 = (ros->srm.requestor.position[0].position.elevation.size() != 0 ? 1 : 0);
                         if(debug)
-                            logger->debug() << "|\033[38;5;94m006794\033[0m| Optional field elevation = " << *_tmp_7553;
-                        char* _tmp_7554 = (char*) buffer++;
-                        *_tmp_7554 = (ros->srm.requestor.position[0].position.regional.size() != 0 ? 1 : 0);
+                            logger->debug() << "|\033[38;5;94m000061\033[0m| Optional field elevation = " << *_tmp_57;
+                        char* _tmp_58 = (char*) buffer++;
+                        *_tmp_58 = (ros->srm.requestor.position[0].position.regional.size() != 0 ? 1 : 0);
                         if(debug)
-                            logger->debug() << "|\033[38;5;94m006795\033[0m| Optional field regional = " << *_tmp_7554;
+                            logger->debug() << "|\033[38;5;94m000062\033[0m| Optional field regional = " << *_tmp_58;
                         
                         // Field:  type(Latitude) name(lat) extGroup(0)
                         // Real
                         
                         // DOUBLE  min(-900000000) max(900000001) span(1800000002) scaleDivisor(1.0E7) dataType(Double)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m006796\033[0m| " << tools::getTypeName(ros->srm.requestor.position[0].position.lat.value) << 
+                            logger->debug() << "|\033[38;5;94m000063\033[0m| " << tools::getTypeName(ros->srm.requestor.position[0].position.lat.value) << 
                                          " srm.requestor.position[0].position.lat.value: " << ros->srm.requestor.position[0].position.lat.value;
                         }
                         
-                        double _tmp_7556 = ros->srm.requestor.position[0].position.lat.value;
-                        _tmp_7556 *= 1.0E7;
-                        __aux64__ = static_cast<uint64_t>(_tmp_7556);
-                        _tmp_7556 -= -900000000;
-                        uint32_t* _tmp_7555 = (uint32_t*) buffer; buffer += 4;
-                        *_tmp_7555 = static_cast<uint32_t>(_tmp_7556);
+                        double _tmp_60 = ros->srm.requestor.position[0].position.lat.value;
+                        _tmp_60 *= 1.0E7;
+                        __aux64__ = static_cast<uint64_t>(_tmp_60);
+                        _tmp_60 -= -900000000;
+                        uint32_t* _tmp_59 = (uint32_t*) buffer; buffer += 4;
+                        *_tmp_59 = static_cast<uint32_t>(_tmp_60);
                         
                         // MIN validator
                         if (VALIDATORS_ENABLED && __aux64__ < -900000000) {
@@ -1087,16 +1087,16 @@ namespace wind
                         
                         // DOUBLE  min(-1800000000) max(1800000001) span(3600000002) scaleDivisor(1.0E7) dataType(Double)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m006797\033[0m| " << tools::getTypeName(ros->srm.requestor.position[0].position.longint.value) << 
+                            logger->debug() << "|\033[38;5;94m000064\033[0m| " << tools::getTypeName(ros->srm.requestor.position[0].position.longint.value) << 
                                          " srm.requestor.position[0].position.longint.value: " << ros->srm.requestor.position[0].position.longint.value;
                         }
                         
-                        double _tmp_7558 = ros->srm.requestor.position[0].position.longint.value;
-                        _tmp_7558 *= 1.0E7;
-                        __aux64__ = static_cast<uint64_t>(_tmp_7558);
-                        _tmp_7558 -= -1800000000;
-                        uint32_t* _tmp_7557 = (uint32_t*) buffer; buffer += 4;
-                        *_tmp_7557 = static_cast<uint32_t>(_tmp_7558);
+                        double _tmp_62 = ros->srm.requestor.position[0].position.longint.value;
+                        _tmp_62 *= 1.0E7;
+                        __aux64__ = static_cast<uint64_t>(_tmp_62);
+                        _tmp_62 -= -1800000000;
+                        uint32_t* _tmp_61 = (uint32_t*) buffer; buffer += 4;
+                        *_tmp_61 = static_cast<uint32_t>(_tmp_62);
                         
                         // MIN validator
                         if (VALIDATORS_ENABLED && __aux64__ < -1800000000) {
@@ -1115,16 +1115,16 @@ namespace wind
                             
                             // FLOAT  min(-4096) max(61439) span(65536) scaleDivisor(10.0) dataType(Float)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m006798\033[0m| " << tools::getTypeName(ros->srm.requestor.position[0].position.elevation[0].value) << 
+                                logger->debug() << "|\033[38;5;94m000065\033[0m| " << tools::getTypeName(ros->srm.requestor.position[0].position.elevation[0].value) << 
                                              " srm.requestor.position[0].position.elevation[0].value: " << ros->srm.requestor.position[0].position.elevation[0].value;
                             }
                             
-                            float _tmp_7560 = ros->srm.requestor.position[0].position.elevation[0].value;
-                            _tmp_7560 *= 10.0;
-                            __aux64__ = static_cast<uint64_t>(_tmp_7560);
-                            _tmp_7560 -= -4096;
-                            uint16_t* _tmp_7559 = (uint16_t*) buffer; buffer += 2;
-                            *_tmp_7559 = static_cast<uint16_t>(_tmp_7560);
+                            float _tmp_64 = ros->srm.requestor.position[0].position.elevation[0].value;
+                            _tmp_64 *= 10.0;
+                            __aux64__ = static_cast<uint64_t>(_tmp_64);
+                            _tmp_64 -= -4096;
+                            uint16_t* _tmp_63 = (uint16_t*) buffer; buffer += 2;
+                            *_tmp_63 = static_cast<uint16_t>(_tmp_64);
                             
                             // MIN validator
                             if (VALIDATORS_ENABLED && __aux64__ < -4096) {
@@ -1139,7 +1139,7 @@ namespace wind
                         }
                         
                         // Field name: regional  // avoided
-                        if(*_ext_flag_3420) {
+                        if(*_ext_flag_35) {
                         }
                     
                     if(ros->srm.requestor.position[0].heading.size() != 0) {
@@ -1148,12 +1148,12 @@ namespace wind
                         
                         // UINT16  min(0) max(28800) span(28801) dataType(UInt16)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m006799\033[0m| " << tools::getTypeName(ros->srm.requestor.position[0].heading[0].value) << 
+                            logger->debug() << "|\033[38;5;94m000066\033[0m| " << tools::getTypeName(ros->srm.requestor.position[0].heading[0].value) << 
                                          " srm.requestor.position[0].heading[0].value: " << ros->srm.requestor.position[0].heading[0].value;
                         }
                         
-                        uint16_t* _tmp_7562 = (uint16_t*) buffer; buffer += 2;
-                        *_tmp_7562 = ros->srm.requestor.position[0].heading[0].value; 
+                        uint16_t* _tmp_66 = (uint16_t*) buffer; buffer += 2;
+                        *_tmp_66 = ros->srm.requestor.position[0].heading[0].value; 
                         __aux64__ = ros->srm.requestor.position[0].heading[0].value;
                         
                         // MIN validator
@@ -1179,13 +1179,13 @@ namespace wind
                             // Enumerated
                             // INT32  min(0) max(7) span(8) dataType(Int32)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m006800\033[0m| " << tools::getTypeName(ros->srm.requestor.position[0].speed[0].transmisson.value) << 
+                                logger->debug() << "|\033[38;5;94m000067\033[0m| " << tools::getTypeName(ros->srm.requestor.position[0].speed[0].transmisson.value) << 
                                              " srm.requestor.position[0].speed[0].transmisson.value: " << static_cast<int>(ros->srm.requestor.position[0].speed[0].transmisson.value);
                             }
                             
-                            uint8_t* _tmp_7563 = (uint8_t*)buffer;
+                            uint8_t* _tmp_67 = (uint8_t*)buffer;
                             buffer += 1;
-                            *_tmp_7563 = ros->srm.requestor.position[0].speed[0].transmisson.value; 
+                            *_tmp_67 = ros->srm.requestor.position[0].speed[0].transmisson.value; 
                             __aux64__ = ros->srm.requestor.position[0].speed[0].transmisson.value; 
                             // MIN validator
                             if (VALIDATORS_ENABLED && __aux64__ < 0) {
@@ -1203,12 +1203,12 @@ namespace wind
                             
                             // UINT16  min(0) max(8191) span(8192) dataType(UInt16)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m006801\033[0m| " << tools::getTypeName(ros->srm.requestor.position[0].speed[0].speed.value) << 
+                                logger->debug() << "|\033[38;5;94m000068\033[0m| " << tools::getTypeName(ros->srm.requestor.position[0].speed[0].speed.value) << 
                                              " srm.requestor.position[0].speed[0].speed.value: " << ros->srm.requestor.position[0].speed[0].speed.value;
                             }
                             
-                            uint16_t* _tmp_7564 = (uint16_t*) buffer; buffer += 2;
-                            *_tmp_7564 = ros->srm.requestor.position[0].speed[0].speed.value; 
+                            uint16_t* _tmp_68 = (uint16_t*) buffer; buffer += 2;
+                            *_tmp_68 = ros->srm.requestor.position[0].speed[0].speed.value; 
                             __aux64__ = ros->srm.requestor.position[0].speed[0].speed.value;
                             
                             // MIN validator
@@ -1223,7 +1223,7 @@ namespace wind
                             }
                     }
                     
-                    if(*_ext_flag_3419) {
+                    if(*_ext_flag_34) {
                     }
             }
             
@@ -1232,7 +1232,7 @@ namespace wind
                 // Text
                 
                 // TEXT  min(1) max(63) span(63)
-                uint8_t* _tmp_7566 = (uint8_t*)buffer;
+                uint8_t* _tmp_70 = (uint8_t*)buffer;
                 __aux64__ = ros->srm.requestor.name[0].value.size();
                 
                 if(ros->srm.requestor.name[0].value.size() < 1) {
@@ -1244,17 +1244,17 @@ namespace wind
                     return -1;
                 }
                 if(debug)
-                    logger->debug() << "|\033[38;5;94m006802\033[0m| srm.requestor.name[0].value.size(): " << 
+                    logger->debug() << "|\033[38;5;94m000069\033[0m| srm.requestor.name[0].value.size(): " << 
                                 static_cast<int>(ros->srm.requestor.name[0].value.size());
                 
                 if(__aux64__ > 63) __aux64__ = 63;
-                *_tmp_7566 = __aux64__ - 1;
+                *_tmp_70 = __aux64__ - 1;
                 buffer += 1;
                 
-                int __ify = __aux64__;
-                for(int y = 0; y < __ify; y++) {  // 63
+                int __ifc = __aux64__;
+                for(int c = 0; c < __ifc; c++) {  // 63
                     char* __tmp__ = (char*)buffer++;
-                    *__tmp__ = ros->srm.requestor.name[0].value.c_str()[y];
+                    *__tmp__ = ros->srm.requestor.name[0].value.c_str()[c];
                 }
             }
             
@@ -1263,7 +1263,7 @@ namespace wind
                 // Text
                 
                 // TEXT  min(1) max(63) span(63)
-                uint8_t* _tmp_7567 = (uint8_t*)buffer;
+                uint8_t* _tmp_71 = (uint8_t*)buffer;
                 __aux64__ = ros->srm.requestor.route_name[0].value.size();
                 
                 if(ros->srm.requestor.route_name[0].value.size() < 1) {
@@ -1275,17 +1275,17 @@ namespace wind
                     return -1;
                 }
                 if(debug)
-                    logger->debug() << "|\033[38;5;94m006803\033[0m| srm.requestor.route_name[0].value.size(): " << 
+                    logger->debug() << "|\033[38;5;94m000070\033[0m| srm.requestor.route_name[0].value.size(): " << 
                                 static_cast<int>(ros->srm.requestor.route_name[0].value.size());
                 
                 if(__aux64__ > 63) __aux64__ = 63;
-                *_tmp_7567 = __aux64__ - 1;
+                *_tmp_71 = __aux64__ - 1;
                 buffer += 1;
                 
-                int __ifz = __aux64__;
-                for(int z = 0; z < __ifz; z++) {  // 63
+                int __ifd = __aux64__;
+                for(int d = 0; d < __ifd; d++) {  // 63
                     char* __tmp__ = (char*)buffer++;
-                    *__tmp__ = ros->srm.requestor.route_name[0].value.c_str()[z];
+                    *__tmp__ = ros->srm.requestor.route_name[0].value.c_str()[d];
                 }
             }
             
@@ -1294,7 +1294,7 @@ namespace wind
                 // BitString
                 // BIT_STRING  min(8) max(8) span(1)
                 if(debug)
-                    logger->debug() << "|\033[38;5;94m006804\033[0m| srm.requestor.transit_status[0].value: " << static_cast<int>(ros->srm.requestor.transit_status[0].values.size());
+                    logger->debug() << "|\033[38;5;94m000071\033[0m| srm.requestor.transit_status[0].value: " << static_cast<int>(ros->srm.requestor.transit_status[0].values.size());
                 
                 if(ros->srm.requestor.transit_status[0].values.size() < 8) {
                         logger->warning() << "Error: Value in 'srm.requestor.transit_status[0].value' " << (ros->srm.requestor.transit_status[0].values.size()) << " is less than allowable (8); message dropped.";
@@ -1305,16 +1305,16 @@ namespace wind
                     return -1;
                 }
                 
-                uint8_t* _tmp_7568 = (uint8_t*)buffer;
+                uint8_t* _tmp_72 = (uint8_t*)buffer;
                 __aux64__ = ros->srm.requestor.transit_status[0].values.size();
                 if(__aux64__ > 8) __aux64__ = 8;
-                *_tmp_7568 = __aux64__ - 8;
+                *_tmp_72 = __aux64__ - 8;
                 buffer += 1;
                 
-                int __ifa = __aux64__;
-                for(int a = 0; a < __ifa; a++) {
+                int __ife = __aux64__;
+                for(int e = 0; e < __ife; e++) {
                     uint8_t* __b__ = (uint8_t*)buffer++;
-                    *__b__ = (ros->srm.requestor.transit_status[0].values[a]? 1: 0);
+                    *__b__ = (ros->srm.requestor.transit_status[0].values[e]? 1: 0);
                 }
             }
             
@@ -1323,13 +1323,13 @@ namespace wind
                 // Enumerated
                 // INT32  min(0) max(7) span(8) dataType(Int32)
                 if(debug) {
-                    logger->debug() << "|\033[38;5;94m006805\033[0m| " << tools::getTypeName(ros->srm.requestor.transit_occupancy[0].value) << 
+                    logger->debug() << "|\033[38;5;94m000072\033[0m| " << tools::getTypeName(ros->srm.requestor.transit_occupancy[0].value) << 
                                  " srm.requestor.transit_occupancy[0].value: " << static_cast<int>(ros->srm.requestor.transit_occupancy[0].value);
                 }
                 
-                uint8_t* _tmp_7569 = (uint8_t*)buffer;
+                uint8_t* _tmp_73 = (uint8_t*)buffer;
                 buffer += 1;
-                *_tmp_7569 = ros->srm.requestor.transit_occupancy[0].value; 
+                *_tmp_73 = ros->srm.requestor.transit_occupancy[0].value; 
                 __aux64__ = ros->srm.requestor.transit_occupancy[0].value; 
                 // MIN validator
                 if (VALIDATORS_ENABLED && __aux64__ < 0) {
@@ -1349,13 +1349,13 @@ namespace wind
                 
                 // INT8  min(-122) max(121) span(244) dataType(Int8)
                 if(debug) {
-                    logger->debug() << "|\033[38;5;94m006806\033[0m| " << tools::getTypeName(ros->srm.requestor.transit_schedule[0].value) << 
+                    logger->debug() << "|\033[38;5;94m000073\033[0m| " << tools::getTypeName(ros->srm.requestor.transit_schedule[0].value) << 
                                  " srm.requestor.transit_schedule[0].value: " << static_cast<int>(ros->srm.requestor.transit_schedule[0].value);
                 }
                 
-                uint8_t* _tmp_7570 = (uint8_t*) buffer++;
+                uint8_t* _tmp_74 = (uint8_t*) buffer++;
                 __aux64__ = ros->srm.requestor.transit_schedule[0].value - -122;
-                *_tmp_7570 = __aux64__;
+                *_tmp_74 = __aux64__;
                 __aux64__ = ros->srm.requestor.transit_schedule[0].value;
                 
                 // MIN validator
@@ -1371,11 +1371,11 @@ namespace wind
             }
             
             // Field name: regional  // avoided
-            if(*_ext_flag_3410) {
+            if(*_ext_flag_25) {
             }
         
         // Field name: regional  // avoided
-        if(*_ext_flag_3389) {
+        if(*_ext_flag_4) {
         }
     
 	

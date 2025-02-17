@@ -55,7 +55,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
     msg/VehicleDimensions.msg
     msg/VehicleWeightLimits.msg
     DEPENDENCIES
-	    std_msgs
+    std_msgs
         dsrc_v2_aviaeinumberinganddatastructures_msgs
         dsrc_v2_efcdsrcgeneric_msgs
 )

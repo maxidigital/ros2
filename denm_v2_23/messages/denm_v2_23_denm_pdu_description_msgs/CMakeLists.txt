@@ -48,7 +48,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
     msg/StationaryVehicleContainer.msg
     msg/Termination.msg
     DEPENDENCIES
-	    std_msgs
+    std_msgs
         its_container_v4_etsi_its_cdd_msgs
 )
 

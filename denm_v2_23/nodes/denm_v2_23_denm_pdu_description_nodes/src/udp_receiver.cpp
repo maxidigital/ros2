@@ -19,6 +19,10 @@
 #include <udp_receiver.h>
 #include <boost/bind.hpp>
 
+#if WIND_ROS_VERSION == 2
+ using namespace boost::placeholders;
+#endif
+
 wind::comm::UDPReceiver::UDPReceiver(int port)
   : reading_status_(false), socket_(io_service_, udp::endpoint(udp::v4(), port))
 {
