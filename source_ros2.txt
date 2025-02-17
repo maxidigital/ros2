@@ -1,4 +1,4 @@
-/home/maxi/Documents/gits/repository/de.dlr.ts.v2x/cpm_v1/1.0/
+/home/maxi/Documents/gits/repository/de.dlr.ts.v2x/cpm_v1_23/1.0/
 /home/maxi/Documents/gits/repository/de.dlr.ts.v2x/denm_v2_23/1.0/
 /home/maxi/Documents/gits/repository/de.dlr.ts.v2x/dsrc_v2/4.0/
 /home/maxi/Documents/gits/repository/de.dlr.ts.v2x/its_container_v1/4.0/

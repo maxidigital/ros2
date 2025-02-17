@@ -28,7 +28,7 @@ project(cpm_v1_23_cpm_pdu_descriptions_nodes)
 
 set(CMAKE_CXX_STANDARD 14)
 add_definitions(-DWIND_ROS_VERSION=2)
-unset(CATKIN_INSTALL_INTO_PREFIX_ROOT CACHE)
+#unset(CATKIN_INSTALL_INTO_PREFIX_ROOT CACHE)
 
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp      REQUIRED)

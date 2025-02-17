@@ -13,50 +13,52 @@
  * SPDX-License-Identifier: EPL-2.0
  * 
  * 
- * File taken (and slightly modified) from https://gist.github.com/kaimallea/e112f5c22fe8ca6dc627
  * 
  */
-#ifndef ___WIND_UDP_RECEIVER___
-#define ___WIND_UDP_RECEIVER___
+#pragma once
 
-#include <iostream>
-#include <boost/array.hpp>
+#include <array>
+#include <atomic>
+#include <functional>
+#include <memory>
 #include <boost/asio.hpp>
-#include <boost/function.hpp>
-#include <boost/thread/thread.hpp>
+#include <boost/thread.hpp>
 
-using boost::asio::ip::udp;
+#if WIND_ROS_VERSION == 2
+#include <boost/bind/bind.hpp>
+#else
+#include <boost/bind.hpp>
+#endif
 
-namespace wind
-{
-namespace comm
-{
-	typedef boost::function<void(const void*, const size_t&)> DataCallbackFunction;
+namespace wind {
+namespace comm {
 
-	class UDPReceiver
-	{
-	public:
-		UDPReceiver(int port);
-		~UDPReceiver();
+class UDPReceiver {
+public:
+    using DataCallbackFunction = std::function<void(const uint8_t*, size_t)>;
+    static constexpr size_t MAX_BUFFER_SIZE = 65536;
 
-		void startReading();
-		void stopReading();
-		void setReceiveCallbackFunction(DataCallbackFunction handler);
+    explicit UDPReceiver(int port);
+    ~UDPReceiver();
 
-	private:
-		void receiveData();
+    // Disable copy operations
+    UDPReceiver(const UDPReceiver&) = delete;
+    UDPReceiver& operator=(const UDPReceiver&) = delete;
 
-		boost::asio::io_service io_service_;
-		udp::socket socket_;
-		udp::endpoint endpoint_;
-		boost::array<uint8_t, 65536> buffer_;
+    void setReceiveCallbackFunction(DataCallbackFunction handler);
+    void startReading();
+    void stopReading();
 
-		boost::shared_ptr<boost::thread> read_thread_ptr_;
-		bool reading_status_;
+private:
+    void receiveData();
 
-		DataCallbackFunction data_callback_function_;
-	};
-}
-}
+    boost::asio::io_service io_service_;
+    boost::asio::ip::udp::socket socket_;
+    std::atomic<bool> reading_status_;
+    std::shared_ptr<boost::thread> read_thread_ptr_;
+    DataCallbackFunction data_callback_function_;
+    std::array<uint8_t, MAX_BUFFER_SIZE> buffer_;
+};
 
-#endif   // ___WIND_UDP_RECEIVER___
+} // namespace comm
+} // namespace wind
