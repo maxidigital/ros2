@@ -66,7 +66,7 @@ namespace wind
         
         // UINT8  min(0) max(255) span(256) dataType(UInt8)
         if(debug) {
-            logger->debug() << "|\033[38;5;94m000000\033[0m| " << tools::getTypeName(ros->hheader.protocol_version.value) << 
+            logger->print() << "|\033[38;5;94m000000\033[0m| " << tools::getTypeName(ros->hheader.protocol_version.value) << 
                          " hheader.protocol_version.value: " << static_cast<int>(ros->hheader.protocol_version.value);
         }
         
@@ -90,7 +90,7 @@ namespace wind
         
         // UINT8  min(0) max(255) span(256) dataType(UInt8)
         if(debug) {
-            logger->debug() << "|\033[38;5;94m000001\033[0m| " << tools::getTypeName(ros->hheader.message_id.value) << 
+            logger->print() << "|\033[38;5;94m000001\033[0m| " << tools::getTypeName(ros->hheader.message_id.value) << 
                          " hheader.message_id.value: " << static_cast<int>(ros->hheader.message_id.value);
         }
         
@@ -114,7 +114,7 @@ namespace wind
         
         // UINT32  min(0) max(4294967295) span(4294967296) dataType(UInt32)
         if(debug) {
-            logger->debug() << "|\033[38;5;94m000002\033[0m| " << tools::getTypeName(ros->hheader.station_id.value) << 
+            logger->print() << "|\033[38;5;94m000002\033[0m| " << tools::getTypeName(ros->hheader.station_id.value) << 
                          " hheader.station_id.value: " << ros->hheader.station_id.value;
         }
         
@@ -141,7 +141,7 @@ namespace wind
         char* _tmp_4 = (char*) buffer++;
         *_tmp_4 = (ros->ivi.optional.size() != 0 ? 1 : 0);
         if(debug)
-            logger->debug() << "|\033[38;5;94m000003\033[0m| Optional field optional = " << *_tmp_4;
+            logger->print() << "|\033[38;5;94m000003\033[0m| Optional field optional = " << *_tmp_4;
         
         // Field:  type(IVIManagementContainer) name(mandatory) extGroup(0)
             // IVIManagementContainer  SEQUENCE
@@ -160,19 +160,19 @@ namespace wind
             char* _tmp_5 = (char*) buffer++;
             *_tmp_5 = (ros->ivi.mandatory.time_stamp.size() != 0 ? 1 : 0);
             if(debug)
-                logger->debug() << "|\033[38;5;94m000004\033[0m| Optional field time_stamp = " << *_tmp_5;
+                logger->print() << "|\033[38;5;94m000004\033[0m| Optional field time_stamp = " << *_tmp_5;
             char* _tmp_6 = (char*) buffer++;
             *_tmp_6 = (ros->ivi.mandatory.valid_from.size() != 0 ? 1 : 0);
             if(debug)
-                logger->debug() << "|\033[38;5;94m000005\033[0m| Optional field valid_from = " << *_tmp_6;
+                logger->print() << "|\033[38;5;94m000005\033[0m| Optional field valid_from = " << *_tmp_6;
             char* _tmp_7 = (char*) buffer++;
             *_tmp_7 = (ros->ivi.mandatory.valid_to.size() != 0 ? 1 : 0);
             if(debug)
-                logger->debug() << "|\033[38;5;94m000006\033[0m| Optional field valid_to = " << *_tmp_7;
+                logger->print() << "|\033[38;5;94m000006\033[0m| Optional field valid_to = " << *_tmp_7;
             char* _tmp_8 = (char*) buffer++;
             *_tmp_8 = (ros->ivi.mandatory.connected_ivi_structures.size() != 0 ? 1 : 0);
             if(debug)
-                logger->debug() << "|\033[38;5;94m000007\033[0m| Optional field connected_ivi_structures = " << *_tmp_8;
+                logger->print() << "|\033[38;5;94m000007\033[0m| Optional field connected_ivi_structures = " << *_tmp_8;
             
             // Field:  type(Provider) name(service_provider_id) extGroup(0)
                 // Provider  SEQUENCE
@@ -184,7 +184,7 @@ namespace wind
                 // BitString
                 // BIT_STRING  min(10) max(10) span(1)
                 if(debug)
-                    logger->debug() << "|\033[38;5;94m000008\033[0m| ivi.mandatory.service_provider_id.country_code.value: " << static_cast<int>(ros->ivi.mandatory.service_provider_id.country_code.values.size());
+                    logger->print() << "|\033[38;5;94m000008\033[0m| ivi.mandatory.service_provider_id.country_code.value: " << static_cast<int>(ros->ivi.mandatory.service_provider_id.country_code.values.size());
                 
                 if(ros->ivi.mandatory.service_provider_id.country_code.values.size() < 10) {
                         logger->warning() << "Error: Value in 'ivi.mandatory.service_provider_id.country_code.value' " << (ros->ivi.mandatory.service_provider_id.country_code.values.size()) << " is less than allowable (10); message dropped.";
@@ -212,7 +212,7 @@ namespace wind
                 
                 // UINT16  min(0) max(16383) span(16384) dataType(UInt16)
                 if(debug) {
-                    logger->debug() << "|\033[38;5;94m000009\033[0m| " << tools::getTypeName(ros->ivi.mandatory.service_provider_id.provider_identifier.value) << 
+                    logger->print() << "|\033[38;5;94m000009\033[0m| " << tools::getTypeName(ros->ivi.mandatory.service_provider_id.provider_identifier.value) << 
                                  " ivi.mandatory.service_provider_id.provider_identifier.value: " << ros->ivi.mandatory.service_provider_id.provider_identifier.value;
                 }
                 
@@ -236,7 +236,7 @@ namespace wind
             
             // UINT16  min(1) max(32767) span(32767) dataType(UInt16)
             if(debug) {
-                logger->debug() << "|\033[38;5;94m000010\033[0m| " << tools::getTypeName(ros->ivi.mandatory.ivi_identification_number.value) << 
+                logger->print() << "|\033[38;5;94m000010\033[0m| " << tools::getTypeName(ros->ivi.mandatory.ivi_identification_number.value) << 
                              " ivi.mandatory.ivi_identification_number.value: " << ros->ivi.mandatory.ivi_identification_number.value;
             }
             
@@ -275,7 +275,7 @@ namespace wind
                 
                 // INT64  min(0) max(4398046511103) span(4398046511104) dataType(Int64)
                 if(debug) {
-                    logger->debug() << "|\033[38;5;94m000011\033[0m| " << tools::getTypeName(ros->ivi.mandatory.time_stamp[0].value) << 
+                    logger->print() << "|\033[38;5;94m000011\033[0m| " << tools::getTypeName(ros->ivi.mandatory.time_stamp[0].value) << 
                                  " ivi.mandatory.time_stamp[0].value: " << ros->ivi.mandatory.time_stamp[0].value;
                 }
                 
@@ -301,7 +301,7 @@ namespace wind
                 
                 // INT64  min(0) max(4398046511103) span(4398046511104) dataType(Int64)
                 if(debug) {
-                    logger->debug() << "|\033[38;5;94m000012\033[0m| " << tools::getTypeName(ros->ivi.mandatory.valid_from[0].value) << 
+                    logger->print() << "|\033[38;5;94m000012\033[0m| " << tools::getTypeName(ros->ivi.mandatory.valid_from[0].value) << 
                                  " ivi.mandatory.valid_from[0].value: " << ros->ivi.mandatory.valid_from[0].value;
                 }
                 
@@ -327,7 +327,7 @@ namespace wind
                 
                 // INT64  min(0) max(4398046511103) span(4398046511104) dataType(Int64)
                 if(debug) {
-                    logger->debug() << "|\033[38;5;94m000013\033[0m| " << tools::getTypeName(ros->ivi.mandatory.valid_to[0].value) << 
+                    logger->print() << "|\033[38;5;94m000013\033[0m| " << tools::getTypeName(ros->ivi.mandatory.valid_to[0].value) << 
                                  " ivi.mandatory.valid_to[0].value: " << ros->ivi.mandatory.valid_to[0].value;
                 }
                 
@@ -365,7 +365,7 @@ namespace wind
                     
                     // UINT16  min(1) max(32767) span(32767) dataType(UInt16)
                     if(debug) {
-                        logger->debug() << "|\033[38;5;94m000015\033[0m| " << tools::getTypeName(ros->ivi.mandatory.connected_ivi_structures[0].elements[b].value) << 
+                        logger->print() << "|\033[38;5;94m000015\033[0m| " << tools::getTypeName(ros->ivi.mandatory.connected_ivi_structures[0].elements[b].value) << 
                                      " ivi.mandatory.connected_ivi_structures[0].elements[b].value: " << ros->ivi.mandatory.connected_ivi_structures[0].elements[b].value;
                     }
                     
@@ -405,7 +405,7 @@ namespace wind
             
             // UINT8  min(0) max(7) span(8) dataType(UInt8)
             if(debug) {
-                logger->debug() << "|\033[38;5;94m000016\033[0m| " << tools::getTypeName(ros->ivi.mandatory.ivi_status.value) << 
+                logger->print() << "|\033[38;5;94m000016\033[0m| " << tools::getTypeName(ros->ivi.mandatory.ivi_status.value) << 
                              " ivi.mandatory.ivi_status.value: " << static_cast<int>(ros->ivi.mandatory.ivi_status.value);
             }
             
@@ -477,15 +477,15 @@ namespace wind
                         char* _tmp_22 = (char*) buffer++;
                         *_tmp_22 = (ros->ivi.optional[0].elements[c].glc[0].reference_position_time.size() != 0 ? 1 : 0);
                         if(debug)
-                            logger->debug() << "|\033[38;5;94m000019\033[0m| Optional field reference_position_time = " << *_tmp_22;
+                            logger->print() << "|\033[38;5;94m000019\033[0m| Optional field reference_position_time = " << *_tmp_22;
                         char* _tmp_23 = (char*) buffer++;
                         *_tmp_23 = (ros->ivi.optional[0].elements[c].glc[0].reference_position_heading.size() != 0 ? 1 : 0);
                         if(debug)
-                            logger->debug() << "|\033[38;5;94m000020\033[0m| Optional field reference_position_heading = " << *_tmp_23;
+                            logger->print() << "|\033[38;5;94m000020\033[0m| Optional field reference_position_heading = " << *_tmp_23;
                         char* _tmp_24 = (char*) buffer++;
                         *_tmp_24 = (ros->ivi.optional[0].elements[c].glc[0].reference_position_speed.size() != 0 ? 1 : 0);
                         if(debug)
-                            logger->debug() << "|\033[38;5;94m000021\033[0m| Optional field reference_position_speed = " << *_tmp_24;
+                            logger->print() << "|\033[38;5;94m000021\033[0m| Optional field reference_position_speed = " << *_tmp_24;
                         
                         // Field:  type(ReferencePosition) name(reference_position) extGroup(0)
                             // ReferencePosition  SEQUENCE
@@ -500,7 +500,7 @@ namespace wind
                             
                             // DOUBLE  min(-900000000) max(900000001) span(1800000002) scaleDivisor(1.0E7) dataType(Double)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000022\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].reference_position.latitude.value) << 
+                                logger->print() << "|\033[38;5;94m000022\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].reference_position.latitude.value) << 
                                              " ivi.optional[0].elements[c].glc[0].reference_position.latitude.value: " << ros->ivi.optional[0].elements[c].glc[0].reference_position.latitude.value;
                             }
                             
@@ -527,7 +527,7 @@ namespace wind
                             
                             // DOUBLE  min(-1800000000) max(1800000001) span(3600000002) scaleDivisor(1.0E7) dataType(Double)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000023\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].reference_position.longitude.value) << 
+                                logger->print() << "|\033[38;5;94m000023\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].reference_position.longitude.value) << 
                                              " ivi.optional[0].elements[c].glc[0].reference_position.longitude.value: " << ros->ivi.optional[0].elements[c].glc[0].reference_position.longitude.value;
                             }
                             
@@ -561,7 +561,7 @@ namespace wind
                                 
                                 // UINT16  min(0) max(4095) span(4096) dataType(UInt16)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000024\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].reference_position.position_confidence_ellipse.semi_major_confidence.value) << 
+                                    logger->print() << "|\033[38;5;94m000024\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].reference_position.position_confidence_ellipse.semi_major_confidence.value) << 
                                                  " ivi.optional[0].elements[c].glc[0].reference_position.position_confidence_ellipse.semi_major_confidence.value: " << ros->ivi.optional[0].elements[c].glc[0].reference_position.position_confidence_ellipse.semi_major_confidence.value;
                                 }
                                 
@@ -585,7 +585,7 @@ namespace wind
                                 
                                 // UINT16  min(0) max(4095) span(4096) dataType(UInt16)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000025\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].reference_position.position_confidence_ellipse.semi_minor_confidence.value) << 
+                                    logger->print() << "|\033[38;5;94m000025\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].reference_position.position_confidence_ellipse.semi_minor_confidence.value) << 
                                                  " ivi.optional[0].elements[c].glc[0].reference_position.position_confidence_ellipse.semi_minor_confidence.value: " << ros->ivi.optional[0].elements[c].glc[0].reference_position.position_confidence_ellipse.semi_minor_confidence.value;
                                 }
                                 
@@ -609,7 +609,7 @@ namespace wind
                                 
                                 // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000026\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].reference_position.position_confidence_ellipse.semi_major_orientation.value) << 
+                                    logger->print() << "|\033[38;5;94m000026\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].reference_position.position_confidence_ellipse.semi_major_orientation.value) << 
                                                  " ivi.optional[0].elements[c].glc[0].reference_position.position_confidence_ellipse.semi_major_orientation.value: " << ros->ivi.optional[0].elements[c].glc[0].reference_position.position_confidence_ellipse.semi_major_orientation.value;
                                 }
                                 
@@ -641,7 +641,7 @@ namespace wind
                                 
                                 // FLOAT  min(-100000) max(800001) span(900002) scaleDivisor(100.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000027\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].reference_position.altitude.altitude_value.value) << 
+                                    logger->print() << "|\033[38;5;94m000027\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].reference_position.altitude.altitude_value.value) << 
                                                  " ivi.optional[0].elements[c].glc[0].reference_position.altitude.altitude_value.value: " << ros->ivi.optional[0].elements[c].glc[0].reference_position.altitude.altitude_value.value;
                                 }
                                 
@@ -667,7 +667,7 @@ namespace wind
                                 // Enumerated
                                 // INT32  min(0) max(15) span(16) dataType(Int32)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000028\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].reference_position.altitude.altitude_confidence.value) << 
+                                    logger->print() << "|\033[38;5;94m000028\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].reference_position.altitude.altitude_confidence.value) << 
                                                  " ivi.optional[0].elements[c].glc[0].reference_position.altitude.altitude_confidence.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].glc[0].reference_position.altitude.altitude_confidence.value);
                                 }
                                 
@@ -692,7 +692,7 @@ namespace wind
                             
                             // INT64  min(0) max(4398046511103) span(4398046511104) dataType(Int64)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000029\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].reference_position_time[0].value) << 
+                                logger->print() << "|\033[38;5;94m000029\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].reference_position_time[0].value) << 
                                              " ivi.optional[0].elements[c].glc[0].reference_position_time[0].value: " << ros->ivi.optional[0].elements[c].glc[0].reference_position_time[0].value;
                             }
                             
@@ -724,7 +724,7 @@ namespace wind
                                 
                                 // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000030\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].reference_position_heading[0].heading_value.value) << 
+                                    logger->print() << "|\033[38;5;94m000030\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].reference_position_heading[0].heading_value.value) << 
                                                  " ivi.optional[0].elements[c].glc[0].reference_position_heading[0].heading_value.value: " << ros->ivi.optional[0].elements[c].glc[0].reference_position_heading[0].heading_value.value;
                                 }
                                 
@@ -750,7 +750,7 @@ namespace wind
                                 
                                 // FLOAT  min(1) max(127) span(127) scaleDivisor(10.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000031\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].reference_position_heading[0].heading_confidence.value) << 
+                                    logger->print() << "|\033[38;5;94m000031\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].reference_position_heading[0].heading_confidence.value) << 
                                                  " ivi.optional[0].elements[c].glc[0].reference_position_heading[0].heading_confidence.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].glc[0].reference_position_heading[0].heading_confidence.value);
                                 }
                                 
@@ -785,7 +785,7 @@ namespace wind
                                 
                                 // FLOAT  min(0) max(16383) span(16384) scaleDivisor(100.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000032\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].reference_position_speed[0].speed_value.value) << 
+                                    logger->print() << "|\033[38;5;94m000032\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].reference_position_speed[0].speed_value.value) << 
                                                  " ivi.optional[0].elements[c].glc[0].reference_position_speed[0].speed_value.value: " << ros->ivi.optional[0].elements[c].glc[0].reference_position_speed[0].speed_value.value;
                                 }
                                 
@@ -811,7 +811,7 @@ namespace wind
                                 
                                 // FLOAT  min(1) max(127) span(127) scaleDivisor(100.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000033\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].reference_position_speed[0].speed_confidence.value) << 
+                                    logger->print() << "|\033[38;5;94m000033\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].reference_position_speed[0].speed_confidence.value) << 
                                                  " ivi.optional[0].elements[c].glc[0].reference_position_speed[0].speed_confidence.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].glc[0].reference_position_speed[0].speed_confidence.value);
                                 }
                                 
@@ -864,26 +864,26 @@ namespace wind
                                 char* _tmp_46 = (char*) buffer++;
                                 *_tmp_46 = (ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].lane_number.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000035\033[0m| Optional field lane_number = " << *_tmp_46;
+                                    logger->print() << "|\033[38;5;94m000035\033[0m| Optional field lane_number = " << *_tmp_46;
                                 char* _tmp_47 = (char*) buffer++;
                                 *_tmp_47 = (ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone_extension.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000036\033[0m| Optional field zone_extension = " << *_tmp_47;
+                                    logger->print() << "|\033[38;5;94m000036\033[0m| Optional field zone_extension = " << *_tmp_47;
                                 char* _tmp_48 = (char*) buffer++;
                                 *_tmp_48 = (ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone_heading.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000037\033[0m| Optional field zone_heading = " << *_tmp_48;
+                                    logger->print() << "|\033[38;5;94m000037\033[0m| Optional field zone_heading = " << *_tmp_48;
                                 char* _tmp_49 = (char*) buffer++;
                                 *_tmp_49 = (ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000038\033[0m| Optional field zone = " << *_tmp_49;
+                                    logger->print() << "|\033[38;5;94m000038\033[0m| Optional field zone = " << *_tmp_49;
                                 
                                 // Field:  type(Zid) name(zone_id) extGroup(0)
                                 // Integer
                                 
                                 // UINT8  min(1) max(32) span(32) dataType(UInt8)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000039\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone_id.value) << 
+                                    logger->print() << "|\033[38;5;94m000039\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone_id.value) << 
                                                  " ivi.optional[0].elements[c].glc[0].parts.elements[d].zone_id.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone_id.value);
                                 }
                                 
@@ -922,7 +922,7 @@ namespace wind
                                     
                                     // INT8  min(-1) max(14) span(16) dataType(Int8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000040\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].lane_number[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000040\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].lane_number[0].value) << 
                                                      " ivi.optional[0].elements[c].glc[0].parts.elements[d].lane_number[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].lane_number[0].value);
                                     }
                                     
@@ -949,7 +949,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000041\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone_extension[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000041\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone_extension[0].value) << 
                                                      " ivi.optional[0].elements[c].glc[0].parts.elements[d].zone_extension[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone_extension[0].value);
                                     }
                                     
@@ -975,7 +975,7 @@ namespace wind
                                     
                                     // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000042\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone_heading[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000042\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone_heading[0].value) << 
                                                      " ivi.optional[0].elements[c].glc[0].parts.elements[d].zone_heading[0].value: " << ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone_heading[0].value;
                                     }
                                     
@@ -1023,7 +1023,7 @@ namespace wind
                                             char* _tmp_56 = (char*) buffer++;
                                             *_tmp_56 = (ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].segment[0].lane_width.size() != 0 ? 1 : 0);
                                             if(debug)
-                                                logger->debug() << "|\033[38;5;94m000044\033[0m| Optional field lane_width = " << *_tmp_56;
+                                                logger->print() << "|\033[38;5;94m000044\033[0m| Optional field lane_width = " << *_tmp_56;
                                             
                                             // Field:  type(PolygonalLine) name(line) extGroup(0)
                                             // Choice
@@ -1074,7 +1074,7 @@ namespace wind
                                                         
                                                         // DOUBLE  min(-131071) max(131072) span(262144) scaleDivisor(1.0E7) dataType(Double)
                                                         if(debug) {
-                                                            logger->debug() << "|\033[38;5;94m000047\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].segment[0].line.delta_positions[0].elements[e].delta_latitude.value) << 
+                                                            logger->print() << "|\033[38;5;94m000047\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].segment[0].line.delta_positions[0].elements[e].delta_latitude.value) << 
                                                                          " ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].segment[0].line.delta_positions[0].elements[e].delta_latitude.value: " << ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].segment[0].line.delta_positions[0].elements[e].delta_latitude.value;
                                                         }
                                                         
@@ -1101,7 +1101,7 @@ namespace wind
                                                         
                                                         // DOUBLE  min(-131071) max(131072) span(262144) scaleDivisor(1.0E7) dataType(Double)
                                                         if(debug) {
-                                                            logger->debug() << "|\033[38;5;94m000048\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].segment[0].line.delta_positions[0].elements[e].delta_longitude.value) << 
+                                                            logger->print() << "|\033[38;5;94m000048\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].segment[0].line.delta_positions[0].elements[e].delta_longitude.value) << 
                                                                          " ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].segment[0].line.delta_positions[0].elements[e].delta_longitude.value: " << ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].segment[0].line.delta_positions[0].elements[e].delta_longitude.value;
                                                         }
                                                         
@@ -1165,7 +1165,7 @@ namespace wind
                                                         
                                                         // DOUBLE  min(-131071) max(131072) span(262144) scaleDivisor(1.0E7) dataType(Double)
                                                         if(debug) {
-                                                            logger->debug() << "|\033[38;5;94m000051\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].segment[0].line.delta_positions_with_altitude[0].elements[f].delta_latitude.value) << 
+                                                            logger->print() << "|\033[38;5;94m000051\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].segment[0].line.delta_positions_with_altitude[0].elements[f].delta_latitude.value) << 
                                                                          " ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].segment[0].line.delta_positions_with_altitude[0].elements[f].delta_latitude.value: " << ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].segment[0].line.delta_positions_with_altitude[0].elements[f].delta_latitude.value;
                                                         }
                                                         
@@ -1192,7 +1192,7 @@ namespace wind
                                                         
                                                         // DOUBLE  min(-131071) max(131072) span(262144) scaleDivisor(1.0E7) dataType(Double)
                                                         if(debug) {
-                                                            logger->debug() << "|\033[38;5;94m000052\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].segment[0].line.delta_positions_with_altitude[0].elements[f].delta_longitude.value) << 
+                                                            logger->print() << "|\033[38;5;94m000052\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].segment[0].line.delta_positions_with_altitude[0].elements[f].delta_longitude.value) << 
                                                                          " ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].segment[0].line.delta_positions_with_altitude[0].elements[f].delta_longitude.value: " << ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].segment[0].line.delta_positions_with_altitude[0].elements[f].delta_longitude.value;
                                                         }
                                                         
@@ -1219,7 +1219,7 @@ namespace wind
                                                         
                                                         // FLOAT  min(-12700) max(12800) span(25501) scaleDivisor(100.0) dataType(Float)
                                                         if(debug) {
-                                                            logger->debug() << "|\033[38;5;94m000053\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].segment[0].line.delta_positions_with_altitude[0].elements[f].delta_altitude.value) << 
+                                                            logger->print() << "|\033[38;5;94m000053\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].segment[0].line.delta_positions_with_altitude[0].elements[f].delta_altitude.value) << 
                                                                          " ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].segment[0].line.delta_positions_with_altitude[0].elements[f].delta_altitude.value: " << ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].segment[0].line.delta_positions_with_altitude[0].elements[f].delta_altitude.value;
                                                         }
                                                         
@@ -1282,7 +1282,7 @@ namespace wind
                                                         
                                                         // DOUBLE  min(-900000000) max(900000001) span(1800000002) scaleDivisor(1.0E7) dataType(Double)
                                                         if(debug) {
-                                                            logger->debug() << "|\033[38;5;94m000056\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].segment[0].line.absolute_positions[0].elements[g].latitude.value) << 
+                                                            logger->print() << "|\033[38;5;94m000056\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].segment[0].line.absolute_positions[0].elements[g].latitude.value) << 
                                                                          " ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].segment[0].line.absolute_positions[0].elements[g].latitude.value: " << ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].segment[0].line.absolute_positions[0].elements[g].latitude.value;
                                                         }
                                                         
@@ -1309,7 +1309,7 @@ namespace wind
                                                         
                                                         // DOUBLE  min(-1800000000) max(1800000001) span(3600000002) scaleDivisor(1.0E7) dataType(Double)
                                                         if(debug) {
-                                                            logger->debug() << "|\033[38;5;94m000057\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].segment[0].line.absolute_positions[0].elements[g].longitude.value) << 
+                                                            logger->print() << "|\033[38;5;94m000057\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].segment[0].line.absolute_positions[0].elements[g].longitude.value) << 
                                                                          " ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].segment[0].line.absolute_positions[0].elements[g].longitude.value: " << ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].segment[0].line.absolute_positions[0].elements[g].longitude.value;
                                                         }
                                                         
@@ -1373,7 +1373,7 @@ namespace wind
                                                         
                                                         // DOUBLE  min(-900000000) max(900000001) span(1800000002) scaleDivisor(1.0E7) dataType(Double)
                                                         if(debug) {
-                                                            logger->debug() << "|\033[38;5;94m000060\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].segment[0].line.absolute_positions_with_altitude[0].elements[h].latitude.value) << 
+                                                            logger->print() << "|\033[38;5;94m000060\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].segment[0].line.absolute_positions_with_altitude[0].elements[h].latitude.value) << 
                                                                          " ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].segment[0].line.absolute_positions_with_altitude[0].elements[h].latitude.value: " << ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].segment[0].line.absolute_positions_with_altitude[0].elements[h].latitude.value;
                                                         }
                                                         
@@ -1400,7 +1400,7 @@ namespace wind
                                                         
                                                         // DOUBLE  min(-1800000000) max(1800000001) span(3600000002) scaleDivisor(1.0E7) dataType(Double)
                                                         if(debug) {
-                                                            logger->debug() << "|\033[38;5;94m000061\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].segment[0].line.absolute_positions_with_altitude[0].elements[h].longitude.value) << 
+                                                            logger->print() << "|\033[38;5;94m000061\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].segment[0].line.absolute_positions_with_altitude[0].elements[h].longitude.value) << 
                                                                          " ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].segment[0].line.absolute_positions_with_altitude[0].elements[h].longitude.value: " << ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].segment[0].line.absolute_positions_with_altitude[0].elements[h].longitude.value;
                                                         }
                                                         
@@ -1433,7 +1433,7 @@ namespace wind
                                                             
                                                             // FLOAT  min(-100000) max(800001) span(900002) scaleDivisor(100.0) dataType(Float)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m000062\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].segment[0].line.absolute_positions_with_altitude[0].elements[h].altitude.altitude_value.value) << 
+                                                                logger->print() << "|\033[38;5;94m000062\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].segment[0].line.absolute_positions_with_altitude[0].elements[h].altitude.altitude_value.value) << 
                                                                              " ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].segment[0].line.absolute_positions_with_altitude[0].elements[h].altitude.altitude_value.value: " << ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].segment[0].line.absolute_positions_with_altitude[0].elements[h].altitude.altitude_value.value;
                                                             }
                                                             
@@ -1459,7 +1459,7 @@ namespace wind
                                                             // Enumerated
                                                             // INT32  min(0) max(15) span(16) dataType(Int32)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m000063\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].segment[0].line.absolute_positions_with_altitude[0].elements[h].altitude.altitude_confidence.value) << 
+                                                                logger->print() << "|\033[38;5;94m000063\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].segment[0].line.absolute_positions_with_altitude[0].elements[h].altitude.altitude_confidence.value) << 
                                                                              " ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].segment[0].line.absolute_positions_with_altitude[0].elements[h].altitude.altitude_confidence.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].segment[0].line.absolute_positions_with_altitude[0].elements[h].altitude.altitude_confidence.value);
                                                             }
                                                             
@@ -1494,7 +1494,7 @@ namespace wind
                                                 
                                                 // UINT16  min(0) max(1023) span(1024) dataType(UInt16)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000064\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].segment[0].lane_width[0].value) << 
+                                                    logger->print() << "|\033[38;5;94m000064\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].segment[0].lane_width[0].value) << 
                                                                  " ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].segment[0].lane_width[0].value: " << ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].segment[0].lane_width[0].value;
                                                 }
                                                 
@@ -1570,7 +1570,7 @@ namespace wind
                                                     
                                                     // DOUBLE  min(-131071) max(131072) span(262144) scaleDivisor(1.0E7) dataType(Double)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m000068\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].area[0].delta_positions[0].elements[i].delta_latitude.value) << 
+                                                        logger->print() << "|\033[38;5;94m000068\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].area[0].delta_positions[0].elements[i].delta_latitude.value) << 
                                                                      " ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].area[0].delta_positions[0].elements[i].delta_latitude.value: " << ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].area[0].delta_positions[0].elements[i].delta_latitude.value;
                                                     }
                                                     
@@ -1597,7 +1597,7 @@ namespace wind
                                                     
                                                     // DOUBLE  min(-131071) max(131072) span(262144) scaleDivisor(1.0E7) dataType(Double)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m000069\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].area[0].delta_positions[0].elements[i].delta_longitude.value) << 
+                                                        logger->print() << "|\033[38;5;94m000069\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].area[0].delta_positions[0].elements[i].delta_longitude.value) << 
                                                                      " ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].area[0].delta_positions[0].elements[i].delta_longitude.value: " << ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].area[0].delta_positions[0].elements[i].delta_longitude.value;
                                                     }
                                                     
@@ -1661,7 +1661,7 @@ namespace wind
                                                     
                                                     // DOUBLE  min(-131071) max(131072) span(262144) scaleDivisor(1.0E7) dataType(Double)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m000072\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].area[0].delta_positions_with_altitude[0].elements[j].delta_latitude.value) << 
+                                                        logger->print() << "|\033[38;5;94m000072\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].area[0].delta_positions_with_altitude[0].elements[j].delta_latitude.value) << 
                                                                      " ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].area[0].delta_positions_with_altitude[0].elements[j].delta_latitude.value: " << ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].area[0].delta_positions_with_altitude[0].elements[j].delta_latitude.value;
                                                     }
                                                     
@@ -1688,7 +1688,7 @@ namespace wind
                                                     
                                                     // DOUBLE  min(-131071) max(131072) span(262144) scaleDivisor(1.0E7) dataType(Double)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m000073\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].area[0].delta_positions_with_altitude[0].elements[j].delta_longitude.value) << 
+                                                        logger->print() << "|\033[38;5;94m000073\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].area[0].delta_positions_with_altitude[0].elements[j].delta_longitude.value) << 
                                                                      " ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].area[0].delta_positions_with_altitude[0].elements[j].delta_longitude.value: " << ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].area[0].delta_positions_with_altitude[0].elements[j].delta_longitude.value;
                                                     }
                                                     
@@ -1715,7 +1715,7 @@ namespace wind
                                                     
                                                     // FLOAT  min(-12700) max(12800) span(25501) scaleDivisor(100.0) dataType(Float)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m000074\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].area[0].delta_positions_with_altitude[0].elements[j].delta_altitude.value) << 
+                                                        logger->print() << "|\033[38;5;94m000074\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].area[0].delta_positions_with_altitude[0].elements[j].delta_altitude.value) << 
                                                                      " ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].area[0].delta_positions_with_altitude[0].elements[j].delta_altitude.value: " << ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].area[0].delta_positions_with_altitude[0].elements[j].delta_altitude.value;
                                                     }
                                                     
@@ -1778,7 +1778,7 @@ namespace wind
                                                     
                                                     // DOUBLE  min(-900000000) max(900000001) span(1800000002) scaleDivisor(1.0E7) dataType(Double)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m000077\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].area[0].absolute_positions[0].elements[k].latitude.value) << 
+                                                        logger->print() << "|\033[38;5;94m000077\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].area[0].absolute_positions[0].elements[k].latitude.value) << 
                                                                      " ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].area[0].absolute_positions[0].elements[k].latitude.value: " << ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].area[0].absolute_positions[0].elements[k].latitude.value;
                                                     }
                                                     
@@ -1805,7 +1805,7 @@ namespace wind
                                                     
                                                     // DOUBLE  min(-1800000000) max(1800000001) span(3600000002) scaleDivisor(1.0E7) dataType(Double)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m000078\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].area[0].absolute_positions[0].elements[k].longitude.value) << 
+                                                        logger->print() << "|\033[38;5;94m000078\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].area[0].absolute_positions[0].elements[k].longitude.value) << 
                                                                      " ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].area[0].absolute_positions[0].elements[k].longitude.value: " << ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].area[0].absolute_positions[0].elements[k].longitude.value;
                                                     }
                                                     
@@ -1869,7 +1869,7 @@ namespace wind
                                                     
                                                     // DOUBLE  min(-900000000) max(900000001) span(1800000002) scaleDivisor(1.0E7) dataType(Double)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m000081\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].area[0].absolute_positions_with_altitude[0].elements[l].latitude.value) << 
+                                                        logger->print() << "|\033[38;5;94m000081\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].area[0].absolute_positions_with_altitude[0].elements[l].latitude.value) << 
                                                                      " ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].area[0].absolute_positions_with_altitude[0].elements[l].latitude.value: " << ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].area[0].absolute_positions_with_altitude[0].elements[l].latitude.value;
                                                     }
                                                     
@@ -1896,7 +1896,7 @@ namespace wind
                                                     
                                                     // DOUBLE  min(-1800000000) max(1800000001) span(3600000002) scaleDivisor(1.0E7) dataType(Double)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m000082\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].area[0].absolute_positions_with_altitude[0].elements[l].longitude.value) << 
+                                                        logger->print() << "|\033[38;5;94m000082\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].area[0].absolute_positions_with_altitude[0].elements[l].longitude.value) << 
                                                                      " ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].area[0].absolute_positions_with_altitude[0].elements[l].longitude.value: " << ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].area[0].absolute_positions_with_altitude[0].elements[l].longitude.value;
                                                     }
                                                     
@@ -1929,7 +1929,7 @@ namespace wind
                                                         
                                                         // FLOAT  min(-100000) max(800001) span(900002) scaleDivisor(100.0) dataType(Float)
                                                         if(debug) {
-                                                            logger->debug() << "|\033[38;5;94m000083\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].area[0].absolute_positions_with_altitude[0].elements[l].altitude.altitude_value.value) << 
+                                                            logger->print() << "|\033[38;5;94m000083\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].area[0].absolute_positions_with_altitude[0].elements[l].altitude.altitude_value.value) << 
                                                                          " ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].area[0].absolute_positions_with_altitude[0].elements[l].altitude.altitude_value.value: " << ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].area[0].absolute_positions_with_altitude[0].elements[l].altitude.altitude_value.value;
                                                         }
                                                         
@@ -1955,7 +1955,7 @@ namespace wind
                                                         // Enumerated
                                                         // INT32  min(0) max(15) span(16) dataType(Int32)
                                                         if(debug) {
-                                                            logger->debug() << "|\033[38;5;94m000084\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].area[0].absolute_positions_with_altitude[0].elements[l].altitude.altitude_confidence.value) << 
+                                                            logger->print() << "|\033[38;5;94m000084\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].area[0].absolute_positions_with_altitude[0].elements[l].altitude.altitude_confidence.value) << 
                                                                          " ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].area[0].absolute_positions_with_altitude[0].elements[l].altitude.altitude_confidence.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].area[0].absolute_positions_with_altitude[0].elements[l].altitude.altitude_confidence.value);
                                                         }
                                                         
@@ -2002,18 +2002,18 @@ namespace wind
                                             char* _tmp_124 = (char*) buffer++;
                                             *_tmp_124 = (ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].computed_segment[0].offset_distance.size() != 0 ? 1 : 0);
                                             if(debug)
-                                                logger->debug() << "|\033[38;5;94m000086\033[0m| Optional field offset_distance = " << *_tmp_124;
+                                                logger->print() << "|\033[38;5;94m000086\033[0m| Optional field offset_distance = " << *_tmp_124;
                                             char* _tmp_125 = (char*) buffer++;
                                             *_tmp_125 = (ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].computed_segment[0].offset_position.size() != 0 ? 1 : 0);
                                             if(debug)
-                                                logger->debug() << "|\033[38;5;94m000087\033[0m| Optional field offset_position = " << *_tmp_125;
+                                                logger->print() << "|\033[38;5;94m000087\033[0m| Optional field offset_position = " << *_tmp_125;
                                             
                                             // Field:  type(Zid) name(zone_id) extGroup(0)
                                             // Integer
                                             
                                             // UINT8  min(1) max(32) span(32) dataType(UInt8)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000088\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].computed_segment[0].zone_id.value) << 
+                                                logger->print() << "|\033[38;5;94m000088\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].computed_segment[0].zone_id.value) << 
                                                              " ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].computed_segment[0].zone_id.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].computed_segment[0].zone_id.value);
                                             }
                                             
@@ -2051,7 +2051,7 @@ namespace wind
                                             
                                             // INT8  min(-1) max(14) span(16) dataType(Int8)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000089\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].computed_segment[0].lane_number.value) << 
+                                                logger->print() << "|\033[38;5;94m000089\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].computed_segment[0].lane_number.value) << 
                                                              " ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].computed_segment[0].lane_number.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].computed_segment[0].lane_number.value);
                                             }
                                             
@@ -2076,7 +2076,7 @@ namespace wind
                                             
                                             // UINT16  min(0) max(1023) span(1024) dataType(UInt16)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000090\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].computed_segment[0].lane_width.value) << 
+                                                logger->print() << "|\033[38;5;94m000090\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].computed_segment[0].lane_width.value) << 
                                                              " ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].computed_segment[0].lane_width.value: " << ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].computed_segment[0].lane_width.value;
                                             }
                                             
@@ -2101,7 +2101,7 @@ namespace wind
                                                 
                                                 // INT16  min(-32768) max(32767) span(65536) dataType(Int16)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000091\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].computed_segment[0].offset_distance[0].value) << 
+                                                    logger->print() << "|\033[38;5;94m000091\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].computed_segment[0].offset_distance[0].value) << 
                                                                  " ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].computed_segment[0].offset_distance[0].value: " << ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].computed_segment[0].offset_distance[0].value;
                                                 }
                                                 
@@ -2135,7 +2135,7 @@ namespace wind
                                                     
                                                     // DOUBLE  min(-131071) max(131072) span(262144) scaleDivisor(1.0E7) dataType(Double)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m000092\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].computed_segment[0].offset_position[0].delta_latitude.value) << 
+                                                        logger->print() << "|\033[38;5;94m000092\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].computed_segment[0].offset_position[0].delta_latitude.value) << 
                                                                      " ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].computed_segment[0].offset_position[0].delta_latitude.value: " << ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].computed_segment[0].offset_position[0].delta_latitude.value;
                                                     }
                                                     
@@ -2162,7 +2162,7 @@ namespace wind
                                                     
                                                     // DOUBLE  min(-131071) max(131072) span(262144) scaleDivisor(1.0E7) dataType(Double)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m000093\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].computed_segment[0].offset_position[0].delta_longitude.value) << 
+                                                        logger->print() << "|\033[38;5;94m000093\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].computed_segment[0].offset_position[0].delta_longitude.value) << 
                                                                      " ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].computed_segment[0].offset_position[0].delta_longitude.value: " << ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].computed_segment[0].offset_position[0].delta_longitude.value;
                                                     }
                                                     
@@ -2189,7 +2189,7 @@ namespace wind
                                                     
                                                     // FLOAT  min(-12700) max(12800) span(25501) scaleDivisor(100.0) dataType(Float)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m000094\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].computed_segment[0].offset_position[0].delta_altitude.value) << 
+                                                        logger->print() << "|\033[38;5;94m000094\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].computed_segment[0].offset_position[0].delta_altitude.value) << 
                                                                      " ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].computed_segment[0].offset_position[0].delta_altitude.value: " << ros->ivi.optional[0].elements[c].glc[0].parts.elements[d].zone[0].computed_segment[0].offset_position[0].delta_altitude.value;
                                                     }
                                                     
@@ -2275,59 +2275,59 @@ namespace wind
                             char* _tmp_140 = (char*) buffer++;
                             *_tmp_140 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].detection_zone_ids.size() != 0 ? 1 : 0);
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m000097\033[0m| Optional field detection_zone_ids = " << *_tmp_140;
+                                logger->print() << "|\033[38;5;94m000097\033[0m| Optional field detection_zone_ids = " << *_tmp_140;
                             char* _tmp_141 = (char*) buffer++;
                             *_tmp_141 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].its_rrid.size() != 0 ? 1 : 0);
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m000098\033[0m| Optional field its_rrid = " << *_tmp_141;
+                                logger->print() << "|\033[38;5;94m000098\033[0m| Optional field its_rrid = " << *_tmp_141;
                             char* _tmp_142 = (char*) buffer++;
                             *_tmp_142 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].relevance_zone_ids.size() != 0 ? 1 : 0);
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m000099\033[0m| Optional field relevance_zone_ids = " << *_tmp_142;
+                                logger->print() << "|\033[38;5;94m000099\033[0m| Optional field relevance_zone_ids = " << *_tmp_142;
                             char* _tmp_143 = (char*) buffer++;
                             *_tmp_143 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].direction.size() != 0 ? 1 : 0);
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m000100\033[0m| Optional field direction = " << *_tmp_143;
+                                logger->print() << "|\033[38;5;94m000100\033[0m| Optional field direction = " << *_tmp_143;
                             char* _tmp_144 = (char*) buffer++;
                             *_tmp_144 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].driver_awareness_zone_ids.size() != 0 ? 1 : 0);
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m000101\033[0m| Optional field driver_awareness_zone_ids = " << *_tmp_144;
+                                logger->print() << "|\033[38;5;94m000101\033[0m| Optional field driver_awareness_zone_ids = " << *_tmp_144;
                             char* _tmp_145 = (char*) buffer++;
                             *_tmp_145 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].minimum_awareness_time.size() != 0 ? 1 : 0);
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m000102\033[0m| Optional field minimum_awareness_time = " << *_tmp_145;
+                                logger->print() << "|\033[38;5;94m000102\033[0m| Optional field minimum_awareness_time = " << *_tmp_145;
                             char* _tmp_146 = (char*) buffer++;
                             *_tmp_146 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].applicable_lanes.size() != 0 ? 1 : 0);
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m000103\033[0m| Optional field applicable_lanes = " << *_tmp_146;
+                                logger->print() << "|\033[38;5;94m000103\033[0m| Optional field applicable_lanes = " << *_tmp_146;
                             char* _tmp_147 = (char*) buffer++;
                             *_tmp_147 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].ivi_purpose.size() != 0 ? 1 : 0);
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m000104\033[0m| Optional field ivi_purpose = " << *_tmp_147;
+                                logger->print() << "|\033[38;5;94m000104\033[0m| Optional field ivi_purpose = " << *_tmp_147;
                             char* _tmp_148 = (char*) buffer++;
                             *_tmp_148 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].lane_status.size() != 0 ? 1 : 0);
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m000105\033[0m| Optional field lane_status = " << *_tmp_148;
+                                logger->print() << "|\033[38;5;94m000105\033[0m| Optional field lane_status = " << *_tmp_148;
                             char* _tmp_149 = (char*) buffer++;
                             *_tmp_149 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics.size() != 0 ? 1 : 0);
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m000106\033[0m| Optional field vehicle_characteristics = " << *_tmp_149;
+                                logger->print() << "|\033[38;5;94m000106\033[0m| Optional field vehicle_characteristics = " << *_tmp_149;
                             char* _tmp_150 = (char*) buffer++;
                             *_tmp_150 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].driver_characteristics.size() != 0 ? 1 : 0);
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m000107\033[0m| Optional field driver_characteristics = " << *_tmp_150;
+                                logger->print() << "|\033[38;5;94m000107\033[0m| Optional field driver_characteristics = " << *_tmp_150;
                             char* _tmp_151 = (char*) buffer++;
                             *_tmp_151 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].layout_id.size() != 0 ? 1 : 0);
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m000108\033[0m| Optional field layout_id = " << *_tmp_151;
+                                logger->print() << "|\033[38;5;94m000108\033[0m| Optional field layout_id = " << *_tmp_151;
                             char* _tmp_152 = (char*) buffer++;
                             *_tmp_152 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].pre_storedlayout_id.size() != 0 ? 1 : 0);
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m000109\033[0m| Optional field pre_storedlayout_id = " << *_tmp_152;
+                                logger->print() << "|\033[38;5;94m000109\033[0m| Optional field pre_storedlayout_id = " << *_tmp_152;
                             char* _tmp_153 = (char*) buffer++;
                             *_tmp_153 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].extra_text.size() != 0 ? 1 : 0);
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m000110\033[0m| Optional field extra_text = " << *_tmp_153;
+                                logger->print() << "|\033[38;5;94m000110\033[0m| Optional field extra_text = " << *_tmp_153;
                             
                             if(ros->ivi.optional[0].elements[c].giv[0].elements[m].detection_zone_ids.size() != 0) {
                                 // Field:  type(GicPart_detectionZoneIds) name(detection_zone_ids) extGroup(0)
@@ -2350,7 +2350,7 @@ namespace wind
                                     
                                     // UINT8  min(1) max(32) span(32) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000112\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].detection_zone_ids[0].elements[n].value) << 
+                                        logger->print() << "|\033[38;5;94m000112\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].detection_zone_ids[0].elements[n].value) << 
                                                      " ivi.optional[0].elements[c].giv[0].elements[m].detection_zone_ids[0].elements[n].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].detection_zone_ids[0].elements[n].value);
                                     }
                                     
@@ -2403,7 +2403,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(127) span(128) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000114\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].its_rrid[0].content[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000114\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].its_rrid[0].content[0].value) << 
                                                      " ivi.optional[0].elements[c].giv[0].elements[m].its_rrid[0].content[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].its_rrid[0].content[0].value);
                                     }
                                     
@@ -2446,7 +2446,7 @@ namespace wind
                                         
                                         // UINT16  min(128) max(16511) span(16384) dataType(UInt16)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000117\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].its_rrid[0].extension[0].content[0].value) << 
+                                            logger->print() << "|\033[38;5;94m000117\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].its_rrid[0].extension[0].content[0].value) << 
                                                          " ivi.optional[0].elements[c].giv[0].elements[m].its_rrid[0].extension[0].content[0].value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].its_rrid[0].extension[0].content[0].value;
                                         }
                                         
@@ -2490,7 +2490,7 @@ namespace wind
                                             
                                             // UINT32  min(16512) max(2113663) span(2097152) dataType(UInt32)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000120\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].its_rrid[0].extension[0].extension[0].content[0].value) << 
+                                                logger->print() << "|\033[38;5;94m000120\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].its_rrid[0].extension[0].extension[0].content[0].value) << 
                                                              " ivi.optional[0].elements[c].giv[0].elements[m].its_rrid[0].extension[0].extension[0].content[0].value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].its_rrid[0].extension[0].extension[0].content[0].value;
                                             }
                                             
@@ -2522,7 +2522,7 @@ namespace wind
                                             
                                             // UINT32  min(2113664) max(270549119) span(268435456) dataType(UInt32)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000122\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].its_rrid[0].extension[0].extension[0].extension[0].value) << 
+                                                logger->print() << "|\033[38;5;94m000122\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].its_rrid[0].extension[0].extension[0].extension[0].value) << 
                                                              " ivi.optional[0].elements[c].giv[0].elements[m].its_rrid[0].extension[0].extension[0].extension[0].value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].its_rrid[0].extension[0].extension[0].extension[0].value;
                                             }
                                             
@@ -2598,7 +2598,7 @@ namespace wind
                                     
                                     // UINT8  min(1) max(32) span(32) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000124\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].relevance_zone_ids[0].elements[o].value) << 
+                                        logger->print() << "|\033[38;5;94m000124\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].relevance_zone_ids[0].elements[o].value) << 
                                                      " ivi.optional[0].elements[c].giv[0].elements[m].relevance_zone_ids[0].elements[o].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].relevance_zone_ids[0].elements[o].value);
                                     }
                                     
@@ -2639,7 +2639,7 @@ namespace wind
                                 
                                 // UINT8  min(0) max(3) span(4) dataType(UInt8)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000125\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].direction[0].value) << 
+                                    logger->print() << "|\033[38;5;94m000125\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].direction[0].value) << 
                                                  " ivi.optional[0].elements[c].giv[0].elements[m].direction[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].direction[0].value);
                                 }
                                 
@@ -2680,7 +2680,7 @@ namespace wind
                                     
                                     // UINT8  min(1) max(32) span(32) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000127\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].driver_awareness_zone_ids[0].elements[p].value) << 
+                                        logger->print() << "|\033[38;5;94m000127\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].driver_awareness_zone_ids[0].elements[p].value) << 
                                                      " ivi.optional[0].elements[c].giv[0].elements[m].driver_awareness_zone_ids[0].elements[p].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].driver_awareness_zone_ids[0].elements[p].value);
                                     }
                                     
@@ -2721,7 +2721,7 @@ namespace wind
                                 
                                 // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000128\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].minimum_awareness_time[0].value) << 
+                                    logger->print() << "|\033[38;5;94m000128\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].minimum_awareness_time[0].value) << 
                                                  " ivi.optional[0].elements[c].giv[0].elements[m].minimum_awareness_time[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].minimum_awareness_time[0].value);
                                 }
                                 
@@ -2762,7 +2762,7 @@ namespace wind
                                     
                                     // INT8  min(-1) max(14) span(16) dataType(Int8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000130\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].applicable_lanes[0].elements[q].value) << 
+                                        logger->print() << "|\033[38;5;94m000130\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].applicable_lanes[0].elements[q].value) << 
                                                      " ivi.optional[0].elements[c].giv[0].elements[m].applicable_lanes[0].elements[q].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].applicable_lanes[0].elements[q].value);
                                     }
                                     
@@ -2790,7 +2790,7 @@ namespace wind
                             
                             // UINT8  min(0) max(7) span(8) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000131\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].ivi_type.value) << 
+                                logger->print() << "|\033[38;5;94m000131\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].ivi_type.value) << 
                                              " ivi.optional[0].elements[c].giv[0].elements[m].ivi_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].ivi_type.value);
                             }
                             
@@ -2815,7 +2815,7 @@ namespace wind
                                 
                                 // UINT8  min(0) max(3) span(4) dataType(UInt8)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000132\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].ivi_purpose[0].value) << 
+                                    logger->print() << "|\033[38;5;94m000132\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].ivi_purpose[0].value) << 
                                                  " ivi.optional[0].elements[c].giv[0].elements[m].ivi_purpose[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].ivi_purpose[0].value);
                                 }
                                 
@@ -2841,7 +2841,7 @@ namespace wind
                                 
                                 // UINT8  min(0) max(7) span(8) dataType(UInt8)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000133\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].lane_status[0].value) << 
+                                    logger->print() << "|\033[38;5;94m000133\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].lane_status[0].value) << 
                                                  " ivi.optional[0].elements[c].giv[0].elements[m].lane_status[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].lane_status[0].value);
                                 }
                                 
@@ -2899,15 +2899,15 @@ namespace wind
                                         char* _tmp_177 = (char*) buffer++;
                                         *_tmp_177 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000135\033[0m| Optional field tractor = " << *_tmp_177;
+                                            logger->print() << "|\033[38;5;94m000135\033[0m| Optional field tractor = " << *_tmp_177;
                                         char* _tmp_178 = (char*) buffer++;
                                         *_tmp_178 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000136\033[0m| Optional field trailer = " << *_tmp_178;
+                                            logger->print() << "|\033[38;5;94m000136\033[0m| Optional field trailer = " << *_tmp_178;
                                         char* _tmp_179 = (char*) buffer++;
                                         *_tmp_179 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000137\033[0m| Optional field train = " << *_tmp_179;
+                                            logger->print() << "|\033[38;5;94m000137\033[0m| Optional field train = " << *_tmp_179;
                                         
                                         if(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor.size() != 0) {
                                             // Field:  type(TractorCharacteristics) name(tractor) extGroup(0)
@@ -2919,15 +2919,15 @@ namespace wind
                                                 char* _tmp_180 = (char*) buffer++;
                                                 *_tmp_180 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].equal_to.size() != 0 ? 1 : 0);
                                                 if(debug)
-                                                    logger->debug() << "|\033[38;5;94m000138\033[0m| Optional field equal_to = " << *_tmp_180;
+                                                    logger->print() << "|\033[38;5;94m000138\033[0m| Optional field equal_to = " << *_tmp_180;
                                                 char* _tmp_181 = (char*) buffer++;
                                                 *_tmp_181 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].not_equal_to.size() != 0 ? 1 : 0);
                                                 if(debug)
-                                                    logger->debug() << "|\033[38;5;94m000139\033[0m| Optional field not_equal_to = " << *_tmp_181;
+                                                    logger->print() << "|\033[38;5;94m000139\033[0m| Optional field not_equal_to = " << *_tmp_181;
                                                 char* _tmp_182 = (char*) buffer++;
                                                 *_tmp_182 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges.size() != 0 ? 1 : 0);
                                                 if(debug)
-                                                    logger->debug() << "|\033[38;5;94m000140\033[0m| Optional field ranges = " << *_tmp_182;
+                                                    logger->print() << "|\033[38;5;94m000140\033[0m| Optional field ranges = " << *_tmp_182;
                                                 
                                                 if(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].equal_to.size() != 0) {
                                                     // Field:  type(TractorCharacteristics_equalTo) name(equal_to) extGroup(0)
@@ -2971,7 +2971,7 @@ namespace wind
                                                             
                                                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m000143\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].equal_to[0].elements[s].simple_vehicle_type[0].value) << 
+                                                                logger->print() << "|\033[38;5;94m000143\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].equal_to[0].elements[s].simple_vehicle_type[0].value) << 
                                                                              " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].equal_to[0].elements[s].simple_vehicle_type[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].equal_to[0].elements[s].simple_vehicle_type[0].value);
                                                             }
                                                             
@@ -3015,7 +3015,7 @@ namespace wind
                                                                 // Enumerated
                                                                 // INT32  min(0) max(6) span(7) dataType(Int32)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000146\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].equal_to[0].elements[s].eu_vehicle_category_code[0].eu_vehicle_category_l[0].value) << 
+                                                                    logger->print() << "|\033[38;5;94m000146\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].equal_to[0].elements[s].eu_vehicle_category_code[0].eu_vehicle_category_l[0].value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].equal_to[0].elements[s].eu_vehicle_category_code[0].eu_vehicle_category_l[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].equal_to[0].elements[s].eu_vehicle_category_code[0].eu_vehicle_category_l[0].value);
                                                                 }
                                                                 
@@ -3045,7 +3045,7 @@ namespace wind
                                                                 // Enumerated
                                                                 // INT32  min(0) max(2) span(3) dataType(Int32)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000148\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].equal_to[0].elements[s].eu_vehicle_category_code[0].eu_vehicle_category_m[0].value) << 
+                                                                    logger->print() << "|\033[38;5;94m000148\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].equal_to[0].elements[s].eu_vehicle_category_code[0].eu_vehicle_category_m[0].value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].equal_to[0].elements[s].eu_vehicle_category_code[0].eu_vehicle_category_m[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].equal_to[0].elements[s].eu_vehicle_category_code[0].eu_vehicle_category_m[0].value);
                                                                 }
                                                                 
@@ -3075,7 +3075,7 @@ namespace wind
                                                                 // Enumerated
                                                                 // INT32  min(0) max(2) span(3) dataType(Int32)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000150\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].equal_to[0].elements[s].eu_vehicle_category_code[0].eu_vehicle_category_n[0].value) << 
+                                                                    logger->print() << "|\033[38;5;94m000150\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].equal_to[0].elements[s].eu_vehicle_category_code[0].eu_vehicle_category_n[0].value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].equal_to[0].elements[s].eu_vehicle_category_code[0].eu_vehicle_category_n[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].equal_to[0].elements[s].eu_vehicle_category_code[0].eu_vehicle_category_n[0].value);
                                                                 }
                                                                 
@@ -3105,7 +3105,7 @@ namespace wind
                                                                 // Enumerated
                                                                 // INT32  min(0) max(3) span(4) dataType(Int32)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000152\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].equal_to[0].elements[s].eu_vehicle_category_code[0].eu_vehicle_category_o[0].value) << 
+                                                                    logger->print() << "|\033[38;5;94m000152\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].equal_to[0].elements[s].eu_vehicle_category_code[0].eu_vehicle_category_o[0].value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].equal_to[0].elements[s].eu_vehicle_category_code[0].eu_vehicle_category_o[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].equal_to[0].elements[s].eu_vehicle_category_code[0].eu_vehicle_category_o[0].value);
                                                                 }
                                                                 
@@ -3143,7 +3143,7 @@ namespace wind
                                                             
                                                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m000154\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].equal_to[0].elements[s].iso3833_vehicle_type[0].value) << 
+                                                                logger->print() << "|\033[38;5;94m000154\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].equal_to[0].elements[s].iso3833_vehicle_type[0].value) << 
                                                                              " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].equal_to[0].elements[s].iso3833_vehicle_type[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].equal_to[0].elements[s].iso3833_vehicle_type[0].value);
                                                             }
                                                             
@@ -3179,7 +3179,7 @@ namespace wind
                                                                 // Enumerated
                                                                 // INT32  min(0) max(15) span(16) dataType(Int32)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000156\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].equal_to[0].elements[s].euro_and_co2value[0].euro_value.value) << 
+                                                                    logger->print() << "|\033[38;5;94m000156\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].equal_to[0].elements[s].euro_and_co2value[0].euro_value.value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].equal_to[0].elements[s].euro_and_co2value[0].euro_value.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].equal_to[0].elements[s].euro_and_co2value[0].euro_value.value);
                                                                 }
                                                                 
@@ -3202,7 +3202,7 @@ namespace wind
                                                                 // Enumerated
                                                                 // INT32  min(0) max(8) span(9) dataType(Int32)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000157\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].equal_to[0].elements[s].euro_and_co2value[0].cop_value.value) << 
+                                                                    logger->print() << "|\033[38;5;94m000157\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].equal_to[0].elements[s].euro_and_co2value[0].cop_value.value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].equal_to[0].elements[s].euro_and_co2value[0].cop_value.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].equal_to[0].elements[s].euro_and_co2value[0].cop_value.value);
                                                                 }
                                                                 
@@ -3233,7 +3233,7 @@ namespace wind
                                                             
                                                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m000159\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].equal_to[0].elements[s].engine_characteristics[0].value) << 
+                                                                logger->print() << "|\033[38;5;94m000159\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].equal_to[0].elements[s].engine_characteristics[0].value) << 
                                                                              " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].equal_to[0].elements[s].engine_characteristics[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].equal_to[0].elements[s].engine_characteristics[0].value);
                                                             }
                                                             
@@ -3271,7 +3271,7 @@ namespace wind
                                                                 
                                                                 // UINT8  min(0) max(15) span(16) dataType(UInt8)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000161\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].equal_to[0].elements[s].load_type[0].goods_type.value) << 
+                                                                    logger->print() << "|\033[38;5;94m000161\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].equal_to[0].elements[s].load_type[0].goods_type.value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].equal_to[0].elements[s].load_type[0].goods_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].equal_to[0].elements[s].load_type[0].goods_type.value);
                                                                 }
                                                                 
@@ -3307,7 +3307,7 @@ namespace wind
                                                                 // Enumerated
                                                                 // INT32  min(0) max(19) span(20) dataType(Int32)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000162\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].equal_to[0].elements[s].load_type[0].dangerous_goods_type.value) << 
+                                                                    logger->print() << "|\033[38;5;94m000162\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].equal_to[0].elements[s].load_type[0].dangerous_goods_type.value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].equal_to[0].elements[s].load_type[0].dangerous_goods_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].equal_to[0].elements[s].load_type[0].dangerous_goods_type.value);
                                                                 }
                                                                 
@@ -3330,7 +3330,7 @@ namespace wind
                                                                 // BitString
                                                                 // BIT_STRING  min(4) max(4) span(1)
                                                                 if(debug)
-                                                                    logger->debug() << "|\033[38;5;94m000163\033[0m| ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].equal_to[0].elements[s].load_type[0].special_transport_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].equal_to[0].elements[s].load_type[0].special_transport_type.values.size());
+                                                                    logger->print() << "|\033[38;5;94m000163\033[0m| ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].equal_to[0].elements[s].load_type[0].special_transport_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].equal_to[0].elements[s].load_type[0].special_transport_type.values.size());
                                                                 
                                                                 if(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].equal_to[0].elements[s].load_type[0].special_transport_type.values.size() < 4) {
                                                                         logger->warning() << "Error: Value in 'ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].equal_to[0].elements[s].load_type[0].special_transport_type.value' " << (ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].equal_to[0].elements[s].load_type[0].special_transport_type.values.size()) << " is less than allowable (4); message dropped.";
@@ -3364,7 +3364,7 @@ namespace wind
                                                             // Enumerated
                                                             // INT32  min(0) max(15) span(16) dataType(Int32)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m000165\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].equal_to[0].elements[s].usage[0].value) << 
+                                                                logger->print() << "|\033[38;5;94m000165\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].equal_to[0].elements[s].usage[0].value) << 
                                                                              " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].equal_to[0].elements[s].usage[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].equal_to[0].elements[s].usage[0].value);
                                                             }
                                                             
@@ -3434,7 +3434,7 @@ namespace wind
                                                             
                                                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m000168\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].not_equal_to[0].elements[u].simple_vehicle_type[0].value) << 
+                                                                logger->print() << "|\033[38;5;94m000168\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].not_equal_to[0].elements[u].simple_vehicle_type[0].value) << 
                                                                              " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].not_equal_to[0].elements[u].simple_vehicle_type[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].not_equal_to[0].elements[u].simple_vehicle_type[0].value);
                                                             }
                                                             
@@ -3478,7 +3478,7 @@ namespace wind
                                                                 // Enumerated
                                                                 // INT32  min(0) max(6) span(7) dataType(Int32)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000171\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].not_equal_to[0].elements[u].eu_vehicle_category_code[0].eu_vehicle_category_l[0].value) << 
+                                                                    logger->print() << "|\033[38;5;94m000171\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].not_equal_to[0].elements[u].eu_vehicle_category_code[0].eu_vehicle_category_l[0].value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].not_equal_to[0].elements[u].eu_vehicle_category_code[0].eu_vehicle_category_l[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].not_equal_to[0].elements[u].eu_vehicle_category_code[0].eu_vehicle_category_l[0].value);
                                                                 }
                                                                 
@@ -3508,7 +3508,7 @@ namespace wind
                                                                 // Enumerated
                                                                 // INT32  min(0) max(2) span(3) dataType(Int32)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000173\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].not_equal_to[0].elements[u].eu_vehicle_category_code[0].eu_vehicle_category_m[0].value) << 
+                                                                    logger->print() << "|\033[38;5;94m000173\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].not_equal_to[0].elements[u].eu_vehicle_category_code[0].eu_vehicle_category_m[0].value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].not_equal_to[0].elements[u].eu_vehicle_category_code[0].eu_vehicle_category_m[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].not_equal_to[0].elements[u].eu_vehicle_category_code[0].eu_vehicle_category_m[0].value);
                                                                 }
                                                                 
@@ -3538,7 +3538,7 @@ namespace wind
                                                                 // Enumerated
                                                                 // INT32  min(0) max(2) span(3) dataType(Int32)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000175\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].not_equal_to[0].elements[u].eu_vehicle_category_code[0].eu_vehicle_category_n[0].value) << 
+                                                                    logger->print() << "|\033[38;5;94m000175\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].not_equal_to[0].elements[u].eu_vehicle_category_code[0].eu_vehicle_category_n[0].value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].not_equal_to[0].elements[u].eu_vehicle_category_code[0].eu_vehicle_category_n[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].not_equal_to[0].elements[u].eu_vehicle_category_code[0].eu_vehicle_category_n[0].value);
                                                                 }
                                                                 
@@ -3568,7 +3568,7 @@ namespace wind
                                                                 // Enumerated
                                                                 // INT32  min(0) max(3) span(4) dataType(Int32)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000177\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].not_equal_to[0].elements[u].eu_vehicle_category_code[0].eu_vehicle_category_o[0].value) << 
+                                                                    logger->print() << "|\033[38;5;94m000177\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].not_equal_to[0].elements[u].eu_vehicle_category_code[0].eu_vehicle_category_o[0].value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].not_equal_to[0].elements[u].eu_vehicle_category_code[0].eu_vehicle_category_o[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].not_equal_to[0].elements[u].eu_vehicle_category_code[0].eu_vehicle_category_o[0].value);
                                                                 }
                                                                 
@@ -3606,7 +3606,7 @@ namespace wind
                                                             
                                                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m000179\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].not_equal_to[0].elements[u].iso3833_vehicle_type[0].value) << 
+                                                                logger->print() << "|\033[38;5;94m000179\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].not_equal_to[0].elements[u].iso3833_vehicle_type[0].value) << 
                                                                              " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].not_equal_to[0].elements[u].iso3833_vehicle_type[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].not_equal_to[0].elements[u].iso3833_vehicle_type[0].value);
                                                             }
                                                             
@@ -3642,7 +3642,7 @@ namespace wind
                                                                 // Enumerated
                                                                 // INT32  min(0) max(15) span(16) dataType(Int32)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000181\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].not_equal_to[0].elements[u].euro_and_co2value[0].euro_value.value) << 
+                                                                    logger->print() << "|\033[38;5;94m000181\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].not_equal_to[0].elements[u].euro_and_co2value[0].euro_value.value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].not_equal_to[0].elements[u].euro_and_co2value[0].euro_value.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].not_equal_to[0].elements[u].euro_and_co2value[0].euro_value.value);
                                                                 }
                                                                 
@@ -3665,7 +3665,7 @@ namespace wind
                                                                 // Enumerated
                                                                 // INT32  min(0) max(8) span(9) dataType(Int32)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000182\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].not_equal_to[0].elements[u].euro_and_co2value[0].cop_value.value) << 
+                                                                    logger->print() << "|\033[38;5;94m000182\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].not_equal_to[0].elements[u].euro_and_co2value[0].cop_value.value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].not_equal_to[0].elements[u].euro_and_co2value[0].cop_value.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].not_equal_to[0].elements[u].euro_and_co2value[0].cop_value.value);
                                                                 }
                                                                 
@@ -3696,7 +3696,7 @@ namespace wind
                                                             
                                                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m000184\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].not_equal_to[0].elements[u].engine_characteristics[0].value) << 
+                                                                logger->print() << "|\033[38;5;94m000184\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].not_equal_to[0].elements[u].engine_characteristics[0].value) << 
                                                                              " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].not_equal_to[0].elements[u].engine_characteristics[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].not_equal_to[0].elements[u].engine_characteristics[0].value);
                                                             }
                                                             
@@ -3734,7 +3734,7 @@ namespace wind
                                                                 
                                                                 // UINT8  min(0) max(15) span(16) dataType(UInt8)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000186\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].not_equal_to[0].elements[u].load_type[0].goods_type.value) << 
+                                                                    logger->print() << "|\033[38;5;94m000186\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].not_equal_to[0].elements[u].load_type[0].goods_type.value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].not_equal_to[0].elements[u].load_type[0].goods_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].not_equal_to[0].elements[u].load_type[0].goods_type.value);
                                                                 }
                                                                 
@@ -3770,7 +3770,7 @@ namespace wind
                                                                 // Enumerated
                                                                 // INT32  min(0) max(19) span(20) dataType(Int32)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000187\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].not_equal_to[0].elements[u].load_type[0].dangerous_goods_type.value) << 
+                                                                    logger->print() << "|\033[38;5;94m000187\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].not_equal_to[0].elements[u].load_type[0].dangerous_goods_type.value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].not_equal_to[0].elements[u].load_type[0].dangerous_goods_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].not_equal_to[0].elements[u].load_type[0].dangerous_goods_type.value);
                                                                 }
                                                                 
@@ -3793,7 +3793,7 @@ namespace wind
                                                                 // BitString
                                                                 // BIT_STRING  min(4) max(4) span(1)
                                                                 if(debug)
-                                                                    logger->debug() << "|\033[38;5;94m000188\033[0m| ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].not_equal_to[0].elements[u].load_type[0].special_transport_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].not_equal_to[0].elements[u].load_type[0].special_transport_type.values.size());
+                                                                    logger->print() << "|\033[38;5;94m000188\033[0m| ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].not_equal_to[0].elements[u].load_type[0].special_transport_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].not_equal_to[0].elements[u].load_type[0].special_transport_type.values.size());
                                                                 
                                                                 if(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].not_equal_to[0].elements[u].load_type[0].special_transport_type.values.size() < 4) {
                                                                         logger->warning() << "Error: Value in 'ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].not_equal_to[0].elements[u].load_type[0].special_transport_type.value' " << (ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].not_equal_to[0].elements[u].load_type[0].special_transport_type.values.size()) << " is less than allowable (4); message dropped.";
@@ -3827,7 +3827,7 @@ namespace wind
                                                             // Enumerated
                                                             // INT32  min(0) max(15) span(16) dataType(Int32)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m000190\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].not_equal_to[0].elements[u].usage[0].value) << 
+                                                                logger->print() << "|\033[38;5;94m000190\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].not_equal_to[0].elements[u].usage[0].value) << 
                                                                              " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].not_equal_to[0].elements[u].usage[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].not_equal_to[0].elements[u].usage[0].value);
                                                             }
                                                             
@@ -3882,7 +3882,7 @@ namespace wind
                                                             
                                                             // UINT8  min(0) max(3) span(4) dataType(UInt8)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m000192\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].comparison_operator.value) << 
+                                                                logger->print() << "|\033[38;5;94m000192\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].comparison_operator.value) << 
                                                                              " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].comparison_operator.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].comparison_operator.value);
                                                             }
                                                             
@@ -3928,7 +3928,7 @@ namespace wind
                                                                 
                                                                 // UINT8  min(0) max(7) span(8) dataType(UInt8)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000194\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.number_of_axles[0].value) << 
+                                                                    logger->print() << "|\033[38;5;94m000194\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.number_of_axles[0].value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.number_of_axles[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.number_of_axles[0].value);
                                                                 }
                                                                 
@@ -3966,7 +3966,7 @@ namespace wind
                                                                     
                                                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000196\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.vehicle_dimensions[0].vehicle_length_overall.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000196\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.vehicle_dimensions[0].vehicle_length_overall.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.vehicle_dimensions[0].vehicle_length_overall.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.vehicle_dimensions[0].vehicle_length_overall.value);
                                                                     }
                                                                     
@@ -3990,7 +3990,7 @@ namespace wind
                                                                     
                                                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000197\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.vehicle_dimensions[0].vehicle_heigth_overall.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000197\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.vehicle_dimensions[0].vehicle_heigth_overall.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.vehicle_dimensions[0].vehicle_heigth_overall.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.vehicle_dimensions[0].vehicle_heigth_overall.value);
                                                                     }
                                                                     
@@ -4014,7 +4014,7 @@ namespace wind
                                                                     
                                                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000198\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.vehicle_dimensions[0].vehicle_width_overall.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000198\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.vehicle_dimensions[0].vehicle_width_overall.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.vehicle_dimensions[0].vehicle_width_overall.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.vehicle_dimensions[0].vehicle_width_overall.value);
                                                                     }
                                                                     
@@ -4052,7 +4052,7 @@ namespace wind
                                                                     
                                                                     // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000200\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.vehicle_weight_limits[0].vehicle_max_laden_weight.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000200\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.vehicle_weight_limits[0].vehicle_max_laden_weight.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.vehicle_weight_limits[0].vehicle_max_laden_weight.value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.vehicle_weight_limits[0].vehicle_max_laden_weight.value;
                                                                     }
                                                                     
@@ -4076,7 +4076,7 @@ namespace wind
                                                                     
                                                                     // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000201\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.vehicle_weight_limits[0].vehicle_train_maximum_weight.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000201\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.vehicle_weight_limits[0].vehicle_train_maximum_weight.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.vehicle_weight_limits[0].vehicle_train_maximum_weight.value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.vehicle_weight_limits[0].vehicle_train_maximum_weight.value;
                                                                     }
                                                                     
@@ -4100,7 +4100,7 @@ namespace wind
                                                                     
                                                                     // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000202\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.vehicle_weight_limits[0].vehicle_weight_unladen.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000202\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.vehicle_weight_limits[0].vehicle_weight_unladen.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.vehicle_weight_limits[0].vehicle_weight_unladen.value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.vehicle_weight_limits[0].vehicle_weight_unladen.value;
                                                                     }
                                                                     
@@ -4140,7 +4140,7 @@ namespace wind
                                                                     
                                                                     // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000204\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.axle_weight_limits[0].max_ladenweight_on_axle1.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000204\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.axle_weight_limits[0].max_ladenweight_on_axle1.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.axle_weight_limits[0].max_ladenweight_on_axle1.value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.axle_weight_limits[0].max_ladenweight_on_axle1.value;
                                                                     }
                                                                     
@@ -4164,7 +4164,7 @@ namespace wind
                                                                     
                                                                     // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000205\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.axle_weight_limits[0].max_ladenweight_on_axle2.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000205\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.axle_weight_limits[0].max_ladenweight_on_axle2.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.axle_weight_limits[0].max_ladenweight_on_axle2.value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.axle_weight_limits[0].max_ladenweight_on_axle2.value;
                                                                     }
                                                                     
@@ -4188,7 +4188,7 @@ namespace wind
                                                                     
                                                                     // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000206\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.axle_weight_limits[0].max_ladenweight_on_axle3.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000206\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.axle_weight_limits[0].max_ladenweight_on_axle3.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.axle_weight_limits[0].max_ladenweight_on_axle3.value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.axle_weight_limits[0].max_ladenweight_on_axle3.value;
                                                                     }
                                                                     
@@ -4212,7 +4212,7 @@ namespace wind
                                                                     
                                                                     // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000207\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.axle_weight_limits[0].max_ladenweight_on_axle4.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000207\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.axle_weight_limits[0].max_ladenweight_on_axle4.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.axle_weight_limits[0].max_ladenweight_on_axle4.value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.axle_weight_limits[0].max_ladenweight_on_axle4.value;
                                                                     }
                                                                     
@@ -4236,7 +4236,7 @@ namespace wind
                                                                     
                                                                     // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000208\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.axle_weight_limits[0].max_ladenweight_on_axle5.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000208\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.axle_weight_limits[0].max_ladenweight_on_axle5.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.axle_weight_limits[0].max_ladenweight_on_axle5.value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.axle_weight_limits[0].max_ladenweight_on_axle5.value;
                                                                     }
                                                                     
@@ -4273,7 +4273,7 @@ namespace wind
                                                                     
                                                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000210\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.passenger_capacity[0].number_of_seats.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000210\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.passenger_capacity[0].number_of_seats.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.passenger_capacity[0].number_of_seats.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.passenger_capacity[0].number_of_seats.value);
                                                                     }
                                                                     
@@ -4297,7 +4297,7 @@ namespace wind
                                                                     
                                                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000211\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.passenger_capacity[0].number_of_standing_places.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000211\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.passenger_capacity[0].number_of_standing_places.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.passenger_capacity[0].number_of_standing_places.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.passenger_capacity[0].number_of_standing_places.value);
                                                                     }
                                                                     
@@ -4336,7 +4336,7 @@ namespace wind
                                                                     // Enumerated
                                                                     // INT32  min(0) max(1) span(2) dataType(Int32)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000213\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.exhaust_emission_values[0].unit_type.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000213\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.exhaust_emission_values[0].unit_type.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.exhaust_emission_values[0].unit_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.exhaust_emission_values[0].unit_type.value);
                                                                     }
                                                                     
@@ -4360,7 +4360,7 @@ namespace wind
                                                                     
                                                                     // UINT16  min(0) max(32767) span(32768) dataType(UInt16)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000214\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.exhaust_emission_values[0].emission_co.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000214\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.exhaust_emission_values[0].emission_co.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.exhaust_emission_values[0].emission_co.value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.exhaust_emission_values[0].emission_co.value;
                                                                     }
                                                                     
@@ -4384,7 +4384,7 @@ namespace wind
                                                                     
                                                                     // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000215\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.exhaust_emission_values[0].emission_hc.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000215\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.exhaust_emission_values[0].emission_hc.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.exhaust_emission_values[0].emission_hc.value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.exhaust_emission_values[0].emission_hc.value;
                                                                     }
                                                                     
@@ -4408,7 +4408,7 @@ namespace wind
                                                                     
                                                                     // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000216\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.exhaust_emission_values[0].emission_nox.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000216\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.exhaust_emission_values[0].emission_nox.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.exhaust_emission_values[0].emission_nox.value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.exhaust_emission_values[0].emission_nox.value;
                                                                     }
                                                                     
@@ -4432,7 +4432,7 @@ namespace wind
                                                                     
                                                                     // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000217\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.exhaust_emission_values[0].emission_hcnox.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000217\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.exhaust_emission_values[0].emission_hcnox.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.exhaust_emission_values[0].emission_hcnox.value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.exhaust_emission_values[0].emission_hcnox.value;
                                                                     }
                                                                     
@@ -4474,7 +4474,7 @@ namespace wind
                                                                         // Enumerated
                                                                         // INT32  min(0) max(1) span(2) dataType(Int32)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000219\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.diesel_emission_values[0].particulate.unit_type.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000219\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.diesel_emission_values[0].particulate.unit_type.value) << 
                                                                                          " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.diesel_emission_values[0].particulate.unit_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.diesel_emission_values[0].particulate.unit_type.value);
                                                                         }
                                                                         
@@ -4498,7 +4498,7 @@ namespace wind
                                                                         
                                                                         // UINT16  min(0) max(32767) span(32768) dataType(UInt16)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000220\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.diesel_emission_values[0].particulate.value.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000220\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.diesel_emission_values[0].particulate.value.value) << 
                                                                                          " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.diesel_emission_values[0].particulate.value.value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.diesel_emission_values[0].particulate.value.value;
                                                                         }
                                                                         
@@ -4522,7 +4522,7 @@ namespace wind
                                                                     
                                                                     // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000221\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.diesel_emission_values[0].absorption_coeff.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000221\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.diesel_emission_values[0].absorption_coeff.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.diesel_emission_values[0].absorption_coeff.value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.diesel_emission_values[0].absorption_coeff.value;
                                                                     }
                                                                     
@@ -4559,7 +4559,7 @@ namespace wind
                                                                     
                                                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000223\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.sound_level[0].soundstationary.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000223\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.sound_level[0].soundstationary.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.sound_level[0].soundstationary.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.sound_level[0].soundstationary.value);
                                                                     }
                                                                     
@@ -4583,7 +4583,7 @@ namespace wind
                                                                     
                                                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000224\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.sound_level[0].sounddriveby.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000224\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.sound_level[0].sounddriveby.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.sound_level[0].sounddriveby.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].tractor[0].ranges[0].elements[w].limits.sound_level[0].sounddriveby.value);
                                                                     }
                                                                     
@@ -4635,15 +4635,15 @@ namespace wind
                                                     char* _tmp_240 = (char*) buffer++;
                                                     *_tmp_240 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].equal_to.size() != 0 ? 1 : 0);
                                                     if(debug)
-                                                        logger->debug() << "|\033[38;5;94m000226\033[0m| Optional field equal_to = " << *_tmp_240;
+                                                        logger->print() << "|\033[38;5;94m000226\033[0m| Optional field equal_to = " << *_tmp_240;
                                                     char* _tmp_241 = (char*) buffer++;
                                                     *_tmp_241 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].not_equal_to.size() != 0 ? 1 : 0);
                                                     if(debug)
-                                                        logger->debug() << "|\033[38;5;94m000227\033[0m| Optional field not_equal_to = " << *_tmp_241;
+                                                        logger->print() << "|\033[38;5;94m000227\033[0m| Optional field not_equal_to = " << *_tmp_241;
                                                     char* _tmp_242 = (char*) buffer++;
                                                     *_tmp_242 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges.size() != 0 ? 1 : 0);
                                                     if(debug)
-                                                        logger->debug() << "|\033[38;5;94m000228\033[0m| Optional field ranges = " << *_tmp_242;
+                                                        logger->print() << "|\033[38;5;94m000228\033[0m| Optional field ranges = " << *_tmp_242;
                                                     
                                                     if(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].equal_to.size() != 0) {
                                                         // Field:  type(TrailerCharacteristics_equalTo) name(equal_to) extGroup(0)
@@ -4687,7 +4687,7 @@ namespace wind
                                                                 
                                                                 // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000231\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].equal_to[0].elements[y].simple_vehicle_type[0].value) << 
+                                                                    logger->print() << "|\033[38;5;94m000231\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].equal_to[0].elements[y].simple_vehicle_type[0].value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].equal_to[0].elements[y].simple_vehicle_type[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].equal_to[0].elements[y].simple_vehicle_type[0].value);
                                                                 }
                                                                 
@@ -4731,7 +4731,7 @@ namespace wind
                                                                     // Enumerated
                                                                     // INT32  min(0) max(6) span(7) dataType(Int32)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000234\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].equal_to[0].elements[y].eu_vehicle_category_code[0].eu_vehicle_category_l[0].value) << 
+                                                                        logger->print() << "|\033[38;5;94m000234\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].equal_to[0].elements[y].eu_vehicle_category_code[0].eu_vehicle_category_l[0].value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].equal_to[0].elements[y].eu_vehicle_category_code[0].eu_vehicle_category_l[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].equal_to[0].elements[y].eu_vehicle_category_code[0].eu_vehicle_category_l[0].value);
                                                                     }
                                                                     
@@ -4761,7 +4761,7 @@ namespace wind
                                                                     // Enumerated
                                                                     // INT32  min(0) max(2) span(3) dataType(Int32)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000236\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].equal_to[0].elements[y].eu_vehicle_category_code[0].eu_vehicle_category_m[0].value) << 
+                                                                        logger->print() << "|\033[38;5;94m000236\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].equal_to[0].elements[y].eu_vehicle_category_code[0].eu_vehicle_category_m[0].value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].equal_to[0].elements[y].eu_vehicle_category_code[0].eu_vehicle_category_m[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].equal_to[0].elements[y].eu_vehicle_category_code[0].eu_vehicle_category_m[0].value);
                                                                     }
                                                                     
@@ -4791,7 +4791,7 @@ namespace wind
                                                                     // Enumerated
                                                                     // INT32  min(0) max(2) span(3) dataType(Int32)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000238\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].equal_to[0].elements[y].eu_vehicle_category_code[0].eu_vehicle_category_n[0].value) << 
+                                                                        logger->print() << "|\033[38;5;94m000238\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].equal_to[0].elements[y].eu_vehicle_category_code[0].eu_vehicle_category_n[0].value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].equal_to[0].elements[y].eu_vehicle_category_code[0].eu_vehicle_category_n[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].equal_to[0].elements[y].eu_vehicle_category_code[0].eu_vehicle_category_n[0].value);
                                                                     }
                                                                     
@@ -4821,7 +4821,7 @@ namespace wind
                                                                     // Enumerated
                                                                     // INT32  min(0) max(3) span(4) dataType(Int32)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000240\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].equal_to[0].elements[y].eu_vehicle_category_code[0].eu_vehicle_category_o[0].value) << 
+                                                                        logger->print() << "|\033[38;5;94m000240\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].equal_to[0].elements[y].eu_vehicle_category_code[0].eu_vehicle_category_o[0].value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].equal_to[0].elements[y].eu_vehicle_category_code[0].eu_vehicle_category_o[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].equal_to[0].elements[y].eu_vehicle_category_code[0].eu_vehicle_category_o[0].value);
                                                                     }
                                                                     
@@ -4859,7 +4859,7 @@ namespace wind
                                                                 
                                                                 // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000242\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].equal_to[0].elements[y].iso3833_vehicle_type[0].value) << 
+                                                                    logger->print() << "|\033[38;5;94m000242\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].equal_to[0].elements[y].iso3833_vehicle_type[0].value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].equal_to[0].elements[y].iso3833_vehicle_type[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].equal_to[0].elements[y].iso3833_vehicle_type[0].value);
                                                                 }
                                                                 
@@ -4895,7 +4895,7 @@ namespace wind
                                                                     // Enumerated
                                                                     // INT32  min(0) max(15) span(16) dataType(Int32)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000244\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].equal_to[0].elements[y].euro_and_co2value[0].euro_value.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000244\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].equal_to[0].elements[y].euro_and_co2value[0].euro_value.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].equal_to[0].elements[y].euro_and_co2value[0].euro_value.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].equal_to[0].elements[y].euro_and_co2value[0].euro_value.value);
                                                                     }
                                                                     
@@ -4918,7 +4918,7 @@ namespace wind
                                                                     // Enumerated
                                                                     // INT32  min(0) max(8) span(9) dataType(Int32)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000245\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].equal_to[0].elements[y].euro_and_co2value[0].cop_value.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000245\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].equal_to[0].elements[y].euro_and_co2value[0].cop_value.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].equal_to[0].elements[y].euro_and_co2value[0].cop_value.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].equal_to[0].elements[y].euro_and_co2value[0].cop_value.value);
                                                                     }
                                                                     
@@ -4949,7 +4949,7 @@ namespace wind
                                                                 
                                                                 // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000247\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].equal_to[0].elements[y].engine_characteristics[0].value) << 
+                                                                    logger->print() << "|\033[38;5;94m000247\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].equal_to[0].elements[y].engine_characteristics[0].value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].equal_to[0].elements[y].engine_characteristics[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].equal_to[0].elements[y].engine_characteristics[0].value);
                                                                 }
                                                                 
@@ -4987,7 +4987,7 @@ namespace wind
                                                                     
                                                                     // UINT8  min(0) max(15) span(16) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000249\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].equal_to[0].elements[y].load_type[0].goods_type.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000249\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].equal_to[0].elements[y].load_type[0].goods_type.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].equal_to[0].elements[y].load_type[0].goods_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].equal_to[0].elements[y].load_type[0].goods_type.value);
                                                                     }
                                                                     
@@ -5023,7 +5023,7 @@ namespace wind
                                                                     // Enumerated
                                                                     // INT32  min(0) max(19) span(20) dataType(Int32)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000250\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].equal_to[0].elements[y].load_type[0].dangerous_goods_type.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000250\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].equal_to[0].elements[y].load_type[0].dangerous_goods_type.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].equal_to[0].elements[y].load_type[0].dangerous_goods_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].equal_to[0].elements[y].load_type[0].dangerous_goods_type.value);
                                                                     }
                                                                     
@@ -5046,7 +5046,7 @@ namespace wind
                                                                     // BitString
                                                                     // BIT_STRING  min(4) max(4) span(1)
                                                                     if(debug)
-                                                                        logger->debug() << "|\033[38;5;94m000251\033[0m| ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].equal_to[0].elements[y].load_type[0].special_transport_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].equal_to[0].elements[y].load_type[0].special_transport_type.values.size());
+                                                                        logger->print() << "|\033[38;5;94m000251\033[0m| ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].equal_to[0].elements[y].load_type[0].special_transport_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].equal_to[0].elements[y].load_type[0].special_transport_type.values.size());
                                                                     
                                                                     if(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].equal_to[0].elements[y].load_type[0].special_transport_type.values.size() < 4) {
                                                                             logger->warning() << "Error: Value in 'ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].equal_to[0].elements[y].load_type[0].special_transport_type.value' " << (ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].equal_to[0].elements[y].load_type[0].special_transport_type.values.size()) << " is less than allowable (4); message dropped.";
@@ -5080,7 +5080,7 @@ namespace wind
                                                                 // Enumerated
                                                                 // INT32  min(0) max(15) span(16) dataType(Int32)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000253\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].equal_to[0].elements[y].usage[0].value) << 
+                                                                    logger->print() << "|\033[38;5;94m000253\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].equal_to[0].elements[y].usage[0].value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].equal_to[0].elements[y].usage[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].equal_to[0].elements[y].usage[0].value);
                                                                 }
                                                                 
@@ -5150,7 +5150,7 @@ namespace wind
                                                                 
                                                                 // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000256\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].not_equal_to[0].elements[a].simple_vehicle_type[0].value) << 
+                                                                    logger->print() << "|\033[38;5;94m000256\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].not_equal_to[0].elements[a].simple_vehicle_type[0].value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].not_equal_to[0].elements[a].simple_vehicle_type[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].not_equal_to[0].elements[a].simple_vehicle_type[0].value);
                                                                 }
                                                                 
@@ -5194,7 +5194,7 @@ namespace wind
                                                                     // Enumerated
                                                                     // INT32  min(0) max(6) span(7) dataType(Int32)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000259\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].not_equal_to[0].elements[a].eu_vehicle_category_code[0].eu_vehicle_category_l[0].value) << 
+                                                                        logger->print() << "|\033[38;5;94m000259\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].not_equal_to[0].elements[a].eu_vehicle_category_code[0].eu_vehicle_category_l[0].value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].not_equal_to[0].elements[a].eu_vehicle_category_code[0].eu_vehicle_category_l[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].not_equal_to[0].elements[a].eu_vehicle_category_code[0].eu_vehicle_category_l[0].value);
                                                                     }
                                                                     
@@ -5224,7 +5224,7 @@ namespace wind
                                                                     // Enumerated
                                                                     // INT32  min(0) max(2) span(3) dataType(Int32)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000261\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].not_equal_to[0].elements[a].eu_vehicle_category_code[0].eu_vehicle_category_m[0].value) << 
+                                                                        logger->print() << "|\033[38;5;94m000261\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].not_equal_to[0].elements[a].eu_vehicle_category_code[0].eu_vehicle_category_m[0].value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].not_equal_to[0].elements[a].eu_vehicle_category_code[0].eu_vehicle_category_m[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].not_equal_to[0].elements[a].eu_vehicle_category_code[0].eu_vehicle_category_m[0].value);
                                                                     }
                                                                     
@@ -5254,7 +5254,7 @@ namespace wind
                                                                     // Enumerated
                                                                     // INT32  min(0) max(2) span(3) dataType(Int32)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000263\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].not_equal_to[0].elements[a].eu_vehicle_category_code[0].eu_vehicle_category_n[0].value) << 
+                                                                        logger->print() << "|\033[38;5;94m000263\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].not_equal_to[0].elements[a].eu_vehicle_category_code[0].eu_vehicle_category_n[0].value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].not_equal_to[0].elements[a].eu_vehicle_category_code[0].eu_vehicle_category_n[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].not_equal_to[0].elements[a].eu_vehicle_category_code[0].eu_vehicle_category_n[0].value);
                                                                     }
                                                                     
@@ -5284,7 +5284,7 @@ namespace wind
                                                                     // Enumerated
                                                                     // INT32  min(0) max(3) span(4) dataType(Int32)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000265\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].not_equal_to[0].elements[a].eu_vehicle_category_code[0].eu_vehicle_category_o[0].value) << 
+                                                                        logger->print() << "|\033[38;5;94m000265\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].not_equal_to[0].elements[a].eu_vehicle_category_code[0].eu_vehicle_category_o[0].value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].not_equal_to[0].elements[a].eu_vehicle_category_code[0].eu_vehicle_category_o[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].not_equal_to[0].elements[a].eu_vehicle_category_code[0].eu_vehicle_category_o[0].value);
                                                                     }
                                                                     
@@ -5322,7 +5322,7 @@ namespace wind
                                                                 
                                                                 // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000267\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].not_equal_to[0].elements[a].iso3833_vehicle_type[0].value) << 
+                                                                    logger->print() << "|\033[38;5;94m000267\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].not_equal_to[0].elements[a].iso3833_vehicle_type[0].value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].not_equal_to[0].elements[a].iso3833_vehicle_type[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].not_equal_to[0].elements[a].iso3833_vehicle_type[0].value);
                                                                 }
                                                                 
@@ -5358,7 +5358,7 @@ namespace wind
                                                                     // Enumerated
                                                                     // INT32  min(0) max(15) span(16) dataType(Int32)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000269\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].not_equal_to[0].elements[a].euro_and_co2value[0].euro_value.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000269\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].not_equal_to[0].elements[a].euro_and_co2value[0].euro_value.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].not_equal_to[0].elements[a].euro_and_co2value[0].euro_value.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].not_equal_to[0].elements[a].euro_and_co2value[0].euro_value.value);
                                                                     }
                                                                     
@@ -5381,7 +5381,7 @@ namespace wind
                                                                     // Enumerated
                                                                     // INT32  min(0) max(8) span(9) dataType(Int32)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000270\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].not_equal_to[0].elements[a].euro_and_co2value[0].cop_value.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000270\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].not_equal_to[0].elements[a].euro_and_co2value[0].cop_value.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].not_equal_to[0].elements[a].euro_and_co2value[0].cop_value.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].not_equal_to[0].elements[a].euro_and_co2value[0].cop_value.value);
                                                                     }
                                                                     
@@ -5412,7 +5412,7 @@ namespace wind
                                                                 
                                                                 // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000272\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].not_equal_to[0].elements[a].engine_characteristics[0].value) << 
+                                                                    logger->print() << "|\033[38;5;94m000272\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].not_equal_to[0].elements[a].engine_characteristics[0].value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].not_equal_to[0].elements[a].engine_characteristics[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].not_equal_to[0].elements[a].engine_characteristics[0].value);
                                                                 }
                                                                 
@@ -5450,7 +5450,7 @@ namespace wind
                                                                     
                                                                     // UINT8  min(0) max(15) span(16) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000274\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].not_equal_to[0].elements[a].load_type[0].goods_type.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000274\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].not_equal_to[0].elements[a].load_type[0].goods_type.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].not_equal_to[0].elements[a].load_type[0].goods_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].not_equal_to[0].elements[a].load_type[0].goods_type.value);
                                                                     }
                                                                     
@@ -5486,7 +5486,7 @@ namespace wind
                                                                     // Enumerated
                                                                     // INT32  min(0) max(19) span(20) dataType(Int32)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000275\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].not_equal_to[0].elements[a].load_type[0].dangerous_goods_type.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000275\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].not_equal_to[0].elements[a].load_type[0].dangerous_goods_type.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].not_equal_to[0].elements[a].load_type[0].dangerous_goods_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].not_equal_to[0].elements[a].load_type[0].dangerous_goods_type.value);
                                                                     }
                                                                     
@@ -5509,7 +5509,7 @@ namespace wind
                                                                     // BitString
                                                                     // BIT_STRING  min(4) max(4) span(1)
                                                                     if(debug)
-                                                                        logger->debug() << "|\033[38;5;94m000276\033[0m| ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].not_equal_to[0].elements[a].load_type[0].special_transport_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].not_equal_to[0].elements[a].load_type[0].special_transport_type.values.size());
+                                                                        logger->print() << "|\033[38;5;94m000276\033[0m| ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].not_equal_to[0].elements[a].load_type[0].special_transport_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].not_equal_to[0].elements[a].load_type[0].special_transport_type.values.size());
                                                                     
                                                                     if(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].not_equal_to[0].elements[a].load_type[0].special_transport_type.values.size() < 4) {
                                                                             logger->warning() << "Error: Value in 'ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].not_equal_to[0].elements[a].load_type[0].special_transport_type.value' " << (ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].not_equal_to[0].elements[a].load_type[0].special_transport_type.values.size()) << " is less than allowable (4); message dropped.";
@@ -5543,7 +5543,7 @@ namespace wind
                                                                 // Enumerated
                                                                 // INT32  min(0) max(15) span(16) dataType(Int32)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000278\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].not_equal_to[0].elements[a].usage[0].value) << 
+                                                                    logger->print() << "|\033[38;5;94m000278\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].not_equal_to[0].elements[a].usage[0].value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].not_equal_to[0].elements[a].usage[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].not_equal_to[0].elements[a].usage[0].value);
                                                                 }
                                                                 
@@ -5598,7 +5598,7 @@ namespace wind
                                                                 
                                                                 // UINT8  min(0) max(3) span(4) dataType(UInt8)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000280\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].comparison_operator.value) << 
+                                                                    logger->print() << "|\033[38;5;94m000280\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].comparison_operator.value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].comparison_operator.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].comparison_operator.value);
                                                                 }
                                                                 
@@ -5644,7 +5644,7 @@ namespace wind
                                                                     
                                                                     // UINT8  min(0) max(7) span(8) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000282\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.number_of_axles[0].value) << 
+                                                                        logger->print() << "|\033[38;5;94m000282\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.number_of_axles[0].value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.number_of_axles[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.number_of_axles[0].value);
                                                                     }
                                                                     
@@ -5682,7 +5682,7 @@ namespace wind
                                                                         
                                                                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000284\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.vehicle_dimensions[0].vehicle_length_overall.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000284\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.vehicle_dimensions[0].vehicle_length_overall.value) << 
                                                                                          " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.vehicle_dimensions[0].vehicle_length_overall.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.vehicle_dimensions[0].vehicle_length_overall.value);
                                                                         }
                                                                         
@@ -5706,7 +5706,7 @@ namespace wind
                                                                         
                                                                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000285\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.vehicle_dimensions[0].vehicle_heigth_overall.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000285\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.vehicle_dimensions[0].vehicle_heigth_overall.value) << 
                                                                                          " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.vehicle_dimensions[0].vehicle_heigth_overall.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.vehicle_dimensions[0].vehicle_heigth_overall.value);
                                                                         }
                                                                         
@@ -5730,7 +5730,7 @@ namespace wind
                                                                         
                                                                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000286\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.vehicle_dimensions[0].vehicle_width_overall.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000286\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.vehicle_dimensions[0].vehicle_width_overall.value) << 
                                                                                          " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.vehicle_dimensions[0].vehicle_width_overall.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.vehicle_dimensions[0].vehicle_width_overall.value);
                                                                         }
                                                                         
@@ -5768,7 +5768,7 @@ namespace wind
                                                                         
                                                                         // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000288\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.vehicle_weight_limits[0].vehicle_max_laden_weight.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000288\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.vehicle_weight_limits[0].vehicle_max_laden_weight.value) << 
                                                                                          " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.vehicle_weight_limits[0].vehicle_max_laden_weight.value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.vehicle_weight_limits[0].vehicle_max_laden_weight.value;
                                                                         }
                                                                         
@@ -5792,7 +5792,7 @@ namespace wind
                                                                         
                                                                         // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000289\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.vehicle_weight_limits[0].vehicle_train_maximum_weight.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000289\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.vehicle_weight_limits[0].vehicle_train_maximum_weight.value) << 
                                                                                          " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.vehicle_weight_limits[0].vehicle_train_maximum_weight.value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.vehicle_weight_limits[0].vehicle_train_maximum_weight.value;
                                                                         }
                                                                         
@@ -5816,7 +5816,7 @@ namespace wind
                                                                         
                                                                         // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000290\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.vehicle_weight_limits[0].vehicle_weight_unladen.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000290\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.vehicle_weight_limits[0].vehicle_weight_unladen.value) << 
                                                                                          " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.vehicle_weight_limits[0].vehicle_weight_unladen.value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.vehicle_weight_limits[0].vehicle_weight_unladen.value;
                                                                         }
                                                                         
@@ -5856,7 +5856,7 @@ namespace wind
                                                                         
                                                                         // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000292\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.axle_weight_limits[0].max_ladenweight_on_axle1.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000292\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.axle_weight_limits[0].max_ladenweight_on_axle1.value) << 
                                                                                          " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.axle_weight_limits[0].max_ladenweight_on_axle1.value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.axle_weight_limits[0].max_ladenweight_on_axle1.value;
                                                                         }
                                                                         
@@ -5880,7 +5880,7 @@ namespace wind
                                                                         
                                                                         // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000293\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.axle_weight_limits[0].max_ladenweight_on_axle2.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000293\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.axle_weight_limits[0].max_ladenweight_on_axle2.value) << 
                                                                                          " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.axle_weight_limits[0].max_ladenweight_on_axle2.value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.axle_weight_limits[0].max_ladenweight_on_axle2.value;
                                                                         }
                                                                         
@@ -5904,7 +5904,7 @@ namespace wind
                                                                         
                                                                         // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000294\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.axle_weight_limits[0].max_ladenweight_on_axle3.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000294\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.axle_weight_limits[0].max_ladenweight_on_axle3.value) << 
                                                                                          " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.axle_weight_limits[0].max_ladenweight_on_axle3.value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.axle_weight_limits[0].max_ladenweight_on_axle3.value;
                                                                         }
                                                                         
@@ -5928,7 +5928,7 @@ namespace wind
                                                                         
                                                                         // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000295\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.axle_weight_limits[0].max_ladenweight_on_axle4.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000295\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.axle_weight_limits[0].max_ladenweight_on_axle4.value) << 
                                                                                          " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.axle_weight_limits[0].max_ladenweight_on_axle4.value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.axle_weight_limits[0].max_ladenweight_on_axle4.value;
                                                                         }
                                                                         
@@ -5952,7 +5952,7 @@ namespace wind
                                                                         
                                                                         // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000296\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.axle_weight_limits[0].max_ladenweight_on_axle5.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000296\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.axle_weight_limits[0].max_ladenweight_on_axle5.value) << 
                                                                                          " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.axle_weight_limits[0].max_ladenweight_on_axle5.value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.axle_weight_limits[0].max_ladenweight_on_axle5.value;
                                                                         }
                                                                         
@@ -5989,7 +5989,7 @@ namespace wind
                                                                         
                                                                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000298\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.passenger_capacity[0].number_of_seats.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000298\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.passenger_capacity[0].number_of_seats.value) << 
                                                                                          " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.passenger_capacity[0].number_of_seats.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.passenger_capacity[0].number_of_seats.value);
                                                                         }
                                                                         
@@ -6013,7 +6013,7 @@ namespace wind
                                                                         
                                                                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000299\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.passenger_capacity[0].number_of_standing_places.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000299\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.passenger_capacity[0].number_of_standing_places.value) << 
                                                                                          " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.passenger_capacity[0].number_of_standing_places.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.passenger_capacity[0].number_of_standing_places.value);
                                                                         }
                                                                         
@@ -6052,7 +6052,7 @@ namespace wind
                                                                         // Enumerated
                                                                         // INT32  min(0) max(1) span(2) dataType(Int32)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000301\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.exhaust_emission_values[0].unit_type.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000301\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.exhaust_emission_values[0].unit_type.value) << 
                                                                                          " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.exhaust_emission_values[0].unit_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.exhaust_emission_values[0].unit_type.value);
                                                                         }
                                                                         
@@ -6076,7 +6076,7 @@ namespace wind
                                                                         
                                                                         // UINT16  min(0) max(32767) span(32768) dataType(UInt16)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000302\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.exhaust_emission_values[0].emission_co.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000302\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.exhaust_emission_values[0].emission_co.value) << 
                                                                                          " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.exhaust_emission_values[0].emission_co.value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.exhaust_emission_values[0].emission_co.value;
                                                                         }
                                                                         
@@ -6100,7 +6100,7 @@ namespace wind
                                                                         
                                                                         // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000303\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.exhaust_emission_values[0].emission_hc.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000303\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.exhaust_emission_values[0].emission_hc.value) << 
                                                                                          " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.exhaust_emission_values[0].emission_hc.value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.exhaust_emission_values[0].emission_hc.value;
                                                                         }
                                                                         
@@ -6124,7 +6124,7 @@ namespace wind
                                                                         
                                                                         // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000304\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.exhaust_emission_values[0].emission_nox.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000304\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.exhaust_emission_values[0].emission_nox.value) << 
                                                                                          " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.exhaust_emission_values[0].emission_nox.value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.exhaust_emission_values[0].emission_nox.value;
                                                                         }
                                                                         
@@ -6148,7 +6148,7 @@ namespace wind
                                                                         
                                                                         // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000305\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.exhaust_emission_values[0].emission_hcnox.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000305\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.exhaust_emission_values[0].emission_hcnox.value) << 
                                                                                          " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.exhaust_emission_values[0].emission_hcnox.value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.exhaust_emission_values[0].emission_hcnox.value;
                                                                         }
                                                                         
@@ -6190,7 +6190,7 @@ namespace wind
                                                                             // Enumerated
                                                                             // INT32  min(0) max(1) span(2) dataType(Int32)
                                                                             if(debug) {
-                                                                                logger->debug() << "|\033[38;5;94m000307\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.diesel_emission_values[0].particulate.unit_type.value) << 
+                                                                                logger->print() << "|\033[38;5;94m000307\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.diesel_emission_values[0].particulate.unit_type.value) << 
                                                                                              " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.diesel_emission_values[0].particulate.unit_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.diesel_emission_values[0].particulate.unit_type.value);
                                                                             }
                                                                             
@@ -6214,7 +6214,7 @@ namespace wind
                                                                             
                                                                             // UINT16  min(0) max(32767) span(32768) dataType(UInt16)
                                                                             if(debug) {
-                                                                                logger->debug() << "|\033[38;5;94m000308\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.diesel_emission_values[0].particulate.value.value) << 
+                                                                                logger->print() << "|\033[38;5;94m000308\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.diesel_emission_values[0].particulate.value.value) << 
                                                                                              " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.diesel_emission_values[0].particulate.value.value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.diesel_emission_values[0].particulate.value.value;
                                                                             }
                                                                             
@@ -6238,7 +6238,7 @@ namespace wind
                                                                         
                                                                         // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000309\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.diesel_emission_values[0].absorption_coeff.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000309\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.diesel_emission_values[0].absorption_coeff.value) << 
                                                                                          " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.diesel_emission_values[0].absorption_coeff.value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.diesel_emission_values[0].absorption_coeff.value;
                                                                         }
                                                                         
@@ -6275,7 +6275,7 @@ namespace wind
                                                                         
                                                                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000311\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.sound_level[0].soundstationary.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000311\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.sound_level[0].soundstationary.value) << 
                                                                                          " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.sound_level[0].soundstationary.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.sound_level[0].soundstationary.value);
                                                                         }
                                                                         
@@ -6299,7 +6299,7 @@ namespace wind
                                                                         
                                                                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000312\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.sound_level[0].sounddriveby.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000312\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.sound_level[0].sounddriveby.value) << 
                                                                                          " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.sound_level[0].sounddriveby.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].trailer[0].elements[x].ranges[0].elements[c].limits.sound_level[0].sounddriveby.value);
                                                                         }
                                                                         
@@ -6380,7 +6380,7 @@ namespace wind
                                                         
                                                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                         if(debug) {
-                                                            logger->debug() << "|\033[38;5;94m000315\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].equal_to.elements[d].simple_vehicle_type[0].value) << 
+                                                            logger->print() << "|\033[38;5;94m000315\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].equal_to.elements[d].simple_vehicle_type[0].value) << 
                                                                          " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].equal_to.elements[d].simple_vehicle_type[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].equal_to.elements[d].simple_vehicle_type[0].value);
                                                         }
                                                         
@@ -6424,7 +6424,7 @@ namespace wind
                                                             // Enumerated
                                                             // INT32  min(0) max(6) span(7) dataType(Int32)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m000318\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].equal_to.elements[d].eu_vehicle_category_code[0].eu_vehicle_category_l[0].value) << 
+                                                                logger->print() << "|\033[38;5;94m000318\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].equal_to.elements[d].eu_vehicle_category_code[0].eu_vehicle_category_l[0].value) << 
                                                                              " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].equal_to.elements[d].eu_vehicle_category_code[0].eu_vehicle_category_l[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].equal_to.elements[d].eu_vehicle_category_code[0].eu_vehicle_category_l[0].value);
                                                             }
                                                             
@@ -6454,7 +6454,7 @@ namespace wind
                                                             // Enumerated
                                                             // INT32  min(0) max(2) span(3) dataType(Int32)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m000320\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].equal_to.elements[d].eu_vehicle_category_code[0].eu_vehicle_category_m[0].value) << 
+                                                                logger->print() << "|\033[38;5;94m000320\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].equal_to.elements[d].eu_vehicle_category_code[0].eu_vehicle_category_m[0].value) << 
                                                                              " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].equal_to.elements[d].eu_vehicle_category_code[0].eu_vehicle_category_m[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].equal_to.elements[d].eu_vehicle_category_code[0].eu_vehicle_category_m[0].value);
                                                             }
                                                             
@@ -6484,7 +6484,7 @@ namespace wind
                                                             // Enumerated
                                                             // INT32  min(0) max(2) span(3) dataType(Int32)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m000322\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].equal_to.elements[d].eu_vehicle_category_code[0].eu_vehicle_category_n[0].value) << 
+                                                                logger->print() << "|\033[38;5;94m000322\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].equal_to.elements[d].eu_vehicle_category_code[0].eu_vehicle_category_n[0].value) << 
                                                                              " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].equal_to.elements[d].eu_vehicle_category_code[0].eu_vehicle_category_n[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].equal_to.elements[d].eu_vehicle_category_code[0].eu_vehicle_category_n[0].value);
                                                             }
                                                             
@@ -6514,7 +6514,7 @@ namespace wind
                                                             // Enumerated
                                                             // INT32  min(0) max(3) span(4) dataType(Int32)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m000324\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].equal_to.elements[d].eu_vehicle_category_code[0].eu_vehicle_category_o[0].value) << 
+                                                                logger->print() << "|\033[38;5;94m000324\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].equal_to.elements[d].eu_vehicle_category_code[0].eu_vehicle_category_o[0].value) << 
                                                                              " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].equal_to.elements[d].eu_vehicle_category_code[0].eu_vehicle_category_o[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].equal_to.elements[d].eu_vehicle_category_code[0].eu_vehicle_category_o[0].value);
                                                             }
                                                             
@@ -6552,7 +6552,7 @@ namespace wind
                                                         
                                                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                         if(debug) {
-                                                            logger->debug() << "|\033[38;5;94m000326\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].equal_to.elements[d].iso3833_vehicle_type[0].value) << 
+                                                            logger->print() << "|\033[38;5;94m000326\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].equal_to.elements[d].iso3833_vehicle_type[0].value) << 
                                                                          " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].equal_to.elements[d].iso3833_vehicle_type[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].equal_to.elements[d].iso3833_vehicle_type[0].value);
                                                         }
                                                         
@@ -6588,7 +6588,7 @@ namespace wind
                                                             // Enumerated
                                                             // INT32  min(0) max(15) span(16) dataType(Int32)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m000328\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].equal_to.elements[d].euro_and_co2value[0].euro_value.value) << 
+                                                                logger->print() << "|\033[38;5;94m000328\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].equal_to.elements[d].euro_and_co2value[0].euro_value.value) << 
                                                                              " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].equal_to.elements[d].euro_and_co2value[0].euro_value.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].equal_to.elements[d].euro_and_co2value[0].euro_value.value);
                                                             }
                                                             
@@ -6611,7 +6611,7 @@ namespace wind
                                                             // Enumerated
                                                             // INT32  min(0) max(8) span(9) dataType(Int32)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m000329\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].equal_to.elements[d].euro_and_co2value[0].cop_value.value) << 
+                                                                logger->print() << "|\033[38;5;94m000329\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].equal_to.elements[d].euro_and_co2value[0].cop_value.value) << 
                                                                              " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].equal_to.elements[d].euro_and_co2value[0].cop_value.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].equal_to.elements[d].euro_and_co2value[0].cop_value.value);
                                                             }
                                                             
@@ -6642,7 +6642,7 @@ namespace wind
                                                         
                                                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                         if(debug) {
-                                                            logger->debug() << "|\033[38;5;94m000331\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].equal_to.elements[d].engine_characteristics[0].value) << 
+                                                            logger->print() << "|\033[38;5;94m000331\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].equal_to.elements[d].engine_characteristics[0].value) << 
                                                                          " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].equal_to.elements[d].engine_characteristics[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].equal_to.elements[d].engine_characteristics[0].value);
                                                         }
                                                         
@@ -6680,7 +6680,7 @@ namespace wind
                                                             
                                                             // UINT8  min(0) max(15) span(16) dataType(UInt8)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m000333\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].equal_to.elements[d].load_type[0].goods_type.value) << 
+                                                                logger->print() << "|\033[38;5;94m000333\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].equal_to.elements[d].load_type[0].goods_type.value) << 
                                                                              " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].equal_to.elements[d].load_type[0].goods_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].equal_to.elements[d].load_type[0].goods_type.value);
                                                             }
                                                             
@@ -6716,7 +6716,7 @@ namespace wind
                                                             // Enumerated
                                                             // INT32  min(0) max(19) span(20) dataType(Int32)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m000334\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].equal_to.elements[d].load_type[0].dangerous_goods_type.value) << 
+                                                                logger->print() << "|\033[38;5;94m000334\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].equal_to.elements[d].load_type[0].dangerous_goods_type.value) << 
                                                                              " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].equal_to.elements[d].load_type[0].dangerous_goods_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].equal_to.elements[d].load_type[0].dangerous_goods_type.value);
                                                             }
                                                             
@@ -6739,7 +6739,7 @@ namespace wind
                                                             // BitString
                                                             // BIT_STRING  min(4) max(4) span(1)
                                                             if(debug)
-                                                                logger->debug() << "|\033[38;5;94m000335\033[0m| ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].equal_to.elements[d].load_type[0].special_transport_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].equal_to.elements[d].load_type[0].special_transport_type.values.size());
+                                                                logger->print() << "|\033[38;5;94m000335\033[0m| ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].equal_to.elements[d].load_type[0].special_transport_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].equal_to.elements[d].load_type[0].special_transport_type.values.size());
                                                             
                                                             if(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].equal_to.elements[d].load_type[0].special_transport_type.values.size() < 4) {
                                                                     logger->warning() << "Error: Value in 'ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].equal_to.elements[d].load_type[0].special_transport_type.value' " << (ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].equal_to.elements[d].load_type[0].special_transport_type.values.size()) << " is less than allowable (4); message dropped.";
@@ -6773,7 +6773,7 @@ namespace wind
                                                         // Enumerated
                                                         // INT32  min(0) max(15) span(16) dataType(Int32)
                                                         if(debug) {
-                                                            logger->debug() << "|\033[38;5;94m000337\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].equal_to.elements[d].usage[0].value) << 
+                                                            logger->print() << "|\033[38;5;94m000337\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].equal_to.elements[d].usage[0].value) << 
                                                                          " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].equal_to.elements[d].usage[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].equal_to.elements[d].usage[0].value);
                                                         }
                                                         
@@ -6841,7 +6841,7 @@ namespace wind
                                                         
                                                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                         if(debug) {
-                                                            logger->debug() << "|\033[38;5;94m000340\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].not_equal_to.elements[f].simple_vehicle_type[0].value) << 
+                                                            logger->print() << "|\033[38;5;94m000340\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].not_equal_to.elements[f].simple_vehicle_type[0].value) << 
                                                                          " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].not_equal_to.elements[f].simple_vehicle_type[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].not_equal_to.elements[f].simple_vehicle_type[0].value);
                                                         }
                                                         
@@ -6885,7 +6885,7 @@ namespace wind
                                                             // Enumerated
                                                             // INT32  min(0) max(6) span(7) dataType(Int32)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m000343\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].not_equal_to.elements[f].eu_vehicle_category_code[0].eu_vehicle_category_l[0].value) << 
+                                                                logger->print() << "|\033[38;5;94m000343\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].not_equal_to.elements[f].eu_vehicle_category_code[0].eu_vehicle_category_l[0].value) << 
                                                                              " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].not_equal_to.elements[f].eu_vehicle_category_code[0].eu_vehicle_category_l[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].not_equal_to.elements[f].eu_vehicle_category_code[0].eu_vehicle_category_l[0].value);
                                                             }
                                                             
@@ -6915,7 +6915,7 @@ namespace wind
                                                             // Enumerated
                                                             // INT32  min(0) max(2) span(3) dataType(Int32)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m000345\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].not_equal_to.elements[f].eu_vehicle_category_code[0].eu_vehicle_category_m[0].value) << 
+                                                                logger->print() << "|\033[38;5;94m000345\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].not_equal_to.elements[f].eu_vehicle_category_code[0].eu_vehicle_category_m[0].value) << 
                                                                              " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].not_equal_to.elements[f].eu_vehicle_category_code[0].eu_vehicle_category_m[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].not_equal_to.elements[f].eu_vehicle_category_code[0].eu_vehicle_category_m[0].value);
                                                             }
                                                             
@@ -6945,7 +6945,7 @@ namespace wind
                                                             // Enumerated
                                                             // INT32  min(0) max(2) span(3) dataType(Int32)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m000347\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].not_equal_to.elements[f].eu_vehicle_category_code[0].eu_vehicle_category_n[0].value) << 
+                                                                logger->print() << "|\033[38;5;94m000347\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].not_equal_to.elements[f].eu_vehicle_category_code[0].eu_vehicle_category_n[0].value) << 
                                                                              " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].not_equal_to.elements[f].eu_vehicle_category_code[0].eu_vehicle_category_n[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].not_equal_to.elements[f].eu_vehicle_category_code[0].eu_vehicle_category_n[0].value);
                                                             }
                                                             
@@ -6975,7 +6975,7 @@ namespace wind
                                                             // Enumerated
                                                             // INT32  min(0) max(3) span(4) dataType(Int32)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m000349\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].not_equal_to.elements[f].eu_vehicle_category_code[0].eu_vehicle_category_o[0].value) << 
+                                                                logger->print() << "|\033[38;5;94m000349\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].not_equal_to.elements[f].eu_vehicle_category_code[0].eu_vehicle_category_o[0].value) << 
                                                                              " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].not_equal_to.elements[f].eu_vehicle_category_code[0].eu_vehicle_category_o[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].not_equal_to.elements[f].eu_vehicle_category_code[0].eu_vehicle_category_o[0].value);
                                                             }
                                                             
@@ -7013,7 +7013,7 @@ namespace wind
                                                         
                                                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                         if(debug) {
-                                                            logger->debug() << "|\033[38;5;94m000351\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].not_equal_to.elements[f].iso3833_vehicle_type[0].value) << 
+                                                            logger->print() << "|\033[38;5;94m000351\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].not_equal_to.elements[f].iso3833_vehicle_type[0].value) << 
                                                                          " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].not_equal_to.elements[f].iso3833_vehicle_type[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].not_equal_to.elements[f].iso3833_vehicle_type[0].value);
                                                         }
                                                         
@@ -7049,7 +7049,7 @@ namespace wind
                                                             // Enumerated
                                                             // INT32  min(0) max(15) span(16) dataType(Int32)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m000353\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].not_equal_to.elements[f].euro_and_co2value[0].euro_value.value) << 
+                                                                logger->print() << "|\033[38;5;94m000353\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].not_equal_to.elements[f].euro_and_co2value[0].euro_value.value) << 
                                                                              " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].not_equal_to.elements[f].euro_and_co2value[0].euro_value.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].not_equal_to.elements[f].euro_and_co2value[0].euro_value.value);
                                                             }
                                                             
@@ -7072,7 +7072,7 @@ namespace wind
                                                             // Enumerated
                                                             // INT32  min(0) max(8) span(9) dataType(Int32)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m000354\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].not_equal_to.elements[f].euro_and_co2value[0].cop_value.value) << 
+                                                                logger->print() << "|\033[38;5;94m000354\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].not_equal_to.elements[f].euro_and_co2value[0].cop_value.value) << 
                                                                              " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].not_equal_to.elements[f].euro_and_co2value[0].cop_value.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].not_equal_to.elements[f].euro_and_co2value[0].cop_value.value);
                                                             }
                                                             
@@ -7103,7 +7103,7 @@ namespace wind
                                                         
                                                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                         if(debug) {
-                                                            logger->debug() << "|\033[38;5;94m000356\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].not_equal_to.elements[f].engine_characteristics[0].value) << 
+                                                            logger->print() << "|\033[38;5;94m000356\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].not_equal_to.elements[f].engine_characteristics[0].value) << 
                                                                          " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].not_equal_to.elements[f].engine_characteristics[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].not_equal_to.elements[f].engine_characteristics[0].value);
                                                         }
                                                         
@@ -7141,7 +7141,7 @@ namespace wind
                                                             
                                                             // UINT8  min(0) max(15) span(16) dataType(UInt8)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m000358\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].not_equal_to.elements[f].load_type[0].goods_type.value) << 
+                                                                logger->print() << "|\033[38;5;94m000358\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].not_equal_to.elements[f].load_type[0].goods_type.value) << 
                                                                              " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].not_equal_to.elements[f].load_type[0].goods_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].not_equal_to.elements[f].load_type[0].goods_type.value);
                                                             }
                                                             
@@ -7177,7 +7177,7 @@ namespace wind
                                                             // Enumerated
                                                             // INT32  min(0) max(19) span(20) dataType(Int32)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m000359\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].not_equal_to.elements[f].load_type[0].dangerous_goods_type.value) << 
+                                                                logger->print() << "|\033[38;5;94m000359\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].not_equal_to.elements[f].load_type[0].dangerous_goods_type.value) << 
                                                                              " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].not_equal_to.elements[f].load_type[0].dangerous_goods_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].not_equal_to.elements[f].load_type[0].dangerous_goods_type.value);
                                                             }
                                                             
@@ -7200,7 +7200,7 @@ namespace wind
                                                             // BitString
                                                             // BIT_STRING  min(4) max(4) span(1)
                                                             if(debug)
-                                                                logger->debug() << "|\033[38;5;94m000360\033[0m| ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].not_equal_to.elements[f].load_type[0].special_transport_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].not_equal_to.elements[f].load_type[0].special_transport_type.values.size());
+                                                                logger->print() << "|\033[38;5;94m000360\033[0m| ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].not_equal_to.elements[f].load_type[0].special_transport_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].not_equal_to.elements[f].load_type[0].special_transport_type.values.size());
                                                             
                                                             if(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].not_equal_to.elements[f].load_type[0].special_transport_type.values.size() < 4) {
                                                                     logger->warning() << "Error: Value in 'ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].not_equal_to.elements[f].load_type[0].special_transport_type.value' " << (ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].not_equal_to.elements[f].load_type[0].special_transport_type.values.size()) << " is less than allowable (4); message dropped.";
@@ -7234,7 +7234,7 @@ namespace wind
                                                         // Enumerated
                                                         // INT32  min(0) max(15) span(16) dataType(Int32)
                                                         if(debug) {
-                                                            logger->debug() << "|\033[38;5;94m000362\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].not_equal_to.elements[f].usage[0].value) << 
+                                                            logger->print() << "|\033[38;5;94m000362\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].not_equal_to.elements[f].usage[0].value) << 
                                                                          " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].not_equal_to.elements[f].usage[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].not_equal_to.elements[f].usage[0].value);
                                                         }
                                                         
@@ -7287,7 +7287,7 @@ namespace wind
                                                         
                                                         // UINT8  min(0) max(3) span(4) dataType(UInt8)
                                                         if(debug) {
-                                                            logger->debug() << "|\033[38;5;94m000364\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].comparison_operator.value) << 
+                                                            logger->print() << "|\033[38;5;94m000364\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].comparison_operator.value) << 
                                                                          " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].comparison_operator.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].comparison_operator.value);
                                                         }
                                                         
@@ -7333,7 +7333,7 @@ namespace wind
                                                             
                                                             // UINT8  min(0) max(7) span(8) dataType(UInt8)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m000366\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.number_of_axles[0].value) << 
+                                                                logger->print() << "|\033[38;5;94m000366\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.number_of_axles[0].value) << 
                                                                              " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.number_of_axles[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.number_of_axles[0].value);
                                                             }
                                                             
@@ -7371,7 +7371,7 @@ namespace wind
                                                                 
                                                                 // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000368\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.vehicle_dimensions[0].vehicle_length_overall.value) << 
+                                                                    logger->print() << "|\033[38;5;94m000368\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.vehicle_dimensions[0].vehicle_length_overall.value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.vehicle_dimensions[0].vehicle_length_overall.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.vehicle_dimensions[0].vehicle_length_overall.value);
                                                                 }
                                                                 
@@ -7395,7 +7395,7 @@ namespace wind
                                                                 
                                                                 // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000369\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.vehicle_dimensions[0].vehicle_heigth_overall.value) << 
+                                                                    logger->print() << "|\033[38;5;94m000369\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.vehicle_dimensions[0].vehicle_heigth_overall.value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.vehicle_dimensions[0].vehicle_heigth_overall.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.vehicle_dimensions[0].vehicle_heigth_overall.value);
                                                                 }
                                                                 
@@ -7419,7 +7419,7 @@ namespace wind
                                                                 
                                                                 // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000370\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.vehicle_dimensions[0].vehicle_width_overall.value) << 
+                                                                    logger->print() << "|\033[38;5;94m000370\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.vehicle_dimensions[0].vehicle_width_overall.value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.vehicle_dimensions[0].vehicle_width_overall.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.vehicle_dimensions[0].vehicle_width_overall.value);
                                                                 }
                                                                 
@@ -7457,7 +7457,7 @@ namespace wind
                                                                 
                                                                 // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000372\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.vehicle_weight_limits[0].vehicle_max_laden_weight.value) << 
+                                                                    logger->print() << "|\033[38;5;94m000372\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.vehicle_weight_limits[0].vehicle_max_laden_weight.value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.vehicle_weight_limits[0].vehicle_max_laden_weight.value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.vehicle_weight_limits[0].vehicle_max_laden_weight.value;
                                                                 }
                                                                 
@@ -7481,7 +7481,7 @@ namespace wind
                                                                 
                                                                 // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000373\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.vehicle_weight_limits[0].vehicle_train_maximum_weight.value) << 
+                                                                    logger->print() << "|\033[38;5;94m000373\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.vehicle_weight_limits[0].vehicle_train_maximum_weight.value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.vehicle_weight_limits[0].vehicle_train_maximum_weight.value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.vehicle_weight_limits[0].vehicle_train_maximum_weight.value;
                                                                 }
                                                                 
@@ -7505,7 +7505,7 @@ namespace wind
                                                                 
                                                                 // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000374\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.vehicle_weight_limits[0].vehicle_weight_unladen.value) << 
+                                                                    logger->print() << "|\033[38;5;94m000374\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.vehicle_weight_limits[0].vehicle_weight_unladen.value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.vehicle_weight_limits[0].vehicle_weight_unladen.value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.vehicle_weight_limits[0].vehicle_weight_unladen.value;
                                                                 }
                                                                 
@@ -7545,7 +7545,7 @@ namespace wind
                                                                 
                                                                 // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000376\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.axle_weight_limits[0].max_ladenweight_on_axle1.value) << 
+                                                                    logger->print() << "|\033[38;5;94m000376\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.axle_weight_limits[0].max_ladenweight_on_axle1.value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.axle_weight_limits[0].max_ladenweight_on_axle1.value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.axle_weight_limits[0].max_ladenweight_on_axle1.value;
                                                                 }
                                                                 
@@ -7569,7 +7569,7 @@ namespace wind
                                                                 
                                                                 // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000377\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.axle_weight_limits[0].max_ladenweight_on_axle2.value) << 
+                                                                    logger->print() << "|\033[38;5;94m000377\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.axle_weight_limits[0].max_ladenweight_on_axle2.value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.axle_weight_limits[0].max_ladenweight_on_axle2.value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.axle_weight_limits[0].max_ladenweight_on_axle2.value;
                                                                 }
                                                                 
@@ -7593,7 +7593,7 @@ namespace wind
                                                                 
                                                                 // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000378\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.axle_weight_limits[0].max_ladenweight_on_axle3.value) << 
+                                                                    logger->print() << "|\033[38;5;94m000378\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.axle_weight_limits[0].max_ladenweight_on_axle3.value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.axle_weight_limits[0].max_ladenweight_on_axle3.value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.axle_weight_limits[0].max_ladenweight_on_axle3.value;
                                                                 }
                                                                 
@@ -7617,7 +7617,7 @@ namespace wind
                                                                 
                                                                 // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000379\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.axle_weight_limits[0].max_ladenweight_on_axle4.value) << 
+                                                                    logger->print() << "|\033[38;5;94m000379\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.axle_weight_limits[0].max_ladenweight_on_axle4.value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.axle_weight_limits[0].max_ladenweight_on_axle4.value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.axle_weight_limits[0].max_ladenweight_on_axle4.value;
                                                                 }
                                                                 
@@ -7641,7 +7641,7 @@ namespace wind
                                                                 
                                                                 // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000380\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.axle_weight_limits[0].max_ladenweight_on_axle5.value) << 
+                                                                    logger->print() << "|\033[38;5;94m000380\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.axle_weight_limits[0].max_ladenweight_on_axle5.value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.axle_weight_limits[0].max_ladenweight_on_axle5.value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.axle_weight_limits[0].max_ladenweight_on_axle5.value;
                                                                 }
                                                                 
@@ -7678,7 +7678,7 @@ namespace wind
                                                                 
                                                                 // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000382\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.passenger_capacity[0].number_of_seats.value) << 
+                                                                    logger->print() << "|\033[38;5;94m000382\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.passenger_capacity[0].number_of_seats.value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.passenger_capacity[0].number_of_seats.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.passenger_capacity[0].number_of_seats.value);
                                                                 }
                                                                 
@@ -7702,7 +7702,7 @@ namespace wind
                                                                 
                                                                 // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000383\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.passenger_capacity[0].number_of_standing_places.value) << 
+                                                                    logger->print() << "|\033[38;5;94m000383\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.passenger_capacity[0].number_of_standing_places.value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.passenger_capacity[0].number_of_standing_places.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.passenger_capacity[0].number_of_standing_places.value);
                                                                 }
                                                                 
@@ -7741,7 +7741,7 @@ namespace wind
                                                                 // Enumerated
                                                                 // INT32  min(0) max(1) span(2) dataType(Int32)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000385\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.exhaust_emission_values[0].unit_type.value) << 
+                                                                    logger->print() << "|\033[38;5;94m000385\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.exhaust_emission_values[0].unit_type.value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.exhaust_emission_values[0].unit_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.exhaust_emission_values[0].unit_type.value);
                                                                 }
                                                                 
@@ -7765,7 +7765,7 @@ namespace wind
                                                                 
                                                                 // UINT16  min(0) max(32767) span(32768) dataType(UInt16)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000386\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.exhaust_emission_values[0].emission_co.value) << 
+                                                                    logger->print() << "|\033[38;5;94m000386\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.exhaust_emission_values[0].emission_co.value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.exhaust_emission_values[0].emission_co.value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.exhaust_emission_values[0].emission_co.value;
                                                                 }
                                                                 
@@ -7789,7 +7789,7 @@ namespace wind
                                                                 
                                                                 // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000387\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.exhaust_emission_values[0].emission_hc.value) << 
+                                                                    logger->print() << "|\033[38;5;94m000387\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.exhaust_emission_values[0].emission_hc.value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.exhaust_emission_values[0].emission_hc.value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.exhaust_emission_values[0].emission_hc.value;
                                                                 }
                                                                 
@@ -7813,7 +7813,7 @@ namespace wind
                                                                 
                                                                 // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000388\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.exhaust_emission_values[0].emission_nox.value) << 
+                                                                    logger->print() << "|\033[38;5;94m000388\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.exhaust_emission_values[0].emission_nox.value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.exhaust_emission_values[0].emission_nox.value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.exhaust_emission_values[0].emission_nox.value;
                                                                 }
                                                                 
@@ -7837,7 +7837,7 @@ namespace wind
                                                                 
                                                                 // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000389\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.exhaust_emission_values[0].emission_hcnox.value) << 
+                                                                    logger->print() << "|\033[38;5;94m000389\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.exhaust_emission_values[0].emission_hcnox.value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.exhaust_emission_values[0].emission_hcnox.value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.exhaust_emission_values[0].emission_hcnox.value;
                                                                 }
                                                                 
@@ -7879,7 +7879,7 @@ namespace wind
                                                                     // Enumerated
                                                                     // INT32  min(0) max(1) span(2) dataType(Int32)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000391\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.diesel_emission_values[0].particulate.unit_type.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000391\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.diesel_emission_values[0].particulate.unit_type.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.diesel_emission_values[0].particulate.unit_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.diesel_emission_values[0].particulate.unit_type.value);
                                                                     }
                                                                     
@@ -7903,7 +7903,7 @@ namespace wind
                                                                     
                                                                     // UINT16  min(0) max(32767) span(32768) dataType(UInt16)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000392\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.diesel_emission_values[0].particulate.value.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000392\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.diesel_emission_values[0].particulate.value.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.diesel_emission_values[0].particulate.value.value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.diesel_emission_values[0].particulate.value.value;
                                                                     }
                                                                     
@@ -7927,7 +7927,7 @@ namespace wind
                                                                 
                                                                 // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000393\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.diesel_emission_values[0].absorption_coeff.value) << 
+                                                                    logger->print() << "|\033[38;5;94m000393\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.diesel_emission_values[0].absorption_coeff.value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.diesel_emission_values[0].absorption_coeff.value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.diesel_emission_values[0].absorption_coeff.value;
                                                                 }
                                                                 
@@ -7964,7 +7964,7 @@ namespace wind
                                                                 
                                                                 // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000395\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.sound_level[0].soundstationary.value) << 
+                                                                    logger->print() << "|\033[38;5;94m000395\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.sound_level[0].soundstationary.value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.sound_level[0].soundstationary.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.sound_level[0].soundstationary.value);
                                                                 }
                                                                 
@@ -7988,7 +7988,7 @@ namespace wind
                                                                 
                                                                 // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000396\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.sound_level[0].sounddriveby.value) << 
+                                                                    logger->print() << "|\033[38;5;94m000396\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.sound_level[0].sounddriveby.value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.sound_level[0].sounddriveby.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].vehicle_characteristics[0].elements[r].train[0].ranges.elements[h].limits.sound_level[0].sounddriveby.value);
                                                                 }
                                                                 
@@ -8026,7 +8026,7 @@ namespace wind
                                 
                                 // UINT8  min(0) max(3) span(4) dataType(UInt8)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000397\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].driver_characteristics[0].value) << 
+                                    logger->print() << "|\033[38;5;94m000397\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].driver_characteristics[0].value) << 
                                                  " ivi.optional[0].elements[c].giv[0].elements[m].driver_characteristics[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].driver_characteristics[0].value);
                                 }
                                 
@@ -8052,7 +8052,7 @@ namespace wind
                                 
                                 // UINT8  min(1) max(4) span(4) dataType(UInt8)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000398\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].layout_id[0].value) << 
+                                    logger->print() << "|\033[38;5;94m000398\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].layout_id[0].value) << 
                                                  " ivi.optional[0].elements[c].giv[0].elements[m].layout_id[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].layout_id[0].value);
                                 }
                                 
@@ -8092,7 +8092,7 @@ namespace wind
                                 
                                 // UINT8  min(1) max(64) span(64) dataType(UInt8)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000399\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].pre_storedlayout_id[0].value) << 
+                                    logger->print() << "|\033[38;5;94m000399\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].pre_storedlayout_id[0].value) << 
                                                  " ivi.optional[0].elements[c].giv[0].elements[m].pre_storedlayout_id[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].pre_storedlayout_id[0].value);
                                 }
                                 
@@ -8149,7 +8149,7 @@ namespace wind
                                     char* _tmp_361 = (char*) buffer++;
                                     *_tmp_361 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].layout_component_id.size() != 0 ? 1 : 0);
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m000401\033[0m| Optional field layout_component_id = " << *_tmp_361;
+                                        logger->print() << "|\033[38;5;94m000401\033[0m| Optional field layout_component_id = " << *_tmp_361;
                                     
                                     if(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].layout_component_id.size() != 0) {
                                         // Field:  type(RSCode_layoutComponentId) name(layout_component_id) extGroup(0)
@@ -8157,7 +8157,7 @@ namespace wind
                                         
                                         // UINT8  min(1) max(4) span(4) dataType(UInt8)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000402\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].layout_component_id[0].value) << 
+                                            logger->print() << "|\033[38;5;94m000402\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].layout_component_id[0].value) << 
                                                          " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].layout_component_id[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].layout_component_id[0].value);
                                         }
                                         
@@ -8221,22 +8221,22 @@ namespace wind
                                             char* _tmp_364 = (char*) buffer++;
                                             *_tmp_364 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity.size() != 0 ? 1 : 0);
                                             if(debug)
-                                                logger->debug() << "|\033[38;5;94m000404\033[0m| Optional field validity = " << *_tmp_364;
+                                                logger->print() << "|\033[38;5;94m000404\033[0m| Optional field validity = " << *_tmp_364;
                                             char* _tmp_365 = (char*) buffer++;
                                             *_tmp_365 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].value.size() != 0 ? 1 : 0);
                                             if(debug)
-                                                logger->debug() << "|\033[38;5;94m000405\033[0m| Optional field value = " << *_tmp_365;
+                                                logger->print() << "|\033[38;5;94m000405\033[0m| Optional field value = " << *_tmp_365;
                                             char* _tmp_366 = (char*) buffer++;
                                             *_tmp_366 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].unit.size() != 0 ? 1 : 0);
                                             if(debug)
-                                                logger->debug() << "|\033[38;5;94m000406\033[0m| Optional field unit = " << *_tmp_366;
+                                                logger->print() << "|\033[38;5;94m000406\033[0m| Optional field unit = " << *_tmp_366;
                                             
                                             // Field:  type(VcClass) name(road_sign_class) extGroup(0)
                                             // Integer
                                             
                                             // UINT8  min(0) max(7) span(8) dataType(UInt8)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000407\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].road_sign_class.value) << 
+                                                logger->print() << "|\033[38;5;94m000407\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].road_sign_class.value) << 
                                                              " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].road_sign_class.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].road_sign_class.value);
                                             }
                                             
@@ -8260,7 +8260,7 @@ namespace wind
                                             
                                             // UINT8  min(1) max(64) span(64) dataType(UInt8)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000408\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].road_sign_code.value) << 
+                                                logger->print() << "|\033[38;5;94m000408\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].road_sign_code.value) << 
                                                              " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].road_sign_code.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].road_sign_code.value);
                                             }
                                             
@@ -8285,7 +8285,7 @@ namespace wind
                                             
                                             // UINT8  min(0) max(7) span(8) dataType(UInt8)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000409\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].vc_option.value) << 
+                                                logger->print() << "|\033[38;5;94m000409\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].vc_option.value) << 
                                                              " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].vc_option.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].vc_option.value);
                                             }
                                             
@@ -8332,27 +8332,27 @@ namespace wind
                                                         char* _tmp_371 = (char*) buffer++;
                                                         *_tmp_371 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].year.size() != 0 ? 1 : 0);
                                                         if(debug)
-                                                            logger->debug() << "|\033[38;5;94m000411\033[0m| Optional field year = " << *_tmp_371;
+                                                            logger->print() << "|\033[38;5;94m000411\033[0m| Optional field year = " << *_tmp_371;
                                                         char* _tmp_372 = (char*) buffer++;
                                                         *_tmp_372 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].month_day.size() != 0 ? 1 : 0);
                                                         if(debug)
-                                                            logger->debug() << "|\033[38;5;94m000412\033[0m| Optional field month_day = " << *_tmp_372;
+                                                            logger->print() << "|\033[38;5;94m000412\033[0m| Optional field month_day = " << *_tmp_372;
                                                         char* _tmp_373 = (char*) buffer++;
                                                         *_tmp_373 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].pmd.size() != 0 ? 1 : 0);
                                                         if(debug)
-                                                            logger->debug() << "|\033[38;5;94m000413\033[0m| Optional field pmd = " << *_tmp_373;
+                                                            logger->print() << "|\033[38;5;94m000413\033[0m| Optional field pmd = " << *_tmp_373;
                                                         char* _tmp_374 = (char*) buffer++;
                                                         *_tmp_374 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].hour_minutes.size() != 0 ? 1 : 0);
                                                         if(debug)
-                                                            logger->debug() << "|\033[38;5;94m000414\033[0m| Optional field hour_minutes = " << *_tmp_374;
+                                                            logger->print() << "|\033[38;5;94m000414\033[0m| Optional field hour_minutes = " << *_tmp_374;
                                                         char* _tmp_375 = (char*) buffer++;
                                                         *_tmp_375 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].day_of_week.size() != 0 ? 1 : 0);
                                                         if(debug)
-                                                            logger->debug() << "|\033[38;5;94m000415\033[0m| Optional field day_of_week = " << *_tmp_375;
+                                                            logger->print() << "|\033[38;5;94m000415\033[0m| Optional field day_of_week = " << *_tmp_375;
                                                         char* _tmp_376 = (char*) buffer++;
                                                         *_tmp_376 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].period.size() != 0 ? 1 : 0);
                                                         if(debug)
-                                                            logger->debug() << "|\033[38;5;94m000416\033[0m| Optional field period = " << *_tmp_376;
+                                                            logger->print() << "|\033[38;5;94m000416\033[0m| Optional field period = " << *_tmp_376;
                                                         
                                                         if(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].year.size() != 0) {
                                                             // Field:  type(DTM_year) name(year) extGroup(0)
@@ -8366,7 +8366,7 @@ namespace wind
                                                                 
                                                                 // UINT16  min(2000) max(2127) span(128) dataType(UInt16)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000417\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].year[0].syr.value) << 
+                                                                    logger->print() << "|\033[38;5;94m000417\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].year[0].syr.value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].year[0].syr.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].year[0].syr.value);
                                                                 }
                                                                 
@@ -8404,7 +8404,7 @@ namespace wind
                                                                 
                                                                 // UINT16  min(2000) max(2127) span(128) dataType(UInt16)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000418\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].year[0].eyr.value) << 
+                                                                    logger->print() << "|\033[38;5;94m000418\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].year[0].eyr.value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].year[0].eyr.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].year[0].eyr.value);
                                                                 }
                                                                 
@@ -8456,7 +8456,7 @@ namespace wind
                                                                     
                                                                     // UINT8  min(1) max(12) span(12) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000419\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].month_day[0].smd.month.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000419\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].month_day[0].smd.month.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].month_day[0].smd.month.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].month_day[0].smd.month.value);
                                                                     }
                                                                     
@@ -8481,7 +8481,7 @@ namespace wind
                                                                     
                                                                     // UINT8  min(1) max(31) span(31) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000420\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].month_day[0].smd.day.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000420\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].month_day[0].smd.day.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].month_day[0].smd.day.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].month_day[0].smd.day.value);
                                                                     }
                                                                     
@@ -8512,7 +8512,7 @@ namespace wind
                                                                     
                                                                     // UINT8  min(1) max(12) span(12) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000421\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].month_day[0].emd.month.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000421\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].month_day[0].emd.month.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].month_day[0].emd.month.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].month_day[0].emd.month.value);
                                                                     }
                                                                     
@@ -8537,7 +8537,7 @@ namespace wind
                                                                     
                                                                     // UINT8  min(1) max(31) span(31) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000422\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].month_day[0].emd.day.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000422\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].month_day[0].emd.day.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].month_day[0].emd.day.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].month_day[0].emd.day.value);
                                                                     }
                                                                     
@@ -8563,7 +8563,7 @@ namespace wind
                                                             // BitString
                                                             // BIT_STRING  min(4) max(4) span(1)
                                                             if(debug)
-                                                                logger->debug() << "|\033[38;5;94m000423\033[0m| ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].pmd[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].pmd[0].values.size());
+                                                                logger->print() << "|\033[38;5;94m000423\033[0m| ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].pmd[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].pmd[0].values.size());
                                                             
                                                             if(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].pmd[0].values.size() < 4) {
                                                                     logger->warning() << "Error: Value in 'ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].pmd[0].value' " << (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].pmd[0].values.size()) << " is less than allowable (4); message dropped.";
@@ -8605,7 +8605,7 @@ namespace wind
                                                                     
                                                                     // UINT8  min(0) max(23) span(24) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000424\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].hour_minutes[0].shm.hours.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000424\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].hour_minutes[0].shm.hours.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].hour_minutes[0].shm.hours.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].hour_minutes[0].shm.hours.value);
                                                                     }
                                                                     
@@ -8629,7 +8629,7 @@ namespace wind
                                                                     
                                                                     // UINT8  min(0) max(59) span(60) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000425\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].hour_minutes[0].shm.mins.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000425\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].hour_minutes[0].shm.mins.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].hour_minutes[0].shm.mins.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].hour_minutes[0].shm.mins.value);
                                                                     }
                                                                     
@@ -8659,7 +8659,7 @@ namespace wind
                                                                     
                                                                     // UINT8  min(0) max(23) span(24) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000426\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].hour_minutes[0].ehm.hours.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000426\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].hour_minutes[0].ehm.hours.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].hour_minutes[0].ehm.hours.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].hour_minutes[0].ehm.hours.value);
                                                                     }
                                                                     
@@ -8683,7 +8683,7 @@ namespace wind
                                                                     
                                                                     // UINT8  min(0) max(59) span(60) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000427\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].hour_minutes[0].ehm.mins.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000427\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].hour_minutes[0].ehm.mins.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].hour_minutes[0].ehm.mins.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].hour_minutes[0].ehm.mins.value);
                                                                     }
                                                                     
@@ -8708,7 +8708,7 @@ namespace wind
                                                             // BitString
                                                             // BIT_STRING  min(8) max(8) span(1)
                                                             if(debug)
-                                                                logger->debug() << "|\033[38;5;94m000428\033[0m| ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].day_of_week[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].day_of_week[0].values.size());
+                                                                logger->print() << "|\033[38;5;94m000428\033[0m| ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].day_of_week[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].day_of_week[0].values.size());
                                                             
                                                             if(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].day_of_week[0].values.size() < 8) {
                                                                     logger->warning() << "Error: Value in 'ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].day_of_week[0].value' " << (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].day_of_week[0].values.size()) << " is less than allowable (8); message dropped.";
@@ -8744,7 +8744,7 @@ namespace wind
                                                                 
                                                                 // UINT8  min(0) max(23) span(24) dataType(UInt8)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000429\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].period[0].hours.value) << 
+                                                                    logger->print() << "|\033[38;5;94m000429\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].period[0].hours.value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].period[0].hours.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].period[0].hours.value);
                                                                 }
                                                                 
@@ -8768,7 +8768,7 @@ namespace wind
                                                                 
                                                                 // UINT8  min(0) max(59) span(60) dataType(UInt8)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000430\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].period[0].mins.value) << 
+                                                                    logger->print() << "|\033[38;5;94m000430\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].period[0].mins.value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].period[0].mins.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].validity[0].elements[j].period[0].mins.value);
                                                                 }
                                                                 
@@ -8797,7 +8797,7 @@ namespace wind
                                                 
                                                 // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000431\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].value[0].value) << 
+                                                    logger->print() << "|\033[38;5;94m000431\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].value[0].value) << 
                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].value[0].value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].value[0].value;
                                                 }
                                                 
@@ -8823,7 +8823,7 @@ namespace wind
                                                 
                                                 // UINT8  min(0) max(15) span(16) dataType(UInt8)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000432\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].unit[0].value) << 
+                                                    logger->print() << "|\033[38;5;94m000432\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].unit[0].value) << 
                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].unit[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.vienna_convention[0].unit[0].value);
                                                 }
                                                 
@@ -8858,7 +8858,7 @@ namespace wind
                                             char* _tmp_395 = (char*) buffer++;
                                             *_tmp_395 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes.size() != 0 ? 1 : 0);
                                             if(debug)
-                                                logger->debug() << "|\033[38;5;94m000434\033[0m| Optional field attributes = " << *_tmp_395;
+                                                logger->print() << "|\033[38;5;94m000434\033[0m| Optional field attributes = " << *_tmp_395;
                                             
                                             // Field:  type(ISO14823Code_pictogramCode) name(pictogram_code) extGroup(0)
                                                 // ISO14823Code_pictogramCode  SEQUENCE
@@ -8869,7 +8869,7 @@ namespace wind
                                                 char* _tmp_396 = (char*) buffer++;
                                                 *_tmp_396 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].pictogram_code.country_code.size() != 0 ? 1 : 0);
                                                 if(debug)
-                                                    logger->debug() << "|\033[38;5;94m000435\033[0m| Optional field country_code = " << *_tmp_396;
+                                                    logger->print() << "|\033[38;5;94m000435\033[0m| Optional field country_code = " << *_tmp_396;
                                                 
                                                 if(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].pictogram_code.country_code.size() != 0) {
                                                     // Field:  type(ISO14823Code_pictogramCode_countryCode) name(country_code) extGroup(0)
@@ -8877,7 +8877,7 @@ namespace wind
                                                     // OCTET_STRING  min(2) max(2) span(1)
                                                     
                                                     if(debug)
-                                                        logger->debug() << "|\033[38;5;94m000436\033[0m| ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].pictogram_code.country_code[0].values.size(): ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].pictogram_code.country_code[0]" << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].pictogram_code.country_code[0].values.size());
+                                                        logger->print() << "|\033[38;5;94m000436\033[0m| ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].pictogram_code.country_code[0].values.size(): ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].pictogram_code.country_code[0]" << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].pictogram_code.country_code[0].values.size());
                                                     
                                                     if(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].pictogram_code.country_code[0].values.size() < 2) {
                                                         logger->warning() << "Error: Value in 'ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].pictogram_code.country_code[0].value' (" << 
@@ -8924,7 +8924,7 @@ namespace wind
                                                     // INT32  min(0) max(2) span(3) dataType(Int32)
                                                     uint8_t* _ext_flag_293 = (uint8_t*) buffer++; // Write extension flag for ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].pictogram_code.service_category_code.traffic_sign_pictogram[0].
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m000438\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].pictogram_code.service_category_code.traffic_sign_pictogram[0].value) << 
+                                                        logger->print() << "|\033[38;5;94m000438\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].pictogram_code.service_category_code.traffic_sign_pictogram[0].value) << 
                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].pictogram_code.service_category_code.traffic_sign_pictogram[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].pictogram_code.service_category_code.traffic_sign_pictogram[0].value);
                                                     }
                                                     
@@ -8955,7 +8955,7 @@ namespace wind
                                                     // INT32  min(0) max(0) span(1) dataType(Int32)
                                                     uint8_t* _ext_flag_294 = (uint8_t*) buffer++; // Write extension flag for ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].pictogram_code.service_category_code.public_facilities_pictogram[0].
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m000440\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].pictogram_code.service_category_code.public_facilities_pictogram[0].value) << 
+                                                        logger->print() << "|\033[38;5;94m000440\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].pictogram_code.service_category_code.public_facilities_pictogram[0].value) << 
                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].pictogram_code.service_category_code.public_facilities_pictogram[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].pictogram_code.service_category_code.public_facilities_pictogram[0].value);
                                                     }
                                                     
@@ -8986,7 +8986,7 @@ namespace wind
                                                     // INT32  min(0) max(1) span(2) dataType(Int32)
                                                     uint8_t* _ext_flag_295 = (uint8_t*) buffer++; // Write extension flag for ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].pictogram_code.service_category_code.ambient_or_road_condition_pictogram[0].
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m000442\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].pictogram_code.service_category_code.ambient_or_road_condition_pictogram[0].value) << 
+                                                        logger->print() << "|\033[38;5;94m000442\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].pictogram_code.service_category_code.ambient_or_road_condition_pictogram[0].value) << 
                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].pictogram_code.service_category_code.ambient_or_road_condition_pictogram[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].pictogram_code.service_category_code.ambient_or_road_condition_pictogram[0].value);
                                                     }
                                                     
@@ -9023,7 +9023,7 @@ namespace wind
                                                     
                                                     // UINT8  min(1) max(9) span(9) dataType(UInt8)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m000443\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].pictogram_code.pictogram_category_code.nature.value) << 
+                                                        logger->print() << "|\033[38;5;94m000443\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].pictogram_code.pictogram_category_code.nature.value) << 
                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].pictogram_code.pictogram_category_code.nature.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].pictogram_code.pictogram_category_code.nature.value);
                                                     }
                                                     
@@ -9048,7 +9048,7 @@ namespace wind
                                                     
                                                     // UINT8  min(0) max(99) span(100) dataType(UInt8)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m000444\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].pictogram_code.pictogram_category_code.serial_number.value) << 
+                                                        logger->print() << "|\033[38;5;94m000444\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].pictogram_code.pictogram_category_code.serial_number.value) << 
                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].pictogram_code.pictogram_category_code.serial_number.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].pictogram_code.pictogram_category_code.serial_number.value);
                                                     }
                                                     
@@ -9113,27 +9113,27 @@ namespace wind
                                                             char* _tmp_404 = (char*) buffer++;
                                                             *_tmp_404 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].year.size() != 0 ? 1 : 0);
                                                             if(debug)
-                                                                logger->debug() << "|\033[38;5;94m000447\033[0m| Optional field year = " << *_tmp_404;
+                                                                logger->print() << "|\033[38;5;94m000447\033[0m| Optional field year = " << *_tmp_404;
                                                             char* _tmp_405 = (char*) buffer++;
                                                             *_tmp_405 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].month_day.size() != 0 ? 1 : 0);
                                                             if(debug)
-                                                                logger->debug() << "|\033[38;5;94m000448\033[0m| Optional field month_day = " << *_tmp_405;
+                                                                logger->print() << "|\033[38;5;94m000448\033[0m| Optional field month_day = " << *_tmp_405;
                                                             char* _tmp_406 = (char*) buffer++;
                                                             *_tmp_406 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].pmd.size() != 0 ? 1 : 0);
                                                             if(debug)
-                                                                logger->debug() << "|\033[38;5;94m000449\033[0m| Optional field pmd = " << *_tmp_406;
+                                                                logger->print() << "|\033[38;5;94m000449\033[0m| Optional field pmd = " << *_tmp_406;
                                                             char* _tmp_407 = (char*) buffer++;
                                                             *_tmp_407 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].hour_minutes.size() != 0 ? 1 : 0);
                                                             if(debug)
-                                                                logger->debug() << "|\033[38;5;94m000450\033[0m| Optional field hour_minutes = " << *_tmp_407;
+                                                                logger->print() << "|\033[38;5;94m000450\033[0m| Optional field hour_minutes = " << *_tmp_407;
                                                             char* _tmp_408 = (char*) buffer++;
                                                             *_tmp_408 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].day_of_week.size() != 0 ? 1 : 0);
                                                             if(debug)
-                                                                logger->debug() << "|\033[38;5;94m000451\033[0m| Optional field day_of_week = " << *_tmp_408;
+                                                                logger->print() << "|\033[38;5;94m000451\033[0m| Optional field day_of_week = " << *_tmp_408;
                                                             char* _tmp_409 = (char*) buffer++;
                                                             *_tmp_409 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].period.size() != 0 ? 1 : 0);
                                                             if(debug)
-                                                                logger->debug() << "|\033[38;5;94m000452\033[0m| Optional field period = " << *_tmp_409;
+                                                                logger->print() << "|\033[38;5;94m000452\033[0m| Optional field period = " << *_tmp_409;
                                                             
                                                             if(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].year.size() != 0) {
                                                                 // Field:  type(DTM_year) name(year) extGroup(0)
@@ -9147,7 +9147,7 @@ namespace wind
                                                                     
                                                                     // UINT16  min(2000) max(2127) span(128) dataType(UInt16)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000453\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].year[0].syr.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000453\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].year[0].syr.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].year[0].syr.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].year[0].syr.value);
                                                                     }
                                                                     
@@ -9185,7 +9185,7 @@ namespace wind
                                                                     
                                                                     // UINT16  min(2000) max(2127) span(128) dataType(UInt16)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000454\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].year[0].eyr.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000454\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].year[0].eyr.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].year[0].eyr.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].year[0].eyr.value);
                                                                     }
                                                                     
@@ -9237,7 +9237,7 @@ namespace wind
                                                                         
                                                                         // UINT8  min(1) max(12) span(12) dataType(UInt8)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000455\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].month_day[0].smd.month.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000455\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].month_day[0].smd.month.value) << 
                                                                                          " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].month_day[0].smd.month.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].month_day[0].smd.month.value);
                                                                         }
                                                                         
@@ -9262,7 +9262,7 @@ namespace wind
                                                                         
                                                                         // UINT8  min(1) max(31) span(31) dataType(UInt8)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000456\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].month_day[0].smd.day.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000456\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].month_day[0].smd.day.value) << 
                                                                                          " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].month_day[0].smd.day.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].month_day[0].smd.day.value);
                                                                         }
                                                                         
@@ -9293,7 +9293,7 @@ namespace wind
                                                                         
                                                                         // UINT8  min(1) max(12) span(12) dataType(UInt8)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000457\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].month_day[0].emd.month.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000457\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].month_day[0].emd.month.value) << 
                                                                                          " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].month_day[0].emd.month.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].month_day[0].emd.month.value);
                                                                         }
                                                                         
@@ -9318,7 +9318,7 @@ namespace wind
                                                                         
                                                                         // UINT8  min(1) max(31) span(31) dataType(UInt8)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000458\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].month_day[0].emd.day.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000458\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].month_day[0].emd.day.value) << 
                                                                                          " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].month_day[0].emd.day.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].month_day[0].emd.day.value);
                                                                         }
                                                                         
@@ -9344,7 +9344,7 @@ namespace wind
                                                                 // BitString
                                                                 // BIT_STRING  min(4) max(4) span(1)
                                                                 if(debug)
-                                                                    logger->debug() << "|\033[38;5;94m000459\033[0m| ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].pmd[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].pmd[0].values.size());
+                                                                    logger->print() << "|\033[38;5;94m000459\033[0m| ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].pmd[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].pmd[0].values.size());
                                                                 
                                                                 if(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].pmd[0].values.size() < 4) {
                                                                         logger->warning() << "Error: Value in 'ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].pmd[0].value' " << (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].pmd[0].values.size()) << " is less than allowable (4); message dropped.";
@@ -9386,7 +9386,7 @@ namespace wind
                                                                         
                                                                         // UINT8  min(0) max(23) span(24) dataType(UInt8)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000460\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].hour_minutes[0].shm.hours.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000460\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].hour_minutes[0].shm.hours.value) << 
                                                                                          " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].hour_minutes[0].shm.hours.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].hour_minutes[0].shm.hours.value);
                                                                         }
                                                                         
@@ -9410,7 +9410,7 @@ namespace wind
                                                                         
                                                                         // UINT8  min(0) max(59) span(60) dataType(UInt8)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000461\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].hour_minutes[0].shm.mins.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000461\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].hour_minutes[0].shm.mins.value) << 
                                                                                          " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].hour_minutes[0].shm.mins.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].hour_minutes[0].shm.mins.value);
                                                                         }
                                                                         
@@ -9440,7 +9440,7 @@ namespace wind
                                                                         
                                                                         // UINT8  min(0) max(23) span(24) dataType(UInt8)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000462\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].hour_minutes[0].ehm.hours.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000462\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].hour_minutes[0].ehm.hours.value) << 
                                                                                          " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].hour_minutes[0].ehm.hours.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].hour_minutes[0].ehm.hours.value);
                                                                         }
                                                                         
@@ -9464,7 +9464,7 @@ namespace wind
                                                                         
                                                                         // UINT8  min(0) max(59) span(60) dataType(UInt8)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000463\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].hour_minutes[0].ehm.mins.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000463\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].hour_minutes[0].ehm.mins.value) << 
                                                                                          " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].hour_minutes[0].ehm.mins.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].hour_minutes[0].ehm.mins.value);
                                                                         }
                                                                         
@@ -9489,7 +9489,7 @@ namespace wind
                                                                 // BitString
                                                                 // BIT_STRING  min(8) max(8) span(1)
                                                                 if(debug)
-                                                                    logger->debug() << "|\033[38;5;94m000464\033[0m| ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].day_of_week[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].day_of_week[0].values.size());
+                                                                    logger->print() << "|\033[38;5;94m000464\033[0m| ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].day_of_week[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].day_of_week[0].values.size());
                                                                 
                                                                 if(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].day_of_week[0].values.size() < 8) {
                                                                         logger->warning() << "Error: Value in 'ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].day_of_week[0].value' " << (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].day_of_week[0].values.size()) << " is less than allowable (8); message dropped.";
@@ -9525,7 +9525,7 @@ namespace wind
                                                                     
                                                                     // UINT8  min(0) max(23) span(24) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000465\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].period[0].hours.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000465\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].period[0].hours.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].period[0].hours.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].period[0].hours.value);
                                                                     }
                                                                     
@@ -9549,7 +9549,7 @@ namespace wind
                                                                     
                                                                     // UINT8  min(0) max(59) span(60) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000466\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].period[0].mins.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000466\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].period[0].mins.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].period[0].mins.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dtm[0].period[0].mins.value);
                                                                     }
                                                                     
@@ -9597,7 +9597,7 @@ namespace wind
                                                                 
                                                                 // UINT16  min(2000) max(2127) span(128) dataType(UInt16)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000468\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].edt[0].year.syr.value) << 
+                                                                    logger->print() << "|\033[38;5;94m000468\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].edt[0].year.syr.value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].edt[0].year.syr.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].edt[0].year.syr.value);
                                                                 }
                                                                 
@@ -9635,7 +9635,7 @@ namespace wind
                                                                 
                                                                 // UINT16  min(2000) max(2127) span(128) dataType(UInt16)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000469\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].edt[0].year.eyr.value) << 
+                                                                    logger->print() << "|\033[38;5;94m000469\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].edt[0].year.eyr.value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].edt[0].year.eyr.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].edt[0].year.eyr.value);
                                                                 }
                                                                 
@@ -9685,7 +9685,7 @@ namespace wind
                                                                     
                                                                     // UINT8  min(1) max(12) span(12) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000470\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].edt[0].month_day.smd.month.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000470\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].edt[0].month_day.smd.month.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].edt[0].month_day.smd.month.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].edt[0].month_day.smd.month.value);
                                                                     }
                                                                     
@@ -9710,7 +9710,7 @@ namespace wind
                                                                     
                                                                     // UINT8  min(1) max(31) span(31) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000471\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].edt[0].month_day.smd.day.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000471\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].edt[0].month_day.smd.day.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].edt[0].month_day.smd.day.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].edt[0].month_day.smd.day.value);
                                                                     }
                                                                     
@@ -9741,7 +9741,7 @@ namespace wind
                                                                     
                                                                     // UINT8  min(1) max(12) span(12) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000472\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].edt[0].month_day.emd.month.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000472\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].edt[0].month_day.emd.month.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].edt[0].month_day.emd.month.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].edt[0].month_day.emd.month.value);
                                                                     }
                                                                     
@@ -9766,7 +9766,7 @@ namespace wind
                                                                     
                                                                     // UINT8  min(1) max(31) span(31) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000473\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].edt[0].month_day.emd.day.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000473\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].edt[0].month_day.emd.day.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].edt[0].month_day.emd.day.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].edt[0].month_day.emd.day.value);
                                                                     }
                                                                     
@@ -9790,7 +9790,7 @@ namespace wind
                                                             // BitString
                                                             // BIT_STRING  min(4) max(4) span(1)
                                                             if(debug)
-                                                                logger->debug() << "|\033[38;5;94m000474\033[0m| ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].edt[0].pmd.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].edt[0].pmd.values.size());
+                                                                logger->print() << "|\033[38;5;94m000474\033[0m| ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].edt[0].pmd.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].edt[0].pmd.values.size());
                                                             
                                                             if(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].edt[0].pmd.values.size() < 4) {
                                                                     logger->warning() << "Error: Value in 'ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].edt[0].pmd.value' " << (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].edt[0].pmd.values.size()) << " is less than allowable (4); message dropped.";
@@ -9830,7 +9830,7 @@ namespace wind
                                                                     
                                                                     // UINT8  min(0) max(23) span(24) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000475\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].edt[0].hour_minutes.shm.hours.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000475\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].edt[0].hour_minutes.shm.hours.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].edt[0].hour_minutes.shm.hours.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].edt[0].hour_minutes.shm.hours.value);
                                                                     }
                                                                     
@@ -9854,7 +9854,7 @@ namespace wind
                                                                     
                                                                     // UINT8  min(0) max(59) span(60) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000476\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].edt[0].hour_minutes.shm.mins.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000476\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].edt[0].hour_minutes.shm.mins.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].edt[0].hour_minutes.shm.mins.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].edt[0].hour_minutes.shm.mins.value);
                                                                     }
                                                                     
@@ -9884,7 +9884,7 @@ namespace wind
                                                                     
                                                                     // UINT8  min(0) max(23) span(24) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000477\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].edt[0].hour_minutes.ehm.hours.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000477\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].edt[0].hour_minutes.ehm.hours.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].edt[0].hour_minutes.ehm.hours.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].edt[0].hour_minutes.ehm.hours.value);
                                                                     }
                                                                     
@@ -9908,7 +9908,7 @@ namespace wind
                                                                     
                                                                     // UINT8  min(0) max(59) span(60) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000478\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].edt[0].hour_minutes.ehm.mins.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000478\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].edt[0].hour_minutes.ehm.mins.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].edt[0].hour_minutes.ehm.mins.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].edt[0].hour_minutes.ehm.mins.value);
                                                                     }
                                                                     
@@ -9931,7 +9931,7 @@ namespace wind
                                                             // BitString
                                                             // BIT_STRING  min(8) max(8) span(1)
                                                             if(debug)
-                                                                logger->debug() << "|\033[38;5;94m000479\033[0m| ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].edt[0].day_of_week.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].edt[0].day_of_week.values.size());
+                                                                logger->print() << "|\033[38;5;94m000479\033[0m| ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].edt[0].day_of_week.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].edt[0].day_of_week.values.size());
                                                             
                                                             if(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].edt[0].day_of_week.values.size() < 8) {
                                                                     logger->warning() << "Error: Value in 'ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].edt[0].day_of_week.value' " << (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].edt[0].day_of_week.values.size()) << " is less than allowable (8); message dropped.";
@@ -9965,7 +9965,7 @@ namespace wind
                                                                 
                                                                 // UINT8  min(0) max(23) span(24) dataType(UInt8)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000480\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].edt[0].period.hours.value) << 
+                                                                    logger->print() << "|\033[38;5;94m000480\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].edt[0].period.hours.value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].edt[0].period.hours.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].edt[0].period.hours.value);
                                                                 }
                                                                 
@@ -9989,7 +9989,7 @@ namespace wind
                                                                 
                                                                 // UINT8  min(0) max(59) span(60) dataType(UInt8)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000481\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].edt[0].period.mins.value) << 
+                                                                    logger->print() << "|\033[38;5;94m000481\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].edt[0].period.mins.value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].edt[0].period.mins.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].edt[0].period.mins.value);
                                                                 }
                                                                 
@@ -10020,7 +10020,7 @@ namespace wind
                                                         
                                                         // UINT8  min(1) max(8) span(8) dataType(UInt8)
                                                         if(debug) {
-                                                            logger->debug() << "|\033[38;5;94m000483\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dfl[0].value) << 
+                                                            logger->print() << "|\033[38;5;94m000483\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dfl[0].value) << 
                                                                          " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dfl[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dfl[0].value);
                                                         }
                                                         
@@ -10057,19 +10057,19 @@ namespace wind
                                                             char* _tmp_443 = (char*) buffer++;
                                                             *_tmp_443 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ved[0].hei.size() != 0 ? 1 : 0);
                                                             if(debug)
-                                                                logger->debug() << "|\033[38;5;94m000485\033[0m| Optional field hei = " << *_tmp_443;
+                                                                logger->print() << "|\033[38;5;94m000485\033[0m| Optional field hei = " << *_tmp_443;
                                                             char* _tmp_444 = (char*) buffer++;
                                                             *_tmp_444 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ved[0].wid.size() != 0 ? 1 : 0);
                                                             if(debug)
-                                                                logger->debug() << "|\033[38;5;94m000486\033[0m| Optional field wid = " << *_tmp_444;
+                                                                logger->print() << "|\033[38;5;94m000486\033[0m| Optional field wid = " << *_tmp_444;
                                                             char* _tmp_445 = (char*) buffer++;
                                                             *_tmp_445 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ved[0].vln.size() != 0 ? 1 : 0);
                                                             if(debug)
-                                                                logger->debug() << "|\033[38;5;94m000487\033[0m| Optional field vln = " << *_tmp_445;
+                                                                logger->print() << "|\033[38;5;94m000487\033[0m| Optional field vln = " << *_tmp_445;
                                                             char* _tmp_446 = (char*) buffer++;
                                                             *_tmp_446 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ved[0].wei.size() != 0 ? 1 : 0);
                                                             if(debug)
-                                                                logger->debug() << "|\033[38;5;94m000488\033[0m| Optional field wei = " << *_tmp_446;
+                                                                logger->print() << "|\033[38;5;94m000488\033[0m| Optional field wei = " << *_tmp_446;
                                                             
                                                             if(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ved[0].hei.size() != 0) {
                                                                 // Field:  type(Distance) name(hei) extGroup(0)
@@ -10083,7 +10083,7 @@ namespace wind
                                                                     
                                                                     // UINT16  min(1) max(16384) span(16384) dataType(UInt16)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000489\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ved[0].hei[0].value.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000489\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ved[0].hei[0].value.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ved[0].hei[0].value.value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ved[0].hei[0].value.value;
                                                                     }
                                                                     
@@ -10108,7 +10108,7 @@ namespace wind
                                                                     
                                                                     // UINT8  min(0) max(15) span(16) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000490\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ved[0].hei[0].unit.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000490\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ved[0].hei[0].unit.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ved[0].hei[0].unit.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ved[0].hei[0].unit.value);
                                                                     }
                                                                     
@@ -10140,7 +10140,7 @@ namespace wind
                                                                     
                                                                     // UINT16  min(1) max(16384) span(16384) dataType(UInt16)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000491\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ved[0].wid[0].value.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000491\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ved[0].wid[0].value.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ved[0].wid[0].value.value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ved[0].wid[0].value.value;
                                                                     }
                                                                     
@@ -10165,7 +10165,7 @@ namespace wind
                                                                     
                                                                     // UINT8  min(0) max(15) span(16) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000492\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ved[0].wid[0].unit.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000492\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ved[0].wid[0].unit.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ved[0].wid[0].unit.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ved[0].wid[0].unit.value);
                                                                     }
                                                                     
@@ -10197,7 +10197,7 @@ namespace wind
                                                                     
                                                                     // UINT16  min(1) max(16384) span(16384) dataType(UInt16)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000493\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ved[0].vln[0].value.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000493\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ved[0].vln[0].value.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ved[0].vln[0].value.value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ved[0].vln[0].value.value;
                                                                     }
                                                                     
@@ -10222,7 +10222,7 @@ namespace wind
                                                                     
                                                                     // UINT8  min(0) max(15) span(16) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000494\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ved[0].vln[0].unit.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000494\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ved[0].vln[0].unit.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ved[0].vln[0].unit.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ved[0].vln[0].unit.value);
                                                                     }
                                                                     
@@ -10254,7 +10254,7 @@ namespace wind
                                                                     
                                                                     // UINT16  min(1) max(16384) span(16384) dataType(UInt16)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000495\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ved[0].wei[0].value.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000495\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ved[0].wei[0].value.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ved[0].wei[0].value.value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ved[0].wei[0].value.value;
                                                                     }
                                                                     
@@ -10279,7 +10279,7 @@ namespace wind
                                                                     
                                                                     // UINT8  min(0) max(15) span(16) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000496\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ved[0].wei[0].unit.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000496\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ved[0].wei[0].unit.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ved[0].wei[0].unit.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ved[0].wei[0].unit.value);
                                                                     }
                                                                     
@@ -10315,11 +10315,11 @@ namespace wind
                                                             char* _tmp_455 = (char*) buffer++;
                                                             *_tmp_455 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].spe[0].spm.size() != 0 ? 1 : 0);
                                                             if(debug)
-                                                                logger->debug() << "|\033[38;5;94m000498\033[0m| Optional field spm = " << *_tmp_455;
+                                                                logger->print() << "|\033[38;5;94m000498\033[0m| Optional field spm = " << *_tmp_455;
                                                             char* _tmp_456 = (char*) buffer++;
                                                             *_tmp_456 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].spe[0].mns.size() != 0 ? 1 : 0);
                                                             if(debug)
-                                                                logger->debug() << "|\033[38;5;94m000499\033[0m| Optional field mns = " << *_tmp_456;
+                                                                logger->print() << "|\033[38;5;94m000499\033[0m| Optional field mns = " << *_tmp_456;
                                                             
                                                             if(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].spe[0].spm.size() != 0) {
                                                                 // Field:  type(SPE_spm) name(spm) extGroup(0)
@@ -10327,7 +10327,7 @@ namespace wind
                                                                 
                                                                 // UINT8  min(0) max(250) span(251) dataType(UInt8)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000500\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].spe[0].spm[0].value) << 
+                                                                    logger->print() << "|\033[38;5;94m000500\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].spe[0].spm[0].value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].spe[0].spm[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].spe[0].spm[0].value);
                                                                 }
                                                                 
@@ -10353,7 +10353,7 @@ namespace wind
                                                                 
                                                                 // UINT8  min(0) max(250) span(251) dataType(UInt8)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000501\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].spe[0].mns[0].value) << 
+                                                                    logger->print() << "|\033[38;5;94m000501\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].spe[0].mns[0].value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].spe[0].mns[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].spe[0].mns[0].value);
                                                                 }
                                                                 
@@ -10378,7 +10378,7 @@ namespace wind
                                                             
                                                             // UINT8  min(0) max(1) span(2) dataType(UInt8)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m000502\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].spe[0].unit.value) << 
+                                                                logger->print() << "|\033[38;5;94m000502\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].spe[0].unit.value) << 
                                                                              " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].spe[0].unit.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].spe[0].unit.value);
                                                             }
                                                             
@@ -10409,7 +10409,7 @@ namespace wind
                                                         
                                                         // UINT8  min(1) max(32) span(32) dataType(UInt8)
                                                         if(debug) {
-                                                            logger->debug() << "|\033[38;5;94m000504\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].roi[0].value) << 
+                                                            logger->print() << "|\033[38;5;94m000504\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].roi[0].value) << 
                                                                          " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].roi[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].roi[0].value);
                                                         }
                                                         
@@ -10447,7 +10447,7 @@ namespace wind
                                                             
                                                             // UINT16  min(1) max(16384) span(16384) dataType(UInt16)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m000506\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dbv[0].value.value) << 
+                                                                logger->print() << "|\033[38;5;94m000506\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dbv[0].value.value) << 
                                                                              " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dbv[0].value.value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dbv[0].value.value;
                                                             }
                                                             
@@ -10472,7 +10472,7 @@ namespace wind
                                                             
                                                             // UINT8  min(0) max(15) span(16) dataType(UInt8)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m000507\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dbv[0].unit.value) << 
+                                                                logger->print() << "|\033[38;5;94m000507\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dbv[0].unit.value) << 
                                                                              " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dbv[0].unit.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].dbv[0].unit.value);
                                                             }
                                                             
@@ -10508,15 +10508,15 @@ namespace wind
                                                             char* _tmp_463 = (char*) buffer++;
                                                             *_tmp_463 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].dcj.size() != 0 ? 1 : 0);
                                                             if(debug)
-                                                                logger->debug() << "|\033[38;5;94m000509\033[0m| Optional field dcj = " << *_tmp_463;
+                                                                logger->print() << "|\033[38;5;94m000509\033[0m| Optional field dcj = " << *_tmp_463;
                                                             char* _tmp_464 = (char*) buffer++;
                                                             *_tmp_464 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].dcr.size() != 0 ? 1 : 0);
                                                             if(debug)
-                                                                logger->debug() << "|\033[38;5;94m000510\033[0m| Optional field dcr = " << *_tmp_464;
+                                                                logger->print() << "|\033[38;5;94m000510\033[0m| Optional field dcr = " << *_tmp_464;
                                                             char* _tmp_465 = (char*) buffer++;
                                                             *_tmp_465 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].tpl.size() != 0 ? 1 : 0);
                                                             if(debug)
-                                                                logger->debug() << "|\033[38;5;94m000511\033[0m| Optional field tpl = " << *_tmp_465;
+                                                                logger->print() << "|\033[38;5;94m000511\033[0m| Optional field tpl = " << *_tmp_465;
                                                             
                                                             if(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].dcj.size() != 0) {
                                                                 // Field:  type(DDD_dcj) name(dcj) extGroup(0)
@@ -10524,7 +10524,7 @@ namespace wind
                                                                 
                                                                 // UINT8  min(1) max(128) span(128) dataType(UInt8)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000512\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].dcj[0].value) << 
+                                                                    logger->print() << "|\033[38;5;94m000512\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].dcj[0].value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].dcj[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].dcj[0].value);
                                                                 }
                                                                 
@@ -10551,7 +10551,7 @@ namespace wind
                                                                 
                                                                 // UINT8  min(1) max(128) span(128) dataType(UInt8)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000513\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].dcr[0].value) << 
+                                                                    logger->print() << "|\033[38;5;94m000513\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].dcr[0].value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].dcr[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].dcr[0].value);
                                                                 }
                                                                 
@@ -10578,7 +10578,7 @@ namespace wind
                                                                 
                                                                 // UINT8  min(1) max(128) span(128) dataType(UInt8)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000514\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].tpl[0].value) << 
+                                                                    logger->print() << "|\033[38;5;94m000514\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].tpl[0].value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].tpl[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].tpl[0].value);
                                                                 }
                                                                 
@@ -10628,38 +10628,38 @@ namespace wind
                                                                     char* _tmp_470 = (char*) buffer++;
                                                                     *_tmp_470 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].dp.size() != 0 ? 1 : 0);
                                                                     if(debug)
-                                                                        logger->debug() << "|\033[38;5;94m000516\033[0m| Optional field dp = " << *_tmp_470;
+                                                                        logger->print() << "|\033[38;5;94m000516\033[0m| Optional field dp = " << *_tmp_470;
                                                                     char* _tmp_471 = (char*) buffer++;
                                                                     *_tmp_471 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].dr.size() != 0 ? 1 : 0);
                                                                     if(debug)
-                                                                        logger->debug() << "|\033[38;5;94m000517\033[0m| Optional field dr = " << *_tmp_471;
+                                                                        logger->print() << "|\033[38;5;94m000517\033[0m| Optional field dr = " << *_tmp_471;
                                                                     char* _tmp_472 = (char*) buffer++;
                                                                     *_tmp_472 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].rne.size() != 0 ? 1 : 0);
                                                                     if(debug)
-                                                                        logger->debug() << "|\033[38;5;94m000518\033[0m| Optional field rne = " << *_tmp_472;
+                                                                        logger->print() << "|\033[38;5;94m000518\033[0m| Optional field rne = " << *_tmp_472;
                                                                     char* _tmp_473 = (char*) buffer++;
                                                                     *_tmp_473 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].stn_id.size() != 0 ? 1 : 0);
                                                                     if(debug)
-                                                                        logger->debug() << "|\033[38;5;94m000519\033[0m| Optional field stn_id = " << *_tmp_473;
+                                                                        logger->print() << "|\033[38;5;94m000519\033[0m| Optional field stn_id = " << *_tmp_473;
                                                                     char* _tmp_474 = (char*) buffer++;
                                                                     *_tmp_474 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].stn_text.size() != 0 ? 1 : 0);
                                                                     if(debug)
-                                                                        logger->debug() << "|\033[38;5;94m000520\033[0m| Optional field stn_text = " << *_tmp_474;
+                                                                        logger->print() << "|\033[38;5;94m000520\033[0m| Optional field stn_text = " << *_tmp_474;
                                                                     char* _tmp_475 = (char*) buffer++;
                                                                     *_tmp_475 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].dcp.size() != 0 ? 1 : 0);
                                                                     if(debug)
-                                                                        logger->debug() << "|\033[38;5;94m000521\033[0m| Optional field dcp = " << *_tmp_475;
+                                                                        logger->print() << "|\033[38;5;94m000521\033[0m| Optional field dcp = " << *_tmp_475;
                                                                     char* _tmp_476 = (char*) buffer++;
                                                                     *_tmp_476 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].ddp.size() != 0 ? 1 : 0);
                                                                     if(debug)
-                                                                        logger->debug() << "|\033[38;5;94m000522\033[0m| Optional field ddp = " << *_tmp_476;
+                                                                        logger->print() << "|\033[38;5;94m000522\033[0m| Optional field ddp = " << *_tmp_476;
                                                                     
                                                                     // Field:  type(DDD_IO_drn) name(drn) extGroup(0)
                                                                     // Integer
                                                                     
                                                                     // UINT8  min(0) max(7) span(8) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000523\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].drn.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000523\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].drn.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].drn.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].drn.value);
                                                                     }
                                                                     
@@ -10704,22 +10704,22 @@ namespace wind
                                                                                 char* _tmp_479 = (char*) buffer++;
                                                                                 *_tmp_479 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].dp[0].elements[t].dep_blob.size() != 0 ? 1 : 0);
                                                                                 if(debug)
-                                                                                    logger->debug() << "|\033[38;5;94m000525\033[0m| Optional field dep_blob = " << *_tmp_479;
+                                                                                    logger->print() << "|\033[38;5;94m000525\033[0m| Optional field dep_blob = " << *_tmp_479;
                                                                                 char* _tmp_480 = (char*) buffer++;
                                                                                 *_tmp_480 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].dp[0].elements[t].pln_id.size() != 0 ? 1 : 0);
                                                                                 if(debug)
-                                                                                    logger->debug() << "|\033[38;5;94m000526\033[0m| Optional field pln_id = " << *_tmp_480;
+                                                                                    logger->print() << "|\033[38;5;94m000526\033[0m| Optional field pln_id = " << *_tmp_480;
                                                                                 char* _tmp_481 = (char*) buffer++;
                                                                                 *_tmp_481 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].dp[0].elements[t].pln_text.size() != 0 ? 1 : 0);
                                                                                 if(debug)
-                                                                                    logger->debug() << "|\033[38;5;94m000527\033[0m| Optional field pln_text = " << *_tmp_481;
+                                                                                    logger->print() << "|\033[38;5;94m000527\033[0m| Optional field pln_text = " << *_tmp_481;
                                                                                 
                                                                                 // Field:  type(DDD_DEP) name(dep_type) extGroup(0)
                                                                                 // Integer
                                                                                 
                                                                                 // UINT8  min(0) max(15) span(16) dataType(UInt8)
                                                                                 if(debug) {
-                                                                                    logger->debug() << "|\033[38;5;94m000528\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].dp[0].elements[t].dep_type.value) << 
+                                                                                    logger->print() << "|\033[38;5;94m000528\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].dp[0].elements[t].dep_type.value) << 
                                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].dp[0].elements[t].dep_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].dp[0].elements[t].dep_type.value);
                                                                                 }
                                                                                 
@@ -10758,7 +10758,7 @@ namespace wind
                                                                                     // OCTET_STRING  min(0) max(16383) span(16384)
                                                                                     
                                                                                     if(debug)
-                                                                                        logger->debug() << "|\033[38;5;94m000529\033[0m| ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].dp[0].elements[t].dep_blob[0].values.size(): ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].dp[0].elements[t].dep_blob[0]" << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].dp[0].elements[t].dep_blob[0].values.size());
+                                                                                        logger->print() << "|\033[38;5;94m000529\033[0m| ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].dp[0].elements[t].dep_blob[0].values.size(): ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].dp[0].elements[t].dep_blob[0]" << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].dp[0].elements[t].dep_blob[0].values.size());
                                                                                     
                                                                                     if(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].dp[0].elements[t].dep_blob[0].values.size() < 0) {
                                                                                         logger->warning() << "Error: Value in 'ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].dp[0].elements[t].dep_blob[0].value' (" << 
@@ -10789,7 +10789,7 @@ namespace wind
                                                                                     
                                                                                     // UINT16  min(1) max(999) span(999) dataType(UInt16)
                                                                                     if(debug) {
-                                                                                        logger->debug() << "|\033[38;5;94m000530\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].dp[0].elements[t].pln_id[0].value) << 
+                                                                                        logger->print() << "|\033[38;5;94m000530\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].dp[0].elements[t].pln_id[0].value) << 
                                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].dp[0].elements[t].pln_id[0].value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].dp[0].elements[t].pln_id[0].value;
                                                                                     }
                                                                                     
@@ -10828,7 +10828,7 @@ namespace wind
                                                                                         return -1;
                                                                                     }
                                                                                     if(debug)
-                                                                                        logger->debug() << "|\033[38;5;94m000531\033[0m| ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].dp[0].elements[t].pln_text[0].value.size(): " << 
+                                                                                        logger->print() << "|\033[38;5;94m000531\033[0m| ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].dp[0].elements[t].pln_text[0].value.size(): " << 
                                                                                                     static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].dp[0].elements[t].pln_text[0].value.size());
                                                                                     
                                                                                     if(__aux64__ > 16383) __aux64__ = 16383;
@@ -10870,18 +10870,18 @@ namespace wind
                                                                                 char* _tmp_488 = (char*) buffer++;
                                                                                 *_tmp_488 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].dr[0].elements[w].ron_id.size() != 0 ? 1 : 0);
                                                                                 if(debug)
-                                                                                    logger->debug() << "|\033[38;5;94m000533\033[0m| Optional field ron_id = " << *_tmp_488;
+                                                                                    logger->print() << "|\033[38;5;94m000533\033[0m| Optional field ron_id = " << *_tmp_488;
                                                                                 char* _tmp_489 = (char*) buffer++;
                                                                                 *_tmp_489 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].dr[0].elements[w].ron_text.size() != 0 ? 1 : 0);
                                                                                 if(debug)
-                                                                                    logger->debug() << "|\033[38;5;94m000534\033[0m| Optional field ron_text = " << *_tmp_489;
+                                                                                    logger->print() << "|\033[38;5;94m000534\033[0m| Optional field ron_text = " << *_tmp_489;
                                                                                 
                                                                                 // Field:  type(DDD_DER) name(der_type) extGroup(0)
                                                                                 // Integer
                                                                                 
                                                                                 // UINT8  min(0) max(15) span(16) dataType(UInt8)
                                                                                 if(debug) {
-                                                                                    logger->debug() << "|\033[38;5;94m000535\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].dr[0].elements[w].der_type.value) << 
+                                                                                    logger->print() << "|\033[38;5;94m000535\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].dr[0].elements[w].der_type.value) << 
                                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].dr[0].elements[w].der_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].dr[0].elements[w].der_type.value);
                                                                                 }
                                                                                 
@@ -10919,7 +10919,7 @@ namespace wind
                                                                                     
                                                                                     // UINT16  min(1) max(999) span(999) dataType(UInt16)
                                                                                     if(debug) {
-                                                                                        logger->debug() << "|\033[38;5;94m000536\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].dr[0].elements[w].ron_id[0].value) << 
+                                                                                        logger->print() << "|\033[38;5;94m000536\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].dr[0].elements[w].ron_id[0].value) << 
                                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].dr[0].elements[w].ron_id[0].value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].dr[0].elements[w].ron_id[0].value;
                                                                                     }
                                                                                     
@@ -10958,7 +10958,7 @@ namespace wind
                                                                                         return -1;
                                                                                     }
                                                                                     if(debug)
-                                                                                        logger->debug() << "|\033[38;5;94m000537\033[0m| ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].dr[0].elements[w].ron_text[0].value.size(): " << 
+                                                                                        logger->print() << "|\033[38;5;94m000537\033[0m| ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].dr[0].elements[w].ron_text[0].value.size(): " << 
                                                                                                     static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].dr[0].elements[w].ron_text[0].value.size());
                                                                                     
                                                                                     if(__aux64__ > 16383) __aux64__ = 16383;
@@ -10981,7 +10981,7 @@ namespace wind
                                                                         
                                                                         // UINT16  min(1) max(999) span(999) dataType(UInt16)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000538\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].rne[0].value) << 
+                                                                            logger->print() << "|\033[38;5;94m000538\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].rne[0].value) << 
                                                                                          " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].rne[0].value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].rne[0].value;
                                                                         }
                                                                         
@@ -11008,7 +11008,7 @@ namespace wind
                                                                         
                                                                         // UINT16  min(1) max(999) span(999) dataType(UInt16)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000539\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].stn_id[0].value) << 
+                                                                            logger->print() << "|\033[38;5;94m000539\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].stn_id[0].value) << 
                                                                                          " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].stn_id[0].value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].stn_id[0].value;
                                                                         }
                                                                         
@@ -11047,7 +11047,7 @@ namespace wind
                                                                             return -1;
                                                                         }
                                                                         if(debug)
-                                                                            logger->debug() << "|\033[38;5;94m000540\033[0m| ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].stn_text[0].value.size(): " << 
+                                                                            logger->print() << "|\033[38;5;94m000540\033[0m| ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].stn_text[0].value.size(): " << 
                                                                                         static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].stn_text[0].value.size());
                                                                         
                                                                         if(__aux64__ > 16383) __aux64__ = 16383;
@@ -11073,7 +11073,7 @@ namespace wind
                                                                             
                                                                             // UINT16  min(1) max(16384) span(16384) dataType(UInt16)
                                                                             if(debug) {
-                                                                                logger->debug() << "|\033[38;5;94m000541\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].dcp[0].value.value) << 
+                                                                                logger->print() << "|\033[38;5;94m000541\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].dcp[0].value.value) << 
                                                                                              " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].dcp[0].value.value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].dcp[0].value.value;
                                                                             }
                                                                             
@@ -11098,7 +11098,7 @@ namespace wind
                                                                             
                                                                             // UINT8  min(2) max(9) span(8) dataType(UInt8)
                                                                             if(debug) {
-                                                                                logger->debug() << "|\033[38;5;94m000542\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].dcp[0].unit.value) << 
+                                                                                logger->print() << "|\033[38;5;94m000542\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].dcp[0].unit.value) << 
                                                                                              " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].dcp[0].unit.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].dcp[0].unit.value);
                                                                             }
                                                                             
@@ -11131,7 +11131,7 @@ namespace wind
                                                                             
                                                                             // UINT16  min(1) max(16384) span(16384) dataType(UInt16)
                                                                             if(debug) {
-                                                                                logger->debug() << "|\033[38;5;94m000543\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].ddp[0].value.value) << 
+                                                                                logger->print() << "|\033[38;5;94m000543\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].ddp[0].value.value) << 
                                                                                              " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].ddp[0].value.value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].ddp[0].value.value;
                                                                             }
                                                                             
@@ -11156,7 +11156,7 @@ namespace wind
                                                                             
                                                                             // UINT8  min(2) max(9) span(8) dataType(UInt8)
                                                                             if(debug) {
-                                                                                logger->debug() << "|\033[38;5;94m000544\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].ddp[0].unit.value) << 
+                                                                                logger->print() << "|\033[38;5;94m000544\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].ddp[0].unit.value) << 
                                                                                              " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].ddp[0].unit.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.iso14823[0].attributes[0].elements[n].ddd[0].io_list.elements[s].ddp[0].unit.value);
                                                                             }
                                                                             
@@ -11200,7 +11200,7 @@ namespace wind
                                         
                                         // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000546\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.itis_codes[0].value) << 
+                                            logger->print() << "|\033[38;5;94m000546\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.itis_codes[0].value) << 
                                                          " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.itis_codes[0].value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.itis_codes[0].value;
                                         }
                                         
@@ -11238,15 +11238,15 @@ namespace wind
                                             char* _tmp_502 = (char*) buffer++;
                                             *_tmp_502 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].value.size() != 0 ? 1 : 0);
                                             if(debug)
-                                                logger->debug() << "|\033[38;5;94m000548\033[0m| Optional field value = " << *_tmp_502;
+                                                logger->print() << "|\033[38;5;94m000548\033[0m| Optional field value = " << *_tmp_502;
                                             char* _tmp_503 = (char*) buffer++;
                                             *_tmp_503 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].unit.size() != 0 ? 1 : 0);
                                             if(debug)
-                                                logger->debug() << "|\033[38;5;94m000549\033[0m| Optional field unit = " << *_tmp_503;
+                                                logger->print() << "|\033[38;5;94m000549\033[0m| Optional field unit = " << *_tmp_503;
                                             char* _tmp_504 = (char*) buffer++;
                                             *_tmp_504 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes.size() != 0 ? 1 : 0);
                                             if(debug)
-                                                logger->debug() << "|\033[38;5;94m000550\033[0m| Optional field attributes = " << *_tmp_504;
+                                                logger->print() << "|\033[38;5;94m000550\033[0m| Optional field attributes = " << *_tmp_504;
                                             
                                             // Field:  type(Provider) name(owner) extGroup(0)
                                                 // Provider  SEQUENCE
@@ -11258,7 +11258,7 @@ namespace wind
                                                 // BitString
                                                 // BIT_STRING  min(10) max(10) span(1)
                                                 if(debug)
-                                                    logger->debug() << "|\033[38;5;94m000551\033[0m| ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].owner.country_code.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].owner.country_code.values.size());
+                                                    logger->print() << "|\033[38;5;94m000551\033[0m| ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].owner.country_code.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].owner.country_code.values.size());
                                                 
                                                 if(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].owner.country_code.values.size() < 10) {
                                                         logger->warning() << "Error: Value in 'ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].owner.country_code.value' " << (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].owner.country_code.values.size()) << " is less than allowable (10); message dropped.";
@@ -11286,7 +11286,7 @@ namespace wind
                                                 
                                                 // UINT16  min(0) max(16383) span(16384) dataType(UInt16)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000552\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].owner.provider_identifier.value) << 
+                                                    logger->print() << "|\033[38;5;94m000552\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].owner.provider_identifier.value) << 
                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].owner.provider_identifier.value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].owner.provider_identifier.value;
                                                 }
                                                 
@@ -11310,7 +11310,7 @@ namespace wind
                                             
                                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000553\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].version.value) << 
+                                                logger->print() << "|\033[38;5;94m000553\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].version.value) << 
                                                              " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].version.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].version.value);
                                             }
                                             
@@ -11334,7 +11334,7 @@ namespace wind
                                             
                                             // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000554\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].pictogram_code.value) << 
+                                                logger->print() << "|\033[38;5;94m000554\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].pictogram_code.value) << 
                                                              " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].pictogram_code.value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].pictogram_code.value;
                                             }
                                             
@@ -11359,7 +11359,7 @@ namespace wind
                                                 
                                                 // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000555\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].value[0].value) << 
+                                                    logger->print() << "|\033[38;5;94m000555\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].value[0].value) << 
                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].value[0].value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].value[0].value;
                                                 }
                                                 
@@ -11385,7 +11385,7 @@ namespace wind
                                                 
                                                 // UINT8  min(0) max(15) span(16) dataType(UInt8)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000556\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].unit[0].value) << 
+                                                    logger->print() << "|\033[38;5;94m000556\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].unit[0].value) << 
                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].unit[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].unit[0].value);
                                                 }
                                                 
@@ -11451,27 +11451,27 @@ namespace wind
                                                             char* _tmp_512 = (char*) buffer++;
                                                             *_tmp_512 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].year.size() != 0 ? 1 : 0);
                                                             if(debug)
-                                                                logger->debug() << "|\033[38;5;94m000559\033[0m| Optional field year = " << *_tmp_512;
+                                                                logger->print() << "|\033[38;5;94m000559\033[0m| Optional field year = " << *_tmp_512;
                                                             char* _tmp_513 = (char*) buffer++;
                                                             *_tmp_513 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].month_day.size() != 0 ? 1 : 0);
                                                             if(debug)
-                                                                logger->debug() << "|\033[38;5;94m000560\033[0m| Optional field month_day = " << *_tmp_513;
+                                                                logger->print() << "|\033[38;5;94m000560\033[0m| Optional field month_day = " << *_tmp_513;
                                                             char* _tmp_514 = (char*) buffer++;
                                                             *_tmp_514 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].pmd.size() != 0 ? 1 : 0);
                                                             if(debug)
-                                                                logger->debug() << "|\033[38;5;94m000561\033[0m| Optional field pmd = " << *_tmp_514;
+                                                                logger->print() << "|\033[38;5;94m000561\033[0m| Optional field pmd = " << *_tmp_514;
                                                             char* _tmp_515 = (char*) buffer++;
                                                             *_tmp_515 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].hour_minutes.size() != 0 ? 1 : 0);
                                                             if(debug)
-                                                                logger->debug() << "|\033[38;5;94m000562\033[0m| Optional field hour_minutes = " << *_tmp_515;
+                                                                logger->print() << "|\033[38;5;94m000562\033[0m| Optional field hour_minutes = " << *_tmp_515;
                                                             char* _tmp_516 = (char*) buffer++;
                                                             *_tmp_516 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].day_of_week.size() != 0 ? 1 : 0);
                                                             if(debug)
-                                                                logger->debug() << "|\033[38;5;94m000563\033[0m| Optional field day_of_week = " << *_tmp_516;
+                                                                logger->print() << "|\033[38;5;94m000563\033[0m| Optional field day_of_week = " << *_tmp_516;
                                                             char* _tmp_517 = (char*) buffer++;
                                                             *_tmp_517 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].period.size() != 0 ? 1 : 0);
                                                             if(debug)
-                                                                logger->debug() << "|\033[38;5;94m000564\033[0m| Optional field period = " << *_tmp_517;
+                                                                logger->print() << "|\033[38;5;94m000564\033[0m| Optional field period = " << *_tmp_517;
                                                             
                                                             if(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].year.size() != 0) {
                                                                 // Field:  type(DTM_year) name(year) extGroup(0)
@@ -11485,7 +11485,7 @@ namespace wind
                                                                     
                                                                     // UINT16  min(2000) max(2127) span(128) dataType(UInt16)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000565\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].year[0].syr.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000565\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].year[0].syr.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].year[0].syr.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].year[0].syr.value);
                                                                     }
                                                                     
@@ -11523,7 +11523,7 @@ namespace wind
                                                                     
                                                                     // UINT16  min(2000) max(2127) span(128) dataType(UInt16)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000566\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].year[0].eyr.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000566\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].year[0].eyr.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].year[0].eyr.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].year[0].eyr.value);
                                                                     }
                                                                     
@@ -11575,7 +11575,7 @@ namespace wind
                                                                         
                                                                         // UINT8  min(1) max(12) span(12) dataType(UInt8)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000567\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].month_day[0].smd.month.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000567\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].month_day[0].smd.month.value) << 
                                                                                          " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].month_day[0].smd.month.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].month_day[0].smd.month.value);
                                                                         }
                                                                         
@@ -11600,7 +11600,7 @@ namespace wind
                                                                         
                                                                         // UINT8  min(1) max(31) span(31) dataType(UInt8)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000568\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].month_day[0].smd.day.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000568\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].month_day[0].smd.day.value) << 
                                                                                          " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].month_day[0].smd.day.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].month_day[0].smd.day.value);
                                                                         }
                                                                         
@@ -11631,7 +11631,7 @@ namespace wind
                                                                         
                                                                         // UINT8  min(1) max(12) span(12) dataType(UInt8)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000569\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].month_day[0].emd.month.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000569\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].month_day[0].emd.month.value) << 
                                                                                          " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].month_day[0].emd.month.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].month_day[0].emd.month.value);
                                                                         }
                                                                         
@@ -11656,7 +11656,7 @@ namespace wind
                                                                         
                                                                         // UINT8  min(1) max(31) span(31) dataType(UInt8)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000570\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].month_day[0].emd.day.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000570\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].month_day[0].emd.day.value) << 
                                                                                          " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].month_day[0].emd.day.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].month_day[0].emd.day.value);
                                                                         }
                                                                         
@@ -11682,7 +11682,7 @@ namespace wind
                                                                 // BitString
                                                                 // BIT_STRING  min(4) max(4) span(1)
                                                                 if(debug)
-                                                                    logger->debug() << "|\033[38;5;94m000571\033[0m| ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].pmd[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].pmd[0].values.size());
+                                                                    logger->print() << "|\033[38;5;94m000571\033[0m| ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].pmd[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].pmd[0].values.size());
                                                                 
                                                                 if(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].pmd[0].values.size() < 4) {
                                                                         logger->warning() << "Error: Value in 'ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].pmd[0].value' " << (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].pmd[0].values.size()) << " is less than allowable (4); message dropped.";
@@ -11724,7 +11724,7 @@ namespace wind
                                                                         
                                                                         // UINT8  min(0) max(23) span(24) dataType(UInt8)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000572\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].hour_minutes[0].shm.hours.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000572\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].hour_minutes[0].shm.hours.value) << 
                                                                                          " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].hour_minutes[0].shm.hours.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].hour_minutes[0].shm.hours.value);
                                                                         }
                                                                         
@@ -11748,7 +11748,7 @@ namespace wind
                                                                         
                                                                         // UINT8  min(0) max(59) span(60) dataType(UInt8)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000573\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].hour_minutes[0].shm.mins.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000573\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].hour_minutes[0].shm.mins.value) << 
                                                                                          " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].hour_minutes[0].shm.mins.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].hour_minutes[0].shm.mins.value);
                                                                         }
                                                                         
@@ -11778,7 +11778,7 @@ namespace wind
                                                                         
                                                                         // UINT8  min(0) max(23) span(24) dataType(UInt8)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000574\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].hour_minutes[0].ehm.hours.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000574\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].hour_minutes[0].ehm.hours.value) << 
                                                                                          " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].hour_minutes[0].ehm.hours.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].hour_minutes[0].ehm.hours.value);
                                                                         }
                                                                         
@@ -11802,7 +11802,7 @@ namespace wind
                                                                         
                                                                         // UINT8  min(0) max(59) span(60) dataType(UInt8)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000575\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].hour_minutes[0].ehm.mins.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000575\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].hour_minutes[0].ehm.mins.value) << 
                                                                                          " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].hour_minutes[0].ehm.mins.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].hour_minutes[0].ehm.mins.value);
                                                                         }
                                                                         
@@ -11827,7 +11827,7 @@ namespace wind
                                                                 // BitString
                                                                 // BIT_STRING  min(8) max(8) span(1)
                                                                 if(debug)
-                                                                    logger->debug() << "|\033[38;5;94m000576\033[0m| ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].day_of_week[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].day_of_week[0].values.size());
+                                                                    logger->print() << "|\033[38;5;94m000576\033[0m| ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].day_of_week[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].day_of_week[0].values.size());
                                                                 
                                                                 if(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].day_of_week[0].values.size() < 8) {
                                                                         logger->warning() << "Error: Value in 'ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].day_of_week[0].value' " << (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].day_of_week[0].values.size()) << " is less than allowable (8); message dropped.";
@@ -11863,7 +11863,7 @@ namespace wind
                                                                     
                                                                     // UINT8  min(0) max(23) span(24) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000577\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].period[0].hours.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000577\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].period[0].hours.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].period[0].hours.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].period[0].hours.value);
                                                                     }
                                                                     
@@ -11887,7 +11887,7 @@ namespace wind
                                                                     
                                                                     // UINT8  min(0) max(59) span(60) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000578\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].period[0].mins.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000578\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].period[0].mins.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].period[0].mins.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dtm[0].period[0].mins.value);
                                                                     }
                                                                     
@@ -11935,7 +11935,7 @@ namespace wind
                                                                 
                                                                 // UINT16  min(2000) max(2127) span(128) dataType(UInt16)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000580\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].edt[0].year.syr.value) << 
+                                                                    logger->print() << "|\033[38;5;94m000580\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].edt[0].year.syr.value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].edt[0].year.syr.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].edt[0].year.syr.value);
                                                                 }
                                                                 
@@ -11973,7 +11973,7 @@ namespace wind
                                                                 
                                                                 // UINT16  min(2000) max(2127) span(128) dataType(UInt16)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000581\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].edt[0].year.eyr.value) << 
+                                                                    logger->print() << "|\033[38;5;94m000581\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].edt[0].year.eyr.value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].edt[0].year.eyr.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].edt[0].year.eyr.value);
                                                                 }
                                                                 
@@ -12023,7 +12023,7 @@ namespace wind
                                                                     
                                                                     // UINT8  min(1) max(12) span(12) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000582\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].edt[0].month_day.smd.month.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000582\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].edt[0].month_day.smd.month.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].edt[0].month_day.smd.month.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].edt[0].month_day.smd.month.value);
                                                                     }
                                                                     
@@ -12048,7 +12048,7 @@ namespace wind
                                                                     
                                                                     // UINT8  min(1) max(31) span(31) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000583\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].edt[0].month_day.smd.day.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000583\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].edt[0].month_day.smd.day.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].edt[0].month_day.smd.day.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].edt[0].month_day.smd.day.value);
                                                                     }
                                                                     
@@ -12079,7 +12079,7 @@ namespace wind
                                                                     
                                                                     // UINT8  min(1) max(12) span(12) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000584\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].edt[0].month_day.emd.month.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000584\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].edt[0].month_day.emd.month.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].edt[0].month_day.emd.month.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].edt[0].month_day.emd.month.value);
                                                                     }
                                                                     
@@ -12104,7 +12104,7 @@ namespace wind
                                                                     
                                                                     // UINT8  min(1) max(31) span(31) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000585\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].edt[0].month_day.emd.day.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000585\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].edt[0].month_day.emd.day.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].edt[0].month_day.emd.day.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].edt[0].month_day.emd.day.value);
                                                                     }
                                                                     
@@ -12128,7 +12128,7 @@ namespace wind
                                                             // BitString
                                                             // BIT_STRING  min(4) max(4) span(1)
                                                             if(debug)
-                                                                logger->debug() << "|\033[38;5;94m000586\033[0m| ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].edt[0].pmd.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].edt[0].pmd.values.size());
+                                                                logger->print() << "|\033[38;5;94m000586\033[0m| ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].edt[0].pmd.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].edt[0].pmd.values.size());
                                                             
                                                             if(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].edt[0].pmd.values.size() < 4) {
                                                                     logger->warning() << "Error: Value in 'ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].edt[0].pmd.value' " << (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].edt[0].pmd.values.size()) << " is less than allowable (4); message dropped.";
@@ -12168,7 +12168,7 @@ namespace wind
                                                                     
                                                                     // UINT8  min(0) max(23) span(24) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000587\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].edt[0].hour_minutes.shm.hours.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000587\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].edt[0].hour_minutes.shm.hours.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].edt[0].hour_minutes.shm.hours.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].edt[0].hour_minutes.shm.hours.value);
                                                                     }
                                                                     
@@ -12192,7 +12192,7 @@ namespace wind
                                                                     
                                                                     // UINT8  min(0) max(59) span(60) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000588\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].edt[0].hour_minutes.shm.mins.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000588\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].edt[0].hour_minutes.shm.mins.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].edt[0].hour_minutes.shm.mins.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].edt[0].hour_minutes.shm.mins.value);
                                                                     }
                                                                     
@@ -12222,7 +12222,7 @@ namespace wind
                                                                     
                                                                     // UINT8  min(0) max(23) span(24) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000589\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].edt[0].hour_minutes.ehm.hours.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000589\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].edt[0].hour_minutes.ehm.hours.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].edt[0].hour_minutes.ehm.hours.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].edt[0].hour_minutes.ehm.hours.value);
                                                                     }
                                                                     
@@ -12246,7 +12246,7 @@ namespace wind
                                                                     
                                                                     // UINT8  min(0) max(59) span(60) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000590\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].edt[0].hour_minutes.ehm.mins.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000590\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].edt[0].hour_minutes.ehm.mins.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].edt[0].hour_minutes.ehm.mins.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].edt[0].hour_minutes.ehm.mins.value);
                                                                     }
                                                                     
@@ -12269,7 +12269,7 @@ namespace wind
                                                             // BitString
                                                             // BIT_STRING  min(8) max(8) span(1)
                                                             if(debug)
-                                                                logger->debug() << "|\033[38;5;94m000591\033[0m| ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].edt[0].day_of_week.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].edt[0].day_of_week.values.size());
+                                                                logger->print() << "|\033[38;5;94m000591\033[0m| ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].edt[0].day_of_week.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].edt[0].day_of_week.values.size());
                                                             
                                                             if(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].edt[0].day_of_week.values.size() < 8) {
                                                                     logger->warning() << "Error: Value in 'ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].edt[0].day_of_week.value' " << (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].edt[0].day_of_week.values.size()) << " is less than allowable (8); message dropped.";
@@ -12303,7 +12303,7 @@ namespace wind
                                                                 
                                                                 // UINT8  min(0) max(23) span(24) dataType(UInt8)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000592\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].edt[0].period.hours.value) << 
+                                                                    logger->print() << "|\033[38;5;94m000592\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].edt[0].period.hours.value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].edt[0].period.hours.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].edt[0].period.hours.value);
                                                                 }
                                                                 
@@ -12327,7 +12327,7 @@ namespace wind
                                                                 
                                                                 // UINT8  min(0) max(59) span(60) dataType(UInt8)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000593\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].edt[0].period.mins.value) << 
+                                                                    logger->print() << "|\033[38;5;94m000593\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].edt[0].period.mins.value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].edt[0].period.mins.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].edt[0].period.mins.value);
                                                                 }
                                                                 
@@ -12358,7 +12358,7 @@ namespace wind
                                                         
                                                         // UINT8  min(1) max(8) span(8) dataType(UInt8)
                                                         if(debug) {
-                                                            logger->debug() << "|\033[38;5;94m000595\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dfl[0].value) << 
+                                                            logger->print() << "|\033[38;5;94m000595\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dfl[0].value) << 
                                                                          " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dfl[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dfl[0].value);
                                                         }
                                                         
@@ -12395,19 +12395,19 @@ namespace wind
                                                             char* _tmp_551 = (char*) buffer++;
                                                             *_tmp_551 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ved[0].hei.size() != 0 ? 1 : 0);
                                                             if(debug)
-                                                                logger->debug() << "|\033[38;5;94m000597\033[0m| Optional field hei = " << *_tmp_551;
+                                                                logger->print() << "|\033[38;5;94m000597\033[0m| Optional field hei = " << *_tmp_551;
                                                             char* _tmp_552 = (char*) buffer++;
                                                             *_tmp_552 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ved[0].wid.size() != 0 ? 1 : 0);
                                                             if(debug)
-                                                                logger->debug() << "|\033[38;5;94m000598\033[0m| Optional field wid = " << *_tmp_552;
+                                                                logger->print() << "|\033[38;5;94m000598\033[0m| Optional field wid = " << *_tmp_552;
                                                             char* _tmp_553 = (char*) buffer++;
                                                             *_tmp_553 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ved[0].vln.size() != 0 ? 1 : 0);
                                                             if(debug)
-                                                                logger->debug() << "|\033[38;5;94m000599\033[0m| Optional field vln = " << *_tmp_553;
+                                                                logger->print() << "|\033[38;5;94m000599\033[0m| Optional field vln = " << *_tmp_553;
                                                             char* _tmp_554 = (char*) buffer++;
                                                             *_tmp_554 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ved[0].wei.size() != 0 ? 1 : 0);
                                                             if(debug)
-                                                                logger->debug() << "|\033[38;5;94m000600\033[0m| Optional field wei = " << *_tmp_554;
+                                                                logger->print() << "|\033[38;5;94m000600\033[0m| Optional field wei = " << *_tmp_554;
                                                             
                                                             if(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ved[0].hei.size() != 0) {
                                                                 // Field:  type(Distance) name(hei) extGroup(0)
@@ -12421,7 +12421,7 @@ namespace wind
                                                                     
                                                                     // UINT16  min(1) max(16384) span(16384) dataType(UInt16)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000601\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ved[0].hei[0].value.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000601\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ved[0].hei[0].value.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ved[0].hei[0].value.value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ved[0].hei[0].value.value;
                                                                     }
                                                                     
@@ -12446,7 +12446,7 @@ namespace wind
                                                                     
                                                                     // UINT8  min(0) max(15) span(16) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000602\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ved[0].hei[0].unit.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000602\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ved[0].hei[0].unit.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ved[0].hei[0].unit.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ved[0].hei[0].unit.value);
                                                                     }
                                                                     
@@ -12478,7 +12478,7 @@ namespace wind
                                                                     
                                                                     // UINT16  min(1) max(16384) span(16384) dataType(UInt16)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000603\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ved[0].wid[0].value.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000603\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ved[0].wid[0].value.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ved[0].wid[0].value.value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ved[0].wid[0].value.value;
                                                                     }
                                                                     
@@ -12503,7 +12503,7 @@ namespace wind
                                                                     
                                                                     // UINT8  min(0) max(15) span(16) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000604\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ved[0].wid[0].unit.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000604\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ved[0].wid[0].unit.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ved[0].wid[0].unit.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ved[0].wid[0].unit.value);
                                                                     }
                                                                     
@@ -12535,7 +12535,7 @@ namespace wind
                                                                     
                                                                     // UINT16  min(1) max(16384) span(16384) dataType(UInt16)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000605\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ved[0].vln[0].value.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000605\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ved[0].vln[0].value.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ved[0].vln[0].value.value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ved[0].vln[0].value.value;
                                                                     }
                                                                     
@@ -12560,7 +12560,7 @@ namespace wind
                                                                     
                                                                     // UINT8  min(0) max(15) span(16) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000606\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ved[0].vln[0].unit.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000606\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ved[0].vln[0].unit.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ved[0].vln[0].unit.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ved[0].vln[0].unit.value);
                                                                     }
                                                                     
@@ -12592,7 +12592,7 @@ namespace wind
                                                                     
                                                                     // UINT16  min(1) max(16384) span(16384) dataType(UInt16)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000607\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ved[0].wei[0].value.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000607\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ved[0].wei[0].value.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ved[0].wei[0].value.value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ved[0].wei[0].value.value;
                                                                     }
                                                                     
@@ -12617,7 +12617,7 @@ namespace wind
                                                                     
                                                                     // UINT8  min(0) max(15) span(16) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000608\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ved[0].wei[0].unit.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000608\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ved[0].wei[0].unit.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ved[0].wei[0].unit.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ved[0].wei[0].unit.value);
                                                                     }
                                                                     
@@ -12653,11 +12653,11 @@ namespace wind
                                                             char* _tmp_563 = (char*) buffer++;
                                                             *_tmp_563 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].spe[0].spm.size() != 0 ? 1 : 0);
                                                             if(debug)
-                                                                logger->debug() << "|\033[38;5;94m000610\033[0m| Optional field spm = " << *_tmp_563;
+                                                                logger->print() << "|\033[38;5;94m000610\033[0m| Optional field spm = " << *_tmp_563;
                                                             char* _tmp_564 = (char*) buffer++;
                                                             *_tmp_564 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].spe[0].mns.size() != 0 ? 1 : 0);
                                                             if(debug)
-                                                                logger->debug() << "|\033[38;5;94m000611\033[0m| Optional field mns = " << *_tmp_564;
+                                                                logger->print() << "|\033[38;5;94m000611\033[0m| Optional field mns = " << *_tmp_564;
                                                             
                                                             if(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].spe[0].spm.size() != 0) {
                                                                 // Field:  type(SPE_spm) name(spm) extGroup(0)
@@ -12665,7 +12665,7 @@ namespace wind
                                                                 
                                                                 // UINT8  min(0) max(250) span(251) dataType(UInt8)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000612\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].spe[0].spm[0].value) << 
+                                                                    logger->print() << "|\033[38;5;94m000612\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].spe[0].spm[0].value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].spe[0].spm[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].spe[0].spm[0].value);
                                                                 }
                                                                 
@@ -12691,7 +12691,7 @@ namespace wind
                                                                 
                                                                 // UINT8  min(0) max(250) span(251) dataType(UInt8)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000613\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].spe[0].mns[0].value) << 
+                                                                    logger->print() << "|\033[38;5;94m000613\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].spe[0].mns[0].value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].spe[0].mns[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].spe[0].mns[0].value);
                                                                 }
                                                                 
@@ -12716,7 +12716,7 @@ namespace wind
                                                             
                                                             // UINT8  min(0) max(1) span(2) dataType(UInt8)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m000614\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].spe[0].unit.value) << 
+                                                                logger->print() << "|\033[38;5;94m000614\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].spe[0].unit.value) << 
                                                                              " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].spe[0].unit.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].spe[0].unit.value);
                                                             }
                                                             
@@ -12747,7 +12747,7 @@ namespace wind
                                                         
                                                         // UINT8  min(1) max(32) span(32) dataType(UInt8)
                                                         if(debug) {
-                                                            logger->debug() << "|\033[38;5;94m000616\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].roi[0].value) << 
+                                                            logger->print() << "|\033[38;5;94m000616\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].roi[0].value) << 
                                                                          " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].roi[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].roi[0].value);
                                                         }
                                                         
@@ -12785,7 +12785,7 @@ namespace wind
                                                             
                                                             // UINT16  min(1) max(16384) span(16384) dataType(UInt16)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m000618\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dbv[0].value.value) << 
+                                                                logger->print() << "|\033[38;5;94m000618\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dbv[0].value.value) << 
                                                                              " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dbv[0].value.value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dbv[0].value.value;
                                                             }
                                                             
@@ -12810,7 +12810,7 @@ namespace wind
                                                             
                                                             // UINT8  min(0) max(15) span(16) dataType(UInt8)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m000619\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dbv[0].unit.value) << 
+                                                                logger->print() << "|\033[38;5;94m000619\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dbv[0].unit.value) << 
                                                                              " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dbv[0].unit.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].dbv[0].unit.value);
                                                             }
                                                             
@@ -12846,15 +12846,15 @@ namespace wind
                                                             char* _tmp_571 = (char*) buffer++;
                                                             *_tmp_571 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].dcj.size() != 0 ? 1 : 0);
                                                             if(debug)
-                                                                logger->debug() << "|\033[38;5;94m000621\033[0m| Optional field dcj = " << *_tmp_571;
+                                                                logger->print() << "|\033[38;5;94m000621\033[0m| Optional field dcj = " << *_tmp_571;
                                                             char* _tmp_572 = (char*) buffer++;
                                                             *_tmp_572 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].dcr.size() != 0 ? 1 : 0);
                                                             if(debug)
-                                                                logger->debug() << "|\033[38;5;94m000622\033[0m| Optional field dcr = " << *_tmp_572;
+                                                                logger->print() << "|\033[38;5;94m000622\033[0m| Optional field dcr = " << *_tmp_572;
                                                             char* _tmp_573 = (char*) buffer++;
                                                             *_tmp_573 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].tpl.size() != 0 ? 1 : 0);
                                                             if(debug)
-                                                                logger->debug() << "|\033[38;5;94m000623\033[0m| Optional field tpl = " << *_tmp_573;
+                                                                logger->print() << "|\033[38;5;94m000623\033[0m| Optional field tpl = " << *_tmp_573;
                                                             
                                                             if(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].dcj.size() != 0) {
                                                                 // Field:  type(DDD_dcj) name(dcj) extGroup(0)
@@ -12862,7 +12862,7 @@ namespace wind
                                                                 
                                                                 // UINT8  min(1) max(128) span(128) dataType(UInt8)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000624\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].dcj[0].value) << 
+                                                                    logger->print() << "|\033[38;5;94m000624\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].dcj[0].value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].dcj[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].dcj[0].value);
                                                                 }
                                                                 
@@ -12889,7 +12889,7 @@ namespace wind
                                                                 
                                                                 // UINT8  min(1) max(128) span(128) dataType(UInt8)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000625\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].dcr[0].value) << 
+                                                                    logger->print() << "|\033[38;5;94m000625\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].dcr[0].value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].dcr[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].dcr[0].value);
                                                                 }
                                                                 
@@ -12916,7 +12916,7 @@ namespace wind
                                                                 
                                                                 // UINT8  min(1) max(128) span(128) dataType(UInt8)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000626\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].tpl[0].value) << 
+                                                                    logger->print() << "|\033[38;5;94m000626\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].tpl[0].value) << 
                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].tpl[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].tpl[0].value);
                                                                 }
                                                                 
@@ -12966,38 +12966,38 @@ namespace wind
                                                                     char* _tmp_578 = (char*) buffer++;
                                                                     *_tmp_578 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].dp.size() != 0 ? 1 : 0);
                                                                     if(debug)
-                                                                        logger->debug() << "|\033[38;5;94m000628\033[0m| Optional field dp = " << *_tmp_578;
+                                                                        logger->print() << "|\033[38;5;94m000628\033[0m| Optional field dp = " << *_tmp_578;
                                                                     char* _tmp_579 = (char*) buffer++;
                                                                     *_tmp_579 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].dr.size() != 0 ? 1 : 0);
                                                                     if(debug)
-                                                                        logger->debug() << "|\033[38;5;94m000629\033[0m| Optional field dr = " << *_tmp_579;
+                                                                        logger->print() << "|\033[38;5;94m000629\033[0m| Optional field dr = " << *_tmp_579;
                                                                     char* _tmp_580 = (char*) buffer++;
                                                                     *_tmp_580 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].rne.size() != 0 ? 1 : 0);
                                                                     if(debug)
-                                                                        logger->debug() << "|\033[38;5;94m000630\033[0m| Optional field rne = " << *_tmp_580;
+                                                                        logger->print() << "|\033[38;5;94m000630\033[0m| Optional field rne = " << *_tmp_580;
                                                                     char* _tmp_581 = (char*) buffer++;
                                                                     *_tmp_581 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].stn_id.size() != 0 ? 1 : 0);
                                                                     if(debug)
-                                                                        logger->debug() << "|\033[38;5;94m000631\033[0m| Optional field stn_id = " << *_tmp_581;
+                                                                        logger->print() << "|\033[38;5;94m000631\033[0m| Optional field stn_id = " << *_tmp_581;
                                                                     char* _tmp_582 = (char*) buffer++;
                                                                     *_tmp_582 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].stn_text.size() != 0 ? 1 : 0);
                                                                     if(debug)
-                                                                        logger->debug() << "|\033[38;5;94m000632\033[0m| Optional field stn_text = " << *_tmp_582;
+                                                                        logger->print() << "|\033[38;5;94m000632\033[0m| Optional field stn_text = " << *_tmp_582;
                                                                     char* _tmp_583 = (char*) buffer++;
                                                                     *_tmp_583 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].dcp.size() != 0 ? 1 : 0);
                                                                     if(debug)
-                                                                        logger->debug() << "|\033[38;5;94m000633\033[0m| Optional field dcp = " << *_tmp_583;
+                                                                        logger->print() << "|\033[38;5;94m000633\033[0m| Optional field dcp = " << *_tmp_583;
                                                                     char* _tmp_584 = (char*) buffer++;
                                                                     *_tmp_584 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].ddp.size() != 0 ? 1 : 0);
                                                                     if(debug)
-                                                                        logger->debug() << "|\033[38;5;94m000634\033[0m| Optional field ddp = " << *_tmp_584;
+                                                                        logger->print() << "|\033[38;5;94m000634\033[0m| Optional field ddp = " << *_tmp_584;
                                                                     
                                                                     // Field:  type(DDD_IO_drn) name(drn) extGroup(0)
                                                                     // Integer
                                                                     
                                                                     // UINT8  min(0) max(7) span(8) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000635\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].drn.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000635\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].drn.value) << 
                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].drn.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].drn.value);
                                                                     }
                                                                     
@@ -13042,22 +13042,22 @@ namespace wind
                                                                                 char* _tmp_587 = (char*) buffer++;
                                                                                 *_tmp_587 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].dp[0].elements[g].dep_blob.size() != 0 ? 1 : 0);
                                                                                 if(debug)
-                                                                                    logger->debug() << "|\033[38;5;94m000637\033[0m| Optional field dep_blob = " << *_tmp_587;
+                                                                                    logger->print() << "|\033[38;5;94m000637\033[0m| Optional field dep_blob = " << *_tmp_587;
                                                                                 char* _tmp_588 = (char*) buffer++;
                                                                                 *_tmp_588 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].dp[0].elements[g].pln_id.size() != 0 ? 1 : 0);
                                                                                 if(debug)
-                                                                                    logger->debug() << "|\033[38;5;94m000638\033[0m| Optional field pln_id = " << *_tmp_588;
+                                                                                    logger->print() << "|\033[38;5;94m000638\033[0m| Optional field pln_id = " << *_tmp_588;
                                                                                 char* _tmp_589 = (char*) buffer++;
                                                                                 *_tmp_589 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].dp[0].elements[g].pln_text.size() != 0 ? 1 : 0);
                                                                                 if(debug)
-                                                                                    logger->debug() << "|\033[38;5;94m000639\033[0m| Optional field pln_text = " << *_tmp_589;
+                                                                                    logger->print() << "|\033[38;5;94m000639\033[0m| Optional field pln_text = " << *_tmp_589;
                                                                                 
                                                                                 // Field:  type(DDD_DEP) name(dep_type) extGroup(0)
                                                                                 // Integer
                                                                                 
                                                                                 // UINT8  min(0) max(15) span(16) dataType(UInt8)
                                                                                 if(debug) {
-                                                                                    logger->debug() << "|\033[38;5;94m000640\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].dp[0].elements[g].dep_type.value) << 
+                                                                                    logger->print() << "|\033[38;5;94m000640\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].dp[0].elements[g].dep_type.value) << 
                                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].dp[0].elements[g].dep_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].dp[0].elements[g].dep_type.value);
                                                                                 }
                                                                                 
@@ -13096,7 +13096,7 @@ namespace wind
                                                                                     // OCTET_STRING  min(0) max(16383) span(16384)
                                                                                     
                                                                                     if(debug)
-                                                                                        logger->debug() << "|\033[38;5;94m000641\033[0m| ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].dp[0].elements[g].dep_blob[0].values.size(): ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].dp[0].elements[g].dep_blob[0]" << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].dp[0].elements[g].dep_blob[0].values.size());
+                                                                                        logger->print() << "|\033[38;5;94m000641\033[0m| ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].dp[0].elements[g].dep_blob[0].values.size(): ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].dp[0].elements[g].dep_blob[0]" << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].dp[0].elements[g].dep_blob[0].values.size());
                                                                                     
                                                                                     if(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].dp[0].elements[g].dep_blob[0].values.size() < 0) {
                                                                                         logger->warning() << "Error: Value in 'ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].dp[0].elements[g].dep_blob[0].value' (" << 
@@ -13127,7 +13127,7 @@ namespace wind
                                                                                     
                                                                                     // UINT16  min(1) max(999) span(999) dataType(UInt16)
                                                                                     if(debug) {
-                                                                                        logger->debug() << "|\033[38;5;94m000642\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].dp[0].elements[g].pln_id[0].value) << 
+                                                                                        logger->print() << "|\033[38;5;94m000642\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].dp[0].elements[g].pln_id[0].value) << 
                                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].dp[0].elements[g].pln_id[0].value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].dp[0].elements[g].pln_id[0].value;
                                                                                     }
                                                                                     
@@ -13166,7 +13166,7 @@ namespace wind
                                                                                         return -1;
                                                                                     }
                                                                                     if(debug)
-                                                                                        logger->debug() << "|\033[38;5;94m000643\033[0m| ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].dp[0].elements[g].pln_text[0].value.size(): " << 
+                                                                                        logger->print() << "|\033[38;5;94m000643\033[0m| ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].dp[0].elements[g].pln_text[0].value.size(): " << 
                                                                                                     static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].dp[0].elements[g].pln_text[0].value.size());
                                                                                     
                                                                                     if(__aux64__ > 16383) __aux64__ = 16383;
@@ -13208,18 +13208,18 @@ namespace wind
                                                                                 char* _tmp_596 = (char*) buffer++;
                                                                                 *_tmp_596 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].dr[0].elements[j].ron_id.size() != 0 ? 1 : 0);
                                                                                 if(debug)
-                                                                                    logger->debug() << "|\033[38;5;94m000645\033[0m| Optional field ron_id = " << *_tmp_596;
+                                                                                    logger->print() << "|\033[38;5;94m000645\033[0m| Optional field ron_id = " << *_tmp_596;
                                                                                 char* _tmp_597 = (char*) buffer++;
                                                                                 *_tmp_597 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].dr[0].elements[j].ron_text.size() != 0 ? 1 : 0);
                                                                                 if(debug)
-                                                                                    logger->debug() << "|\033[38;5;94m000646\033[0m| Optional field ron_text = " << *_tmp_597;
+                                                                                    logger->print() << "|\033[38;5;94m000646\033[0m| Optional field ron_text = " << *_tmp_597;
                                                                                 
                                                                                 // Field:  type(DDD_DER) name(der_type) extGroup(0)
                                                                                 // Integer
                                                                                 
                                                                                 // UINT8  min(0) max(15) span(16) dataType(UInt8)
                                                                                 if(debug) {
-                                                                                    logger->debug() << "|\033[38;5;94m000647\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].dr[0].elements[j].der_type.value) << 
+                                                                                    logger->print() << "|\033[38;5;94m000647\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].dr[0].elements[j].der_type.value) << 
                                                                                                  " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].dr[0].elements[j].der_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].dr[0].elements[j].der_type.value);
                                                                                 }
                                                                                 
@@ -13257,7 +13257,7 @@ namespace wind
                                                                                     
                                                                                     // UINT16  min(1) max(999) span(999) dataType(UInt16)
                                                                                     if(debug) {
-                                                                                        logger->debug() << "|\033[38;5;94m000648\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].dr[0].elements[j].ron_id[0].value) << 
+                                                                                        logger->print() << "|\033[38;5;94m000648\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].dr[0].elements[j].ron_id[0].value) << 
                                                                                                      " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].dr[0].elements[j].ron_id[0].value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].dr[0].elements[j].ron_id[0].value;
                                                                                     }
                                                                                     
@@ -13296,7 +13296,7 @@ namespace wind
                                                                                         return -1;
                                                                                     }
                                                                                     if(debug)
-                                                                                        logger->debug() << "|\033[38;5;94m000649\033[0m| ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].dr[0].elements[j].ron_text[0].value.size(): " << 
+                                                                                        logger->print() << "|\033[38;5;94m000649\033[0m| ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].dr[0].elements[j].ron_text[0].value.size(): " << 
                                                                                                     static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].dr[0].elements[j].ron_text[0].value.size());
                                                                                     
                                                                                     if(__aux64__ > 16383) __aux64__ = 16383;
@@ -13319,7 +13319,7 @@ namespace wind
                                                                         
                                                                         // UINT16  min(1) max(999) span(999) dataType(UInt16)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000650\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].rne[0].value) << 
+                                                                            logger->print() << "|\033[38;5;94m000650\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].rne[0].value) << 
                                                                                          " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].rne[0].value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].rne[0].value;
                                                                         }
                                                                         
@@ -13346,7 +13346,7 @@ namespace wind
                                                                         
                                                                         // UINT16  min(1) max(999) span(999) dataType(UInt16)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000651\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].stn_id[0].value) << 
+                                                                            logger->print() << "|\033[38;5;94m000651\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].stn_id[0].value) << 
                                                                                          " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].stn_id[0].value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].stn_id[0].value;
                                                                         }
                                                                         
@@ -13385,7 +13385,7 @@ namespace wind
                                                                             return -1;
                                                                         }
                                                                         if(debug)
-                                                                            logger->debug() << "|\033[38;5;94m000652\033[0m| ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].stn_text[0].value.size(): " << 
+                                                                            logger->print() << "|\033[38;5;94m000652\033[0m| ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].stn_text[0].value.size(): " << 
                                                                                         static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].stn_text[0].value.size());
                                                                         
                                                                         if(__aux64__ > 16383) __aux64__ = 16383;
@@ -13411,7 +13411,7 @@ namespace wind
                                                                             
                                                                             // UINT16  min(1) max(16384) span(16384) dataType(UInt16)
                                                                             if(debug) {
-                                                                                logger->debug() << "|\033[38;5;94m000653\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].dcp[0].value.value) << 
+                                                                                logger->print() << "|\033[38;5;94m000653\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].dcp[0].value.value) << 
                                                                                              " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].dcp[0].value.value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].dcp[0].value.value;
                                                                             }
                                                                             
@@ -13436,7 +13436,7 @@ namespace wind
                                                                             
                                                                             // UINT8  min(2) max(9) span(8) dataType(UInt8)
                                                                             if(debug) {
-                                                                                logger->debug() << "|\033[38;5;94m000654\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].dcp[0].unit.value) << 
+                                                                                logger->print() << "|\033[38;5;94m000654\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].dcp[0].unit.value) << 
                                                                                              " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].dcp[0].unit.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].dcp[0].unit.value);
                                                                             }
                                                                             
@@ -13469,7 +13469,7 @@ namespace wind
                                                                             
                                                                             // UINT16  min(1) max(16384) span(16384) dataType(UInt16)
                                                                             if(debug) {
-                                                                                logger->debug() << "|\033[38;5;94m000655\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].ddp[0].value.value) << 
+                                                                                logger->print() << "|\033[38;5;94m000655\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].ddp[0].value.value) << 
                                                                                              " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].ddp[0].value.value: " << ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].ddp[0].value.value;
                                                                             }
                                                                             
@@ -13494,7 +13494,7 @@ namespace wind
                                                                             
                                                                             // UINT8  min(2) max(9) span(8) dataType(UInt8)
                                                                             if(debug) {
-                                                                                logger->debug() << "|\033[38;5;94m000656\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].ddp[0].unit.value) << 
+                                                                                logger->print() << "|\033[38;5;94m000656\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].ddp[0].unit.value) << 
                                                                                              " ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].ddp[0].unit.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].road_sign_codes.elements[i].code.any_catalogue[0].attributes[0].elements[a].ddd[0].io_list.elements[f].ddp[0].unit.value);
                                                                             }
                                                                             
@@ -13560,7 +13560,7 @@ namespace wind
                                         char* _tmp_610 = (char*) buffer++;
                                         *_tmp_610 = (ros->ivi.optional[0].elements[c].giv[0].elements[m].extra_text[0].elements[m].layout_component_id.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000658\033[0m| Optional field layout_component_id = " << *_tmp_610;
+                                            logger->print() << "|\033[38;5;94m000658\033[0m| Optional field layout_component_id = " << *_tmp_610;
                                         
                                         if(ros->ivi.optional[0].elements[c].giv[0].elements[m].extra_text[0].elements[m].layout_component_id.size() != 0) {
                                             // Field:  type(Text_layoutComponentId) name(layout_component_id) extGroup(0)
@@ -13568,7 +13568,7 @@ namespace wind
                                             
                                             // UINT8  min(1) max(4) span(4) dataType(UInt8)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000659\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].extra_text[0].elements[m].layout_component_id[0].value) << 
+                                                logger->print() << "|\033[38;5;94m000659\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].giv[0].elements[m].extra_text[0].elements[m].layout_component_id[0].value) << 
                                                              " ivi.optional[0].elements[c].giv[0].elements[m].extra_text[0].elements[m].layout_component_id[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].extra_text[0].elements[m].layout_component_id[0].value);
                                             }
                                             
@@ -13606,7 +13606,7 @@ namespace wind
                                         // BitString
                                         // BIT_STRING  min(10) max(10) span(1)
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000660\033[0m| ivi.optional[0].elements[c].giv[0].elements[m].extra_text[0].elements[m].language.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].extra_text[0].elements[m].language.values.size());
+                                            logger->print() << "|\033[38;5;94m000660\033[0m| ivi.optional[0].elements[c].giv[0].elements[m].extra_text[0].elements[m].language.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].extra_text[0].elements[m].language.values.size());
                                         
                                         if(ros->ivi.optional[0].elements[c].giv[0].elements[m].extra_text[0].elements[m].language.values.size() < 10) {
                                                 logger->warning() << "Error: Value in 'ivi.optional[0].elements[c].giv[0].elements[m].extra_text[0].elements[m].language.value' " << (ros->ivi.optional[0].elements[c].giv[0].elements[m].extra_text[0].elements[m].language.values.size()) << " is less than allowable (10); message dropped.";
@@ -13646,7 +13646,7 @@ namespace wind
                                             return -1;
                                         }
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000661\033[0m| ivi.optional[0].elements[c].giv[0].elements[m].extra_text[0].elements[m].text_content.value.size(): " << 
+                                            logger->print() << "|\033[38;5;94m000661\033[0m| ivi.optional[0].elements[c].giv[0].elements[m].extra_text[0].elements[m].text_content.value.size(): " << 
                                                         static_cast<int>(ros->ivi.optional[0].elements[c].giv[0].elements[m].extra_text[0].elements[m].text_content.value.size());
                                         
                                         if(__aux64__ > 16383) __aux64__ = 16383;
@@ -13719,7 +13719,7 @@ namespace wind
                                 
                                 // UINT8  min(1) max(32) span(32) dataType(UInt8)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000665\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].zone_ids.elements[q].value) << 
+                                    logger->print() << "|\033[38;5;94m000665\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].zone_ids.elements[q].value) << 
                                                  " ivi.optional[0].elements[c].rcc[0].elements[p].zone_ids.elements[q].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].zone_ids.elements[q].value);
                                 }
                                 
@@ -13757,7 +13757,7 @@ namespace wind
                             // Enumerated
                             // INT32  min(0) max(3) span(4) dataType(Int32)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000666\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].road_type.value) << 
+                                logger->print() << "|\033[38;5;94m000666\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].road_type.value) << 
                                              " ivi.optional[0].elements[c].rcc[0].elements[p].road_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].road_type.value);
                             }
                             
@@ -13808,22 +13808,22 @@ namespace wind
                                     char* _tmp_622 = (char*) buffer++;
                                     *_tmp_622 = (ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity.size() != 0 ? 1 : 0);
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m000668\033[0m| Optional field validity = " << *_tmp_622;
+                                        logger->print() << "|\033[38;5;94m000668\033[0m| Optional field validity = " << *_tmp_622;
                                     char* _tmp_623 = (char*) buffer++;
                                     *_tmp_623 = (ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier.size() != 0 ? 1 : 0);
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m000669\033[0m| Optional field lane_type_qualifier = " << *_tmp_623;
+                                        logger->print() << "|\033[38;5;94m000669\033[0m| Optional field lane_type_qualifier = " << *_tmp_623;
                                     char* _tmp_624 = (char*) buffer++;
                                     *_tmp_624 = (ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_width.size() != 0 ? 1 : 0);
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m000670\033[0m| Optional field lane_width = " << *_tmp_624;
+                                        logger->print() << "|\033[38;5;94m000670\033[0m| Optional field lane_width = " << *_tmp_624;
                                     
                                     // Field:  type(LanePosition) name(lane_number) extGroup(0)
                                     // Integer
                                     
                                     // INT8  min(-1) max(14) span(16) dataType(Int8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000671\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_number.value) << 
+                                        logger->print() << "|\033[38;5;94m000671\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_number.value) << 
                                                      " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_number.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_number.value);
                                     }
                                     
@@ -13848,7 +13848,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(3) span(4) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000672\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].direction.value) << 
+                                        logger->print() << "|\033[38;5;94m000672\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].direction.value) << 
                                                      " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].direction.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].direction.value);
                                     }
                                     
@@ -13880,27 +13880,27 @@ namespace wind
                                             char* _tmp_627 = (char*) buffer++;
                                             *_tmp_627 = (ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].year.size() != 0 ? 1 : 0);
                                             if(debug)
-                                                logger->debug() << "|\033[38;5;94m000673\033[0m| Optional field year = " << *_tmp_627;
+                                                logger->print() << "|\033[38;5;94m000673\033[0m| Optional field year = " << *_tmp_627;
                                             char* _tmp_628 = (char*) buffer++;
                                             *_tmp_628 = (ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].month_day.size() != 0 ? 1 : 0);
                                             if(debug)
-                                                logger->debug() << "|\033[38;5;94m000674\033[0m| Optional field month_day = " << *_tmp_628;
+                                                logger->print() << "|\033[38;5;94m000674\033[0m| Optional field month_day = " << *_tmp_628;
                                             char* _tmp_629 = (char*) buffer++;
                                             *_tmp_629 = (ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].pmd.size() != 0 ? 1 : 0);
                                             if(debug)
-                                                logger->debug() << "|\033[38;5;94m000675\033[0m| Optional field pmd = " << *_tmp_629;
+                                                logger->print() << "|\033[38;5;94m000675\033[0m| Optional field pmd = " << *_tmp_629;
                                             char* _tmp_630 = (char*) buffer++;
                                             *_tmp_630 = (ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].hour_minutes.size() != 0 ? 1 : 0);
                                             if(debug)
-                                                logger->debug() << "|\033[38;5;94m000676\033[0m| Optional field hour_minutes = " << *_tmp_630;
+                                                logger->print() << "|\033[38;5;94m000676\033[0m| Optional field hour_minutes = " << *_tmp_630;
                                             char* _tmp_631 = (char*) buffer++;
                                             *_tmp_631 = (ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].day_of_week.size() != 0 ? 1 : 0);
                                             if(debug)
-                                                logger->debug() << "|\033[38;5;94m000677\033[0m| Optional field day_of_week = " << *_tmp_631;
+                                                logger->print() << "|\033[38;5;94m000677\033[0m| Optional field day_of_week = " << *_tmp_631;
                                             char* _tmp_632 = (char*) buffer++;
                                             *_tmp_632 = (ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].period.size() != 0 ? 1 : 0);
                                             if(debug)
-                                                logger->debug() << "|\033[38;5;94m000678\033[0m| Optional field period = " << *_tmp_632;
+                                                logger->print() << "|\033[38;5;94m000678\033[0m| Optional field period = " << *_tmp_632;
                                             
                                             if(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].year.size() != 0) {
                                                 // Field:  type(DTM_year) name(year) extGroup(0)
@@ -13914,7 +13914,7 @@ namespace wind
                                                     
                                                     // UINT16  min(2000) max(2127) span(128) dataType(UInt16)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m000679\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].year[0].syr.value) << 
+                                                        logger->print() << "|\033[38;5;94m000679\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].year[0].syr.value) << 
                                                                      " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].year[0].syr.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].year[0].syr.value);
                                                     }
                                                     
@@ -13952,7 +13952,7 @@ namespace wind
                                                     
                                                     // UINT16  min(2000) max(2127) span(128) dataType(UInt16)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m000680\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].year[0].eyr.value) << 
+                                                        logger->print() << "|\033[38;5;94m000680\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].year[0].eyr.value) << 
                                                                      " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].year[0].eyr.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].year[0].eyr.value);
                                                     }
                                                     
@@ -14004,7 +14004,7 @@ namespace wind
                                                         
                                                         // UINT8  min(1) max(12) span(12) dataType(UInt8)
                                                         if(debug) {
-                                                            logger->debug() << "|\033[38;5;94m000681\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].month_day[0].smd.month.value) << 
+                                                            logger->print() << "|\033[38;5;94m000681\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].month_day[0].smd.month.value) << 
                                                                          " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].month_day[0].smd.month.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].month_day[0].smd.month.value);
                                                         }
                                                         
@@ -14029,7 +14029,7 @@ namespace wind
                                                         
                                                         // UINT8  min(1) max(31) span(31) dataType(UInt8)
                                                         if(debug) {
-                                                            logger->debug() << "|\033[38;5;94m000682\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].month_day[0].smd.day.value) << 
+                                                            logger->print() << "|\033[38;5;94m000682\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].month_day[0].smd.day.value) << 
                                                                          " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].month_day[0].smd.day.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].month_day[0].smd.day.value);
                                                         }
                                                         
@@ -14060,7 +14060,7 @@ namespace wind
                                                         
                                                         // UINT8  min(1) max(12) span(12) dataType(UInt8)
                                                         if(debug) {
-                                                            logger->debug() << "|\033[38;5;94m000683\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].month_day[0].emd.month.value) << 
+                                                            logger->print() << "|\033[38;5;94m000683\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].month_day[0].emd.month.value) << 
                                                                          " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].month_day[0].emd.month.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].month_day[0].emd.month.value);
                                                         }
                                                         
@@ -14085,7 +14085,7 @@ namespace wind
                                                         
                                                         // UINT8  min(1) max(31) span(31) dataType(UInt8)
                                                         if(debug) {
-                                                            logger->debug() << "|\033[38;5;94m000684\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].month_day[0].emd.day.value) << 
+                                                            logger->print() << "|\033[38;5;94m000684\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].month_day[0].emd.day.value) << 
                                                                          " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].month_day[0].emd.day.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].month_day[0].emd.day.value);
                                                         }
                                                         
@@ -14111,7 +14111,7 @@ namespace wind
                                                 // BitString
                                                 // BIT_STRING  min(4) max(4) span(1)
                                                 if(debug)
-                                                    logger->debug() << "|\033[38;5;94m000685\033[0m| ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].pmd[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].pmd[0].values.size());
+                                                    logger->print() << "|\033[38;5;94m000685\033[0m| ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].pmd[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].pmd[0].values.size());
                                                 
                                                 if(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].pmd[0].values.size() < 4) {
                                                         logger->warning() << "Error: Value in 'ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].pmd[0].value' " << (ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].pmd[0].values.size()) << " is less than allowable (4); message dropped.";
@@ -14153,7 +14153,7 @@ namespace wind
                                                         
                                                         // UINT8  min(0) max(23) span(24) dataType(UInt8)
                                                         if(debug) {
-                                                            logger->debug() << "|\033[38;5;94m000686\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].hour_minutes[0].shm.hours.value) << 
+                                                            logger->print() << "|\033[38;5;94m000686\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].hour_minutes[0].shm.hours.value) << 
                                                                          " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].hour_minutes[0].shm.hours.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].hour_minutes[0].shm.hours.value);
                                                         }
                                                         
@@ -14177,7 +14177,7 @@ namespace wind
                                                         
                                                         // UINT8  min(0) max(59) span(60) dataType(UInt8)
                                                         if(debug) {
-                                                            logger->debug() << "|\033[38;5;94m000687\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].hour_minutes[0].shm.mins.value) << 
+                                                            logger->print() << "|\033[38;5;94m000687\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].hour_minutes[0].shm.mins.value) << 
                                                                          " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].hour_minutes[0].shm.mins.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].hour_minutes[0].shm.mins.value);
                                                         }
                                                         
@@ -14207,7 +14207,7 @@ namespace wind
                                                         
                                                         // UINT8  min(0) max(23) span(24) dataType(UInt8)
                                                         if(debug) {
-                                                            logger->debug() << "|\033[38;5;94m000688\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].hour_minutes[0].ehm.hours.value) << 
+                                                            logger->print() << "|\033[38;5;94m000688\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].hour_minutes[0].ehm.hours.value) << 
                                                                          " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].hour_minutes[0].ehm.hours.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].hour_minutes[0].ehm.hours.value);
                                                         }
                                                         
@@ -14231,7 +14231,7 @@ namespace wind
                                                         
                                                         // UINT8  min(0) max(59) span(60) dataType(UInt8)
                                                         if(debug) {
-                                                            logger->debug() << "|\033[38;5;94m000689\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].hour_minutes[0].ehm.mins.value) << 
+                                                            logger->print() << "|\033[38;5;94m000689\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].hour_minutes[0].ehm.mins.value) << 
                                                                          " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].hour_minutes[0].ehm.mins.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].hour_minutes[0].ehm.mins.value);
                                                         }
                                                         
@@ -14256,7 +14256,7 @@ namespace wind
                                                 // BitString
                                                 // BIT_STRING  min(8) max(8) span(1)
                                                 if(debug)
-                                                    logger->debug() << "|\033[38;5;94m000690\033[0m| ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].day_of_week[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].day_of_week[0].values.size());
+                                                    logger->print() << "|\033[38;5;94m000690\033[0m| ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].day_of_week[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].day_of_week[0].values.size());
                                                 
                                                 if(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].day_of_week[0].values.size() < 8) {
                                                         logger->warning() << "Error: Value in 'ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].day_of_week[0].value' " << (ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].day_of_week[0].values.size()) << " is less than allowable (8); message dropped.";
@@ -14292,7 +14292,7 @@ namespace wind
                                                     
                                                     // UINT8  min(0) max(23) span(24) dataType(UInt8)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m000691\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].period[0].hours.value) << 
+                                                        logger->print() << "|\033[38;5;94m000691\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].period[0].hours.value) << 
                                                                      " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].period[0].hours.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].period[0].hours.value);
                                                     }
                                                     
@@ -14316,7 +14316,7 @@ namespace wind
                                                     
                                                     // UINT8  min(0) max(59) span(60) dataType(UInt8)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m000692\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].period[0].mins.value) << 
+                                                        logger->print() << "|\033[38;5;94m000692\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].period[0].mins.value) << 
                                                                      " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].period[0].mins.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].validity[0].period[0].mins.value);
                                                     }
                                                     
@@ -14342,7 +14342,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(31) span(32) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000693\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type.value) << 
+                                        logger->print() << "|\033[38;5;94m000693\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type.value) << 
                                                      " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type.value);
                                     }
                                     
@@ -14371,15 +14371,15 @@ namespace wind
                                             char* _tmp_650 = (char*) buffer++;
                                             *_tmp_650 = (ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor.size() != 0 ? 1 : 0);
                                             if(debug)
-                                                logger->debug() << "|\033[38;5;94m000694\033[0m| Optional field tractor = " << *_tmp_650;
+                                                logger->print() << "|\033[38;5;94m000694\033[0m| Optional field tractor = " << *_tmp_650;
                                             char* _tmp_651 = (char*) buffer++;
                                             *_tmp_651 = (ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer.size() != 0 ? 1 : 0);
                                             if(debug)
-                                                logger->debug() << "|\033[38;5;94m000695\033[0m| Optional field trailer = " << *_tmp_651;
+                                                logger->print() << "|\033[38;5;94m000695\033[0m| Optional field trailer = " << *_tmp_651;
                                             char* _tmp_652 = (char*) buffer++;
                                             *_tmp_652 = (ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train.size() != 0 ? 1 : 0);
                                             if(debug)
-                                                logger->debug() << "|\033[38;5;94m000696\033[0m| Optional field train = " << *_tmp_652;
+                                                logger->print() << "|\033[38;5;94m000696\033[0m| Optional field train = " << *_tmp_652;
                                             
                                             if(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor.size() != 0) {
                                                 // Field:  type(TractorCharacteristics) name(tractor) extGroup(0)
@@ -14391,15 +14391,15 @@ namespace wind
                                                     char* _tmp_653 = (char*) buffer++;
                                                     *_tmp_653 = (ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].equal_to.size() != 0 ? 1 : 0);
                                                     if(debug)
-                                                        logger->debug() << "|\033[38;5;94m000697\033[0m| Optional field equal_to = " << *_tmp_653;
+                                                        logger->print() << "|\033[38;5;94m000697\033[0m| Optional field equal_to = " << *_tmp_653;
                                                     char* _tmp_654 = (char*) buffer++;
                                                     *_tmp_654 = (ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].not_equal_to.size() != 0 ? 1 : 0);
                                                     if(debug)
-                                                        logger->debug() << "|\033[38;5;94m000698\033[0m| Optional field not_equal_to = " << *_tmp_654;
+                                                        logger->print() << "|\033[38;5;94m000698\033[0m| Optional field not_equal_to = " << *_tmp_654;
                                                     char* _tmp_655 = (char*) buffer++;
                                                     *_tmp_655 = (ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges.size() != 0 ? 1 : 0);
                                                     if(debug)
-                                                        logger->debug() << "|\033[38;5;94m000699\033[0m| Optional field ranges = " << *_tmp_655;
+                                                        logger->print() << "|\033[38;5;94m000699\033[0m| Optional field ranges = " << *_tmp_655;
                                                     
                                                     if(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].equal_to.size() != 0) {
                                                         // Field:  type(TractorCharacteristics_equalTo) name(equal_to) extGroup(0)
@@ -14443,7 +14443,7 @@ namespace wind
                                                                 
                                                                 // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000702\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].equal_to[0].elements[u].simple_vehicle_type[0].value) << 
+                                                                    logger->print() << "|\033[38;5;94m000702\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].equal_to[0].elements[u].simple_vehicle_type[0].value) << 
                                                                                  " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].equal_to[0].elements[u].simple_vehicle_type[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].equal_to[0].elements[u].simple_vehicle_type[0].value);
                                                                 }
                                                                 
@@ -14487,7 +14487,7 @@ namespace wind
                                                                     // Enumerated
                                                                     // INT32  min(0) max(6) span(7) dataType(Int32)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000705\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].equal_to[0].elements[u].eu_vehicle_category_code[0].eu_vehicle_category_l[0].value) << 
+                                                                        logger->print() << "|\033[38;5;94m000705\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].equal_to[0].elements[u].eu_vehicle_category_code[0].eu_vehicle_category_l[0].value) << 
                                                                                      " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].equal_to[0].elements[u].eu_vehicle_category_code[0].eu_vehicle_category_l[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].equal_to[0].elements[u].eu_vehicle_category_code[0].eu_vehicle_category_l[0].value);
                                                                     }
                                                                     
@@ -14517,7 +14517,7 @@ namespace wind
                                                                     // Enumerated
                                                                     // INT32  min(0) max(2) span(3) dataType(Int32)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000707\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].equal_to[0].elements[u].eu_vehicle_category_code[0].eu_vehicle_category_m[0].value) << 
+                                                                        logger->print() << "|\033[38;5;94m000707\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].equal_to[0].elements[u].eu_vehicle_category_code[0].eu_vehicle_category_m[0].value) << 
                                                                                      " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].equal_to[0].elements[u].eu_vehicle_category_code[0].eu_vehicle_category_m[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].equal_to[0].elements[u].eu_vehicle_category_code[0].eu_vehicle_category_m[0].value);
                                                                     }
                                                                     
@@ -14547,7 +14547,7 @@ namespace wind
                                                                     // Enumerated
                                                                     // INT32  min(0) max(2) span(3) dataType(Int32)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000709\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].equal_to[0].elements[u].eu_vehicle_category_code[0].eu_vehicle_category_n[0].value) << 
+                                                                        logger->print() << "|\033[38;5;94m000709\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].equal_to[0].elements[u].eu_vehicle_category_code[0].eu_vehicle_category_n[0].value) << 
                                                                                      " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].equal_to[0].elements[u].eu_vehicle_category_code[0].eu_vehicle_category_n[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].equal_to[0].elements[u].eu_vehicle_category_code[0].eu_vehicle_category_n[0].value);
                                                                     }
                                                                     
@@ -14577,7 +14577,7 @@ namespace wind
                                                                     // Enumerated
                                                                     // INT32  min(0) max(3) span(4) dataType(Int32)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000711\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].equal_to[0].elements[u].eu_vehicle_category_code[0].eu_vehicle_category_o[0].value) << 
+                                                                        logger->print() << "|\033[38;5;94m000711\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].equal_to[0].elements[u].eu_vehicle_category_code[0].eu_vehicle_category_o[0].value) << 
                                                                                      " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].equal_to[0].elements[u].eu_vehicle_category_code[0].eu_vehicle_category_o[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].equal_to[0].elements[u].eu_vehicle_category_code[0].eu_vehicle_category_o[0].value);
                                                                     }
                                                                     
@@ -14615,7 +14615,7 @@ namespace wind
                                                                 
                                                                 // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000713\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].equal_to[0].elements[u].iso3833_vehicle_type[0].value) << 
+                                                                    logger->print() << "|\033[38;5;94m000713\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].equal_to[0].elements[u].iso3833_vehicle_type[0].value) << 
                                                                                  " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].equal_to[0].elements[u].iso3833_vehicle_type[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].equal_to[0].elements[u].iso3833_vehicle_type[0].value);
                                                                 }
                                                                 
@@ -14651,7 +14651,7 @@ namespace wind
                                                                     // Enumerated
                                                                     // INT32  min(0) max(15) span(16) dataType(Int32)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000715\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].equal_to[0].elements[u].euro_and_co2value[0].euro_value.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000715\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].equal_to[0].elements[u].euro_and_co2value[0].euro_value.value) << 
                                                                                      " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].equal_to[0].elements[u].euro_and_co2value[0].euro_value.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].equal_to[0].elements[u].euro_and_co2value[0].euro_value.value);
                                                                     }
                                                                     
@@ -14674,7 +14674,7 @@ namespace wind
                                                                     // Enumerated
                                                                     // INT32  min(0) max(8) span(9) dataType(Int32)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000716\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].equal_to[0].elements[u].euro_and_co2value[0].cop_value.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000716\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].equal_to[0].elements[u].euro_and_co2value[0].cop_value.value) << 
                                                                                      " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].equal_to[0].elements[u].euro_and_co2value[0].cop_value.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].equal_to[0].elements[u].euro_and_co2value[0].cop_value.value);
                                                                     }
                                                                     
@@ -14705,7 +14705,7 @@ namespace wind
                                                                 
                                                                 // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000718\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].equal_to[0].elements[u].engine_characteristics[0].value) << 
+                                                                    logger->print() << "|\033[38;5;94m000718\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].equal_to[0].elements[u].engine_characteristics[0].value) << 
                                                                                  " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].equal_to[0].elements[u].engine_characteristics[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].equal_to[0].elements[u].engine_characteristics[0].value);
                                                                 }
                                                                 
@@ -14743,7 +14743,7 @@ namespace wind
                                                                     
                                                                     // UINT8  min(0) max(15) span(16) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000720\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].equal_to[0].elements[u].load_type[0].goods_type.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000720\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].equal_to[0].elements[u].load_type[0].goods_type.value) << 
                                                                                      " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].equal_to[0].elements[u].load_type[0].goods_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].equal_to[0].elements[u].load_type[0].goods_type.value);
                                                                     }
                                                                     
@@ -14779,7 +14779,7 @@ namespace wind
                                                                     // Enumerated
                                                                     // INT32  min(0) max(19) span(20) dataType(Int32)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000721\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].equal_to[0].elements[u].load_type[0].dangerous_goods_type.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000721\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].equal_to[0].elements[u].load_type[0].dangerous_goods_type.value) << 
                                                                                      " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].equal_to[0].elements[u].load_type[0].dangerous_goods_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].equal_to[0].elements[u].load_type[0].dangerous_goods_type.value);
                                                                     }
                                                                     
@@ -14802,7 +14802,7 @@ namespace wind
                                                                     // BitString
                                                                     // BIT_STRING  min(4) max(4) span(1)
                                                                     if(debug)
-                                                                        logger->debug() << "|\033[38;5;94m000722\033[0m| ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].equal_to[0].elements[u].load_type[0].special_transport_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].equal_to[0].elements[u].load_type[0].special_transport_type.values.size());
+                                                                        logger->print() << "|\033[38;5;94m000722\033[0m| ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].equal_to[0].elements[u].load_type[0].special_transport_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].equal_to[0].elements[u].load_type[0].special_transport_type.values.size());
                                                                     
                                                                     if(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].equal_to[0].elements[u].load_type[0].special_transport_type.values.size() < 4) {
                                                                             logger->warning() << "Error: Value in 'ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].equal_to[0].elements[u].load_type[0].special_transport_type.value' " << (ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].equal_to[0].elements[u].load_type[0].special_transport_type.values.size()) << " is less than allowable (4); message dropped.";
@@ -14836,7 +14836,7 @@ namespace wind
                                                                 // Enumerated
                                                                 // INT32  min(0) max(15) span(16) dataType(Int32)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000724\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].equal_to[0].elements[u].usage[0].value) << 
+                                                                    logger->print() << "|\033[38;5;94m000724\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].equal_to[0].elements[u].usage[0].value) << 
                                                                                  " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].equal_to[0].elements[u].usage[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].equal_to[0].elements[u].usage[0].value);
                                                                 }
                                                                 
@@ -14906,7 +14906,7 @@ namespace wind
                                                                 
                                                                 // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000727\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].not_equal_to[0].elements[w].simple_vehicle_type[0].value) << 
+                                                                    logger->print() << "|\033[38;5;94m000727\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].not_equal_to[0].elements[w].simple_vehicle_type[0].value) << 
                                                                                  " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].not_equal_to[0].elements[w].simple_vehicle_type[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].not_equal_to[0].elements[w].simple_vehicle_type[0].value);
                                                                 }
                                                                 
@@ -14950,7 +14950,7 @@ namespace wind
                                                                     // Enumerated
                                                                     // INT32  min(0) max(6) span(7) dataType(Int32)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000730\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].not_equal_to[0].elements[w].eu_vehicle_category_code[0].eu_vehicle_category_l[0].value) << 
+                                                                        logger->print() << "|\033[38;5;94m000730\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].not_equal_to[0].elements[w].eu_vehicle_category_code[0].eu_vehicle_category_l[0].value) << 
                                                                                      " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].not_equal_to[0].elements[w].eu_vehicle_category_code[0].eu_vehicle_category_l[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].not_equal_to[0].elements[w].eu_vehicle_category_code[0].eu_vehicle_category_l[0].value);
                                                                     }
                                                                     
@@ -14980,7 +14980,7 @@ namespace wind
                                                                     // Enumerated
                                                                     // INT32  min(0) max(2) span(3) dataType(Int32)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000732\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].not_equal_to[0].elements[w].eu_vehicle_category_code[0].eu_vehicle_category_m[0].value) << 
+                                                                        logger->print() << "|\033[38;5;94m000732\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].not_equal_to[0].elements[w].eu_vehicle_category_code[0].eu_vehicle_category_m[0].value) << 
                                                                                      " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].not_equal_to[0].elements[w].eu_vehicle_category_code[0].eu_vehicle_category_m[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].not_equal_to[0].elements[w].eu_vehicle_category_code[0].eu_vehicle_category_m[0].value);
                                                                     }
                                                                     
@@ -15010,7 +15010,7 @@ namespace wind
                                                                     // Enumerated
                                                                     // INT32  min(0) max(2) span(3) dataType(Int32)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000734\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].not_equal_to[0].elements[w].eu_vehicle_category_code[0].eu_vehicle_category_n[0].value) << 
+                                                                        logger->print() << "|\033[38;5;94m000734\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].not_equal_to[0].elements[w].eu_vehicle_category_code[0].eu_vehicle_category_n[0].value) << 
                                                                                      " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].not_equal_to[0].elements[w].eu_vehicle_category_code[0].eu_vehicle_category_n[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].not_equal_to[0].elements[w].eu_vehicle_category_code[0].eu_vehicle_category_n[0].value);
                                                                     }
                                                                     
@@ -15040,7 +15040,7 @@ namespace wind
                                                                     // Enumerated
                                                                     // INT32  min(0) max(3) span(4) dataType(Int32)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000736\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].not_equal_to[0].elements[w].eu_vehicle_category_code[0].eu_vehicle_category_o[0].value) << 
+                                                                        logger->print() << "|\033[38;5;94m000736\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].not_equal_to[0].elements[w].eu_vehicle_category_code[0].eu_vehicle_category_o[0].value) << 
                                                                                      " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].not_equal_to[0].elements[w].eu_vehicle_category_code[0].eu_vehicle_category_o[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].not_equal_to[0].elements[w].eu_vehicle_category_code[0].eu_vehicle_category_o[0].value);
                                                                     }
                                                                     
@@ -15078,7 +15078,7 @@ namespace wind
                                                                 
                                                                 // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000738\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].not_equal_to[0].elements[w].iso3833_vehicle_type[0].value) << 
+                                                                    logger->print() << "|\033[38;5;94m000738\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].not_equal_to[0].elements[w].iso3833_vehicle_type[0].value) << 
                                                                                  " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].not_equal_to[0].elements[w].iso3833_vehicle_type[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].not_equal_to[0].elements[w].iso3833_vehicle_type[0].value);
                                                                 }
                                                                 
@@ -15114,7 +15114,7 @@ namespace wind
                                                                     // Enumerated
                                                                     // INT32  min(0) max(15) span(16) dataType(Int32)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000740\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].not_equal_to[0].elements[w].euro_and_co2value[0].euro_value.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000740\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].not_equal_to[0].elements[w].euro_and_co2value[0].euro_value.value) << 
                                                                                      " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].not_equal_to[0].elements[w].euro_and_co2value[0].euro_value.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].not_equal_to[0].elements[w].euro_and_co2value[0].euro_value.value);
                                                                     }
                                                                     
@@ -15137,7 +15137,7 @@ namespace wind
                                                                     // Enumerated
                                                                     // INT32  min(0) max(8) span(9) dataType(Int32)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000741\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].not_equal_to[0].elements[w].euro_and_co2value[0].cop_value.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000741\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].not_equal_to[0].elements[w].euro_and_co2value[0].cop_value.value) << 
                                                                                      " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].not_equal_to[0].elements[w].euro_and_co2value[0].cop_value.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].not_equal_to[0].elements[w].euro_and_co2value[0].cop_value.value);
                                                                     }
                                                                     
@@ -15168,7 +15168,7 @@ namespace wind
                                                                 
                                                                 // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000743\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].not_equal_to[0].elements[w].engine_characteristics[0].value) << 
+                                                                    logger->print() << "|\033[38;5;94m000743\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].not_equal_to[0].elements[w].engine_characteristics[0].value) << 
                                                                                  " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].not_equal_to[0].elements[w].engine_characteristics[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].not_equal_to[0].elements[w].engine_characteristics[0].value);
                                                                 }
                                                                 
@@ -15206,7 +15206,7 @@ namespace wind
                                                                     
                                                                     // UINT8  min(0) max(15) span(16) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000745\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].not_equal_to[0].elements[w].load_type[0].goods_type.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000745\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].not_equal_to[0].elements[w].load_type[0].goods_type.value) << 
                                                                                      " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].not_equal_to[0].elements[w].load_type[0].goods_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].not_equal_to[0].elements[w].load_type[0].goods_type.value);
                                                                     }
                                                                     
@@ -15242,7 +15242,7 @@ namespace wind
                                                                     // Enumerated
                                                                     // INT32  min(0) max(19) span(20) dataType(Int32)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000746\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].not_equal_to[0].elements[w].load_type[0].dangerous_goods_type.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000746\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].not_equal_to[0].elements[w].load_type[0].dangerous_goods_type.value) << 
                                                                                      " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].not_equal_to[0].elements[w].load_type[0].dangerous_goods_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].not_equal_to[0].elements[w].load_type[0].dangerous_goods_type.value);
                                                                     }
                                                                     
@@ -15265,7 +15265,7 @@ namespace wind
                                                                     // BitString
                                                                     // BIT_STRING  min(4) max(4) span(1)
                                                                     if(debug)
-                                                                        logger->debug() << "|\033[38;5;94m000747\033[0m| ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].not_equal_to[0].elements[w].load_type[0].special_transport_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].not_equal_to[0].elements[w].load_type[0].special_transport_type.values.size());
+                                                                        logger->print() << "|\033[38;5;94m000747\033[0m| ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].not_equal_to[0].elements[w].load_type[0].special_transport_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].not_equal_to[0].elements[w].load_type[0].special_transport_type.values.size());
                                                                     
                                                                     if(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].not_equal_to[0].elements[w].load_type[0].special_transport_type.values.size() < 4) {
                                                                             logger->warning() << "Error: Value in 'ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].not_equal_to[0].elements[w].load_type[0].special_transport_type.value' " << (ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].not_equal_to[0].elements[w].load_type[0].special_transport_type.values.size()) << " is less than allowable (4); message dropped.";
@@ -15299,7 +15299,7 @@ namespace wind
                                                                 // Enumerated
                                                                 // INT32  min(0) max(15) span(16) dataType(Int32)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000749\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].not_equal_to[0].elements[w].usage[0].value) << 
+                                                                    logger->print() << "|\033[38;5;94m000749\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].not_equal_to[0].elements[w].usage[0].value) << 
                                                                                  " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].not_equal_to[0].elements[w].usage[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].not_equal_to[0].elements[w].usage[0].value);
                                                                 }
                                                                 
@@ -15354,7 +15354,7 @@ namespace wind
                                                                 
                                                                 // UINT8  min(0) max(3) span(4) dataType(UInt8)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000751\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].comparison_operator.value) << 
+                                                                    logger->print() << "|\033[38;5;94m000751\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].comparison_operator.value) << 
                                                                                  " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].comparison_operator.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].comparison_operator.value);
                                                                 }
                                                                 
@@ -15400,7 +15400,7 @@ namespace wind
                                                                     
                                                                     // UINT8  min(0) max(7) span(8) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000753\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.number_of_axles[0].value) << 
+                                                                        logger->print() << "|\033[38;5;94m000753\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.number_of_axles[0].value) << 
                                                                                      " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.number_of_axles[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.number_of_axles[0].value);
                                                                     }
                                                                     
@@ -15438,7 +15438,7 @@ namespace wind
                                                                         
                                                                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000755\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.vehicle_dimensions[0].vehicle_length_overall.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000755\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.vehicle_dimensions[0].vehicle_length_overall.value) << 
                                                                                          " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.vehicle_dimensions[0].vehicle_length_overall.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.vehicle_dimensions[0].vehicle_length_overall.value);
                                                                         }
                                                                         
@@ -15462,7 +15462,7 @@ namespace wind
                                                                         
                                                                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000756\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.vehicle_dimensions[0].vehicle_heigth_overall.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000756\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.vehicle_dimensions[0].vehicle_heigth_overall.value) << 
                                                                                          " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.vehicle_dimensions[0].vehicle_heigth_overall.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.vehicle_dimensions[0].vehicle_heigth_overall.value);
                                                                         }
                                                                         
@@ -15486,7 +15486,7 @@ namespace wind
                                                                         
                                                                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000757\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.vehicle_dimensions[0].vehicle_width_overall.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000757\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.vehicle_dimensions[0].vehicle_width_overall.value) << 
                                                                                          " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.vehicle_dimensions[0].vehicle_width_overall.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.vehicle_dimensions[0].vehicle_width_overall.value);
                                                                         }
                                                                         
@@ -15524,7 +15524,7 @@ namespace wind
                                                                         
                                                                         // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000759\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.vehicle_weight_limits[0].vehicle_max_laden_weight.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000759\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.vehicle_weight_limits[0].vehicle_max_laden_weight.value) << 
                                                                                          " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.vehicle_weight_limits[0].vehicle_max_laden_weight.value: " << ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.vehicle_weight_limits[0].vehicle_max_laden_weight.value;
                                                                         }
                                                                         
@@ -15548,7 +15548,7 @@ namespace wind
                                                                         
                                                                         // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000760\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.vehicle_weight_limits[0].vehicle_train_maximum_weight.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000760\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.vehicle_weight_limits[0].vehicle_train_maximum_weight.value) << 
                                                                                          " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.vehicle_weight_limits[0].vehicle_train_maximum_weight.value: " << ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.vehicle_weight_limits[0].vehicle_train_maximum_weight.value;
                                                                         }
                                                                         
@@ -15572,7 +15572,7 @@ namespace wind
                                                                         
                                                                         // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000761\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.vehicle_weight_limits[0].vehicle_weight_unladen.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000761\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.vehicle_weight_limits[0].vehicle_weight_unladen.value) << 
                                                                                          " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.vehicle_weight_limits[0].vehicle_weight_unladen.value: " << ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.vehicle_weight_limits[0].vehicle_weight_unladen.value;
                                                                         }
                                                                         
@@ -15612,7 +15612,7 @@ namespace wind
                                                                         
                                                                         // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000763\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.axle_weight_limits[0].max_ladenweight_on_axle1.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000763\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.axle_weight_limits[0].max_ladenweight_on_axle1.value) << 
                                                                                          " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.axle_weight_limits[0].max_ladenweight_on_axle1.value: " << ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.axle_weight_limits[0].max_ladenweight_on_axle1.value;
                                                                         }
                                                                         
@@ -15636,7 +15636,7 @@ namespace wind
                                                                         
                                                                         // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000764\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.axle_weight_limits[0].max_ladenweight_on_axle2.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000764\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.axle_weight_limits[0].max_ladenweight_on_axle2.value) << 
                                                                                          " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.axle_weight_limits[0].max_ladenweight_on_axle2.value: " << ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.axle_weight_limits[0].max_ladenweight_on_axle2.value;
                                                                         }
                                                                         
@@ -15660,7 +15660,7 @@ namespace wind
                                                                         
                                                                         // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000765\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.axle_weight_limits[0].max_ladenweight_on_axle3.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000765\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.axle_weight_limits[0].max_ladenweight_on_axle3.value) << 
                                                                                          " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.axle_weight_limits[0].max_ladenweight_on_axle3.value: " << ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.axle_weight_limits[0].max_ladenweight_on_axle3.value;
                                                                         }
                                                                         
@@ -15684,7 +15684,7 @@ namespace wind
                                                                         
                                                                         // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000766\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.axle_weight_limits[0].max_ladenweight_on_axle4.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000766\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.axle_weight_limits[0].max_ladenweight_on_axle4.value) << 
                                                                                          " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.axle_weight_limits[0].max_ladenweight_on_axle4.value: " << ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.axle_weight_limits[0].max_ladenweight_on_axle4.value;
                                                                         }
                                                                         
@@ -15708,7 +15708,7 @@ namespace wind
                                                                         
                                                                         // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000767\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.axle_weight_limits[0].max_ladenweight_on_axle5.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000767\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.axle_weight_limits[0].max_ladenweight_on_axle5.value) << 
                                                                                          " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.axle_weight_limits[0].max_ladenweight_on_axle5.value: " << ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.axle_weight_limits[0].max_ladenweight_on_axle5.value;
                                                                         }
                                                                         
@@ -15745,7 +15745,7 @@ namespace wind
                                                                         
                                                                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000769\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.passenger_capacity[0].number_of_seats.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000769\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.passenger_capacity[0].number_of_seats.value) << 
                                                                                          " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.passenger_capacity[0].number_of_seats.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.passenger_capacity[0].number_of_seats.value);
                                                                         }
                                                                         
@@ -15769,7 +15769,7 @@ namespace wind
                                                                         
                                                                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000770\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.passenger_capacity[0].number_of_standing_places.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000770\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.passenger_capacity[0].number_of_standing_places.value) << 
                                                                                          " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.passenger_capacity[0].number_of_standing_places.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.passenger_capacity[0].number_of_standing_places.value);
                                                                         }
                                                                         
@@ -15808,7 +15808,7 @@ namespace wind
                                                                         // Enumerated
                                                                         // INT32  min(0) max(1) span(2) dataType(Int32)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000772\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.exhaust_emission_values[0].unit_type.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000772\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.exhaust_emission_values[0].unit_type.value) << 
                                                                                          " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.exhaust_emission_values[0].unit_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.exhaust_emission_values[0].unit_type.value);
                                                                         }
                                                                         
@@ -15832,7 +15832,7 @@ namespace wind
                                                                         
                                                                         // UINT16  min(0) max(32767) span(32768) dataType(UInt16)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000773\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.exhaust_emission_values[0].emission_co.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000773\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.exhaust_emission_values[0].emission_co.value) << 
                                                                                          " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.exhaust_emission_values[0].emission_co.value: " << ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.exhaust_emission_values[0].emission_co.value;
                                                                         }
                                                                         
@@ -15856,7 +15856,7 @@ namespace wind
                                                                         
                                                                         // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000774\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.exhaust_emission_values[0].emission_hc.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000774\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.exhaust_emission_values[0].emission_hc.value) << 
                                                                                          " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.exhaust_emission_values[0].emission_hc.value: " << ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.exhaust_emission_values[0].emission_hc.value;
                                                                         }
                                                                         
@@ -15880,7 +15880,7 @@ namespace wind
                                                                         
                                                                         // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000775\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.exhaust_emission_values[0].emission_nox.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000775\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.exhaust_emission_values[0].emission_nox.value) << 
                                                                                          " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.exhaust_emission_values[0].emission_nox.value: " << ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.exhaust_emission_values[0].emission_nox.value;
                                                                         }
                                                                         
@@ -15904,7 +15904,7 @@ namespace wind
                                                                         
                                                                         // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000776\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.exhaust_emission_values[0].emission_hcnox.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000776\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.exhaust_emission_values[0].emission_hcnox.value) << 
                                                                                          " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.exhaust_emission_values[0].emission_hcnox.value: " << ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.exhaust_emission_values[0].emission_hcnox.value;
                                                                         }
                                                                         
@@ -15946,7 +15946,7 @@ namespace wind
                                                                             // Enumerated
                                                                             // INT32  min(0) max(1) span(2) dataType(Int32)
                                                                             if(debug) {
-                                                                                logger->debug() << "|\033[38;5;94m000778\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.diesel_emission_values[0].particulate.unit_type.value) << 
+                                                                                logger->print() << "|\033[38;5;94m000778\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.diesel_emission_values[0].particulate.unit_type.value) << 
                                                                                              " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.diesel_emission_values[0].particulate.unit_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.diesel_emission_values[0].particulate.unit_type.value);
                                                                             }
                                                                             
@@ -15970,7 +15970,7 @@ namespace wind
                                                                             
                                                                             // UINT16  min(0) max(32767) span(32768) dataType(UInt16)
                                                                             if(debug) {
-                                                                                logger->debug() << "|\033[38;5;94m000779\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.diesel_emission_values[0].particulate.value.value) << 
+                                                                                logger->print() << "|\033[38;5;94m000779\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.diesel_emission_values[0].particulate.value.value) << 
                                                                                              " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.diesel_emission_values[0].particulate.value.value: " << ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.diesel_emission_values[0].particulate.value.value;
                                                                             }
                                                                             
@@ -15994,7 +15994,7 @@ namespace wind
                                                                         
                                                                         // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000780\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.diesel_emission_values[0].absorption_coeff.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000780\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.diesel_emission_values[0].absorption_coeff.value) << 
                                                                                          " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.diesel_emission_values[0].absorption_coeff.value: " << ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.diesel_emission_values[0].absorption_coeff.value;
                                                                         }
                                                                         
@@ -16031,7 +16031,7 @@ namespace wind
                                                                         
                                                                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000782\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.sound_level[0].soundstationary.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000782\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.sound_level[0].soundstationary.value) << 
                                                                                          " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.sound_level[0].soundstationary.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.sound_level[0].soundstationary.value);
                                                                         }
                                                                         
@@ -16055,7 +16055,7 @@ namespace wind
                                                                         
                                                                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000783\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.sound_level[0].sounddriveby.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000783\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.sound_level[0].sounddriveby.value) << 
                                                                                          " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.sound_level[0].sounddriveby.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].tractor[0].ranges[0].elements[y].limits.sound_level[0].sounddriveby.value);
                                                                         }
                                                                         
@@ -16107,15 +16107,15 @@ namespace wind
                                                         char* _tmp_713 = (char*) buffer++;
                                                         *_tmp_713 = (ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].equal_to.size() != 0 ? 1 : 0);
                                                         if(debug)
-                                                            logger->debug() << "|\033[38;5;94m000785\033[0m| Optional field equal_to = " << *_tmp_713;
+                                                            logger->print() << "|\033[38;5;94m000785\033[0m| Optional field equal_to = " << *_tmp_713;
                                                         char* _tmp_714 = (char*) buffer++;
                                                         *_tmp_714 = (ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].not_equal_to.size() != 0 ? 1 : 0);
                                                         if(debug)
-                                                            logger->debug() << "|\033[38;5;94m000786\033[0m| Optional field not_equal_to = " << *_tmp_714;
+                                                            logger->print() << "|\033[38;5;94m000786\033[0m| Optional field not_equal_to = " << *_tmp_714;
                                                         char* _tmp_715 = (char*) buffer++;
                                                         *_tmp_715 = (ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges.size() != 0 ? 1 : 0);
                                                         if(debug)
-                                                            logger->debug() << "|\033[38;5;94m000787\033[0m| Optional field ranges = " << *_tmp_715;
+                                                            logger->print() << "|\033[38;5;94m000787\033[0m| Optional field ranges = " << *_tmp_715;
                                                         
                                                         if(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].equal_to.size() != 0) {
                                                             // Field:  type(TrailerCharacteristics_equalTo) name(equal_to) extGroup(0)
@@ -16159,7 +16159,7 @@ namespace wind
                                                                     
                                                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000790\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].equal_to[0].elements[a].simple_vehicle_type[0].value) << 
+                                                                        logger->print() << "|\033[38;5;94m000790\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].equal_to[0].elements[a].simple_vehicle_type[0].value) << 
                                                                                      " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].equal_to[0].elements[a].simple_vehicle_type[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].equal_to[0].elements[a].simple_vehicle_type[0].value);
                                                                     }
                                                                     
@@ -16203,7 +16203,7 @@ namespace wind
                                                                         // Enumerated
                                                                         // INT32  min(0) max(6) span(7) dataType(Int32)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000793\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].equal_to[0].elements[a].eu_vehicle_category_code[0].eu_vehicle_category_l[0].value) << 
+                                                                            logger->print() << "|\033[38;5;94m000793\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].equal_to[0].elements[a].eu_vehicle_category_code[0].eu_vehicle_category_l[0].value) << 
                                                                                          " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].equal_to[0].elements[a].eu_vehicle_category_code[0].eu_vehicle_category_l[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].equal_to[0].elements[a].eu_vehicle_category_code[0].eu_vehicle_category_l[0].value);
                                                                         }
                                                                         
@@ -16233,7 +16233,7 @@ namespace wind
                                                                         // Enumerated
                                                                         // INT32  min(0) max(2) span(3) dataType(Int32)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000795\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].equal_to[0].elements[a].eu_vehicle_category_code[0].eu_vehicle_category_m[0].value) << 
+                                                                            logger->print() << "|\033[38;5;94m000795\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].equal_to[0].elements[a].eu_vehicle_category_code[0].eu_vehicle_category_m[0].value) << 
                                                                                          " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].equal_to[0].elements[a].eu_vehicle_category_code[0].eu_vehicle_category_m[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].equal_to[0].elements[a].eu_vehicle_category_code[0].eu_vehicle_category_m[0].value);
                                                                         }
                                                                         
@@ -16263,7 +16263,7 @@ namespace wind
                                                                         // Enumerated
                                                                         // INT32  min(0) max(2) span(3) dataType(Int32)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000797\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].equal_to[0].elements[a].eu_vehicle_category_code[0].eu_vehicle_category_n[0].value) << 
+                                                                            logger->print() << "|\033[38;5;94m000797\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].equal_to[0].elements[a].eu_vehicle_category_code[0].eu_vehicle_category_n[0].value) << 
                                                                                          " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].equal_to[0].elements[a].eu_vehicle_category_code[0].eu_vehicle_category_n[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].equal_to[0].elements[a].eu_vehicle_category_code[0].eu_vehicle_category_n[0].value);
                                                                         }
                                                                         
@@ -16293,7 +16293,7 @@ namespace wind
                                                                         // Enumerated
                                                                         // INT32  min(0) max(3) span(4) dataType(Int32)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000799\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].equal_to[0].elements[a].eu_vehicle_category_code[0].eu_vehicle_category_o[0].value) << 
+                                                                            logger->print() << "|\033[38;5;94m000799\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].equal_to[0].elements[a].eu_vehicle_category_code[0].eu_vehicle_category_o[0].value) << 
                                                                                          " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].equal_to[0].elements[a].eu_vehicle_category_code[0].eu_vehicle_category_o[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].equal_to[0].elements[a].eu_vehicle_category_code[0].eu_vehicle_category_o[0].value);
                                                                         }
                                                                         
@@ -16331,7 +16331,7 @@ namespace wind
                                                                     
                                                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000801\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].equal_to[0].elements[a].iso3833_vehicle_type[0].value) << 
+                                                                        logger->print() << "|\033[38;5;94m000801\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].equal_to[0].elements[a].iso3833_vehicle_type[0].value) << 
                                                                                      " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].equal_to[0].elements[a].iso3833_vehicle_type[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].equal_to[0].elements[a].iso3833_vehicle_type[0].value);
                                                                     }
                                                                     
@@ -16367,7 +16367,7 @@ namespace wind
                                                                         // Enumerated
                                                                         // INT32  min(0) max(15) span(16) dataType(Int32)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000803\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].equal_to[0].elements[a].euro_and_co2value[0].euro_value.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000803\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].equal_to[0].elements[a].euro_and_co2value[0].euro_value.value) << 
                                                                                          " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].equal_to[0].elements[a].euro_and_co2value[0].euro_value.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].equal_to[0].elements[a].euro_and_co2value[0].euro_value.value);
                                                                         }
                                                                         
@@ -16390,7 +16390,7 @@ namespace wind
                                                                         // Enumerated
                                                                         // INT32  min(0) max(8) span(9) dataType(Int32)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000804\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].equal_to[0].elements[a].euro_and_co2value[0].cop_value.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000804\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].equal_to[0].elements[a].euro_and_co2value[0].cop_value.value) << 
                                                                                          " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].equal_to[0].elements[a].euro_and_co2value[0].cop_value.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].equal_to[0].elements[a].euro_and_co2value[0].cop_value.value);
                                                                         }
                                                                         
@@ -16421,7 +16421,7 @@ namespace wind
                                                                     
                                                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000806\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].equal_to[0].elements[a].engine_characteristics[0].value) << 
+                                                                        logger->print() << "|\033[38;5;94m000806\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].equal_to[0].elements[a].engine_characteristics[0].value) << 
                                                                                      " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].equal_to[0].elements[a].engine_characteristics[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].equal_to[0].elements[a].engine_characteristics[0].value);
                                                                     }
                                                                     
@@ -16459,7 +16459,7 @@ namespace wind
                                                                         
                                                                         // UINT8  min(0) max(15) span(16) dataType(UInt8)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000808\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].equal_to[0].elements[a].load_type[0].goods_type.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000808\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].equal_to[0].elements[a].load_type[0].goods_type.value) << 
                                                                                          " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].equal_to[0].elements[a].load_type[0].goods_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].equal_to[0].elements[a].load_type[0].goods_type.value);
                                                                         }
                                                                         
@@ -16495,7 +16495,7 @@ namespace wind
                                                                         // Enumerated
                                                                         // INT32  min(0) max(19) span(20) dataType(Int32)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000809\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].equal_to[0].elements[a].load_type[0].dangerous_goods_type.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000809\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].equal_to[0].elements[a].load_type[0].dangerous_goods_type.value) << 
                                                                                          " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].equal_to[0].elements[a].load_type[0].dangerous_goods_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].equal_to[0].elements[a].load_type[0].dangerous_goods_type.value);
                                                                         }
                                                                         
@@ -16518,7 +16518,7 @@ namespace wind
                                                                         // BitString
                                                                         // BIT_STRING  min(4) max(4) span(1)
                                                                         if(debug)
-                                                                            logger->debug() << "|\033[38;5;94m000810\033[0m| ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].equal_to[0].elements[a].load_type[0].special_transport_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].equal_to[0].elements[a].load_type[0].special_transport_type.values.size());
+                                                                            logger->print() << "|\033[38;5;94m000810\033[0m| ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].equal_to[0].elements[a].load_type[0].special_transport_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].equal_to[0].elements[a].load_type[0].special_transport_type.values.size());
                                                                         
                                                                         if(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].equal_to[0].elements[a].load_type[0].special_transport_type.values.size() < 4) {
                                                                                 logger->warning() << "Error: Value in 'ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].equal_to[0].elements[a].load_type[0].special_transport_type.value' " << (ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].equal_to[0].elements[a].load_type[0].special_transport_type.values.size()) << " is less than allowable (4); message dropped.";
@@ -16552,7 +16552,7 @@ namespace wind
                                                                     // Enumerated
                                                                     // INT32  min(0) max(15) span(16) dataType(Int32)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000812\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].equal_to[0].elements[a].usage[0].value) << 
+                                                                        logger->print() << "|\033[38;5;94m000812\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].equal_to[0].elements[a].usage[0].value) << 
                                                                                      " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].equal_to[0].elements[a].usage[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].equal_to[0].elements[a].usage[0].value);
                                                                     }
                                                                     
@@ -16622,7 +16622,7 @@ namespace wind
                                                                     
                                                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000815\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].not_equal_to[0].elements[c].simple_vehicle_type[0].value) << 
+                                                                        logger->print() << "|\033[38;5;94m000815\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].not_equal_to[0].elements[c].simple_vehicle_type[0].value) << 
                                                                                      " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].not_equal_to[0].elements[c].simple_vehicle_type[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].not_equal_to[0].elements[c].simple_vehicle_type[0].value);
                                                                     }
                                                                     
@@ -16666,7 +16666,7 @@ namespace wind
                                                                         // Enumerated
                                                                         // INT32  min(0) max(6) span(7) dataType(Int32)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000818\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].not_equal_to[0].elements[c].eu_vehicle_category_code[0].eu_vehicle_category_l[0].value) << 
+                                                                            logger->print() << "|\033[38;5;94m000818\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].not_equal_to[0].elements[c].eu_vehicle_category_code[0].eu_vehicle_category_l[0].value) << 
                                                                                          " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].not_equal_to[0].elements[c].eu_vehicle_category_code[0].eu_vehicle_category_l[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].not_equal_to[0].elements[c].eu_vehicle_category_code[0].eu_vehicle_category_l[0].value);
                                                                         }
                                                                         
@@ -16696,7 +16696,7 @@ namespace wind
                                                                         // Enumerated
                                                                         // INT32  min(0) max(2) span(3) dataType(Int32)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000820\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].not_equal_to[0].elements[c].eu_vehicle_category_code[0].eu_vehicle_category_m[0].value) << 
+                                                                            logger->print() << "|\033[38;5;94m000820\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].not_equal_to[0].elements[c].eu_vehicle_category_code[0].eu_vehicle_category_m[0].value) << 
                                                                                          " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].not_equal_to[0].elements[c].eu_vehicle_category_code[0].eu_vehicle_category_m[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].not_equal_to[0].elements[c].eu_vehicle_category_code[0].eu_vehicle_category_m[0].value);
                                                                         }
                                                                         
@@ -16726,7 +16726,7 @@ namespace wind
                                                                         // Enumerated
                                                                         // INT32  min(0) max(2) span(3) dataType(Int32)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000822\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].not_equal_to[0].elements[c].eu_vehicle_category_code[0].eu_vehicle_category_n[0].value) << 
+                                                                            logger->print() << "|\033[38;5;94m000822\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].not_equal_to[0].elements[c].eu_vehicle_category_code[0].eu_vehicle_category_n[0].value) << 
                                                                                          " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].not_equal_to[0].elements[c].eu_vehicle_category_code[0].eu_vehicle_category_n[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].not_equal_to[0].elements[c].eu_vehicle_category_code[0].eu_vehicle_category_n[0].value);
                                                                         }
                                                                         
@@ -16756,7 +16756,7 @@ namespace wind
                                                                         // Enumerated
                                                                         // INT32  min(0) max(3) span(4) dataType(Int32)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000824\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].not_equal_to[0].elements[c].eu_vehicle_category_code[0].eu_vehicle_category_o[0].value) << 
+                                                                            logger->print() << "|\033[38;5;94m000824\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].not_equal_to[0].elements[c].eu_vehicle_category_code[0].eu_vehicle_category_o[0].value) << 
                                                                                          " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].not_equal_to[0].elements[c].eu_vehicle_category_code[0].eu_vehicle_category_o[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].not_equal_to[0].elements[c].eu_vehicle_category_code[0].eu_vehicle_category_o[0].value);
                                                                         }
                                                                         
@@ -16794,7 +16794,7 @@ namespace wind
                                                                     
                                                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000826\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].not_equal_to[0].elements[c].iso3833_vehicle_type[0].value) << 
+                                                                        logger->print() << "|\033[38;5;94m000826\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].not_equal_to[0].elements[c].iso3833_vehicle_type[0].value) << 
                                                                                      " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].not_equal_to[0].elements[c].iso3833_vehicle_type[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].not_equal_to[0].elements[c].iso3833_vehicle_type[0].value);
                                                                     }
                                                                     
@@ -16830,7 +16830,7 @@ namespace wind
                                                                         // Enumerated
                                                                         // INT32  min(0) max(15) span(16) dataType(Int32)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000828\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].not_equal_to[0].elements[c].euro_and_co2value[0].euro_value.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000828\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].not_equal_to[0].elements[c].euro_and_co2value[0].euro_value.value) << 
                                                                                          " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].not_equal_to[0].elements[c].euro_and_co2value[0].euro_value.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].not_equal_to[0].elements[c].euro_and_co2value[0].euro_value.value);
                                                                         }
                                                                         
@@ -16853,7 +16853,7 @@ namespace wind
                                                                         // Enumerated
                                                                         // INT32  min(0) max(8) span(9) dataType(Int32)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000829\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].not_equal_to[0].elements[c].euro_and_co2value[0].cop_value.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000829\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].not_equal_to[0].elements[c].euro_and_co2value[0].cop_value.value) << 
                                                                                          " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].not_equal_to[0].elements[c].euro_and_co2value[0].cop_value.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].not_equal_to[0].elements[c].euro_and_co2value[0].cop_value.value);
                                                                         }
                                                                         
@@ -16884,7 +16884,7 @@ namespace wind
                                                                     
                                                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000831\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].not_equal_to[0].elements[c].engine_characteristics[0].value) << 
+                                                                        logger->print() << "|\033[38;5;94m000831\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].not_equal_to[0].elements[c].engine_characteristics[0].value) << 
                                                                                      " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].not_equal_to[0].elements[c].engine_characteristics[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].not_equal_to[0].elements[c].engine_characteristics[0].value);
                                                                     }
                                                                     
@@ -16922,7 +16922,7 @@ namespace wind
                                                                         
                                                                         // UINT8  min(0) max(15) span(16) dataType(UInt8)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000833\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].not_equal_to[0].elements[c].load_type[0].goods_type.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000833\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].not_equal_to[0].elements[c].load_type[0].goods_type.value) << 
                                                                                          " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].not_equal_to[0].elements[c].load_type[0].goods_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].not_equal_to[0].elements[c].load_type[0].goods_type.value);
                                                                         }
                                                                         
@@ -16958,7 +16958,7 @@ namespace wind
                                                                         // Enumerated
                                                                         // INT32  min(0) max(19) span(20) dataType(Int32)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000834\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].not_equal_to[0].elements[c].load_type[0].dangerous_goods_type.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000834\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].not_equal_to[0].elements[c].load_type[0].dangerous_goods_type.value) << 
                                                                                          " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].not_equal_to[0].elements[c].load_type[0].dangerous_goods_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].not_equal_to[0].elements[c].load_type[0].dangerous_goods_type.value);
                                                                         }
                                                                         
@@ -16981,7 +16981,7 @@ namespace wind
                                                                         // BitString
                                                                         // BIT_STRING  min(4) max(4) span(1)
                                                                         if(debug)
-                                                                            logger->debug() << "|\033[38;5;94m000835\033[0m| ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].not_equal_to[0].elements[c].load_type[0].special_transport_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].not_equal_to[0].elements[c].load_type[0].special_transport_type.values.size());
+                                                                            logger->print() << "|\033[38;5;94m000835\033[0m| ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].not_equal_to[0].elements[c].load_type[0].special_transport_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].not_equal_to[0].elements[c].load_type[0].special_transport_type.values.size());
                                                                         
                                                                         if(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].not_equal_to[0].elements[c].load_type[0].special_transport_type.values.size() < 4) {
                                                                                 logger->warning() << "Error: Value in 'ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].not_equal_to[0].elements[c].load_type[0].special_transport_type.value' " << (ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].not_equal_to[0].elements[c].load_type[0].special_transport_type.values.size()) << " is less than allowable (4); message dropped.";
@@ -17015,7 +17015,7 @@ namespace wind
                                                                     // Enumerated
                                                                     // INT32  min(0) max(15) span(16) dataType(Int32)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000837\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].not_equal_to[0].elements[c].usage[0].value) << 
+                                                                        logger->print() << "|\033[38;5;94m000837\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].not_equal_to[0].elements[c].usage[0].value) << 
                                                                                      " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].not_equal_to[0].elements[c].usage[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].not_equal_to[0].elements[c].usage[0].value);
                                                                     }
                                                                     
@@ -17070,7 +17070,7 @@ namespace wind
                                                                     
                                                                     // UINT8  min(0) max(3) span(4) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000839\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].comparison_operator.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000839\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].comparison_operator.value) << 
                                                                                      " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].comparison_operator.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].comparison_operator.value);
                                                                     }
                                                                     
@@ -17116,7 +17116,7 @@ namespace wind
                                                                         
                                                                         // UINT8  min(0) max(7) span(8) dataType(UInt8)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000841\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.number_of_axles[0].value) << 
+                                                                            logger->print() << "|\033[38;5;94m000841\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.number_of_axles[0].value) << 
                                                                                          " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.number_of_axles[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.number_of_axles[0].value);
                                                                         }
                                                                         
@@ -17154,7 +17154,7 @@ namespace wind
                                                                             
                                                                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                                             if(debug) {
-                                                                                logger->debug() << "|\033[38;5;94m000843\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.vehicle_dimensions[0].vehicle_length_overall.value) << 
+                                                                                logger->print() << "|\033[38;5;94m000843\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.vehicle_dimensions[0].vehicle_length_overall.value) << 
                                                                                              " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.vehicle_dimensions[0].vehicle_length_overall.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.vehicle_dimensions[0].vehicle_length_overall.value);
                                                                             }
                                                                             
@@ -17178,7 +17178,7 @@ namespace wind
                                                                             
                                                                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                                             if(debug) {
-                                                                                logger->debug() << "|\033[38;5;94m000844\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.vehicle_dimensions[0].vehicle_heigth_overall.value) << 
+                                                                                logger->print() << "|\033[38;5;94m000844\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.vehicle_dimensions[0].vehicle_heigth_overall.value) << 
                                                                                              " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.vehicle_dimensions[0].vehicle_heigth_overall.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.vehicle_dimensions[0].vehicle_heigth_overall.value);
                                                                             }
                                                                             
@@ -17202,7 +17202,7 @@ namespace wind
                                                                             
                                                                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                                             if(debug) {
-                                                                                logger->debug() << "|\033[38;5;94m000845\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.vehicle_dimensions[0].vehicle_width_overall.value) << 
+                                                                                logger->print() << "|\033[38;5;94m000845\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.vehicle_dimensions[0].vehicle_width_overall.value) << 
                                                                                              " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.vehicle_dimensions[0].vehicle_width_overall.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.vehicle_dimensions[0].vehicle_width_overall.value);
                                                                             }
                                                                             
@@ -17240,7 +17240,7 @@ namespace wind
                                                                             
                                                                             // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                             if(debug) {
-                                                                                logger->debug() << "|\033[38;5;94m000847\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.vehicle_weight_limits[0].vehicle_max_laden_weight.value) << 
+                                                                                logger->print() << "|\033[38;5;94m000847\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.vehicle_weight_limits[0].vehicle_max_laden_weight.value) << 
                                                                                              " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.vehicle_weight_limits[0].vehicle_max_laden_weight.value: " << ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.vehicle_weight_limits[0].vehicle_max_laden_weight.value;
                                                                             }
                                                                             
@@ -17264,7 +17264,7 @@ namespace wind
                                                                             
                                                                             // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                             if(debug) {
-                                                                                logger->debug() << "|\033[38;5;94m000848\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.vehicle_weight_limits[0].vehicle_train_maximum_weight.value) << 
+                                                                                logger->print() << "|\033[38;5;94m000848\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.vehicle_weight_limits[0].vehicle_train_maximum_weight.value) << 
                                                                                              " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.vehicle_weight_limits[0].vehicle_train_maximum_weight.value: " << ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.vehicle_weight_limits[0].vehicle_train_maximum_weight.value;
                                                                             }
                                                                             
@@ -17288,7 +17288,7 @@ namespace wind
                                                                             
                                                                             // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                             if(debug) {
-                                                                                logger->debug() << "|\033[38;5;94m000849\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.vehicle_weight_limits[0].vehicle_weight_unladen.value) << 
+                                                                                logger->print() << "|\033[38;5;94m000849\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.vehicle_weight_limits[0].vehicle_weight_unladen.value) << 
                                                                                              " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.vehicle_weight_limits[0].vehicle_weight_unladen.value: " << ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.vehicle_weight_limits[0].vehicle_weight_unladen.value;
                                                                             }
                                                                             
@@ -17328,7 +17328,7 @@ namespace wind
                                                                             
                                                                             // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                             if(debug) {
-                                                                                logger->debug() << "|\033[38;5;94m000851\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.axle_weight_limits[0].max_ladenweight_on_axle1.value) << 
+                                                                                logger->print() << "|\033[38;5;94m000851\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.axle_weight_limits[0].max_ladenweight_on_axle1.value) << 
                                                                                              " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.axle_weight_limits[0].max_ladenweight_on_axle1.value: " << ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.axle_weight_limits[0].max_ladenweight_on_axle1.value;
                                                                             }
                                                                             
@@ -17352,7 +17352,7 @@ namespace wind
                                                                             
                                                                             // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                             if(debug) {
-                                                                                logger->debug() << "|\033[38;5;94m000852\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.axle_weight_limits[0].max_ladenweight_on_axle2.value) << 
+                                                                                logger->print() << "|\033[38;5;94m000852\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.axle_weight_limits[0].max_ladenweight_on_axle2.value) << 
                                                                                              " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.axle_weight_limits[0].max_ladenweight_on_axle2.value: " << ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.axle_weight_limits[0].max_ladenweight_on_axle2.value;
                                                                             }
                                                                             
@@ -17376,7 +17376,7 @@ namespace wind
                                                                             
                                                                             // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                             if(debug) {
-                                                                                logger->debug() << "|\033[38;5;94m000853\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.axle_weight_limits[0].max_ladenweight_on_axle3.value) << 
+                                                                                logger->print() << "|\033[38;5;94m000853\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.axle_weight_limits[0].max_ladenweight_on_axle3.value) << 
                                                                                              " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.axle_weight_limits[0].max_ladenweight_on_axle3.value: " << ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.axle_weight_limits[0].max_ladenweight_on_axle3.value;
                                                                             }
                                                                             
@@ -17400,7 +17400,7 @@ namespace wind
                                                                             
                                                                             // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                             if(debug) {
-                                                                                logger->debug() << "|\033[38;5;94m000854\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.axle_weight_limits[0].max_ladenweight_on_axle4.value) << 
+                                                                                logger->print() << "|\033[38;5;94m000854\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.axle_weight_limits[0].max_ladenweight_on_axle4.value) << 
                                                                                              " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.axle_weight_limits[0].max_ladenweight_on_axle4.value: " << ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.axle_weight_limits[0].max_ladenweight_on_axle4.value;
                                                                             }
                                                                             
@@ -17424,7 +17424,7 @@ namespace wind
                                                                             
                                                                             // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                             if(debug) {
-                                                                                logger->debug() << "|\033[38;5;94m000855\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.axle_weight_limits[0].max_ladenweight_on_axle5.value) << 
+                                                                                logger->print() << "|\033[38;5;94m000855\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.axle_weight_limits[0].max_ladenweight_on_axle5.value) << 
                                                                                              " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.axle_weight_limits[0].max_ladenweight_on_axle5.value: " << ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.axle_weight_limits[0].max_ladenweight_on_axle5.value;
                                                                             }
                                                                             
@@ -17461,7 +17461,7 @@ namespace wind
                                                                             
                                                                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                                             if(debug) {
-                                                                                logger->debug() << "|\033[38;5;94m000857\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.passenger_capacity[0].number_of_seats.value) << 
+                                                                                logger->print() << "|\033[38;5;94m000857\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.passenger_capacity[0].number_of_seats.value) << 
                                                                                              " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.passenger_capacity[0].number_of_seats.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.passenger_capacity[0].number_of_seats.value);
                                                                             }
                                                                             
@@ -17485,7 +17485,7 @@ namespace wind
                                                                             
                                                                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                                             if(debug) {
-                                                                                logger->debug() << "|\033[38;5;94m000858\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.passenger_capacity[0].number_of_standing_places.value) << 
+                                                                                logger->print() << "|\033[38;5;94m000858\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.passenger_capacity[0].number_of_standing_places.value) << 
                                                                                              " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.passenger_capacity[0].number_of_standing_places.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.passenger_capacity[0].number_of_standing_places.value);
                                                                             }
                                                                             
@@ -17524,7 +17524,7 @@ namespace wind
                                                                             // Enumerated
                                                                             // INT32  min(0) max(1) span(2) dataType(Int32)
                                                                             if(debug) {
-                                                                                logger->debug() << "|\033[38;5;94m000860\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.exhaust_emission_values[0].unit_type.value) << 
+                                                                                logger->print() << "|\033[38;5;94m000860\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.exhaust_emission_values[0].unit_type.value) << 
                                                                                              " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.exhaust_emission_values[0].unit_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.exhaust_emission_values[0].unit_type.value);
                                                                             }
                                                                             
@@ -17548,7 +17548,7 @@ namespace wind
                                                                             
                                                                             // UINT16  min(0) max(32767) span(32768) dataType(UInt16)
                                                                             if(debug) {
-                                                                                logger->debug() << "|\033[38;5;94m000861\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.exhaust_emission_values[0].emission_co.value) << 
+                                                                                logger->print() << "|\033[38;5;94m000861\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.exhaust_emission_values[0].emission_co.value) << 
                                                                                              " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.exhaust_emission_values[0].emission_co.value: " << ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.exhaust_emission_values[0].emission_co.value;
                                                                             }
                                                                             
@@ -17572,7 +17572,7 @@ namespace wind
                                                                             
                                                                             // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                             if(debug) {
-                                                                                logger->debug() << "|\033[38;5;94m000862\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.exhaust_emission_values[0].emission_hc.value) << 
+                                                                                logger->print() << "|\033[38;5;94m000862\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.exhaust_emission_values[0].emission_hc.value) << 
                                                                                              " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.exhaust_emission_values[0].emission_hc.value: " << ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.exhaust_emission_values[0].emission_hc.value;
                                                                             }
                                                                             
@@ -17596,7 +17596,7 @@ namespace wind
                                                                             
                                                                             // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                             if(debug) {
-                                                                                logger->debug() << "|\033[38;5;94m000863\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.exhaust_emission_values[0].emission_nox.value) << 
+                                                                                logger->print() << "|\033[38;5;94m000863\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.exhaust_emission_values[0].emission_nox.value) << 
                                                                                              " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.exhaust_emission_values[0].emission_nox.value: " << ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.exhaust_emission_values[0].emission_nox.value;
                                                                             }
                                                                             
@@ -17620,7 +17620,7 @@ namespace wind
                                                                             
                                                                             // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                             if(debug) {
-                                                                                logger->debug() << "|\033[38;5;94m000864\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.exhaust_emission_values[0].emission_hcnox.value) << 
+                                                                                logger->print() << "|\033[38;5;94m000864\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.exhaust_emission_values[0].emission_hcnox.value) << 
                                                                                              " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.exhaust_emission_values[0].emission_hcnox.value: " << ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.exhaust_emission_values[0].emission_hcnox.value;
                                                                             }
                                                                             
@@ -17662,7 +17662,7 @@ namespace wind
                                                                                 // Enumerated
                                                                                 // INT32  min(0) max(1) span(2) dataType(Int32)
                                                                                 if(debug) {
-                                                                                    logger->debug() << "|\033[38;5;94m000866\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.diesel_emission_values[0].particulate.unit_type.value) << 
+                                                                                    logger->print() << "|\033[38;5;94m000866\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.diesel_emission_values[0].particulate.unit_type.value) << 
                                                                                                  " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.diesel_emission_values[0].particulate.unit_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.diesel_emission_values[0].particulate.unit_type.value);
                                                                                 }
                                                                                 
@@ -17686,7 +17686,7 @@ namespace wind
                                                                                 
                                                                                 // UINT16  min(0) max(32767) span(32768) dataType(UInt16)
                                                                                 if(debug) {
-                                                                                    logger->debug() << "|\033[38;5;94m000867\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.diesel_emission_values[0].particulate.value.value) << 
+                                                                                    logger->print() << "|\033[38;5;94m000867\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.diesel_emission_values[0].particulate.value.value) << 
                                                                                                  " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.diesel_emission_values[0].particulate.value.value: " << ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.diesel_emission_values[0].particulate.value.value;
                                                                                 }
                                                                                 
@@ -17710,7 +17710,7 @@ namespace wind
                                                                             
                                                                             // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                             if(debug) {
-                                                                                logger->debug() << "|\033[38;5;94m000868\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.diesel_emission_values[0].absorption_coeff.value) << 
+                                                                                logger->print() << "|\033[38;5;94m000868\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.diesel_emission_values[0].absorption_coeff.value) << 
                                                                                              " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.diesel_emission_values[0].absorption_coeff.value: " << ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.diesel_emission_values[0].absorption_coeff.value;
                                                                             }
                                                                             
@@ -17747,7 +17747,7 @@ namespace wind
                                                                             
                                                                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                                             if(debug) {
-                                                                                logger->debug() << "|\033[38;5;94m000870\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.sound_level[0].soundstationary.value) << 
+                                                                                logger->print() << "|\033[38;5;94m000870\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.sound_level[0].soundstationary.value) << 
                                                                                              " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.sound_level[0].soundstationary.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.sound_level[0].soundstationary.value);
                                                                             }
                                                                             
@@ -17771,7 +17771,7 @@ namespace wind
                                                                             
                                                                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                                             if(debug) {
-                                                                                logger->debug() << "|\033[38;5;94m000871\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.sound_level[0].sounddriveby.value) << 
+                                                                                logger->print() << "|\033[38;5;94m000871\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.sound_level[0].sounddriveby.value) << 
                                                                                              " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.sound_level[0].sounddriveby.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].trailer[0].elements[z].ranges[0].elements[e].limits.sound_level[0].sounddriveby.value);
                                                                             }
                                                                             
@@ -17852,7 +17852,7 @@ namespace wind
                                                             
                                                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m000874\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].equal_to.elements[f].simple_vehicle_type[0].value) << 
+                                                                logger->print() << "|\033[38;5;94m000874\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].equal_to.elements[f].simple_vehicle_type[0].value) << 
                                                                              " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].equal_to.elements[f].simple_vehicle_type[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].equal_to.elements[f].simple_vehicle_type[0].value);
                                                             }
                                                             
@@ -17896,7 +17896,7 @@ namespace wind
                                                                 // Enumerated
                                                                 // INT32  min(0) max(6) span(7) dataType(Int32)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000877\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].equal_to.elements[f].eu_vehicle_category_code[0].eu_vehicle_category_l[0].value) << 
+                                                                    logger->print() << "|\033[38;5;94m000877\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].equal_to.elements[f].eu_vehicle_category_code[0].eu_vehicle_category_l[0].value) << 
                                                                                  " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].equal_to.elements[f].eu_vehicle_category_code[0].eu_vehicle_category_l[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].equal_to.elements[f].eu_vehicle_category_code[0].eu_vehicle_category_l[0].value);
                                                                 }
                                                                 
@@ -17926,7 +17926,7 @@ namespace wind
                                                                 // Enumerated
                                                                 // INT32  min(0) max(2) span(3) dataType(Int32)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000879\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].equal_to.elements[f].eu_vehicle_category_code[0].eu_vehicle_category_m[0].value) << 
+                                                                    logger->print() << "|\033[38;5;94m000879\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].equal_to.elements[f].eu_vehicle_category_code[0].eu_vehicle_category_m[0].value) << 
                                                                                  " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].equal_to.elements[f].eu_vehicle_category_code[0].eu_vehicle_category_m[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].equal_to.elements[f].eu_vehicle_category_code[0].eu_vehicle_category_m[0].value);
                                                                 }
                                                                 
@@ -17956,7 +17956,7 @@ namespace wind
                                                                 // Enumerated
                                                                 // INT32  min(0) max(2) span(3) dataType(Int32)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000881\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].equal_to.elements[f].eu_vehicle_category_code[0].eu_vehicle_category_n[0].value) << 
+                                                                    logger->print() << "|\033[38;5;94m000881\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].equal_to.elements[f].eu_vehicle_category_code[0].eu_vehicle_category_n[0].value) << 
                                                                                  " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].equal_to.elements[f].eu_vehicle_category_code[0].eu_vehicle_category_n[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].equal_to.elements[f].eu_vehicle_category_code[0].eu_vehicle_category_n[0].value);
                                                                 }
                                                                 
@@ -17986,7 +17986,7 @@ namespace wind
                                                                 // Enumerated
                                                                 // INT32  min(0) max(3) span(4) dataType(Int32)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000883\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].equal_to.elements[f].eu_vehicle_category_code[0].eu_vehicle_category_o[0].value) << 
+                                                                    logger->print() << "|\033[38;5;94m000883\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].equal_to.elements[f].eu_vehicle_category_code[0].eu_vehicle_category_o[0].value) << 
                                                                                  " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].equal_to.elements[f].eu_vehicle_category_code[0].eu_vehicle_category_o[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].equal_to.elements[f].eu_vehicle_category_code[0].eu_vehicle_category_o[0].value);
                                                                 }
                                                                 
@@ -18024,7 +18024,7 @@ namespace wind
                                                             
                                                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m000885\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].equal_to.elements[f].iso3833_vehicle_type[0].value) << 
+                                                                logger->print() << "|\033[38;5;94m000885\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].equal_to.elements[f].iso3833_vehicle_type[0].value) << 
                                                                              " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].equal_to.elements[f].iso3833_vehicle_type[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].equal_to.elements[f].iso3833_vehicle_type[0].value);
                                                             }
                                                             
@@ -18060,7 +18060,7 @@ namespace wind
                                                                 // Enumerated
                                                                 // INT32  min(0) max(15) span(16) dataType(Int32)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000887\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].equal_to.elements[f].euro_and_co2value[0].euro_value.value) << 
+                                                                    logger->print() << "|\033[38;5;94m000887\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].equal_to.elements[f].euro_and_co2value[0].euro_value.value) << 
                                                                                  " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].equal_to.elements[f].euro_and_co2value[0].euro_value.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].equal_to.elements[f].euro_and_co2value[0].euro_value.value);
                                                                 }
                                                                 
@@ -18083,7 +18083,7 @@ namespace wind
                                                                 // Enumerated
                                                                 // INT32  min(0) max(8) span(9) dataType(Int32)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000888\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].equal_to.elements[f].euro_and_co2value[0].cop_value.value) << 
+                                                                    logger->print() << "|\033[38;5;94m000888\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].equal_to.elements[f].euro_and_co2value[0].cop_value.value) << 
                                                                                  " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].equal_to.elements[f].euro_and_co2value[0].cop_value.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].equal_to.elements[f].euro_and_co2value[0].cop_value.value);
                                                                 }
                                                                 
@@ -18114,7 +18114,7 @@ namespace wind
                                                             
                                                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m000890\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].equal_to.elements[f].engine_characteristics[0].value) << 
+                                                                logger->print() << "|\033[38;5;94m000890\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].equal_to.elements[f].engine_characteristics[0].value) << 
                                                                              " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].equal_to.elements[f].engine_characteristics[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].equal_to.elements[f].engine_characteristics[0].value);
                                                             }
                                                             
@@ -18152,7 +18152,7 @@ namespace wind
                                                                 
                                                                 // UINT8  min(0) max(15) span(16) dataType(UInt8)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000892\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].equal_to.elements[f].load_type[0].goods_type.value) << 
+                                                                    logger->print() << "|\033[38;5;94m000892\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].equal_to.elements[f].load_type[0].goods_type.value) << 
                                                                                  " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].equal_to.elements[f].load_type[0].goods_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].equal_to.elements[f].load_type[0].goods_type.value);
                                                                 }
                                                                 
@@ -18188,7 +18188,7 @@ namespace wind
                                                                 // Enumerated
                                                                 // INT32  min(0) max(19) span(20) dataType(Int32)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000893\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].equal_to.elements[f].load_type[0].dangerous_goods_type.value) << 
+                                                                    logger->print() << "|\033[38;5;94m000893\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].equal_to.elements[f].load_type[0].dangerous_goods_type.value) << 
                                                                                  " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].equal_to.elements[f].load_type[0].dangerous_goods_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].equal_to.elements[f].load_type[0].dangerous_goods_type.value);
                                                                 }
                                                                 
@@ -18211,7 +18211,7 @@ namespace wind
                                                                 // BitString
                                                                 // BIT_STRING  min(4) max(4) span(1)
                                                                 if(debug)
-                                                                    logger->debug() << "|\033[38;5;94m000894\033[0m| ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].equal_to.elements[f].load_type[0].special_transport_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].equal_to.elements[f].load_type[0].special_transport_type.values.size());
+                                                                    logger->print() << "|\033[38;5;94m000894\033[0m| ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].equal_to.elements[f].load_type[0].special_transport_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].equal_to.elements[f].load_type[0].special_transport_type.values.size());
                                                                 
                                                                 if(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].equal_to.elements[f].load_type[0].special_transport_type.values.size() < 4) {
                                                                         logger->warning() << "Error: Value in 'ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].equal_to.elements[f].load_type[0].special_transport_type.value' " << (ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].equal_to.elements[f].load_type[0].special_transport_type.values.size()) << " is less than allowable (4); message dropped.";
@@ -18245,7 +18245,7 @@ namespace wind
                                                             // Enumerated
                                                             // INT32  min(0) max(15) span(16) dataType(Int32)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m000896\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].equal_to.elements[f].usage[0].value) << 
+                                                                logger->print() << "|\033[38;5;94m000896\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].equal_to.elements[f].usage[0].value) << 
                                                                              " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].equal_to.elements[f].usage[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].equal_to.elements[f].usage[0].value);
                                                             }
                                                             
@@ -18313,7 +18313,7 @@ namespace wind
                                                             
                                                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m000899\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].not_equal_to.elements[h].simple_vehicle_type[0].value) << 
+                                                                logger->print() << "|\033[38;5;94m000899\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].not_equal_to.elements[h].simple_vehicle_type[0].value) << 
                                                                              " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].not_equal_to.elements[h].simple_vehicle_type[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].not_equal_to.elements[h].simple_vehicle_type[0].value);
                                                             }
                                                             
@@ -18357,7 +18357,7 @@ namespace wind
                                                                 // Enumerated
                                                                 // INT32  min(0) max(6) span(7) dataType(Int32)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000902\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].not_equal_to.elements[h].eu_vehicle_category_code[0].eu_vehicle_category_l[0].value) << 
+                                                                    logger->print() << "|\033[38;5;94m000902\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].not_equal_to.elements[h].eu_vehicle_category_code[0].eu_vehicle_category_l[0].value) << 
                                                                                  " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].not_equal_to.elements[h].eu_vehicle_category_code[0].eu_vehicle_category_l[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].not_equal_to.elements[h].eu_vehicle_category_code[0].eu_vehicle_category_l[0].value);
                                                                 }
                                                                 
@@ -18387,7 +18387,7 @@ namespace wind
                                                                 // Enumerated
                                                                 // INT32  min(0) max(2) span(3) dataType(Int32)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000904\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].not_equal_to.elements[h].eu_vehicle_category_code[0].eu_vehicle_category_m[0].value) << 
+                                                                    logger->print() << "|\033[38;5;94m000904\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].not_equal_to.elements[h].eu_vehicle_category_code[0].eu_vehicle_category_m[0].value) << 
                                                                                  " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].not_equal_to.elements[h].eu_vehicle_category_code[0].eu_vehicle_category_m[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].not_equal_to.elements[h].eu_vehicle_category_code[0].eu_vehicle_category_m[0].value);
                                                                 }
                                                                 
@@ -18417,7 +18417,7 @@ namespace wind
                                                                 // Enumerated
                                                                 // INT32  min(0) max(2) span(3) dataType(Int32)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000906\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].not_equal_to.elements[h].eu_vehicle_category_code[0].eu_vehicle_category_n[0].value) << 
+                                                                    logger->print() << "|\033[38;5;94m000906\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].not_equal_to.elements[h].eu_vehicle_category_code[0].eu_vehicle_category_n[0].value) << 
                                                                                  " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].not_equal_to.elements[h].eu_vehicle_category_code[0].eu_vehicle_category_n[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].not_equal_to.elements[h].eu_vehicle_category_code[0].eu_vehicle_category_n[0].value);
                                                                 }
                                                                 
@@ -18447,7 +18447,7 @@ namespace wind
                                                                 // Enumerated
                                                                 // INT32  min(0) max(3) span(4) dataType(Int32)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000908\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].not_equal_to.elements[h].eu_vehicle_category_code[0].eu_vehicle_category_o[0].value) << 
+                                                                    logger->print() << "|\033[38;5;94m000908\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].not_equal_to.elements[h].eu_vehicle_category_code[0].eu_vehicle_category_o[0].value) << 
                                                                                  " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].not_equal_to.elements[h].eu_vehicle_category_code[0].eu_vehicle_category_o[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].not_equal_to.elements[h].eu_vehicle_category_code[0].eu_vehicle_category_o[0].value);
                                                                 }
                                                                 
@@ -18485,7 +18485,7 @@ namespace wind
                                                             
                                                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m000910\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].not_equal_to.elements[h].iso3833_vehicle_type[0].value) << 
+                                                                logger->print() << "|\033[38;5;94m000910\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].not_equal_to.elements[h].iso3833_vehicle_type[0].value) << 
                                                                              " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].not_equal_to.elements[h].iso3833_vehicle_type[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].not_equal_to.elements[h].iso3833_vehicle_type[0].value);
                                                             }
                                                             
@@ -18521,7 +18521,7 @@ namespace wind
                                                                 // Enumerated
                                                                 // INT32  min(0) max(15) span(16) dataType(Int32)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000912\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].not_equal_to.elements[h].euro_and_co2value[0].euro_value.value) << 
+                                                                    logger->print() << "|\033[38;5;94m000912\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].not_equal_to.elements[h].euro_and_co2value[0].euro_value.value) << 
                                                                                  " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].not_equal_to.elements[h].euro_and_co2value[0].euro_value.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].not_equal_to.elements[h].euro_and_co2value[0].euro_value.value);
                                                                 }
                                                                 
@@ -18544,7 +18544,7 @@ namespace wind
                                                                 // Enumerated
                                                                 // INT32  min(0) max(8) span(9) dataType(Int32)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000913\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].not_equal_to.elements[h].euro_and_co2value[0].cop_value.value) << 
+                                                                    logger->print() << "|\033[38;5;94m000913\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].not_equal_to.elements[h].euro_and_co2value[0].cop_value.value) << 
                                                                                  " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].not_equal_to.elements[h].euro_and_co2value[0].cop_value.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].not_equal_to.elements[h].euro_and_co2value[0].cop_value.value);
                                                                 }
                                                                 
@@ -18575,7 +18575,7 @@ namespace wind
                                                             
                                                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m000915\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].not_equal_to.elements[h].engine_characteristics[0].value) << 
+                                                                logger->print() << "|\033[38;5;94m000915\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].not_equal_to.elements[h].engine_characteristics[0].value) << 
                                                                              " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].not_equal_to.elements[h].engine_characteristics[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].not_equal_to.elements[h].engine_characteristics[0].value);
                                                             }
                                                             
@@ -18613,7 +18613,7 @@ namespace wind
                                                                 
                                                                 // UINT8  min(0) max(15) span(16) dataType(UInt8)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000917\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].not_equal_to.elements[h].load_type[0].goods_type.value) << 
+                                                                    logger->print() << "|\033[38;5;94m000917\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].not_equal_to.elements[h].load_type[0].goods_type.value) << 
                                                                                  " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].not_equal_to.elements[h].load_type[0].goods_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].not_equal_to.elements[h].load_type[0].goods_type.value);
                                                                 }
                                                                 
@@ -18649,7 +18649,7 @@ namespace wind
                                                                 // Enumerated
                                                                 // INT32  min(0) max(19) span(20) dataType(Int32)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000918\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].not_equal_to.elements[h].load_type[0].dangerous_goods_type.value) << 
+                                                                    logger->print() << "|\033[38;5;94m000918\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].not_equal_to.elements[h].load_type[0].dangerous_goods_type.value) << 
                                                                                  " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].not_equal_to.elements[h].load_type[0].dangerous_goods_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].not_equal_to.elements[h].load_type[0].dangerous_goods_type.value);
                                                                 }
                                                                 
@@ -18672,7 +18672,7 @@ namespace wind
                                                                 // BitString
                                                                 // BIT_STRING  min(4) max(4) span(1)
                                                                 if(debug)
-                                                                    logger->debug() << "|\033[38;5;94m000919\033[0m| ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].not_equal_to.elements[h].load_type[0].special_transport_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].not_equal_to.elements[h].load_type[0].special_transport_type.values.size());
+                                                                    logger->print() << "|\033[38;5;94m000919\033[0m| ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].not_equal_to.elements[h].load_type[0].special_transport_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].not_equal_to.elements[h].load_type[0].special_transport_type.values.size());
                                                                 
                                                                 if(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].not_equal_to.elements[h].load_type[0].special_transport_type.values.size() < 4) {
                                                                         logger->warning() << "Error: Value in 'ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].not_equal_to.elements[h].load_type[0].special_transport_type.value' " << (ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].not_equal_to.elements[h].load_type[0].special_transport_type.values.size()) << " is less than allowable (4); message dropped.";
@@ -18706,7 +18706,7 @@ namespace wind
                                                             // Enumerated
                                                             // INT32  min(0) max(15) span(16) dataType(Int32)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m000921\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].not_equal_to.elements[h].usage[0].value) << 
+                                                                logger->print() << "|\033[38;5;94m000921\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].not_equal_to.elements[h].usage[0].value) << 
                                                                              " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].not_equal_to.elements[h].usage[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].not_equal_to.elements[h].usage[0].value);
                                                             }
                                                             
@@ -18759,7 +18759,7 @@ namespace wind
                                                             
                                                             // UINT8  min(0) max(3) span(4) dataType(UInt8)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m000923\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].comparison_operator.value) << 
+                                                                logger->print() << "|\033[38;5;94m000923\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].comparison_operator.value) << 
                                                                              " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].comparison_operator.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].comparison_operator.value);
                                                             }
                                                             
@@ -18805,7 +18805,7 @@ namespace wind
                                                                 
                                                                 // UINT8  min(0) max(7) span(8) dataType(UInt8)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000925\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.number_of_axles[0].value) << 
+                                                                    logger->print() << "|\033[38;5;94m000925\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.number_of_axles[0].value) << 
                                                                                  " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.number_of_axles[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.number_of_axles[0].value);
                                                                 }
                                                                 
@@ -18843,7 +18843,7 @@ namespace wind
                                                                     
                                                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000927\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.vehicle_dimensions[0].vehicle_length_overall.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000927\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.vehicle_dimensions[0].vehicle_length_overall.value) << 
                                                                                      " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.vehicle_dimensions[0].vehicle_length_overall.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.vehicle_dimensions[0].vehicle_length_overall.value);
                                                                     }
                                                                     
@@ -18867,7 +18867,7 @@ namespace wind
                                                                     
                                                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000928\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.vehicle_dimensions[0].vehicle_heigth_overall.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000928\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.vehicle_dimensions[0].vehicle_heigth_overall.value) << 
                                                                                      " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.vehicle_dimensions[0].vehicle_heigth_overall.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.vehicle_dimensions[0].vehicle_heigth_overall.value);
                                                                     }
                                                                     
@@ -18891,7 +18891,7 @@ namespace wind
                                                                     
                                                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000929\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.vehicle_dimensions[0].vehicle_width_overall.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000929\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.vehicle_dimensions[0].vehicle_width_overall.value) << 
                                                                                      " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.vehicle_dimensions[0].vehicle_width_overall.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.vehicle_dimensions[0].vehicle_width_overall.value);
                                                                     }
                                                                     
@@ -18929,7 +18929,7 @@ namespace wind
                                                                     
                                                                     // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000931\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.vehicle_weight_limits[0].vehicle_max_laden_weight.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000931\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.vehicle_weight_limits[0].vehicle_max_laden_weight.value) << 
                                                                                      " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.vehicle_weight_limits[0].vehicle_max_laden_weight.value: " << ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.vehicle_weight_limits[0].vehicle_max_laden_weight.value;
                                                                     }
                                                                     
@@ -18953,7 +18953,7 @@ namespace wind
                                                                     
                                                                     // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000932\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.vehicle_weight_limits[0].vehicle_train_maximum_weight.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000932\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.vehicle_weight_limits[0].vehicle_train_maximum_weight.value) << 
                                                                                      " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.vehicle_weight_limits[0].vehicle_train_maximum_weight.value: " << ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.vehicle_weight_limits[0].vehicle_train_maximum_weight.value;
                                                                     }
                                                                     
@@ -18977,7 +18977,7 @@ namespace wind
                                                                     
                                                                     // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000933\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.vehicle_weight_limits[0].vehicle_weight_unladen.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000933\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.vehicle_weight_limits[0].vehicle_weight_unladen.value) << 
                                                                                      " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.vehicle_weight_limits[0].vehicle_weight_unladen.value: " << ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.vehicle_weight_limits[0].vehicle_weight_unladen.value;
                                                                     }
                                                                     
@@ -19017,7 +19017,7 @@ namespace wind
                                                                     
                                                                     // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000935\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.axle_weight_limits[0].max_ladenweight_on_axle1.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000935\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.axle_weight_limits[0].max_ladenweight_on_axle1.value) << 
                                                                                      " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.axle_weight_limits[0].max_ladenweight_on_axle1.value: " << ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.axle_weight_limits[0].max_ladenweight_on_axle1.value;
                                                                     }
                                                                     
@@ -19041,7 +19041,7 @@ namespace wind
                                                                     
                                                                     // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000936\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.axle_weight_limits[0].max_ladenweight_on_axle2.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000936\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.axle_weight_limits[0].max_ladenweight_on_axle2.value) << 
                                                                                      " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.axle_weight_limits[0].max_ladenweight_on_axle2.value: " << ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.axle_weight_limits[0].max_ladenweight_on_axle2.value;
                                                                     }
                                                                     
@@ -19065,7 +19065,7 @@ namespace wind
                                                                     
                                                                     // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000937\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.axle_weight_limits[0].max_ladenweight_on_axle3.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000937\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.axle_weight_limits[0].max_ladenweight_on_axle3.value) << 
                                                                                      " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.axle_weight_limits[0].max_ladenweight_on_axle3.value: " << ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.axle_weight_limits[0].max_ladenweight_on_axle3.value;
                                                                     }
                                                                     
@@ -19089,7 +19089,7 @@ namespace wind
                                                                     
                                                                     // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000938\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.axle_weight_limits[0].max_ladenweight_on_axle4.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000938\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.axle_weight_limits[0].max_ladenweight_on_axle4.value) << 
                                                                                      " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.axle_weight_limits[0].max_ladenweight_on_axle4.value: " << ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.axle_weight_limits[0].max_ladenweight_on_axle4.value;
                                                                     }
                                                                     
@@ -19113,7 +19113,7 @@ namespace wind
                                                                     
                                                                     // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000939\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.axle_weight_limits[0].max_ladenweight_on_axle5.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000939\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.axle_weight_limits[0].max_ladenweight_on_axle5.value) << 
                                                                                      " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.axle_weight_limits[0].max_ladenweight_on_axle5.value: " << ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.axle_weight_limits[0].max_ladenweight_on_axle5.value;
                                                                     }
                                                                     
@@ -19150,7 +19150,7 @@ namespace wind
                                                                     
                                                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000941\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.passenger_capacity[0].number_of_seats.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000941\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.passenger_capacity[0].number_of_seats.value) << 
                                                                                      " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.passenger_capacity[0].number_of_seats.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.passenger_capacity[0].number_of_seats.value);
                                                                     }
                                                                     
@@ -19174,7 +19174,7 @@ namespace wind
                                                                     
                                                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000942\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.passenger_capacity[0].number_of_standing_places.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000942\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.passenger_capacity[0].number_of_standing_places.value) << 
                                                                                      " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.passenger_capacity[0].number_of_standing_places.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.passenger_capacity[0].number_of_standing_places.value);
                                                                     }
                                                                     
@@ -19213,7 +19213,7 @@ namespace wind
                                                                     // Enumerated
                                                                     // INT32  min(0) max(1) span(2) dataType(Int32)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000944\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.exhaust_emission_values[0].unit_type.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000944\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.exhaust_emission_values[0].unit_type.value) << 
                                                                                      " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.exhaust_emission_values[0].unit_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.exhaust_emission_values[0].unit_type.value);
                                                                     }
                                                                     
@@ -19237,7 +19237,7 @@ namespace wind
                                                                     
                                                                     // UINT16  min(0) max(32767) span(32768) dataType(UInt16)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000945\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.exhaust_emission_values[0].emission_co.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000945\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.exhaust_emission_values[0].emission_co.value) << 
                                                                                      " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.exhaust_emission_values[0].emission_co.value: " << ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.exhaust_emission_values[0].emission_co.value;
                                                                     }
                                                                     
@@ -19261,7 +19261,7 @@ namespace wind
                                                                     
                                                                     // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000946\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.exhaust_emission_values[0].emission_hc.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000946\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.exhaust_emission_values[0].emission_hc.value) << 
                                                                                      " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.exhaust_emission_values[0].emission_hc.value: " << ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.exhaust_emission_values[0].emission_hc.value;
                                                                     }
                                                                     
@@ -19285,7 +19285,7 @@ namespace wind
                                                                     
                                                                     // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000947\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.exhaust_emission_values[0].emission_nox.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000947\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.exhaust_emission_values[0].emission_nox.value) << 
                                                                                      " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.exhaust_emission_values[0].emission_nox.value: " << ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.exhaust_emission_values[0].emission_nox.value;
                                                                     }
                                                                     
@@ -19309,7 +19309,7 @@ namespace wind
                                                                     
                                                                     // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000948\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.exhaust_emission_values[0].emission_hcnox.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000948\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.exhaust_emission_values[0].emission_hcnox.value) << 
                                                                                      " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.exhaust_emission_values[0].emission_hcnox.value: " << ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.exhaust_emission_values[0].emission_hcnox.value;
                                                                     }
                                                                     
@@ -19351,7 +19351,7 @@ namespace wind
                                                                         // Enumerated
                                                                         // INT32  min(0) max(1) span(2) dataType(Int32)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000950\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.diesel_emission_values[0].particulate.unit_type.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000950\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.diesel_emission_values[0].particulate.unit_type.value) << 
                                                                                          " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.diesel_emission_values[0].particulate.unit_type.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.diesel_emission_values[0].particulate.unit_type.value);
                                                                         }
                                                                         
@@ -19375,7 +19375,7 @@ namespace wind
                                                                         
                                                                         // UINT16  min(0) max(32767) span(32768) dataType(UInt16)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000951\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.diesel_emission_values[0].particulate.value.value) << 
+                                                                            logger->print() << "|\033[38;5;94m000951\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.diesel_emission_values[0].particulate.value.value) << 
                                                                                          " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.diesel_emission_values[0].particulate.value.value: " << ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.diesel_emission_values[0].particulate.value.value;
                                                                         }
                                                                         
@@ -19399,7 +19399,7 @@ namespace wind
                                                                     
                                                                     // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000952\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.diesel_emission_values[0].absorption_coeff.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000952\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.diesel_emission_values[0].absorption_coeff.value) << 
                                                                                      " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.diesel_emission_values[0].absorption_coeff.value: " << ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.diesel_emission_values[0].absorption_coeff.value;
                                                                     }
                                                                     
@@ -19436,7 +19436,7 @@ namespace wind
                                                                     
                                                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000954\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.sound_level[0].soundstationary.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000954\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.sound_level[0].soundstationary.value) << 
                                                                                      " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.sound_level[0].soundstationary.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.sound_level[0].soundstationary.value);
                                                                     }
                                                                     
@@ -19460,7 +19460,7 @@ namespace wind
                                                                     
                                                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000955\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.sound_level[0].sounddriveby.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000955\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.sound_level[0].sounddriveby.value) << 
                                                                                      " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.sound_level[0].sounddriveby.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_type_qualifier[0].train[0].ranges.elements[j].limits.sound_level[0].sounddriveby.value);
                                                                     }
                                                                     
@@ -19495,7 +19495,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(7) span(8) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000956\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_status.value) << 
+                                        logger->print() << "|\033[38;5;94m000956\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_status.value) << 
                                                      " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_status.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_status.value);
                                     }
                                     
@@ -19533,7 +19533,7 @@ namespace wind
                                         
                                         // UINT16  min(0) max(1023) span(1024) dataType(UInt16)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000957\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_width[0].value) << 
+                                            logger->print() << "|\033[38;5;94m000957\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_width[0].value) << 
                                                          " ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_width[0].value: " << ros->ivi.optional[0].elements[c].rcc[0].elements[p].lane_configuration.elements[r].lane_width[0].value;
                                         }
                                         
@@ -19603,35 +19603,35 @@ namespace wind
                             char* _tmp_834 = (char*) buffer++;
                             *_tmp_834 = (ros->ivi.optional[0].elements[c].tc[0].elements[k].detection_zone_ids.size() != 0 ? 1 : 0);
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m000960\033[0m| Optional field detection_zone_ids = " << *_tmp_834;
+                                logger->print() << "|\033[38;5;94m000960\033[0m| Optional field detection_zone_ids = " << *_tmp_834;
                             char* _tmp_835 = (char*) buffer++;
                             *_tmp_835 = (ros->ivi.optional[0].elements[c].tc[0].elements[k].direction.size() != 0 ? 1 : 0);
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m000961\033[0m| Optional field direction = " << *_tmp_835;
+                                logger->print() << "|\033[38;5;94m000961\033[0m| Optional field direction = " << *_tmp_835;
                             char* _tmp_836 = (char*) buffer++;
                             *_tmp_836 = (ros->ivi.optional[0].elements[c].tc[0].elements[k].driver_awareness_zone_ids.size() != 0 ? 1 : 0);
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m000962\033[0m| Optional field driver_awareness_zone_ids = " << *_tmp_836;
+                                logger->print() << "|\033[38;5;94m000962\033[0m| Optional field driver_awareness_zone_ids = " << *_tmp_836;
                             char* _tmp_837 = (char*) buffer++;
                             *_tmp_837 = (ros->ivi.optional[0].elements[c].tc[0].elements[k].minimum_awareness_time.size() != 0 ? 1 : 0);
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m000963\033[0m| Optional field minimum_awareness_time = " << *_tmp_837;
+                                logger->print() << "|\033[38;5;94m000963\033[0m| Optional field minimum_awareness_time = " << *_tmp_837;
                             char* _tmp_838 = (char*) buffer++;
                             *_tmp_838 = (ros->ivi.optional[0].elements[c].tc[0].elements[k].applicable_lanes.size() != 0 ? 1 : 0);
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m000964\033[0m| Optional field applicable_lanes = " << *_tmp_838;
+                                logger->print() << "|\033[38;5;94m000964\033[0m| Optional field applicable_lanes = " << *_tmp_838;
                             char* _tmp_839 = (char*) buffer++;
                             *_tmp_839 = (ros->ivi.optional[0].elements[c].tc[0].elements[k].layout_id.size() != 0 ? 1 : 0);
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m000965\033[0m| Optional field layout_id = " << *_tmp_839;
+                                logger->print() << "|\033[38;5;94m000965\033[0m| Optional field layout_id = " << *_tmp_839;
                             char* _tmp_840 = (char*) buffer++;
                             *_tmp_840 = (ros->ivi.optional[0].elements[c].tc[0].elements[k].pre_storedlayout_id.size() != 0 ? 1 : 0);
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m000966\033[0m| Optional field pre_storedlayout_id = " << *_tmp_840;
+                                logger->print() << "|\033[38;5;94m000966\033[0m| Optional field pre_storedlayout_id = " << *_tmp_840;
                             char* _tmp_841 = (char*) buffer++;
                             *_tmp_841 = (ros->ivi.optional[0].elements[c].tc[0].elements[k].text.size() != 0 ? 1 : 0);
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m000967\033[0m| Optional field text = " << *_tmp_841;
+                                logger->print() << "|\033[38;5;94m000967\033[0m| Optional field text = " << *_tmp_841;
                             
                             if(ros->ivi.optional[0].elements[c].tc[0].elements[k].detection_zone_ids.size() != 0) {
                                 // Field:  type(TcPart_detectionZoneIds) name(detection_zone_ids) extGroup(0)
@@ -19654,7 +19654,7 @@ namespace wind
                                     
                                     // UINT8  min(1) max(32) span(32) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000969\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].tc[0].elements[k].detection_zone_ids[0].elements[l].value) << 
+                                        logger->print() << "|\033[38;5;94m000969\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].tc[0].elements[k].detection_zone_ids[0].elements[l].value) << 
                                                      " ivi.optional[0].elements[c].tc[0].elements[k].detection_zone_ids[0].elements[l].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].tc[0].elements[k].detection_zone_ids[0].elements[l].value);
                                     }
                                     
@@ -19709,7 +19709,7 @@ namespace wind
                                 
                                 // UINT8  min(1) max(32) span(32) dataType(UInt8)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000971\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].tc[0].elements[k].relevance_zone_ids.elements[m].value) << 
+                                    logger->print() << "|\033[38;5;94m000971\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].tc[0].elements[k].relevance_zone_ids.elements[m].value) << 
                                                  " ivi.optional[0].elements[c].tc[0].elements[k].relevance_zone_ids.elements[m].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].tc[0].elements[k].relevance_zone_ids.elements[m].value);
                                 }
                                 
@@ -19749,7 +19749,7 @@ namespace wind
                                 
                                 // UINT8  min(0) max(3) span(4) dataType(UInt8)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000972\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].tc[0].elements[k].direction[0].value) << 
+                                    logger->print() << "|\033[38;5;94m000972\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].tc[0].elements[k].direction[0].value) << 
                                                  " ivi.optional[0].elements[c].tc[0].elements[k].direction[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].tc[0].elements[k].direction[0].value);
                                 }
                                 
@@ -19790,7 +19790,7 @@ namespace wind
                                     
                                     // UINT8  min(1) max(32) span(32) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000974\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].tc[0].elements[k].driver_awareness_zone_ids[0].elements[n].value) << 
+                                        logger->print() << "|\033[38;5;94m000974\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].tc[0].elements[k].driver_awareness_zone_ids[0].elements[n].value) << 
                                                      " ivi.optional[0].elements[c].tc[0].elements[k].driver_awareness_zone_ids[0].elements[n].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].tc[0].elements[k].driver_awareness_zone_ids[0].elements[n].value);
                                     }
                                     
@@ -19831,7 +19831,7 @@ namespace wind
                                 
                                 // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000975\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].tc[0].elements[k].minimum_awareness_time[0].value) << 
+                                    logger->print() << "|\033[38;5;94m000975\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].tc[0].elements[k].minimum_awareness_time[0].value) << 
                                                  " ivi.optional[0].elements[c].tc[0].elements[k].minimum_awareness_time[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].tc[0].elements[k].minimum_awareness_time[0].value);
                                 }
                                 
@@ -19872,7 +19872,7 @@ namespace wind
                                     
                                     // INT8  min(-1) max(14) span(16) dataType(Int8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000977\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].tc[0].elements[k].applicable_lanes[0].elements[o].value) << 
+                                        logger->print() << "|\033[38;5;94m000977\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].tc[0].elements[k].applicable_lanes[0].elements[o].value) << 
                                                      " ivi.optional[0].elements[c].tc[0].elements[k].applicable_lanes[0].elements[o].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].tc[0].elements[k].applicable_lanes[0].elements[o].value);
                                     }
                                     
@@ -19901,7 +19901,7 @@ namespace wind
                                 
                                 // UINT8  min(1) max(4) span(4) dataType(UInt8)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000978\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].tc[0].elements[k].layout_id[0].value) << 
+                                    logger->print() << "|\033[38;5;94m000978\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].tc[0].elements[k].layout_id[0].value) << 
                                                  " ivi.optional[0].elements[c].tc[0].elements[k].layout_id[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].tc[0].elements[k].layout_id[0].value);
                                 }
                                 
@@ -19941,7 +19941,7 @@ namespace wind
                                 
                                 // UINT8  min(1) max(64) span(64) dataType(UInt8)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000979\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].tc[0].elements[k].pre_storedlayout_id[0].value) << 
+                                    logger->print() << "|\033[38;5;94m000979\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].tc[0].elements[k].pre_storedlayout_id[0].value) << 
                                                  " ivi.optional[0].elements[c].tc[0].elements[k].pre_storedlayout_id[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].tc[0].elements[k].pre_storedlayout_id[0].value);
                                 }
                                 
@@ -20000,7 +20000,7 @@ namespace wind
                                         char* _tmp_860 = (char*) buffer++;
                                         *_tmp_860 = (ros->ivi.optional[0].elements[c].tc[0].elements[k].text[0].elements[p].layout_component_id.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000981\033[0m| Optional field layout_component_id = " << *_tmp_860;
+                                            logger->print() << "|\033[38;5;94m000981\033[0m| Optional field layout_component_id = " << *_tmp_860;
                                         
                                         if(ros->ivi.optional[0].elements[c].tc[0].elements[k].text[0].elements[p].layout_component_id.size() != 0) {
                                             // Field:  type(Text_layoutComponentId) name(layout_component_id) extGroup(0)
@@ -20008,7 +20008,7 @@ namespace wind
                                             
                                             // UINT8  min(1) max(4) span(4) dataType(UInt8)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000982\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].tc[0].elements[k].text[0].elements[p].layout_component_id[0].value) << 
+                                                logger->print() << "|\033[38;5;94m000982\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].tc[0].elements[k].text[0].elements[p].layout_component_id[0].value) << 
                                                              " ivi.optional[0].elements[c].tc[0].elements[k].text[0].elements[p].layout_component_id[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].tc[0].elements[k].text[0].elements[p].layout_component_id[0].value);
                                             }
                                             
@@ -20046,7 +20046,7 @@ namespace wind
                                         // BitString
                                         // BIT_STRING  min(10) max(10) span(1)
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000983\033[0m| ivi.optional[0].elements[c].tc[0].elements[k].text[0].elements[p].language.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].tc[0].elements[k].text[0].elements[p].language.values.size());
+                                            logger->print() << "|\033[38;5;94m000983\033[0m| ivi.optional[0].elements[c].tc[0].elements[k].text[0].elements[p].language.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].tc[0].elements[k].text[0].elements[p].language.values.size());
                                         
                                         if(ros->ivi.optional[0].elements[c].tc[0].elements[k].text[0].elements[p].language.values.size() < 10) {
                                                 logger->warning() << "Error: Value in 'ivi.optional[0].elements[c].tc[0].elements[k].text[0].elements[p].language.value' " << (ros->ivi.optional[0].elements[c].tc[0].elements[k].text[0].elements[p].language.values.size()) << " is less than allowable (10); message dropped.";
@@ -20086,7 +20086,7 @@ namespace wind
                                             return -1;
                                         }
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000984\033[0m| ivi.optional[0].elements[c].tc[0].elements[k].text[0].elements[p].text_content.value.size(): " << 
+                                            logger->print() << "|\033[38;5;94m000984\033[0m| ivi.optional[0].elements[c].tc[0].elements[k].text[0].elements[p].text_content.value.size(): " << 
                                                         static_cast<int>(ros->ivi.optional[0].elements[c].tc[0].elements[k].text[0].elements[p].text_content.value.size());
                                         
                                         if(__aux64__ > 16383) __aux64__ = 16383;
@@ -20108,7 +20108,7 @@ namespace wind
                             // OCTET_STRING  min(0) max(16383) span(16384)
                             
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m000985\033[0m| ivi.optional[0].elements[c].tc[0].elements[k].data.values.size(): ivi.optional[0].elements[c].tc[0].elements[k].data" << static_cast<int>(ros->ivi.optional[0].elements[c].tc[0].elements[k].data.values.size());
+                                logger->print() << "|\033[38;5;94m000985\033[0m| ivi.optional[0].elements[c].tc[0].elements[k].data.values.size(): ivi.optional[0].elements[c].tc[0].elements[k].data" << static_cast<int>(ros->ivi.optional[0].elements[c].tc[0].elements[k].data.values.size());
                             
                             if(ros->ivi.optional[0].elements[c].tc[0].elements[k].data.values.size() < 0) {
                                 logger->warning() << "Error: Value in 'ivi.optional[0].elements[c].tc[0].elements[k].data.value' (" << 
@@ -20157,18 +20157,18 @@ namespace wind
                         char* _tmp_867 = (char*) buffer++;
                         *_tmp_867 = (ros->ivi.optional[0].elements[c].lac[0].height.size() != 0 ? 1 : 0);
                         if(debug)
-                            logger->debug() << "|\033[38;5;94m000987\033[0m| Optional field height = " << *_tmp_867;
+                            logger->print() << "|\033[38;5;94m000987\033[0m| Optional field height = " << *_tmp_867;
                         char* _tmp_868 = (char*) buffer++;
                         *_tmp_868 = (ros->ivi.optional[0].elements[c].lac[0].width.size() != 0 ? 1 : 0);
                         if(debug)
-                            logger->debug() << "|\033[38;5;94m000988\033[0m| Optional field width = " << *_tmp_868;
+                            logger->print() << "|\033[38;5;94m000988\033[0m| Optional field width = " << *_tmp_868;
                         
                         // Field:  type(LayoutContainer_layoutId) name(layout_id) extGroup(0)
                         // Integer
                         
                         // UINT8  min(1) max(4) span(4) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000989\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].lac[0].layout_id.value) << 
+                            logger->print() << "|\033[38;5;94m000989\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].lac[0].layout_id.value) << 
                                          " ivi.optional[0].elements[c].lac[0].layout_id.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].lac[0].layout_id.value);
                         }
                         
@@ -20207,7 +20207,7 @@ namespace wind
                             
                             // UINT8  min(10) max(73) span(64) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000990\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].lac[0].height[0].value) << 
+                                logger->print() << "|\033[38;5;94m000990\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].lac[0].height[0].value) << 
                                              " ivi.optional[0].elements[c].lac[0].height[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].lac[0].height[0].value);
                             }
                             
@@ -20234,7 +20234,7 @@ namespace wind
                             
                             // UINT16  min(10) max(265) span(256) dataType(UInt16)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000991\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].lac[0].width[0].value) << 
+                                logger->print() << "|\033[38;5;94m000991\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].lac[0].width[0].value) << 
                                              " ivi.optional[0].elements[c].lac[0].width[0].value: " << static_cast<int>(ros->ivi.optional[0].elements[c].lac[0].width[0].value);
                             }
                             
@@ -20285,7 +20285,7 @@ namespace wind
                                 
                                 // UINT8  min(1) max(8) span(8) dataType(UInt8)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000993\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].lac[0].layout_components.elements[t].layout_component_id.value) << 
+                                    logger->print() << "|\033[38;5;94m000993\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].lac[0].layout_components.elements[t].layout_component_id.value) << 
                                                  " ivi.optional[0].elements[c].lac[0].layout_components.elements[t].layout_component_id.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].lac[0].layout_components.elements[t].layout_component_id.value);
                                 }
                                 
@@ -20323,7 +20323,7 @@ namespace wind
                                 
                                 // UINT8  min(10) max(73) span(64) dataType(UInt8)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000994\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].lac[0].layout_components.elements[t].height.value) << 
+                                    logger->print() << "|\033[38;5;94m000994\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].lac[0].layout_components.elements[t].height.value) << 
                                                  " ivi.optional[0].elements[c].lac[0].layout_components.elements[t].height.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].lac[0].layout_components.elements[t].height.value);
                                 }
                                 
@@ -20348,7 +20348,7 @@ namespace wind
                                 
                                 // UINT16  min(10) max(265) span(256) dataType(UInt16)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000995\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].lac[0].layout_components.elements[t].width.value) << 
+                                    logger->print() << "|\033[38;5;94m000995\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].lac[0].layout_components.elements[t].width.value) << 
                                                  " ivi.optional[0].elements[c].lac[0].layout_components.elements[t].width.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].lac[0].layout_components.elements[t].width.value);
                                 }
                                 
@@ -20373,7 +20373,7 @@ namespace wind
                                 
                                 // UINT16  min(10) max(265) span(256) dataType(UInt16)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000996\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].lac[0].layout_components.elements[t].x.value) << 
+                                    logger->print() << "|\033[38;5;94m000996\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].lac[0].layout_components.elements[t].x.value) << 
                                                  " ivi.optional[0].elements[c].lac[0].layout_components.elements[t].x.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].lac[0].layout_components.elements[t].x.value);
                                 }
                                 
@@ -20398,7 +20398,7 @@ namespace wind
                                 
                                 // UINT8  min(10) max(73) span(64) dataType(UInt8)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000997\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].lac[0].layout_components.elements[t].y.value) << 
+                                    logger->print() << "|\033[38;5;94m000997\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].lac[0].layout_components.elements[t].y.value) << 
                                                  " ivi.optional[0].elements[c].lac[0].layout_components.elements[t].y.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].lac[0].layout_components.elements[t].y.value);
                                 }
                                 
@@ -20423,7 +20423,7 @@ namespace wind
                                 
                                 // UINT8  min(0) max(1) span(2) dataType(UInt8)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000998\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].lac[0].layout_components.elements[t].text_scripting.value) << 
+                                    logger->print() << "|\033[38;5;94m000998\033[0m| " << tools::getTypeName(ros->ivi.optional[0].elements[c].lac[0].layout_components.elements[t].text_scripting.value) << 
                                                  " ivi.optional[0].elements[c].lac[0].layout_components.elements[t].text_scripting.value: " << static_cast<int>(ros->ivi.optional[0].elements[c].lac[0].layout_components.elements[t].text_scripting.value);
                                 }
                                 

@@ -75,6 +75,9 @@ public:
         slogger_->print() << "" << tools::generateLine(buf_size, "<");
         slogger_->print() << "Received incoming stream of " << buf_size << " bytes";
 
+        if(buf_size < 2)
+            return;
+
         //rate_tracker_.incrementCount();
         //slogger_->print() << "Current message rate: " << tools::green((rate_tracker_.getCurrentRateFormatted())) << " msgs/sec";
 
@@ -83,6 +86,10 @@ public:
 
         const uint8_t *buffer        = (const uint8_t *) buf;
         int8_t offset                = int(buffer[1]) ? INDICATION_HEADER_SIZE : REQUEST_HEADER_SIZE;
+
+        if(buf_size < offset + 32) // Wind header len + its container header len
+            return;
+
         unsigned int protocolVersion = int(buffer[0 + offset]);
         unsigned int messageId       = int(buffer[1 + offset]);
 
@@ -102,6 +109,8 @@ public:
 
         if(messageId == MESSAGE_ID && protocolVersion == PROTOCOL_VERSION) {
             receiver_->incoming_message(buf);
+        } else {
+			slogger_->print(tools::yellow("Ignoring message"));
         }
     }
 
@@ -126,16 +135,8 @@ public:
         slogger_->print() << "Registering message name(" << tools::bold(tools::cyan("MAPEM")) << ")";
         slogger_->print() << "Starting UDP server port(" << tools::bold(tools::cyan(std::to_string(input_port_))) << ")";
 
-        udp_receiver_ = new wind::comm::UDPReceiver(input_port_);
-        //udp_receiver_->setReceiveCallbackFunction(boost::bind(&ReceiverNode::receiveMsgCallback, this, _1, _2));
-        udp_receiver_->setReceiveCallbackFunction(std::bind(&ReceiverNode::receiveMsgCallback, this, 
-            std::placeholders::_1, 
-            std::placeholders::_2));
-
-        /*udp_receiver_->setReceiveCallbackFunction(boost::bind(&ReceiverNode::receiveMsgCallback, this,
-          boost::placeholders::_1,
-          boost::placeholders::_2));*/
-
+        udp_receiver_ = new wind::comm::UDPReceiver(input_port_);      
+        udp_receiver_->setReceiveCallbackFunction(std::bind(&ReceiverNode::receiveMsgCallback, this, std::placeholders::_1, std::placeholders::_2));
         udp_receiver_->startReading();
 
         slogger_->print(tools::bold(tools::green("Ready!")));
@@ -190,21 +191,20 @@ private:
       std::shared_ptr<wind::wind_ros::Receiver_dsrc_v2_mapem_pdu_descriptions> receiver_;
     #endif
 
-    int                                  input_port_;
-    std::string                          topic_;
-    bool                                 debug_;
-    bool                                 show_hex_;
-    wind::comm::UDPReceiver*             udp_receiver_;
+    int                                        input_port_;
+    std::string                             topic_;
+    bool                                     debug_;
+    bool                                     show_hex_;
+    wind::comm::UDPReceiver*   udp_receiver_;
     DiskLogger*                          dlogger_;
-    ScreenLogger*                        slogger_;
+    ScreenLogger*                      slogger_;
     //MessageRateTracker*                  rate_tracker_;
 };
 
 void printUsage(ScreenLogger* slogger, bool isError = false) {
     if (!isError) {
-        slogger->print(tools::bold(tools::custom(100, 100, 100, 
-            "Usage: [--name nodeName] [--port portNumber] [--topic topic] [--debug] [--show-hex] [--log-to-disk] [--log-file filename]")));
-        slogger->print(tools::custom(80, 80, 80, "Default values in include/wind_constants.h"));
+        slogger->print(tools::bold(tools::purple("Usage: [--name nodeName] [--port portNumber] [--topic topic] [--debug] [--show-hex] [--log-to-disk] [--log-file filename]")));
+        slogger->print(tools::purple("Default values in include/wind_constants.h"));
         slogger->print("");
     } else {
         slogger->print("Usage: [--name nodeName] [--port portNumber] [--topic topic] [--debug] [--show-hex] [--log-to-disk] [--log-file filename]");
@@ -337,7 +337,7 @@ int main(int argc, char** argv) {
     node.set_topic(_topic);
     node.set_screen_logger(slogger);
     if(_debug) node.enable_debug();
-        if(_showh) node.enable_show_hex();
+    if(_showh) node.enable_show_hex();
     if(_log)   node.enable_disk_logger(_logfo, _logfi);
 
     node.run();

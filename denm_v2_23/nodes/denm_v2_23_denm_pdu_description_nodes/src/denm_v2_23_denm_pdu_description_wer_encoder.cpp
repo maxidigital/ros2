@@ -66,7 +66,7 @@ namespace wind
         
         // UINT8  min(0) max(255) span(256) dataType(UInt8)
         if(debug) {
-            logger->debug() << "|\033[38;5;94m000000\033[0m| " << tools::getTypeName(ros->hheader.protocol_version.value) << 
+            logger->print() << "|\033[38;5;94m000000\033[0m| " << tools::getTypeName(ros->hheader.protocol_version.value) << 
                          " hheader.protocol_version.value: " << static_cast<int>(ros->hheader.protocol_version.value);
         }
         
@@ -90,7 +90,7 @@ namespace wind
         
         // UINT8  min(0) max(255) span(256) dataType(UInt8)
         if(debug) {
-            logger->debug() << "|\033[38;5;94m000001\033[0m| " << tools::getTypeName(ros->hheader.message_id.value) << 
+            logger->print() << "|\033[38;5;94m000001\033[0m| " << tools::getTypeName(ros->hheader.message_id.value) << 
                          " hheader.message_id.value: " << static_cast<int>(ros->hheader.message_id.value);
         }
         
@@ -114,7 +114,7 @@ namespace wind
         
         // UINT32  min(0) max(4294967295) span(4294967296) dataType(UInt32)
         if(debug) {
-            logger->debug() << "|\033[38;5;94m000002\033[0m| " << tools::getTypeName(ros->hheader.station_id.value) << 
+            logger->print() << "|\033[38;5;94m000002\033[0m| " << tools::getTypeName(ros->hheader.station_id.value) << 
                          " hheader.station_id.value: " << ros->hheader.station_id.value;
         }
         
@@ -143,15 +143,15 @@ namespace wind
         char* _tmp_4 = (char*) buffer++;
         *_tmp_4 = (ros->denm.situation.size() != 0 ? 1 : 0);
         if(debug)
-            logger->debug() << "|\033[38;5;94m000003\033[0m| Optional field situation = " << *_tmp_4;
+            logger->print() << "|\033[38;5;94m000003\033[0m| Optional field situation = " << *_tmp_4;
         char* _tmp_5 = (char*) buffer++;
         *_tmp_5 = (ros->denm.location.size() != 0 ? 1 : 0);
         if(debug)
-            logger->debug() << "|\033[38;5;94m000004\033[0m| Optional field location = " << *_tmp_5;
+            logger->print() << "|\033[38;5;94m000004\033[0m| Optional field location = " << *_tmp_5;
         char* _tmp_6 = (char*) buffer++;
         *_tmp_6 = (ros->denm.alacarte.size() != 0 ? 1 : 0);
         if(debug)
-            logger->debug() << "|\033[38;5;94m000005\033[0m| Optional field alacarte = " << *_tmp_6;
+            logger->print() << "|\033[38;5;94m000005\033[0m| Optional field alacarte = " << *_tmp_6;
         
         // Field:  type(ManagementContainer) name(management) extGroup(0)
             // ManagementContainer  SEQUENCE
@@ -173,19 +173,19 @@ namespace wind
             char* _tmp_7 = (char*) buffer++;
             *_tmp_7 = (ros->denm.management.termination.size() != 0 ? 1 : 0);
             if(debug)
-                logger->debug() << "|\033[38;5;94m000006\033[0m| Optional field termination = " << *_tmp_7;
+                logger->print() << "|\033[38;5;94m000006\033[0m| Optional field termination = " << *_tmp_7;
             char* _tmp_8 = (char*) buffer++;
             *_tmp_8 = (ros->denm.management.awareness_distance.size() != 0 ? 1 : 0);
             if(debug)
-                logger->debug() << "|\033[38;5;94m000007\033[0m| Optional field awareness_distance = " << *_tmp_8;
+                logger->print() << "|\033[38;5;94m000007\033[0m| Optional field awareness_distance = " << *_tmp_8;
             char* _tmp_9 = (char*) buffer++;
             *_tmp_9 = (ros->denm.management.traffic_direction.size() != 0 ? 1 : 0);
             if(debug)
-                logger->debug() << "|\033[38;5;94m000008\033[0m| Optional field traffic_direction = " << *_tmp_9;
+                logger->print() << "|\033[38;5;94m000008\033[0m| Optional field traffic_direction = " << *_tmp_9;
             char* _tmp_10 = (char*) buffer++;
             *_tmp_10 = (ros->denm.management.transmission_interval.size() != 0 ? 1 : 0);
             if(debug)
-                logger->debug() << "|\033[38;5;94m000009\033[0m| Optional field transmission_interval = " << *_tmp_10;
+                logger->print() << "|\033[38;5;94m000009\033[0m| Optional field transmission_interval = " << *_tmp_10;
             
             // Field:  type(ActionId) name(action_id) extGroup(0)
                 // ActionId  SEQUENCE
@@ -198,7 +198,7 @@ namespace wind
                 
                 // UINT32  min(0) max(4294967295) span(4294967296) dataType(UInt32)
                 if(debug) {
-                    logger->debug() << "|\033[38;5;94m000010\033[0m| " << tools::getTypeName(ros->denm.management.action_id.originating_station_id.value) << 
+                    logger->print() << "|\033[38;5;94m000010\033[0m| " << tools::getTypeName(ros->denm.management.action_id.originating_station_id.value) << 
                                  " denm.management.action_id.originating_station_id.value: " << ros->denm.management.action_id.originating_station_id.value;
                 }
                 
@@ -222,7 +222,7 @@ namespace wind
                 
                 // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                 if(debug) {
-                    logger->debug() << "|\033[38;5;94m000011\033[0m| " << tools::getTypeName(ros->denm.management.action_id.sequence_number.value) << 
+                    logger->print() << "|\033[38;5;94m000011\033[0m| " << tools::getTypeName(ros->denm.management.action_id.sequence_number.value) << 
                                  " denm.management.action_id.sequence_number.value: " << ros->denm.management.action_id.sequence_number.value;
                 }
                 
@@ -246,7 +246,7 @@ namespace wind
             
             // DOUBLE  min(0) max(4398046511103) span(4398046511104) scaleDivisor(1000.0) dataType(Double)
             if(debug) {
-                logger->debug() << "|\033[38;5;94m000012\033[0m| " << tools::getTypeName(ros->denm.management.detection_time.value) << 
+                logger->print() << "|\033[38;5;94m000012\033[0m| " << tools::getTypeName(ros->denm.management.detection_time.value) << 
                              " denm.management.detection_time.value: " << ros->denm.management.detection_time.value;
             }
             
@@ -272,7 +272,7 @@ namespace wind
             
             // DOUBLE  min(0) max(4398046511103) span(4398046511104) scaleDivisor(1000.0) dataType(Double)
             if(debug) {
-                logger->debug() << "|\033[38;5;94m000013\033[0m| " << tools::getTypeName(ros->denm.management.reference_time.value) << 
+                logger->print() << "|\033[38;5;94m000013\033[0m| " << tools::getTypeName(ros->denm.management.reference_time.value) << 
                              " denm.management.reference_time.value: " << ros->denm.management.reference_time.value;
             }
             
@@ -298,7 +298,7 @@ namespace wind
                 // Enumerated
                 // INT32  min(0) max(1) span(2) dataType(Int32)
                 if(debug) {
-                    logger->debug() << "|\033[38;5;94m000014\033[0m| " << tools::getTypeName(ros->denm.management.termination[0].value) << 
+                    logger->print() << "|\033[38;5;94m000014\033[0m| " << tools::getTypeName(ros->denm.management.termination[0].value) << 
                                  " denm.management.termination[0].value: " << static_cast<int>(ros->denm.management.termination[0].value);
                 }
                 
@@ -331,7 +331,7 @@ namespace wind
                 
                 // DOUBLE  min(-900000000) max(900000001) span(1800000002) scaleDivisor(1.0E7) dataType(Double)
                 if(debug) {
-                    logger->debug() << "|\033[38;5;94m000015\033[0m| " << tools::getTypeName(ros->denm.management.event_position.latitude.value) << 
+                    logger->print() << "|\033[38;5;94m000015\033[0m| " << tools::getTypeName(ros->denm.management.event_position.latitude.value) << 
                                  " denm.management.event_position.latitude.value: " << ros->denm.management.event_position.latitude.value;
                 }
                 
@@ -358,7 +358,7 @@ namespace wind
                 
                 // DOUBLE  min(-1800000000) max(1800000001) span(3600000002) scaleDivisor(1.0E7) dataType(Double)
                 if(debug) {
-                    logger->debug() << "|\033[38;5;94m000016\033[0m| " << tools::getTypeName(ros->denm.management.event_position.longitude.value) << 
+                    logger->print() << "|\033[38;5;94m000016\033[0m| " << tools::getTypeName(ros->denm.management.event_position.longitude.value) << 
                                  " denm.management.event_position.longitude.value: " << ros->denm.management.event_position.longitude.value;
                 }
                 
@@ -392,7 +392,7 @@ namespace wind
                     
                     // FLOAT  min(0) max(4095) span(4096) scaleDivisor(100.0) dataType(Float)
                     if(debug) {
-                        logger->debug() << "|\033[38;5;94m000017\033[0m| " << tools::getTypeName(ros->denm.management.event_position.position_confidence_ellipse.semi_major_confidence.value) << 
+                        logger->print() << "|\033[38;5;94m000017\033[0m| " << tools::getTypeName(ros->denm.management.event_position.position_confidence_ellipse.semi_major_confidence.value) << 
                                      " denm.management.event_position.position_confidence_ellipse.semi_major_confidence.value: " << ros->denm.management.event_position.position_confidence_ellipse.semi_major_confidence.value;
                     }
                     
@@ -418,7 +418,7 @@ namespace wind
                     
                     // FLOAT  min(0) max(4095) span(4096) scaleDivisor(100.0) dataType(Float)
                     if(debug) {
-                        logger->debug() << "|\033[38;5;94m000018\033[0m| " << tools::getTypeName(ros->denm.management.event_position.position_confidence_ellipse.semi_minor_confidence.value) << 
+                        logger->print() << "|\033[38;5;94m000018\033[0m| " << tools::getTypeName(ros->denm.management.event_position.position_confidence_ellipse.semi_minor_confidence.value) << 
                                      " denm.management.event_position.position_confidence_ellipse.semi_minor_confidence.value: " << ros->denm.management.event_position.position_confidence_ellipse.semi_minor_confidence.value;
                     }
                     
@@ -444,7 +444,7 @@ namespace wind
                     
                     // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                     if(debug) {
-                        logger->debug() << "|\033[38;5;94m000019\033[0m| " << tools::getTypeName(ros->denm.management.event_position.position_confidence_ellipse.semi_major_orientation.value) << 
+                        logger->print() << "|\033[38;5;94m000019\033[0m| " << tools::getTypeName(ros->denm.management.event_position.position_confidence_ellipse.semi_major_orientation.value) << 
                                      " denm.management.event_position.position_confidence_ellipse.semi_major_orientation.value: " << ros->denm.management.event_position.position_confidence_ellipse.semi_major_orientation.value;
                     }
                     
@@ -476,7 +476,7 @@ namespace wind
                     
                     // FLOAT  min(-100000) max(800001) span(900002) scaleDivisor(100.0) dataType(Float)
                     if(debug) {
-                        logger->debug() << "|\033[38;5;94m000020\033[0m| " << tools::getTypeName(ros->denm.management.event_position.altitude.altitude_value.value) << 
+                        logger->print() << "|\033[38;5;94m000020\033[0m| " << tools::getTypeName(ros->denm.management.event_position.altitude.altitude_value.value) << 
                                      " denm.management.event_position.altitude.altitude_value.value: " << ros->denm.management.event_position.altitude.altitude_value.value;
                     }
                     
@@ -502,7 +502,7 @@ namespace wind
                     // Enumerated
                     // INT32  min(0) max(15) span(16) dataType(Int32)
                     if(debug) {
-                        logger->debug() << "|\033[38;5;94m000021\033[0m| " << tools::getTypeName(ros->denm.management.event_position.altitude.altitude_confidence.value) << 
+                        logger->print() << "|\033[38;5;94m000021\033[0m| " << tools::getTypeName(ros->denm.management.event_position.altitude.altitude_confidence.value) << 
                                      " denm.management.event_position.altitude.altitude_confidence.value: " << static_cast<int>(ros->denm.management.event_position.altitude.altitude_confidence.value);
                     }
                     
@@ -526,7 +526,7 @@ namespace wind
                 // Enumerated
                 // INT32  min(0) max(7) span(8) dataType(Int32)
                 if(debug) {
-                    logger->debug() << "|\033[38;5;94m000022\033[0m| " << tools::getTypeName(ros->denm.management.awareness_distance[0].value) << 
+                    logger->print() << "|\033[38;5;94m000022\033[0m| " << tools::getTypeName(ros->denm.management.awareness_distance[0].value) << 
                                  " denm.management.awareness_distance[0].value: " << static_cast<int>(ros->denm.management.awareness_distance[0].value);
                 }
                 
@@ -551,7 +551,7 @@ namespace wind
                 // Enumerated
                 // INT32  min(0) max(3) span(4) dataType(Int32)
                 if(debug) {
-                    logger->debug() << "|\033[38;5;94m000023\033[0m| " << tools::getTypeName(ros->denm.management.traffic_direction[0].value) << 
+                    logger->print() << "|\033[38;5;94m000023\033[0m| " << tools::getTypeName(ros->denm.management.traffic_direction[0].value) << 
                                  " denm.management.traffic_direction[0].value: " << static_cast<int>(ros->denm.management.traffic_direction[0].value);
                 }
                 
@@ -576,7 +576,7 @@ namespace wind
             
             // UINT32  min(0) max(86400) span(86401) dataType(UInt32)
             if(debug) {
-                logger->debug() << "|\033[38;5;94m000024\033[0m| " << tools::getTypeName(ros->denm.management.validity_duration.value) << 
+                logger->print() << "|\033[38;5;94m000024\033[0m| " << tools::getTypeName(ros->denm.management.validity_duration.value) << 
                              " denm.management.validity_duration.value: " << ros->denm.management.validity_duration.value;
             }
             
@@ -601,7 +601,7 @@ namespace wind
                 
                 // FLOAT  min(1) max(10000) span(10000) scaleDivisor(1000.0) dataType(Float)
                 if(debug) {
-                    logger->debug() << "|\033[38;5;94m000025\033[0m| " << tools::getTypeName(ros->denm.management.transmission_interval[0].value) << 
+                    logger->print() << "|\033[38;5;94m000025\033[0m| " << tools::getTypeName(ros->denm.management.transmission_interval[0].value) << 
                                  " denm.management.transmission_interval[0].value: " << ros->denm.management.transmission_interval[0].value;
                 }
                 
@@ -629,7 +629,7 @@ namespace wind
             
             // UINT8  min(0) max(255) span(256) dataType(UInt8)
             if(debug) {
-                logger->debug() << "|\033[38;5;94m000026\033[0m| " << tools::getTypeName(ros->denm.management.station_type.value) << 
+                logger->print() << "|\033[38;5;94m000026\033[0m| " << tools::getTypeName(ros->denm.management.station_type.value) << 
                              " denm.management.station_type.value: " << static_cast<int>(ros->denm.management.station_type.value);
             }
             
@@ -667,18 +667,18 @@ namespace wind
                 char* _tmp_38 = (char*) buffer++;
                 *_tmp_38 = (ros->denm.situation[0].linked_cause.size() != 0 ? 1 : 0);
                 if(debug)
-                    logger->debug() << "|\033[38;5;94m000027\033[0m| Optional field linked_cause = " << *_tmp_38;
+                    logger->print() << "|\033[38;5;94m000027\033[0m| Optional field linked_cause = " << *_tmp_38;
                 char* _tmp_39 = (char*) buffer++;
                 *_tmp_39 = (ros->denm.situation[0].event_zone.size() != 0 ? 1 : 0);
                 if(debug)
-                    logger->debug() << "|\033[38;5;94m000028\033[0m| Optional field event_zone = " << *_tmp_39;
+                    logger->print() << "|\033[38;5;94m000028\033[0m| Optional field event_zone = " << *_tmp_39;
                 
                 // Field:  type(InformationQuality) name(information_quality) extGroup(0)
                 // Integer
                 
                 // UINT8  min(0) max(7) span(8) dataType(UInt8)
                 if(debug) {
-                    logger->debug() << "|\033[38;5;94m000029\033[0m| " << tools::getTypeName(ros->denm.situation[0].information_quality.value) << 
+                    logger->print() << "|\033[38;5;94m000029\033[0m| " << tools::getTypeName(ros->denm.situation[0].information_quality.value) << 
                                  " denm.situation[0].information_quality.value: " << static_cast<int>(ros->denm.situation[0].information_quality.value);
                 }
                 
@@ -850,7 +850,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000031\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved0[0].value) << 
+                            logger->print() << "|\033[38;5;94m000031\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved0[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved0[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved0[0].value);
                         }
                         
@@ -881,7 +881,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000033\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.traffic_condition1[0].value) << 
+                            logger->print() << "|\033[38;5;94m000033\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.traffic_condition1[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.traffic_condition1[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.traffic_condition1[0].value);
                         }
                         
@@ -912,7 +912,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000035\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.accident2[0].value) << 
+                            logger->print() << "|\033[38;5;94m000035\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.accident2[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.accident2[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.accident2[0].value);
                         }
                         
@@ -943,7 +943,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000037\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.roadworks3[0].value) << 
+                            logger->print() << "|\033[38;5;94m000037\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.roadworks3[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.roadworks3[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.roadworks3[0].value);
                         }
                         
@@ -974,7 +974,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000039\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved4[0].value) << 
+                            logger->print() << "|\033[38;5;94m000039\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved4[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved4[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved4[0].value);
                         }
                         
@@ -1005,7 +1005,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000041\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.impassability5[0].value) << 
+                            logger->print() << "|\033[38;5;94m000041\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.impassability5[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.impassability5[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.impassability5[0].value);
                         }
                         
@@ -1036,7 +1036,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000043\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.adverse_weather_condition_adhesion6[0].value) << 
+                            logger->print() << "|\033[38;5;94m000043\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.adverse_weather_condition_adhesion6[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.adverse_weather_condition_adhesion6[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.adverse_weather_condition_adhesion6[0].value);
                         }
                         
@@ -1067,7 +1067,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000045\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.aquaplaning7[0].value) << 
+                            logger->print() << "|\033[38;5;94m000045\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.aquaplaning7[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.aquaplaning7[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.aquaplaning7[0].value);
                         }
                         
@@ -1098,7 +1098,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000047\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved8[0].value) << 
+                            logger->print() << "|\033[38;5;94m000047\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved8[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved8[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved8[0].value);
                         }
                         
@@ -1129,7 +1129,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000049\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.hazardous_location_surface_condition9[0].value) << 
+                            logger->print() << "|\033[38;5;94m000049\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.hazardous_location_surface_condition9[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.hazardous_location_surface_condition9[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.hazardous_location_surface_condition9[0].value);
                         }
                         
@@ -1160,7 +1160,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000051\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.hazardous_location_obstacle_on_the_road10[0].value) << 
+                            logger->print() << "|\033[38;5;94m000051\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.hazardous_location_obstacle_on_the_road10[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.hazardous_location_obstacle_on_the_road10[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.hazardous_location_obstacle_on_the_road10[0].value);
                         }
                         
@@ -1191,7 +1191,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000053\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.hazardous_location_animal_on_the_road11[0].value) << 
+                            logger->print() << "|\033[38;5;94m000053\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.hazardous_location_animal_on_the_road11[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.hazardous_location_animal_on_the_road11[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.hazardous_location_animal_on_the_road11[0].value);
                         }
                         
@@ -1222,7 +1222,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000055\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.human_presence_on_the_road12[0].value) << 
+                            logger->print() << "|\033[38;5;94m000055\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.human_presence_on_the_road12[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.human_presence_on_the_road12[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.human_presence_on_the_road12[0].value);
                         }
                         
@@ -1253,7 +1253,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000057\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved13[0].value) << 
+                            logger->print() << "|\033[38;5;94m000057\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved13[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved13[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved13[0].value);
                         }
                         
@@ -1284,7 +1284,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000059\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.wrong_way_driving14[0].value) << 
+                            logger->print() << "|\033[38;5;94m000059\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.wrong_way_driving14[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.wrong_way_driving14[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.wrong_way_driving14[0].value);
                         }
                         
@@ -1315,7 +1315,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000061\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.rescue_and_recovery_work_in_progress15[0].value) << 
+                            logger->print() << "|\033[38;5;94m000061\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.rescue_and_recovery_work_in_progress15[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.rescue_and_recovery_work_in_progress15[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.rescue_and_recovery_work_in_progress15[0].value);
                         }
                         
@@ -1346,7 +1346,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000063\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved16[0].value) << 
+                            logger->print() << "|\033[38;5;94m000063\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved16[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved16[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved16[0].value);
                         }
                         
@@ -1377,7 +1377,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000065\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.adverse_weather_condition_extreme_weather_condition17[0].value) << 
+                            logger->print() << "|\033[38;5;94m000065\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.adverse_weather_condition_extreme_weather_condition17[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.adverse_weather_condition_extreme_weather_condition17[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.adverse_weather_condition_extreme_weather_condition17[0].value);
                         }
                         
@@ -1408,7 +1408,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000067\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.adverse_weather_condition_visibility18[0].value) << 
+                            logger->print() << "|\033[38;5;94m000067\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.adverse_weather_condition_visibility18[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.adverse_weather_condition_visibility18[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.adverse_weather_condition_visibility18[0].value);
                         }
                         
@@ -1439,7 +1439,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000069\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.adverse_weather_condition_precipitation19[0].value) << 
+                            logger->print() << "|\033[38;5;94m000069\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.adverse_weather_condition_precipitation19[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.adverse_weather_condition_precipitation19[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.adverse_weather_condition_precipitation19[0].value);
                         }
                         
@@ -1470,7 +1470,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000071\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.violence20[0].value) << 
+                            logger->print() << "|\033[38;5;94m000071\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.violence20[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.violence20[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.violence20[0].value);
                         }
                         
@@ -1501,7 +1501,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000073\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved21[0].value) << 
+                            logger->print() << "|\033[38;5;94m000073\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved21[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved21[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved21[0].value);
                         }
                         
@@ -1532,7 +1532,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000075\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved22[0].value) << 
+                            logger->print() << "|\033[38;5;94m000075\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved22[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved22[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved22[0].value);
                         }
                         
@@ -1563,7 +1563,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000077\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved23[0].value) << 
+                            logger->print() << "|\033[38;5;94m000077\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved23[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved23[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved23[0].value);
                         }
                         
@@ -1594,7 +1594,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000079\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved24[0].value) << 
+                            logger->print() << "|\033[38;5;94m000079\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved24[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved24[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved24[0].value);
                         }
                         
@@ -1625,7 +1625,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000081\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved25[0].value) << 
+                            logger->print() << "|\033[38;5;94m000081\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved25[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved25[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved25[0].value);
                         }
                         
@@ -1656,7 +1656,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000083\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.slow_vehicle26[0].value) << 
+                            logger->print() << "|\033[38;5;94m000083\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.slow_vehicle26[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.slow_vehicle26[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.slow_vehicle26[0].value);
                         }
                         
@@ -1687,7 +1687,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000085\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.dangerous_end_of_queue27[0].value) << 
+                            logger->print() << "|\033[38;5;94m000085\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.dangerous_end_of_queue27[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.dangerous_end_of_queue27[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.dangerous_end_of_queue27[0].value);
                         }
                         
@@ -1718,7 +1718,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000087\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.public_transport_vehicle_approaching28[0].value) << 
+                            logger->print() << "|\033[38;5;94m000087\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.public_transport_vehicle_approaching28[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.public_transport_vehicle_approaching28[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.public_transport_vehicle_approaching28[0].value);
                         }
                         
@@ -1749,7 +1749,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000089\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved29[0].value) << 
+                            logger->print() << "|\033[38;5;94m000089\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved29[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved29[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved29[0].value);
                         }
                         
@@ -1780,7 +1780,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000091\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved30[0].value) << 
+                            logger->print() << "|\033[38;5;94m000091\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved30[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved30[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved30[0].value);
                         }
                         
@@ -1811,7 +1811,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000093\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved31[0].value) << 
+                            logger->print() << "|\033[38;5;94m000093\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved31[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved31[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved31[0].value);
                         }
                         
@@ -1842,7 +1842,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000095\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved32[0].value) << 
+                            logger->print() << "|\033[38;5;94m000095\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved32[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved32[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved32[0].value);
                         }
                         
@@ -1873,7 +1873,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000097\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved33[0].value) << 
+                            logger->print() << "|\033[38;5;94m000097\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved33[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved33[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved33[0].value);
                         }
                         
@@ -1904,7 +1904,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000099\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved34[0].value) << 
+                            logger->print() << "|\033[38;5;94m000099\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved34[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved34[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved34[0].value);
                         }
                         
@@ -1935,7 +1935,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000101\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved35[0].value) << 
+                            logger->print() << "|\033[38;5;94m000101\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved35[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved35[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved35[0].value);
                         }
                         
@@ -1966,7 +1966,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000103\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved36[0].value) << 
+                            logger->print() << "|\033[38;5;94m000103\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved36[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved36[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved36[0].value);
                         }
                         
@@ -1997,7 +1997,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000105\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved37[0].value) << 
+                            logger->print() << "|\033[38;5;94m000105\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved37[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved37[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved37[0].value);
                         }
                         
@@ -2028,7 +2028,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000107\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved38[0].value) << 
+                            logger->print() << "|\033[38;5;94m000107\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved38[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved38[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved38[0].value);
                         }
                         
@@ -2059,7 +2059,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000109\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved39[0].value) << 
+                            logger->print() << "|\033[38;5;94m000109\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved39[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved39[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved39[0].value);
                         }
                         
@@ -2090,7 +2090,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000111\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved40[0].value) << 
+                            logger->print() << "|\033[38;5;94m000111\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved40[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved40[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved40[0].value);
                         }
                         
@@ -2121,7 +2121,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000113\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved41[0].value) << 
+                            logger->print() << "|\033[38;5;94m000113\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved41[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved41[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved41[0].value);
                         }
                         
@@ -2152,7 +2152,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000115\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved42[0].value) << 
+                            logger->print() << "|\033[38;5;94m000115\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved42[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved42[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved42[0].value);
                         }
                         
@@ -2183,7 +2183,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000117\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved43[0].value) << 
+                            logger->print() << "|\033[38;5;94m000117\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved43[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved43[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved43[0].value);
                         }
                         
@@ -2214,7 +2214,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000119\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved44[0].value) << 
+                            logger->print() << "|\033[38;5;94m000119\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved44[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved44[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved44[0].value);
                         }
                         
@@ -2245,7 +2245,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000121\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved45[0].value) << 
+                            logger->print() << "|\033[38;5;94m000121\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved45[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved45[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved45[0].value);
                         }
                         
@@ -2276,7 +2276,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000123\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved46[0].value) << 
+                            logger->print() << "|\033[38;5;94m000123\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved46[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved46[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved46[0].value);
                         }
                         
@@ -2307,7 +2307,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000125\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved47[0].value) << 
+                            logger->print() << "|\033[38;5;94m000125\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved47[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved47[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved47[0].value);
                         }
                         
@@ -2338,7 +2338,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000127\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved48[0].value) << 
+                            logger->print() << "|\033[38;5;94m000127\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved48[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved48[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved48[0].value);
                         }
                         
@@ -2369,7 +2369,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000129\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved49[0].value) << 
+                            logger->print() << "|\033[38;5;94m000129\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved49[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved49[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved49[0].value);
                         }
                         
@@ -2400,7 +2400,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000131\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved50[0].value) << 
+                            logger->print() << "|\033[38;5;94m000131\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved50[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved50[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved50[0].value);
                         }
                         
@@ -2431,7 +2431,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000133\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved51[0].value) << 
+                            logger->print() << "|\033[38;5;94m000133\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved51[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved51[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved51[0].value);
                         }
                         
@@ -2462,7 +2462,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000135\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved52[0].value) << 
+                            logger->print() << "|\033[38;5;94m000135\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved52[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved52[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved52[0].value);
                         }
                         
@@ -2493,7 +2493,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000137\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved53[0].value) << 
+                            logger->print() << "|\033[38;5;94m000137\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved53[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved53[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved53[0].value);
                         }
                         
@@ -2524,7 +2524,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000139\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved54[0].value) << 
+                            logger->print() << "|\033[38;5;94m000139\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved54[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved54[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved54[0].value);
                         }
                         
@@ -2555,7 +2555,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000141\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved55[0].value) << 
+                            logger->print() << "|\033[38;5;94m000141\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved55[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved55[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved55[0].value);
                         }
                         
@@ -2586,7 +2586,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000143\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved56[0].value) << 
+                            logger->print() << "|\033[38;5;94m000143\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved56[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved56[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved56[0].value);
                         }
                         
@@ -2617,7 +2617,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000145\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved57[0].value) << 
+                            logger->print() << "|\033[38;5;94m000145\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved57[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved57[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved57[0].value);
                         }
                         
@@ -2648,7 +2648,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000147\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved58[0].value) << 
+                            logger->print() << "|\033[38;5;94m000147\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved58[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved58[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved58[0].value);
                         }
                         
@@ -2679,7 +2679,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000149\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved59[0].value) << 
+                            logger->print() << "|\033[38;5;94m000149\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved59[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved59[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved59[0].value);
                         }
                         
@@ -2710,7 +2710,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000151\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved60[0].value) << 
+                            logger->print() << "|\033[38;5;94m000151\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved60[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved60[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved60[0].value);
                         }
                         
@@ -2741,7 +2741,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000153\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved61[0].value) << 
+                            logger->print() << "|\033[38;5;94m000153\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved61[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved61[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved61[0].value);
                         }
                         
@@ -2772,7 +2772,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000155\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved62[0].value) << 
+                            logger->print() << "|\033[38;5;94m000155\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved62[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved62[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved62[0].value);
                         }
                         
@@ -2803,7 +2803,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000157\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved63[0].value) << 
+                            logger->print() << "|\033[38;5;94m000157\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved63[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved63[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved63[0].value);
                         }
                         
@@ -2834,7 +2834,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000159\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved64[0].value) << 
+                            logger->print() << "|\033[38;5;94m000159\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved64[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved64[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved64[0].value);
                         }
                         
@@ -2865,7 +2865,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000161\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved65[0].value) << 
+                            logger->print() << "|\033[38;5;94m000161\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved65[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved65[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved65[0].value);
                         }
                         
@@ -2896,7 +2896,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000163\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved66[0].value) << 
+                            logger->print() << "|\033[38;5;94m000163\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved66[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved66[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved66[0].value);
                         }
                         
@@ -2927,7 +2927,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000165\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved67[0].value) << 
+                            logger->print() << "|\033[38;5;94m000165\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved67[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved67[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved67[0].value);
                         }
                         
@@ -2958,7 +2958,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000167\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved68[0].value) << 
+                            logger->print() << "|\033[38;5;94m000167\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved68[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved68[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved68[0].value);
                         }
                         
@@ -2989,7 +2989,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000169\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved69[0].value) << 
+                            logger->print() << "|\033[38;5;94m000169\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved69[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved69[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved69[0].value);
                         }
                         
@@ -3020,7 +3020,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000171\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved70[0].value) << 
+                            logger->print() << "|\033[38;5;94m000171\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved70[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved70[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved70[0].value);
                         }
                         
@@ -3051,7 +3051,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000173\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved71[0].value) << 
+                            logger->print() << "|\033[38;5;94m000173\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved71[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved71[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved71[0].value);
                         }
                         
@@ -3082,7 +3082,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000175\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved72[0].value) << 
+                            logger->print() << "|\033[38;5;94m000175\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved72[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved72[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved72[0].value);
                         }
                         
@@ -3113,7 +3113,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000177\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved73[0].value) << 
+                            logger->print() << "|\033[38;5;94m000177\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved73[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved73[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved73[0].value);
                         }
                         
@@ -3144,7 +3144,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000179\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved74[0].value) << 
+                            logger->print() << "|\033[38;5;94m000179\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved74[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved74[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved74[0].value);
                         }
                         
@@ -3175,7 +3175,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000181\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved75[0].value) << 
+                            logger->print() << "|\033[38;5;94m000181\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved75[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved75[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved75[0].value);
                         }
                         
@@ -3206,7 +3206,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000183\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved76[0].value) << 
+                            logger->print() << "|\033[38;5;94m000183\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved76[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved76[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved76[0].value);
                         }
                         
@@ -3237,7 +3237,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000185\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved77[0].value) << 
+                            logger->print() << "|\033[38;5;94m000185\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved77[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved77[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved77[0].value);
                         }
                         
@@ -3268,7 +3268,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000187\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved78[0].value) << 
+                            logger->print() << "|\033[38;5;94m000187\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved78[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved78[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved78[0].value);
                         }
                         
@@ -3299,7 +3299,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000189\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved79[0].value) << 
+                            logger->print() << "|\033[38;5;94m000189\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved79[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved79[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved79[0].value);
                         }
                         
@@ -3330,7 +3330,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000191\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved80[0].value) << 
+                            logger->print() << "|\033[38;5;94m000191\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved80[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved80[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved80[0].value);
                         }
                         
@@ -3361,7 +3361,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000193\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved81[0].value) << 
+                            logger->print() << "|\033[38;5;94m000193\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved81[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved81[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved81[0].value);
                         }
                         
@@ -3392,7 +3392,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000195\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved82[0].value) << 
+                            logger->print() << "|\033[38;5;94m000195\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved82[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved82[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved82[0].value);
                         }
                         
@@ -3423,7 +3423,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000197\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved83[0].value) << 
+                            logger->print() << "|\033[38;5;94m000197\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved83[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved83[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved83[0].value);
                         }
                         
@@ -3454,7 +3454,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000199\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved84[0].value) << 
+                            logger->print() << "|\033[38;5;94m000199\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved84[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved84[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved84[0].value);
                         }
                         
@@ -3485,7 +3485,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000201\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved85[0].value) << 
+                            logger->print() << "|\033[38;5;94m000201\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved85[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved85[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved85[0].value);
                         }
                         
@@ -3516,7 +3516,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000203\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved86[0].value) << 
+                            logger->print() << "|\033[38;5;94m000203\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved86[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved86[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved86[0].value);
                         }
                         
@@ -3547,7 +3547,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000205\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved87[0].value) << 
+                            logger->print() << "|\033[38;5;94m000205\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved87[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved87[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved87[0].value);
                         }
                         
@@ -3578,7 +3578,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000207\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved88[0].value) << 
+                            logger->print() << "|\033[38;5;94m000207\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved88[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved88[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved88[0].value);
                         }
                         
@@ -3609,7 +3609,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000209\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved89[0].value) << 
+                            logger->print() << "|\033[38;5;94m000209\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved89[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved89[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved89[0].value);
                         }
                         
@@ -3640,7 +3640,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000211\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved90[0].value) << 
+                            logger->print() << "|\033[38;5;94m000211\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved90[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved90[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved90[0].value);
                         }
                         
@@ -3671,7 +3671,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000213\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.vehicle_breakdown91[0].value) << 
+                            logger->print() << "|\033[38;5;94m000213\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.vehicle_breakdown91[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.vehicle_breakdown91[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.vehicle_breakdown91[0].value);
                         }
                         
@@ -3702,7 +3702,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000215\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.post_crash92[0].value) << 
+                            logger->print() << "|\033[38;5;94m000215\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.post_crash92[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.post_crash92[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.post_crash92[0].value);
                         }
                         
@@ -3733,7 +3733,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000217\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.human_problem93[0].value) << 
+                            logger->print() << "|\033[38;5;94m000217\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.human_problem93[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.human_problem93[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.human_problem93[0].value);
                         }
                         
@@ -3764,7 +3764,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000219\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.stationary_vehicle94[0].value) << 
+                            logger->print() << "|\033[38;5;94m000219\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.stationary_vehicle94[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.stationary_vehicle94[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.stationary_vehicle94[0].value);
                         }
                         
@@ -3795,7 +3795,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000221\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.emergency_vehicle_approaching95[0].value) << 
+                            logger->print() << "|\033[38;5;94m000221\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.emergency_vehicle_approaching95[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.emergency_vehicle_approaching95[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.emergency_vehicle_approaching95[0].value);
                         }
                         
@@ -3826,7 +3826,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000223\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.hazardous_location_dangerous_curve96[0].value) << 
+                            logger->print() << "|\033[38;5;94m000223\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.hazardous_location_dangerous_curve96[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.hazardous_location_dangerous_curve96[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.hazardous_location_dangerous_curve96[0].value);
                         }
                         
@@ -3857,7 +3857,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000225\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.collision_risk97[0].value) << 
+                            logger->print() << "|\033[38;5;94m000225\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.collision_risk97[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.collision_risk97[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.collision_risk97[0].value);
                         }
                         
@@ -3888,7 +3888,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000227\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.signal_violation98[0].value) << 
+                            logger->print() << "|\033[38;5;94m000227\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.signal_violation98[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.signal_violation98[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.signal_violation98[0].value);
                         }
                         
@@ -3919,7 +3919,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000229\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.dangerous_situation99[0].value) << 
+                            logger->print() << "|\033[38;5;94m000229\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.dangerous_situation99[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.dangerous_situation99[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.dangerous_situation99[0].value);
                         }
                         
@@ -3950,7 +3950,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000231\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.railway_level_crossing100[0].value) << 
+                            logger->print() << "|\033[38;5;94m000231\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.railway_level_crossing100[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.railway_level_crossing100[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.railway_level_crossing100[0].value);
                         }
                         
@@ -3981,7 +3981,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000233\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved101[0].value) << 
+                            logger->print() << "|\033[38;5;94m000233\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved101[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved101[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved101[0].value);
                         }
                         
@@ -4012,7 +4012,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000235\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved102[0].value) << 
+                            logger->print() << "|\033[38;5;94m000235\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved102[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved102[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved102[0].value);
                         }
                         
@@ -4043,7 +4043,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000237\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved103[0].value) << 
+                            logger->print() << "|\033[38;5;94m000237\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved103[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved103[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved103[0].value);
                         }
                         
@@ -4074,7 +4074,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000239\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved104[0].value) << 
+                            logger->print() << "|\033[38;5;94m000239\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved104[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved104[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved104[0].value);
                         }
                         
@@ -4105,7 +4105,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000241\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved105[0].value) << 
+                            logger->print() << "|\033[38;5;94m000241\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved105[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved105[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved105[0].value);
                         }
                         
@@ -4136,7 +4136,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000243\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved106[0].value) << 
+                            logger->print() << "|\033[38;5;94m000243\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved106[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved106[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved106[0].value);
                         }
                         
@@ -4167,7 +4167,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000245\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved107[0].value) << 
+                            logger->print() << "|\033[38;5;94m000245\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved107[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved107[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved107[0].value);
                         }
                         
@@ -4198,7 +4198,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000247\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved108[0].value) << 
+                            logger->print() << "|\033[38;5;94m000247\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved108[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved108[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved108[0].value);
                         }
                         
@@ -4229,7 +4229,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000249\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved109[0].value) << 
+                            logger->print() << "|\033[38;5;94m000249\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved109[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved109[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved109[0].value);
                         }
                         
@@ -4260,7 +4260,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000251\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved110[0].value) << 
+                            logger->print() << "|\033[38;5;94m000251\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved110[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved110[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved110[0].value);
                         }
                         
@@ -4291,7 +4291,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000253\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved111[0].value) << 
+                            logger->print() << "|\033[38;5;94m000253\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved111[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved111[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved111[0].value);
                         }
                         
@@ -4322,7 +4322,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000255\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved112[0].value) << 
+                            logger->print() << "|\033[38;5;94m000255\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved112[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved112[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved112[0].value);
                         }
                         
@@ -4353,7 +4353,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000257\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved113[0].value) << 
+                            logger->print() << "|\033[38;5;94m000257\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved113[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved113[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved113[0].value);
                         }
                         
@@ -4384,7 +4384,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000259\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved114[0].value) << 
+                            logger->print() << "|\033[38;5;94m000259\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved114[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved114[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved114[0].value);
                         }
                         
@@ -4415,7 +4415,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000261\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved115[0].value) << 
+                            logger->print() << "|\033[38;5;94m000261\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved115[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved115[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved115[0].value);
                         }
                         
@@ -4446,7 +4446,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000263\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved116[0].value) << 
+                            logger->print() << "|\033[38;5;94m000263\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved116[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved116[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved116[0].value);
                         }
                         
@@ -4477,7 +4477,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000265\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved117[0].value) << 
+                            logger->print() << "|\033[38;5;94m000265\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved117[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved117[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved117[0].value);
                         }
                         
@@ -4508,7 +4508,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000267\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved118[0].value) << 
+                            logger->print() << "|\033[38;5;94m000267\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved118[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved118[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved118[0].value);
                         }
                         
@@ -4539,7 +4539,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000269\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved119[0].value) << 
+                            logger->print() << "|\033[38;5;94m000269\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved119[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved119[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved119[0].value);
                         }
                         
@@ -4570,7 +4570,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000271\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved120[0].value) << 
+                            logger->print() << "|\033[38;5;94m000271\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved120[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved120[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved120[0].value);
                         }
                         
@@ -4601,7 +4601,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000273\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved121[0].value) << 
+                            logger->print() << "|\033[38;5;94m000273\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved121[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved121[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved121[0].value);
                         }
                         
@@ -4632,7 +4632,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000275\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved122[0].value) << 
+                            logger->print() << "|\033[38;5;94m000275\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved122[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved122[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved122[0].value);
                         }
                         
@@ -4663,7 +4663,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000277\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved123[0].value) << 
+                            logger->print() << "|\033[38;5;94m000277\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved123[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved123[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved123[0].value);
                         }
                         
@@ -4694,7 +4694,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000279\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved124[0].value) << 
+                            logger->print() << "|\033[38;5;94m000279\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved124[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved124[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved124[0].value);
                         }
                         
@@ -4725,7 +4725,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000281\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved125[0].value) << 
+                            logger->print() << "|\033[38;5;94m000281\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved125[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved125[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved125[0].value);
                         }
                         
@@ -4756,7 +4756,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000283\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved126[0].value) << 
+                            logger->print() << "|\033[38;5;94m000283\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved126[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved126[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved126[0].value);
                         }
                         
@@ -4787,7 +4787,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000285\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved127[0].value) << 
+                            logger->print() << "|\033[38;5;94m000285\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved127[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved127[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved127[0].value);
                         }
                         
@@ -4818,7 +4818,7 @@ namespace wind
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000287\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved128[0].value) << 
+                            logger->print() << "|\033[38;5;94m000287\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_type.cc_and_scc.reserved128[0].value) << 
                                          " denm.situation[0].event_type.cc_and_scc.reserved128[0].value: " << static_cast<int>(ros->denm.situation[0].event_type.cc_and_scc.reserved128[0].value);
                         }
                         
@@ -5001,7 +5001,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000289\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved0[0].value) << 
+                                logger->print() << "|\033[38;5;94m000289\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved0[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved0[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved0[0].value);
                             }
                             
@@ -5032,7 +5032,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000291\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.traffic_condition1[0].value) << 
+                                logger->print() << "|\033[38;5;94m000291\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.traffic_condition1[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.traffic_condition1[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.traffic_condition1[0].value);
                             }
                             
@@ -5063,7 +5063,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000293\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.accident2[0].value) << 
+                                logger->print() << "|\033[38;5;94m000293\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.accident2[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.accident2[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.accident2[0].value);
                             }
                             
@@ -5094,7 +5094,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000295\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.roadworks3[0].value) << 
+                                logger->print() << "|\033[38;5;94m000295\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.roadworks3[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.roadworks3[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.roadworks3[0].value);
                             }
                             
@@ -5125,7 +5125,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000297\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved4[0].value) << 
+                                logger->print() << "|\033[38;5;94m000297\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved4[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved4[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved4[0].value);
                             }
                             
@@ -5156,7 +5156,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000299\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.impassability5[0].value) << 
+                                logger->print() << "|\033[38;5;94m000299\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.impassability5[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.impassability5[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.impassability5[0].value);
                             }
                             
@@ -5187,7 +5187,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000301\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.adverse_weather_condition_adhesion6[0].value) << 
+                                logger->print() << "|\033[38;5;94m000301\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.adverse_weather_condition_adhesion6[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.adverse_weather_condition_adhesion6[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.adverse_weather_condition_adhesion6[0].value);
                             }
                             
@@ -5218,7 +5218,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000303\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.aquaplaning7[0].value) << 
+                                logger->print() << "|\033[38;5;94m000303\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.aquaplaning7[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.aquaplaning7[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.aquaplaning7[0].value);
                             }
                             
@@ -5249,7 +5249,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000305\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved8[0].value) << 
+                                logger->print() << "|\033[38;5;94m000305\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved8[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved8[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved8[0].value);
                             }
                             
@@ -5280,7 +5280,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000307\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.hazardous_location_surface_condition9[0].value) << 
+                                logger->print() << "|\033[38;5;94m000307\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.hazardous_location_surface_condition9[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.hazardous_location_surface_condition9[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.hazardous_location_surface_condition9[0].value);
                             }
                             
@@ -5311,7 +5311,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000309\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.hazardous_location_obstacle_on_the_road10[0].value) << 
+                                logger->print() << "|\033[38;5;94m000309\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.hazardous_location_obstacle_on_the_road10[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.hazardous_location_obstacle_on_the_road10[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.hazardous_location_obstacle_on_the_road10[0].value);
                             }
                             
@@ -5342,7 +5342,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000311\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.hazardous_location_animal_on_the_road11[0].value) << 
+                                logger->print() << "|\033[38;5;94m000311\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.hazardous_location_animal_on_the_road11[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.hazardous_location_animal_on_the_road11[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.hazardous_location_animal_on_the_road11[0].value);
                             }
                             
@@ -5373,7 +5373,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000313\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.human_presence_on_the_road12[0].value) << 
+                                logger->print() << "|\033[38;5;94m000313\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.human_presence_on_the_road12[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.human_presence_on_the_road12[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.human_presence_on_the_road12[0].value);
                             }
                             
@@ -5404,7 +5404,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000315\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved13[0].value) << 
+                                logger->print() << "|\033[38;5;94m000315\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved13[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved13[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved13[0].value);
                             }
                             
@@ -5435,7 +5435,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000317\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.wrong_way_driving14[0].value) << 
+                                logger->print() << "|\033[38;5;94m000317\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.wrong_way_driving14[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.wrong_way_driving14[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.wrong_way_driving14[0].value);
                             }
                             
@@ -5466,7 +5466,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000319\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.rescue_and_recovery_work_in_progress15[0].value) << 
+                                logger->print() << "|\033[38;5;94m000319\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.rescue_and_recovery_work_in_progress15[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.rescue_and_recovery_work_in_progress15[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.rescue_and_recovery_work_in_progress15[0].value);
                             }
                             
@@ -5497,7 +5497,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000321\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved16[0].value) << 
+                                logger->print() << "|\033[38;5;94m000321\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved16[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved16[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved16[0].value);
                             }
                             
@@ -5528,7 +5528,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000323\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.adverse_weather_condition_extreme_weather_condition17[0].value) << 
+                                logger->print() << "|\033[38;5;94m000323\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.adverse_weather_condition_extreme_weather_condition17[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.adverse_weather_condition_extreme_weather_condition17[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.adverse_weather_condition_extreme_weather_condition17[0].value);
                             }
                             
@@ -5559,7 +5559,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000325\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.adverse_weather_condition_visibility18[0].value) << 
+                                logger->print() << "|\033[38;5;94m000325\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.adverse_weather_condition_visibility18[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.adverse_weather_condition_visibility18[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.adverse_weather_condition_visibility18[0].value);
                             }
                             
@@ -5590,7 +5590,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000327\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.adverse_weather_condition_precipitation19[0].value) << 
+                                logger->print() << "|\033[38;5;94m000327\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.adverse_weather_condition_precipitation19[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.adverse_weather_condition_precipitation19[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.adverse_weather_condition_precipitation19[0].value);
                             }
                             
@@ -5621,7 +5621,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000329\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.violence20[0].value) << 
+                                logger->print() << "|\033[38;5;94m000329\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.violence20[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.violence20[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.violence20[0].value);
                             }
                             
@@ -5652,7 +5652,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000331\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved21[0].value) << 
+                                logger->print() << "|\033[38;5;94m000331\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved21[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved21[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved21[0].value);
                             }
                             
@@ -5683,7 +5683,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000333\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved22[0].value) << 
+                                logger->print() << "|\033[38;5;94m000333\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved22[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved22[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved22[0].value);
                             }
                             
@@ -5714,7 +5714,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000335\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved23[0].value) << 
+                                logger->print() << "|\033[38;5;94m000335\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved23[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved23[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved23[0].value);
                             }
                             
@@ -5745,7 +5745,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000337\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved24[0].value) << 
+                                logger->print() << "|\033[38;5;94m000337\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved24[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved24[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved24[0].value);
                             }
                             
@@ -5776,7 +5776,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000339\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved25[0].value) << 
+                                logger->print() << "|\033[38;5;94m000339\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved25[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved25[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved25[0].value);
                             }
                             
@@ -5807,7 +5807,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000341\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.slow_vehicle26[0].value) << 
+                                logger->print() << "|\033[38;5;94m000341\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.slow_vehicle26[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.slow_vehicle26[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.slow_vehicle26[0].value);
                             }
                             
@@ -5838,7 +5838,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000343\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.dangerous_end_of_queue27[0].value) << 
+                                logger->print() << "|\033[38;5;94m000343\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.dangerous_end_of_queue27[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.dangerous_end_of_queue27[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.dangerous_end_of_queue27[0].value);
                             }
                             
@@ -5869,7 +5869,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000345\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.public_transport_vehicle_approaching28[0].value) << 
+                                logger->print() << "|\033[38;5;94m000345\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.public_transport_vehicle_approaching28[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.public_transport_vehicle_approaching28[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.public_transport_vehicle_approaching28[0].value);
                             }
                             
@@ -5900,7 +5900,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000347\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved29[0].value) << 
+                                logger->print() << "|\033[38;5;94m000347\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved29[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved29[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved29[0].value);
                             }
                             
@@ -5931,7 +5931,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000349\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved30[0].value) << 
+                                logger->print() << "|\033[38;5;94m000349\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved30[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved30[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved30[0].value);
                             }
                             
@@ -5962,7 +5962,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000351\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved31[0].value) << 
+                                logger->print() << "|\033[38;5;94m000351\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved31[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved31[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved31[0].value);
                             }
                             
@@ -5993,7 +5993,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000353\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved32[0].value) << 
+                                logger->print() << "|\033[38;5;94m000353\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved32[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved32[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved32[0].value);
                             }
                             
@@ -6024,7 +6024,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000355\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved33[0].value) << 
+                                logger->print() << "|\033[38;5;94m000355\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved33[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved33[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved33[0].value);
                             }
                             
@@ -6055,7 +6055,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000357\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved34[0].value) << 
+                                logger->print() << "|\033[38;5;94m000357\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved34[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved34[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved34[0].value);
                             }
                             
@@ -6086,7 +6086,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000359\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved35[0].value) << 
+                                logger->print() << "|\033[38;5;94m000359\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved35[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved35[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved35[0].value);
                             }
                             
@@ -6117,7 +6117,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000361\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved36[0].value) << 
+                                logger->print() << "|\033[38;5;94m000361\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved36[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved36[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved36[0].value);
                             }
                             
@@ -6148,7 +6148,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000363\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved37[0].value) << 
+                                logger->print() << "|\033[38;5;94m000363\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved37[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved37[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved37[0].value);
                             }
                             
@@ -6179,7 +6179,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000365\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved38[0].value) << 
+                                logger->print() << "|\033[38;5;94m000365\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved38[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved38[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved38[0].value);
                             }
                             
@@ -6210,7 +6210,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000367\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved39[0].value) << 
+                                logger->print() << "|\033[38;5;94m000367\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved39[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved39[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved39[0].value);
                             }
                             
@@ -6241,7 +6241,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000369\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved40[0].value) << 
+                                logger->print() << "|\033[38;5;94m000369\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved40[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved40[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved40[0].value);
                             }
                             
@@ -6272,7 +6272,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000371\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved41[0].value) << 
+                                logger->print() << "|\033[38;5;94m000371\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved41[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved41[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved41[0].value);
                             }
                             
@@ -6303,7 +6303,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000373\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved42[0].value) << 
+                                logger->print() << "|\033[38;5;94m000373\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved42[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved42[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved42[0].value);
                             }
                             
@@ -6334,7 +6334,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000375\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved43[0].value) << 
+                                logger->print() << "|\033[38;5;94m000375\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved43[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved43[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved43[0].value);
                             }
                             
@@ -6365,7 +6365,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000377\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved44[0].value) << 
+                                logger->print() << "|\033[38;5;94m000377\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved44[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved44[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved44[0].value);
                             }
                             
@@ -6396,7 +6396,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000379\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved45[0].value) << 
+                                logger->print() << "|\033[38;5;94m000379\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved45[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved45[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved45[0].value);
                             }
                             
@@ -6427,7 +6427,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000381\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved46[0].value) << 
+                                logger->print() << "|\033[38;5;94m000381\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved46[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved46[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved46[0].value);
                             }
                             
@@ -6458,7 +6458,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000383\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved47[0].value) << 
+                                logger->print() << "|\033[38;5;94m000383\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved47[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved47[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved47[0].value);
                             }
                             
@@ -6489,7 +6489,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000385\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved48[0].value) << 
+                                logger->print() << "|\033[38;5;94m000385\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved48[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved48[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved48[0].value);
                             }
                             
@@ -6520,7 +6520,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000387\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved49[0].value) << 
+                                logger->print() << "|\033[38;5;94m000387\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved49[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved49[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved49[0].value);
                             }
                             
@@ -6551,7 +6551,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000389\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved50[0].value) << 
+                                logger->print() << "|\033[38;5;94m000389\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved50[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved50[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved50[0].value);
                             }
                             
@@ -6582,7 +6582,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000391\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved51[0].value) << 
+                                logger->print() << "|\033[38;5;94m000391\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved51[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved51[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved51[0].value);
                             }
                             
@@ -6613,7 +6613,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000393\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved52[0].value) << 
+                                logger->print() << "|\033[38;5;94m000393\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved52[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved52[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved52[0].value);
                             }
                             
@@ -6644,7 +6644,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000395\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved53[0].value) << 
+                                logger->print() << "|\033[38;5;94m000395\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved53[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved53[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved53[0].value);
                             }
                             
@@ -6675,7 +6675,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000397\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved54[0].value) << 
+                                logger->print() << "|\033[38;5;94m000397\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved54[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved54[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved54[0].value);
                             }
                             
@@ -6706,7 +6706,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000399\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved55[0].value) << 
+                                logger->print() << "|\033[38;5;94m000399\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved55[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved55[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved55[0].value);
                             }
                             
@@ -6737,7 +6737,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000401\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved56[0].value) << 
+                                logger->print() << "|\033[38;5;94m000401\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved56[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved56[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved56[0].value);
                             }
                             
@@ -6768,7 +6768,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000403\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved57[0].value) << 
+                                logger->print() << "|\033[38;5;94m000403\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved57[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved57[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved57[0].value);
                             }
                             
@@ -6799,7 +6799,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000405\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved58[0].value) << 
+                                logger->print() << "|\033[38;5;94m000405\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved58[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved58[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved58[0].value);
                             }
                             
@@ -6830,7 +6830,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000407\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved59[0].value) << 
+                                logger->print() << "|\033[38;5;94m000407\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved59[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved59[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved59[0].value);
                             }
                             
@@ -6861,7 +6861,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000409\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved60[0].value) << 
+                                logger->print() << "|\033[38;5;94m000409\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved60[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved60[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved60[0].value);
                             }
                             
@@ -6892,7 +6892,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000411\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved61[0].value) << 
+                                logger->print() << "|\033[38;5;94m000411\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved61[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved61[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved61[0].value);
                             }
                             
@@ -6923,7 +6923,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000413\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved62[0].value) << 
+                                logger->print() << "|\033[38;5;94m000413\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved62[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved62[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved62[0].value);
                             }
                             
@@ -6954,7 +6954,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000415\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved63[0].value) << 
+                                logger->print() << "|\033[38;5;94m000415\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved63[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved63[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved63[0].value);
                             }
                             
@@ -6985,7 +6985,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000417\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved64[0].value) << 
+                                logger->print() << "|\033[38;5;94m000417\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved64[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved64[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved64[0].value);
                             }
                             
@@ -7016,7 +7016,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000419\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved65[0].value) << 
+                                logger->print() << "|\033[38;5;94m000419\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved65[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved65[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved65[0].value);
                             }
                             
@@ -7047,7 +7047,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000421\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved66[0].value) << 
+                                logger->print() << "|\033[38;5;94m000421\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved66[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved66[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved66[0].value);
                             }
                             
@@ -7078,7 +7078,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000423\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved67[0].value) << 
+                                logger->print() << "|\033[38;5;94m000423\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved67[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved67[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved67[0].value);
                             }
                             
@@ -7109,7 +7109,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000425\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved68[0].value) << 
+                                logger->print() << "|\033[38;5;94m000425\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved68[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved68[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved68[0].value);
                             }
                             
@@ -7140,7 +7140,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000427\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved69[0].value) << 
+                                logger->print() << "|\033[38;5;94m000427\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved69[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved69[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved69[0].value);
                             }
                             
@@ -7171,7 +7171,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000429\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved70[0].value) << 
+                                logger->print() << "|\033[38;5;94m000429\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved70[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved70[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved70[0].value);
                             }
                             
@@ -7202,7 +7202,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000431\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved71[0].value) << 
+                                logger->print() << "|\033[38;5;94m000431\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved71[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved71[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved71[0].value);
                             }
                             
@@ -7233,7 +7233,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000433\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved72[0].value) << 
+                                logger->print() << "|\033[38;5;94m000433\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved72[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved72[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved72[0].value);
                             }
                             
@@ -7264,7 +7264,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000435\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved73[0].value) << 
+                                logger->print() << "|\033[38;5;94m000435\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved73[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved73[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved73[0].value);
                             }
                             
@@ -7295,7 +7295,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000437\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved74[0].value) << 
+                                logger->print() << "|\033[38;5;94m000437\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved74[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved74[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved74[0].value);
                             }
                             
@@ -7326,7 +7326,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000439\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved75[0].value) << 
+                                logger->print() << "|\033[38;5;94m000439\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved75[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved75[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved75[0].value);
                             }
                             
@@ -7357,7 +7357,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000441\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved76[0].value) << 
+                                logger->print() << "|\033[38;5;94m000441\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved76[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved76[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved76[0].value);
                             }
                             
@@ -7388,7 +7388,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000443\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved77[0].value) << 
+                                logger->print() << "|\033[38;5;94m000443\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved77[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved77[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved77[0].value);
                             }
                             
@@ -7419,7 +7419,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000445\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved78[0].value) << 
+                                logger->print() << "|\033[38;5;94m000445\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved78[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved78[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved78[0].value);
                             }
                             
@@ -7450,7 +7450,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000447\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved79[0].value) << 
+                                logger->print() << "|\033[38;5;94m000447\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved79[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved79[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved79[0].value);
                             }
                             
@@ -7481,7 +7481,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000449\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved80[0].value) << 
+                                logger->print() << "|\033[38;5;94m000449\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved80[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved80[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved80[0].value);
                             }
                             
@@ -7512,7 +7512,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000451\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved81[0].value) << 
+                                logger->print() << "|\033[38;5;94m000451\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved81[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved81[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved81[0].value);
                             }
                             
@@ -7543,7 +7543,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000453\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved82[0].value) << 
+                                logger->print() << "|\033[38;5;94m000453\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved82[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved82[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved82[0].value);
                             }
                             
@@ -7574,7 +7574,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000455\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved83[0].value) << 
+                                logger->print() << "|\033[38;5;94m000455\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved83[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved83[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved83[0].value);
                             }
                             
@@ -7605,7 +7605,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000457\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved84[0].value) << 
+                                logger->print() << "|\033[38;5;94m000457\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved84[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved84[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved84[0].value);
                             }
                             
@@ -7636,7 +7636,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000459\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved85[0].value) << 
+                                logger->print() << "|\033[38;5;94m000459\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved85[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved85[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved85[0].value);
                             }
                             
@@ -7667,7 +7667,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000461\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved86[0].value) << 
+                                logger->print() << "|\033[38;5;94m000461\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved86[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved86[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved86[0].value);
                             }
                             
@@ -7698,7 +7698,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000463\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved87[0].value) << 
+                                logger->print() << "|\033[38;5;94m000463\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved87[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved87[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved87[0].value);
                             }
                             
@@ -7729,7 +7729,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000465\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved88[0].value) << 
+                                logger->print() << "|\033[38;5;94m000465\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved88[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved88[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved88[0].value);
                             }
                             
@@ -7760,7 +7760,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000467\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved89[0].value) << 
+                                logger->print() << "|\033[38;5;94m000467\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved89[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved89[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved89[0].value);
                             }
                             
@@ -7791,7 +7791,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000469\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved90[0].value) << 
+                                logger->print() << "|\033[38;5;94m000469\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved90[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved90[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved90[0].value);
                             }
                             
@@ -7822,7 +7822,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000471\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.vehicle_breakdown91[0].value) << 
+                                logger->print() << "|\033[38;5;94m000471\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.vehicle_breakdown91[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.vehicle_breakdown91[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.vehicle_breakdown91[0].value);
                             }
                             
@@ -7853,7 +7853,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000473\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.post_crash92[0].value) << 
+                                logger->print() << "|\033[38;5;94m000473\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.post_crash92[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.post_crash92[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.post_crash92[0].value);
                             }
                             
@@ -7884,7 +7884,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000475\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.human_problem93[0].value) << 
+                                logger->print() << "|\033[38;5;94m000475\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.human_problem93[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.human_problem93[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.human_problem93[0].value);
                             }
                             
@@ -7915,7 +7915,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000477\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.stationary_vehicle94[0].value) << 
+                                logger->print() << "|\033[38;5;94m000477\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.stationary_vehicle94[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.stationary_vehicle94[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.stationary_vehicle94[0].value);
                             }
                             
@@ -7946,7 +7946,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000479\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.emergency_vehicle_approaching95[0].value) << 
+                                logger->print() << "|\033[38;5;94m000479\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.emergency_vehicle_approaching95[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.emergency_vehicle_approaching95[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.emergency_vehicle_approaching95[0].value);
                             }
                             
@@ -7977,7 +7977,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000481\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.hazardous_location_dangerous_curve96[0].value) << 
+                                logger->print() << "|\033[38;5;94m000481\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.hazardous_location_dangerous_curve96[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.hazardous_location_dangerous_curve96[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.hazardous_location_dangerous_curve96[0].value);
                             }
                             
@@ -8008,7 +8008,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000483\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.collision_risk97[0].value) << 
+                                logger->print() << "|\033[38;5;94m000483\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.collision_risk97[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.collision_risk97[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.collision_risk97[0].value);
                             }
                             
@@ -8039,7 +8039,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000485\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.signal_violation98[0].value) << 
+                                logger->print() << "|\033[38;5;94m000485\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.signal_violation98[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.signal_violation98[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.signal_violation98[0].value);
                             }
                             
@@ -8070,7 +8070,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000487\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.dangerous_situation99[0].value) << 
+                                logger->print() << "|\033[38;5;94m000487\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.dangerous_situation99[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.dangerous_situation99[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.dangerous_situation99[0].value);
                             }
                             
@@ -8101,7 +8101,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000489\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.railway_level_crossing100[0].value) << 
+                                logger->print() << "|\033[38;5;94m000489\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.railway_level_crossing100[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.railway_level_crossing100[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.railway_level_crossing100[0].value);
                             }
                             
@@ -8132,7 +8132,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000491\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved101[0].value) << 
+                                logger->print() << "|\033[38;5;94m000491\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved101[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved101[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved101[0].value);
                             }
                             
@@ -8163,7 +8163,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000493\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved102[0].value) << 
+                                logger->print() << "|\033[38;5;94m000493\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved102[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved102[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved102[0].value);
                             }
                             
@@ -8194,7 +8194,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000495\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved103[0].value) << 
+                                logger->print() << "|\033[38;5;94m000495\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved103[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved103[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved103[0].value);
                             }
                             
@@ -8225,7 +8225,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000497\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved104[0].value) << 
+                                logger->print() << "|\033[38;5;94m000497\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved104[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved104[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved104[0].value);
                             }
                             
@@ -8256,7 +8256,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000499\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved105[0].value) << 
+                                logger->print() << "|\033[38;5;94m000499\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved105[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved105[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved105[0].value);
                             }
                             
@@ -8287,7 +8287,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000501\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved106[0].value) << 
+                                logger->print() << "|\033[38;5;94m000501\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved106[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved106[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved106[0].value);
                             }
                             
@@ -8318,7 +8318,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000503\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved107[0].value) << 
+                                logger->print() << "|\033[38;5;94m000503\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved107[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved107[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved107[0].value);
                             }
                             
@@ -8349,7 +8349,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000505\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved108[0].value) << 
+                                logger->print() << "|\033[38;5;94m000505\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved108[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved108[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved108[0].value);
                             }
                             
@@ -8380,7 +8380,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000507\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved109[0].value) << 
+                                logger->print() << "|\033[38;5;94m000507\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved109[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved109[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved109[0].value);
                             }
                             
@@ -8411,7 +8411,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000509\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved110[0].value) << 
+                                logger->print() << "|\033[38;5;94m000509\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved110[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved110[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved110[0].value);
                             }
                             
@@ -8442,7 +8442,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000511\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved111[0].value) << 
+                                logger->print() << "|\033[38;5;94m000511\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved111[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved111[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved111[0].value);
                             }
                             
@@ -8473,7 +8473,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000513\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved112[0].value) << 
+                                logger->print() << "|\033[38;5;94m000513\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved112[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved112[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved112[0].value);
                             }
                             
@@ -8504,7 +8504,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000515\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved113[0].value) << 
+                                logger->print() << "|\033[38;5;94m000515\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved113[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved113[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved113[0].value);
                             }
                             
@@ -8535,7 +8535,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000517\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved114[0].value) << 
+                                logger->print() << "|\033[38;5;94m000517\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved114[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved114[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved114[0].value);
                             }
                             
@@ -8566,7 +8566,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000519\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved115[0].value) << 
+                                logger->print() << "|\033[38;5;94m000519\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved115[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved115[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved115[0].value);
                             }
                             
@@ -8597,7 +8597,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000521\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved116[0].value) << 
+                                logger->print() << "|\033[38;5;94m000521\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved116[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved116[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved116[0].value);
                             }
                             
@@ -8628,7 +8628,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000523\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved117[0].value) << 
+                                logger->print() << "|\033[38;5;94m000523\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved117[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved117[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved117[0].value);
                             }
                             
@@ -8659,7 +8659,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000525\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved118[0].value) << 
+                                logger->print() << "|\033[38;5;94m000525\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved118[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved118[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved118[0].value);
                             }
                             
@@ -8690,7 +8690,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000527\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved119[0].value) << 
+                                logger->print() << "|\033[38;5;94m000527\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved119[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved119[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved119[0].value);
                             }
                             
@@ -8721,7 +8721,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000529\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved120[0].value) << 
+                                logger->print() << "|\033[38;5;94m000529\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved120[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved120[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved120[0].value);
                             }
                             
@@ -8752,7 +8752,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000531\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved121[0].value) << 
+                                logger->print() << "|\033[38;5;94m000531\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved121[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved121[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved121[0].value);
                             }
                             
@@ -8783,7 +8783,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000533\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved122[0].value) << 
+                                logger->print() << "|\033[38;5;94m000533\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved122[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved122[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved122[0].value);
                             }
                             
@@ -8814,7 +8814,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000535\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved123[0].value) << 
+                                logger->print() << "|\033[38;5;94m000535\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved123[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved123[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved123[0].value);
                             }
                             
@@ -8845,7 +8845,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000537\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved124[0].value) << 
+                                logger->print() << "|\033[38;5;94m000537\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved124[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved124[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved124[0].value);
                             }
                             
@@ -8876,7 +8876,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000539\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved125[0].value) << 
+                                logger->print() << "|\033[38;5;94m000539\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved125[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved125[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved125[0].value);
                             }
                             
@@ -8907,7 +8907,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000541\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved126[0].value) << 
+                                logger->print() << "|\033[38;5;94m000541\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved126[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved126[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved126[0].value);
                             }
                             
@@ -8938,7 +8938,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000543\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved127[0].value) << 
+                                logger->print() << "|\033[38;5;94m000543\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved127[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved127[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved127[0].value);
                             }
                             
@@ -8969,7 +8969,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000545\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved128[0].value) << 
+                                logger->print() << "|\033[38;5;94m000545\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved128[0].value) << 
                                              " denm.situation[0].linked_cause[0].cc_and_scc.reserved128[0].value: " << static_cast<int>(ros->denm.situation[0].linked_cause[0].cc_and_scc.reserved128[0].value);
                             }
                             
@@ -9021,7 +9021,7 @@ namespace wind
                             char* _tmp_302 = (char*) buffer++;
                             *_tmp_302 = (ros->denm.situation[0].event_zone[0].elements[a].event_delta_time.size() != 0 ? 1 : 0);
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m000547\033[0m| Optional field event_delta_time = " << *_tmp_302;
+                                logger->print() << "|\033[38;5;94m000547\033[0m| Optional field event_delta_time = " << *_tmp_302;
                             
                             // Field:  type(DeltaReferencePosition) name(event_position) extGroup(0)
                                 // DeltaReferencePosition  SEQUENCE
@@ -9035,7 +9035,7 @@ namespace wind
                                 
                                 // DOUBLE  min(-131071) max(131072) span(262144) scaleDivisor(1.0E7) dataType(Double)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000548\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_zone[0].elements[a].event_position.delta_latitude.value) << 
+                                    logger->print() << "|\033[38;5;94m000548\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_zone[0].elements[a].event_position.delta_latitude.value) << 
                                                  " denm.situation[0].event_zone[0].elements[a].event_position.delta_latitude.value: " << ros->denm.situation[0].event_zone[0].elements[a].event_position.delta_latitude.value;
                                 }
                                 
@@ -9062,7 +9062,7 @@ namespace wind
                                 
                                 // DOUBLE  min(-131071) max(131072) span(262144) scaleDivisor(1.0E7) dataType(Double)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000549\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_zone[0].elements[a].event_position.delta_longitude.value) << 
+                                    logger->print() << "|\033[38;5;94m000549\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_zone[0].elements[a].event_position.delta_longitude.value) << 
                                                  " denm.situation[0].event_zone[0].elements[a].event_position.delta_longitude.value: " << ros->denm.situation[0].event_zone[0].elements[a].event_position.delta_longitude.value;
                                 }
                                 
@@ -9089,7 +9089,7 @@ namespace wind
                                 
                                 // FLOAT  min(-12700) max(12800) span(25501) scaleDivisor(100.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000550\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_zone[0].elements[a].event_position.delta_altitude.value) << 
+                                    logger->print() << "|\033[38;5;94m000550\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_zone[0].elements[a].event_position.delta_altitude.value) << 
                                                  " denm.situation[0].event_zone[0].elements[a].event_position.delta_altitude.value: " << ros->denm.situation[0].event_zone[0].elements[a].event_position.delta_altitude.value;
                                 }
                                 
@@ -9117,7 +9117,7 @@ namespace wind
                                 
                                 // FLOAT  min(1) max(65535) span(65535) scaleDivisor(100.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000551\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_zone[0].elements[a].event_delta_time[0].value) << 
+                                    logger->print() << "|\033[38;5;94m000551\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_zone[0].elements[a].event_delta_time[0].value) << 
                                                  " denm.situation[0].event_zone[0].elements[a].event_delta_time[0].value: " << ros->denm.situation[0].event_zone[0].elements[a].event_delta_time[0].value;
                                 }
                                 
@@ -9168,7 +9168,7 @@ namespace wind
                             
                             // UINT8  min(0) max(7) span(8) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000552\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_zone[0].elements[a].information_quality.value) << 
+                                logger->print() << "|\033[38;5;94m000552\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_zone[0].elements[a].information_quality.value) << 
                                              " denm.situation[0].event_zone[0].elements[a].information_quality.value: " << static_cast<int>(ros->denm.situation[0].event_zone[0].elements[a].information_quality.value);
                             }
                             
@@ -9239,7 +9239,7 @@ namespace wind
                                 
                                 // UINT32  min(0) max(4294967295) span(4294967296) dataType(UInt32)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000554\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_denms[0].elements[b].originating_station_id.value) << 
+                                    logger->print() << "|\033[38;5;94m000554\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_denms[0].elements[b].originating_station_id.value) << 
                                                  " denm.situation[0].linked_denms[0].elements[b].originating_station_id.value: " << ros->denm.situation[0].linked_denms[0].elements[b].originating_station_id.value;
                                 }
                                 
@@ -9263,7 +9263,7 @@ namespace wind
                                 
                                 // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000555\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_denms[0].elements[b].sequence_number.value) << 
+                                    logger->print() << "|\033[38;5;94m000555\033[0m| " << tools::getTypeName(ros->denm.situation[0].linked_denms[0].elements[b].sequence_number.value) << 
                                                  " denm.situation[0].linked_denms[0].elements[b].sequence_number.value: " << ros->denm.situation[0].linked_denms[0].elements[b].sequence_number.value;
                                 }
                                 
@@ -9291,7 +9291,7 @@ namespace wind
                         
                         // INT16  min(-8190) max(8191) span(16382) dataType(Int16)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000556\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_end[0].value) << 
+                            logger->print() << "|\033[38;5;94m000556\033[0m| " << tools::getTypeName(ros->denm.situation[0].event_end[0].value) << 
                                          " denm.situation[0].event_end[0].value: " << ros->denm.situation[0].event_end[0].value;
                         }
                         
@@ -9336,15 +9336,15 @@ namespace wind
                 char* _tmp_328 = (char*) buffer++;
                 *_tmp_328 = (ros->denm.location[0].event_speed.size() != 0 ? 1 : 0);
                 if(debug)
-                    logger->debug() << "|\033[38;5;94m000557\033[0m| Optional field event_speed = " << *_tmp_328;
+                    logger->print() << "|\033[38;5;94m000557\033[0m| Optional field event_speed = " << *_tmp_328;
                 char* _tmp_329 = (char*) buffer++;
                 *_tmp_329 = (ros->denm.location[0].event_position_heading.size() != 0 ? 1 : 0);
                 if(debug)
-                    logger->debug() << "|\033[38;5;94m000558\033[0m| Optional field event_position_heading = " << *_tmp_329;
+                    logger->print() << "|\033[38;5;94m000558\033[0m| Optional field event_position_heading = " << *_tmp_329;
                 char* _tmp_330 = (char*) buffer++;
                 *_tmp_330 = (ros->denm.location[0].road_type.size() != 0 ? 1 : 0);
                 if(debug)
-                    logger->debug() << "|\033[38;5;94m000559\033[0m| Optional field road_type = " << *_tmp_330;
+                    logger->print() << "|\033[38;5;94m000559\033[0m| Optional field road_type = " << *_tmp_330;
                 
                 if(ros->denm.location[0].event_speed.size() != 0) {
                     // Field:  type(Speed) name(event_speed) extGroup(0)
@@ -9358,7 +9358,7 @@ namespace wind
                         
                         // FLOAT  min(0) max(16383) span(16384) scaleDivisor(100.0) dataType(Float)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000560\033[0m| " << tools::getTypeName(ros->denm.location[0].event_speed[0].speed_value.value) << 
+                            logger->print() << "|\033[38;5;94m000560\033[0m| " << tools::getTypeName(ros->denm.location[0].event_speed[0].speed_value.value) << 
                                          " denm.location[0].event_speed[0].speed_value.value: " << ros->denm.location[0].event_speed[0].speed_value.value;
                         }
                         
@@ -9384,7 +9384,7 @@ namespace wind
                         
                         // FLOAT  min(1) max(127) span(127) scaleDivisor(100.0) dataType(Float)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000561\033[0m| " << tools::getTypeName(ros->denm.location[0].event_speed[0].speed_confidence.value) << 
+                            logger->print() << "|\033[38;5;94m000561\033[0m| " << tools::getTypeName(ros->denm.location[0].event_speed[0].speed_confidence.value) << 
                                          " denm.location[0].event_speed[0].speed_confidence.value: " << static_cast<int>(ros->denm.location[0].event_speed[0].speed_confidence.value);
                         }
                         
@@ -9419,7 +9419,7 @@ namespace wind
                         
                         // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000562\033[0m| " << tools::getTypeName(ros->denm.location[0].event_position_heading[0].value.value) << 
+                            logger->print() << "|\033[38;5;94m000562\033[0m| " << tools::getTypeName(ros->denm.location[0].event_position_heading[0].value.value) << 
                                          " denm.location[0].event_position_heading[0].value.value: " << ros->denm.location[0].event_position_heading[0].value.value;
                         }
                         
@@ -9445,7 +9445,7 @@ namespace wind
                         
                         // FLOAT  min(1) max(127) span(127) scaleDivisor(10.0) dataType(Float)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000563\033[0m| " << tools::getTypeName(ros->denm.location[0].event_position_heading[0].confidence.value) << 
+                            logger->print() << "|\033[38;5;94m000563\033[0m| " << tools::getTypeName(ros->denm.location[0].event_position_heading[0].confidence.value) << 
                                          " denm.location[0].event_position_heading[0].confidence.value: " << static_cast<int>(ros->denm.location[0].event_position_heading[0].confidence.value);
                         }
                         
@@ -9500,7 +9500,7 @@ namespace wind
                             char* _tmp_341 = (char*) buffer++;
                             *_tmp_341 = (ros->denm.location[0].detection_zones_to_event_position.elements[c].elements[d].path_delta_time.size() != 0 ? 1 : 0);
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m000566\033[0m| Optional field path_delta_time = " << *_tmp_341;
+                                logger->print() << "|\033[38;5;94m000566\033[0m| Optional field path_delta_time = " << *_tmp_341;
                             
                             // Field:  type(DeltaReferencePosition) name(path_position) extGroup(0)
                                 // DeltaReferencePosition  SEQUENCE
@@ -9514,7 +9514,7 @@ namespace wind
                                 
                                 // DOUBLE  min(-131071) max(131072) span(262144) scaleDivisor(1.0E7) dataType(Double)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000567\033[0m| " << tools::getTypeName(ros->denm.location[0].detection_zones_to_event_position.elements[c].elements[d].path_position.delta_latitude.value) << 
+                                    logger->print() << "|\033[38;5;94m000567\033[0m| " << tools::getTypeName(ros->denm.location[0].detection_zones_to_event_position.elements[c].elements[d].path_position.delta_latitude.value) << 
                                                  " denm.location[0].detection_zones_to_event_position.elements[c].elements[d].path_position.delta_latitude.value: " << ros->denm.location[0].detection_zones_to_event_position.elements[c].elements[d].path_position.delta_latitude.value;
                                 }
                                 
@@ -9541,7 +9541,7 @@ namespace wind
                                 
                                 // DOUBLE  min(-131071) max(131072) span(262144) scaleDivisor(1.0E7) dataType(Double)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000568\033[0m| " << tools::getTypeName(ros->denm.location[0].detection_zones_to_event_position.elements[c].elements[d].path_position.delta_longitude.value) << 
+                                    logger->print() << "|\033[38;5;94m000568\033[0m| " << tools::getTypeName(ros->denm.location[0].detection_zones_to_event_position.elements[c].elements[d].path_position.delta_longitude.value) << 
                                                  " denm.location[0].detection_zones_to_event_position.elements[c].elements[d].path_position.delta_longitude.value: " << ros->denm.location[0].detection_zones_to_event_position.elements[c].elements[d].path_position.delta_longitude.value;
                                 }
                                 
@@ -9568,7 +9568,7 @@ namespace wind
                                 
                                 // FLOAT  min(-12700) max(12800) span(25501) scaleDivisor(100.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000569\033[0m| " << tools::getTypeName(ros->denm.location[0].detection_zones_to_event_position.elements[c].elements[d].path_position.delta_altitude.value) << 
+                                    logger->print() << "|\033[38;5;94m000569\033[0m| " << tools::getTypeName(ros->denm.location[0].detection_zones_to_event_position.elements[c].elements[d].path_position.delta_altitude.value) << 
                                                  " denm.location[0].detection_zones_to_event_position.elements[c].elements[d].path_position.delta_altitude.value: " << ros->denm.location[0].detection_zones_to_event_position.elements[c].elements[d].path_position.delta_altitude.value;
                                 }
                                 
@@ -9596,7 +9596,7 @@ namespace wind
                                 
                                 // FLOAT  min(1) max(65535) span(65535) scaleDivisor(100.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000570\033[0m| " << tools::getTypeName(ros->denm.location[0].detection_zones_to_event_position.elements[c].elements[d].path_delta_time[0].value) << 
+                                    logger->print() << "|\033[38;5;94m000570\033[0m| " << tools::getTypeName(ros->denm.location[0].detection_zones_to_event_position.elements[c].elements[d].path_delta_time[0].value) << 
                                                  " denm.location[0].detection_zones_to_event_position.elements[c].elements[d].path_delta_time[0].value: " << ros->denm.location[0].detection_zones_to_event_position.elements[c].elements[d].path_delta_time[0].value;
                                 }
                                 
@@ -9651,7 +9651,7 @@ namespace wind
                     // Enumerated
                     // INT32  min(0) max(3) span(4) dataType(Int32)
                     if(debug) {
-                        logger->debug() << "|\033[38;5;94m000571\033[0m| " << tools::getTypeName(ros->denm.location[0].road_type[0].value) << 
+                        logger->print() << "|\033[38;5;94m000571\033[0m| " << tools::getTypeName(ros->denm.location[0].road_type[0].value) << 
                                      " denm.location[0].road_type[0].value: " << static_cast<int>(ros->denm.location[0].road_type[0].value);
                     }
                     
@@ -9731,7 +9731,7 @@ namespace wind
                                 char* _tmp_368 = (char*) buffer++;
                                 *_tmp_368 = (ros->denm.location[0].lane_positions[0].elements[e].map_based.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000573\033[0m| Optional field map_based = " << *_tmp_368;
+                                    logger->print() << "|\033[38;5;94m000573\033[0m| Optional field map_based = " << *_tmp_368;
                                 
                                 // Field:  type(LanePositionOptions) name(lane_position_based) extGroup(0)
                                 // Choice
@@ -9757,7 +9757,7 @@ namespace wind
                                     
                                     // INT8  min(-1) max(14) span(16) dataType(Int8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000575\033[0m| " << tools::getTypeName(ros->denm.location[0].lane_positions[0].elements[e].lane_position_based.simplelane_position[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000575\033[0m| " << tools::getTypeName(ros->denm.location[0].lane_positions[0].elements[e].lane_position_based.simplelane_position[0].value) << 
                                                      " denm.location[0].lane_positions[0].elements[e].lane_position_based.simplelane_position[0].value: " << static_cast<int>(ros->denm.location[0].lane_positions[0].elements[e].lane_position_based.simplelane_position[0].value);
                                     }
                                     
@@ -9789,7 +9789,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(31) span(32) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000577\033[0m| " << tools::getTypeName(ros->denm.location[0].lane_positions[0].elements[e].lane_position_based.simple_lane_type[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000577\033[0m| " << tools::getTypeName(ros->denm.location[0].lane_positions[0].elements[e].lane_position_based.simple_lane_type[0].value) << 
                                                      " denm.location[0].lane_positions[0].elements[e].lane_position_based.simple_lane_type[0].value: " << static_cast<int>(ros->denm.location[0].lane_positions[0].elements[e].lane_position_based.simple_lane_type[0].value);
                                     }
                                     
@@ -9831,7 +9831,7 @@ namespace wind
                                         
                                         // INT8  min(-1) max(14) span(16) dataType(Int8)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000579\033[0m| " << tools::getTypeName(ros->denm.location[0].lane_positions[0].elements[e].lane_position_based.detailedlane_position[0].transversal_position.value) << 
+                                            logger->print() << "|\033[38;5;94m000579\033[0m| " << tools::getTypeName(ros->denm.location[0].lane_positions[0].elements[e].lane_position_based.detailedlane_position[0].transversal_position.value) << 
                                                          " denm.location[0].lane_positions[0].elements[e].lane_position_based.detailedlane_position[0].transversal_position.value: " << static_cast<int>(ros->denm.location[0].lane_positions[0].elements[e].lane_position_based.detailedlane_position[0].transversal_position.value);
                                         }
                                         
@@ -9856,7 +9856,7 @@ namespace wind
                                         
                                         // UINT8  min(0) max(31) span(32) dataType(UInt8)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000580\033[0m| " << tools::getTypeName(ros->denm.location[0].lane_positions[0].elements[e].lane_position_based.detailedlane_position[0].lane_type.value) << 
+                                            logger->print() << "|\033[38;5;94m000580\033[0m| " << tools::getTypeName(ros->denm.location[0].lane_positions[0].elements[e].lane_position_based.detailedlane_position[0].lane_type.value) << 
                                                          " denm.location[0].lane_positions[0].elements[e].lane_position_based.detailedlane_position[0].lane_type.value: " << static_cast<int>(ros->denm.location[0].lane_positions[0].elements[e].lane_position_based.detailedlane_position[0].lane_type.value);
                                         }
                                         
@@ -9880,7 +9880,7 @@ namespace wind
                                         
                                         // UINT8  min(0) max(3) span(4) dataType(UInt8)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000581\033[0m| " << tools::getTypeName(ros->denm.location[0].lane_positions[0].elements[e].lane_position_based.detailedlane_position[0].direction.value) << 
+                                            logger->print() << "|\033[38;5;94m000581\033[0m| " << tools::getTypeName(ros->denm.location[0].lane_positions[0].elements[e].lane_position_based.detailedlane_position[0].direction.value) << 
                                                          " denm.location[0].lane_positions[0].elements[e].lane_position_based.detailedlane_position[0].direction.value: " << static_cast<int>(ros->denm.location[0].lane_positions[0].elements[e].lane_position_based.detailedlane_position[0].direction.value);
                                         }
                                         
@@ -9927,7 +9927,7 @@ namespace wind
                                         
                                         // INT8  min(-1) max(14) span(16) dataType(Int8)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000583\033[0m| " << tools::getTypeName(ros->denm.location[0].lane_positions[0].elements[e].lane_position_based.lane_position_with_lateral_details[0].transversal_position.value) << 
+                                            logger->print() << "|\033[38;5;94m000583\033[0m| " << tools::getTypeName(ros->denm.location[0].lane_positions[0].elements[e].lane_position_based.lane_position_with_lateral_details[0].transversal_position.value) << 
                                                          " denm.location[0].lane_positions[0].elements[e].lane_position_based.lane_position_with_lateral_details[0].transversal_position.value: " << static_cast<int>(ros->denm.location[0].lane_positions[0].elements[e].lane_position_based.lane_position_with_lateral_details[0].transversal_position.value);
                                         }
                                         
@@ -9952,7 +9952,7 @@ namespace wind
                                         
                                         // UINT8  min(0) max(31) span(32) dataType(UInt8)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000584\033[0m| " << tools::getTypeName(ros->denm.location[0].lane_positions[0].elements[e].lane_position_based.lane_position_with_lateral_details[0].lane_type.value) << 
+                                            logger->print() << "|\033[38;5;94m000584\033[0m| " << tools::getTypeName(ros->denm.location[0].lane_positions[0].elements[e].lane_position_based.lane_position_with_lateral_details[0].lane_type.value) << 
                                                          " denm.location[0].lane_positions[0].elements[e].lane_position_based.lane_position_with_lateral_details[0].lane_type.value: " << static_cast<int>(ros->denm.location[0].lane_positions[0].elements[e].lane_position_based.lane_position_with_lateral_details[0].lane_type.value);
                                         }
                                         
@@ -9976,7 +9976,7 @@ namespace wind
                                         
                                         // UINT8  min(0) max(3) span(4) dataType(UInt8)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000585\033[0m| " << tools::getTypeName(ros->denm.location[0].lane_positions[0].elements[e].lane_position_based.lane_position_with_lateral_details[0].direction.value) << 
+                                            logger->print() << "|\033[38;5;94m000585\033[0m| " << tools::getTypeName(ros->denm.location[0].lane_positions[0].elements[e].lane_position_based.lane_position_with_lateral_details[0].direction.value) << 
                                                          " denm.location[0].lane_positions[0].elements[e].lane_position_based.lane_position_with_lateral_details[0].direction.value: " << static_cast<int>(ros->denm.location[0].lane_positions[0].elements[e].lane_position_based.lane_position_with_lateral_details[0].direction.value);
                                         }
                                         
@@ -10000,7 +10000,7 @@ namespace wind
                                         
                                         // FLOAT  min(0) max(511) span(512) scaleDivisor(10.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000586\033[0m| " << tools::getTypeName(ros->denm.location[0].lane_positions[0].elements[e].lane_position_based.lane_position_with_lateral_details[0].distance_to_left_border.value) << 
+                                            logger->print() << "|\033[38;5;94m000586\033[0m| " << tools::getTypeName(ros->denm.location[0].lane_positions[0].elements[e].lane_position_based.lane_position_with_lateral_details[0].distance_to_left_border.value) << 
                                                          " denm.location[0].lane_positions[0].elements[e].lane_position_based.lane_position_with_lateral_details[0].distance_to_left_border.value: " << ros->denm.location[0].lane_positions[0].elements[e].lane_position_based.lane_position_with_lateral_details[0].distance_to_left_border.value;
                                         }
                                         
@@ -10026,7 +10026,7 @@ namespace wind
                                         
                                         // FLOAT  min(0) max(511) span(512) scaleDivisor(10.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000587\033[0m| " << tools::getTypeName(ros->denm.location[0].lane_positions[0].elements[e].lane_position_based.lane_position_with_lateral_details[0].distance_to_right_border.value) << 
+                                            logger->print() << "|\033[38;5;94m000587\033[0m| " << tools::getTypeName(ros->denm.location[0].lane_positions[0].elements[e].lane_position_based.lane_position_with_lateral_details[0].distance_to_right_border.value) << 
                                                          " denm.location[0].lane_positions[0].elements[e].lane_position_based.lane_position_with_lateral_details[0].distance_to_right_border.value: " << ros->denm.location[0].lane_positions[0].elements[e].lane_position_based.lane_position_with_lateral_details[0].distance_to_right_border.value;
                                         }
                                         
@@ -10083,7 +10083,7 @@ namespace wind
                                             
                                             // INT8  min(-1) max(14) span(16) dataType(Int8)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000589\033[0m| " << tools::getTypeName(ros->denm.location[0].lane_positions[0].elements[e].lane_position_based.traffic_island_position[0].one_side.transversal_position.value) << 
+                                                logger->print() << "|\033[38;5;94m000589\033[0m| " << tools::getTypeName(ros->denm.location[0].lane_positions[0].elements[e].lane_position_based.traffic_island_position[0].one_side.transversal_position.value) << 
                                                              " denm.location[0].lane_positions[0].elements[e].lane_position_based.traffic_island_position[0].one_side.transversal_position.value: " << static_cast<int>(ros->denm.location[0].lane_positions[0].elements[e].lane_position_based.traffic_island_position[0].one_side.transversal_position.value);
                                             }
                                             
@@ -10108,7 +10108,7 @@ namespace wind
                                             
                                             // UINT8  min(0) max(31) span(32) dataType(UInt8)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000590\033[0m| " << tools::getTypeName(ros->denm.location[0].lane_positions[0].elements[e].lane_position_based.traffic_island_position[0].one_side.lane_type.value) << 
+                                                logger->print() << "|\033[38;5;94m000590\033[0m| " << tools::getTypeName(ros->denm.location[0].lane_positions[0].elements[e].lane_position_based.traffic_island_position[0].one_side.lane_type.value) << 
                                                              " denm.location[0].lane_positions[0].elements[e].lane_position_based.traffic_island_position[0].one_side.lane_type.value: " << static_cast<int>(ros->denm.location[0].lane_positions[0].elements[e].lane_position_based.traffic_island_position[0].one_side.lane_type.value);
                                             }
                                             
@@ -10132,7 +10132,7 @@ namespace wind
                                             
                                             // UINT8  min(0) max(3) span(4) dataType(UInt8)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000591\033[0m| " << tools::getTypeName(ros->denm.location[0].lane_positions[0].elements[e].lane_position_based.traffic_island_position[0].one_side.direction.value) << 
+                                                logger->print() << "|\033[38;5;94m000591\033[0m| " << tools::getTypeName(ros->denm.location[0].lane_positions[0].elements[e].lane_position_based.traffic_island_position[0].one_side.direction.value) << 
                                                              " denm.location[0].lane_positions[0].elements[e].lane_position_based.traffic_island_position[0].one_side.direction.value: " << static_cast<int>(ros->denm.location[0].lane_positions[0].elements[e].lane_position_based.traffic_island_position[0].one_side.direction.value);
                                             }
                                             
@@ -10170,7 +10170,7 @@ namespace wind
                                             
                                             // INT8  min(-1) max(14) span(16) dataType(Int8)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000592\033[0m| " << tools::getTypeName(ros->denm.location[0].lane_positions[0].elements[e].lane_position_based.traffic_island_position[0].other_side.transversal_position.value) << 
+                                                logger->print() << "|\033[38;5;94m000592\033[0m| " << tools::getTypeName(ros->denm.location[0].lane_positions[0].elements[e].lane_position_based.traffic_island_position[0].other_side.transversal_position.value) << 
                                                              " denm.location[0].lane_positions[0].elements[e].lane_position_based.traffic_island_position[0].other_side.transversal_position.value: " << static_cast<int>(ros->denm.location[0].lane_positions[0].elements[e].lane_position_based.traffic_island_position[0].other_side.transversal_position.value);
                                             }
                                             
@@ -10195,7 +10195,7 @@ namespace wind
                                             
                                             // UINT8  min(0) max(31) span(32) dataType(UInt8)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000593\033[0m| " << tools::getTypeName(ros->denm.location[0].lane_positions[0].elements[e].lane_position_based.traffic_island_position[0].other_side.lane_type.value) << 
+                                                logger->print() << "|\033[38;5;94m000593\033[0m| " << tools::getTypeName(ros->denm.location[0].lane_positions[0].elements[e].lane_position_based.traffic_island_position[0].other_side.lane_type.value) << 
                                                              " denm.location[0].lane_positions[0].elements[e].lane_position_based.traffic_island_position[0].other_side.lane_type.value: " << static_cast<int>(ros->denm.location[0].lane_positions[0].elements[e].lane_position_based.traffic_island_position[0].other_side.lane_type.value);
                                             }
                                             
@@ -10219,7 +10219,7 @@ namespace wind
                                             
                                             // UINT8  min(0) max(3) span(4) dataType(UInt8)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000594\033[0m| " << tools::getTypeName(ros->denm.location[0].lane_positions[0].elements[e].lane_position_based.traffic_island_position[0].other_side.direction.value) << 
+                                                logger->print() << "|\033[38;5;94m000594\033[0m| " << tools::getTypeName(ros->denm.location[0].lane_positions[0].elements[e].lane_position_based.traffic_island_position[0].other_side.direction.value) << 
                                                              " denm.location[0].lane_positions[0].elements[e].lane_position_based.traffic_island_position[0].other_side.direction.value: " << static_cast<int>(ros->denm.location[0].lane_positions[0].elements[e].lane_position_based.traffic_island_position[0].other_side.direction.value);
                                             }
                                             
@@ -10266,19 +10266,19 @@ namespace wind
                                         char* _tmp_392 = (char*) buffer++;
                                         *_tmp_392 = (ros->denm.location[0].lane_positions[0].elements[e].map_based[0].map_reference.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000595\033[0m| Optional field map_reference = " << *_tmp_392;
+                                            logger->print() << "|\033[38;5;94m000595\033[0m| Optional field map_reference = " << *_tmp_392;
                                         char* _tmp_393 = (char*) buffer++;
                                         *_tmp_393 = (ros->denm.location[0].lane_positions[0].elements[e].map_based[0].lane_id.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000596\033[0m| Optional field lane_id = " << *_tmp_393;
+                                            logger->print() << "|\033[38;5;94m000596\033[0m| Optional field lane_id = " << *_tmp_393;
                                         char* _tmp_394 = (char*) buffer++;
                                         *_tmp_394 = (ros->denm.location[0].lane_positions[0].elements[e].map_based[0].connection_id.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000597\033[0m| Optional field connection_id = " << *_tmp_394;
+                                            logger->print() << "|\033[38;5;94m000597\033[0m| Optional field connection_id = " << *_tmp_394;
                                         char* _tmp_395 = (char*) buffer++;
                                         *_tmp_395 = (ros->denm.location[0].lane_positions[0].elements[e].map_based[0].longitudinal_lane_position.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000598\033[0m| Optional field longitudinal_lane_position = " << *_tmp_395;
+                                            logger->print() << "|\033[38;5;94m000598\033[0m| Optional field longitudinal_lane_position = " << *_tmp_395;
                                         
                                         if(ros->denm.location[0].lane_positions[0].elements[e].map_based[0].map_reference.size() != 0) {
                                             // Field:  type(MapReference) name(map_reference) extGroup(0)
@@ -10301,7 +10301,7 @@ namespace wind
                                                     char* _tmp_396 = (char*) buffer++;
                                                     *_tmp_396 = (ros->denm.location[0].lane_positions[0].elements[e].map_based[0].map_reference[0].roadsegment[0].region.size() != 0 ? 1 : 0);
                                                     if(debug)
-                                                        logger->debug() << "|\033[38;5;94m000600\033[0m| Optional field region = " << *_tmp_396;
+                                                        logger->print() << "|\033[38;5;94m000600\033[0m| Optional field region = " << *_tmp_396;
                                                     
                                                     if(ros->denm.location[0].lane_positions[0].elements[e].map_based[0].map_reference[0].roadsegment[0].region.size() != 0) {
                                                         // Field:  type(Identifier2B) name(region) extGroup(0)
@@ -10309,7 +10309,7 @@ namespace wind
                                                         
                                                         // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                         if(debug) {
-                                                            logger->debug() << "|\033[38;5;94m000601\033[0m| " << tools::getTypeName(ros->denm.location[0].lane_positions[0].elements[e].map_based[0].map_reference[0].roadsegment[0].region[0].value) << 
+                                                            logger->print() << "|\033[38;5;94m000601\033[0m| " << tools::getTypeName(ros->denm.location[0].lane_positions[0].elements[e].map_based[0].map_reference[0].roadsegment[0].region[0].value) << 
                                                                          " denm.location[0].lane_positions[0].elements[e].map_based[0].map_reference[0].roadsegment[0].region[0].value: " << ros->denm.location[0].lane_positions[0].elements[e].map_based[0].map_reference[0].roadsegment[0].region[0].value;
                                                         }
                                                         
@@ -10334,7 +10334,7 @@ namespace wind
                                                     
                                                     // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m000602\033[0m| " << tools::getTypeName(ros->denm.location[0].lane_positions[0].elements[e].map_based[0].map_reference[0].roadsegment[0].id.value) << 
+                                                        logger->print() << "|\033[38;5;94m000602\033[0m| " << tools::getTypeName(ros->denm.location[0].lane_positions[0].elements[e].map_based[0].map_reference[0].roadsegment[0].id.value) << 
                                                                      " denm.location[0].lane_positions[0].elements[e].map_based[0].map_reference[0].roadsegment[0].id.value: " << ros->denm.location[0].lane_positions[0].elements[e].map_based[0].map_reference[0].roadsegment[0].id.value;
                                                     }
                                                     
@@ -10368,7 +10368,7 @@ namespace wind
                                                     char* _tmp_399 = (char*) buffer++;
                                                     *_tmp_399 = (ros->denm.location[0].lane_positions[0].elements[e].map_based[0].map_reference[0].intersection[0].region.size() != 0 ? 1 : 0);
                                                     if(debug)
-                                                        logger->debug() << "|\033[38;5;94m000604\033[0m| Optional field region = " << *_tmp_399;
+                                                        logger->print() << "|\033[38;5;94m000604\033[0m| Optional field region = " << *_tmp_399;
                                                     
                                                     if(ros->denm.location[0].lane_positions[0].elements[e].map_based[0].map_reference[0].intersection[0].region.size() != 0) {
                                                         // Field:  type(Identifier2B) name(region) extGroup(0)
@@ -10376,7 +10376,7 @@ namespace wind
                                                         
                                                         // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                         if(debug) {
-                                                            logger->debug() << "|\033[38;5;94m000605\033[0m| " << tools::getTypeName(ros->denm.location[0].lane_positions[0].elements[e].map_based[0].map_reference[0].intersection[0].region[0].value) << 
+                                                            logger->print() << "|\033[38;5;94m000605\033[0m| " << tools::getTypeName(ros->denm.location[0].lane_positions[0].elements[e].map_based[0].map_reference[0].intersection[0].region[0].value) << 
                                                                          " denm.location[0].lane_positions[0].elements[e].map_based[0].map_reference[0].intersection[0].region[0].value: " << ros->denm.location[0].lane_positions[0].elements[e].map_based[0].map_reference[0].intersection[0].region[0].value;
                                                         }
                                                         
@@ -10401,7 +10401,7 @@ namespace wind
                                                     
                                                     // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m000606\033[0m| " << tools::getTypeName(ros->denm.location[0].lane_positions[0].elements[e].map_based[0].map_reference[0].intersection[0].id.value) << 
+                                                        logger->print() << "|\033[38;5;94m000606\033[0m| " << tools::getTypeName(ros->denm.location[0].lane_positions[0].elements[e].map_based[0].map_reference[0].intersection[0].id.value) << 
                                                                      " denm.location[0].lane_positions[0].elements[e].map_based[0].map_reference[0].intersection[0].id.value: " << ros->denm.location[0].lane_positions[0].elements[e].map_based[0].map_reference[0].intersection[0].id.value;
                                                     }
                                                     
@@ -10434,7 +10434,7 @@ namespace wind
                                             
                                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000607\033[0m| " << tools::getTypeName(ros->denm.location[0].lane_positions[0].elements[e].map_based[0].lane_id[0].value) << 
+                                                logger->print() << "|\033[38;5;94m000607\033[0m| " << tools::getTypeName(ros->denm.location[0].lane_positions[0].elements[e].map_based[0].lane_id[0].value) << 
                                                              " denm.location[0].lane_positions[0].elements[e].map_based[0].lane_id[0].value: " << static_cast<int>(ros->denm.location[0].lane_positions[0].elements[e].map_based[0].lane_id[0].value);
                                             }
                                             
@@ -10460,7 +10460,7 @@ namespace wind
                                             
                                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000608\033[0m| " << tools::getTypeName(ros->denm.location[0].lane_positions[0].elements[e].map_based[0].connection_id[0].value) << 
+                                                logger->print() << "|\033[38;5;94m000608\033[0m| " << tools::getTypeName(ros->denm.location[0].lane_positions[0].elements[e].map_based[0].connection_id[0].value) << 
                                                              " denm.location[0].lane_positions[0].elements[e].map_based[0].connection_id[0].value: " << static_cast<int>(ros->denm.location[0].lane_positions[0].elements[e].map_based[0].connection_id[0].value);
                                             }
                                             
@@ -10492,7 +10492,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(0) max(32767) span(32768) scaleDivisor(10.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000609\033[0m| " << tools::getTypeName(ros->denm.location[0].lane_positions[0].elements[e].map_based[0].longitudinal_lane_position[0].longitudinal_lane_position_value.value) << 
+                                                    logger->print() << "|\033[38;5;94m000609\033[0m| " << tools::getTypeName(ros->denm.location[0].lane_positions[0].elements[e].map_based[0].longitudinal_lane_position[0].longitudinal_lane_position_value.value) << 
                                                                  " denm.location[0].lane_positions[0].elements[e].map_based[0].longitudinal_lane_position[0].longitudinal_lane_position_value.value: " << ros->denm.location[0].lane_positions[0].elements[e].map_based[0].longitudinal_lane_position[0].longitudinal_lane_position_value.value;
                                                 }
                                                 
@@ -10518,7 +10518,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(0) max(1023) span(1024) scaleDivisor(10.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000610\033[0m| " << tools::getTypeName(ros->denm.location[0].lane_positions[0].elements[e].map_based[0].longitudinal_lane_position[0].longitudinal_lane_position_confidence.value) << 
+                                                    logger->print() << "|\033[38;5;94m000610\033[0m| " << tools::getTypeName(ros->denm.location[0].lane_positions[0].elements[e].map_based[0].longitudinal_lane_position[0].longitudinal_lane_position_confidence.value) << 
                                                                  " denm.location[0].lane_positions[0].elements[e].map_based[0].longitudinal_lane_position[0].longitudinal_lane_position_confidence.value: " << ros->denm.location[0].lane_positions[0].elements[e].map_based[0].longitudinal_lane_position[0].longitudinal_lane_position_confidence.value;
                                                 }
                                                 
@@ -10557,13 +10557,13 @@ namespace wind
                                     char* _tmp_409 = (char*) buffer++;
                                     *_tmp_409 = (ros->denm.location[0].lane_positions[0].elements[e].confidence.confidence_value.size() != 0 ? 1 : 0);
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m000611\033[0m| Optional field confidence_value = " << *_tmp_409;
+                                        logger->print() << "|\033[38;5;94m000611\033[0m| Optional field confidence_value = " << *_tmp_409;
                                     
                                     // Field:  type(SensorTypes) name(used_detection_information) extGroup(0)
                                     // BitString
                                     // BIT_STRING  min(16) max(16) span(1)
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m000612\033[0m| denm.location[0].lane_positions[0].elements[e].confidence.used_detection_information.value: " << static_cast<int>(ros->denm.location[0].lane_positions[0].elements[e].confidence.used_detection_information.values.size());
+                                        logger->print() << "|\033[38;5;94m000612\033[0m| denm.location[0].lane_positions[0].elements[e].confidence.used_detection_information.value: " << static_cast<int>(ros->denm.location[0].lane_positions[0].elements[e].confidence.used_detection_information.values.size());
                                     
                                     if(ros->denm.location[0].lane_positions[0].elements[e].confidence.used_detection_information.values.size() < 16) {
                                             logger->warning() << "Error: Value in 'denm.location[0].lane_positions[0].elements[e].confidence.used_detection_information.value' " << (ros->denm.location[0].lane_positions[0].elements[e].confidence.used_detection_information.values.size()) << " is less than allowable (16); message dropped.";
@@ -10593,7 +10593,7 @@ namespace wind
                                     // BitString
                                     // BIT_STRING  min(1) max(168) span(168)
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m000613\033[0m| denm.location[0].lane_positions[0].elements[e].confidence.used_stored_information.value: " << static_cast<int>(ros->denm.location[0].lane_positions[0].elements[e].confidence.used_stored_information.values.size());
+                                        logger->print() << "|\033[38;5;94m000613\033[0m| denm.location[0].lane_positions[0].elements[e].confidence.used_stored_information.value: " << static_cast<int>(ros->denm.location[0].lane_positions[0].elements[e].confidence.used_stored_information.values.size());
                                     
                                     if(ros->denm.location[0].lane_positions[0].elements[e].confidence.used_stored_information.values.size() < 1) {
                                             logger->warning() << "Error: Value in 'denm.location[0].lane_positions[0].elements[e].confidence.used_stored_information.value' " << (ros->denm.location[0].lane_positions[0].elements[e].confidence.used_stored_information.values.size()) << " is less than allowable (1); message dropped.";
@@ -10625,7 +10625,7 @@ namespace wind
                                         
                                         // UINT8  min(1) max(101) span(101) dataType(UInt8)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000614\033[0m| " << tools::getTypeName(ros->denm.location[0].lane_positions[0].elements[e].confidence.confidence_value[0].value) << 
+                                            logger->print() << "|\033[38;5;94m000614\033[0m| " << tools::getTypeName(ros->denm.location[0].lane_positions[0].elements[e].confidence.confidence_value[0].value) << 
                                                          " denm.location[0].lane_positions[0].elements[e].confidence.confidence_value[0].value: " << static_cast<int>(ros->denm.location[0].lane_positions[0].elements[e].confidence.confidence_value[0].value);
                                         }
                                         
@@ -10668,7 +10668,7 @@ namespace wind
                             char* _tmp_415 = (char*) buffer++;
                             *_tmp_415 = (ros->denm.location[0].occupied_lanes[0].map_based.size() != 0 ? 1 : 0);
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m000615\033[0m| Optional field map_based = " << *_tmp_415;
+                                logger->print() << "|\033[38;5;94m000615\033[0m| Optional field map_based = " << *_tmp_415;
                             
                             // Field:  type(OccupiedLanesWithConfidence_lanePositionBased) name(lane_position_based) extGroup(0)
                             // SequenceOf
@@ -10706,7 +10706,7 @@ namespace wind
                                     
                                     // INT8  min(-1) max(14) span(16) dataType(Int8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000618\033[0m| " << tools::getTypeName(ros->denm.location[0].occupied_lanes[0].lane_position_based.elements[h].simplelane_position[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000618\033[0m| " << tools::getTypeName(ros->denm.location[0].occupied_lanes[0].lane_position_based.elements[h].simplelane_position[0].value) << 
                                                      " denm.location[0].occupied_lanes[0].lane_position_based.elements[h].simplelane_position[0].value: " << static_cast<int>(ros->denm.location[0].occupied_lanes[0].lane_position_based.elements[h].simplelane_position[0].value);
                                     }
                                     
@@ -10738,7 +10738,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(31) span(32) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000620\033[0m| " << tools::getTypeName(ros->denm.location[0].occupied_lanes[0].lane_position_based.elements[h].simple_lane_type[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000620\033[0m| " << tools::getTypeName(ros->denm.location[0].occupied_lanes[0].lane_position_based.elements[h].simple_lane_type[0].value) << 
                                                      " denm.location[0].occupied_lanes[0].lane_position_based.elements[h].simple_lane_type[0].value: " << static_cast<int>(ros->denm.location[0].occupied_lanes[0].lane_position_based.elements[h].simple_lane_type[0].value);
                                     }
                                     
@@ -10780,7 +10780,7 @@ namespace wind
                                         
                                         // INT8  min(-1) max(14) span(16) dataType(Int8)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000622\033[0m| " << tools::getTypeName(ros->denm.location[0].occupied_lanes[0].lane_position_based.elements[h].detailedlane_position[0].transversal_position.value) << 
+                                            logger->print() << "|\033[38;5;94m000622\033[0m| " << tools::getTypeName(ros->denm.location[0].occupied_lanes[0].lane_position_based.elements[h].detailedlane_position[0].transversal_position.value) << 
                                                          " denm.location[0].occupied_lanes[0].lane_position_based.elements[h].detailedlane_position[0].transversal_position.value: " << static_cast<int>(ros->denm.location[0].occupied_lanes[0].lane_position_based.elements[h].detailedlane_position[0].transversal_position.value);
                                         }
                                         
@@ -10805,7 +10805,7 @@ namespace wind
                                         
                                         // UINT8  min(0) max(31) span(32) dataType(UInt8)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000623\033[0m| " << tools::getTypeName(ros->denm.location[0].occupied_lanes[0].lane_position_based.elements[h].detailedlane_position[0].lane_type.value) << 
+                                            logger->print() << "|\033[38;5;94m000623\033[0m| " << tools::getTypeName(ros->denm.location[0].occupied_lanes[0].lane_position_based.elements[h].detailedlane_position[0].lane_type.value) << 
                                                          " denm.location[0].occupied_lanes[0].lane_position_based.elements[h].detailedlane_position[0].lane_type.value: " << static_cast<int>(ros->denm.location[0].occupied_lanes[0].lane_position_based.elements[h].detailedlane_position[0].lane_type.value);
                                         }
                                         
@@ -10829,7 +10829,7 @@ namespace wind
                                         
                                         // UINT8  min(0) max(3) span(4) dataType(UInt8)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000624\033[0m| " << tools::getTypeName(ros->denm.location[0].occupied_lanes[0].lane_position_based.elements[h].detailedlane_position[0].direction.value) << 
+                                            logger->print() << "|\033[38;5;94m000624\033[0m| " << tools::getTypeName(ros->denm.location[0].occupied_lanes[0].lane_position_based.elements[h].detailedlane_position[0].direction.value) << 
                                                          " denm.location[0].occupied_lanes[0].lane_position_based.elements[h].detailedlane_position[0].direction.value: " << static_cast<int>(ros->denm.location[0].occupied_lanes[0].lane_position_based.elements[h].detailedlane_position[0].direction.value);
                                         }
                                         
@@ -10876,7 +10876,7 @@ namespace wind
                                         
                                         // INT8  min(-1) max(14) span(16) dataType(Int8)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000626\033[0m| " << tools::getTypeName(ros->denm.location[0].occupied_lanes[0].lane_position_based.elements[h].lane_position_with_lateral_details[0].transversal_position.value) << 
+                                            logger->print() << "|\033[38;5;94m000626\033[0m| " << tools::getTypeName(ros->denm.location[0].occupied_lanes[0].lane_position_based.elements[h].lane_position_with_lateral_details[0].transversal_position.value) << 
                                                          " denm.location[0].occupied_lanes[0].lane_position_based.elements[h].lane_position_with_lateral_details[0].transversal_position.value: " << static_cast<int>(ros->denm.location[0].occupied_lanes[0].lane_position_based.elements[h].lane_position_with_lateral_details[0].transversal_position.value);
                                         }
                                         
@@ -10901,7 +10901,7 @@ namespace wind
                                         
                                         // UINT8  min(0) max(31) span(32) dataType(UInt8)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000627\033[0m| " << tools::getTypeName(ros->denm.location[0].occupied_lanes[0].lane_position_based.elements[h].lane_position_with_lateral_details[0].lane_type.value) << 
+                                            logger->print() << "|\033[38;5;94m000627\033[0m| " << tools::getTypeName(ros->denm.location[0].occupied_lanes[0].lane_position_based.elements[h].lane_position_with_lateral_details[0].lane_type.value) << 
                                                          " denm.location[0].occupied_lanes[0].lane_position_based.elements[h].lane_position_with_lateral_details[0].lane_type.value: " << static_cast<int>(ros->denm.location[0].occupied_lanes[0].lane_position_based.elements[h].lane_position_with_lateral_details[0].lane_type.value);
                                         }
                                         
@@ -10925,7 +10925,7 @@ namespace wind
                                         
                                         // UINT8  min(0) max(3) span(4) dataType(UInt8)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000628\033[0m| " << tools::getTypeName(ros->denm.location[0].occupied_lanes[0].lane_position_based.elements[h].lane_position_with_lateral_details[0].direction.value) << 
+                                            logger->print() << "|\033[38;5;94m000628\033[0m| " << tools::getTypeName(ros->denm.location[0].occupied_lanes[0].lane_position_based.elements[h].lane_position_with_lateral_details[0].direction.value) << 
                                                          " denm.location[0].occupied_lanes[0].lane_position_based.elements[h].lane_position_with_lateral_details[0].direction.value: " << static_cast<int>(ros->denm.location[0].occupied_lanes[0].lane_position_based.elements[h].lane_position_with_lateral_details[0].direction.value);
                                         }
                                         
@@ -10949,7 +10949,7 @@ namespace wind
                                         
                                         // FLOAT  min(0) max(511) span(512) scaleDivisor(10.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000629\033[0m| " << tools::getTypeName(ros->denm.location[0].occupied_lanes[0].lane_position_based.elements[h].lane_position_with_lateral_details[0].distance_to_left_border.value) << 
+                                            logger->print() << "|\033[38;5;94m000629\033[0m| " << tools::getTypeName(ros->denm.location[0].occupied_lanes[0].lane_position_based.elements[h].lane_position_with_lateral_details[0].distance_to_left_border.value) << 
                                                          " denm.location[0].occupied_lanes[0].lane_position_based.elements[h].lane_position_with_lateral_details[0].distance_to_left_border.value: " << ros->denm.location[0].occupied_lanes[0].lane_position_based.elements[h].lane_position_with_lateral_details[0].distance_to_left_border.value;
                                         }
                                         
@@ -10975,7 +10975,7 @@ namespace wind
                                         
                                         // FLOAT  min(0) max(511) span(512) scaleDivisor(10.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000630\033[0m| " << tools::getTypeName(ros->denm.location[0].occupied_lanes[0].lane_position_based.elements[h].lane_position_with_lateral_details[0].distance_to_right_border.value) << 
+                                            logger->print() << "|\033[38;5;94m000630\033[0m| " << tools::getTypeName(ros->denm.location[0].occupied_lanes[0].lane_position_based.elements[h].lane_position_with_lateral_details[0].distance_to_right_border.value) << 
                                                          " denm.location[0].occupied_lanes[0].lane_position_based.elements[h].lane_position_with_lateral_details[0].distance_to_right_border.value: " << ros->denm.location[0].occupied_lanes[0].lane_position_based.elements[h].lane_position_with_lateral_details[0].distance_to_right_border.value;
                                         }
                                         
@@ -11032,7 +11032,7 @@ namespace wind
                                             
                                             // INT8  min(-1) max(14) span(16) dataType(Int8)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000632\033[0m| " << tools::getTypeName(ros->denm.location[0].occupied_lanes[0].lane_position_based.elements[h].traffic_island_position[0].one_side.transversal_position.value) << 
+                                                logger->print() << "|\033[38;5;94m000632\033[0m| " << tools::getTypeName(ros->denm.location[0].occupied_lanes[0].lane_position_based.elements[h].traffic_island_position[0].one_side.transversal_position.value) << 
                                                              " denm.location[0].occupied_lanes[0].lane_position_based.elements[h].traffic_island_position[0].one_side.transversal_position.value: " << static_cast<int>(ros->denm.location[0].occupied_lanes[0].lane_position_based.elements[h].traffic_island_position[0].one_side.transversal_position.value);
                                             }
                                             
@@ -11057,7 +11057,7 @@ namespace wind
                                             
                                             // UINT8  min(0) max(31) span(32) dataType(UInt8)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000633\033[0m| " << tools::getTypeName(ros->denm.location[0].occupied_lanes[0].lane_position_based.elements[h].traffic_island_position[0].one_side.lane_type.value) << 
+                                                logger->print() << "|\033[38;5;94m000633\033[0m| " << tools::getTypeName(ros->denm.location[0].occupied_lanes[0].lane_position_based.elements[h].traffic_island_position[0].one_side.lane_type.value) << 
                                                              " denm.location[0].occupied_lanes[0].lane_position_based.elements[h].traffic_island_position[0].one_side.lane_type.value: " << static_cast<int>(ros->denm.location[0].occupied_lanes[0].lane_position_based.elements[h].traffic_island_position[0].one_side.lane_type.value);
                                             }
                                             
@@ -11081,7 +11081,7 @@ namespace wind
                                             
                                             // UINT8  min(0) max(3) span(4) dataType(UInt8)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000634\033[0m| " << tools::getTypeName(ros->denm.location[0].occupied_lanes[0].lane_position_based.elements[h].traffic_island_position[0].one_side.direction.value) << 
+                                                logger->print() << "|\033[38;5;94m000634\033[0m| " << tools::getTypeName(ros->denm.location[0].occupied_lanes[0].lane_position_based.elements[h].traffic_island_position[0].one_side.direction.value) << 
                                                              " denm.location[0].occupied_lanes[0].lane_position_based.elements[h].traffic_island_position[0].one_side.direction.value: " << static_cast<int>(ros->denm.location[0].occupied_lanes[0].lane_position_based.elements[h].traffic_island_position[0].one_side.direction.value);
                                             }
                                             
@@ -11119,7 +11119,7 @@ namespace wind
                                             
                                             // INT8  min(-1) max(14) span(16) dataType(Int8)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000635\033[0m| " << tools::getTypeName(ros->denm.location[0].occupied_lanes[0].lane_position_based.elements[h].traffic_island_position[0].other_side.transversal_position.value) << 
+                                                logger->print() << "|\033[38;5;94m000635\033[0m| " << tools::getTypeName(ros->denm.location[0].occupied_lanes[0].lane_position_based.elements[h].traffic_island_position[0].other_side.transversal_position.value) << 
                                                              " denm.location[0].occupied_lanes[0].lane_position_based.elements[h].traffic_island_position[0].other_side.transversal_position.value: " << static_cast<int>(ros->denm.location[0].occupied_lanes[0].lane_position_based.elements[h].traffic_island_position[0].other_side.transversal_position.value);
                                             }
                                             
@@ -11144,7 +11144,7 @@ namespace wind
                                             
                                             // UINT8  min(0) max(31) span(32) dataType(UInt8)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000636\033[0m| " << tools::getTypeName(ros->denm.location[0].occupied_lanes[0].lane_position_based.elements[h].traffic_island_position[0].other_side.lane_type.value) << 
+                                                logger->print() << "|\033[38;5;94m000636\033[0m| " << tools::getTypeName(ros->denm.location[0].occupied_lanes[0].lane_position_based.elements[h].traffic_island_position[0].other_side.lane_type.value) << 
                                                              " denm.location[0].occupied_lanes[0].lane_position_based.elements[h].traffic_island_position[0].other_side.lane_type.value: " << static_cast<int>(ros->denm.location[0].occupied_lanes[0].lane_position_based.elements[h].traffic_island_position[0].other_side.lane_type.value);
                                             }
                                             
@@ -11168,7 +11168,7 @@ namespace wind
                                             
                                             // UINT8  min(0) max(3) span(4) dataType(UInt8)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000637\033[0m| " << tools::getTypeName(ros->denm.location[0].occupied_lanes[0].lane_position_based.elements[h].traffic_island_position[0].other_side.direction.value) << 
+                                                logger->print() << "|\033[38;5;94m000637\033[0m| " << tools::getTypeName(ros->denm.location[0].occupied_lanes[0].lane_position_based.elements[h].traffic_island_position[0].other_side.direction.value) << 
                                                              " denm.location[0].occupied_lanes[0].lane_position_based.elements[h].traffic_island_position[0].other_side.direction.value: " << static_cast<int>(ros->denm.location[0].occupied_lanes[0].lane_position_based.elements[h].traffic_island_position[0].other_side.direction.value);
                                             }
                                             
@@ -11228,19 +11228,19 @@ namespace wind
                                         char* _tmp_441 = (char*) buffer++;
                                         *_tmp_441 = (ros->denm.location[0].occupied_lanes[0].map_based[0].elements[i].map_reference.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000639\033[0m| Optional field map_reference = " << *_tmp_441;
+                                            logger->print() << "|\033[38;5;94m000639\033[0m| Optional field map_reference = " << *_tmp_441;
                                         char* _tmp_442 = (char*) buffer++;
                                         *_tmp_442 = (ros->denm.location[0].occupied_lanes[0].map_based[0].elements[i].lane_id.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000640\033[0m| Optional field lane_id = " << *_tmp_442;
+                                            logger->print() << "|\033[38;5;94m000640\033[0m| Optional field lane_id = " << *_tmp_442;
                                         char* _tmp_443 = (char*) buffer++;
                                         *_tmp_443 = (ros->denm.location[0].occupied_lanes[0].map_based[0].elements[i].connection_id.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000641\033[0m| Optional field connection_id = " << *_tmp_443;
+                                            logger->print() << "|\033[38;5;94m000641\033[0m| Optional field connection_id = " << *_tmp_443;
                                         char* _tmp_444 = (char*) buffer++;
                                         *_tmp_444 = (ros->denm.location[0].occupied_lanes[0].map_based[0].elements[i].longitudinal_lane_position.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000642\033[0m| Optional field longitudinal_lane_position = " << *_tmp_444;
+                                            logger->print() << "|\033[38;5;94m000642\033[0m| Optional field longitudinal_lane_position = " << *_tmp_444;
                                         
                                         if(ros->denm.location[0].occupied_lanes[0].map_based[0].elements[i].map_reference.size() != 0) {
                                             // Field:  type(MapReference) name(map_reference) extGroup(0)
@@ -11263,7 +11263,7 @@ namespace wind
                                                     char* _tmp_445 = (char*) buffer++;
                                                     *_tmp_445 = (ros->denm.location[0].occupied_lanes[0].map_based[0].elements[i].map_reference[0].roadsegment[0].region.size() != 0 ? 1 : 0);
                                                     if(debug)
-                                                        logger->debug() << "|\033[38;5;94m000644\033[0m| Optional field region = " << *_tmp_445;
+                                                        logger->print() << "|\033[38;5;94m000644\033[0m| Optional field region = " << *_tmp_445;
                                                     
                                                     if(ros->denm.location[0].occupied_lanes[0].map_based[0].elements[i].map_reference[0].roadsegment[0].region.size() != 0) {
                                                         // Field:  type(Identifier2B) name(region) extGroup(0)
@@ -11271,7 +11271,7 @@ namespace wind
                                                         
                                                         // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                         if(debug) {
-                                                            logger->debug() << "|\033[38;5;94m000645\033[0m| " << tools::getTypeName(ros->denm.location[0].occupied_lanes[0].map_based[0].elements[i].map_reference[0].roadsegment[0].region[0].value) << 
+                                                            logger->print() << "|\033[38;5;94m000645\033[0m| " << tools::getTypeName(ros->denm.location[0].occupied_lanes[0].map_based[0].elements[i].map_reference[0].roadsegment[0].region[0].value) << 
                                                                          " denm.location[0].occupied_lanes[0].map_based[0].elements[i].map_reference[0].roadsegment[0].region[0].value: " << ros->denm.location[0].occupied_lanes[0].map_based[0].elements[i].map_reference[0].roadsegment[0].region[0].value;
                                                         }
                                                         
@@ -11296,7 +11296,7 @@ namespace wind
                                                     
                                                     // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m000646\033[0m| " << tools::getTypeName(ros->denm.location[0].occupied_lanes[0].map_based[0].elements[i].map_reference[0].roadsegment[0].id.value) << 
+                                                        logger->print() << "|\033[38;5;94m000646\033[0m| " << tools::getTypeName(ros->denm.location[0].occupied_lanes[0].map_based[0].elements[i].map_reference[0].roadsegment[0].id.value) << 
                                                                      " denm.location[0].occupied_lanes[0].map_based[0].elements[i].map_reference[0].roadsegment[0].id.value: " << ros->denm.location[0].occupied_lanes[0].map_based[0].elements[i].map_reference[0].roadsegment[0].id.value;
                                                     }
                                                     
@@ -11330,7 +11330,7 @@ namespace wind
                                                     char* _tmp_448 = (char*) buffer++;
                                                     *_tmp_448 = (ros->denm.location[0].occupied_lanes[0].map_based[0].elements[i].map_reference[0].intersection[0].region.size() != 0 ? 1 : 0);
                                                     if(debug)
-                                                        logger->debug() << "|\033[38;5;94m000648\033[0m| Optional field region = " << *_tmp_448;
+                                                        logger->print() << "|\033[38;5;94m000648\033[0m| Optional field region = " << *_tmp_448;
                                                     
                                                     if(ros->denm.location[0].occupied_lanes[0].map_based[0].elements[i].map_reference[0].intersection[0].region.size() != 0) {
                                                         // Field:  type(Identifier2B) name(region) extGroup(0)
@@ -11338,7 +11338,7 @@ namespace wind
                                                         
                                                         // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                         if(debug) {
-                                                            logger->debug() << "|\033[38;5;94m000649\033[0m| " << tools::getTypeName(ros->denm.location[0].occupied_lanes[0].map_based[0].elements[i].map_reference[0].intersection[0].region[0].value) << 
+                                                            logger->print() << "|\033[38;5;94m000649\033[0m| " << tools::getTypeName(ros->denm.location[0].occupied_lanes[0].map_based[0].elements[i].map_reference[0].intersection[0].region[0].value) << 
                                                                          " denm.location[0].occupied_lanes[0].map_based[0].elements[i].map_reference[0].intersection[0].region[0].value: " << ros->denm.location[0].occupied_lanes[0].map_based[0].elements[i].map_reference[0].intersection[0].region[0].value;
                                                         }
                                                         
@@ -11363,7 +11363,7 @@ namespace wind
                                                     
                                                     // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m000650\033[0m| " << tools::getTypeName(ros->denm.location[0].occupied_lanes[0].map_based[0].elements[i].map_reference[0].intersection[0].id.value) << 
+                                                        logger->print() << "|\033[38;5;94m000650\033[0m| " << tools::getTypeName(ros->denm.location[0].occupied_lanes[0].map_based[0].elements[i].map_reference[0].intersection[0].id.value) << 
                                                                      " denm.location[0].occupied_lanes[0].map_based[0].elements[i].map_reference[0].intersection[0].id.value: " << ros->denm.location[0].occupied_lanes[0].map_based[0].elements[i].map_reference[0].intersection[0].id.value;
                                                     }
                                                     
@@ -11396,7 +11396,7 @@ namespace wind
                                             
                                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000651\033[0m| " << tools::getTypeName(ros->denm.location[0].occupied_lanes[0].map_based[0].elements[i].lane_id[0].value) << 
+                                                logger->print() << "|\033[38;5;94m000651\033[0m| " << tools::getTypeName(ros->denm.location[0].occupied_lanes[0].map_based[0].elements[i].lane_id[0].value) << 
                                                              " denm.location[0].occupied_lanes[0].map_based[0].elements[i].lane_id[0].value: " << static_cast<int>(ros->denm.location[0].occupied_lanes[0].map_based[0].elements[i].lane_id[0].value);
                                             }
                                             
@@ -11422,7 +11422,7 @@ namespace wind
                                             
                                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000652\033[0m| " << tools::getTypeName(ros->denm.location[0].occupied_lanes[0].map_based[0].elements[i].connection_id[0].value) << 
+                                                logger->print() << "|\033[38;5;94m000652\033[0m| " << tools::getTypeName(ros->denm.location[0].occupied_lanes[0].map_based[0].elements[i].connection_id[0].value) << 
                                                              " denm.location[0].occupied_lanes[0].map_based[0].elements[i].connection_id[0].value: " << static_cast<int>(ros->denm.location[0].occupied_lanes[0].map_based[0].elements[i].connection_id[0].value);
                                             }
                                             
@@ -11454,7 +11454,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(0) max(32767) span(32768) scaleDivisor(10.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000653\033[0m| " << tools::getTypeName(ros->denm.location[0].occupied_lanes[0].map_based[0].elements[i].longitudinal_lane_position[0].longitudinal_lane_position_value.value) << 
+                                                    logger->print() << "|\033[38;5;94m000653\033[0m| " << tools::getTypeName(ros->denm.location[0].occupied_lanes[0].map_based[0].elements[i].longitudinal_lane_position[0].longitudinal_lane_position_value.value) << 
                                                                  " denm.location[0].occupied_lanes[0].map_based[0].elements[i].longitudinal_lane_position[0].longitudinal_lane_position_value.value: " << ros->denm.location[0].occupied_lanes[0].map_based[0].elements[i].longitudinal_lane_position[0].longitudinal_lane_position_value.value;
                                                 }
                                                 
@@ -11480,7 +11480,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(0) max(1023) span(1024) scaleDivisor(10.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000654\033[0m| " << tools::getTypeName(ros->denm.location[0].occupied_lanes[0].map_based[0].elements[i].longitudinal_lane_position[0].longitudinal_lane_position_confidence.value) << 
+                                                    logger->print() << "|\033[38;5;94m000654\033[0m| " << tools::getTypeName(ros->denm.location[0].occupied_lanes[0].map_based[0].elements[i].longitudinal_lane_position[0].longitudinal_lane_position_confidence.value) << 
                                                                  " denm.location[0].occupied_lanes[0].map_based[0].elements[i].longitudinal_lane_position[0].longitudinal_lane_position_confidence.value: " << ros->denm.location[0].occupied_lanes[0].map_based[0].elements[i].longitudinal_lane_position[0].longitudinal_lane_position_confidence.value;
                                                 }
                                                 
@@ -11520,13 +11520,13 @@ namespace wind
                                 char* _tmp_458 = (char*) buffer++;
                                 *_tmp_458 = (ros->denm.location[0].occupied_lanes[0].confidence.confidence_value.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000655\033[0m| Optional field confidence_value = " << *_tmp_458;
+                                    logger->print() << "|\033[38;5;94m000655\033[0m| Optional field confidence_value = " << *_tmp_458;
                                 
                                 // Field:  type(SensorTypes) name(used_detection_information) extGroup(0)
                                 // BitString
                                 // BIT_STRING  min(16) max(16) span(1)
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000656\033[0m| denm.location[0].occupied_lanes[0].confidence.used_detection_information.value: " << static_cast<int>(ros->denm.location[0].occupied_lanes[0].confidence.used_detection_information.values.size());
+                                    logger->print() << "|\033[38;5;94m000656\033[0m| denm.location[0].occupied_lanes[0].confidence.used_detection_information.value: " << static_cast<int>(ros->denm.location[0].occupied_lanes[0].confidence.used_detection_information.values.size());
                                 
                                 if(ros->denm.location[0].occupied_lanes[0].confidence.used_detection_information.values.size() < 16) {
                                         logger->warning() << "Error: Value in 'denm.location[0].occupied_lanes[0].confidence.used_detection_information.value' " << (ros->denm.location[0].occupied_lanes[0].confidence.used_detection_information.values.size()) << " is less than allowable (16); message dropped.";
@@ -11556,7 +11556,7 @@ namespace wind
                                 // BitString
                                 // BIT_STRING  min(1) max(168) span(168)
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000657\033[0m| denm.location[0].occupied_lanes[0].confidence.used_stored_information.value: " << static_cast<int>(ros->denm.location[0].occupied_lanes[0].confidence.used_stored_information.values.size());
+                                    logger->print() << "|\033[38;5;94m000657\033[0m| denm.location[0].occupied_lanes[0].confidence.used_stored_information.value: " << static_cast<int>(ros->denm.location[0].occupied_lanes[0].confidence.used_stored_information.values.size());
                                 
                                 if(ros->denm.location[0].occupied_lanes[0].confidence.used_stored_information.values.size() < 1) {
                                         logger->warning() << "Error: Value in 'denm.location[0].occupied_lanes[0].confidence.used_stored_information.value' " << (ros->denm.location[0].occupied_lanes[0].confidence.used_stored_information.values.size()) << " is less than allowable (1); message dropped.";
@@ -11588,7 +11588,7 @@ namespace wind
                                     
                                     // UINT8  min(1) max(101) span(101) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000658\033[0m| " << tools::getTypeName(ros->denm.location[0].occupied_lanes[0].confidence.confidence_value[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000658\033[0m| " << tools::getTypeName(ros->denm.location[0].occupied_lanes[0].confidence.confidence_value[0].value) << 
                                                      " denm.location[0].occupied_lanes[0].confidence.confidence_value[0].value: " << static_cast<int>(ros->denm.location[0].occupied_lanes[0].confidence.confidence_value[0].value);
                                     }
                                     
@@ -11648,7 +11648,7 @@ namespace wind
                                     // BitString
                                     // BIT_STRING  min(10) max(10) span(1)
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m000660\033[0m| denm.location[0].linked_ivims[0].elements[l].service_provider_id.country_code.value: " << static_cast<int>(ros->denm.location[0].linked_ivims[0].elements[l].service_provider_id.country_code.values.size());
+                                        logger->print() << "|\033[38;5;94m000660\033[0m| denm.location[0].linked_ivims[0].elements[l].service_provider_id.country_code.value: " << static_cast<int>(ros->denm.location[0].linked_ivims[0].elements[l].service_provider_id.country_code.values.size());
                                     
                                     if(ros->denm.location[0].linked_ivims[0].elements[l].service_provider_id.country_code.values.size() < 10) {
                                             logger->warning() << "Error: Value in 'denm.location[0].linked_ivims[0].elements[l].service_provider_id.country_code.value' " << (ros->denm.location[0].linked_ivims[0].elements[l].service_provider_id.country_code.values.size()) << " is less than allowable (10); message dropped.";
@@ -11676,7 +11676,7 @@ namespace wind
                                     
                                     // UINT16  min(0) max(16383) span(16384) dataType(UInt16)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000661\033[0m| " << tools::getTypeName(ros->denm.location[0].linked_ivims[0].elements[l].service_provider_id.provider_identifier.value) << 
+                                        logger->print() << "|\033[38;5;94m000661\033[0m| " << tools::getTypeName(ros->denm.location[0].linked_ivims[0].elements[l].service_provider_id.provider_identifier.value) << 
                                                      " denm.location[0].linked_ivims[0].elements[l].service_provider_id.provider_identifier.value: " << ros->denm.location[0].linked_ivims[0].elements[l].service_provider_id.provider_identifier.value;
                                     }
                                     
@@ -11700,7 +11700,7 @@ namespace wind
                                 
                                 // UINT16  min(1) max(32767) span(32767) dataType(UInt16)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000662\033[0m| " << tools::getTypeName(ros->denm.location[0].linked_ivims[0].elements[l].ivi_identification_number.value) << 
+                                    logger->print() << "|\033[38;5;94m000662\033[0m| " << tools::getTypeName(ros->denm.location[0].linked_ivims[0].elements[l].ivi_identification_number.value) << 
                                                  " denm.location[0].linked_ivims[0].elements[l].ivi_identification_number.value: " << ros->denm.location[0].linked_ivims[0].elements[l].ivi_identification_number.value;
                                 }
                                 
@@ -11772,7 +11772,7 @@ namespace wind
                                     char* _tmp_470 = (char*) buffer++;
                                     *_tmp_470 = (ros->denm.location[0].linked_mapems[0].elements[n].roadsegment[0].region.size() != 0 ? 1 : 0);
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m000665\033[0m| Optional field region = " << *_tmp_470;
+                                        logger->print() << "|\033[38;5;94m000665\033[0m| Optional field region = " << *_tmp_470;
                                     
                                     if(ros->denm.location[0].linked_mapems[0].elements[n].roadsegment[0].region.size() != 0) {
                                         // Field:  type(Identifier2B) name(region) extGroup(0)
@@ -11780,7 +11780,7 @@ namespace wind
                                         
                                         // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000666\033[0m| " << tools::getTypeName(ros->denm.location[0].linked_mapems[0].elements[n].roadsegment[0].region[0].value) << 
+                                            logger->print() << "|\033[38;5;94m000666\033[0m| " << tools::getTypeName(ros->denm.location[0].linked_mapems[0].elements[n].roadsegment[0].region[0].value) << 
                                                          " denm.location[0].linked_mapems[0].elements[n].roadsegment[0].region[0].value: " << ros->denm.location[0].linked_mapems[0].elements[n].roadsegment[0].region[0].value;
                                         }
                                         
@@ -11805,7 +11805,7 @@ namespace wind
                                     
                                     // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000667\033[0m| " << tools::getTypeName(ros->denm.location[0].linked_mapems[0].elements[n].roadsegment[0].id.value) << 
+                                        logger->print() << "|\033[38;5;94m000667\033[0m| " << tools::getTypeName(ros->denm.location[0].linked_mapems[0].elements[n].roadsegment[0].id.value) << 
                                                      " denm.location[0].linked_mapems[0].elements[n].roadsegment[0].id.value: " << ros->denm.location[0].linked_mapems[0].elements[n].roadsegment[0].id.value;
                                     }
                                     
@@ -11839,7 +11839,7 @@ namespace wind
                                     char* _tmp_473 = (char*) buffer++;
                                     *_tmp_473 = (ros->denm.location[0].linked_mapems[0].elements[n].intersection[0].region.size() != 0 ? 1 : 0);
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m000669\033[0m| Optional field region = " << *_tmp_473;
+                                        logger->print() << "|\033[38;5;94m000669\033[0m| Optional field region = " << *_tmp_473;
                                     
                                     if(ros->denm.location[0].linked_mapems[0].elements[n].intersection[0].region.size() != 0) {
                                         // Field:  type(Identifier2B) name(region) extGroup(0)
@@ -11847,7 +11847,7 @@ namespace wind
                                         
                                         // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000670\033[0m| " << tools::getTypeName(ros->denm.location[0].linked_mapems[0].elements[n].intersection[0].region[0].value) << 
+                                            logger->print() << "|\033[38;5;94m000670\033[0m| " << tools::getTypeName(ros->denm.location[0].linked_mapems[0].elements[n].intersection[0].region[0].value) << 
                                                          " denm.location[0].linked_mapems[0].elements[n].intersection[0].region[0].value: " << ros->denm.location[0].linked_mapems[0].elements[n].intersection[0].region[0].value;
                                         }
                                         
@@ -11872,7 +11872,7 @@ namespace wind
                                     
                                     // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000671\033[0m| " << tools::getTypeName(ros->denm.location[0].linked_mapems[0].elements[n].intersection[0].id.value) << 
+                                        logger->print() << "|\033[38;5;94m000671\033[0m| " << tools::getTypeName(ros->denm.location[0].linked_mapems[0].elements[n].intersection[0].id.value) << 
                                                      " denm.location[0].linked_mapems[0].elements[n].intersection[0].id.value: " << ros->denm.location[0].linked_mapems[0].elements[n].intersection[0].id.value;
                                     }
                                     
@@ -11924,7 +11924,7 @@ namespace wind
                                 
                                 // UINT8  min(1) max(23) span(23) dataType(UInt8)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000673\033[0m| " << tools::getTypeName(ros->denm.location[0].detection_zones_to_specified_event_point[0].elements[o].point_of_event_zone.value) << 
+                                    logger->print() << "|\033[38;5;94m000673\033[0m| " << tools::getTypeName(ros->denm.location[0].detection_zones_to_specified_event_point[0].elements[o].point_of_event_zone.value) << 
                                                  " denm.location[0].detection_zones_to_specified_event_point[0].elements[o].point_of_event_zone.value: " << static_cast<int>(ros->denm.location[0].detection_zones_to_specified_event_point[0].elements[o].point_of_event_zone.value);
                                 }
                                 
@@ -11964,7 +11964,7 @@ namespace wind
                                         char* _tmp_479 = (char*) buffer++;
                                         *_tmp_479 = (ros->denm.location[0].detection_zones_to_specified_event_point[0].elements[o].path.elements[p].path_delta_time.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000675\033[0m| Optional field path_delta_time = " << *_tmp_479;
+                                            logger->print() << "|\033[38;5;94m000675\033[0m| Optional field path_delta_time = " << *_tmp_479;
                                         
                                         // Field:  type(DeltaReferencePosition) name(path_position) extGroup(0)
                                             // DeltaReferencePosition  SEQUENCE
@@ -11978,7 +11978,7 @@ namespace wind
                                             
                                             // DOUBLE  min(-131071) max(131072) span(262144) scaleDivisor(1.0E7) dataType(Double)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000676\033[0m| " << tools::getTypeName(ros->denm.location[0].detection_zones_to_specified_event_point[0].elements[o].path.elements[p].path_position.delta_latitude.value) << 
+                                                logger->print() << "|\033[38;5;94m000676\033[0m| " << tools::getTypeName(ros->denm.location[0].detection_zones_to_specified_event_point[0].elements[o].path.elements[p].path_position.delta_latitude.value) << 
                                                              " denm.location[0].detection_zones_to_specified_event_point[0].elements[o].path.elements[p].path_position.delta_latitude.value: " << ros->denm.location[0].detection_zones_to_specified_event_point[0].elements[o].path.elements[p].path_position.delta_latitude.value;
                                             }
                                             
@@ -12005,7 +12005,7 @@ namespace wind
                                             
                                             // DOUBLE  min(-131071) max(131072) span(262144) scaleDivisor(1.0E7) dataType(Double)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000677\033[0m| " << tools::getTypeName(ros->denm.location[0].detection_zones_to_specified_event_point[0].elements[o].path.elements[p].path_position.delta_longitude.value) << 
+                                                logger->print() << "|\033[38;5;94m000677\033[0m| " << tools::getTypeName(ros->denm.location[0].detection_zones_to_specified_event_point[0].elements[o].path.elements[p].path_position.delta_longitude.value) << 
                                                              " denm.location[0].detection_zones_to_specified_event_point[0].elements[o].path.elements[p].path_position.delta_longitude.value: " << ros->denm.location[0].detection_zones_to_specified_event_point[0].elements[o].path.elements[p].path_position.delta_longitude.value;
                                             }
                                             
@@ -12032,7 +12032,7 @@ namespace wind
                                             
                                             // FLOAT  min(-12700) max(12800) span(25501) scaleDivisor(100.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000678\033[0m| " << tools::getTypeName(ros->denm.location[0].detection_zones_to_specified_event_point[0].elements[o].path.elements[p].path_position.delta_altitude.value) << 
+                                                logger->print() << "|\033[38;5;94m000678\033[0m| " << tools::getTypeName(ros->denm.location[0].detection_zones_to_specified_event_point[0].elements[o].path.elements[p].path_position.delta_altitude.value) << 
                                                              " denm.location[0].detection_zones_to_specified_event_point[0].elements[o].path.elements[p].path_position.delta_altitude.value: " << ros->denm.location[0].detection_zones_to_specified_event_point[0].elements[o].path.elements[p].path_position.delta_altitude.value;
                                             }
                                             
@@ -12060,7 +12060,7 @@ namespace wind
                                             
                                             // FLOAT  min(1) max(65535) span(65535) scaleDivisor(100.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000679\033[0m| " << tools::getTypeName(ros->denm.location[0].detection_zones_to_specified_event_point[0].elements[o].path.elements[p].path_delta_time[0].value) << 
+                                                logger->print() << "|\033[38;5;94m000679\033[0m| " << tools::getTypeName(ros->denm.location[0].detection_zones_to_specified_event_point[0].elements[o].path.elements[p].path_delta_time[0].value) << 
                                                              " denm.location[0].detection_zones_to_specified_event_point[0].elements[o].path.elements[p].path_delta_time[0].value: " << ros->denm.location[0].detection_zones_to_specified_event_point[0].elements[o].path.elements[p].path_delta_time[0].value;
                                             }
                                             
@@ -12171,22 +12171,22 @@ namespace wind
                                         char* _tmp_496 = (char*) buffer++;
                                         *_tmp_496 = (ros->denm.location[0].predicted_paths[0].elements[q].path_predicted.elements[r].horizontal_position_confidence.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000682\033[0m| Optional field horizontal_position_confidence = " << *_tmp_496;
+                                            logger->print() << "|\033[38;5;94m000682\033[0m| Optional field horizontal_position_confidence = " << *_tmp_496;
                                         char* _tmp_497 = (char*) buffer++;
                                         *_tmp_497 = (ros->denm.location[0].predicted_paths[0].elements[q].path_predicted.elements[r].symmetric_area_offset.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000683\033[0m| Optional field symmetric_area_offset = " << *_tmp_497;
+                                            logger->print() << "|\033[38;5;94m000683\033[0m| Optional field symmetric_area_offset = " << *_tmp_497;
                                         char* _tmp_498 = (char*) buffer++;
                                         *_tmp_498 = (ros->denm.location[0].predicted_paths[0].elements[q].path_predicted.elements[r].asymmetric_area_offset.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000684\033[0m| Optional field asymmetric_area_offset = " << *_tmp_498;
+                                            logger->print() << "|\033[38;5;94m000684\033[0m| Optional field asymmetric_area_offset = " << *_tmp_498;
                                         
                                         // Field:  type(DeltaLatitude) name(delta_latitude) extGroup(0)
                                         // Real
                                         
                                         // DOUBLE  min(-131071) max(131072) span(262144) scaleDivisor(1.0E7) dataType(Double)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000685\033[0m| " << tools::getTypeName(ros->denm.location[0].predicted_paths[0].elements[q].path_predicted.elements[r].delta_latitude.value) << 
+                                            logger->print() << "|\033[38;5;94m000685\033[0m| " << tools::getTypeName(ros->denm.location[0].predicted_paths[0].elements[q].path_predicted.elements[r].delta_latitude.value) << 
                                                          " denm.location[0].predicted_paths[0].elements[q].path_predicted.elements[r].delta_latitude.value: " << ros->denm.location[0].predicted_paths[0].elements[q].path_predicted.elements[r].delta_latitude.value;
                                         }
                                         
@@ -12213,7 +12213,7 @@ namespace wind
                                         
                                         // DOUBLE  min(-131071) max(131072) span(262144) scaleDivisor(1.0E7) dataType(Double)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000686\033[0m| " << tools::getTypeName(ros->denm.location[0].predicted_paths[0].elements[q].path_predicted.elements[r].delta_longitude.value) << 
+                                            logger->print() << "|\033[38;5;94m000686\033[0m| " << tools::getTypeName(ros->denm.location[0].predicted_paths[0].elements[q].path_predicted.elements[r].delta_longitude.value) << 
                                                          " denm.location[0].predicted_paths[0].elements[q].path_predicted.elements[r].delta_longitude.value: " << ros->denm.location[0].predicted_paths[0].elements[q].path_predicted.elements[r].delta_longitude.value;
                                         }
                                         
@@ -12248,7 +12248,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(0) max(4095) span(4096) scaleDivisor(100.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000687\033[0m| " << tools::getTypeName(ros->denm.location[0].predicted_paths[0].elements[q].path_predicted.elements[r].horizontal_position_confidence[0].semi_major_confidence.value) << 
+                                                    logger->print() << "|\033[38;5;94m000687\033[0m| " << tools::getTypeName(ros->denm.location[0].predicted_paths[0].elements[q].path_predicted.elements[r].horizontal_position_confidence[0].semi_major_confidence.value) << 
                                                                  " denm.location[0].predicted_paths[0].elements[q].path_predicted.elements[r].horizontal_position_confidence[0].semi_major_confidence.value: " << ros->denm.location[0].predicted_paths[0].elements[q].path_predicted.elements[r].horizontal_position_confidence[0].semi_major_confidence.value;
                                                 }
                                                 
@@ -12274,7 +12274,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(0) max(4095) span(4096) scaleDivisor(100.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000688\033[0m| " << tools::getTypeName(ros->denm.location[0].predicted_paths[0].elements[q].path_predicted.elements[r].horizontal_position_confidence[0].semi_minor_confidence.value) << 
+                                                    logger->print() << "|\033[38;5;94m000688\033[0m| " << tools::getTypeName(ros->denm.location[0].predicted_paths[0].elements[q].path_predicted.elements[r].horizontal_position_confidence[0].semi_minor_confidence.value) << 
                                                                  " denm.location[0].predicted_paths[0].elements[q].path_predicted.elements[r].horizontal_position_confidence[0].semi_minor_confidence.value: " << ros->denm.location[0].predicted_paths[0].elements[q].path_predicted.elements[r].horizontal_position_confidence[0].semi_minor_confidence.value;
                                                 }
                                                 
@@ -12300,7 +12300,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000689\033[0m| " << tools::getTypeName(ros->denm.location[0].predicted_paths[0].elements[q].path_predicted.elements[r].horizontal_position_confidence[0].semi_major_orientation.value) << 
+                                                    logger->print() << "|\033[38;5;94m000689\033[0m| " << tools::getTypeName(ros->denm.location[0].predicted_paths[0].elements[q].path_predicted.elements[r].horizontal_position_confidence[0].semi_major_orientation.value) << 
                                                                  " denm.location[0].predicted_paths[0].elements[q].path_predicted.elements[r].horizontal_position_confidence[0].semi_major_orientation.value: " << ros->denm.location[0].predicted_paths[0].elements[q].path_predicted.elements[r].horizontal_position_confidence[0].semi_major_orientation.value;
                                                 }
                                                 
@@ -12327,7 +12327,7 @@ namespace wind
                                         
                                         // FLOAT  min(-12700) max(12800) span(25501) scaleDivisor(100.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000690\033[0m| " << tools::getTypeName(ros->denm.location[0].predicted_paths[0].elements[q].path_predicted.elements[r].delta_altitude.value) << 
+                                            logger->print() << "|\033[38;5;94m000690\033[0m| " << tools::getTypeName(ros->denm.location[0].predicted_paths[0].elements[q].path_predicted.elements[r].delta_altitude.value) << 
                                                          " denm.location[0].predicted_paths[0].elements[q].path_predicted.elements[r].delta_altitude.value: " << ros->denm.location[0].predicted_paths[0].elements[q].path_predicted.elements[r].delta_altitude.value;
                                         }
                                         
@@ -12353,7 +12353,7 @@ namespace wind
                                         // Enumerated
                                         // INT32  min(0) max(15) span(16) dataType(Int32)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000691\033[0m| " << tools::getTypeName(ros->denm.location[0].predicted_paths[0].elements[q].path_predicted.elements[r].altitude_confidence.value) << 
+                                            logger->print() << "|\033[38;5;94m000691\033[0m| " << tools::getTypeName(ros->denm.location[0].predicted_paths[0].elements[q].path_predicted.elements[r].altitude_confidence.value) << 
                                                          " denm.location[0].predicted_paths[0].elements[q].path_predicted.elements[r].altitude_confidence.value: " << static_cast<int>(ros->denm.location[0].predicted_paths[0].elements[q].path_predicted.elements[r].altitude_confidence.value);
                                         }
                                         
@@ -12389,7 +12389,7 @@ namespace wind
                                             
                                             // FLOAT  min(0) max(127) span(128) scaleDivisor(10.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000693\033[0m| " << tools::getTypeName(ros->denm.location[0].predicted_paths[0].elements[q].path_predicted.elements[r].path_delta_time.delta_time_high_precision[0].value) << 
+                                                logger->print() << "|\033[38;5;94m000693\033[0m| " << tools::getTypeName(ros->denm.location[0].predicted_paths[0].elements[q].path_predicted.elements[r].path_delta_time.delta_time_high_precision[0].value) << 
                                                              " denm.location[0].predicted_paths[0].elements[q].path_predicted.elements[r].path_delta_time.delta_time_high_precision[0].value: " << static_cast<int>(ros->denm.location[0].predicted_paths[0].elements[q].path_predicted.elements[r].path_delta_time.delta_time_high_precision[0].value);
                                             }
                                             
@@ -12422,7 +12422,7 @@ namespace wind
                                             
                                             // FLOAT  min(0) max(127) span(128) scaleDivisor(0.1) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000695\033[0m| " << tools::getTypeName(ros->denm.location[0].predicted_paths[0].elements[q].path_predicted.elements[r].path_delta_time.delta_time_big_range[0].value) << 
+                                                logger->print() << "|\033[38;5;94m000695\033[0m| " << tools::getTypeName(ros->denm.location[0].predicted_paths[0].elements[q].path_predicted.elements[r].path_delta_time.delta_time_big_range[0].value) << 
                                                              " denm.location[0].predicted_paths[0].elements[q].path_predicted.elements[r].path_delta_time.delta_time_big_range[0].value: " << static_cast<int>(ros->denm.location[0].predicted_paths[0].elements[q].path_predicted.elements[r].path_delta_time.delta_time_big_range[0].value);
                                             }
                                             
@@ -12456,7 +12456,7 @@ namespace wind
                                             
                                             // FLOAT  min(0) max(511) span(512) scaleDivisor(10.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000696\033[0m| " << tools::getTypeName(ros->denm.location[0].predicted_paths[0].elements[q].path_predicted.elements[r].symmetric_area_offset[0].value) << 
+                                                logger->print() << "|\033[38;5;94m000696\033[0m| " << tools::getTypeName(ros->denm.location[0].predicted_paths[0].elements[q].path_predicted.elements[r].symmetric_area_offset[0].value) << 
                                                              " denm.location[0].predicted_paths[0].elements[q].path_predicted.elements[r].symmetric_area_offset[0].value: " << ros->denm.location[0].predicted_paths[0].elements[q].path_predicted.elements[r].symmetric_area_offset[0].value;
                                             }
                                             
@@ -12484,7 +12484,7 @@ namespace wind
                                             
                                             // FLOAT  min(0) max(511) span(512) scaleDivisor(10.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000697\033[0m| " << tools::getTypeName(ros->denm.location[0].predicted_paths[0].elements[q].path_predicted.elements[r].asymmetric_area_offset[0].value) << 
+                                                logger->print() << "|\033[38;5;94m000697\033[0m| " << tools::getTypeName(ros->denm.location[0].predicted_paths[0].elements[q].path_predicted.elements[r].asymmetric_area_offset[0].value) << 
                                                              " denm.location[0].predicted_paths[0].elements[q].path_predicted.elements[r].asymmetric_area_offset[0].value: " << ros->denm.location[0].predicted_paths[0].elements[q].path_predicted.elements[r].asymmetric_area_offset[0].value;
                                             }
                                             
@@ -12515,7 +12515,7 @@ namespace wind
                                 // INT32  min(0) max(2) span(3) dataType(Int32)
                                 uint8_t* _ext_flag_409 = (uint8_t*) buffer++; // Write extension flag for ros->denm.location[0].predicted_paths[0].elements[q].usage_indication.
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000698\033[0m| " << tools::getTypeName(ros->denm.location[0].predicted_paths[0].elements[q].usage_indication.value) << 
+                                    logger->print() << "|\033[38;5;94m000698\033[0m| " << tools::getTypeName(ros->denm.location[0].predicted_paths[0].elements[q].usage_indication.value) << 
                                                  " denm.location[0].predicted_paths[0].elements[q].usage_indication.value: " << static_cast<int>(ros->denm.location[0].predicted_paths[0].elements[q].usage_indication.value);
                                 }
                                 
@@ -12539,7 +12539,7 @@ namespace wind
                                 
                                 // UINT8  min(1) max(101) span(101) dataType(UInt8)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000699\033[0m| " << tools::getTypeName(ros->denm.location[0].predicted_paths[0].elements[q].confidence_level.value) << 
+                                    logger->print() << "|\033[38;5;94m000699\033[0m| " << tools::getTypeName(ros->denm.location[0].predicted_paths[0].elements[q].confidence_level.value) << 
                                                  " denm.location[0].predicted_paths[0].elements[q].confidence_level.value: " << static_cast<int>(ros->denm.location[0].predicted_paths[0].elements[q].confidence_level.value);
                                 }
                                 
@@ -12586,27 +12586,27 @@ namespace wind
                 char* _tmp_524 = (char*) buffer++;
                 *_tmp_524 = (ros->denm.alacarte[0].lane_position.size() != 0 ? 1 : 0);
                 if(debug)
-                    logger->debug() << "|\033[38;5;94m000700\033[0m| Optional field lane_position = " << *_tmp_524;
+                    logger->print() << "|\033[38;5;94m000700\033[0m| Optional field lane_position = " << *_tmp_524;
                 char* _tmp_525 = (char*) buffer++;
                 *_tmp_525 = (ros->denm.alacarte[0].impact_reduction.size() != 0 ? 1 : 0);
                 if(debug)
-                    logger->debug() << "|\033[38;5;94m000701\033[0m| Optional field impact_reduction = " << *_tmp_525;
+                    logger->print() << "|\033[38;5;94m000701\033[0m| Optional field impact_reduction = " << *_tmp_525;
                 char* _tmp_526 = (char*) buffer++;
                 *_tmp_526 = (ros->denm.alacarte[0].external_temperature.size() != 0 ? 1 : 0);
                 if(debug)
-                    logger->debug() << "|\033[38;5;94m000702\033[0m| Optional field external_temperature = " << *_tmp_526;
+                    logger->print() << "|\033[38;5;94m000702\033[0m| Optional field external_temperature = " << *_tmp_526;
                 char* _tmp_527 = (char*) buffer++;
                 *_tmp_527 = (ros->denm.alacarte[0].road_works.size() != 0 ? 1 : 0);
                 if(debug)
-                    logger->debug() << "|\033[38;5;94m000703\033[0m| Optional field road_works = " << *_tmp_527;
+                    logger->print() << "|\033[38;5;94m000703\033[0m| Optional field road_works = " << *_tmp_527;
                 char* _tmp_528 = (char*) buffer++;
                 *_tmp_528 = (ros->denm.alacarte[0].positioning_solution.size() != 0 ? 1 : 0);
                 if(debug)
-                    logger->debug() << "|\033[38;5;94m000704\033[0m| Optional field positioning_solution = " << *_tmp_528;
+                    logger->print() << "|\033[38;5;94m000704\033[0m| Optional field positioning_solution = " << *_tmp_528;
                 char* _tmp_529 = (char*) buffer++;
                 *_tmp_529 = (ros->denm.alacarte[0].stationary_vehicle.size() != 0 ? 1 : 0);
                 if(debug)
-                    logger->debug() << "|\033[38;5;94m000705\033[0m| Optional field stationary_vehicle = " << *_tmp_529;
+                    logger->print() << "|\033[38;5;94m000705\033[0m| Optional field stationary_vehicle = " << *_tmp_529;
                 
                 if(ros->denm.alacarte[0].lane_position.size() != 0) {
                     // Field:  type(LanePosition) name(lane_position) extGroup(0)
@@ -12614,7 +12614,7 @@ namespace wind
                     
                     // INT8  min(-1) max(14) span(16) dataType(Int8)
                     if(debug) {
-                        logger->debug() << "|\033[38;5;94m000706\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].lane_position[0].value) << 
+                        logger->print() << "|\033[38;5;94m000706\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].lane_position[0].value) << 
                                      " denm.alacarte[0].lane_position[0].value: " << static_cast<int>(ros->denm.alacarte[0].lane_position[0].value);
                     }
                     
@@ -12657,7 +12657,7 @@ namespace wind
                         
                         // FLOAT  min(1) max(100) span(100) scaleDivisor(100.0) dataType(Float)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000707\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].impact_reduction[0].height_lon_carr_left.value) << 
+                            logger->print() << "|\033[38;5;94m000707\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].impact_reduction[0].height_lon_carr_left.value) << 
                                          " denm.alacarte[0].impact_reduction[0].height_lon_carr_left.value: " << static_cast<int>(ros->denm.alacarte[0].impact_reduction[0].height_lon_carr_left.value);
                         }
                         
@@ -12684,7 +12684,7 @@ namespace wind
                         
                         // FLOAT  min(1) max(100) span(100) scaleDivisor(100.0) dataType(Float)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000708\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].impact_reduction[0].height_lon_carr_right.value) << 
+                            logger->print() << "|\033[38;5;94m000708\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].impact_reduction[0].height_lon_carr_right.value) << 
                                          " denm.alacarte[0].impact_reduction[0].height_lon_carr_right.value: " << static_cast<int>(ros->denm.alacarte[0].impact_reduction[0].height_lon_carr_right.value);
                         }
                         
@@ -12711,7 +12711,7 @@ namespace wind
                         
                         // FLOAT  min(1) max(127) span(127) scaleDivisor(100.0) dataType(Float)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000709\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].impact_reduction[0].pos_lon_carr_left.value) << 
+                            logger->print() << "|\033[38;5;94m000709\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].impact_reduction[0].pos_lon_carr_left.value) << 
                                          " denm.alacarte[0].impact_reduction[0].pos_lon_carr_left.value: " << static_cast<int>(ros->denm.alacarte[0].impact_reduction[0].pos_lon_carr_left.value);
                         }
                         
@@ -12738,7 +12738,7 @@ namespace wind
                         
                         // FLOAT  min(1) max(127) span(127) scaleDivisor(100.0) dataType(Float)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000710\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].impact_reduction[0].pos_lon_carr_right.value) << 
+                            logger->print() << "|\033[38;5;94m000710\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].impact_reduction[0].pos_lon_carr_right.value) << 
                                          " denm.alacarte[0].impact_reduction[0].pos_lon_carr_right.value: " << static_cast<int>(ros->denm.alacarte[0].impact_reduction[0].pos_lon_carr_right.value);
                         }
                         
@@ -12780,7 +12780,7 @@ namespace wind
                             
                             // FLOAT  min(1) max(30) span(30) scaleDivisor(10.0) dataType(Float)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000712\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].impact_reduction[0].position_of_pillars.elements[s].value) << 
+                                logger->print() << "|\033[38;5;94m000712\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].impact_reduction[0].position_of_pillars.elements[s].value) << 
                                              " denm.alacarte[0].impact_reduction[0].position_of_pillars.elements[s].value: " << static_cast<int>(ros->denm.alacarte[0].impact_reduction[0].position_of_pillars.elements[s].value);
                             }
                             
@@ -12809,7 +12809,7 @@ namespace wind
                         
                         // FLOAT  min(1) max(63) span(63) scaleDivisor(10.0) dataType(Float)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000713\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].impact_reduction[0].pos_cent_mass.value) << 
+                            logger->print() << "|\033[38;5;94m000713\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].impact_reduction[0].pos_cent_mass.value) << 
                                          " denm.alacarte[0].impact_reduction[0].pos_cent_mass.value: " << static_cast<int>(ros->denm.alacarte[0].impact_reduction[0].pos_cent_mass.value);
                         }
                         
@@ -12836,7 +12836,7 @@ namespace wind
                         
                         // FLOAT  min(1) max(127) span(127) scaleDivisor(10.0) dataType(Float)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000714\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].impact_reduction[0].wheel_base_vehicle.value) << 
+                            logger->print() << "|\033[38;5;94m000714\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].impact_reduction[0].wheel_base_vehicle.value) << 
                                          " denm.alacarte[0].impact_reduction[0].wheel_base_vehicle.value: " << static_cast<int>(ros->denm.alacarte[0].impact_reduction[0].wheel_base_vehicle.value);
                         }
                         
@@ -12863,7 +12863,7 @@ namespace wind
                         
                         // FLOAT  min(1) max(255) span(255) scaleDivisor(2.5) dataType(Float)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000715\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].impact_reduction[0].turning_radius.value) << 
+                            logger->print() << "|\033[38;5;94m000715\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].impact_reduction[0].turning_radius.value) << 
                                          " denm.alacarte[0].impact_reduction[0].turning_radius.value: " << static_cast<int>(ros->denm.alacarte[0].impact_reduction[0].turning_radius.value);
                         }
                         
@@ -12890,7 +12890,7 @@ namespace wind
                         
                         // FLOAT  min(1) max(20) span(20) scaleDivisor(10.0) dataType(Float)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000716\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].impact_reduction[0].pos_front_ax.value) << 
+                            logger->print() << "|\033[38;5;94m000716\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].impact_reduction[0].pos_front_ax.value) << 
                                          " denm.alacarte[0].impact_reduction[0].pos_front_ax.value: " << static_cast<int>(ros->denm.alacarte[0].impact_reduction[0].pos_front_ax.value);
                         }
                         
@@ -12916,7 +12916,7 @@ namespace wind
                         // BitString
                         // BIT_STRING  min(20) max(20) span(1)
                         if(debug)
-                            logger->debug() << "|\033[38;5;94m000717\033[0m| denm.alacarte[0].impact_reduction[0].position_of_occupants.value: " << static_cast<int>(ros->denm.alacarte[0].impact_reduction[0].position_of_occupants.values.size());
+                            logger->print() << "|\033[38;5;94m000717\033[0m| denm.alacarte[0].impact_reduction[0].position_of_occupants.value: " << static_cast<int>(ros->denm.alacarte[0].impact_reduction[0].position_of_occupants.values.size());
                         
                         if(ros->denm.alacarte[0].impact_reduction[0].position_of_occupants.values.size() < 20) {
                                 logger->warning() << "Error: Value in 'denm.alacarte[0].impact_reduction[0].position_of_occupants.value' " << (ros->denm.alacarte[0].impact_reduction[0].position_of_occupants.values.size()) << " is less than allowable (20); message dropped.";
@@ -12944,7 +12944,7 @@ namespace wind
                         
                         // UINT16  min(1) max(1024) span(1024) dataType(UInt16)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000718\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].impact_reduction[0].vehicle_mass.value) << 
+                            logger->print() << "|\033[38;5;94m000718\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].impact_reduction[0].vehicle_mass.value) << 
                                          " denm.alacarte[0].impact_reduction[0].vehicle_mass.value: " << ros->denm.alacarte[0].impact_reduction[0].vehicle_mass.value;
                         }
                         
@@ -12968,7 +12968,7 @@ namespace wind
                         // Enumerated
                         // INT32  min(0) max(1) span(2) dataType(Int32)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000719\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].impact_reduction[0].request_response_indication.value) << 
+                            logger->print() << "|\033[38;5;94m000719\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].impact_reduction[0].request_response_indication.value) << 
                                          " denm.alacarte[0].impact_reduction[0].request_response_indication.value: " << static_cast<int>(ros->denm.alacarte[0].impact_reduction[0].request_response_indication.value);
                         }
                         
@@ -12994,7 +12994,7 @@ namespace wind
                     
                     // INT8  min(-60) max(67) span(128) dataType(Int8)
                     if(debug) {
-                        logger->debug() << "|\033[38;5;94m000720\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].external_temperature[0].value) << 
+                        logger->print() << "|\033[38;5;94m000720\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].external_temperature[0].value) << 
                                      " denm.alacarte[0].external_temperature[0].value: " << static_cast<int>(ros->denm.alacarte[0].external_temperature[0].value);
                     }
                     
@@ -13031,46 +13031,46 @@ namespace wind
                         char* _tmp_554 = (char*) buffer++;
                         *_tmp_554 = (ros->denm.alacarte[0].road_works[0].light_bar_siren_in_use.size() != 0 ? 1 : 0);
                         if(debug)
-                            logger->debug() << "|\033[38;5;94m000721\033[0m| Optional field light_bar_siren_in_use = " << *_tmp_554;
+                            logger->print() << "|\033[38;5;94m000721\033[0m| Optional field light_bar_siren_in_use = " << *_tmp_554;
                         char* _tmp_555 = (char*) buffer++;
                         *_tmp_555 = (ros->denm.alacarte[0].road_works[0].closed_lanes.size() != 0 ? 1 : 0);
                         if(debug)
-                            logger->debug() << "|\033[38;5;94m000722\033[0m| Optional field closed_lanes = " << *_tmp_555;
+                            logger->print() << "|\033[38;5;94m000722\033[0m| Optional field closed_lanes = " << *_tmp_555;
                         char* _tmp_556 = (char*) buffer++;
                         *_tmp_556 = (ros->denm.alacarte[0].road_works[0].restriction.size() != 0 ? 1 : 0);
                         if(debug)
-                            logger->debug() << "|\033[38;5;94m000723\033[0m| Optional field restriction = " << *_tmp_556;
+                            logger->print() << "|\033[38;5;94m000723\033[0m| Optional field restriction = " << *_tmp_556;
                         char* _tmp_557 = (char*) buffer++;
                         *_tmp_557 = (ros->denm.alacarte[0].road_works[0].speed_limit.size() != 0 ? 1 : 0);
                         if(debug)
-                            logger->debug() << "|\033[38;5;94m000724\033[0m| Optional field speed_limit = " << *_tmp_557;
+                            logger->print() << "|\033[38;5;94m000724\033[0m| Optional field speed_limit = " << *_tmp_557;
                         char* _tmp_558 = (char*) buffer++;
                         *_tmp_558 = (ros->denm.alacarte[0].road_works[0].incident_indication.size() != 0 ? 1 : 0);
                         if(debug)
-                            logger->debug() << "|\033[38;5;94m000725\033[0m| Optional field incident_indication = " << *_tmp_558;
+                            logger->print() << "|\033[38;5;94m000725\033[0m| Optional field incident_indication = " << *_tmp_558;
                         char* _tmp_559 = (char*) buffer++;
                         *_tmp_559 = (ros->denm.alacarte[0].road_works[0].recommended_path.size() != 0 ? 1 : 0);
                         if(debug)
-                            logger->debug() << "|\033[38;5;94m000726\033[0m| Optional field recommended_path = " << *_tmp_559;
+                            logger->print() << "|\033[38;5;94m000726\033[0m| Optional field recommended_path = " << *_tmp_559;
                         char* _tmp_560 = (char*) buffer++;
                         *_tmp_560 = (ros->denm.alacarte[0].road_works[0].starting_point_speed_limit.size() != 0 ? 1 : 0);
                         if(debug)
-                            logger->debug() << "|\033[38;5;94m000727\033[0m| Optional field starting_point_speed_limit = " << *_tmp_560;
+                            logger->print() << "|\033[38;5;94m000727\033[0m| Optional field starting_point_speed_limit = " << *_tmp_560;
                         char* _tmp_561 = (char*) buffer++;
                         *_tmp_561 = (ros->denm.alacarte[0].road_works[0].traffic_flow_rule.size() != 0 ? 1 : 0);
                         if(debug)
-                            logger->debug() << "|\033[38;5;94m000728\033[0m| Optional field traffic_flow_rule = " << *_tmp_561;
+                            logger->print() << "|\033[38;5;94m000728\033[0m| Optional field traffic_flow_rule = " << *_tmp_561;
                         char* _tmp_562 = (char*) buffer++;
                         *_tmp_562 = (ros->denm.alacarte[0].road_works[0].reference_denms.size() != 0 ? 1 : 0);
                         if(debug)
-                            logger->debug() << "|\033[38;5;94m000729\033[0m| Optional field reference_denms = " << *_tmp_562;
+                            logger->print() << "|\033[38;5;94m000729\033[0m| Optional field reference_denms = " << *_tmp_562;
                         
                         if(ros->denm.alacarte[0].road_works[0].light_bar_siren_in_use.size() != 0) {
                             // Field:  type(LightBarSirenInUse) name(light_bar_siren_in_use) extGroup(0)
                             // BitString
                             // BIT_STRING  min(2) max(2) span(1)
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m000730\033[0m| denm.alacarte[0].road_works[0].light_bar_siren_in_use[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].light_bar_siren_in_use[0].values.size());
+                                logger->print() << "|\033[38;5;94m000730\033[0m| denm.alacarte[0].road_works[0].light_bar_siren_in_use[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].light_bar_siren_in_use[0].values.size());
                             
                             if(ros->denm.alacarte[0].road_works[0].light_bar_siren_in_use[0].values.size() < 2) {
                                     logger->warning() << "Error: Value in 'denm.alacarte[0].road_works[0].light_bar_siren_in_use[0].value' " << (ros->denm.alacarte[0].road_works[0].light_bar_siren_in_use[0].values.size()) << " is less than allowable (2); message dropped.";
@@ -13108,22 +13108,22 @@ namespace wind
                                 char* _tmp_564 = (char*) buffer++;
                                 *_tmp_564 = (ros->denm.alacarte[0].road_works[0].closed_lanes[0].innerhard_shoulder_status.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000731\033[0m| Optional field innerhard_shoulder_status = " << *_tmp_564;
+                                    logger->print() << "|\033[38;5;94m000731\033[0m| Optional field innerhard_shoulder_status = " << *_tmp_564;
                                 char* _tmp_565 = (char*) buffer++;
                                 *_tmp_565 = (ros->denm.alacarte[0].road_works[0].closed_lanes[0].outerhard_shoulder_status.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000732\033[0m| Optional field outerhard_shoulder_status = " << *_tmp_565;
+                                    logger->print() << "|\033[38;5;94m000732\033[0m| Optional field outerhard_shoulder_status = " << *_tmp_565;
                                 char* _tmp_566 = (char*) buffer++;
                                 *_tmp_566 = (ros->denm.alacarte[0].road_works[0].closed_lanes[0].driving_lane_status.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000733\033[0m| Optional field driving_lane_status = " << *_tmp_566;
+                                    logger->print() << "|\033[38;5;94m000733\033[0m| Optional field driving_lane_status = " << *_tmp_566;
                                 
                                 if(ros->denm.alacarte[0].road_works[0].closed_lanes[0].innerhard_shoulder_status.size() != 0) {
                                     // Field:  type(HardShoulderStatus) name(innerhard_shoulder_status) extGroup(0)
                                     // Enumerated
                                     // INT32  min(0) max(2) span(3) dataType(Int32)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000734\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].closed_lanes[0].innerhard_shoulder_status[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000734\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].closed_lanes[0].innerhard_shoulder_status[0].value) << 
                                                      " denm.alacarte[0].road_works[0].closed_lanes[0].innerhard_shoulder_status[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].closed_lanes[0].innerhard_shoulder_status[0].value);
                                     }
                                     
@@ -13148,7 +13148,7 @@ namespace wind
                                     // Enumerated
                                     // INT32  min(0) max(2) span(3) dataType(Int32)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000735\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].closed_lanes[0].outerhard_shoulder_status[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000735\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].closed_lanes[0].outerhard_shoulder_status[0].value) << 
                                                      " denm.alacarte[0].road_works[0].closed_lanes[0].outerhard_shoulder_status[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].closed_lanes[0].outerhard_shoulder_status[0].value);
                                     }
                                     
@@ -13173,7 +13173,7 @@ namespace wind
                                     // BitString
                                     // BIT_STRING  min(1) max(13) span(13)
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m000736\033[0m| denm.alacarte[0].road_works[0].closed_lanes[0].driving_lane_status[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].closed_lanes[0].driving_lane_status[0].values.size());
+                                        logger->print() << "|\033[38;5;94m000736\033[0m| denm.alacarte[0].road_works[0].closed_lanes[0].driving_lane_status[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].closed_lanes[0].driving_lane_status[0].values.size());
                                     
                                     if(ros->denm.alacarte[0].road_works[0].closed_lanes[0].driving_lane_status[0].values.size() < 1) {
                                             logger->warning() << "Error: Value in 'denm.alacarte[0].road_works[0].closed_lanes[0].driving_lane_status[0].value' " << (ros->denm.alacarte[0].road_works[0].closed_lanes[0].driving_lane_status[0].values.size()) << " is less than allowable (1); message dropped.";
@@ -13222,7 +13222,7 @@ namespace wind
                                 
                                 // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000738\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].restriction[0].elements[w].value) << 
+                                    logger->print() << "|\033[38;5;94m000738\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].restriction[0].elements[w].value) << 
                                                  " denm.alacarte[0].road_works[0].restriction[0].elements[w].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].restriction[0].elements[w].value);
                                 }
                                 
@@ -13250,7 +13250,7 @@ namespace wind
                             
                             // UINT8  min(1) max(255) span(255) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000739\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].speed_limit[0].value) << 
+                                logger->print() << "|\033[38;5;94m000739\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].speed_limit[0].value) << 
                                              " denm.alacarte[0].road_works[0].speed_limit[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].speed_limit[0].value);
                             }
                             
@@ -13425,7 +13425,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000741\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved0[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000741\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved0[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved0[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved0[0].value);
                                     }
                                     
@@ -13456,7 +13456,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000743\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.traffic_condition1[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000743\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.traffic_condition1[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.traffic_condition1[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.traffic_condition1[0].value);
                                     }
                                     
@@ -13487,7 +13487,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000745\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.accident2[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000745\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.accident2[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.accident2[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.accident2[0].value);
                                     }
                                     
@@ -13518,7 +13518,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000747\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.roadworks3[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000747\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.roadworks3[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.roadworks3[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.roadworks3[0].value);
                                     }
                                     
@@ -13549,7 +13549,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000749\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved4[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000749\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved4[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved4[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved4[0].value);
                                     }
                                     
@@ -13580,7 +13580,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000751\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.impassability5[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000751\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.impassability5[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.impassability5[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.impassability5[0].value);
                                     }
                                     
@@ -13611,7 +13611,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000753\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.adverse_weather_condition_adhesion6[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000753\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.adverse_weather_condition_adhesion6[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.adverse_weather_condition_adhesion6[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.adverse_weather_condition_adhesion6[0].value);
                                     }
                                     
@@ -13642,7 +13642,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000755\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.aquaplaning7[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000755\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.aquaplaning7[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.aquaplaning7[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.aquaplaning7[0].value);
                                     }
                                     
@@ -13673,7 +13673,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000757\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved8[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000757\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved8[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved8[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved8[0].value);
                                     }
                                     
@@ -13704,7 +13704,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000759\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.hazardous_location_surface_condition9[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000759\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.hazardous_location_surface_condition9[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.hazardous_location_surface_condition9[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.hazardous_location_surface_condition9[0].value);
                                     }
                                     
@@ -13735,7 +13735,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000761\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.hazardous_location_obstacle_on_the_road10[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000761\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.hazardous_location_obstacle_on_the_road10[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.hazardous_location_obstacle_on_the_road10[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.hazardous_location_obstacle_on_the_road10[0].value);
                                     }
                                     
@@ -13766,7 +13766,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000763\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.hazardous_location_animal_on_the_road11[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000763\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.hazardous_location_animal_on_the_road11[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.hazardous_location_animal_on_the_road11[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.hazardous_location_animal_on_the_road11[0].value);
                                     }
                                     
@@ -13797,7 +13797,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000765\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.human_presence_on_the_road12[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000765\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.human_presence_on_the_road12[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.human_presence_on_the_road12[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.human_presence_on_the_road12[0].value);
                                     }
                                     
@@ -13828,7 +13828,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000767\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved13[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000767\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved13[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved13[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved13[0].value);
                                     }
                                     
@@ -13859,7 +13859,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000769\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.wrong_way_driving14[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000769\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.wrong_way_driving14[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.wrong_way_driving14[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.wrong_way_driving14[0].value);
                                     }
                                     
@@ -13890,7 +13890,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000771\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.rescue_and_recovery_work_in_progress15[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000771\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.rescue_and_recovery_work_in_progress15[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.rescue_and_recovery_work_in_progress15[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.rescue_and_recovery_work_in_progress15[0].value);
                                     }
                                     
@@ -13921,7 +13921,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000773\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved16[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000773\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved16[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved16[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved16[0].value);
                                     }
                                     
@@ -13952,7 +13952,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000775\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.adverse_weather_condition_extreme_weather_condition17[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000775\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.adverse_weather_condition_extreme_weather_condition17[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.adverse_weather_condition_extreme_weather_condition17[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.adverse_weather_condition_extreme_weather_condition17[0].value);
                                     }
                                     
@@ -13983,7 +13983,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000777\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.adverse_weather_condition_visibility18[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000777\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.adverse_weather_condition_visibility18[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.adverse_weather_condition_visibility18[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.adverse_weather_condition_visibility18[0].value);
                                     }
                                     
@@ -14014,7 +14014,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000779\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.adverse_weather_condition_precipitation19[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000779\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.adverse_weather_condition_precipitation19[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.adverse_weather_condition_precipitation19[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.adverse_weather_condition_precipitation19[0].value);
                                     }
                                     
@@ -14045,7 +14045,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000781\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.violence20[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000781\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.violence20[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.violence20[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.violence20[0].value);
                                     }
                                     
@@ -14076,7 +14076,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000783\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved21[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000783\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved21[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved21[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved21[0].value);
                                     }
                                     
@@ -14107,7 +14107,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000785\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved22[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000785\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved22[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved22[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved22[0].value);
                                     }
                                     
@@ -14138,7 +14138,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000787\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved23[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000787\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved23[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved23[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved23[0].value);
                                     }
                                     
@@ -14169,7 +14169,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000789\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved24[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000789\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved24[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved24[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved24[0].value);
                                     }
                                     
@@ -14200,7 +14200,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000791\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved25[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000791\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved25[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved25[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved25[0].value);
                                     }
                                     
@@ -14231,7 +14231,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000793\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.slow_vehicle26[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000793\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.slow_vehicle26[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.slow_vehicle26[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.slow_vehicle26[0].value);
                                     }
                                     
@@ -14262,7 +14262,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000795\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.dangerous_end_of_queue27[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000795\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.dangerous_end_of_queue27[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.dangerous_end_of_queue27[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.dangerous_end_of_queue27[0].value);
                                     }
                                     
@@ -14293,7 +14293,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000797\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.public_transport_vehicle_approaching28[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000797\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.public_transport_vehicle_approaching28[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.public_transport_vehicle_approaching28[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.public_transport_vehicle_approaching28[0].value);
                                     }
                                     
@@ -14324,7 +14324,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000799\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved29[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000799\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved29[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved29[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved29[0].value);
                                     }
                                     
@@ -14355,7 +14355,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000801\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved30[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000801\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved30[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved30[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved30[0].value);
                                     }
                                     
@@ -14386,7 +14386,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000803\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved31[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000803\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved31[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved31[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved31[0].value);
                                     }
                                     
@@ -14417,7 +14417,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000805\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved32[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000805\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved32[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved32[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved32[0].value);
                                     }
                                     
@@ -14448,7 +14448,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000807\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved33[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000807\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved33[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved33[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved33[0].value);
                                     }
                                     
@@ -14479,7 +14479,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000809\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved34[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000809\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved34[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved34[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved34[0].value);
                                     }
                                     
@@ -14510,7 +14510,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000811\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved35[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000811\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved35[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved35[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved35[0].value);
                                     }
                                     
@@ -14541,7 +14541,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000813\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved36[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000813\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved36[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved36[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved36[0].value);
                                     }
                                     
@@ -14572,7 +14572,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000815\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved37[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000815\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved37[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved37[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved37[0].value);
                                     }
                                     
@@ -14603,7 +14603,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000817\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved38[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000817\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved38[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved38[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved38[0].value);
                                     }
                                     
@@ -14634,7 +14634,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000819\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved39[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000819\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved39[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved39[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved39[0].value);
                                     }
                                     
@@ -14665,7 +14665,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000821\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved40[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000821\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved40[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved40[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved40[0].value);
                                     }
                                     
@@ -14696,7 +14696,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000823\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved41[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000823\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved41[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved41[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved41[0].value);
                                     }
                                     
@@ -14727,7 +14727,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000825\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved42[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000825\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved42[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved42[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved42[0].value);
                                     }
                                     
@@ -14758,7 +14758,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000827\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved43[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000827\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved43[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved43[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved43[0].value);
                                     }
                                     
@@ -14789,7 +14789,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000829\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved44[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000829\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved44[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved44[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved44[0].value);
                                     }
                                     
@@ -14820,7 +14820,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000831\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved45[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000831\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved45[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved45[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved45[0].value);
                                     }
                                     
@@ -14851,7 +14851,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000833\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved46[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000833\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved46[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved46[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved46[0].value);
                                     }
                                     
@@ -14882,7 +14882,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000835\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved47[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000835\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved47[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved47[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved47[0].value);
                                     }
                                     
@@ -14913,7 +14913,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000837\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved48[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000837\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved48[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved48[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved48[0].value);
                                     }
                                     
@@ -14944,7 +14944,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000839\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved49[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000839\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved49[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved49[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved49[0].value);
                                     }
                                     
@@ -14975,7 +14975,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000841\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved50[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000841\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved50[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved50[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved50[0].value);
                                     }
                                     
@@ -15006,7 +15006,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000843\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved51[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000843\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved51[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved51[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved51[0].value);
                                     }
                                     
@@ -15037,7 +15037,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000845\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved52[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000845\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved52[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved52[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved52[0].value);
                                     }
                                     
@@ -15068,7 +15068,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000847\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved53[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000847\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved53[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved53[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved53[0].value);
                                     }
                                     
@@ -15099,7 +15099,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000849\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved54[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000849\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved54[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved54[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved54[0].value);
                                     }
                                     
@@ -15130,7 +15130,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000851\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved55[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000851\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved55[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved55[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved55[0].value);
                                     }
                                     
@@ -15161,7 +15161,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000853\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved56[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000853\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved56[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved56[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved56[0].value);
                                     }
                                     
@@ -15192,7 +15192,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000855\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved57[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000855\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved57[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved57[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved57[0].value);
                                     }
                                     
@@ -15223,7 +15223,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000857\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved58[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000857\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved58[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved58[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved58[0].value);
                                     }
                                     
@@ -15254,7 +15254,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000859\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved59[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000859\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved59[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved59[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved59[0].value);
                                     }
                                     
@@ -15285,7 +15285,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000861\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved60[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000861\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved60[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved60[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved60[0].value);
                                     }
                                     
@@ -15316,7 +15316,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000863\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved61[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000863\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved61[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved61[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved61[0].value);
                                     }
                                     
@@ -15347,7 +15347,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000865\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved62[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000865\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved62[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved62[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved62[0].value);
                                     }
                                     
@@ -15378,7 +15378,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000867\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved63[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000867\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved63[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved63[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved63[0].value);
                                     }
                                     
@@ -15409,7 +15409,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000869\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved64[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000869\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved64[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved64[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved64[0].value);
                                     }
                                     
@@ -15440,7 +15440,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000871\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved65[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000871\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved65[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved65[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved65[0].value);
                                     }
                                     
@@ -15471,7 +15471,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000873\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved66[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000873\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved66[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved66[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved66[0].value);
                                     }
                                     
@@ -15502,7 +15502,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000875\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved67[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000875\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved67[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved67[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved67[0].value);
                                     }
                                     
@@ -15533,7 +15533,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000877\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved68[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000877\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved68[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved68[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved68[0].value);
                                     }
                                     
@@ -15564,7 +15564,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000879\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved69[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000879\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved69[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved69[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved69[0].value);
                                     }
                                     
@@ -15595,7 +15595,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000881\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved70[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000881\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved70[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved70[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved70[0].value);
                                     }
                                     
@@ -15626,7 +15626,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000883\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved71[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000883\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved71[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved71[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved71[0].value);
                                     }
                                     
@@ -15657,7 +15657,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000885\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved72[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000885\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved72[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved72[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved72[0].value);
                                     }
                                     
@@ -15688,7 +15688,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000887\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved73[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000887\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved73[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved73[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved73[0].value);
                                     }
                                     
@@ -15719,7 +15719,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000889\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved74[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000889\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved74[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved74[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved74[0].value);
                                     }
                                     
@@ -15750,7 +15750,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000891\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved75[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000891\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved75[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved75[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved75[0].value);
                                     }
                                     
@@ -15781,7 +15781,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000893\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved76[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000893\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved76[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved76[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved76[0].value);
                                     }
                                     
@@ -15812,7 +15812,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000895\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved77[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000895\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved77[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved77[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved77[0].value);
                                     }
                                     
@@ -15843,7 +15843,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000897\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved78[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000897\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved78[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved78[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved78[0].value);
                                     }
                                     
@@ -15874,7 +15874,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000899\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved79[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000899\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved79[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved79[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved79[0].value);
                                     }
                                     
@@ -15905,7 +15905,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000901\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved80[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000901\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved80[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved80[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved80[0].value);
                                     }
                                     
@@ -15936,7 +15936,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000903\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved81[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000903\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved81[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved81[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved81[0].value);
                                     }
                                     
@@ -15967,7 +15967,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000905\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved82[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000905\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved82[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved82[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved82[0].value);
                                     }
                                     
@@ -15998,7 +15998,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000907\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved83[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000907\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved83[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved83[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved83[0].value);
                                     }
                                     
@@ -16029,7 +16029,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000909\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved84[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000909\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved84[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved84[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved84[0].value);
                                     }
                                     
@@ -16060,7 +16060,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000911\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved85[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000911\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved85[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved85[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved85[0].value);
                                     }
                                     
@@ -16091,7 +16091,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000913\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved86[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000913\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved86[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved86[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved86[0].value);
                                     }
                                     
@@ -16122,7 +16122,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000915\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved87[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000915\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved87[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved87[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved87[0].value);
                                     }
                                     
@@ -16153,7 +16153,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000917\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved88[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000917\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved88[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved88[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved88[0].value);
                                     }
                                     
@@ -16184,7 +16184,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000919\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved89[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000919\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved89[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved89[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved89[0].value);
                                     }
                                     
@@ -16215,7 +16215,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000921\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved90[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000921\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved90[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved90[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved90[0].value);
                                     }
                                     
@@ -16246,7 +16246,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000923\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.vehicle_breakdown91[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000923\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.vehicle_breakdown91[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.vehicle_breakdown91[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.vehicle_breakdown91[0].value);
                                     }
                                     
@@ -16277,7 +16277,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000925\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.post_crash92[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000925\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.post_crash92[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.post_crash92[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.post_crash92[0].value);
                                     }
                                     
@@ -16308,7 +16308,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000927\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.human_problem93[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000927\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.human_problem93[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.human_problem93[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.human_problem93[0].value);
                                     }
                                     
@@ -16339,7 +16339,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000929\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.stationary_vehicle94[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000929\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.stationary_vehicle94[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.stationary_vehicle94[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.stationary_vehicle94[0].value);
                                     }
                                     
@@ -16370,7 +16370,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000931\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.emergency_vehicle_approaching95[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000931\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.emergency_vehicle_approaching95[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.emergency_vehicle_approaching95[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.emergency_vehicle_approaching95[0].value);
                                     }
                                     
@@ -16401,7 +16401,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000933\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.hazardous_location_dangerous_curve96[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000933\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.hazardous_location_dangerous_curve96[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.hazardous_location_dangerous_curve96[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.hazardous_location_dangerous_curve96[0].value);
                                     }
                                     
@@ -16432,7 +16432,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000935\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.collision_risk97[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000935\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.collision_risk97[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.collision_risk97[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.collision_risk97[0].value);
                                     }
                                     
@@ -16463,7 +16463,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000937\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.signal_violation98[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000937\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.signal_violation98[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.signal_violation98[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.signal_violation98[0].value);
                                     }
                                     
@@ -16494,7 +16494,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000939\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.dangerous_situation99[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000939\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.dangerous_situation99[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.dangerous_situation99[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.dangerous_situation99[0].value);
                                     }
                                     
@@ -16525,7 +16525,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000941\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.railway_level_crossing100[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000941\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.railway_level_crossing100[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.railway_level_crossing100[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.railway_level_crossing100[0].value);
                                     }
                                     
@@ -16556,7 +16556,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000943\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved101[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000943\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved101[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved101[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved101[0].value);
                                     }
                                     
@@ -16587,7 +16587,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000945\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved102[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000945\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved102[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved102[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved102[0].value);
                                     }
                                     
@@ -16618,7 +16618,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000947\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved103[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000947\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved103[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved103[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved103[0].value);
                                     }
                                     
@@ -16649,7 +16649,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000949\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved104[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000949\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved104[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved104[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved104[0].value);
                                     }
                                     
@@ -16680,7 +16680,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000951\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved105[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000951\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved105[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved105[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved105[0].value);
                                     }
                                     
@@ -16711,7 +16711,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000953\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved106[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000953\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved106[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved106[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved106[0].value);
                                     }
                                     
@@ -16742,7 +16742,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000955\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved107[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000955\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved107[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved107[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved107[0].value);
                                     }
                                     
@@ -16773,7 +16773,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000957\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved108[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000957\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved108[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved108[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved108[0].value);
                                     }
                                     
@@ -16804,7 +16804,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000959\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved109[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000959\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved109[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved109[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved109[0].value);
                                     }
                                     
@@ -16835,7 +16835,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000961\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved110[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000961\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved110[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved110[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved110[0].value);
                                     }
                                     
@@ -16866,7 +16866,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000963\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved111[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000963\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved111[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved111[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved111[0].value);
                                     }
                                     
@@ -16897,7 +16897,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000965\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved112[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000965\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved112[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved112[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved112[0].value);
                                     }
                                     
@@ -16928,7 +16928,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000967\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved113[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000967\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved113[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved113[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved113[0].value);
                                     }
                                     
@@ -16959,7 +16959,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000969\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved114[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000969\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved114[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved114[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved114[0].value);
                                     }
                                     
@@ -16990,7 +16990,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000971\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved115[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000971\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved115[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved115[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved115[0].value);
                                     }
                                     
@@ -17021,7 +17021,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000973\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved116[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000973\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved116[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved116[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved116[0].value);
                                     }
                                     
@@ -17052,7 +17052,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000975\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved117[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000975\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved117[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved117[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved117[0].value);
                                     }
                                     
@@ -17083,7 +17083,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000977\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved118[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000977\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved118[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved118[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved118[0].value);
                                     }
                                     
@@ -17114,7 +17114,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000979\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved119[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000979\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved119[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved119[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved119[0].value);
                                     }
                                     
@@ -17145,7 +17145,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000981\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved120[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000981\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved120[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved120[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved120[0].value);
                                     }
                                     
@@ -17176,7 +17176,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000983\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved121[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000983\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved121[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved121[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved121[0].value);
                                     }
                                     
@@ -17207,7 +17207,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000985\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved122[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000985\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved122[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved122[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved122[0].value);
                                     }
                                     
@@ -17238,7 +17238,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000987\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved123[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000987\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved123[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved123[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved123[0].value);
                                     }
                                     
@@ -17269,7 +17269,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000989\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved124[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000989\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved124[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved124[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved124[0].value);
                                     }
                                     
@@ -17300,7 +17300,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000991\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved125[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000991\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved125[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved125[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved125[0].value);
                                     }
                                     
@@ -17331,7 +17331,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000993\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved126[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000993\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved126[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved126[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved126[0].value);
                                     }
                                     
@@ -17362,7 +17362,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000995\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved127[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000995\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved127[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved127[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved127[0].value);
                                     }
                                     
@@ -17393,7 +17393,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000997\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved128[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000997\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved128[0].value) << 
                                                      " denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved128[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].incident_indication[0].cc_and_scc.reserved128[0].value);
                                     }
                                     
@@ -17449,7 +17449,7 @@ namespace wind
                                     
                                     // DOUBLE  min(-900000000) max(900000001) span(1800000002) scaleDivisor(1.0E7) dataType(Double)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000999\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].recommended_path[0].elements[x].latitude.value) << 
+                                        logger->print() << "|\033[38;5;94m000999\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].recommended_path[0].elements[x].latitude.value) << 
                                                      " denm.alacarte[0].road_works[0].recommended_path[0].elements[x].latitude.value: " << ros->denm.alacarte[0].road_works[0].recommended_path[0].elements[x].latitude.value;
                                     }
                                     
@@ -17476,7 +17476,7 @@ namespace wind
                                     
                                     // DOUBLE  min(-1800000000) max(1800000001) span(3600000002) scaleDivisor(1.0E7) dataType(Double)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001000\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].recommended_path[0].elements[x].longitude.value) << 
+                                        logger->print() << "|\033[38;5;94m001000\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].recommended_path[0].elements[x].longitude.value) << 
                                                      " denm.alacarte[0].road_works[0].recommended_path[0].elements[x].longitude.value: " << ros->denm.alacarte[0].road_works[0].recommended_path[0].elements[x].longitude.value;
                                     }
                                     
@@ -17510,7 +17510,7 @@ namespace wind
                                         
                                         // FLOAT  min(0) max(4095) span(4096) scaleDivisor(100.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m001001\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].recommended_path[0].elements[x].position_confidence_ellipse.semi_major_confidence.value) << 
+                                            logger->print() << "|\033[38;5;94m001001\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].recommended_path[0].elements[x].position_confidence_ellipse.semi_major_confidence.value) << 
                                                          " denm.alacarte[0].road_works[0].recommended_path[0].elements[x].position_confidence_ellipse.semi_major_confidence.value: " << ros->denm.alacarte[0].road_works[0].recommended_path[0].elements[x].position_confidence_ellipse.semi_major_confidence.value;
                                         }
                                         
@@ -17536,7 +17536,7 @@ namespace wind
                                         
                                         // FLOAT  min(0) max(4095) span(4096) scaleDivisor(100.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m001002\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].recommended_path[0].elements[x].position_confidence_ellipse.semi_minor_confidence.value) << 
+                                            logger->print() << "|\033[38;5;94m001002\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].recommended_path[0].elements[x].position_confidence_ellipse.semi_minor_confidence.value) << 
                                                          " denm.alacarte[0].road_works[0].recommended_path[0].elements[x].position_confidence_ellipse.semi_minor_confidence.value: " << ros->denm.alacarte[0].road_works[0].recommended_path[0].elements[x].position_confidence_ellipse.semi_minor_confidence.value;
                                         }
                                         
@@ -17562,7 +17562,7 @@ namespace wind
                                         
                                         // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m001003\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].recommended_path[0].elements[x].position_confidence_ellipse.semi_major_orientation.value) << 
+                                            logger->print() << "|\033[38;5;94m001003\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].recommended_path[0].elements[x].position_confidence_ellipse.semi_major_orientation.value) << 
                                                          " denm.alacarte[0].road_works[0].recommended_path[0].elements[x].position_confidence_ellipse.semi_major_orientation.value: " << ros->denm.alacarte[0].road_works[0].recommended_path[0].elements[x].position_confidence_ellipse.semi_major_orientation.value;
                                         }
                                         
@@ -17594,7 +17594,7 @@ namespace wind
                                         
                                         // FLOAT  min(-100000) max(800001) span(900002) scaleDivisor(100.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m001004\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].recommended_path[0].elements[x].altitude.altitude_value.value) << 
+                                            logger->print() << "|\033[38;5;94m001004\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].recommended_path[0].elements[x].altitude.altitude_value.value) << 
                                                          " denm.alacarte[0].road_works[0].recommended_path[0].elements[x].altitude.altitude_value.value: " << ros->denm.alacarte[0].road_works[0].recommended_path[0].elements[x].altitude.altitude_value.value;
                                         }
                                         
@@ -17620,7 +17620,7 @@ namespace wind
                                         // Enumerated
                                         // INT32  min(0) max(15) span(16) dataType(Int32)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m001005\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].recommended_path[0].elements[x].altitude.altitude_confidence.value) << 
+                                            logger->print() << "|\033[38;5;94m001005\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].recommended_path[0].elements[x].altitude.altitude_confidence.value) << 
                                                          " denm.alacarte[0].road_works[0].recommended_path[0].elements[x].altitude.altitude_confidence.value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].recommended_path[0].elements[x].altitude.altitude_confidence.value);
                                         }
                                         
@@ -17655,7 +17655,7 @@ namespace wind
                                 
                                 // DOUBLE  min(-131071) max(131072) span(262144) scaleDivisor(1.0E7) dataType(Double)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m001006\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].starting_point_speed_limit[0].delta_latitude.value) << 
+                                    logger->print() << "|\033[38;5;94m001006\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].starting_point_speed_limit[0].delta_latitude.value) << 
                                                  " denm.alacarte[0].road_works[0].starting_point_speed_limit[0].delta_latitude.value: " << ros->denm.alacarte[0].road_works[0].starting_point_speed_limit[0].delta_latitude.value;
                                 }
                                 
@@ -17682,7 +17682,7 @@ namespace wind
                                 
                                 // DOUBLE  min(-131071) max(131072) span(262144) scaleDivisor(1.0E7) dataType(Double)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m001007\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].starting_point_speed_limit[0].delta_longitude.value) << 
+                                    logger->print() << "|\033[38;5;94m001007\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].starting_point_speed_limit[0].delta_longitude.value) << 
                                                  " denm.alacarte[0].road_works[0].starting_point_speed_limit[0].delta_longitude.value: " << ros->denm.alacarte[0].road_works[0].starting_point_speed_limit[0].delta_longitude.value;
                                 }
                                 
@@ -17709,7 +17709,7 @@ namespace wind
                                 
                                 // FLOAT  min(-12700) max(12800) span(25501) scaleDivisor(100.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m001008\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].starting_point_speed_limit[0].delta_altitude.value) << 
+                                    logger->print() << "|\033[38;5;94m001008\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].starting_point_speed_limit[0].delta_altitude.value) << 
                                                  " denm.alacarte[0].road_works[0].starting_point_speed_limit[0].delta_altitude.value: " << ros->denm.alacarte[0].road_works[0].starting_point_speed_limit[0].delta_altitude.value;
                                 }
                                 
@@ -17738,7 +17738,7 @@ namespace wind
                             // INT32  min(0) max(4) span(5) dataType(Int32)
                             uint8_t* _ext_flag_573 = (uint8_t*) buffer++; // Write extension flag for ros->denm.alacarte[0].road_works[0].traffic_flow_rule[0].
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m001009\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].traffic_flow_rule[0].value) << 
+                                logger->print() << "|\033[38;5;94m001009\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].traffic_flow_rule[0].value) << 
                                              " denm.alacarte[0].road_works[0].traffic_flow_rule[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_works[0].traffic_flow_rule[0].value);
                             }
                             
@@ -17785,7 +17785,7 @@ namespace wind
                                     
                                     // UINT32  min(0) max(4294967295) span(4294967296) dataType(UInt32)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001011\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].reference_denms[0].elements[y].originating_station_id.value) << 
+                                        logger->print() << "|\033[38;5;94m001011\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].reference_denms[0].elements[y].originating_station_id.value) << 
                                                      " denm.alacarte[0].road_works[0].reference_denms[0].elements[y].originating_station_id.value: " << ros->denm.alacarte[0].road_works[0].reference_denms[0].elements[y].originating_station_id.value;
                                     }
                                     
@@ -17809,7 +17809,7 @@ namespace wind
                                     
                                     // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001012\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].reference_denms[0].elements[y].sequence_number.value) << 
+                                        logger->print() << "|\033[38;5;94m001012\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_works[0].reference_denms[0].elements[y].sequence_number.value) << 
                                                      " denm.alacarte[0].road_works[0].reference_denms[0].elements[y].sequence_number.value: " << ros->denm.alacarte[0].road_works[0].reference_denms[0].elements[y].sequence_number.value;
                                     }
                                     
@@ -17838,7 +17838,7 @@ namespace wind
                     // INT32  min(0) max(6) span(7) dataType(Int32)
                     uint8_t* _ext_flag_577 = (uint8_t*) buffer++; // Write extension flag for ros->denm.alacarte[0].positioning_solution[0].
                     if(debug) {
-                        logger->debug() << "|\033[38;5;94m001013\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].positioning_solution[0].value) << 
+                        logger->print() << "|\033[38;5;94m001013\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].positioning_solution[0].value) << 
                                      " denm.alacarte[0].positioning_solution[0].value: " << static_cast<int>(ros->denm.alacarte[0].positioning_solution[0].value);
                     }
                     
@@ -17871,34 +17871,34 @@ namespace wind
                         char* _tmp_729 = (char*) buffer++;
                         *_tmp_729 = (ros->denm.alacarte[0].stationary_vehicle[0].stationary_since.size() != 0 ? 1 : 0);
                         if(debug)
-                            logger->debug() << "|\033[38;5;94m001014\033[0m| Optional field stationary_since = " << *_tmp_729;
+                            logger->print() << "|\033[38;5;94m001014\033[0m| Optional field stationary_since = " << *_tmp_729;
                         char* _tmp_730 = (char*) buffer++;
                         *_tmp_730 = (ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause.size() != 0 ? 1 : 0);
                         if(debug)
-                            logger->debug() << "|\033[38;5;94m001015\033[0m| Optional field stationary_cause = " << *_tmp_730;
+                            logger->print() << "|\033[38;5;94m001015\033[0m| Optional field stationary_cause = " << *_tmp_730;
                         char* _tmp_731 = (char*) buffer++;
                         *_tmp_731 = (ros->denm.alacarte[0].stationary_vehicle[0].carrying_dangerous_goods.size() != 0 ? 1 : 0);
                         if(debug)
-                            logger->debug() << "|\033[38;5;94m001016\033[0m| Optional field carrying_dangerous_goods = " << *_tmp_731;
+                            logger->print() << "|\033[38;5;94m001016\033[0m| Optional field carrying_dangerous_goods = " << *_tmp_731;
                         char* _tmp_732 = (char*) buffer++;
                         *_tmp_732 = (ros->denm.alacarte[0].stationary_vehicle[0].number_of_occupants.size() != 0 ? 1 : 0);
                         if(debug)
-                            logger->debug() << "|\033[38;5;94m001017\033[0m| Optional field number_of_occupants = " << *_tmp_732;
+                            logger->print() << "|\033[38;5;94m001017\033[0m| Optional field number_of_occupants = " << *_tmp_732;
                         char* _tmp_733 = (char*) buffer++;
                         *_tmp_733 = (ros->denm.alacarte[0].stationary_vehicle[0].vehicle_identification.size() != 0 ? 1 : 0);
                         if(debug)
-                            logger->debug() << "|\033[38;5;94m001018\033[0m| Optional field vehicle_identification = " << *_tmp_733;
+                            logger->print() << "|\033[38;5;94m001018\033[0m| Optional field vehicle_identification = " << *_tmp_733;
                         char* _tmp_734 = (char*) buffer++;
                         *_tmp_734 = (ros->denm.alacarte[0].stationary_vehicle[0].energy_storage_type.size() != 0 ? 1 : 0);
                         if(debug)
-                            logger->debug() << "|\033[38;5;94m001019\033[0m| Optional field energy_storage_type = " << *_tmp_734;
+                            logger->print() << "|\033[38;5;94m001019\033[0m| Optional field energy_storage_type = " << *_tmp_734;
                         
                         if(ros->denm.alacarte[0].stationary_vehicle[0].stationary_since.size() != 0) {
                             // Field:  type(StationarySince) name(stationary_since) extGroup(0)
                             // Enumerated
                             // INT32  min(0) max(3) span(4) dataType(Int32)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m001020\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_since[0].value) << 
+                                logger->print() << "|\033[38;5;94m001020\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_since[0].value) << 
                                              " denm.alacarte[0].stationary_vehicle[0].stationary_since[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_since[0].value);
                             }
                             
@@ -18072,7 +18072,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001022\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved0[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001022\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved0[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved0[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved0[0].value);
                                     }
                                     
@@ -18103,7 +18103,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001024\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.traffic_condition1[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001024\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.traffic_condition1[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.traffic_condition1[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.traffic_condition1[0].value);
                                     }
                                     
@@ -18134,7 +18134,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001026\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.accident2[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001026\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.accident2[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.accident2[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.accident2[0].value);
                                     }
                                     
@@ -18165,7 +18165,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001028\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.roadworks3[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001028\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.roadworks3[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.roadworks3[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.roadworks3[0].value);
                                     }
                                     
@@ -18196,7 +18196,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001030\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved4[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001030\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved4[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved4[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved4[0].value);
                                     }
                                     
@@ -18227,7 +18227,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001032\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.impassability5[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001032\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.impassability5[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.impassability5[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.impassability5[0].value);
                                     }
                                     
@@ -18258,7 +18258,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001034\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.adverse_weather_condition_adhesion6[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001034\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.adverse_weather_condition_adhesion6[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.adverse_weather_condition_adhesion6[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.adverse_weather_condition_adhesion6[0].value);
                                     }
                                     
@@ -18289,7 +18289,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001036\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.aquaplaning7[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001036\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.aquaplaning7[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.aquaplaning7[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.aquaplaning7[0].value);
                                     }
                                     
@@ -18320,7 +18320,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001038\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved8[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001038\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved8[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved8[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved8[0].value);
                                     }
                                     
@@ -18351,7 +18351,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001040\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.hazardous_location_surface_condition9[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001040\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.hazardous_location_surface_condition9[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.hazardous_location_surface_condition9[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.hazardous_location_surface_condition9[0].value);
                                     }
                                     
@@ -18382,7 +18382,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001042\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.hazardous_location_obstacle_on_the_road10[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001042\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.hazardous_location_obstacle_on_the_road10[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.hazardous_location_obstacle_on_the_road10[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.hazardous_location_obstacle_on_the_road10[0].value);
                                     }
                                     
@@ -18413,7 +18413,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001044\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.hazardous_location_animal_on_the_road11[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001044\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.hazardous_location_animal_on_the_road11[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.hazardous_location_animal_on_the_road11[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.hazardous_location_animal_on_the_road11[0].value);
                                     }
                                     
@@ -18444,7 +18444,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001046\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.human_presence_on_the_road12[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001046\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.human_presence_on_the_road12[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.human_presence_on_the_road12[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.human_presence_on_the_road12[0].value);
                                     }
                                     
@@ -18475,7 +18475,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001048\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved13[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001048\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved13[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved13[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved13[0].value);
                                     }
                                     
@@ -18506,7 +18506,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001050\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.wrong_way_driving14[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001050\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.wrong_way_driving14[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.wrong_way_driving14[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.wrong_way_driving14[0].value);
                                     }
                                     
@@ -18537,7 +18537,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001052\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.rescue_and_recovery_work_in_progress15[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001052\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.rescue_and_recovery_work_in_progress15[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.rescue_and_recovery_work_in_progress15[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.rescue_and_recovery_work_in_progress15[0].value);
                                     }
                                     
@@ -18568,7 +18568,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001054\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved16[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001054\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved16[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved16[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved16[0].value);
                                     }
                                     
@@ -18599,7 +18599,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001056\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.adverse_weather_condition_extreme_weather_condition17[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001056\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.adverse_weather_condition_extreme_weather_condition17[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.adverse_weather_condition_extreme_weather_condition17[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.adverse_weather_condition_extreme_weather_condition17[0].value);
                                     }
                                     
@@ -18630,7 +18630,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001058\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.adverse_weather_condition_visibility18[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001058\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.adverse_weather_condition_visibility18[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.adverse_weather_condition_visibility18[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.adverse_weather_condition_visibility18[0].value);
                                     }
                                     
@@ -18661,7 +18661,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001060\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.adverse_weather_condition_precipitation19[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001060\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.adverse_weather_condition_precipitation19[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.adverse_weather_condition_precipitation19[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.adverse_weather_condition_precipitation19[0].value);
                                     }
                                     
@@ -18692,7 +18692,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001062\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.violence20[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001062\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.violence20[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.violence20[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.violence20[0].value);
                                     }
                                     
@@ -18723,7 +18723,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001064\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved21[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001064\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved21[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved21[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved21[0].value);
                                     }
                                     
@@ -18754,7 +18754,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001066\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved22[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001066\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved22[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved22[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved22[0].value);
                                     }
                                     
@@ -18785,7 +18785,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001068\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved23[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001068\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved23[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved23[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved23[0].value);
                                     }
                                     
@@ -18816,7 +18816,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001070\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved24[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001070\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved24[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved24[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved24[0].value);
                                     }
                                     
@@ -18847,7 +18847,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001072\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved25[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001072\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved25[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved25[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved25[0].value);
                                     }
                                     
@@ -18878,7 +18878,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001074\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.slow_vehicle26[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001074\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.slow_vehicle26[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.slow_vehicle26[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.slow_vehicle26[0].value);
                                     }
                                     
@@ -18909,7 +18909,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001076\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.dangerous_end_of_queue27[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001076\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.dangerous_end_of_queue27[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.dangerous_end_of_queue27[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.dangerous_end_of_queue27[0].value);
                                     }
                                     
@@ -18940,7 +18940,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001078\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.public_transport_vehicle_approaching28[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001078\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.public_transport_vehicle_approaching28[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.public_transport_vehicle_approaching28[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.public_transport_vehicle_approaching28[0].value);
                                     }
                                     
@@ -18971,7 +18971,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001080\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved29[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001080\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved29[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved29[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved29[0].value);
                                     }
                                     
@@ -19002,7 +19002,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001082\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved30[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001082\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved30[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved30[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved30[0].value);
                                     }
                                     
@@ -19033,7 +19033,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001084\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved31[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001084\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved31[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved31[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved31[0].value);
                                     }
                                     
@@ -19064,7 +19064,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001086\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved32[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001086\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved32[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved32[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved32[0].value);
                                     }
                                     
@@ -19095,7 +19095,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001088\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved33[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001088\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved33[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved33[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved33[0].value);
                                     }
                                     
@@ -19126,7 +19126,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001090\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved34[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001090\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved34[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved34[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved34[0].value);
                                     }
                                     
@@ -19157,7 +19157,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001092\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved35[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001092\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved35[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved35[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved35[0].value);
                                     }
                                     
@@ -19188,7 +19188,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001094\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved36[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001094\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved36[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved36[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved36[0].value);
                                     }
                                     
@@ -19219,7 +19219,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001096\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved37[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001096\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved37[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved37[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved37[0].value);
                                     }
                                     
@@ -19250,7 +19250,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001098\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved38[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001098\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved38[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved38[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved38[0].value);
                                     }
                                     
@@ -19281,7 +19281,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001100\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved39[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001100\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved39[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved39[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved39[0].value);
                                     }
                                     
@@ -19312,7 +19312,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001102\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved40[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001102\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved40[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved40[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved40[0].value);
                                     }
                                     
@@ -19343,7 +19343,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001104\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved41[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001104\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved41[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved41[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved41[0].value);
                                     }
                                     
@@ -19374,7 +19374,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001106\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved42[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001106\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved42[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved42[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved42[0].value);
                                     }
                                     
@@ -19405,7 +19405,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001108\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved43[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001108\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved43[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved43[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved43[0].value);
                                     }
                                     
@@ -19436,7 +19436,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001110\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved44[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001110\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved44[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved44[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved44[0].value);
                                     }
                                     
@@ -19467,7 +19467,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001112\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved45[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001112\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved45[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved45[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved45[0].value);
                                     }
                                     
@@ -19498,7 +19498,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001114\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved46[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001114\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved46[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved46[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved46[0].value);
                                     }
                                     
@@ -19529,7 +19529,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001116\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved47[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001116\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved47[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved47[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved47[0].value);
                                     }
                                     
@@ -19560,7 +19560,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001118\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved48[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001118\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved48[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved48[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved48[0].value);
                                     }
                                     
@@ -19591,7 +19591,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001120\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved49[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001120\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved49[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved49[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved49[0].value);
                                     }
                                     
@@ -19622,7 +19622,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001122\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved50[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001122\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved50[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved50[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved50[0].value);
                                     }
                                     
@@ -19653,7 +19653,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001124\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved51[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001124\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved51[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved51[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved51[0].value);
                                     }
                                     
@@ -19684,7 +19684,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001126\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved52[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001126\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved52[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved52[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved52[0].value);
                                     }
                                     
@@ -19715,7 +19715,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001128\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved53[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001128\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved53[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved53[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved53[0].value);
                                     }
                                     
@@ -19746,7 +19746,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001130\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved54[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001130\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved54[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved54[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved54[0].value);
                                     }
                                     
@@ -19777,7 +19777,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001132\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved55[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001132\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved55[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved55[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved55[0].value);
                                     }
                                     
@@ -19808,7 +19808,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001134\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved56[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001134\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved56[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved56[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved56[0].value);
                                     }
                                     
@@ -19839,7 +19839,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001136\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved57[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001136\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved57[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved57[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved57[0].value);
                                     }
                                     
@@ -19870,7 +19870,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001138\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved58[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001138\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved58[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved58[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved58[0].value);
                                     }
                                     
@@ -19901,7 +19901,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001140\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved59[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001140\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved59[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved59[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved59[0].value);
                                     }
                                     
@@ -19932,7 +19932,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001142\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved60[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001142\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved60[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved60[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved60[0].value);
                                     }
                                     
@@ -19963,7 +19963,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001144\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved61[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001144\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved61[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved61[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved61[0].value);
                                     }
                                     
@@ -19994,7 +19994,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001146\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved62[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001146\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved62[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved62[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved62[0].value);
                                     }
                                     
@@ -20025,7 +20025,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001148\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved63[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001148\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved63[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved63[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved63[0].value);
                                     }
                                     
@@ -20056,7 +20056,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001150\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved64[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001150\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved64[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved64[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved64[0].value);
                                     }
                                     
@@ -20087,7 +20087,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001152\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved65[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001152\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved65[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved65[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved65[0].value);
                                     }
                                     
@@ -20118,7 +20118,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001154\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved66[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001154\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved66[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved66[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved66[0].value);
                                     }
                                     
@@ -20149,7 +20149,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001156\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved67[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001156\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved67[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved67[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved67[0].value);
                                     }
                                     
@@ -20180,7 +20180,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001158\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved68[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001158\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved68[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved68[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved68[0].value);
                                     }
                                     
@@ -20211,7 +20211,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001160\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved69[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001160\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved69[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved69[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved69[0].value);
                                     }
                                     
@@ -20242,7 +20242,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001162\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved70[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001162\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved70[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved70[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved70[0].value);
                                     }
                                     
@@ -20273,7 +20273,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001164\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved71[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001164\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved71[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved71[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved71[0].value);
                                     }
                                     
@@ -20304,7 +20304,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001166\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved72[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001166\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved72[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved72[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved72[0].value);
                                     }
                                     
@@ -20335,7 +20335,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001168\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved73[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001168\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved73[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved73[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved73[0].value);
                                     }
                                     
@@ -20366,7 +20366,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001170\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved74[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001170\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved74[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved74[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved74[0].value);
                                     }
                                     
@@ -20397,7 +20397,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001172\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved75[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001172\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved75[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved75[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved75[0].value);
                                     }
                                     
@@ -20428,7 +20428,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001174\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved76[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001174\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved76[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved76[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved76[0].value);
                                     }
                                     
@@ -20459,7 +20459,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001176\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved77[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001176\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved77[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved77[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved77[0].value);
                                     }
                                     
@@ -20490,7 +20490,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001178\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved78[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001178\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved78[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved78[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved78[0].value);
                                     }
                                     
@@ -20521,7 +20521,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001180\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved79[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001180\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved79[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved79[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved79[0].value);
                                     }
                                     
@@ -20552,7 +20552,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001182\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved80[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001182\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved80[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved80[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved80[0].value);
                                     }
                                     
@@ -20583,7 +20583,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001184\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved81[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001184\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved81[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved81[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved81[0].value);
                                     }
                                     
@@ -20614,7 +20614,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001186\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved82[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001186\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved82[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved82[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved82[0].value);
                                     }
                                     
@@ -20645,7 +20645,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001188\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved83[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001188\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved83[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved83[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved83[0].value);
                                     }
                                     
@@ -20676,7 +20676,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001190\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved84[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001190\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved84[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved84[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved84[0].value);
                                     }
                                     
@@ -20707,7 +20707,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001192\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved85[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001192\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved85[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved85[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved85[0].value);
                                     }
                                     
@@ -20738,7 +20738,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001194\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved86[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001194\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved86[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved86[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved86[0].value);
                                     }
                                     
@@ -20769,7 +20769,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001196\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved87[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001196\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved87[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved87[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved87[0].value);
                                     }
                                     
@@ -20800,7 +20800,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001198\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved88[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001198\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved88[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved88[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved88[0].value);
                                     }
                                     
@@ -20831,7 +20831,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001200\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved89[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001200\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved89[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved89[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved89[0].value);
                                     }
                                     
@@ -20862,7 +20862,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001202\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved90[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001202\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved90[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved90[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved90[0].value);
                                     }
                                     
@@ -20893,7 +20893,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001204\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.vehicle_breakdown91[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001204\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.vehicle_breakdown91[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.vehicle_breakdown91[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.vehicle_breakdown91[0].value);
                                     }
                                     
@@ -20924,7 +20924,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001206\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.post_crash92[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001206\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.post_crash92[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.post_crash92[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.post_crash92[0].value);
                                     }
                                     
@@ -20955,7 +20955,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001208\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.human_problem93[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001208\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.human_problem93[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.human_problem93[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.human_problem93[0].value);
                                     }
                                     
@@ -20986,7 +20986,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001210\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.stationary_vehicle94[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001210\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.stationary_vehicle94[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.stationary_vehicle94[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.stationary_vehicle94[0].value);
                                     }
                                     
@@ -21017,7 +21017,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001212\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.emergency_vehicle_approaching95[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001212\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.emergency_vehicle_approaching95[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.emergency_vehicle_approaching95[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.emergency_vehicle_approaching95[0].value);
                                     }
                                     
@@ -21048,7 +21048,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001214\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.hazardous_location_dangerous_curve96[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001214\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.hazardous_location_dangerous_curve96[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.hazardous_location_dangerous_curve96[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.hazardous_location_dangerous_curve96[0].value);
                                     }
                                     
@@ -21079,7 +21079,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001216\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.collision_risk97[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001216\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.collision_risk97[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.collision_risk97[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.collision_risk97[0].value);
                                     }
                                     
@@ -21110,7 +21110,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001218\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.signal_violation98[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001218\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.signal_violation98[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.signal_violation98[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.signal_violation98[0].value);
                                     }
                                     
@@ -21141,7 +21141,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001220\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.dangerous_situation99[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001220\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.dangerous_situation99[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.dangerous_situation99[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.dangerous_situation99[0].value);
                                     }
                                     
@@ -21172,7 +21172,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001222\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.railway_level_crossing100[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001222\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.railway_level_crossing100[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.railway_level_crossing100[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.railway_level_crossing100[0].value);
                                     }
                                     
@@ -21203,7 +21203,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001224\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved101[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001224\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved101[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved101[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved101[0].value);
                                     }
                                     
@@ -21234,7 +21234,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001226\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved102[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001226\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved102[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved102[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved102[0].value);
                                     }
                                     
@@ -21265,7 +21265,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001228\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved103[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001228\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved103[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved103[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved103[0].value);
                                     }
                                     
@@ -21296,7 +21296,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001230\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved104[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001230\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved104[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved104[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved104[0].value);
                                     }
                                     
@@ -21327,7 +21327,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001232\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved105[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001232\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved105[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved105[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved105[0].value);
                                     }
                                     
@@ -21358,7 +21358,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001234\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved106[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001234\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved106[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved106[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved106[0].value);
                                     }
                                     
@@ -21389,7 +21389,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001236\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved107[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001236\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved107[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved107[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved107[0].value);
                                     }
                                     
@@ -21420,7 +21420,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001238\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved108[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001238\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved108[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved108[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved108[0].value);
                                     }
                                     
@@ -21451,7 +21451,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001240\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved109[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001240\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved109[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved109[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved109[0].value);
                                     }
                                     
@@ -21482,7 +21482,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001242\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved110[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001242\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved110[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved110[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved110[0].value);
                                     }
                                     
@@ -21513,7 +21513,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001244\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved111[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001244\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved111[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved111[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved111[0].value);
                                     }
                                     
@@ -21544,7 +21544,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001246\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved112[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001246\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved112[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved112[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved112[0].value);
                                     }
                                     
@@ -21575,7 +21575,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001248\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved113[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001248\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved113[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved113[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved113[0].value);
                                     }
                                     
@@ -21606,7 +21606,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001250\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved114[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001250\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved114[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved114[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved114[0].value);
                                     }
                                     
@@ -21637,7 +21637,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001252\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved115[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001252\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved115[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved115[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved115[0].value);
                                     }
                                     
@@ -21668,7 +21668,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001254\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved116[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001254\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved116[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved116[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved116[0].value);
                                     }
                                     
@@ -21699,7 +21699,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001256\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved117[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001256\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved117[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved117[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved117[0].value);
                                     }
                                     
@@ -21730,7 +21730,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001258\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved118[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001258\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved118[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved118[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved118[0].value);
                                     }
                                     
@@ -21761,7 +21761,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001260\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved119[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001260\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved119[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved119[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved119[0].value);
                                     }
                                     
@@ -21792,7 +21792,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001262\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved120[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001262\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved120[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved120[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved120[0].value);
                                     }
                                     
@@ -21823,7 +21823,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001264\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved121[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001264\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved121[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved121[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved121[0].value);
                                     }
                                     
@@ -21854,7 +21854,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001266\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved122[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001266\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved122[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved122[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved122[0].value);
                                     }
                                     
@@ -21885,7 +21885,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001268\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved123[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001268\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved123[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved123[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved123[0].value);
                                     }
                                     
@@ -21916,7 +21916,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001270\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved124[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001270\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved124[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved124[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved124[0].value);
                                     }
                                     
@@ -21947,7 +21947,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001272\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved125[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001272\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved125[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved125[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved125[0].value);
                                     }
                                     
@@ -21978,7 +21978,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001274\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved126[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001274\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved126[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved126[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved126[0].value);
                                     }
                                     
@@ -22009,7 +22009,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001276\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved127[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001276\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved127[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved127[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved127[0].value);
                                     }
                                     
@@ -22040,7 +22040,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001278\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved128[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001278\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved128[0].value) << 
                                                      " denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved128[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].stationary_cause[0].cc_and_scc.reserved128[0].value);
                                     }
                                     
@@ -22089,21 +22089,21 @@ namespace wind
                                 char* _tmp_866 = (char*) buffer++;
                                 *_tmp_866 = (ros->denm.alacarte[0].stationary_vehicle[0].carrying_dangerous_goods[0].emergency_action_code.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m001279\033[0m| Optional field emergency_action_code = " << *_tmp_866;
+                                    logger->print() << "|\033[38;5;94m001279\033[0m| Optional field emergency_action_code = " << *_tmp_866;
                                 char* _tmp_867 = (char*) buffer++;
                                 *_tmp_867 = (ros->denm.alacarte[0].stationary_vehicle[0].carrying_dangerous_goods[0].phone_number.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m001280\033[0m| Optional field phone_number = " << *_tmp_867;
+                                    logger->print() << "|\033[38;5;94m001280\033[0m| Optional field phone_number = " << *_tmp_867;
                                 char* _tmp_868 = (char*) buffer++;
                                 *_tmp_868 = (ros->denm.alacarte[0].stationary_vehicle[0].carrying_dangerous_goods[0].company_name.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m001281\033[0m| Optional field company_name = " << *_tmp_868;
+                                    logger->print() << "|\033[38;5;94m001281\033[0m| Optional field company_name = " << *_tmp_868;
                                 
                                 // Field:  type(DangerousGoodsBasic) name(dangerous_goods_type) extGroup(0)
                                 // Enumerated
                                 // INT32  min(0) max(19) span(20) dataType(Int32)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m001282\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].carrying_dangerous_goods[0].dangerous_goods_type.value) << 
+                                    logger->print() << "|\033[38;5;94m001282\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].carrying_dangerous_goods[0].dangerous_goods_type.value) << 
                                                  " denm.alacarte[0].stationary_vehicle[0].carrying_dangerous_goods[0].dangerous_goods_type.value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].carrying_dangerous_goods[0].dangerous_goods_type.value);
                                 }
                                 
@@ -22127,7 +22127,7 @@ namespace wind
                                 
                                 // UINT16  min(0) max(9999) span(10000) dataType(UInt16)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m001283\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].carrying_dangerous_goods[0].un_number.value) << 
+                                    logger->print() << "|\033[38;5;94m001283\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].carrying_dangerous_goods[0].un_number.value) << 
                                                  " denm.alacarte[0].stationary_vehicle[0].carrying_dangerous_goods[0].un_number.value: " << ros->denm.alacarte[0].stationary_vehicle[0].carrying_dangerous_goods[0].un_number.value;
                                 }
                                 
@@ -22152,7 +22152,7 @@ namespace wind
                                 uint8_t* _tmp_871 = (uint8_t*)buffer++;
                                 *_tmp_871 = (ros->denm.alacarte[0].stationary_vehicle[0].carrying_dangerous_goods[0].elevated_temperature.value ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m001284\033[0m| denm.alacarte[0].stationary_vehicle[0].carrying_dangerous_goods[0].elevated_temperature: " << (*_tmp_871);
+                                    logger->print() << "|\033[38;5;94m001284\033[0m| denm.alacarte[0].stationary_vehicle[0].carrying_dangerous_goods[0].elevated_temperature: " << (*_tmp_871);
                                 
                                 // Field:  type(DangerousGoodsExtended_tunnelsRestricted) name(tunnels_restricted) extGroup(0)
                                 // Value
@@ -22160,7 +22160,7 @@ namespace wind
                                 uint8_t* _tmp_872 = (uint8_t*)buffer++;
                                 *_tmp_872 = (ros->denm.alacarte[0].stationary_vehicle[0].carrying_dangerous_goods[0].tunnels_restricted.value ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m001285\033[0m| denm.alacarte[0].stationary_vehicle[0].carrying_dangerous_goods[0].tunnels_restricted: " << (*_tmp_872);
+                                    logger->print() << "|\033[38;5;94m001285\033[0m| denm.alacarte[0].stationary_vehicle[0].carrying_dangerous_goods[0].tunnels_restricted: " << (*_tmp_872);
                                 
                                 // Field:  type(DangerousGoodsExtended_limitedQuantity) name(limited_quantity) extGroup(0)
                                 // Value
@@ -22168,7 +22168,7 @@ namespace wind
                                 uint8_t* _tmp_873 = (uint8_t*)buffer++;
                                 *_tmp_873 = (ros->denm.alacarte[0].stationary_vehicle[0].carrying_dangerous_goods[0].limited_quantity.value ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m001286\033[0m| denm.alacarte[0].stationary_vehicle[0].carrying_dangerous_goods[0].limited_quantity: " << (*_tmp_873);
+                                    logger->print() << "|\033[38;5;94m001286\033[0m| denm.alacarte[0].stationary_vehicle[0].carrying_dangerous_goods[0].limited_quantity: " << (*_tmp_873);
                                 
                                 if(ros->denm.alacarte[0].stationary_vehicle[0].carrying_dangerous_goods[0].emergency_action_code.size() != 0) {
                                     // Field:  type(DangerousGoodsExtended_emergencyActionCode) name(emergency_action_code) extGroup(0)
@@ -22187,7 +22187,7 @@ namespace wind
                                         return -1;
                                     }
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m001287\033[0m| denm.alacarte[0].stationary_vehicle[0].carrying_dangerous_goods[0].emergency_action_code[0].value.size(): " << 
+                                        logger->print() << "|\033[38;5;94m001287\033[0m| denm.alacarte[0].stationary_vehicle[0].carrying_dangerous_goods[0].emergency_action_code[0].value.size(): " << 
                                                     static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].carrying_dangerous_goods[0].emergency_action_code[0].value.size());
                                     
                                     if(__aux64__ > 24) __aux64__ = 24;
@@ -22218,7 +22218,7 @@ namespace wind
                                         return -1;
                                     }
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m001288\033[0m| denm.alacarte[0].stationary_vehicle[0].carrying_dangerous_goods[0].phone_number[0].value.size(): " << 
+                                        logger->print() << "|\033[38;5;94m001288\033[0m| denm.alacarte[0].stationary_vehicle[0].carrying_dangerous_goods[0].phone_number[0].value.size(): " << 
                                                     static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].carrying_dangerous_goods[0].phone_number[0].value.size());
                                     
                                     if(__aux64__ > 16) __aux64__ = 16;
@@ -22249,7 +22249,7 @@ namespace wind
                                         return -1;
                                     }
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m001289\033[0m| denm.alacarte[0].stationary_vehicle[0].carrying_dangerous_goods[0].company_name[0].value.size(): " << 
+                                        logger->print() << "|\033[38;5;94m001289\033[0m| denm.alacarte[0].stationary_vehicle[0].carrying_dangerous_goods[0].company_name[0].value.size(): " << 
                                                     static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].carrying_dangerous_goods[0].company_name[0].value.size());
                                     
                                     if(__aux64__ > 24) __aux64__ = 24;
@@ -22273,7 +22273,7 @@ namespace wind
                             
                             // UINT8  min(0) max(127) span(128) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m001290\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].number_of_occupants[0].value) << 
+                                logger->print() << "|\033[38;5;94m001290\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].stationary_vehicle[0].number_of_occupants[0].value) << 
                                              " denm.alacarte[0].stationary_vehicle[0].number_of_occupants[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].number_of_occupants[0].value);
                             }
                             
@@ -22306,11 +22306,11 @@ namespace wind
                                 char* _tmp_879 = (char*) buffer++;
                                 *_tmp_879 = (ros->denm.alacarte[0].stationary_vehicle[0].vehicle_identification[0].w_m_inumber.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m001291\033[0m| Optional field w_m_inumber = " << *_tmp_879;
+                                    logger->print() << "|\033[38;5;94m001291\033[0m| Optional field w_m_inumber = " << *_tmp_879;
                                 char* _tmp_880 = (char*) buffer++;
                                 *_tmp_880 = (ros->denm.alacarte[0].stationary_vehicle[0].vehicle_identification[0].v_ds.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m001292\033[0m| Optional field v_ds = " << *_tmp_880;
+                                    logger->print() << "|\033[38;5;94m001292\033[0m| Optional field v_ds = " << *_tmp_880;
                                 
                                 if(ros->denm.alacarte[0].stationary_vehicle[0].vehicle_identification[0].w_m_inumber.size() != 0) {
                                     // Field:  type(WMInumber) name(w_m_inumber) extGroup(0)
@@ -22329,7 +22329,7 @@ namespace wind
                                         return -1;
                                     }
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m001293\033[0m| denm.alacarte[0].stationary_vehicle[0].vehicle_identification[0].w_m_inumber[0].value.size(): " << 
+                                        logger->print() << "|\033[38;5;94m001293\033[0m| denm.alacarte[0].stationary_vehicle[0].vehicle_identification[0].w_m_inumber[0].value.size(): " << 
                                                     static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].vehicle_identification[0].w_m_inumber[0].value.size());
                                     
                                     if(__aux64__ > 3) __aux64__ = 3;
@@ -22360,7 +22360,7 @@ namespace wind
                                         return -1;
                                     }
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m001294\033[0m| denm.alacarte[0].stationary_vehicle[0].vehicle_identification[0].v_ds[0].value.size(): " << 
+                                        logger->print() << "|\033[38;5;94m001294\033[0m| denm.alacarte[0].stationary_vehicle[0].vehicle_identification[0].v_ds[0].value.size(): " << 
                                                     static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].vehicle_identification[0].v_ds[0].value.size());
                                     
                                     if(__aux64__ > 6) __aux64__ = 6;
@@ -22383,7 +22383,7 @@ namespace wind
                             // BitString
                             // BIT_STRING  min(7) max(7) span(1)
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m001295\033[0m| denm.alacarte[0].stationary_vehicle[0].energy_storage_type[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].energy_storage_type[0].values.size());
+                                logger->print() << "|\033[38;5;94m001295\033[0m| denm.alacarte[0].stationary_vehicle[0].energy_storage_type[0].value: " << static_cast<int>(ros->denm.alacarte[0].stationary_vehicle[0].energy_storage_type[0].values.size());
                             
                             if(ros->denm.alacarte[0].stationary_vehicle[0].energy_storage_type[0].values.size() < 7) {
                                     logger->warning() << "Error: Value in 'denm.alacarte[0].stationary_vehicle[0].energy_storage_type[0].value' " << (ros->denm.alacarte[0].stationary_vehicle[0].energy_storage_type[0].values.size()) << " is less than allowable (7); message dropped.";
@@ -22454,13 +22454,13 @@ namespace wind
                                 char* _tmp_891 = (char*) buffer++;
                                 *_tmp_891 = (ros->denm.alacarte[0].road_configuration[0].road_configuration_confidence.confidence_value.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m001296\033[0m| Optional field confidence_value = " << *_tmp_891;
+                                    logger->print() << "|\033[38;5;94m001296\033[0m| Optional field confidence_value = " << *_tmp_891;
                                 
                                 // Field:  type(SensorTypes) name(used_detection_information) extGroup(0)
                                 // BitString
                                 // BIT_STRING  min(16) max(16) span(1)
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m001297\033[0m| denm.alacarte[0].road_configuration[0].road_configuration_confidence.used_detection_information.value: " << static_cast<int>(ros->denm.alacarte[0].road_configuration[0].road_configuration_confidence.used_detection_information.values.size());
+                                    logger->print() << "|\033[38;5;94m001297\033[0m| denm.alacarte[0].road_configuration[0].road_configuration_confidence.used_detection_information.value: " << static_cast<int>(ros->denm.alacarte[0].road_configuration[0].road_configuration_confidence.used_detection_information.values.size());
                                 
                                 if(ros->denm.alacarte[0].road_configuration[0].road_configuration_confidence.used_detection_information.values.size() < 16) {
                                         logger->warning() << "Error: Value in 'denm.alacarte[0].road_configuration[0].road_configuration_confidence.used_detection_information.value' " << (ros->denm.alacarte[0].road_configuration[0].road_configuration_confidence.used_detection_information.values.size()) << " is less than allowable (16); message dropped.";
@@ -22490,7 +22490,7 @@ namespace wind
                                 // BitString
                                 // BIT_STRING  min(1) max(168) span(168)
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m001298\033[0m| denm.alacarte[0].road_configuration[0].road_configuration_confidence.used_stored_information.value: " << static_cast<int>(ros->denm.alacarte[0].road_configuration[0].road_configuration_confidence.used_stored_information.values.size());
+                                    logger->print() << "|\033[38;5;94m001298\033[0m| denm.alacarte[0].road_configuration[0].road_configuration_confidence.used_stored_information.value: " << static_cast<int>(ros->denm.alacarte[0].road_configuration[0].road_configuration_confidence.used_stored_information.values.size());
                                 
                                 if(ros->denm.alacarte[0].road_configuration[0].road_configuration_confidence.used_stored_information.values.size() < 1) {
                                         logger->warning() << "Error: Value in 'denm.alacarte[0].road_configuration[0].road_configuration_confidence.used_stored_information.value' " << (ros->denm.alacarte[0].road_configuration[0].road_configuration_confidence.used_stored_information.values.size()) << " is less than allowable (1); message dropped.";
@@ -22522,7 +22522,7 @@ namespace wind
                                     
                                     // UINT8  min(1) max(101) span(101) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001299\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_configuration[0].road_configuration_confidence.confidence_value[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001299\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_configuration[0].road_configuration_confidence.confidence_value[0].value) << 
                                                      " denm.alacarte[0].road_configuration[0].road_configuration_confidence.confidence_value[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_configuration[0].road_configuration_confidence.confidence_value[0].value);
                                     }
                                     
@@ -22575,15 +22575,15 @@ namespace wind
                                     char* _tmp_897 = (char*) buffer++;
                                     *_tmp_897 = (ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].road_type.size() != 0 ? 1 : 0);
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m001301\033[0m| Optional field road_type = " << *_tmp_897;
+                                        logger->print() << "|\033[38;5;94m001301\033[0m| Optional field road_type = " << *_tmp_897;
                                     char* _tmp_898 = (char*) buffer++;
                                     *_tmp_898 = (ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].lane_configuration.size() != 0 ? 1 : 0);
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m001302\033[0m| Optional field lane_configuration = " << *_tmp_898;
+                                        logger->print() << "|\033[38;5;94m001302\033[0m| Optional field lane_configuration = " << *_tmp_898;
                                     char* _tmp_899 = (char*) buffer++;
                                     *_tmp_899 = (ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].mapem_configuration.size() != 0 ? 1 : 0);
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m001303\033[0m| Optional field mapem_configuration = " << *_tmp_899;
+                                        logger->print() << "|\033[38;5;94m001303\033[0m| Optional field mapem_configuration = " << *_tmp_899;
                                     
                                     // Field:  type(RoadSectionDefinition) name(road_section_definition) extGroup(0)
                                         // RoadSectionDefinition  SEQUENCE
@@ -22602,11 +22602,11 @@ namespace wind
                                         char* _tmp_900 = (char*) buffer++;
                                         *_tmp_900 = (ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].road_section_definition.length_of_section.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m001304\033[0m| Optional field length_of_section = " << *_tmp_900;
+                                            logger->print() << "|\033[38;5;94m001304\033[0m| Optional field length_of_section = " << *_tmp_900;
                                         char* _tmp_901 = (char*) buffer++;
                                         *_tmp_901 = (ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].road_section_definition.ending_point_section.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m001305\033[0m| Optional field ending_point_section = " << *_tmp_901;
+                                            logger->print() << "|\033[38;5;94m001305\033[0m| Optional field ending_point_section = " << *_tmp_901;
                                         
                                         // Field:  type(GeoPosition) name(starting_point_section) extGroup(0)
                                             // GeoPosition  SEQUENCE
@@ -22620,7 +22620,7 @@ namespace wind
                                             
                                             // DOUBLE  min(-900000000) max(900000001) span(1800000002) scaleDivisor(1.0E7) dataType(Double)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m001306\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].road_section_definition.starting_point_section.latitude.value) << 
+                                                logger->print() << "|\033[38;5;94m001306\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].road_section_definition.starting_point_section.latitude.value) << 
                                                              " denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].road_section_definition.starting_point_section.latitude.value: " << ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].road_section_definition.starting_point_section.latitude.value;
                                             }
                                             
@@ -22647,7 +22647,7 @@ namespace wind
                                             
                                             // DOUBLE  min(-1800000000) max(1800000001) span(3600000002) scaleDivisor(1.0E7) dataType(Double)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m001307\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].road_section_definition.starting_point_section.longitude.value) << 
+                                                logger->print() << "|\033[38;5;94m001307\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].road_section_definition.starting_point_section.longitude.value) << 
                                                              " denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].road_section_definition.starting_point_section.longitude.value: " << ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].road_section_definition.starting_point_section.longitude.value;
                                             }
                                             
@@ -22674,7 +22674,7 @@ namespace wind
                                             
                                             // FLOAT  min(-100000) max(800001) span(900002) scaleDivisor(100.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m001308\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].road_section_definition.starting_point_section.altitude.value) << 
+                                                logger->print() << "|\033[38;5;94m001308\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].road_section_definition.starting_point_section.altitude.value) << 
                                                              " denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].road_section_definition.starting_point_section.altitude.value: " << ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].road_section_definition.starting_point_section.altitude.value;
                                             }
                                             
@@ -22702,7 +22702,7 @@ namespace wind
                                             
                                             // FLOAT  min(0) max(65535) span(65536) scaleDivisor(10.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m001309\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].road_section_definition.length_of_section[0].value) << 
+                                                logger->print() << "|\033[38;5;94m001309\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].road_section_definition.length_of_section[0].value) << 
                                                              " denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].road_section_definition.length_of_section[0].value: " << ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].road_section_definition.length_of_section[0].value;
                                             }
                                             
@@ -22737,7 +22737,7 @@ namespace wind
                                                 
                                                 // DOUBLE  min(-900000000) max(900000001) span(1800000002) scaleDivisor(1.0E7) dataType(Double)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m001310\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].road_section_definition.ending_point_section[0].latitude.value) << 
+                                                    logger->print() << "|\033[38;5;94m001310\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].road_section_definition.ending_point_section[0].latitude.value) << 
                                                                  " denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].road_section_definition.ending_point_section[0].latitude.value: " << ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].road_section_definition.ending_point_section[0].latitude.value;
                                                 }
                                                 
@@ -22764,7 +22764,7 @@ namespace wind
                                                 
                                                 // DOUBLE  min(-1800000000) max(1800000001) span(3600000002) scaleDivisor(1.0E7) dataType(Double)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m001311\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].road_section_definition.ending_point_section[0].longitude.value) << 
+                                                    logger->print() << "|\033[38;5;94m001311\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].road_section_definition.ending_point_section[0].longitude.value) << 
                                                                  " denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].road_section_definition.ending_point_section[0].longitude.value: " << ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].road_section_definition.ending_point_section[0].longitude.value;
                                                 }
                                                 
@@ -22791,7 +22791,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(-100000) max(800001) span(900002) scaleDivisor(100.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m001312\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].road_section_definition.ending_point_section[0].altitude.value) << 
+                                                    logger->print() << "|\033[38;5;94m001312\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].road_section_definition.ending_point_section[0].altitude.value) << 
                                                                  " denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].road_section_definition.ending_point_section[0].altitude.value: " << ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].road_section_definition.ending_point_section[0].altitude.value;
                                                 }
                                                 
@@ -22831,7 +22831,7 @@ namespace wind
                                             
                                             // UINT8  min(0) max(14) span(15) dataType(UInt8)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m001314\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].road_section_definition.connected_paths.elements[i].value) << 
+                                                logger->print() << "|\033[38;5;94m001314\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].road_section_definition.connected_paths.elements[i].value) << 
                                                              " denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].road_section_definition.connected_paths.elements[i].value: " << static_cast<int>(ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].road_section_definition.connected_paths.elements[i].value);
                                             }
                                             
@@ -22869,7 +22869,7 @@ namespace wind
                                             
                                             // UINT8  min(0) max(14) span(15) dataType(UInt8)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m001316\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].road_section_definition.included_paths.elements[j].value) << 
+                                                logger->print() << "|\033[38;5;94m001316\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].road_section_definition.included_paths.elements[j].value) << 
                                                              " denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].road_section_definition.included_paths.elements[j].value: " << static_cast<int>(ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].road_section_definition.included_paths.elements[j].value);
                                             }
                                             
@@ -22896,7 +22896,7 @@ namespace wind
                                         uint8_t* _tmp_920 = (uint8_t*)buffer++;
                                         *_tmp_920 = (ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].road_section_definition.is_event_zone_included.value ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m001317\033[0m| denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].road_section_definition.is_event_zone_included: " << (*_tmp_920);
+                                            logger->print() << "|\033[38;5;94m001317\033[0m| denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].road_section_definition.is_event_zone_included: " << (*_tmp_920);
                                         
                                         // Field:  type(RoadSectionDefinition_isEventZoneConnected) name(is_event_zone_connected) extGroup(0)
                                         // Value
@@ -22904,7 +22904,7 @@ namespace wind
                                         uint8_t* _tmp_921 = (uint8_t*)buffer++;
                                         *_tmp_921 = (ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].road_section_definition.is_event_zone_connected.value ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m001318\033[0m| denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].road_section_definition.is_event_zone_connected: " << (*_tmp_921);
+                                            logger->print() << "|\033[38;5;94m001318\033[0m| denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].road_section_definition.is_event_zone_connected: " << (*_tmp_921);
                                         
                                         if(*_ext_flag_722) {
                                         }
@@ -22914,7 +22914,7 @@ namespace wind
                                         // Enumerated
                                         // INT32  min(0) max(3) span(4) dataType(Int32)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m001319\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].road_type[0].value) << 
+                                            logger->print() << "|\033[38;5;94m001319\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].road_type[0].value) << 
                                                          " denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].road_type[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].road_type[0].value);
                                         }
                                         
@@ -22965,22 +22965,22 @@ namespace wind
                                                 char* _tmp_925 = (char*) buffer++;
                                                 *_tmp_925 = (ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].lane_configuration[0].elements[k].lane_width.size() != 0 ? 1 : 0);
                                                 if(debug)
-                                                    logger->debug() << "|\033[38;5;94m001321\033[0m| Optional field lane_width = " << *_tmp_925;
+                                                    logger->print() << "|\033[38;5;94m001321\033[0m| Optional field lane_width = " << *_tmp_925;
                                                 char* _tmp_926 = (char*) buffer++;
                                                 *_tmp_926 = (ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].lane_configuration[0].elements[k].connecting_lane.size() != 0 ? 1 : 0);
                                                 if(debug)
-                                                    logger->debug() << "|\033[38;5;94m001322\033[0m| Optional field connecting_lane = " << *_tmp_926;
+                                                    logger->print() << "|\033[38;5;94m001322\033[0m| Optional field connecting_lane = " << *_tmp_926;
                                                 char* _tmp_927 = (char*) buffer++;
                                                 *_tmp_927 = (ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].lane_configuration[0].elements[k].connecting_road_section.size() != 0 ? 1 : 0);
                                                 if(debug)
-                                                    logger->debug() << "|\033[38;5;94m001323\033[0m| Optional field connecting_road_section = " << *_tmp_927;
+                                                    logger->print() << "|\033[38;5;94m001323\033[0m| Optional field connecting_road_section = " << *_tmp_927;
                                                 
                                                 // Field:  type(LanePosition) name(lane_number) extGroup(0)
                                                 // Integer
                                                 
                                                 // INT8  min(-1) max(14) span(16) dataType(Int8)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m001324\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].lane_configuration[0].elements[k].lane_number.value) << 
+                                                    logger->print() << "|\033[38;5;94m001324\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].lane_configuration[0].elements[k].lane_number.value) << 
                                                                  " denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].lane_configuration[0].elements[k].lane_number.value: " << static_cast<int>(ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].lane_configuration[0].elements[k].lane_number.value);
                                                 }
                                                 
@@ -23005,7 +23005,7 @@ namespace wind
                                                 
                                                 // UINT8  min(0) max(3) span(4) dataType(UInt8)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m001325\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].lane_configuration[0].elements[k].direction.value) << 
+                                                    logger->print() << "|\033[38;5;94m001325\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].lane_configuration[0].elements[k].direction.value) << 
                                                                  " denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].lane_configuration[0].elements[k].direction.value: " << static_cast<int>(ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].lane_configuration[0].elements[k].direction.value);
                                                 }
                                                 
@@ -23030,7 +23030,7 @@ namespace wind
                                                     
                                                     // FLOAT  min(0) max(1023) span(1024) scaleDivisor(100.0) dataType(Float)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m001326\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].lane_configuration[0].elements[k].lane_width[0].value) << 
+                                                        logger->print() << "|\033[38;5;94m001326\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].lane_configuration[0].elements[k].lane_width[0].value) << 
                                                                      " denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].lane_configuration[0].elements[k].lane_width[0].value: " << ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].lane_configuration[0].elements[k].lane_width[0].value;
                                                     }
                                                     
@@ -23058,7 +23058,7 @@ namespace wind
                                                     
                                                     // INT8  min(-1) max(14) span(16) dataType(Int8)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m001327\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].lane_configuration[0].elements[k].connecting_lane[0].value) << 
+                                                        logger->print() << "|\033[38;5;94m001327\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].lane_configuration[0].elements[k].connecting_lane[0].value) << 
                                                                      " denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].lane_configuration[0].elements[k].connecting_lane[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].lane_configuration[0].elements[k].connecting_lane[0].value);
                                                     }
                                                     
@@ -23085,7 +23085,7 @@ namespace wind
                                                     
                                                     // UINT8  min(0) max(8) span(9) dataType(UInt8)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m001328\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].lane_configuration[0].elements[k].connecting_road_section[0].value) << 
+                                                        logger->print() << "|\033[38;5;94m001328\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].lane_configuration[0].elements[k].connecting_road_section[0].value) << 
                                                                      " denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].lane_configuration[0].elements[k].connecting_road_section[0].value: " << static_cast<int>(ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].lane_configuration[0].elements[k].connecting_road_section[0].value);
                                                     }
                                                     
@@ -23152,15 +23152,15 @@ namespace wind
                                                 char* _tmp_937 = (char*) buffer++;
                                                 *_tmp_937 = (ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].mapem_configuration[0].elements[l].map_reference.size() != 0 ? 1 : 0);
                                                 if(debug)
-                                                    logger->debug() << "|\033[38;5;94m001330\033[0m| Optional field map_reference = " << *_tmp_937;
+                                                    logger->print() << "|\033[38;5;94m001330\033[0m| Optional field map_reference = " << *_tmp_937;
                                                 char* _tmp_938 = (char*) buffer++;
                                                 *_tmp_938 = (ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].mapem_configuration[0].elements[l].lane_ids.size() != 0 ? 1 : 0);
                                                 if(debug)
-                                                    logger->debug() << "|\033[38;5;94m001331\033[0m| Optional field lane_ids = " << *_tmp_938;
+                                                    logger->print() << "|\033[38;5;94m001331\033[0m| Optional field lane_ids = " << *_tmp_938;
                                                 char* _tmp_939 = (char*) buffer++;
                                                 *_tmp_939 = (ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].mapem_configuration[0].elements[l].connection_ids.size() != 0 ? 1 : 0);
                                                 if(debug)
-                                                    logger->debug() << "|\033[38;5;94m001332\033[0m| Optional field connection_ids = " << *_tmp_939;
+                                                    logger->print() << "|\033[38;5;94m001332\033[0m| Optional field connection_ids = " << *_tmp_939;
                                                 
                                                 if(ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].mapem_configuration[0].elements[l].map_reference.size() != 0) {
                                                     // Field:  type(MapReference) name(map_reference) extGroup(0)
@@ -23183,7 +23183,7 @@ namespace wind
                                                             char* _tmp_940 = (char*) buffer++;
                                                             *_tmp_940 = (ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].mapem_configuration[0].elements[l].map_reference[0].roadsegment[0].region.size() != 0 ? 1 : 0);
                                                             if(debug)
-                                                                logger->debug() << "|\033[38;5;94m001334\033[0m| Optional field region = " << *_tmp_940;
+                                                                logger->print() << "|\033[38;5;94m001334\033[0m| Optional field region = " << *_tmp_940;
                                                             
                                                             if(ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].mapem_configuration[0].elements[l].map_reference[0].roadsegment[0].region.size() != 0) {
                                                                 // Field:  type(Identifier2B) name(region) extGroup(0)
@@ -23191,7 +23191,7 @@ namespace wind
                                                                 
                                                                 // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m001335\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].mapem_configuration[0].elements[l].map_reference[0].roadsegment[0].region[0].value) << 
+                                                                    logger->print() << "|\033[38;5;94m001335\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].mapem_configuration[0].elements[l].map_reference[0].roadsegment[0].region[0].value) << 
                                                                                  " denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].mapem_configuration[0].elements[l].map_reference[0].roadsegment[0].region[0].value: " << ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].mapem_configuration[0].elements[l].map_reference[0].roadsegment[0].region[0].value;
                                                                 }
                                                                 
@@ -23216,7 +23216,7 @@ namespace wind
                                                             
                                                             // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m001336\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].mapem_configuration[0].elements[l].map_reference[0].roadsegment[0].id.value) << 
+                                                                logger->print() << "|\033[38;5;94m001336\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].mapem_configuration[0].elements[l].map_reference[0].roadsegment[0].id.value) << 
                                                                              " denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].mapem_configuration[0].elements[l].map_reference[0].roadsegment[0].id.value: " << ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].mapem_configuration[0].elements[l].map_reference[0].roadsegment[0].id.value;
                                                             }
                                                             
@@ -23250,7 +23250,7 @@ namespace wind
                                                             char* _tmp_943 = (char*) buffer++;
                                                             *_tmp_943 = (ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].mapem_configuration[0].elements[l].map_reference[0].intersection[0].region.size() != 0 ? 1 : 0);
                                                             if(debug)
-                                                                logger->debug() << "|\033[38;5;94m001338\033[0m| Optional field region = " << *_tmp_943;
+                                                                logger->print() << "|\033[38;5;94m001338\033[0m| Optional field region = " << *_tmp_943;
                                                             
                                                             if(ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].mapem_configuration[0].elements[l].map_reference[0].intersection[0].region.size() != 0) {
                                                                 // Field:  type(Identifier2B) name(region) extGroup(0)
@@ -23258,7 +23258,7 @@ namespace wind
                                                                 
                                                                 // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m001339\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].mapem_configuration[0].elements[l].map_reference[0].intersection[0].region[0].value) << 
+                                                                    logger->print() << "|\033[38;5;94m001339\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].mapem_configuration[0].elements[l].map_reference[0].intersection[0].region[0].value) << 
                                                                                  " denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].mapem_configuration[0].elements[l].map_reference[0].intersection[0].region[0].value: " << ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].mapem_configuration[0].elements[l].map_reference[0].intersection[0].region[0].value;
                                                                 }
                                                                 
@@ -23283,7 +23283,7 @@ namespace wind
                                                             
                                                             // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m001340\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].mapem_configuration[0].elements[l].map_reference[0].intersection[0].id.value) << 
+                                                                logger->print() << "|\033[38;5;94m001340\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].mapem_configuration[0].elements[l].map_reference[0].intersection[0].id.value) << 
                                                                              " denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].mapem_configuration[0].elements[l].map_reference[0].intersection[0].id.value: " << ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].mapem_configuration[0].elements[l].map_reference[0].intersection[0].id.value;
                                                             }
                                                             
@@ -23331,7 +23331,7 @@ namespace wind
                                                         
                                                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                         if(debug) {
-                                                            logger->debug() << "|\033[38;5;94m001342\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].mapem_configuration[0].elements[l].lane_ids[0].elements[m].value) << 
+                                                            logger->print() << "|\033[38;5;94m001342\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].mapem_configuration[0].elements[l].lane_ids[0].elements[m].value) << 
                                                                          " denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].mapem_configuration[0].elements[l].lane_ids[0].elements[m].value: " << static_cast<int>(ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].mapem_configuration[0].elements[l].lane_ids[0].elements[m].value);
                                                         }
                                                         
@@ -23374,7 +23374,7 @@ namespace wind
                                                         
                                                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                         if(debug) {
-                                                            logger->debug() << "|\033[38;5;94m001344\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].mapem_configuration[0].elements[l].connection_ids[0].elements[n].value) << 
+                                                            logger->print() << "|\033[38;5;94m001344\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].mapem_configuration[0].elements[l].connection_ids[0].elements[n].value) << 
                                                                          " denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].mapem_configuration[0].elements[l].connection_ids[0].elements[n].value: " << static_cast<int>(ros->denm.alacarte[0].road_configuration[0].road_configuration_section_list.elements[h].mapem_configuration[0].elements[l].connection_ids[0].elements[n].value);
                                                         }
                                                         
@@ -23425,19 +23425,19 @@ namespace wind
                             char* _tmp_953 = (char*) buffer++;
                             *_tmp_953 = (ros->denm.alacarte[0].precrash[0].object_station_id.size() != 0 ? 1 : 0);
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m001345\033[0m| Optional field object_station_id = " << *_tmp_953;
+                                logger->print() << "|\033[38;5;94m001345\033[0m| Optional field object_station_id = " << *_tmp_953;
                             char* _tmp_954 = (char*) buffer++;
                             *_tmp_954 = (ros->denm.alacarte[0].precrash[0].time_to_collision.size() != 0 ? 1 : 0);
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m001346\033[0m| Optional field time_to_collision = " << *_tmp_954;
+                                logger->print() << "|\033[38;5;94m001346\033[0m| Optional field time_to_collision = " << *_tmp_954;
                             char* _tmp_955 = (char*) buffer++;
                             *_tmp_955 = (ros->denm.alacarte[0].precrash[0].impact_section.size() != 0 ? 1 : 0);
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m001347\033[0m| Optional field impact_section = " << *_tmp_955;
+                                logger->print() << "|\033[38;5;94m001347\033[0m| Optional field impact_section = " << *_tmp_955;
                             char* _tmp_956 = (char*) buffer++;
                             *_tmp_956 = (ros->denm.alacarte[0].precrash[0].estimated_braking_distance.size() != 0 ? 1 : 0);
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m001348\033[0m| Optional field estimated_braking_distance = " << *_tmp_956;
+                                logger->print() << "|\033[38;5;94m001348\033[0m| Optional field estimated_braking_distance = " << *_tmp_956;
                             
                             // Field:  type(PerceivedObject) name(perceived_pre_crash_object) extGroup(0)
                                 // PerceivedObject  SEQUENCE
@@ -23465,59 +23465,59 @@ namespace wind
                                 char* _tmp_957 = (char*) buffer++;
                                 *_tmp_957 = (ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.object_id.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m001349\033[0m| Optional field object_id = " << *_tmp_957;
+                                    logger->print() << "|\033[38;5;94m001349\033[0m| Optional field object_id = " << *_tmp_957;
                                 char* _tmp_958 = (char*) buffer++;
                                 *_tmp_958 = (ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.velocity.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m001350\033[0m| Optional field velocity = " << *_tmp_958;
+                                    logger->print() << "|\033[38;5;94m001350\033[0m| Optional field velocity = " << *_tmp_958;
                                 char* _tmp_959 = (char*) buffer++;
                                 *_tmp_959 = (ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.acceleration.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m001351\033[0m| Optional field acceleration = " << *_tmp_959;
+                                    logger->print() << "|\033[38;5;94m001351\033[0m| Optional field acceleration = " << *_tmp_959;
                                 char* _tmp_960 = (char*) buffer++;
                                 *_tmp_960 = (ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.angles.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m001352\033[0m| Optional field angles = " << *_tmp_960;
+                                    logger->print() << "|\033[38;5;94m001352\033[0m| Optional field angles = " << *_tmp_960;
                                 char* _tmp_961 = (char*) buffer++;
                                 *_tmp_961 = (ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.z_angular_velocity.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m001353\033[0m| Optional field z_angular_velocity = " << *_tmp_961;
+                                    logger->print() << "|\033[38;5;94m001353\033[0m| Optional field z_angular_velocity = " << *_tmp_961;
                                 char* _tmp_962 = (char*) buffer++;
                                 *_tmp_962 = (ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.lower_triangular_correlation_matrices.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m001354\033[0m| Optional field lower_triangular_correlation_matrices = " << *_tmp_962;
+                                    logger->print() << "|\033[38;5;94m001354\033[0m| Optional field lower_triangular_correlation_matrices = " << *_tmp_962;
                                 char* _tmp_963 = (char*) buffer++;
                                 *_tmp_963 = (ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.object_dimension_z.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m001355\033[0m| Optional field object_dimension_z = " << *_tmp_963;
+                                    logger->print() << "|\033[38;5;94m001355\033[0m| Optional field object_dimension_z = " << *_tmp_963;
                                 char* _tmp_964 = (char*) buffer++;
                                 *_tmp_964 = (ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.object_dimension_y.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m001356\033[0m| Optional field object_dimension_y = " << *_tmp_964;
+                                    logger->print() << "|\033[38;5;94m001356\033[0m| Optional field object_dimension_y = " << *_tmp_964;
                                 char* _tmp_965 = (char*) buffer++;
                                 *_tmp_965 = (ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.object_dimension_x.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m001357\033[0m| Optional field object_dimension_x = " << *_tmp_965;
+                                    logger->print() << "|\033[38;5;94m001357\033[0m| Optional field object_dimension_x = " << *_tmp_965;
                                 char* _tmp_966 = (char*) buffer++;
                                 *_tmp_966 = (ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.object_age.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m001358\033[0m| Optional field object_age = " << *_tmp_966;
+                                    logger->print() << "|\033[38;5;94m001358\033[0m| Optional field object_age = " << *_tmp_966;
                                 char* _tmp_967 = (char*) buffer++;
                                 *_tmp_967 = (ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.object_perception_quality.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m001359\033[0m| Optional field object_perception_quality = " << *_tmp_967;
+                                    logger->print() << "|\033[38;5;94m001359\033[0m| Optional field object_perception_quality = " << *_tmp_967;
                                 char* _tmp_968 = (char*) buffer++;
                                 *_tmp_968 = (ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.sensor_id_list.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m001360\033[0m| Optional field sensor_id_list = " << *_tmp_968;
+                                    logger->print() << "|\033[38;5;94m001360\033[0m| Optional field sensor_id_list = " << *_tmp_968;
                                 char* _tmp_969 = (char*) buffer++;
                                 *_tmp_969 = (ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m001361\033[0m| Optional field classification = " << *_tmp_969;
+                                    logger->print() << "|\033[38;5;94m001361\033[0m| Optional field classification = " << *_tmp_969;
                                 char* _tmp_970 = (char*) buffer++;
                                 *_tmp_970 = (ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.map_position.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m001362\033[0m| Optional field map_position = " << *_tmp_970;
+                                    logger->print() << "|\033[38;5;94m001362\033[0m| Optional field map_position = " << *_tmp_970;
                                 
                                 if(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.object_id.size() != 0) {
                                     // Field:  type(Identifier2B) name(object_id) extGroup(0)
@@ -23525,7 +23525,7 @@ namespace wind
                                     
                                     // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001363\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.object_id[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001363\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.object_id[0].value) << 
                                                      " denm.alacarte[0].precrash[0].perceived_pre_crash_object.object_id[0].value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.object_id[0].value;
                                     }
                                     
@@ -23550,7 +23550,7 @@ namespace wind
                                 
                                 // FLOAT  min(-2048) max(2047) span(4096) scaleDivisor(1000.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m001364\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.measurement_delta_time.value) << 
+                                    logger->print() << "|\033[38;5;94m001364\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.measurement_delta_time.value) << 
                                                  " denm.alacarte[0].precrash[0].perceived_pre_crash_object.measurement_delta_time.value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.measurement_delta_time.value;
                                 }
                                 
@@ -23581,7 +23581,7 @@ namespace wind
                                     char* _tmp_974 = (char*) buffer++;
                                     *_tmp_974 = (ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.position.z_coordinate.size() != 0 ? 1 : 0);
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m001365\033[0m| Optional field z_coordinate = " << *_tmp_974;
+                                        logger->print() << "|\033[38;5;94m001365\033[0m| Optional field z_coordinate = " << *_tmp_974;
                                     
                                     // Field:  type(CartesianCoordinateWithConfidence) name(x_coordinate) extGroup(0)
                                         // CartesianCoordinateWithConfidence  SEQUENCE
@@ -23594,7 +23594,7 @@ namespace wind
                                         
                                         // FLOAT  min(-131072) max(131071) span(262144) scaleDivisor(100.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m001366\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.position.x_coordinate.value.value) << 
+                                            logger->print() << "|\033[38;5;94m001366\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.position.x_coordinate.value.value) << 
                                                          " denm.alacarte[0].precrash[0].perceived_pre_crash_object.position.x_coordinate.value.value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.position.x_coordinate.value.value;
                                         }
                                         
@@ -23621,7 +23621,7 @@ namespace wind
                                         
                                         // FLOAT  min(1) max(4096) span(4096) scaleDivisor(100.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m001367\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.position.x_coordinate.confidence.value) << 
+                                            logger->print() << "|\033[38;5;94m001367\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.position.x_coordinate.confidence.value) << 
                                                          " denm.alacarte[0].precrash[0].perceived_pre_crash_object.position.x_coordinate.confidence.value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.position.x_coordinate.confidence.value;
                                         }
                                         
@@ -23654,7 +23654,7 @@ namespace wind
                                         
                                         // FLOAT  min(-131072) max(131071) span(262144) scaleDivisor(100.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m001368\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.position.y_coordinate.value.value) << 
+                                            logger->print() << "|\033[38;5;94m001368\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.position.y_coordinate.value.value) << 
                                                          " denm.alacarte[0].precrash[0].perceived_pre_crash_object.position.y_coordinate.value.value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.position.y_coordinate.value.value;
                                         }
                                         
@@ -23681,7 +23681,7 @@ namespace wind
                                         
                                         // FLOAT  min(1) max(4096) span(4096) scaleDivisor(100.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m001369\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.position.y_coordinate.confidence.value) << 
+                                            logger->print() << "|\033[38;5;94m001369\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.position.y_coordinate.confidence.value) << 
                                                          " denm.alacarte[0].precrash[0].perceived_pre_crash_object.position.y_coordinate.confidence.value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.position.y_coordinate.confidence.value;
                                         }
                                         
@@ -23715,7 +23715,7 @@ namespace wind
                                             
                                             // FLOAT  min(-131072) max(131071) span(262144) scaleDivisor(100.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m001370\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.position.z_coordinate[0].value.value) << 
+                                                logger->print() << "|\033[38;5;94m001370\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.position.z_coordinate[0].value.value) << 
                                                              " denm.alacarte[0].precrash[0].perceived_pre_crash_object.position.z_coordinate[0].value.value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.position.z_coordinate[0].value.value;
                                             }
                                             
@@ -23742,7 +23742,7 @@ namespace wind
                                             
                                             // FLOAT  min(1) max(4096) span(4096) scaleDivisor(100.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m001371\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.position.z_coordinate[0].confidence.value) << 
+                                                logger->print() << "|\033[38;5;94m001371\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.position.z_coordinate[0].confidence.value) << 
                                                              " denm.alacarte[0].precrash[0].perceived_pre_crash_object.position.z_coordinate[0].confidence.value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.position.z_coordinate[0].confidence.value;
                                             }
                                             
@@ -23787,7 +23787,7 @@ namespace wind
                                             char* _tmp_987 = (char*) buffer++;
                                             *_tmp_987 = (ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.velocity[0].polar_velocity[0].z_velocity.size() != 0 ? 1 : 0);
                                             if(debug)
-                                                logger->debug() << "|\033[38;5;94m001373\033[0m| Optional field z_velocity = " << *_tmp_987;
+                                                logger->print() << "|\033[38;5;94m001373\033[0m| Optional field z_velocity = " << *_tmp_987;
                                             
                                             // Field:  type(Speed) name(velocity_magnitude) extGroup(0)
                                                 // Speed  SEQUENCE
@@ -23800,7 +23800,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(0) max(16383) span(16384) scaleDivisor(100.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m001374\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.velocity[0].polar_velocity[0].velocity_magnitude.speed_value.value) << 
+                                                    logger->print() << "|\033[38;5;94m001374\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.velocity[0].polar_velocity[0].velocity_magnitude.speed_value.value) << 
                                                                  " denm.alacarte[0].precrash[0].perceived_pre_crash_object.velocity[0].polar_velocity[0].velocity_magnitude.speed_value.value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.velocity[0].polar_velocity[0].velocity_magnitude.speed_value.value;
                                                 }
                                                 
@@ -23826,7 +23826,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(1) max(127) span(127) scaleDivisor(100.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m001375\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.velocity[0].polar_velocity[0].velocity_magnitude.speed_confidence.value) << 
+                                                    logger->print() << "|\033[38;5;94m001375\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.velocity[0].polar_velocity[0].velocity_magnitude.speed_confidence.value) << 
                                                                  " denm.alacarte[0].precrash[0].perceived_pre_crash_object.velocity[0].polar_velocity[0].velocity_magnitude.speed_confidence.value: " << static_cast<int>(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.velocity[0].polar_velocity[0].velocity_magnitude.speed_confidence.value);
                                                 }
                                                 
@@ -23859,7 +23859,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m001376\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.velocity[0].polar_velocity[0].velocity_direction.value.value) << 
+                                                    logger->print() << "|\033[38;5;94m001376\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.velocity[0].polar_velocity[0].velocity_direction.value.value) << 
                                                                  " denm.alacarte[0].precrash[0].perceived_pre_crash_object.velocity[0].polar_velocity[0].velocity_direction.value.value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.velocity[0].polar_velocity[0].velocity_direction.value.value;
                                                 }
                                                 
@@ -23885,7 +23885,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(1) max(127) span(127) scaleDivisor(10.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m001377\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.velocity[0].polar_velocity[0].velocity_direction.confidence.value) << 
+                                                    logger->print() << "|\033[38;5;94m001377\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.velocity[0].polar_velocity[0].velocity_direction.confidence.value) << 
                                                                  " denm.alacarte[0].precrash[0].perceived_pre_crash_object.velocity[0].polar_velocity[0].velocity_direction.confidence.value: " << static_cast<int>(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.velocity[0].polar_velocity[0].velocity_direction.confidence.value);
                                                 }
                                                 
@@ -23919,7 +23919,7 @@ namespace wind
                                                     
                                                     // FLOAT  min(-16383) max(16383) span(32767) scaleDivisor(100.0) dataType(Float)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m001378\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.velocity[0].polar_velocity[0].z_velocity[0].value.value) << 
+                                                        logger->print() << "|\033[38;5;94m001378\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.velocity[0].polar_velocity[0].z_velocity[0].value.value) << 
                                                                      " denm.alacarte[0].precrash[0].perceived_pre_crash_object.velocity[0].polar_velocity[0].z_velocity[0].value.value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.velocity[0].polar_velocity[0].z_velocity[0].value.value;
                                                     }
                                                     
@@ -23946,7 +23946,7 @@ namespace wind
                                                     
                                                     // FLOAT  min(1) max(127) span(127) scaleDivisor(100.0) dataType(Float)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m001379\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.velocity[0].polar_velocity[0].z_velocity[0].confidence.value) << 
+                                                        logger->print() << "|\033[38;5;94m001379\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.velocity[0].polar_velocity[0].z_velocity[0].confidence.value) << 
                                                                      " denm.alacarte[0].precrash[0].perceived_pre_crash_object.velocity[0].polar_velocity[0].z_velocity[0].confidence.value: " << static_cast<int>(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.velocity[0].polar_velocity[0].z_velocity[0].confidence.value);
                                                     }
                                                     
@@ -23985,7 +23985,7 @@ namespace wind
                                             char* _tmp_1000 = (char*) buffer++;
                                             *_tmp_1000 = (ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.velocity[0].cartesian_velocity[0].z_velocity.size() != 0 ? 1 : 0);
                                             if(debug)
-                                                logger->debug() << "|\033[38;5;94m001381\033[0m| Optional field z_velocity = " << *_tmp_1000;
+                                                logger->print() << "|\033[38;5;94m001381\033[0m| Optional field z_velocity = " << *_tmp_1000;
                                             
                                             // Field:  type(VelocityComponent) name(x_velocity) extGroup(0)
                                                 // VelocityComponent  SEQUENCE
@@ -23998,7 +23998,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(-16383) max(16383) span(32767) scaleDivisor(100.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m001382\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.velocity[0].cartesian_velocity[0].x_velocity.value.value) << 
+                                                    logger->print() << "|\033[38;5;94m001382\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.velocity[0].cartesian_velocity[0].x_velocity.value.value) << 
                                                                  " denm.alacarte[0].precrash[0].perceived_pre_crash_object.velocity[0].cartesian_velocity[0].x_velocity.value.value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.velocity[0].cartesian_velocity[0].x_velocity.value.value;
                                                 }
                                                 
@@ -24025,7 +24025,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(1) max(127) span(127) scaleDivisor(100.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m001383\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.velocity[0].cartesian_velocity[0].x_velocity.confidence.value) << 
+                                                    logger->print() << "|\033[38;5;94m001383\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.velocity[0].cartesian_velocity[0].x_velocity.confidence.value) << 
                                                                  " denm.alacarte[0].precrash[0].perceived_pre_crash_object.velocity[0].cartesian_velocity[0].x_velocity.confidence.value: " << static_cast<int>(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.velocity[0].cartesian_velocity[0].x_velocity.confidence.value);
                                                 }
                                                 
@@ -24058,7 +24058,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(-16383) max(16383) span(32767) scaleDivisor(100.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m001384\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.velocity[0].cartesian_velocity[0].y_velocity.value.value) << 
+                                                    logger->print() << "|\033[38;5;94m001384\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.velocity[0].cartesian_velocity[0].y_velocity.value.value) << 
                                                                  " denm.alacarte[0].precrash[0].perceived_pre_crash_object.velocity[0].cartesian_velocity[0].y_velocity.value.value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.velocity[0].cartesian_velocity[0].y_velocity.value.value;
                                                 }
                                                 
@@ -24085,7 +24085,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(1) max(127) span(127) scaleDivisor(100.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m001385\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.velocity[0].cartesian_velocity[0].y_velocity.confidence.value) << 
+                                                    logger->print() << "|\033[38;5;94m001385\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.velocity[0].cartesian_velocity[0].y_velocity.confidence.value) << 
                                                                  " denm.alacarte[0].precrash[0].perceived_pre_crash_object.velocity[0].cartesian_velocity[0].y_velocity.confidence.value: " << static_cast<int>(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.velocity[0].cartesian_velocity[0].y_velocity.confidence.value);
                                                 }
                                                 
@@ -24119,7 +24119,7 @@ namespace wind
                                                     
                                                     // FLOAT  min(-16383) max(16383) span(32767) scaleDivisor(100.0) dataType(Float)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m001386\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.velocity[0].cartesian_velocity[0].z_velocity[0].value.value) << 
+                                                        logger->print() << "|\033[38;5;94m001386\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.velocity[0].cartesian_velocity[0].z_velocity[0].value.value) << 
                                                                      " denm.alacarte[0].precrash[0].perceived_pre_crash_object.velocity[0].cartesian_velocity[0].z_velocity[0].value.value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.velocity[0].cartesian_velocity[0].z_velocity[0].value.value;
                                                     }
                                                     
@@ -24146,7 +24146,7 @@ namespace wind
                                                     
                                                     // FLOAT  min(1) max(127) span(127) scaleDivisor(100.0) dataType(Float)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m001387\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.velocity[0].cartesian_velocity[0].z_velocity[0].confidence.value) << 
+                                                        logger->print() << "|\033[38;5;94m001387\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.velocity[0].cartesian_velocity[0].z_velocity[0].confidence.value) << 
                                                                      " denm.alacarte[0].precrash[0].perceived_pre_crash_object.velocity[0].cartesian_velocity[0].z_velocity[0].confidence.value: " << static_cast<int>(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.velocity[0].cartesian_velocity[0].z_velocity[0].confidence.value);
                                                     }
                                                     
@@ -24199,7 +24199,7 @@ namespace wind
                                             char* _tmp_1013 = (char*) buffer++;
                                             *_tmp_1013 = (ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.acceleration[0].polar_acceleration[0].z_acceleration.size() != 0 ? 1 : 0);
                                             if(debug)
-                                                logger->debug() << "|\033[38;5;94m001389\033[0m| Optional field z_acceleration = " << *_tmp_1013;
+                                                logger->print() << "|\033[38;5;94m001389\033[0m| Optional field z_acceleration = " << *_tmp_1013;
                                             
                                             // Field:  type(AccelerationMagnitude) name(acceleration_magnitude) extGroup(0)
                                                 // AccelerationMagnitude  SEQUENCE
@@ -24212,7 +24212,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(0) max(161) span(162) scaleDivisor(10.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m001390\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.acceleration[0].polar_acceleration[0].acceleration_magnitude.acceleration_magnitude_value.value) << 
+                                                    logger->print() << "|\033[38;5;94m001390\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.acceleration[0].polar_acceleration[0].acceleration_magnitude.acceleration_magnitude_value.value) << 
                                                                  " denm.alacarte[0].precrash[0].perceived_pre_crash_object.acceleration[0].polar_acceleration[0].acceleration_magnitude.acceleration_magnitude_value.value: " << static_cast<int>(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.acceleration[0].polar_acceleration[0].acceleration_magnitude.acceleration_magnitude_value.value);
                                                 }
                                                 
@@ -24238,7 +24238,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(0) max(102) span(103) scaleDivisor(10.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m001391\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.acceleration[0].polar_acceleration[0].acceleration_magnitude.acceleration_confidence.value) << 
+                                                    logger->print() << "|\033[38;5;94m001391\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.acceleration[0].polar_acceleration[0].acceleration_magnitude.acceleration_confidence.value) << 
                                                                  " denm.alacarte[0].precrash[0].perceived_pre_crash_object.acceleration[0].polar_acceleration[0].acceleration_magnitude.acceleration_confidence.value: " << static_cast<int>(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.acceleration[0].polar_acceleration[0].acceleration_magnitude.acceleration_confidence.value);
                                                 }
                                                 
@@ -24270,7 +24270,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m001392\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.acceleration[0].polar_acceleration[0].acceleration_direction.value.value) << 
+                                                    logger->print() << "|\033[38;5;94m001392\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.acceleration[0].polar_acceleration[0].acceleration_direction.value.value) << 
                                                                  " denm.alacarte[0].precrash[0].perceived_pre_crash_object.acceleration[0].polar_acceleration[0].acceleration_direction.value.value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.acceleration[0].polar_acceleration[0].acceleration_direction.value.value;
                                                 }
                                                 
@@ -24296,7 +24296,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(1) max(127) span(127) scaleDivisor(10.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m001393\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.acceleration[0].polar_acceleration[0].acceleration_direction.confidence.value) << 
+                                                    logger->print() << "|\033[38;5;94m001393\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.acceleration[0].polar_acceleration[0].acceleration_direction.confidence.value) << 
                                                                  " denm.alacarte[0].precrash[0].perceived_pre_crash_object.acceleration[0].polar_acceleration[0].acceleration_direction.confidence.value: " << static_cast<int>(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.acceleration[0].polar_acceleration[0].acceleration_direction.confidence.value);
                                                 }
                                                 
@@ -24330,7 +24330,7 @@ namespace wind
                                                     
                                                     // FLOAT  min(-160) max(161) span(322) scaleDivisor(10.0) dataType(Float)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m001394\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.acceleration[0].polar_acceleration[0].z_acceleration[0].value.value) << 
+                                                        logger->print() << "|\033[38;5;94m001394\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.acceleration[0].polar_acceleration[0].z_acceleration[0].value.value) << 
                                                                      " denm.alacarte[0].precrash[0].perceived_pre_crash_object.acceleration[0].polar_acceleration[0].z_acceleration[0].value.value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.acceleration[0].polar_acceleration[0].z_acceleration[0].value.value;
                                                     }
                                                     
@@ -24357,7 +24357,7 @@ namespace wind
                                                     
                                                     // FLOAT  min(0) max(102) span(103) scaleDivisor(10.0) dataType(Float)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m001395\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.acceleration[0].polar_acceleration[0].z_acceleration[0].confidence.value) << 
+                                                        logger->print() << "|\033[38;5;94m001395\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.acceleration[0].polar_acceleration[0].z_acceleration[0].confidence.value) << 
                                                                      " denm.alacarte[0].precrash[0].perceived_pre_crash_object.acceleration[0].polar_acceleration[0].z_acceleration[0].confidence.value: " << static_cast<int>(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.acceleration[0].polar_acceleration[0].z_acceleration[0].confidence.value);
                                                     }
                                                     
@@ -24395,7 +24395,7 @@ namespace wind
                                             char* _tmp_1026 = (char*) buffer++;
                                             *_tmp_1026 = (ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.acceleration[0].cartesian_acceleration[0].z_acceleration.size() != 0 ? 1 : 0);
                                             if(debug)
-                                                logger->debug() << "|\033[38;5;94m001397\033[0m| Optional field z_acceleration = " << *_tmp_1026;
+                                                logger->print() << "|\033[38;5;94m001397\033[0m| Optional field z_acceleration = " << *_tmp_1026;
                                             
                                             // Field:  type(AccelerationComponent) name(x_acceleration) extGroup(0)
                                                 // AccelerationComponent  SEQUENCE
@@ -24408,7 +24408,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(-160) max(161) span(322) scaleDivisor(10.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m001398\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.acceleration[0].cartesian_acceleration[0].x_acceleration.value.value) << 
+                                                    logger->print() << "|\033[38;5;94m001398\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.acceleration[0].cartesian_acceleration[0].x_acceleration.value.value) << 
                                                                  " denm.alacarte[0].precrash[0].perceived_pre_crash_object.acceleration[0].cartesian_acceleration[0].x_acceleration.value.value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.acceleration[0].cartesian_acceleration[0].x_acceleration.value.value;
                                                 }
                                                 
@@ -24435,7 +24435,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(0) max(102) span(103) scaleDivisor(10.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m001399\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.acceleration[0].cartesian_acceleration[0].x_acceleration.confidence.value) << 
+                                                    logger->print() << "|\033[38;5;94m001399\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.acceleration[0].cartesian_acceleration[0].x_acceleration.confidence.value) << 
                                                                  " denm.alacarte[0].precrash[0].perceived_pre_crash_object.acceleration[0].cartesian_acceleration[0].x_acceleration.confidence.value: " << static_cast<int>(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.acceleration[0].cartesian_acceleration[0].x_acceleration.confidence.value);
                                                 }
                                                 
@@ -24467,7 +24467,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(-160) max(161) span(322) scaleDivisor(10.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m001400\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.acceleration[0].cartesian_acceleration[0].y_acceleration.value.value) << 
+                                                    logger->print() << "|\033[38;5;94m001400\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.acceleration[0].cartesian_acceleration[0].y_acceleration.value.value) << 
                                                                  " denm.alacarte[0].precrash[0].perceived_pre_crash_object.acceleration[0].cartesian_acceleration[0].y_acceleration.value.value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.acceleration[0].cartesian_acceleration[0].y_acceleration.value.value;
                                                 }
                                                 
@@ -24494,7 +24494,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(0) max(102) span(103) scaleDivisor(10.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m001401\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.acceleration[0].cartesian_acceleration[0].y_acceleration.confidence.value) << 
+                                                    logger->print() << "|\033[38;5;94m001401\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.acceleration[0].cartesian_acceleration[0].y_acceleration.confidence.value) << 
                                                                  " denm.alacarte[0].precrash[0].perceived_pre_crash_object.acceleration[0].cartesian_acceleration[0].y_acceleration.confidence.value: " << static_cast<int>(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.acceleration[0].cartesian_acceleration[0].y_acceleration.confidence.value);
                                                 }
                                                 
@@ -24527,7 +24527,7 @@ namespace wind
                                                     
                                                     // FLOAT  min(-160) max(161) span(322) scaleDivisor(10.0) dataType(Float)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m001402\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.acceleration[0].cartesian_acceleration[0].z_acceleration[0].value.value) << 
+                                                        logger->print() << "|\033[38;5;94m001402\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.acceleration[0].cartesian_acceleration[0].z_acceleration[0].value.value) << 
                                                                      " denm.alacarte[0].precrash[0].perceived_pre_crash_object.acceleration[0].cartesian_acceleration[0].z_acceleration[0].value.value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.acceleration[0].cartesian_acceleration[0].z_acceleration[0].value.value;
                                                     }
                                                     
@@ -24554,7 +24554,7 @@ namespace wind
                                                     
                                                     // FLOAT  min(0) max(102) span(103) scaleDivisor(10.0) dataType(Float)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m001403\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.acceleration[0].cartesian_acceleration[0].z_acceleration[0].confidence.value) << 
+                                                        logger->print() << "|\033[38;5;94m001403\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.acceleration[0].cartesian_acceleration[0].z_acceleration[0].confidence.value) << 
                                                                      " denm.alacarte[0].precrash[0].perceived_pre_crash_object.acceleration[0].cartesian_acceleration[0].z_acceleration[0].confidence.value: " << static_cast<int>(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.acceleration[0].cartesian_acceleration[0].z_acceleration[0].confidence.value);
                                                     }
                                                     
@@ -24594,11 +24594,11 @@ namespace wind
                                         char* _tmp_1039 = (char*) buffer++;
                                         *_tmp_1039 = (ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.angles[0].y_angle.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m001404\033[0m| Optional field y_angle = " << *_tmp_1039;
+                                            logger->print() << "|\033[38;5;94m001404\033[0m| Optional field y_angle = " << *_tmp_1039;
                                         char* _tmp_1040 = (char*) buffer++;
                                         *_tmp_1040 = (ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.angles[0].x_angle.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m001405\033[0m| Optional field x_angle = " << *_tmp_1040;
+                                            logger->print() << "|\033[38;5;94m001405\033[0m| Optional field x_angle = " << *_tmp_1040;
                                         
                                         // Field:  type(CartesianAngle) name(z_angle) extGroup(0)
                                             // CartesianAngle  SEQUENCE
@@ -24611,7 +24611,7 @@ namespace wind
                                             
                                             // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m001406\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.angles[0].z_angle.value.value) << 
+                                                logger->print() << "|\033[38;5;94m001406\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.angles[0].z_angle.value.value) << 
                                                              " denm.alacarte[0].precrash[0].perceived_pre_crash_object.angles[0].z_angle.value.value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.angles[0].z_angle.value.value;
                                             }
                                             
@@ -24637,7 +24637,7 @@ namespace wind
                                             
                                             // FLOAT  min(1) max(127) span(127) scaleDivisor(10.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m001407\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.angles[0].z_angle.confidence.value) << 
+                                                logger->print() << "|\033[38;5;94m001407\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.angles[0].z_angle.confidence.value) << 
                                                              " denm.alacarte[0].precrash[0].perceived_pre_crash_object.angles[0].z_angle.confidence.value: " << static_cast<int>(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.angles[0].z_angle.confidence.value);
                                             }
                                             
@@ -24671,7 +24671,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m001408\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.angles[0].y_angle[0].value.value) << 
+                                                    logger->print() << "|\033[38;5;94m001408\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.angles[0].y_angle[0].value.value) << 
                                                                  " denm.alacarte[0].precrash[0].perceived_pre_crash_object.angles[0].y_angle[0].value.value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.angles[0].y_angle[0].value.value;
                                                 }
                                                 
@@ -24697,7 +24697,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(1) max(127) span(127) scaleDivisor(10.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m001409\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.angles[0].y_angle[0].confidence.value) << 
+                                                    logger->print() << "|\033[38;5;94m001409\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.angles[0].y_angle[0].confidence.value) << 
                                                                  " denm.alacarte[0].precrash[0].perceived_pre_crash_object.angles[0].y_angle[0].confidence.value: " << static_cast<int>(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.angles[0].y_angle[0].confidence.value);
                                                 }
                                                 
@@ -24732,7 +24732,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m001410\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.angles[0].x_angle[0].value.value) << 
+                                                    logger->print() << "|\033[38;5;94m001410\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.angles[0].x_angle[0].value.value) << 
                                                                  " denm.alacarte[0].precrash[0].perceived_pre_crash_object.angles[0].x_angle[0].value.value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.angles[0].x_angle[0].value.value;
                                                 }
                                                 
@@ -24758,7 +24758,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(1) max(127) span(127) scaleDivisor(10.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m001411\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.angles[0].x_angle[0].confidence.value) << 
+                                                    logger->print() << "|\033[38;5;94m001411\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.angles[0].x_angle[0].confidence.value) << 
                                                                  " denm.alacarte[0].precrash[0].perceived_pre_crash_object.angles[0].x_angle[0].confidence.value: " << static_cast<int>(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.angles[0].x_angle[0].confidence.value);
                                                 }
                                                 
@@ -24794,7 +24794,7 @@ namespace wind
                                         
                                         // INT16  min(-255) max(256) span(512) dataType(Int16)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m001412\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.z_angular_velocity[0].value.value) << 
+                                            logger->print() << "|\033[38;5;94m001412\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.z_angular_velocity[0].value.value) << 
                                                          " denm.alacarte[0].precrash[0].perceived_pre_crash_object.z_angular_velocity[0].value.value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.z_angular_velocity[0].value.value;
                                         }
                                         
@@ -24818,7 +24818,7 @@ namespace wind
                                         // Enumerated
                                         // INT32  min(0) max(7) span(8) dataType(Int32)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m001413\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.z_angular_velocity[0].confidence.value) << 
+                                            logger->print() << "|\033[38;5;94m001413\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.z_angular_velocity[0].confidence.value) << 
                                                          " denm.alacarte[0].precrash[0].perceived_pre_crash_object.z_angular_velocity[0].confidence.value: " << static_cast<int>(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.z_angular_velocity[0].confidence.value);
                                         }
                                         
@@ -24861,7 +24861,7 @@ namespace wind
                                             // BitString
                                             // BIT_STRING  min(13) max(13) span(1)
                                             if(debug)
-                                                logger->debug() << "|\033[38;5;94m001415\033[0m| denm.alacarte[0].precrash[0].perceived_pre_crash_object.lower_triangular_correlation_matrices[0].elements[o].components_included_inthe_matrix.value: " << static_cast<int>(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.lower_triangular_correlation_matrices[0].elements[o].components_included_inthe_matrix.values.size());
+                                                logger->print() << "|\033[38;5;94m001415\033[0m| denm.alacarte[0].precrash[0].perceived_pre_crash_object.lower_triangular_correlation_matrices[0].elements[o].components_included_inthe_matrix.value: " << static_cast<int>(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.lower_triangular_correlation_matrices[0].elements[o].components_included_inthe_matrix.values.size());
                                             
                                             if(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.lower_triangular_correlation_matrices[0].elements[o].components_included_inthe_matrix.values.size() < 13) {
                                                     logger->warning() << "Error: Value in 'denm.alacarte[0].precrash[0].perceived_pre_crash_object.lower_triangular_correlation_matrices[0].elements[o].components_included_inthe_matrix.value' " << (ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.lower_triangular_correlation_matrices[0].elements[o].components_included_inthe_matrix.values.size()) << " is less than allowable (13); message dropped.";
@@ -24922,7 +24922,7 @@ namespace wind
                                                     
                                                     // INT8  min(-100) max(101) span(202) dataType(Int8)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m001418\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.lower_triangular_correlation_matrices[0].elements[o].matrix.elements[q].elements[r].value) << 
+                                                        logger->print() << "|\033[38;5;94m001418\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.lower_triangular_correlation_matrices[0].elements[o].matrix.elements[q].elements[r].value) << 
                                                                      " denm.alacarte[0].precrash[0].perceived_pre_crash_object.lower_triangular_correlation_matrices[0].elements[o].matrix.elements[q].elements[r].value: " << static_cast<int>(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.lower_triangular_correlation_matrices[0].elements[o].matrix.elements[q].elements[r].value);
                                                     }
                                                     
@@ -24961,7 +24961,7 @@ namespace wind
                                         
                                         // FLOAT  min(1) max(256) span(256) scaleDivisor(10.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m001419\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.object_dimension_z[0].value.value) << 
+                                            logger->print() << "|\033[38;5;94m001419\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.object_dimension_z[0].value.value) << 
                                                          " denm.alacarte[0].precrash[0].perceived_pre_crash_object.object_dimension_z[0].value.value: " << static_cast<int>(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.object_dimension_z[0].value.value);
                                         }
                                         
@@ -24988,7 +24988,7 @@ namespace wind
                                         
                                         // FLOAT  min(1) max(32) span(32) scaleDivisor(10.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m001420\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.object_dimension_z[0].confidence.value) << 
+                                            logger->print() << "|\033[38;5;94m001420\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.object_dimension_z[0].confidence.value) << 
                                                          " denm.alacarte[0].precrash[0].perceived_pre_crash_object.object_dimension_z[0].confidence.value: " << static_cast<int>(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.object_dimension_z[0].confidence.value);
                                         }
                                         
@@ -25023,7 +25023,7 @@ namespace wind
                                         
                                         // FLOAT  min(1) max(256) span(256) scaleDivisor(10.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m001421\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.object_dimension_y[0].value.value) << 
+                                            logger->print() << "|\033[38;5;94m001421\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.object_dimension_y[0].value.value) << 
                                                          " denm.alacarte[0].precrash[0].perceived_pre_crash_object.object_dimension_y[0].value.value: " << static_cast<int>(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.object_dimension_y[0].value.value);
                                         }
                                         
@@ -25050,7 +25050,7 @@ namespace wind
                                         
                                         // FLOAT  min(1) max(32) span(32) scaleDivisor(10.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m001422\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.object_dimension_y[0].confidence.value) << 
+                                            logger->print() << "|\033[38;5;94m001422\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.object_dimension_y[0].confidence.value) << 
                                                          " denm.alacarte[0].precrash[0].perceived_pre_crash_object.object_dimension_y[0].confidence.value: " << static_cast<int>(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.object_dimension_y[0].confidence.value);
                                         }
                                         
@@ -25085,7 +25085,7 @@ namespace wind
                                         
                                         // FLOAT  min(1) max(256) span(256) scaleDivisor(10.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m001423\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.object_dimension_x[0].value.value) << 
+                                            logger->print() << "|\033[38;5;94m001423\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.object_dimension_x[0].value.value) << 
                                                          " denm.alacarte[0].precrash[0].perceived_pre_crash_object.object_dimension_x[0].value.value: " << static_cast<int>(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.object_dimension_x[0].value.value);
                                         }
                                         
@@ -25112,7 +25112,7 @@ namespace wind
                                         
                                         // FLOAT  min(1) max(32) span(32) scaleDivisor(10.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m001424\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.object_dimension_x[0].confidence.value) << 
+                                            logger->print() << "|\033[38;5;94m001424\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.object_dimension_x[0].confidence.value) << 
                                                          " denm.alacarte[0].precrash[0].perceived_pre_crash_object.object_dimension_x[0].confidence.value: " << static_cast<int>(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.object_dimension_x[0].confidence.value);
                                         }
                                         
@@ -25141,7 +25141,7 @@ namespace wind
                                     
                                     // FLOAT  min(0) max(2047) span(2048) scaleDivisor(1000.0) dataType(Float)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001425\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.object_age[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001425\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.object_age[0].value) << 
                                                      " denm.alacarte[0].precrash[0].perceived_pre_crash_object.object_age[0].value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.object_age[0].value;
                                     }
                                     
@@ -25169,7 +25169,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(15) span(16) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m001426\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.object_perception_quality[0].value) << 
+                                        logger->print() << "|\033[38;5;94m001426\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.object_perception_quality[0].value) << 
                                                      " denm.alacarte[0].precrash[0].perceived_pre_crash_object.object_perception_quality[0].value: " << static_cast<int>(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.object_perception_quality[0].value);
                                     }
                                     
@@ -25210,7 +25210,7 @@ namespace wind
                                         
                                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m001428\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.sensor_id_list[0].elements[s].value) << 
+                                            logger->print() << "|\033[38;5;94m001428\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.sensor_id_list[0].elements[s].value) << 
                                                          " denm.alacarte[0].precrash[0].perceived_pre_crash_object.sensor_id_list[0].elements[s].value: " << static_cast<int>(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.sensor_id_list[0].elements[s].value);
                                         }
                                         
@@ -25274,7 +25274,7 @@ namespace wind
                                                 
                                                 // UINT8  min(0) max(14) span(15) dataType(UInt8)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m001431\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.vehicle_sub_class[0].value) << 
+                                                    logger->print() << "|\033[38;5;94m001431\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.vehicle_sub_class[0].value) << 
                                                                  " denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.vehicle_sub_class[0].value: " << static_cast<int>(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.vehicle_sub_class[0].value);
                                                 }
                                                 
@@ -25323,7 +25323,7 @@ namespace wind
                                                     
                                                     // UINT8  min(0) max(15) span(16) dataType(UInt8)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m001434\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.vru_sub_class[0].pedestrian[0].value) << 
+                                                        logger->print() << "|\033[38;5;94m001434\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.vru_sub_class[0].pedestrian[0].value) << 
                                                                      " denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.vru_sub_class[0].pedestrian[0].value: " << static_cast<int>(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.vru_sub_class[0].pedestrian[0].value);
                                                     }
                                                     
@@ -25354,7 +25354,7 @@ namespace wind
                                                     
                                                     // UINT8  min(0) max(15) span(16) dataType(UInt8)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m001436\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.vru_sub_class[0].bicyclist_and_light_vru_vehicle[0].value) << 
+                                                        logger->print() << "|\033[38;5;94m001436\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.vru_sub_class[0].bicyclist_and_light_vru_vehicle[0].value) << 
                                                                      " denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.vru_sub_class[0].bicyclist_and_light_vru_vehicle[0].value: " << static_cast<int>(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.vru_sub_class[0].bicyclist_and_light_vru_vehicle[0].value);
                                                     }
                                                     
@@ -25385,7 +25385,7 @@ namespace wind
                                                     
                                                     // UINT8  min(0) max(15) span(16) dataType(UInt8)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m001438\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.vru_sub_class[0].motorcyclist[0].value) << 
+                                                        logger->print() << "|\033[38;5;94m001438\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.vru_sub_class[0].motorcyclist[0].value) << 
                                                                      " denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.vru_sub_class[0].motorcyclist[0].value: " << static_cast<int>(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.vru_sub_class[0].motorcyclist[0].value);
                                                     }
                                                     
@@ -25416,7 +25416,7 @@ namespace wind
                                                     
                                                     // UINT8  min(0) max(15) span(16) dataType(UInt8)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m001440\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.vru_sub_class[0].animal[0].value) << 
+                                                        logger->print() << "|\033[38;5;94m001440\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.vru_sub_class[0].animal[0].value) << 
                                                                      " denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.vru_sub_class[0].animal[0].value: " << static_cast<int>(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.vru_sub_class[0].animal[0].value);
                                                     }
                                                     
@@ -25463,15 +25463,15 @@ namespace wind
                                                     char* _tmp_1083 = (char*) buffer++;
                                                     *_tmp_1083 = (ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_id.size() != 0 ? 1 : 0);
                                                     if(debug)
-                                                        logger->debug() << "|\033[38;5;94m001442\033[0m| Optional field cluster_id = " << *_tmp_1083;
+                                                        logger->print() << "|\033[38;5;94m001442\033[0m| Optional field cluster_id = " << *_tmp_1083;
                                                     char* _tmp_1084 = (char*) buffer++;
                                                     *_tmp_1084 = (ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape.size() != 0 ? 1 : 0);
                                                     if(debug)
-                                                        logger->debug() << "|\033[38;5;94m001443\033[0m| Optional field cluster_bounding_box_shape = " << *_tmp_1084;
+                                                        logger->print() << "|\033[38;5;94m001443\033[0m| Optional field cluster_bounding_box_shape = " << *_tmp_1084;
                                                     char* _tmp_1085 = (char*) buffer++;
                                                     *_tmp_1085 = (ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_profiles.size() != 0 ? 1 : 0);
                                                     if(debug)
-                                                        logger->debug() << "|\033[38;5;94m001444\033[0m| Optional field cluster_profiles = " << *_tmp_1085;
+                                                        logger->print() << "|\033[38;5;94m001444\033[0m| Optional field cluster_profiles = " << *_tmp_1085;
                                                     
                                                     if(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_id.size() != 0) {
                                                         // Field:  type(Identifier1B) name(cluster_id) extGroup(0)
@@ -25479,7 +25479,7 @@ namespace wind
                                                         
                                                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                         if(debug) {
-                                                            logger->debug() << "|\033[38;5;94m001445\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_id[0].value) << 
+                                                            logger->print() << "|\033[38;5;94m001445\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_id[0].value) << 
                                                                          " denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_id[0].value: " << static_cast<int>(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_id[0].value);
                                                         }
                                                         
@@ -25531,15 +25531,15 @@ namespace wind
                                                                 char* _tmp_1087 = (char*) buffer++;
                                                                 *_tmp_1087 = (ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].shape_reference_point.size() != 0 ? 1 : 0);
                                                                 if(debug)
-                                                                    logger->debug() << "|\033[38;5;94m001447\033[0m| Optional field shape_reference_point = " << *_tmp_1087;
+                                                                    logger->print() << "|\033[38;5;94m001447\033[0m| Optional field shape_reference_point = " << *_tmp_1087;
                                                                 char* _tmp_1088 = (char*) buffer++;
                                                                 *_tmp_1088 = (ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].orientation.size() != 0 ? 1 : 0);
                                                                 if(debug)
-                                                                    logger->debug() << "|\033[38;5;94m001448\033[0m| Optional field orientation = " << *_tmp_1088;
+                                                                    logger->print() << "|\033[38;5;94m001448\033[0m| Optional field orientation = " << *_tmp_1088;
                                                                 char* _tmp_1089 = (char*) buffer++;
                                                                 *_tmp_1089 = (ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].height.size() != 0 ? 1 : 0);
                                                                 if(debug)
-                                                                    logger->debug() << "|\033[38;5;94m001449\033[0m| Optional field height = " << *_tmp_1089;
+                                                                    logger->print() << "|\033[38;5;94m001449\033[0m| Optional field height = " << *_tmp_1089;
                                                                 
                                                                 if(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].shape_reference_point.size() != 0) {
                                                                     // Field:  type(CartesianPosition3d) name(shape_reference_point) extGroup(0)
@@ -25551,14 +25551,14 @@ namespace wind
                                                                         char* _tmp_1090 = (char*) buffer++;
                                                                         *_tmp_1090 = (ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].shape_reference_point[0].z_coordinate.size() != 0 ? 1 : 0);
                                                                         if(debug)
-                                                                            logger->debug() << "|\033[38;5;94m001450\033[0m| Optional field z_coordinate = " << *_tmp_1090;
+                                                                            logger->print() << "|\033[38;5;94m001450\033[0m| Optional field z_coordinate = " << *_tmp_1090;
                                                                         
                                                                         // Field:  type(CartesianCoordinate) name(x_coordinate) extGroup(0)
                                                                         // Real
                                                                         
                                                                         // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m001451\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].shape_reference_point[0].x_coordinate.value) << 
+                                                                            logger->print() << "|\033[38;5;94m001451\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].shape_reference_point[0].x_coordinate.value) << 
                                                                                          " denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].shape_reference_point[0].x_coordinate.value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].shape_reference_point[0].x_coordinate.value;
                                                                         }
                                                                         
@@ -25585,7 +25585,7 @@ namespace wind
                                                                         
                                                                         // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m001452\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].shape_reference_point[0].y_coordinate.value) << 
+                                                                            logger->print() << "|\033[38;5;94m001452\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].shape_reference_point[0].y_coordinate.value) << 
                                                                                          " denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].shape_reference_point[0].y_coordinate.value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].shape_reference_point[0].y_coordinate.value;
                                                                         }
                                                                         
@@ -25613,7 +25613,7 @@ namespace wind
                                                                             
                                                                             // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                                                             if(debug) {
-                                                                                logger->debug() << "|\033[38;5;94m001453\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].shape_reference_point[0].z_coordinate[0].value) << 
+                                                                                logger->print() << "|\033[38;5;94m001453\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].shape_reference_point[0].z_coordinate[0].value) << 
                                                                                              " denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].shape_reference_point[0].z_coordinate[0].value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].shape_reference_point[0].z_coordinate[0].value;
                                                                             }
                                                                             
@@ -25642,7 +25642,7 @@ namespace wind
                                                                 
                                                                 // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m001454\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].semi_length.value) << 
+                                                                    logger->print() << "|\033[38;5;94m001454\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].semi_length.value) << 
                                                                                  " denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].semi_length.value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].semi_length.value;
                                                                 }
                                                                 
@@ -25668,7 +25668,7 @@ namespace wind
                                                                 
                                                                 // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m001455\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].semi_breadth.value) << 
+                                                                    logger->print() << "|\033[38;5;94m001455\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].semi_breadth.value) << 
                                                                                  " denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].semi_breadth.value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].semi_breadth.value;
                                                                 }
                                                                 
@@ -25695,7 +25695,7 @@ namespace wind
                                                                     
                                                                     // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m001456\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].orientation[0].value) << 
+                                                                        logger->print() << "|\033[38;5;94m001456\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].orientation[0].value) << 
                                                                                      " denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].orientation[0].value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].orientation[0].value;
                                                                     }
                                                                     
@@ -25723,7 +25723,7 @@ namespace wind
                                                                     
                                                                     // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m001457\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].height[0].value) << 
+                                                                        logger->print() << "|\033[38;5;94m001457\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].height[0].value) << 
                                                                                      " denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].height[0].value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].height[0].value;
                                                                     }
                                                                     
@@ -25761,11 +25761,11 @@ namespace wind
                                                                 char* _tmp_1105 = (char*) buffer++;
                                                                 *_tmp_1105 = (ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].circular[0].shape_reference_point.size() != 0 ? 1 : 0);
                                                                 if(debug)
-                                                                    logger->debug() << "|\033[38;5;94m001459\033[0m| Optional field shape_reference_point = " << *_tmp_1105;
+                                                                    logger->print() << "|\033[38;5;94m001459\033[0m| Optional field shape_reference_point = " << *_tmp_1105;
                                                                 char* _tmp_1106 = (char*) buffer++;
                                                                 *_tmp_1106 = (ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].circular[0].height.size() != 0 ? 1 : 0);
                                                                 if(debug)
-                                                                    logger->debug() << "|\033[38;5;94m001460\033[0m| Optional field height = " << *_tmp_1106;
+                                                                    logger->print() << "|\033[38;5;94m001460\033[0m| Optional field height = " << *_tmp_1106;
                                                                 
                                                                 if(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].circular[0].shape_reference_point.size() != 0) {
                                                                     // Field:  type(CartesianPosition3d) name(shape_reference_point) extGroup(0)
@@ -25777,14 +25777,14 @@ namespace wind
                                                                         char* _tmp_1107 = (char*) buffer++;
                                                                         *_tmp_1107 = (ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].circular[0].shape_reference_point[0].z_coordinate.size() != 0 ? 1 : 0);
                                                                         if(debug)
-                                                                            logger->debug() << "|\033[38;5;94m001461\033[0m| Optional field z_coordinate = " << *_tmp_1107;
+                                                                            logger->print() << "|\033[38;5;94m001461\033[0m| Optional field z_coordinate = " << *_tmp_1107;
                                                                         
                                                                         // Field:  type(CartesianCoordinate) name(x_coordinate) extGroup(0)
                                                                         // Real
                                                                         
                                                                         // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m001462\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].circular[0].shape_reference_point[0].x_coordinate.value) << 
+                                                                            logger->print() << "|\033[38;5;94m001462\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].circular[0].shape_reference_point[0].x_coordinate.value) << 
                                                                                          " denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].circular[0].shape_reference_point[0].x_coordinate.value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].circular[0].shape_reference_point[0].x_coordinate.value;
                                                                         }
                                                                         
@@ -25811,7 +25811,7 @@ namespace wind
                                                                         
                                                                         // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m001463\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].circular[0].shape_reference_point[0].y_coordinate.value) << 
+                                                                            logger->print() << "|\033[38;5;94m001463\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].circular[0].shape_reference_point[0].y_coordinate.value) << 
                                                                                          " denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].circular[0].shape_reference_point[0].y_coordinate.value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].circular[0].shape_reference_point[0].y_coordinate.value;
                                                                         }
                                                                         
@@ -25839,7 +25839,7 @@ namespace wind
                                                                             
                                                                             // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                                                             if(debug) {
-                                                                                logger->debug() << "|\033[38;5;94m001464\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].circular[0].shape_reference_point[0].z_coordinate[0].value) << 
+                                                                                logger->print() << "|\033[38;5;94m001464\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].circular[0].shape_reference_point[0].z_coordinate[0].value) << 
                                                                                              " denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].circular[0].shape_reference_point[0].z_coordinate[0].value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].circular[0].shape_reference_point[0].z_coordinate[0].value;
                                                                             }
                                                                             
@@ -25868,7 +25868,7 @@ namespace wind
                                                                 
                                                                 // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m001465\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].circular[0].radius.value) << 
+                                                                    logger->print() << "|\033[38;5;94m001465\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].circular[0].radius.value) << 
                                                                                  " denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].circular[0].radius.value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].circular[0].radius.value;
                                                                 }
                                                                 
@@ -25895,7 +25895,7 @@ namespace wind
                                                                     
                                                                     // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m001466\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].circular[0].height[0].value) << 
+                                                                        logger->print() << "|\033[38;5;94m001466\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].circular[0].height[0].value) << 
                                                                                      " denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].circular[0].height[0].value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].circular[0].height[0].value;
                                                                     }
                                                                     
@@ -25933,11 +25933,11 @@ namespace wind
                                                                 char* _tmp_1118 = (char*) buffer++;
                                                                 *_tmp_1118 = (ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].shape_reference_point.size() != 0 ? 1 : 0);
                                                                 if(debug)
-                                                                    logger->debug() << "|\033[38;5;94m001468\033[0m| Optional field shape_reference_point = " << *_tmp_1118;
+                                                                    logger->print() << "|\033[38;5;94m001468\033[0m| Optional field shape_reference_point = " << *_tmp_1118;
                                                                 char* _tmp_1119 = (char*) buffer++;
                                                                 *_tmp_1119 = (ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].height.size() != 0 ? 1 : 0);
                                                                 if(debug)
-                                                                    logger->debug() << "|\033[38;5;94m001469\033[0m| Optional field height = " << *_tmp_1119;
+                                                                    logger->print() << "|\033[38;5;94m001469\033[0m| Optional field height = " << *_tmp_1119;
                                                                 
                                                                 if(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].shape_reference_point.size() != 0) {
                                                                     // Field:  type(CartesianPosition3d) name(shape_reference_point) extGroup(0)
@@ -25949,14 +25949,14 @@ namespace wind
                                                                         char* _tmp_1120 = (char*) buffer++;
                                                                         *_tmp_1120 = (ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].shape_reference_point[0].z_coordinate.size() != 0 ? 1 : 0);
                                                                         if(debug)
-                                                                            logger->debug() << "|\033[38;5;94m001470\033[0m| Optional field z_coordinate = " << *_tmp_1120;
+                                                                            logger->print() << "|\033[38;5;94m001470\033[0m| Optional field z_coordinate = " << *_tmp_1120;
                                                                         
                                                                         // Field:  type(CartesianCoordinate) name(x_coordinate) extGroup(0)
                                                                         // Real
                                                                         
                                                                         // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m001471\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].shape_reference_point[0].x_coordinate.value) << 
+                                                                            logger->print() << "|\033[38;5;94m001471\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].shape_reference_point[0].x_coordinate.value) << 
                                                                                          " denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].shape_reference_point[0].x_coordinate.value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].shape_reference_point[0].x_coordinate.value;
                                                                         }
                                                                         
@@ -25983,7 +25983,7 @@ namespace wind
                                                                         
                                                                         // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m001472\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].shape_reference_point[0].y_coordinate.value) << 
+                                                                            logger->print() << "|\033[38;5;94m001472\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].shape_reference_point[0].y_coordinate.value) << 
                                                                                          " denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].shape_reference_point[0].y_coordinate.value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].shape_reference_point[0].y_coordinate.value;
                                                                         }
                                                                         
@@ -26011,7 +26011,7 @@ namespace wind
                                                                             
                                                                             // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                                                             if(debug) {
-                                                                                logger->debug() << "|\033[38;5;94m001473\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].shape_reference_point[0].z_coordinate[0].value) << 
+                                                                                logger->print() << "|\033[38;5;94m001473\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].shape_reference_point[0].z_coordinate[0].value) << 
                                                                                              " denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].shape_reference_point[0].z_coordinate[0].value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].shape_reference_point[0].z_coordinate[0].value;
                                                                             }
                                                                             
@@ -26059,14 +26059,14 @@ namespace wind
                                                                         char* _tmp_1128 = (char*) buffer++;
                                                                         *_tmp_1128 = (ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].polygon.elements[u].z_coordinate.size() != 0 ? 1 : 0);
                                                                         if(debug)
-                                                                            logger->debug() << "|\033[38;5;94m001475\033[0m| Optional field z_coordinate = " << *_tmp_1128;
+                                                                            logger->print() << "|\033[38;5;94m001475\033[0m| Optional field z_coordinate = " << *_tmp_1128;
                                                                         
                                                                         // Field:  type(CartesianCoordinate) name(x_coordinate) extGroup(0)
                                                                         // Real
                                                                         
                                                                         // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m001476\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].polygon.elements[u].x_coordinate.value) << 
+                                                                            logger->print() << "|\033[38;5;94m001476\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].polygon.elements[u].x_coordinate.value) << 
                                                                                          " denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].polygon.elements[u].x_coordinate.value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].polygon.elements[u].x_coordinate.value;
                                                                         }
                                                                         
@@ -26093,7 +26093,7 @@ namespace wind
                                                                         
                                                                         // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m001477\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].polygon.elements[u].y_coordinate.value) << 
+                                                                            logger->print() << "|\033[38;5;94m001477\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].polygon.elements[u].y_coordinate.value) << 
                                                                                          " denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].polygon.elements[u].y_coordinate.value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].polygon.elements[u].y_coordinate.value;
                                                                         }
                                                                         
@@ -26121,7 +26121,7 @@ namespace wind
                                                                             
                                                                             // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                                                             if(debug) {
-                                                                                logger->debug() << "|\033[38;5;94m001478\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].polygon.elements[u].z_coordinate[0].value) << 
+                                                                                logger->print() << "|\033[38;5;94m001478\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].polygon.elements[u].z_coordinate[0].value) << 
                                                                                              " denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].polygon.elements[u].z_coordinate[0].value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].polygon.elements[u].z_coordinate[0].value;
                                                                             }
                                                                             
@@ -26152,7 +26152,7 @@ namespace wind
                                                                     
                                                                     // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m001479\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].height[0].value) << 
+                                                                        logger->print() << "|\033[38;5;94m001479\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].height[0].value) << 
                                                                                      " denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].height[0].value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].height[0].value;
                                                                     }
                                                                     
@@ -26192,15 +26192,15 @@ namespace wind
                                                                 char* _tmp_1137 = (char*) buffer++;
                                                                 *_tmp_1137 = (ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].shape_reference_point.size() != 0 ? 1 : 0);
                                                                 if(debug)
-                                                                    logger->debug() << "|\033[38;5;94m001481\033[0m| Optional field shape_reference_point = " << *_tmp_1137;
+                                                                    logger->print() << "|\033[38;5;94m001481\033[0m| Optional field shape_reference_point = " << *_tmp_1137;
                                                                 char* _tmp_1138 = (char*) buffer++;
                                                                 *_tmp_1138 = (ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].orientation.size() != 0 ? 1 : 0);
                                                                 if(debug)
-                                                                    logger->debug() << "|\033[38;5;94m001482\033[0m| Optional field orientation = " << *_tmp_1138;
+                                                                    logger->print() << "|\033[38;5;94m001482\033[0m| Optional field orientation = " << *_tmp_1138;
                                                                 char* _tmp_1139 = (char*) buffer++;
                                                                 *_tmp_1139 = (ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].height.size() != 0 ? 1 : 0);
                                                                 if(debug)
-                                                                    logger->debug() << "|\033[38;5;94m001483\033[0m| Optional field height = " << *_tmp_1139;
+                                                                    logger->print() << "|\033[38;5;94m001483\033[0m| Optional field height = " << *_tmp_1139;
                                                                 
                                                                 if(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].shape_reference_point.size() != 0) {
                                                                     // Field:  type(CartesianPosition3d) name(shape_reference_point) extGroup(0)
@@ -26212,14 +26212,14 @@ namespace wind
                                                                         char* _tmp_1140 = (char*) buffer++;
                                                                         *_tmp_1140 = (ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].shape_reference_point[0].z_coordinate.size() != 0 ? 1 : 0);
                                                                         if(debug)
-                                                                            logger->debug() << "|\033[38;5;94m001484\033[0m| Optional field z_coordinate = " << *_tmp_1140;
+                                                                            logger->print() << "|\033[38;5;94m001484\033[0m| Optional field z_coordinate = " << *_tmp_1140;
                                                                         
                                                                         // Field:  type(CartesianCoordinate) name(x_coordinate) extGroup(0)
                                                                         // Real
                                                                         
                                                                         // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m001485\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].shape_reference_point[0].x_coordinate.value) << 
+                                                                            logger->print() << "|\033[38;5;94m001485\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].shape_reference_point[0].x_coordinate.value) << 
                                                                                          " denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].shape_reference_point[0].x_coordinate.value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].shape_reference_point[0].x_coordinate.value;
                                                                         }
                                                                         
@@ -26246,7 +26246,7 @@ namespace wind
                                                                         
                                                                         // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m001486\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].shape_reference_point[0].y_coordinate.value) << 
+                                                                            logger->print() << "|\033[38;5;94m001486\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].shape_reference_point[0].y_coordinate.value) << 
                                                                                          " denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].shape_reference_point[0].y_coordinate.value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].shape_reference_point[0].y_coordinate.value;
                                                                         }
                                                                         
@@ -26274,7 +26274,7 @@ namespace wind
                                                                             
                                                                             // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                                                             if(debug) {
-                                                                                logger->debug() << "|\033[38;5;94m001487\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].shape_reference_point[0].z_coordinate[0].value) << 
+                                                                                logger->print() << "|\033[38;5;94m001487\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].shape_reference_point[0].z_coordinate[0].value) << 
                                                                                              " denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].shape_reference_point[0].z_coordinate[0].value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].shape_reference_point[0].z_coordinate[0].value;
                                                                             }
                                                                             
@@ -26303,7 +26303,7 @@ namespace wind
                                                                 
                                                                 // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m001488\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].semi_major_axis_length.value) << 
+                                                                    logger->print() << "|\033[38;5;94m001488\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].semi_major_axis_length.value) << 
                                                                                  " denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].semi_major_axis_length.value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].semi_major_axis_length.value;
                                                                 }
                                                                 
@@ -26329,7 +26329,7 @@ namespace wind
                                                                 
                                                                 // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m001489\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].semi_minor_axis_length.value) << 
+                                                                    logger->print() << "|\033[38;5;94m001489\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].semi_minor_axis_length.value) << 
                                                                                  " denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].semi_minor_axis_length.value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].semi_minor_axis_length.value;
                                                                 }
                                                                 
@@ -26356,7 +26356,7 @@ namespace wind
                                                                     
                                                                     // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m001490\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].orientation[0].value) << 
+                                                                        logger->print() << "|\033[38;5;94m001490\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].orientation[0].value) << 
                                                                                      " denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].orientation[0].value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].orientation[0].value;
                                                                     }
                                                                     
@@ -26384,7 +26384,7 @@ namespace wind
                                                                     
                                                                     // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m001491\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].height[0].value) << 
+                                                                        logger->print() << "|\033[38;5;94m001491\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].height[0].value) << 
                                                                                      " denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].height[0].value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].height[0].value;
                                                                     }
                                                                     
@@ -26425,15 +26425,15 @@ namespace wind
                                                                 char* _tmp_1155 = (char*) buffer++;
                                                                 *_tmp_1155 = (ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].shape_reference_point.size() != 0 ? 1 : 0);
                                                                 if(debug)
-                                                                    logger->debug() << "|\033[38;5;94m001493\033[0m| Optional field shape_reference_point = " << *_tmp_1155;
+                                                                    logger->print() << "|\033[38;5;94m001493\033[0m| Optional field shape_reference_point = " << *_tmp_1155;
                                                                 char* _tmp_1156 = (char*) buffer++;
                                                                 *_tmp_1156 = (ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].vertical_opening_angle_start.size() != 0 ? 1 : 0);
                                                                 if(debug)
-                                                                    logger->debug() << "|\033[38;5;94m001494\033[0m| Optional field vertical_opening_angle_start = " << *_tmp_1156;
+                                                                    logger->print() << "|\033[38;5;94m001494\033[0m| Optional field vertical_opening_angle_start = " << *_tmp_1156;
                                                                 char* _tmp_1157 = (char*) buffer++;
                                                                 *_tmp_1157 = (ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].vertical_opening_angle_end.size() != 0 ? 1 : 0);
                                                                 if(debug)
-                                                                    logger->debug() << "|\033[38;5;94m001495\033[0m| Optional field vertical_opening_angle_end = " << *_tmp_1157;
+                                                                    logger->print() << "|\033[38;5;94m001495\033[0m| Optional field vertical_opening_angle_end = " << *_tmp_1157;
                                                                 
                                                                 if(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].shape_reference_point.size() != 0) {
                                                                     // Field:  type(CartesianPosition3d) name(shape_reference_point) extGroup(0)
@@ -26445,14 +26445,14 @@ namespace wind
                                                                         char* _tmp_1158 = (char*) buffer++;
                                                                         *_tmp_1158 = (ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].shape_reference_point[0].z_coordinate.size() != 0 ? 1 : 0);
                                                                         if(debug)
-                                                                            logger->debug() << "|\033[38;5;94m001496\033[0m| Optional field z_coordinate = " << *_tmp_1158;
+                                                                            logger->print() << "|\033[38;5;94m001496\033[0m| Optional field z_coordinate = " << *_tmp_1158;
                                                                         
                                                                         // Field:  type(CartesianCoordinate) name(x_coordinate) extGroup(0)
                                                                         // Real
                                                                         
                                                                         // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m001497\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].shape_reference_point[0].x_coordinate.value) << 
+                                                                            logger->print() << "|\033[38;5;94m001497\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].shape_reference_point[0].x_coordinate.value) << 
                                                                                          " denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].shape_reference_point[0].x_coordinate.value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].shape_reference_point[0].x_coordinate.value;
                                                                         }
                                                                         
@@ -26479,7 +26479,7 @@ namespace wind
                                                                         
                                                                         // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m001498\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].shape_reference_point[0].y_coordinate.value) << 
+                                                                            logger->print() << "|\033[38;5;94m001498\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].shape_reference_point[0].y_coordinate.value) << 
                                                                                          " denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].shape_reference_point[0].y_coordinate.value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].shape_reference_point[0].y_coordinate.value;
                                                                         }
                                                                         
@@ -26507,7 +26507,7 @@ namespace wind
                                                                             
                                                                             // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                                                             if(debug) {
-                                                                                logger->debug() << "|\033[38;5;94m001499\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].shape_reference_point[0].z_coordinate[0].value) << 
+                                                                                logger->print() << "|\033[38;5;94m001499\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].shape_reference_point[0].z_coordinate[0].value) << 
                                                                                              " denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].shape_reference_point[0].z_coordinate[0].value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].shape_reference_point[0].z_coordinate[0].value;
                                                                             }
                                                                             
@@ -26536,7 +26536,7 @@ namespace wind
                                                                 
                                                                 // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m001500\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].range.value) << 
+                                                                    logger->print() << "|\033[38;5;94m001500\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].range.value) << 
                                                                                  " denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].range.value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].range.value;
                                                                 }
                                                                 
@@ -26562,7 +26562,7 @@ namespace wind
                                                                 
                                                                 // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m001501\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].horizontal_opening_angle_start.value) << 
+                                                                    logger->print() << "|\033[38;5;94m001501\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].horizontal_opening_angle_start.value) << 
                                                                                  " denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].horizontal_opening_angle_start.value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].horizontal_opening_angle_start.value;
                                                                 }
                                                                 
@@ -26588,7 +26588,7 @@ namespace wind
                                                                 
                                                                 // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m001502\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].horizontal_opening_angle_end.value) << 
+                                                                    logger->print() << "|\033[38;5;94m001502\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].horizontal_opening_angle_end.value) << 
                                                                                  " denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].horizontal_opening_angle_end.value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].horizontal_opening_angle_end.value;
                                                                 }
                                                                 
@@ -26615,7 +26615,7 @@ namespace wind
                                                                     
                                                                     // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m001503\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].vertical_opening_angle_start[0].value) << 
+                                                                        logger->print() << "|\033[38;5;94m001503\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].vertical_opening_angle_start[0].value) << 
                                                                                      " denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].vertical_opening_angle_start[0].value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].vertical_opening_angle_start[0].value;
                                                                     }
                                                                     
@@ -26643,7 +26643,7 @@ namespace wind
                                                                     
                                                                     // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m001504\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].vertical_opening_angle_end[0].value) << 
+                                                                        logger->print() << "|\033[38;5;94m001504\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].vertical_opening_angle_end[0].value) << 
                                                                                      " denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].vertical_opening_angle_end[0].value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].vertical_opening_angle_end[0].value;
                                                                     }
                                                                     
@@ -26683,14 +26683,14 @@ namespace wind
                                                                 char* _tmp_1175 = (char*) buffer++;
                                                                 *_tmp_1175 = (ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].z_coordinate.size() != 0 ? 1 : 0);
                                                                 if(debug)
-                                                                    logger->debug() << "|\033[38;5;94m001506\033[0m| Optional field z_coordinate = " << *_tmp_1175;
+                                                                    logger->print() << "|\033[38;5;94m001506\033[0m| Optional field z_coordinate = " << *_tmp_1175;
                                                                 
                                                                 // Field:  type(Identifier1B) name(ref_point_id) extGroup(0)
                                                                 // Integer
                                                                 
                                                                 // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m001507\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].ref_point_id.value) << 
+                                                                    logger->print() << "|\033[38;5;94m001507\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].ref_point_id.value) << 
                                                                                  " denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].ref_point_id.value: " << static_cast<int>(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].ref_point_id.value);
                                                                 }
                                                                 
@@ -26714,7 +26714,7 @@ namespace wind
                                                                 
                                                                 // FLOAT  min(-3094) max(1001) span(4096) scaleDivisor(100.0) dataType(Float)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m001508\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].x_coordinate.value) << 
+                                                                    logger->print() << "|\033[38;5;94m001508\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].x_coordinate.value) << 
                                                                                  " denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].x_coordinate.value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].x_coordinate.value;
                                                                 }
                                                                 
@@ -26741,7 +26741,7 @@ namespace wind
                                                                 
                                                                 // FLOAT  min(-3094) max(1001) span(4096) scaleDivisor(100.0) dataType(Float)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m001509\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].y_coordinate.value) << 
+                                                                    logger->print() << "|\033[38;5;94m001509\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].y_coordinate.value) << 
                                                                                  " denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].y_coordinate.value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].y_coordinate.value;
                                                                 }
                                                                 
@@ -26769,7 +26769,7 @@ namespace wind
                                                                     
                                                                     // FLOAT  min(-3094) max(1001) span(4096) scaleDivisor(100.0) dataType(Float)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m001510\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].z_coordinate[0].value) << 
+                                                                        logger->print() << "|\033[38;5;94m001510\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].z_coordinate[0].value) << 
                                                                                      " denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].z_coordinate[0].value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].z_coordinate[0].value;
                                                                     }
                                                                     
@@ -26818,18 +26818,18 @@ namespace wind
                                                                         char* _tmp_1184 = (char*) buffer++;
                                                                         *_tmp_1184 = (ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].radial_shapes_list.elements[v].vertical_opening_angle_start.size() != 0 ? 1 : 0);
                                                                         if(debug)
-                                                                            logger->debug() << "|\033[38;5;94m001512\033[0m| Optional field vertical_opening_angle_start = " << *_tmp_1184;
+                                                                            logger->print() << "|\033[38;5;94m001512\033[0m| Optional field vertical_opening_angle_start = " << *_tmp_1184;
                                                                         char* _tmp_1185 = (char*) buffer++;
                                                                         *_tmp_1185 = (ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].radial_shapes_list.elements[v].vertical_opening_angle_end.size() != 0 ? 1 : 0);
                                                                         if(debug)
-                                                                            logger->debug() << "|\033[38;5;94m001513\033[0m| Optional field vertical_opening_angle_end = " << *_tmp_1185;
+                                                                            logger->print() << "|\033[38;5;94m001513\033[0m| Optional field vertical_opening_angle_end = " << *_tmp_1185;
                                                                         
                                                                         // Field:  type(StandardLength12b) name(range) extGroup(0)
                                                                         // Real
                                                                         
                                                                         // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m001514\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].radial_shapes_list.elements[v].range.value) << 
+                                                                            logger->print() << "|\033[38;5;94m001514\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].radial_shapes_list.elements[v].range.value) << 
                                                                                          " denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].radial_shapes_list.elements[v].range.value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].radial_shapes_list.elements[v].range.value;
                                                                         }
                                                                         
@@ -26855,7 +26855,7 @@ namespace wind
                                                                         
                                                                         // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m001515\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].radial_shapes_list.elements[v].horizontal_opening_angle_start.value) << 
+                                                                            logger->print() << "|\033[38;5;94m001515\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].radial_shapes_list.elements[v].horizontal_opening_angle_start.value) << 
                                                                                          " denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].radial_shapes_list.elements[v].horizontal_opening_angle_start.value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].radial_shapes_list.elements[v].horizontal_opening_angle_start.value;
                                                                         }
                                                                         
@@ -26881,7 +26881,7 @@ namespace wind
                                                                         
                                                                         // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m001516\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].radial_shapes_list.elements[v].horizontal_opening_angle_end.value) << 
+                                                                            logger->print() << "|\033[38;5;94m001516\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].radial_shapes_list.elements[v].horizontal_opening_angle_end.value) << 
                                                                                          " denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].radial_shapes_list.elements[v].horizontal_opening_angle_end.value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].radial_shapes_list.elements[v].horizontal_opening_angle_end.value;
                                                                         }
                                                                         
@@ -26908,7 +26908,7 @@ namespace wind
                                                                             
                                                                             // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                                                             if(debug) {
-                                                                                logger->debug() << "|\033[38;5;94m001517\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].radial_shapes_list.elements[v].vertical_opening_angle_start[0].value) << 
+                                                                                logger->print() << "|\033[38;5;94m001517\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].radial_shapes_list.elements[v].vertical_opening_angle_start[0].value) << 
                                                                                              " denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].radial_shapes_list.elements[v].vertical_opening_angle_start[0].value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].radial_shapes_list.elements[v].vertical_opening_angle_start[0].value;
                                                                             }
                                                                             
@@ -26936,7 +26936,7 @@ namespace wind
                                                                             
                                                                             // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                                                             if(debug) {
-                                                                                logger->debug() << "|\033[38;5;94m001518\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].radial_shapes_list.elements[v].vertical_opening_angle_end[0].value) << 
+                                                                                logger->print() << "|\033[38;5;94m001518\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].radial_shapes_list.elements[v].vertical_opening_angle_end[0].value) << 
                                                                                              " denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].radial_shapes_list.elements[v].vertical_opening_angle_end[0].value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].radial_shapes_list.elements[v].vertical_opening_angle_end[0].value;
                                                                             }
                                                                             
@@ -26973,7 +26973,7 @@ namespace wind
                                                     
                                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m001519\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_cardinality_size.value) << 
+                                                        logger->print() << "|\033[38;5;94m001519\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_cardinality_size.value) << 
                                                                      " denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_cardinality_size.value: " << static_cast<int>(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_cardinality_size.value);
                                                     }
                                                     
@@ -26997,7 +26997,7 @@ namespace wind
                                                         // BitString
                                                         // BIT_STRING  min(4) max(4) span(1)
                                                         if(debug)
-                                                            logger->debug() << "|\033[38;5;94m001520\033[0m| denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_profiles[0].value: " << static_cast<int>(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_profiles[0].values.size());
+                                                            logger->print() << "|\033[38;5;94m001520\033[0m| denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_profiles[0].value: " << static_cast<int>(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_profiles[0].values.size());
                                                         
                                                         if(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_profiles[0].values.size() < 4) {
                                                                 logger->warning() << "Error: Value in 'denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_profiles[0].value' " << (ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.group_sub_class[0].cluster_profiles[0].values.size()) << " is less than allowable (4); message dropped.";
@@ -27036,7 +27036,7 @@ namespace wind
                                                 
                                                 // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m001522\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.other_sub_class[0].value) << 
+                                                    logger->print() << "|\033[38;5;94m001522\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.other_sub_class[0].value) << 
                                                                  " denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.other_sub_class[0].value: " << static_cast<int>(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].object_class.other_sub_class[0].value);
                                                 }
                                                 
@@ -27067,7 +27067,7 @@ namespace wind
                                             
                                             // UINT8  min(1) max(101) span(101) dataType(UInt8)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m001523\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].confidence.value) << 
+                                                logger->print() << "|\033[38;5;94m001523\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].confidence.value) << 
                                                              " denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].confidence.value: " << static_cast<int>(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.classification[0].elements[t].confidence.value);
                                             }
                                             
@@ -27105,19 +27105,19 @@ namespace wind
                                         char* _tmp_1201 = (char*) buffer++;
                                         *_tmp_1201 = (ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.map_position[0].map_reference.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m001524\033[0m| Optional field map_reference = " << *_tmp_1201;
+                                            logger->print() << "|\033[38;5;94m001524\033[0m| Optional field map_reference = " << *_tmp_1201;
                                         char* _tmp_1202 = (char*) buffer++;
                                         *_tmp_1202 = (ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.map_position[0].lane_id.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m001525\033[0m| Optional field lane_id = " << *_tmp_1202;
+                                            logger->print() << "|\033[38;5;94m001525\033[0m| Optional field lane_id = " << *_tmp_1202;
                                         char* _tmp_1203 = (char*) buffer++;
                                         *_tmp_1203 = (ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.map_position[0].connection_id.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m001526\033[0m| Optional field connection_id = " << *_tmp_1203;
+                                            logger->print() << "|\033[38;5;94m001526\033[0m| Optional field connection_id = " << *_tmp_1203;
                                         char* _tmp_1204 = (char*) buffer++;
                                         *_tmp_1204 = (ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.map_position[0].longitudinal_lane_position.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m001527\033[0m| Optional field longitudinal_lane_position = " << *_tmp_1204;
+                                            logger->print() << "|\033[38;5;94m001527\033[0m| Optional field longitudinal_lane_position = " << *_tmp_1204;
                                         
                                         if(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.map_position[0].map_reference.size() != 0) {
                                             // Field:  type(MapReference) name(map_reference) extGroup(0)
@@ -27140,7 +27140,7 @@ namespace wind
                                                     char* _tmp_1205 = (char*) buffer++;
                                                     *_tmp_1205 = (ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.map_position[0].map_reference[0].roadsegment[0].region.size() != 0 ? 1 : 0);
                                                     if(debug)
-                                                        logger->debug() << "|\033[38;5;94m001529\033[0m| Optional field region = " << *_tmp_1205;
+                                                        logger->print() << "|\033[38;5;94m001529\033[0m| Optional field region = " << *_tmp_1205;
                                                     
                                                     if(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.map_position[0].map_reference[0].roadsegment[0].region.size() != 0) {
                                                         // Field:  type(Identifier2B) name(region) extGroup(0)
@@ -27148,7 +27148,7 @@ namespace wind
                                                         
                                                         // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                         if(debug) {
-                                                            logger->debug() << "|\033[38;5;94m001530\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.map_position[0].map_reference[0].roadsegment[0].region[0].value) << 
+                                                            logger->print() << "|\033[38;5;94m001530\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.map_position[0].map_reference[0].roadsegment[0].region[0].value) << 
                                                                          " denm.alacarte[0].precrash[0].perceived_pre_crash_object.map_position[0].map_reference[0].roadsegment[0].region[0].value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.map_position[0].map_reference[0].roadsegment[0].region[0].value;
                                                         }
                                                         
@@ -27173,7 +27173,7 @@ namespace wind
                                                     
                                                     // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m001531\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.map_position[0].map_reference[0].roadsegment[0].id.value) << 
+                                                        logger->print() << "|\033[38;5;94m001531\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.map_position[0].map_reference[0].roadsegment[0].id.value) << 
                                                                      " denm.alacarte[0].precrash[0].perceived_pre_crash_object.map_position[0].map_reference[0].roadsegment[0].id.value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.map_position[0].map_reference[0].roadsegment[0].id.value;
                                                     }
                                                     
@@ -27207,7 +27207,7 @@ namespace wind
                                                     char* _tmp_1208 = (char*) buffer++;
                                                     *_tmp_1208 = (ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.map_position[0].map_reference[0].intersection[0].region.size() != 0 ? 1 : 0);
                                                     if(debug)
-                                                        logger->debug() << "|\033[38;5;94m001533\033[0m| Optional field region = " << *_tmp_1208;
+                                                        logger->print() << "|\033[38;5;94m001533\033[0m| Optional field region = " << *_tmp_1208;
                                                     
                                                     if(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.map_position[0].map_reference[0].intersection[0].region.size() != 0) {
                                                         // Field:  type(Identifier2B) name(region) extGroup(0)
@@ -27215,7 +27215,7 @@ namespace wind
                                                         
                                                         // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                         if(debug) {
-                                                            logger->debug() << "|\033[38;5;94m001534\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.map_position[0].map_reference[0].intersection[0].region[0].value) << 
+                                                            logger->print() << "|\033[38;5;94m001534\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.map_position[0].map_reference[0].intersection[0].region[0].value) << 
                                                                          " denm.alacarte[0].precrash[0].perceived_pre_crash_object.map_position[0].map_reference[0].intersection[0].region[0].value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.map_position[0].map_reference[0].intersection[0].region[0].value;
                                                         }
                                                         
@@ -27240,7 +27240,7 @@ namespace wind
                                                     
                                                     // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m001535\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.map_position[0].map_reference[0].intersection[0].id.value) << 
+                                                        logger->print() << "|\033[38;5;94m001535\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.map_position[0].map_reference[0].intersection[0].id.value) << 
                                                                      " denm.alacarte[0].precrash[0].perceived_pre_crash_object.map_position[0].map_reference[0].intersection[0].id.value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.map_position[0].map_reference[0].intersection[0].id.value;
                                                     }
                                                     
@@ -27273,7 +27273,7 @@ namespace wind
                                             
                                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m001536\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.map_position[0].lane_id[0].value) << 
+                                                logger->print() << "|\033[38;5;94m001536\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.map_position[0].lane_id[0].value) << 
                                                              " denm.alacarte[0].precrash[0].perceived_pre_crash_object.map_position[0].lane_id[0].value: " << static_cast<int>(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.map_position[0].lane_id[0].value);
                                             }
                                             
@@ -27299,7 +27299,7 @@ namespace wind
                                             
                                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m001537\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.map_position[0].connection_id[0].value) << 
+                                                logger->print() << "|\033[38;5;94m001537\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.map_position[0].connection_id[0].value) << 
                                                              " denm.alacarte[0].precrash[0].perceived_pre_crash_object.map_position[0].connection_id[0].value: " << static_cast<int>(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.map_position[0].connection_id[0].value);
                                             }
                                             
@@ -27331,7 +27331,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(0) max(32767) span(32768) scaleDivisor(10.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m001538\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.map_position[0].longitudinal_lane_position[0].longitudinal_lane_position_value.value) << 
+                                                    logger->print() << "|\033[38;5;94m001538\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.map_position[0].longitudinal_lane_position[0].longitudinal_lane_position_value.value) << 
                                                                  " denm.alacarte[0].precrash[0].perceived_pre_crash_object.map_position[0].longitudinal_lane_position[0].longitudinal_lane_position_value.value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.map_position[0].longitudinal_lane_position[0].longitudinal_lane_position_value.value;
                                                 }
                                                 
@@ -27357,7 +27357,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(0) max(1023) span(1024) scaleDivisor(10.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m001539\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.map_position[0].longitudinal_lane_position[0].longitudinal_lane_position_confidence.value) << 
+                                                    logger->print() << "|\033[38;5;94m001539\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.map_position[0].longitudinal_lane_position[0].longitudinal_lane_position_confidence.value) << 
                                                                  " denm.alacarte[0].precrash[0].perceived_pre_crash_object.map_position[0].longitudinal_lane_position[0].longitudinal_lane_position_confidence.value: " << ros->denm.alacarte[0].precrash[0].perceived_pre_crash_object.map_position[0].longitudinal_lane_position[0].longitudinal_lane_position_confidence.value;
                                                 }
                                                 
@@ -27392,7 +27392,7 @@ namespace wind
                                 
                                 // UINT32  min(0) max(4294967295) span(4294967296) dataType(UInt32)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m001540\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].object_station_id[0].value) << 
+                                    logger->print() << "|\033[38;5;94m001540\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].object_station_id[0].value) << 
                                                  " denm.alacarte[0].precrash[0].object_station_id[0].value: " << ros->denm.alacarte[0].precrash[0].object_station_id[0].value;
                                 }
                                 
@@ -27418,7 +27418,7 @@ namespace wind
                                 
                                 // FLOAT  min(1) max(10000) span(10000) scaleDivisor(1000.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m001541\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].time_to_collision[0].value) << 
+                                    logger->print() << "|\033[38;5;94m001541\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].time_to_collision[0].value) << 
                                                  " denm.alacarte[0].precrash[0].time_to_collision[0].value: " << ros->denm.alacarte[0].precrash[0].time_to_collision[0].value;
                                 }
                                 
@@ -27446,7 +27446,7 @@ namespace wind
                                 // Enumerated
                                 // INT32  min(0) max(5) span(6) dataType(Int32)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m001542\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].impact_section[0].value) << 
+                                    logger->print() << "|\033[38;5;94m001542\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].impact_section[0].value) << 
                                                  " denm.alacarte[0].precrash[0].impact_section[0].value: " << static_cast<int>(ros->denm.alacarte[0].precrash[0].impact_section[0].value);
                                 }
                                 
@@ -27472,7 +27472,7 @@ namespace wind
                                 
                                 // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m001543\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].estimated_braking_distance[0].value) << 
+                                    logger->print() << "|\033[38;5;94m001543\033[0m| " << tools::getTypeName(ros->denm.alacarte[0].precrash[0].estimated_braking_distance[0].value) << 
                                                  " denm.alacarte[0].precrash[0].estimated_braking_distance[0].value: " << ros->denm.alacarte[0].precrash[0].estimated_braking_distance[0].value;
                                 }
                                 

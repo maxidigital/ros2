@@ -66,7 +66,7 @@ namespace wind
         
         // UINT8  min(0) max(255) span(256) dataType(UInt8)
         if(debug) {
-            logger->debug() << "|\033[38;5;94m000000\033[0m| " << tools::getTypeName(ros->hheader.protocol_version.value) << 
+            logger->print() << "|\033[38;5;94m000000\033[0m| " << tools::getTypeName(ros->hheader.protocol_version.value) << 
                          " hheader.protocol_version.value: " << static_cast<int>(ros->hheader.protocol_version.value);
         }
         
@@ -90,7 +90,7 @@ namespace wind
         
         // UINT8  min(0) max(255) span(256) dataType(UInt8)
         if(debug) {
-            logger->debug() << "|\033[38;5;94m000001\033[0m| " << tools::getTypeName(ros->hheader.message_id.value) << 
+            logger->print() << "|\033[38;5;94m000001\033[0m| " << tools::getTypeName(ros->hheader.message_id.value) << 
                          " hheader.message_id.value: " << static_cast<int>(ros->hheader.message_id.value);
         }
         
@@ -114,7 +114,7 @@ namespace wind
         
         // UINT32  min(0) max(4294967295) span(4294967296) dataType(UInt32)
         if(debug) {
-            logger->debug() << "|\033[38;5;94m000002\033[0m| " << tools::getTypeName(ros->hheader.station_id.value) << 
+            logger->print() << "|\033[38;5;94m000002\033[0m| " << tools::getTypeName(ros->hheader.station_id.value) << 
                          " hheader.station_id.value: " << ros->hheader.station_id.value;
         }
         
@@ -148,15 +148,15 @@ namespace wind
         char* _tmp_4 = (char*) buffer++;
         *_tmp_4 = (ros->ssm.time_stamp.size() != 0 ? 1 : 0);
         if(debug)
-            logger->debug() << "|\033[38;5;94m000003\033[0m| Optional field time_stamp = " << *_tmp_4;
+            logger->print() << "|\033[38;5;94m000003\033[0m| Optional field time_stamp = " << *_tmp_4;
         char* _tmp_5 = (char*) buffer++;
         *_tmp_5 = (ros->ssm.sequence_number.size() != 0 ? 1 : 0);
         if(debug)
-            logger->debug() << "|\033[38;5;94m000004\033[0m| Optional field sequence_number = " << *_tmp_5;
+            logger->print() << "|\033[38;5;94m000004\033[0m| Optional field sequence_number = " << *_tmp_5;
         char* _tmp_6 = (char*) buffer++;
         *_tmp_6 = (ros->ssm.regional.size() != 0 ? 1 : 0);
         if(debug)
-            logger->debug() << "|\033[38;5;94m000005\033[0m| Optional field regional = " << *_tmp_6;
+            logger->print() << "|\033[38;5;94m000005\033[0m| Optional field regional = " << *_tmp_6;
         
         if(ros->ssm.time_stamp.size() != 0) {
             // Field:  type(MinuteOfTheYear) name(time_stamp) extGroup(0)
@@ -164,7 +164,7 @@ namespace wind
             
             // UINT32  min(0) max(527040) span(527041) dataType(UInt32)
             if(debug) {
-                logger->debug() << "|\033[38;5;94m000006\033[0m| " << tools::getTypeName(ros->ssm.time_stamp[0].value) << 
+                logger->print() << "|\033[38;5;94m000006\033[0m| " << tools::getTypeName(ros->ssm.time_stamp[0].value) << 
                              " ssm.time_stamp[0].value: " << ros->ssm.time_stamp[0].value;
             }
             
@@ -189,7 +189,7 @@ namespace wind
         
         // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
         if(debug) {
-            logger->debug() << "|\033[38;5;94m000007\033[0m| " << tools::getTypeName(ros->ssm.second.value) << 
+            logger->print() << "|\033[38;5;94m000007\033[0m| " << tools::getTypeName(ros->ssm.second.value) << 
                          " ssm.second.value: " << ros->ssm.second.value;
         }
         
@@ -214,7 +214,7 @@ namespace wind
             
             // UINT8  min(0) max(127) span(128) dataType(UInt8)
             if(debug) {
-                logger->debug() << "|\033[38;5;94m000008\033[0m| " << tools::getTypeName(ros->ssm.sequence_number[0].value) << 
+                logger->print() << "|\033[38;5;94m000008\033[0m| " << tools::getTypeName(ros->ssm.sequence_number[0].value) << 
                              " ssm.sequence_number[0].value: " << static_cast<int>(ros->ssm.sequence_number[0].value);
             }
             
@@ -260,14 +260,14 @@ namespace wind
                 char* _tmp_11 = (char*) buffer++;
                 *_tmp_11 = (ros->ssm.status.elements[a].regional.size() != 0 ? 1 : 0);
                 if(debug)
-                    logger->debug() << "|\033[38;5;94m000010\033[0m| Optional field regional = " << *_tmp_11;
+                    logger->print() << "|\033[38;5;94m000010\033[0m| Optional field regional = " << *_tmp_11;
                 
                 // Field:  type(MsgCount) name(sequence_number) extGroup(0)
                 // Integer
                 
                 // UINT8  min(0) max(127) span(128) dataType(UInt8)
                 if(debug) {
-                    logger->debug() << "|\033[38;5;94m000011\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sequence_number.value) << 
+                    logger->print() << "|\033[38;5;94m000011\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sequence_number.value) << 
                                  " ssm.status.elements[a].sequence_number.value: " << static_cast<int>(ros->ssm.status.elements[a].sequence_number.value);
                 }
                 
@@ -294,7 +294,7 @@ namespace wind
                     char* _tmp_13 = (char*) buffer++;
                     *_tmp_13 = (ros->ssm.status.elements[a].id.region.size() != 0 ? 1 : 0);
                     if(debug)
-                        logger->debug() << "|\033[38;5;94m000012\033[0m| Optional field region = " << *_tmp_13;
+                        logger->print() << "|\033[38;5;94m000012\033[0m| Optional field region = " << *_tmp_13;
                     
                     if(ros->ssm.status.elements[a].id.region.size() != 0) {
                         // Field:  type(RoadRegulatorID) name(region) extGroup(0)
@@ -302,7 +302,7 @@ namespace wind
                         
                         // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000013\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].id.region[0].value) << 
+                            logger->print() << "|\033[38;5;94m000013\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].id.region[0].value) << 
                                          " ssm.status.elements[a].id.region[0].value: " << ros->ssm.status.elements[a].id.region[0].value;
                         }
                         
@@ -327,7 +327,7 @@ namespace wind
                     
                     // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                     if(debug) {
-                        logger->debug() << "|\033[38;5;94m000014\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].id.id.value) << 
+                        logger->print() << "|\033[38;5;94m000014\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].id.id.value) << 
                                      " ssm.status.elements[a].id.id.value: " << ros->ssm.status.elements[a].id.id.value;
                     }
                     
@@ -376,27 +376,27 @@ namespace wind
                         char* _tmp_17 = (char*) buffer++;
                         *_tmp_17 = (ros->ssm.status.elements[a].sig_status.elements[b].requester.size() != 0 ? 1 : 0);
                         if(debug)
-                            logger->debug() << "|\033[38;5;94m000016\033[0m| Optional field requester = " << *_tmp_17;
+                            logger->print() << "|\033[38;5;94m000016\033[0m| Optional field requester = " << *_tmp_17;
                         char* _tmp_18 = (char*) buffer++;
                         *_tmp_18 = (ros->ssm.status.elements[a].sig_status.elements[b].outbound_on.size() != 0 ? 1 : 0);
                         if(debug)
-                            logger->debug() << "|\033[38;5;94m000017\033[0m| Optional field outbound_on = " << *_tmp_18;
+                            logger->print() << "|\033[38;5;94m000017\033[0m| Optional field outbound_on = " << *_tmp_18;
                         char* _tmp_19 = (char*) buffer++;
                         *_tmp_19 = (ros->ssm.status.elements[a].sig_status.elements[b].minute.size() != 0 ? 1 : 0);
                         if(debug)
-                            logger->debug() << "|\033[38;5;94m000018\033[0m| Optional field minute = " << *_tmp_19;
+                            logger->print() << "|\033[38;5;94m000018\033[0m| Optional field minute = " << *_tmp_19;
                         char* _tmp_20 = (char*) buffer++;
                         *_tmp_20 = (ros->ssm.status.elements[a].sig_status.elements[b].second.size() != 0 ? 1 : 0);
                         if(debug)
-                            logger->debug() << "|\033[38;5;94m000019\033[0m| Optional field second = " << *_tmp_20;
+                            logger->print() << "|\033[38;5;94m000019\033[0m| Optional field second = " << *_tmp_20;
                         char* _tmp_21 = (char*) buffer++;
                         *_tmp_21 = (ros->ssm.status.elements[a].sig_status.elements[b].duration.size() != 0 ? 1 : 0);
                         if(debug)
-                            logger->debug() << "|\033[38;5;94m000020\033[0m| Optional field duration = " << *_tmp_21;
+                            logger->print() << "|\033[38;5;94m000020\033[0m| Optional field duration = " << *_tmp_21;
                         char* _tmp_22 = (char*) buffer++;
                         *_tmp_22 = (ros->ssm.status.elements[a].sig_status.elements[b].regional.size() != 0 ? 1 : 0);
                         if(debug)
-                            logger->debug() << "|\033[38;5;94m000021\033[0m| Optional field regional = " << *_tmp_22;
+                            logger->print() << "|\033[38;5;94m000021\033[0m| Optional field regional = " << *_tmp_22;
                         
                         if(ros->ssm.status.elements[a].sig_status.elements[b].requester.size() != 0) {
                             // Field:  type(SignalRequesterInfo) name(requester) extGroup(0)
@@ -414,11 +414,11 @@ namespace wind
                                 char* _tmp_23 = (char*) buffer++;
                                 *_tmp_23 = (ros->ssm.status.elements[a].sig_status.elements[b].requester[0].role.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000022\033[0m| Optional field role = " << *_tmp_23;
+                                    logger->print() << "|\033[38;5;94m000022\033[0m| Optional field role = " << *_tmp_23;
                                 char* _tmp_24 = (char*) buffer++;
                                 *_tmp_24 = (ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000023\033[0m| Optional field type_data = " << *_tmp_24;
+                                    logger->print() << "|\033[38;5;94m000023\033[0m| Optional field type_data = " << *_tmp_24;
                                 
                                 // Field:  type(VehicleID) name(id) extGroup(0)
                                 // Choice
@@ -437,7 +437,7 @@ namespace wind
                                     // OCTET_STRING  min(4) max(4) span(1)
                                     
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m000025\033[0m| ssm.status.elements[a].sig_status.elements[b].requester[0].id.entity_id[0].values.size(): ssm.status.elements[a].sig_status.elements[b].requester[0].id.entity_id[0]" << static_cast<int>(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].id.entity_id[0].values.size());
+                                        logger->print() << "|\033[38;5;94m000025\033[0m| ssm.status.elements[a].sig_status.elements[b].requester[0].id.entity_id[0].values.size(): ssm.status.elements[a].sig_status.elements[b].requester[0].id.entity_id[0]" << static_cast<int>(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].id.entity_id[0].values.size());
                                     
                                     if(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].id.entity_id[0].values.size() < 4) {
                                         logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].id.entity_id[0].value' (" << 
@@ -473,7 +473,7 @@ namespace wind
                                     
                                     // UINT32  min(0) max(4294967295) span(4294967296) dataType(UInt32)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000027\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].id.station_id[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000027\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].id.station_id[0].value) << 
                                                      " ssm.status.elements[a].sig_status.elements[b].requester[0].id.station_id[0].value: " << ros->ssm.status.elements[a].sig_status.elements[b].requester[0].id.station_id[0].value;
                                     }
                                     
@@ -504,7 +504,7 @@ namespace wind
                                 
                                 // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000028\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].request.value) << 
+                                    logger->print() << "|\033[38;5;94m000028\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].request.value) << 
                                                  " ssm.status.elements[a].sig_status.elements[b].requester[0].request.value: " << static_cast<int>(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].request.value);
                                 }
                                 
@@ -528,7 +528,7 @@ namespace wind
                                 
                                 // UINT8  min(0) max(127) span(128) dataType(UInt8)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000029\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].sequence_number.value) << 
+                                    logger->print() << "|\033[38;5;94m000029\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].sequence_number.value) << 
                                                  " ssm.status.elements[a].sig_status.elements[b].requester[0].sequence_number.value: " << static_cast<int>(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].sequence_number.value);
                                 }
                                 
@@ -553,7 +553,7 @@ namespace wind
                                     // INT32  min(0) max(22) span(23) dataType(Int32)
                                     uint8_t* _ext_flag_18 = (uint8_t*) buffer++; // Write extension flag for ros->ssm.status.elements[a].sig_status.elements[b].requester[0].role[0].
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000030\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].role[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000030\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].role[0].value) << 
                                                      " ssm.status.elements[a].sig_status.elements[b].requester[0].role[0].value: " << static_cast<int>(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].role[0].value);
                                     }
                                     
@@ -590,30 +590,30 @@ namespace wind
                                         char* _tmp_30 = (char*) buffer++;
                                         *_tmp_30 = (ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].subrole.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000031\033[0m| Optional field subrole = " << *_tmp_30;
+                                            logger->print() << "|\033[38;5;94m000031\033[0m| Optional field subrole = " << *_tmp_30;
                                         char* _tmp_31 = (char*) buffer++;
                                         *_tmp_31 = (ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].request.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000032\033[0m| Optional field request = " << *_tmp_31;
+                                            logger->print() << "|\033[38;5;94m000032\033[0m| Optional field request = " << *_tmp_31;
                                         char* _tmp_32 = (char*) buffer++;
                                         *_tmp_32 = (ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].iso3883.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000033\033[0m| Optional field iso3883 = " << *_tmp_32;
+                                            logger->print() << "|\033[38;5;94m000033\033[0m| Optional field iso3883 = " << *_tmp_32;
                                         char* _tmp_33 = (char*) buffer++;
                                         *_tmp_33 = (ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].hpms_type.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000034\033[0m| Optional field hpms_type = " << *_tmp_33;
+                                            logger->print() << "|\033[38;5;94m000034\033[0m| Optional field hpms_type = " << *_tmp_33;
                                         char* _tmp_34 = (char*) buffer++;
                                         *_tmp_34 = (ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].regional.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000035\033[0m| Optional field regional = " << *_tmp_34;
+                                            logger->print() << "|\033[38;5;94m000035\033[0m| Optional field regional = " << *_tmp_34;
                                         
                                         // Field:  type(BasicVehicleRole) name(role) extGroup(0)
                                         // Enumerated
                                         // INT32  min(0) max(22) span(23) dataType(Int32)
                                         uint8_t* _ext_flag_20 = (uint8_t*) buffer++; // Write extension flag for ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].role.
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000036\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].role.value) << 
+                                            logger->print() << "|\033[38;5;94m000036\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].role.value) << 
                                                          " ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].role.value: " << static_cast<int>(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].role.value);
                                         }
                                         
@@ -637,7 +637,7 @@ namespace wind
                                             // Enumerated
                                             // INT32  min(0) max(15) span(16) dataType(Int32)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000037\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].subrole[0].value) << 
+                                                logger->print() << "|\033[38;5;94m000037\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].subrole[0].value) << 
                                                              " ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].subrole[0].value: " << static_cast<int>(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].subrole[0].value);
                                             }
                                             
@@ -662,7 +662,7 @@ namespace wind
                                             // Enumerated
                                             // INT32  min(0) max(15) span(16) dataType(Int32)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000038\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].request[0].value) << 
+                                                logger->print() << "|\033[38;5;94m000038\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].request[0].value) << 
                                                              " ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].request[0].value: " << static_cast<int>(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].request[0].value);
                                             }
                                             
@@ -688,7 +688,7 @@ namespace wind
                                             
                                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000039\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].iso3883[0].value) << 
+                                                logger->print() << "|\033[38;5;94m000039\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].iso3883[0].value) << 
                                                              " ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].iso3883[0].value: " << static_cast<int>(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].iso3883[0].value);
                                             }
                                             
@@ -714,7 +714,7 @@ namespace wind
                                             // INT32  min(0) max(15) span(16) dataType(Int32)
                                             uint8_t* _ext_flag_24 = (uint8_t*) buffer++; // Write extension flag for ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].hpms_type[0].
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000040\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].hpms_type[0].value) << 
+                                                logger->print() << "|\033[38;5;94m000040\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].hpms_type[0].value) << 
                                                              " ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].hpms_type[0].value: " << static_cast<int>(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].hpms_type[0].value);
                                             }
                                             
@@ -765,7 +765,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000042\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].inbound_on.lane[0].value) << 
+                                logger->print() << "|\033[38;5;94m000042\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].inbound_on.lane[0].value) << 
                                              " ssm.status.elements[a].sig_status.elements[b].inbound_on.lane[0].value: " << static_cast<int>(ros->ssm.status.elements[a].sig_status.elements[b].inbound_on.lane[0].value);
                             }
                             
@@ -796,7 +796,7 @@ namespace wind
                             
                             // UINT8  min(0) max(15) span(16) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000044\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].inbound_on.approach[0].value) << 
+                                logger->print() << "|\033[38;5;94m000044\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].inbound_on.approach[0].value) << 
                                              " ssm.status.elements[a].sig_status.elements[b].inbound_on.approach[0].value: " << static_cast<int>(ros->ssm.status.elements[a].sig_status.elements[b].inbound_on.approach[0].value);
                             }
                             
@@ -827,7 +827,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000046\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].inbound_on.connection[0].value) << 
+                                logger->print() << "|\033[38;5;94m000046\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].inbound_on.connection[0].value) << 
                                              " ssm.status.elements[a].sig_status.elements[b].inbound_on.connection[0].value: " << static_cast<int>(ros->ssm.status.elements[a].sig_status.elements[b].inbound_on.connection[0].value);
                             }
                             
@@ -876,7 +876,7 @@ namespace wind
                                 
                                 // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000048\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].outbound_on[0].lane[0].value) << 
+                                    logger->print() << "|\033[38;5;94m000048\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].outbound_on[0].lane[0].value) << 
                                                  " ssm.status.elements[a].sig_status.elements[b].outbound_on[0].lane[0].value: " << static_cast<int>(ros->ssm.status.elements[a].sig_status.elements[b].outbound_on[0].lane[0].value);
                                 }
                                 
@@ -907,7 +907,7 @@ namespace wind
                                 
                                 // UINT8  min(0) max(15) span(16) dataType(UInt8)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000050\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].outbound_on[0].approach[0].value) << 
+                                    logger->print() << "|\033[38;5;94m000050\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].outbound_on[0].approach[0].value) << 
                                                  " ssm.status.elements[a].sig_status.elements[b].outbound_on[0].approach[0].value: " << static_cast<int>(ros->ssm.status.elements[a].sig_status.elements[b].outbound_on[0].approach[0].value);
                                 }
                                 
@@ -938,7 +938,7 @@ namespace wind
                                 
                                 // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000052\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].outbound_on[0].connection[0].value) << 
+                                    logger->print() << "|\033[38;5;94m000052\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].outbound_on[0].connection[0].value) << 
                                                  " ssm.status.elements[a].sig_status.elements[b].outbound_on[0].connection[0].value: " << static_cast<int>(ros->ssm.status.elements[a].sig_status.elements[b].outbound_on[0].connection[0].value);
                                 }
                                 
@@ -971,7 +971,7 @@ namespace wind
                             
                             // UINT32  min(0) max(527040) span(527041) dataType(UInt32)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000053\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].minute[0].value) << 
+                                logger->print() << "|\033[38;5;94m000053\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].minute[0].value) << 
                                              " ssm.status.elements[a].sig_status.elements[b].minute[0].value: " << ros->ssm.status.elements[a].sig_status.elements[b].minute[0].value;
                             }
                             
@@ -997,7 +997,7 @@ namespace wind
                             
                             // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000054\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].second[0].value) << 
+                                logger->print() << "|\033[38;5;94m000054\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].second[0].value) << 
                                              " ssm.status.elements[a].sig_status.elements[b].second[0].value: " << ros->ssm.status.elements[a].sig_status.elements[b].second[0].value;
                             }
                             
@@ -1023,7 +1023,7 @@ namespace wind
                             
                             // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000055\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].duration[0].value) << 
+                                logger->print() << "|\033[38;5;94m000055\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].duration[0].value) << 
                                              " ssm.status.elements[a].sig_status.elements[b].duration[0].value: " << ros->ssm.status.elements[a].sig_status.elements[b].duration[0].value;
                             }
                             
@@ -1048,7 +1048,7 @@ namespace wind
                         // INT32  min(0) max(7) span(8) dataType(Int32)
                         uint8_t* _ext_flag_36 = (uint8_t*) buffer++; // Write extension flag for ros->ssm.status.elements[a].sig_status.elements[b].status.
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000056\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].status.value) << 
+                            logger->print() << "|\033[38;5;94m000056\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].status.value) << 
                                          " ssm.status.elements[a].sig_status.elements[b].status.value: " << static_cast<int>(ros->ssm.status.elements[a].sig_status.elements[b].status.value);
                         }
                         

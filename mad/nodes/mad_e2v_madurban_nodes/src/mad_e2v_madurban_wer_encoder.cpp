@@ -66,7 +66,7 @@ namespace wind
         
         // UINT8  min(0) max(255) span(256) dataType(UInt8)
         if(debug) {
-            logger->debug() << "|\033[38;5;94m000000\033[0m| " << tools::getTypeName(ros->hheader.protocol_version.value) << 
+            logger->print() << "|\033[38;5;94m000000\033[0m| " << tools::getTypeName(ros->hheader.protocol_version.value) << 
                          " hheader.protocol_version.value: " << static_cast<int>(ros->hheader.protocol_version.value);
         }
         
@@ -90,7 +90,7 @@ namespace wind
         
         // UINT8  min(0) max(255) span(256) dataType(UInt8)
         if(debug) {
-            logger->debug() << "|\033[38;5;94m000001\033[0m| " << tools::getTypeName(ros->hheader.message_id.value) << 
+            logger->print() << "|\033[38;5;94m000001\033[0m| " << tools::getTypeName(ros->hheader.message_id.value) << 
                          " hheader.message_id.value: " << static_cast<int>(ros->hheader.message_id.value);
         }
         
@@ -114,7 +114,7 @@ namespace wind
         
         // UINT32  min(0) max(4294967295) span(4294967296) dataType(UInt32)
         if(debug) {
-            logger->debug() << "|\033[38;5;94m000002\033[0m| " << tools::getTypeName(ros->hheader.station_id.value) << 
+            logger->print() << "|\033[38;5;94m000002\033[0m| " << tools::getTypeName(ros->hheader.station_id.value) << 
                          " hheader.station_id.value: " << ros->hheader.station_id.value;
         }
         
@@ -142,7 +142,7 @@ namespace wind
         char* _tmp_4 = (char*) buffer++;
         *_tmp_4 = (ros->epu_to_vehicle.epu_low_frequency_container.size() != 0 ? 1 : 0);
         if(debug)
-            logger->debug() << "|\033[38;5;94m000003\033[0m| Optional field epu_low_frequency_container = " << *_tmp_4;
+            logger->print() << "|\033[38;5;94m000003\033[0m| Optional field epu_low_frequency_container = " << *_tmp_4;
         
         // Field:  type(ManagementContainer) name(management_container) extGroup(0)
             // ManagementContainer  SEQUENCE
@@ -159,7 +159,7 @@ namespace wind
             
             // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
             if(debug) {
-                logger->debug() << "|\033[38;5;94m000004\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.management_container.reference_time.value) << 
+                logger->print() << "|\033[38;5;94m000004\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.management_container.reference_time.value) << 
                              " epu_to_vehicle.management_container.reference_time.value: " << ros->epu_to_vehicle.management_container.reference_time.value;
             }
             
@@ -191,7 +191,7 @@ namespace wind
                 
                 // DOUBLE  min(-900000000) max(900000001) span(1800000002) scaleDivisor(1.0E7) dataType(Double)
                 if(debug) {
-                    logger->debug() << "|\033[38;5;94m000005\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.management_container.reference_position.latitude.value) << 
+                    logger->print() << "|\033[38;5;94m000005\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.management_container.reference_position.latitude.value) << 
                                  " epu_to_vehicle.management_container.reference_position.latitude.value: " << ros->epu_to_vehicle.management_container.reference_position.latitude.value;
                 }
                 
@@ -218,7 +218,7 @@ namespace wind
                 
                 // DOUBLE  min(-1800000000) max(1800000001) span(3600000002) scaleDivisor(1.0E7) dataType(Double)
                 if(debug) {
-                    logger->debug() << "|\033[38;5;94m000006\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.management_container.reference_position.longitude.value) << 
+                    logger->print() << "|\033[38;5;94m000006\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.management_container.reference_position.longitude.value) << 
                                  " epu_to_vehicle.management_container.reference_position.longitude.value: " << ros->epu_to_vehicle.management_container.reference_position.longitude.value;
                 }
                 
@@ -252,7 +252,7 @@ namespace wind
                     
                     // FLOAT  min(0) max(4095) span(4096) scaleDivisor(100.0) dataType(Float)
                     if(debug) {
-                        logger->debug() << "|\033[38;5;94m000007\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.management_container.reference_position.position_confidence_ellipse.semi_major_confidence.value) << 
+                        logger->print() << "|\033[38;5;94m000007\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.management_container.reference_position.position_confidence_ellipse.semi_major_confidence.value) << 
                                      " epu_to_vehicle.management_container.reference_position.position_confidence_ellipse.semi_major_confidence.value: " << ros->epu_to_vehicle.management_container.reference_position.position_confidence_ellipse.semi_major_confidence.value;
                     }
                     
@@ -278,7 +278,7 @@ namespace wind
                     
                     // FLOAT  min(0) max(4095) span(4096) scaleDivisor(100.0) dataType(Float)
                     if(debug) {
-                        logger->debug() << "|\033[38;5;94m000008\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.management_container.reference_position.position_confidence_ellipse.semi_minor_confidence.value) << 
+                        logger->print() << "|\033[38;5;94m000008\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.management_container.reference_position.position_confidence_ellipse.semi_minor_confidence.value) << 
                                      " epu_to_vehicle.management_container.reference_position.position_confidence_ellipse.semi_minor_confidence.value: " << ros->epu_to_vehicle.management_container.reference_position.position_confidence_ellipse.semi_minor_confidence.value;
                     }
                     
@@ -304,7 +304,7 @@ namespace wind
                     
                     // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                     if(debug) {
-                        logger->debug() << "|\033[38;5;94m000009\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.management_container.reference_position.position_confidence_ellipse.semi_major_orientation.value) << 
+                        logger->print() << "|\033[38;5;94m000009\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.management_container.reference_position.position_confidence_ellipse.semi_major_orientation.value) << 
                                      " epu_to_vehicle.management_container.reference_position.position_confidence_ellipse.semi_major_orientation.value: " << ros->epu_to_vehicle.management_container.reference_position.position_confidence_ellipse.semi_major_orientation.value;
                     }
                     
@@ -336,7 +336,7 @@ namespace wind
                     
                     // FLOAT  min(-100000) max(800001) span(900002) scaleDivisor(100.0) dataType(Float)
                     if(debug) {
-                        logger->debug() << "|\033[38;5;94m000010\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.management_container.reference_position.altitude.altitude_value.value) << 
+                        logger->print() << "|\033[38;5;94m000010\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.management_container.reference_position.altitude.altitude_value.value) << 
                                      " epu_to_vehicle.management_container.reference_position.altitude.altitude_value.value: " << ros->epu_to_vehicle.management_container.reference_position.altitude.altitude_value.value;
                     }
                     
@@ -362,7 +362,7 @@ namespace wind
                     // Enumerated
                     // INT32  min(0) max(15) span(16) dataType(Int32)
                     if(debug) {
-                        logger->debug() << "|\033[38;5;94m000011\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.management_container.reference_position.altitude.altitude_confidence.value) << 
+                        logger->print() << "|\033[38;5;94m000011\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.management_container.reference_position.altitude.altitude_confidence.value) << 
                                      " epu_to_vehicle.management_container.reference_position.altitude.altitude_confidence.value: " << static_cast<int>(ros->epu_to_vehicle.management_container.reference_position.altitude.altitude_confidence.value);
                     }
                     
@@ -392,11 +392,11 @@ namespace wind
             char* _tmp_20 = (char*) buffer++;
             *_tmp_20 = (ros->epu_to_vehicle.epu_high_frequency_container.behaviours.size() != 0 ? 1 : 0);
             if(debug)
-                logger->debug() << "|\033[38;5;94m000012\033[0m| Optional field behaviours = " << *_tmp_20;
+                logger->print() << "|\033[38;5;94m000012\033[0m| Optional field behaviours = " << *_tmp_20;
             char* _tmp_21 = (char*) buffer++;
             *_tmp_21 = (ros->epu_to_vehicle.epu_high_frequency_container.safety.size() != 0 ? 1 : 0);
             if(debug)
-                logger->debug() << "|\033[38;5;94m000013\033[0m| Optional field safety = " << *_tmp_21;
+                logger->print() << "|\033[38;5;94m000013\033[0m| Optional field safety = " << *_tmp_21;
             
             if(ros->epu_to_vehicle.epu_high_frequency_container.behaviours.size() != 0) {
                 // Field:  type(Behaviours) name(behaviours) extGroup(0)
@@ -428,18 +428,18 @@ namespace wind
                         char* _tmp_23 = (char*) buffer++;
                         *_tmp_23 = (ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].exterior_lights_advice.size() != 0 ? 1 : 0);
                         if(debug)
-                            logger->debug() << "|\033[38;5;94m000015\033[0m| Optional field exterior_lights_advice = " << *_tmp_23;
+                            logger->print() << "|\033[38;5;94m000015\033[0m| Optional field exterior_lights_advice = " << *_tmp_23;
                         char* _tmp_24 = (char*) buffer++;
                         *_tmp_24 = (ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].horn_advice.size() != 0 ? 1 : 0);
                         if(debug)
-                            logger->debug() << "|\033[38;5;94m000016\033[0m| Optional field horn_advice = " << *_tmp_24;
+                            logger->print() << "|\033[38;5;94m000016\033[0m| Optional field horn_advice = " << *_tmp_24;
                         
                         // Field:  type(StationId) name(subject_station_id) extGroup(0)
                         // Integer
                         
                         // UINT32  min(0) max(4294967295) span(4294967296) dataType(UInt32)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000017\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].subject_station_id.value) << 
+                            logger->print() << "|\033[38;5;94m000017\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].subject_station_id.value) << 
                                          " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].subject_station_id.value: " << ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].subject_station_id.value;
                         }
                         
@@ -467,15 +467,15 @@ namespace wind
                             char* _tmp_26 = (char*) buffer++;
                             *_tmp_26 = (ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.maneuver_advice.size() != 0 ? 1 : 0);
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m000018\033[0m| Optional field maneuver_advice = " << *_tmp_26;
+                                logger->print() << "|\033[38;5;94m000018\033[0m| Optional field maneuver_advice = " << *_tmp_26;
                             char* _tmp_27 = (char*) buffer++;
                             *_tmp_27 = (ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice.size() != 0 ? 1 : 0);
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m000019\033[0m| Optional field trajectory_advice = " << *_tmp_27;
+                                logger->print() << "|\033[38;5;94m000019\033[0m| Optional field trajectory_advice = " << *_tmp_27;
                             char* _tmp_28 = (char*) buffer++;
                             *_tmp_28 = (ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.control_advice.size() != 0 ? 1 : 0);
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m000020\033[0m| Optional field control_advice = " << *_tmp_28;
+                                logger->print() << "|\033[38;5;94m000020\033[0m| Optional field control_advice = " << *_tmp_28;
                             
                             if(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.maneuver_advice.size() != 0) {
                                 // Field:  type(ManeuverAdvice) name(maneuver_advice) extGroup(0)
@@ -489,7 +489,7 @@ namespace wind
                                     // INT32  min(0) max(12) span(13) dataType(Int32)
                                     uint8_t* _ext_flag_16 = (uint8_t*) buffer++; // Write extension flag for ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.maneuver_advice[0].nominal_maneuver.
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000021\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.maneuver_advice[0].nominal_maneuver.value) << 
+                                        logger->print() << "|\033[38;5;94m000021\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.maneuver_advice[0].nominal_maneuver.value) << 
                                                      " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.maneuver_advice[0].nominal_maneuver.value: " << static_cast<int>(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.maneuver_advice[0].nominal_maneuver.value);
                                     }
                                     
@@ -513,7 +513,7 @@ namespace wind
                                     // INT32  min(0) max(6) span(7) dataType(Int32)
                                     uint8_t* _ext_flag_17 = (uint8_t*) buffer++; // Write extension flag for ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.maneuver_advice[0].mrm_maneuver.
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000022\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.maneuver_advice[0].mrm_maneuver.value) << 
+                                        logger->print() << "|\033[38;5;94m000022\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.maneuver_advice[0].mrm_maneuver.value) << 
                                                      " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.maneuver_advice[0].mrm_maneuver.value: " << static_cast<int>(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.maneuver_advice[0].mrm_maneuver.value);
                                     }
                                     
@@ -575,26 +575,26 @@ namespace wind
                                             char* _tmp_32 = (char*) buffer++;
                                             *_tmp_32 = (ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].horizontal_position_confidence.size() != 0 ? 1 : 0);
                                             if(debug)
-                                                logger->debug() << "|\033[38;5;94m000024\033[0m| Optional field horizontal_position_confidence = " << *_tmp_32;
+                                                logger->print() << "|\033[38;5;94m000024\033[0m| Optional field horizontal_position_confidence = " << *_tmp_32;
                                             char* _tmp_33 = (char*) buffer++;
                                             *_tmp_33 = (ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].path_delta_time.size() != 0 ? 1 : 0);
                                             if(debug)
-                                                logger->debug() << "|\033[38;5;94m000025\033[0m| Optional field path_delta_time = " << *_tmp_33;
+                                                logger->print() << "|\033[38;5;94m000025\033[0m| Optional field path_delta_time = " << *_tmp_33;
                                             char* _tmp_34 = (char*) buffer++;
                                             *_tmp_34 = (ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].symmetric_area_offset.size() != 0 ? 1 : 0);
                                             if(debug)
-                                                logger->debug() << "|\033[38;5;94m000026\033[0m| Optional field symmetric_area_offset = " << *_tmp_34;
+                                                logger->print() << "|\033[38;5;94m000026\033[0m| Optional field symmetric_area_offset = " << *_tmp_34;
                                             char* _tmp_35 = (char*) buffer++;
                                             *_tmp_35 = (ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].asymmetric_area_offset.size() != 0 ? 1 : 0);
                                             if(debug)
-                                                logger->debug() << "|\033[38;5;94m000027\033[0m| Optional field asymmetric_area_offset = " << *_tmp_35;
+                                                logger->print() << "|\033[38;5;94m000027\033[0m| Optional field asymmetric_area_offset = " << *_tmp_35;
                                             
                                             // Field:  type(DeltaLatitude) name(delta_latitude) extGroup(0)
                                             // Real
                                             
                                             // DOUBLE  min(-131071) max(131072) span(262144) scaleDivisor(1.0E7) dataType(Double)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000028\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].delta_latitude.value) << 
+                                                logger->print() << "|\033[38;5;94m000028\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].delta_latitude.value) << 
                                                              " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].delta_latitude.value: " << ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].delta_latitude.value;
                                             }
                                             
@@ -621,7 +621,7 @@ namespace wind
                                             
                                             // DOUBLE  min(-131071) max(131072) span(262144) scaleDivisor(1.0E7) dataType(Double)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000029\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].delta_longitude.value) << 
+                                                logger->print() << "|\033[38;5;94m000029\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].delta_longitude.value) << 
                                                              " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].delta_longitude.value: " << ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].delta_longitude.value;
                                             }
                                             
@@ -656,7 +656,7 @@ namespace wind
                                                     
                                                     // FLOAT  min(0) max(4095) span(4096) scaleDivisor(100.0) dataType(Float)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m000030\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].horizontal_position_confidence[0].semi_major_confidence.value) << 
+                                                        logger->print() << "|\033[38;5;94m000030\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].horizontal_position_confidence[0].semi_major_confidence.value) << 
                                                                      " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].horizontal_position_confidence[0].semi_major_confidence.value: " << ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].horizontal_position_confidence[0].semi_major_confidence.value;
                                                     }
                                                     
@@ -682,7 +682,7 @@ namespace wind
                                                     
                                                     // FLOAT  min(0) max(4095) span(4096) scaleDivisor(100.0) dataType(Float)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m000031\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].horizontal_position_confidence[0].semi_minor_confidence.value) << 
+                                                        logger->print() << "|\033[38;5;94m000031\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].horizontal_position_confidence[0].semi_minor_confidence.value) << 
                                                                      " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].horizontal_position_confidence[0].semi_minor_confidence.value: " << ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].horizontal_position_confidence[0].semi_minor_confidence.value;
                                                     }
                                                     
@@ -708,7 +708,7 @@ namespace wind
                                                     
                                                     // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m000032\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].horizontal_position_confidence[0].semi_major_orientation.value) << 
+                                                        logger->print() << "|\033[38;5;94m000032\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].horizontal_position_confidence[0].semi_major_orientation.value) << 
                                                                      " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].horizontal_position_confidence[0].semi_major_orientation.value: " << ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].horizontal_position_confidence[0].semi_major_orientation.value;
                                                     }
                                                     
@@ -735,7 +735,7 @@ namespace wind
                                             
                                             // FLOAT  min(-12700) max(12800) span(25501) scaleDivisor(100.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000033\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].delta_altitude.value) << 
+                                                logger->print() << "|\033[38;5;94m000033\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].delta_altitude.value) << 
                                                              " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].delta_altitude.value: " << ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].delta_altitude.value;
                                             }
                                             
@@ -761,7 +761,7 @@ namespace wind
                                             // Enumerated
                                             // INT32  min(0) max(15) span(16) dataType(Int32)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000034\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].altitude_confidence.value) << 
+                                                logger->print() << "|\033[38;5;94m000034\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].altitude_confidence.value) << 
                                                              " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].altitude_confidence.value: " << static_cast<int>(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].altitude_confidence.value);
                                             }
                                             
@@ -798,7 +798,7 @@ namespace wind
                                                     
                                                     // FLOAT  min(0) max(127) span(128) scaleDivisor(10.0) dataType(Float)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m000036\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].path_delta_time[0].delta_time_high_precision[0].value) << 
+                                                        logger->print() << "|\033[38;5;94m000036\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].path_delta_time[0].delta_time_high_precision[0].value) << 
                                                                      " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].path_delta_time[0].delta_time_high_precision[0].value: " << static_cast<int>(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].path_delta_time[0].delta_time_high_precision[0].value);
                                                     }
                                                     
@@ -831,7 +831,7 @@ namespace wind
                                                     
                                                     // FLOAT  min(0) max(127) span(128) scaleDivisor(0.1) dataType(Float)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m000038\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].path_delta_time[0].delta_time_big_range[0].value) << 
+                                                        logger->print() << "|\033[38;5;94m000038\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].path_delta_time[0].delta_time_big_range[0].value) << 
                                                                      " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].path_delta_time[0].delta_time_big_range[0].value: " << static_cast<int>(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].path_delta_time[0].delta_time_big_range[0].value);
                                                     }
                                                     
@@ -866,7 +866,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(0) max(511) span(512) scaleDivisor(10.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000039\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].symmetric_area_offset[0].value) << 
+                                                    logger->print() << "|\033[38;5;94m000039\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].symmetric_area_offset[0].value) << 
                                                                  " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].symmetric_area_offset[0].value: " << ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].symmetric_area_offset[0].value;
                                                 }
                                                 
@@ -894,7 +894,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(0) max(511) span(512) scaleDivisor(10.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000040\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].asymmetric_area_offset[0].value) << 
+                                                    logger->print() << "|\033[38;5;94m000040\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].asymmetric_area_offset[0].value) << 
                                                                  " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].asymmetric_area_offset[0].value: " << ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].asymmetric_area_offset[0].value;
                                                 }
                                                 
@@ -947,7 +947,7 @@ namespace wind
                                                     
                                                     // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m000041\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].heading_value[0].value) << 
+                                                        logger->print() << "|\033[38;5;94m000041\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].heading_value[0].value) << 
                                                                      " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].heading_value[0].value: " << ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].heading_value[0].value;
                                                     }
                                                     
@@ -975,7 +975,7 @@ namespace wind
                                                     
                                                     // FLOAT  min(0) max(16383) span(16384) scaleDivisor(100.0) dataType(Float)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m000042\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].abs_speed[0].value) << 
+                                                        logger->print() << "|\033[38;5;94m000042\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].abs_speed[0].value) << 
                                                                      " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].abs_speed[0].value: " << ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].abs_speed[0].value;
                                                     }
                                                     
@@ -1003,7 +1003,7 @@ namespace wind
                                                     
                                                     // FLOAT  min(-160) max(161) span(322) scaleDivisor(10.0) dataType(Float)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m000043\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].longitudinal_acceleration[0].value) << 
+                                                        logger->print() << "|\033[38;5;94m000043\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].longitudinal_acceleration[0].value) << 
                                                                      " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].longitudinal_acceleration[0].value: " << ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].longitudinal_acceleration[0].value;
                                                     }
                                                     
@@ -1065,26 +1065,26 @@ namespace wind
                                             char* _tmp_71 = (char*) buffer++;
                                             *_tmp_71 = (ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].horizontal_position_confidence.size() != 0 ? 1 : 0);
                                             if(debug)
-                                                logger->debug() << "|\033[38;5;94m000045\033[0m| Optional field horizontal_position_confidence = " << *_tmp_71;
+                                                logger->print() << "|\033[38;5;94m000045\033[0m| Optional field horizontal_position_confidence = " << *_tmp_71;
                                             char* _tmp_72 = (char*) buffer++;
                                             *_tmp_72 = (ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].path_delta_time.size() != 0 ? 1 : 0);
                                             if(debug)
-                                                logger->debug() << "|\033[38;5;94m000046\033[0m| Optional field path_delta_time = " << *_tmp_72;
+                                                logger->print() << "|\033[38;5;94m000046\033[0m| Optional field path_delta_time = " << *_tmp_72;
                                             char* _tmp_73 = (char*) buffer++;
                                             *_tmp_73 = (ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].symmetric_area_offset.size() != 0 ? 1 : 0);
                                             if(debug)
-                                                logger->debug() << "|\033[38;5;94m000047\033[0m| Optional field symmetric_area_offset = " << *_tmp_73;
+                                                logger->print() << "|\033[38;5;94m000047\033[0m| Optional field symmetric_area_offset = " << *_tmp_73;
                                             char* _tmp_74 = (char*) buffer++;
                                             *_tmp_74 = (ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].asymmetric_area_offset.size() != 0 ? 1 : 0);
                                             if(debug)
-                                                logger->debug() << "|\033[38;5;94m000048\033[0m| Optional field asymmetric_area_offset = " << *_tmp_74;
+                                                logger->print() << "|\033[38;5;94m000048\033[0m| Optional field asymmetric_area_offset = " << *_tmp_74;
                                             
                                             // Field:  type(DeltaLatitude) name(delta_latitude) extGroup(0)
                                             // Real
                                             
                                             // DOUBLE  min(-131071) max(131072) span(262144) scaleDivisor(1.0E7) dataType(Double)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000049\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].delta_latitude.value) << 
+                                                logger->print() << "|\033[38;5;94m000049\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].delta_latitude.value) << 
                                                              " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].delta_latitude.value: " << ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].delta_latitude.value;
                                             }
                                             
@@ -1111,7 +1111,7 @@ namespace wind
                                             
                                             // DOUBLE  min(-131071) max(131072) span(262144) scaleDivisor(1.0E7) dataType(Double)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000050\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].delta_longitude.value) << 
+                                                logger->print() << "|\033[38;5;94m000050\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].delta_longitude.value) << 
                                                              " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].delta_longitude.value: " << ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].delta_longitude.value;
                                             }
                                             
@@ -1146,7 +1146,7 @@ namespace wind
                                                     
                                                     // FLOAT  min(0) max(4095) span(4096) scaleDivisor(100.0) dataType(Float)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m000051\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].horizontal_position_confidence[0].semi_major_confidence.value) << 
+                                                        logger->print() << "|\033[38;5;94m000051\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].horizontal_position_confidence[0].semi_major_confidence.value) << 
                                                                      " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].horizontal_position_confidence[0].semi_major_confidence.value: " << ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].horizontal_position_confidence[0].semi_major_confidence.value;
                                                     }
                                                     
@@ -1172,7 +1172,7 @@ namespace wind
                                                     
                                                     // FLOAT  min(0) max(4095) span(4096) scaleDivisor(100.0) dataType(Float)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m000052\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].horizontal_position_confidence[0].semi_minor_confidence.value) << 
+                                                        logger->print() << "|\033[38;5;94m000052\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].horizontal_position_confidence[0].semi_minor_confidence.value) << 
                                                                      " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].horizontal_position_confidence[0].semi_minor_confidence.value: " << ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].horizontal_position_confidence[0].semi_minor_confidence.value;
                                                     }
                                                     
@@ -1198,7 +1198,7 @@ namespace wind
                                                     
                                                     // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m000053\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].horizontal_position_confidence[0].semi_major_orientation.value) << 
+                                                        logger->print() << "|\033[38;5;94m000053\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].horizontal_position_confidence[0].semi_major_orientation.value) << 
                                                                      " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].horizontal_position_confidence[0].semi_major_orientation.value: " << ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].horizontal_position_confidence[0].semi_major_orientation.value;
                                                     }
                                                     
@@ -1225,7 +1225,7 @@ namespace wind
                                             
                                             // FLOAT  min(-12700) max(12800) span(25501) scaleDivisor(100.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000054\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].delta_altitude.value) << 
+                                                logger->print() << "|\033[38;5;94m000054\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].delta_altitude.value) << 
                                                              " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].delta_altitude.value: " << ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].delta_altitude.value;
                                             }
                                             
@@ -1251,7 +1251,7 @@ namespace wind
                                             // Enumerated
                                             // INT32  min(0) max(15) span(16) dataType(Int32)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000055\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].altitude_confidence.value) << 
+                                                logger->print() << "|\033[38;5;94m000055\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].altitude_confidence.value) << 
                                                              " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].altitude_confidence.value: " << static_cast<int>(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].altitude_confidence.value);
                                             }
                                             
@@ -1288,7 +1288,7 @@ namespace wind
                                                     
                                                     // FLOAT  min(0) max(127) span(128) scaleDivisor(10.0) dataType(Float)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m000057\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].path_delta_time[0].delta_time_high_precision[0].value) << 
+                                                        logger->print() << "|\033[38;5;94m000057\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].path_delta_time[0].delta_time_high_precision[0].value) << 
                                                                      " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].path_delta_time[0].delta_time_high_precision[0].value: " << static_cast<int>(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].path_delta_time[0].delta_time_high_precision[0].value);
                                                     }
                                                     
@@ -1321,7 +1321,7 @@ namespace wind
                                                     
                                                     // FLOAT  min(0) max(127) span(128) scaleDivisor(0.1) dataType(Float)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m000059\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].path_delta_time[0].delta_time_big_range[0].value) << 
+                                                        logger->print() << "|\033[38;5;94m000059\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].path_delta_time[0].delta_time_big_range[0].value) << 
                                                                      " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].path_delta_time[0].delta_time_big_range[0].value: " << static_cast<int>(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].path_delta_time[0].delta_time_big_range[0].value);
                                                     }
                                                     
@@ -1356,7 +1356,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(0) max(511) span(512) scaleDivisor(10.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000060\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].symmetric_area_offset[0].value) << 
+                                                    logger->print() << "|\033[38;5;94m000060\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].symmetric_area_offset[0].value) << 
                                                                  " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].symmetric_area_offset[0].value: " << ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].symmetric_area_offset[0].value;
                                                 }
                                                 
@@ -1384,7 +1384,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(0) max(511) span(512) scaleDivisor(10.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000061\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].asymmetric_area_offset[0].value) << 
+                                                    logger->print() << "|\033[38;5;94m000061\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].asymmetric_area_offset[0].value) << 
                                                                  " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].asymmetric_area_offset[0].value: " << ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].asymmetric_area_offset[0].value;
                                                 }
                                                 
@@ -1437,7 +1437,7 @@ namespace wind
                                                     
                                                     // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m000062\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].heading_value[0].value) << 
+                                                        logger->print() << "|\033[38;5;94m000062\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].heading_value[0].value) << 
                                                                      " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].heading_value[0].value: " << ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].heading_value[0].value;
                                                     }
                                                     
@@ -1465,7 +1465,7 @@ namespace wind
                                                     
                                                     // FLOAT  min(0) max(16383) span(16384) scaleDivisor(100.0) dataType(Float)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m000063\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].abs_speed[0].value) << 
+                                                        logger->print() << "|\033[38;5;94m000063\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].abs_speed[0].value) << 
                                                                      " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].abs_speed[0].value: " << ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].abs_speed[0].value;
                                                     }
                                                     
@@ -1493,7 +1493,7 @@ namespace wind
                                                     
                                                     // FLOAT  min(-160) max(161) span(322) scaleDivisor(10.0) dataType(Float)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m000064\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].longitudinal_acceleration[0].value) << 
+                                                        logger->print() << "|\033[38;5;94m000064\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].longitudinal_acceleration[0].value) << 
                                                                      " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].longitudinal_acceleration[0].value: " << ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].longitudinal_acceleration[0].value;
                                                     }
                                                     
@@ -1533,7 +1533,7 @@ namespace wind
                                     // Enumerated
                                     // INT32  min(0) max(2) span(3) dataType(Int32)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000065\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.control_advice[0].drive_direction.value) << 
+                                        logger->print() << "|\033[38;5;94m000065\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.control_advice[0].drive_direction.value) << 
                                                      " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.control_advice[0].drive_direction.value: " << static_cast<int>(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.control_advice[0].drive_direction.value);
                                     }
                                     
@@ -1557,7 +1557,7 @@ namespace wind
                                     
                                     // FLOAT  min(-160) max(161) span(322) scaleDivisor(10.0) dataType(Float)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000066\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.control_advice[0].acceleration.value) << 
+                                        logger->print() << "|\033[38;5;94m000066\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.control_advice[0].acceleration.value) << 
                                                      " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.control_advice[0].acceleration.value: " << ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.control_advice[0].acceleration.value;
                                     }
                                     
@@ -1584,7 +1584,7 @@ namespace wind
                                     
                                     // INT16  min(-160) max(160) span(321) dataType(Int16)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000067\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.control_advice[0].steering_angle.value) << 
+                                        logger->print() << "|\033[38;5;94m000067\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.control_advice[0].steering_angle.value) << 
                                                      " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.control_advice[0].steering_angle.value: " << ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.control_advice[0].steering_angle.value;
                                     }
                                     
@@ -1610,7 +1610,7 @@ namespace wind
                             // BitString
                             // BIT_STRING  min(8) max(8) span(1)
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m000068\033[0m| epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].exterior_lights_advice[0].value: " << static_cast<int>(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].exterior_lights_advice[0].values.size());
+                                logger->print() << "|\033[38;5;94m000068\033[0m| epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].exterior_lights_advice[0].value: " << static_cast<int>(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].exterior_lights_advice[0].values.size());
                             
                             if(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].exterior_lights_advice[0].values.size() < 8) {
                                     logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].exterior_lights_advice[0].value' " << (ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].exterior_lights_advice[0].values.size()) << " is less than allowable (8); message dropped.";
@@ -1639,7 +1639,7 @@ namespace wind
                             // Enumerated
                             // INT32  min(0) max(3) span(4) dataType(Int32)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000069\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].horn_advice[0].value) << 
+                                logger->print() << "|\033[38;5;94m000069\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].horn_advice[0].value) << 
                                              " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].horn_advice[0].value: " << static_cast<int>(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].horn_advice[0].value);
                             }
                             
@@ -1690,18 +1690,18 @@ namespace wind
                         char* _tmp_117 = (char*) buffer++;
                         *_tmp_117 = (ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data.size() != 0 ? 1 : 0);
                         if(debug)
-                            logger->debug() << "|\033[38;5;94m000071\033[0m| Optional field object_data = " << *_tmp_117;
+                            logger->print() << "|\033[38;5;94m000071\033[0m| Optional field object_data = " << *_tmp_117;
                         char* _tmp_118 = (char*) buffer++;
                         *_tmp_118 = (ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics.size() != 0 ? 1 : 0);
                         if(debug)
-                            logger->debug() << "|\033[38;5;94m000072\033[0m| Optional field rss_dynamics = " << *_tmp_118;
+                            logger->print() << "|\033[38;5;94m000072\033[0m| Optional field rss_dynamics = " << *_tmp_118;
                         
                         // Field:  type(StationId) name(subject_station_id) extGroup(0)
                         // Integer
                         
                         // UINT32  min(0) max(4294967295) span(4294967296) dataType(UInt32)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000073\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].subject_station_id.value) << 
+                            logger->print() << "|\033[38;5;94m000073\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].subject_station_id.value) << 
                                          " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].subject_station_id.value: " << ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].subject_station_id.value;
                         }
                         
@@ -1739,14 +1739,14 @@ namespace wind
                                 char* _tmp_120 = (char*) buffer++;
                                 *_tmp_120 = (ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].steering_angle.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000074\033[0m| Optional field steering_angle = " << *_tmp_120;
+                                    logger->print() << "|\033[38;5;94m000074\033[0m| Optional field steering_angle = " << *_tmp_120;
                                 
                                 // Field:  type(Identifier2B) name(id) extGroup(0)
                                 // Integer
                                 
                                 // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000075\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].id.value) << 
+                                    logger->print() << "|\033[38;5;94m000075\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].id.value) << 
                                                  " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].id.value: " << ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].id.value;
                                 }
                                 
@@ -1770,7 +1770,7 @@ namespace wind
                                 
                                 // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000076\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].type.value) << 
+                                    logger->print() << "|\033[38;5;94m000076\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].type.value) << 
                                                  " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].type.value: " << static_cast<int>(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].type.value);
                                 }
                                 
@@ -1801,7 +1801,7 @@ namespace wind
                                     
                                     // DOUBLE  min(-131071) max(131072) span(262144) scaleDivisor(1.0E7) dataType(Double)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000077\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].delta_position.delta_latitude.value) << 
+                                        logger->print() << "|\033[38;5;94m000077\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].delta_position.delta_latitude.value) << 
                                                      " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].delta_position.delta_latitude.value: " << ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].delta_position.delta_latitude.value;
                                     }
                                     
@@ -1828,7 +1828,7 @@ namespace wind
                                     
                                     // DOUBLE  min(-131071) max(131072) span(262144) scaleDivisor(1.0E7) dataType(Double)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000078\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].delta_position.delta_longitude.value) << 
+                                        logger->print() << "|\033[38;5;94m000078\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].delta_position.delta_longitude.value) << 
                                                      " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].delta_position.delta_longitude.value: " << ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].delta_position.delta_longitude.value;
                                     }
                                     
@@ -1855,7 +1855,7 @@ namespace wind
                                     
                                     // FLOAT  min(-12700) max(12800) span(25501) scaleDivisor(100.0) dataType(Float)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000079\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].delta_position.delta_altitude.value) << 
+                                        logger->print() << "|\033[38;5;94m000079\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].delta_position.delta_altitude.value) << 
                                                      " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].delta_position.delta_altitude.value: " << ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].delta_position.delta_altitude.value;
                                     }
                                     
@@ -1882,7 +1882,7 @@ namespace wind
                                 
                                 // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000080\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].heading.value) << 
+                                    logger->print() << "|\033[38;5;94m000080\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].heading.value) << 
                                                  " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].heading.value: " << ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].heading.value;
                                 }
                                 
@@ -1908,7 +1908,7 @@ namespace wind
                                 
                                 // FLOAT  min(0) max(4095) span(4096) scaleDivisor(100.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000081\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].semi_major_position_confidence.value) << 
+                                    logger->print() << "|\033[38;5;94m000081\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].semi_major_position_confidence.value) << 
                                                  " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].semi_major_position_confidence.value: " << ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].semi_major_position_confidence.value;
                                 }
                                 
@@ -1934,7 +1934,7 @@ namespace wind
                                 
                                 // FLOAT  min(0) max(4095) span(4096) scaleDivisor(100.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000082\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].semi_minor_position_confidence.value) << 
+                                    logger->print() << "|\033[38;5;94m000082\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].semi_minor_position_confidence.value) << 
                                                  " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].semi_minor_position_confidence.value: " << ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].semi_minor_position_confidence.value;
                                 }
                                 
@@ -1960,7 +1960,7 @@ namespace wind
                                 
                                 // FLOAT  min(1) max(1023) span(1023) scaleDivisor(10.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000083\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].dimension_length.value) << 
+                                    logger->print() << "|\033[38;5;94m000083\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].dimension_length.value) << 
                                                  " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].dimension_length.value: " << ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].dimension_length.value;
                                 }
                                 
@@ -1987,7 +1987,7 @@ namespace wind
                                 
                                 // FLOAT  min(1) max(62) span(62) scaleDivisor(10.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000084\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].dimension_width.value) << 
+                                    logger->print() << "|\033[38;5;94m000084\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].dimension_width.value) << 
                                                  " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].dimension_width.value: " << static_cast<int>(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].dimension_width.value);
                                 }
                                 
@@ -2014,7 +2014,7 @@ namespace wind
                                 
                                 // FLOAT  min(1) max(62) span(62) scaleDivisor(10.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000085\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].dimension_height.value) << 
+                                    logger->print() << "|\033[38;5;94m000085\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].dimension_height.value) << 
                                                  " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].dimension_height.value: " << static_cast<int>(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].dimension_height.value);
                                 }
                                 
@@ -2047,7 +2047,7 @@ namespace wind
                                     
                                     // FLOAT  min(-16383) max(16383) span(32767) scaleDivisor(100.0) dataType(Float)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000086\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].speed_range.minimum.value) << 
+                                        logger->print() << "|\033[38;5;94m000086\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].speed_range.minimum.value) << 
                                                      " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].speed_range.minimum.value: " << ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].speed_range.minimum.value;
                                     }
                                     
@@ -2074,7 +2074,7 @@ namespace wind
                                     
                                     // FLOAT  min(-16383) max(16383) span(32767) scaleDivisor(100.0) dataType(Float)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000087\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].speed_range.maximum.value) << 
+                                        logger->print() << "|\033[38;5;94m000087\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].speed_range.maximum.value) << 
                                                      " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].speed_range.maximum.value: " << ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].speed_range.maximum.value;
                                     }
                                     
@@ -2101,7 +2101,7 @@ namespace wind
                                 
                                 // FLOAT  min(-32766) max(32767) span(65534) scaleDivisor(100.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000088\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].yaw_rate.value) << 
+                                    logger->print() << "|\033[38;5;94m000088\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].yaw_rate.value) << 
                                                  " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].yaw_rate.value: " << ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].yaw_rate.value;
                                 }
                                 
@@ -2129,7 +2129,7 @@ namespace wind
                                     
                                     // INT16  min(-160) max(160) span(321) dataType(Int16)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000089\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].steering_angle[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000089\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].steering_angle[0].value) << 
                                                      " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].steering_angle[0].value: " << ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].steering_angle[0].value;
                                     }
                                     
@@ -2175,7 +2175,7 @@ namespace wind
                                 
                                 // FLOAT  min(-160) max(161) span(322) scaleDivisor(10.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000090\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lon_accel_max.value) << 
+                                    logger->print() << "|\033[38;5;94m000090\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lon_accel_max.value) << 
                                                  " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lon_accel_max.value: " << ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lon_accel_max.value;
                                 }
                                 
@@ -2202,7 +2202,7 @@ namespace wind
                                 
                                 // FLOAT  min(-160) max(161) span(322) scaleDivisor(10.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000091\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lon_brake_max.value) << 
+                                    logger->print() << "|\033[38;5;94m000091\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lon_brake_max.value) << 
                                                  " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lon_brake_max.value: " << ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lon_brake_max.value;
                                 }
                                 
@@ -2229,7 +2229,7 @@ namespace wind
                                 
                                 // FLOAT  min(-160) max(161) span(322) scaleDivisor(10.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000092\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lon_brake_min.value) << 
+                                    logger->print() << "|\033[38;5;94m000092\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lon_brake_min.value) << 
                                                  " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lon_brake_min.value: " << ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lon_brake_min.value;
                                 }
                                 
@@ -2256,7 +2256,7 @@ namespace wind
                                 
                                 // FLOAT  min(-160) max(161) span(322) scaleDivisor(10.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000093\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lon_brake_min_correct.value) << 
+                                    logger->print() << "|\033[38;5;94m000093\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lon_brake_min_correct.value) << 
                                                  " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lon_brake_min_correct.value: " << ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lon_brake_min_correct.value;
                                 }
                                 
@@ -2283,7 +2283,7 @@ namespace wind
                                 
                                 // FLOAT  min(-160) max(161) span(322) scaleDivisor(10.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000094\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lat_accel_max.value) << 
+                                    logger->print() << "|\033[38;5;94m000094\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lat_accel_max.value) << 
                                                  " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lat_accel_max.value: " << ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lat_accel_max.value;
                                 }
                                 
@@ -2310,7 +2310,7 @@ namespace wind
                                 
                                 // FLOAT  min(-160) max(161) span(322) scaleDivisor(10.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000095\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lat_brake_min.value) << 
+                                    logger->print() << "|\033[38;5;94m000095\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lat_brake_min.value) << 
                                                  " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lat_brake_min.value: " << ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lat_brake_min.value;
                                 }
                                 
@@ -2337,7 +2337,7 @@ namespace wind
                                 
                                 // UINT8  min(0) max(15) span(16) dataType(UInt8)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000096\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lateral_fluctuation_margin.value) << 
+                                    logger->print() << "|\033[38;5;94m000096\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lateral_fluctuation_margin.value) << 
                                                  " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lateral_fluctuation_margin.value: " << static_cast<int>(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lateral_fluctuation_margin.value);
                                 }
                                 
@@ -2361,7 +2361,7 @@ namespace wind
                                 
                                 // FLOAT  min(0) max(127) span(128) scaleDivisor(10.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000097\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].response_time.value) << 
+                                    logger->print() << "|\033[38;5;94m000097\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].response_time.value) << 
                                                  " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].response_time.value: " << static_cast<int>(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].response_time.value);
                                 }
                                 
@@ -2387,7 +2387,7 @@ namespace wind
                                 
                                 // FLOAT  min(0) max(16383) span(16384) scaleDivisor(100.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000098\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].max_speed_on_acceleration.value) << 
+                                    logger->print() << "|\033[38;5;94m000098\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].max_speed_on_acceleration.value) << 
                                                  " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].max_speed_on_acceleration.value: " << ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].max_speed_on_acceleration.value;
                                 }
                                 
@@ -2413,7 +2413,7 @@ namespace wind
                                 
                                 // FLOAT  min(0) max(255) span(256) scaleDivisor(10.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000099\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].min_longitudinal_safety_distance.value) << 
+                                    logger->print() << "|\033[38;5;94m000099\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].min_longitudinal_safety_distance.value) << 
                                                  " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].min_longitudinal_safety_distance.value: " << static_cast<int>(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].min_longitudinal_safety_distance.value);
                                 }
                                 
@@ -2439,7 +2439,7 @@ namespace wind
                                 
                                 // FLOAT  min(0) max(255) span(256) scaleDivisor(10.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000100\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].unstructured_pedestrian_turning_radius.value) << 
+                                    logger->print() << "|\033[38;5;94m000100\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].unstructured_pedestrian_turning_radius.value) << 
                                                  " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].unstructured_pedestrian_turning_radius.value: " << static_cast<int>(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].unstructured_pedestrian_turning_radius.value);
                                 }
                                 
@@ -2465,7 +2465,7 @@ namespace wind
                                 
                                 // FLOAT  min(0) max(255) span(256) scaleDivisor(10.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000101\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].unstructured_vehicle_min_radius.value) << 
+                                    logger->print() << "|\033[38;5;94m000101\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].unstructured_vehicle_min_radius.value) << 
                                                  " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].unstructured_vehicle_min_radius.value: " << static_cast<int>(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].unstructured_vehicle_min_radius.value);
                                 }
                                 
@@ -2491,7 +2491,7 @@ namespace wind
                                 
                                 // INT16  min(-2040) max(2041) span(4082) dataType(Int16)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000102\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].unstructured_vehicle_yaw_rate_change.value) << 
+                                    logger->print() << "|\033[38;5;94m000102\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].unstructured_vehicle_yaw_rate_change.value) << 
                                                  " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].unstructured_vehicle_yaw_rate_change.value: " << ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].unstructured_vehicle_yaw_rate_change.value;
                                 }
                                 
@@ -2516,7 +2516,7 @@ namespace wind
                                 
                                 // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000103\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].unstructured_drive_away_max_angle.value) << 
+                                    logger->print() << "|\033[38;5;94m000103\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].unstructured_drive_away_max_angle.value) << 
                                                  " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].unstructured_drive_away_max_angle.value: " << ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].unstructured_drive_away_max_angle.value;
                                 }
                                 
@@ -2560,18 +2560,18 @@ namespace wind
                                 char* _tmp_175 = (char*) buffer++;
                                 *_tmp_175 = (ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].rss_route.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000105\033[0m| Optional field rss_route = " << *_tmp_175;
+                                    logger->print() << "|\033[38;5;94m000105\033[0m| Optional field rss_route = " << *_tmp_175;
                                 char* _tmp_176 = (char*) buffer++;
                                 *_tmp_176 = (ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000106\033[0m| Optional field vehicle_route_state = " << *_tmp_176;
+                                    logger->print() << "|\033[38;5;94m000106\033[0m| Optional field vehicle_route_state = " << *_tmp_176;
                                 
                                 // Field:  type(DeltaTimeTenthOfSecond) name(v2x_latency) extGroup(0)
                                 // Real
                                 
                                 // FLOAT  min(0) max(127) span(128) scaleDivisor(10.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000107\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].v2x_latency.value) << 
+                                    logger->print() << "|\033[38;5;94m000107\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].v2x_latency.value) << 
                                                  " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].v2x_latency.value: " << static_cast<int>(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].v2x_latency.value);
                                 }
                                 
@@ -2610,7 +2610,7 @@ namespace wind
                                     // BitString
                                     // BIT_STRING  min(8) max(8) span(1)
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m000108\033[0m| epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.response_flags.value: " << static_cast<int>(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.response_flags.values.size());
+                                        logger->print() << "|\033[38;5;94m000108\033[0m| epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.response_flags.value: " << static_cast<int>(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.response_flags.values.size());
                                     
                                     if(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.response_flags.values.size() < 8) {
                                             logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.response_flags.value' " << (ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.response_flags.values.size()) << " is less than allowable (8); message dropped.";
@@ -2640,7 +2640,7 @@ namespace wind
                                     // Enumerated
                                     // INT32  min(0) max(2) span(3) dataType(Int32)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000109\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.longitudinal_response.value) << 
+                                        logger->print() << "|\033[38;5;94m000109\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.longitudinal_response.value) << 
                                                      " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.longitudinal_response.value: " << static_cast<int>(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.longitudinal_response.value);
                                     }
                                     
@@ -2663,7 +2663,7 @@ namespace wind
                                     // Enumerated
                                     // INT32  min(0) max(1) span(2) dataType(Int32)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000110\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_response_right.value) << 
+                                        logger->print() << "|\033[38;5;94m000110\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_response_right.value) << 
                                                      " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_response_right.value: " << static_cast<int>(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_response_right.value);
                                     }
                                     
@@ -2686,7 +2686,7 @@ namespace wind
                                     // Enumerated
                                     // INT32  min(0) max(1) span(2) dataType(Int32)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000111\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_response_left.value) << 
+                                        logger->print() << "|\033[38;5;94m000111\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_response_left.value) << 
                                                      " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_response_left.value: " << static_cast<int>(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_response_left.value);
                                     }
                                     
@@ -2709,7 +2709,7 @@ namespace wind
                                     // Enumerated
                                     // INT32  min(0) max(3) span(4) dataType(Int32)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000112\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.unstructured_constellation_response.value) << 
+                                        logger->print() << "|\033[38;5;94m000112\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.unstructured_constellation_response.value) << 
                                                      " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.unstructured_constellation_response.value: " << static_cast<int>(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.unstructured_constellation_response.value);
                                     }
                                     
@@ -2751,7 +2751,7 @@ namespace wind
                                             
                                             // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000114\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.heading_ranges.elements[h].begin.value) << 
+                                                logger->print() << "|\033[38;5;94m000114\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.heading_ranges.elements[h].begin.value) << 
                                                              " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.heading_ranges.elements[h].begin.value: " << ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.heading_ranges.elements[h].begin.value;
                                             }
                                             
@@ -2777,7 +2777,7 @@ namespace wind
                                             
                                             // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000115\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.heading_ranges.elements[h].end.value) << 
+                                                logger->print() << "|\033[38;5;94m000115\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.heading_ranges.elements[h].end.value) << 
                                                              " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.heading_ranges.elements[h].end.value: " << ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.heading_ranges.elements[h].end.value;
                                             }
                                             
@@ -2820,7 +2820,7 @@ namespace wind
                                         
                                         // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000117\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.dangerous_objects.elements[i].value) << 
+                                            logger->print() << "|\033[38;5;94m000117\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.dangerous_objects.elements[i].value) << 
                                                          " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.dangerous_objects.elements[i].value: " << ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.dangerous_objects.elements[i].value;
                                         }
                                         
@@ -2852,7 +2852,7 @@ namespace wind
                                         
                                         // FLOAT  min(-160) max(161) span(322) scaleDivisor(10.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000118\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.longitudinal_range.minimum.value) << 
+                                            logger->print() << "|\033[38;5;94m000118\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.longitudinal_range.minimum.value) << 
                                                          " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.longitudinal_range.minimum.value: " << ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.longitudinal_range.minimum.value;
                                         }
                                         
@@ -2879,7 +2879,7 @@ namespace wind
                                         
                                         // FLOAT  min(-160) max(161) span(322) scaleDivisor(10.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000119\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.longitudinal_range.maximum.value) << 
+                                            logger->print() << "|\033[38;5;94m000119\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.longitudinal_range.maximum.value) << 
                                                          " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.longitudinal_range.maximum.value: " << ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.longitudinal_range.maximum.value;
                                         }
                                         
@@ -2912,7 +2912,7 @@ namespace wind
                                         
                                         // FLOAT  min(-160) max(161) span(322) scaleDivisor(10.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000120\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_right_range.minimum.value) << 
+                                            logger->print() << "|\033[38;5;94m000120\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_right_range.minimum.value) << 
                                                          " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_right_range.minimum.value: " << ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_right_range.minimum.value;
                                         }
                                         
@@ -2939,7 +2939,7 @@ namespace wind
                                         
                                         // FLOAT  min(-160) max(161) span(322) scaleDivisor(10.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000121\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_right_range.maximum.value) << 
+                                            logger->print() << "|\033[38;5;94m000121\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_right_range.maximum.value) << 
                                                          " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_right_range.maximum.value: " << ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_right_range.maximum.value;
                                         }
                                         
@@ -2972,7 +2972,7 @@ namespace wind
                                         
                                         // FLOAT  min(-160) max(161) span(322) scaleDivisor(10.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000122\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_left_range.minimum.value) << 
+                                            logger->print() << "|\033[38;5;94m000122\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_left_range.minimum.value) << 
                                                          " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_left_range.minimum.value: " << ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_left_range.minimum.value;
                                         }
                                         
@@ -2999,7 +2999,7 @@ namespace wind
                                         
                                         // FLOAT  min(-160) max(161) span(322) scaleDivisor(10.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000123\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_left_range.maximum.value) << 
+                                            logger->print() << "|\033[38;5;94m000123\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_left_range.maximum.value) << 
                                                          " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_left_range.maximum.value: " << ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_left_range.maximum.value;
                                         }
                                         
@@ -3046,7 +3046,7 @@ namespace wind
                                             
                                             // DOUBLE  min(-131071) max(131072) span(262144) scaleDivisor(1.0E7) dataType(Double)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000125\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].rss_route[0].elements[j].delta_latitude.value) << 
+                                                logger->print() << "|\033[38;5;94m000125\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].rss_route[0].elements[j].delta_latitude.value) << 
                                                              " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].rss_route[0].elements[j].delta_latitude.value: " << ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].rss_route[0].elements[j].delta_latitude.value;
                                             }
                                             
@@ -3073,7 +3073,7 @@ namespace wind
                                             
                                             // DOUBLE  min(-131071) max(131072) span(262144) scaleDivisor(1.0E7) dataType(Double)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000126\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].rss_route[0].elements[j].delta_longitude.value) << 
+                                                logger->print() << "|\033[38;5;94m000126\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].rss_route[0].elements[j].delta_longitude.value) << 
                                                              " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].rss_route[0].elements[j].delta_longitude.value: " << ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].rss_route[0].elements[j].delta_longitude.value;
                                             }
                                             
@@ -3100,7 +3100,7 @@ namespace wind
                                             
                                             // FLOAT  min(-12700) max(12800) span(25501) scaleDivisor(100.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000127\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].rss_route[0].elements[j].delta_altitude.value) << 
+                                                logger->print() << "|\033[38;5;94m000127\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].rss_route[0].elements[j].delta_altitude.value) << 
                                                              " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].rss_route[0].elements[j].delta_altitude.value: " << ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].rss_route[0].elements[j].delta_altitude.value;
                                             }
                                             
@@ -3144,7 +3144,7 @@ namespace wind
                                         
                                         // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000128\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_heading.value) << 
+                                            logger->print() << "|\033[38;5;94m000128\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_heading.value) << 
                                                          " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_heading.value: " << ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_heading.value;
                                         }
                                         
@@ -3170,7 +3170,7 @@ namespace wind
                                         
                                         // INT16  min(-1023) max(1023) span(2047) dataType(Int16)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000129\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_radius.value) << 
+                                            logger->print() << "|\033[38;5;94m000129\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_radius.value) << 
                                                          " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_radius.value: " << ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_radius.value;
                                         }
                                         
@@ -3195,7 +3195,7 @@ namespace wind
                                         
                                         // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000130\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_heading_delta.value) << 
+                                            logger->print() << "|\033[38;5;94m000130\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_heading_delta.value) << 
                                                          " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_heading_delta.value: " << ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_heading_delta.value;
                                         }
                                         
@@ -3221,7 +3221,7 @@ namespace wind
                                         
                                         // FLOAT  min(-16383) max(16383) span(32767) scaleDivisor(100.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000131\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_speed_lon.value) << 
+                                            logger->print() << "|\033[38;5;94m000131\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_speed_lon.value) << 
                                                          " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_speed_lon.value: " << ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_speed_lon.value;
                                         }
                                         
@@ -3248,7 +3248,7 @@ namespace wind
                                         
                                         // FLOAT  min(-16383) max(16383) span(32767) scaleDivisor(100.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000132\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_speed_lat.value) << 
+                                            logger->print() << "|\033[38;5;94m000132\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_speed_lat.value) << 
                                                          " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_speed_lat.value: " << ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_speed_lat.value;
                                         }
                                         
@@ -3275,7 +3275,7 @@ namespace wind
                                         
                                         // FLOAT  min(-160) max(161) span(322) scaleDivisor(10.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000133\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_accel_lon.value) << 
+                                            logger->print() << "|\033[38;5;94m000133\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_accel_lon.value) << 
                                                          " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_accel_lon.value: " << ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_accel_lon.value;
                                         }
                                         
@@ -3302,7 +3302,7 @@ namespace wind
                                         
                                         // FLOAT  min(-160) max(161) span(322) scaleDivisor(10.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000134\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_accel_lat.value) << 
+                                            logger->print() << "|\033[38;5;94m000134\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_accel_lat.value) << 
                                                          " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_accel_lat.value: " << ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_accel_lat.value;
                                         }
                                         
@@ -3329,7 +3329,7 @@ namespace wind
                                         
                                         // FLOAT  min(-160) max(161) span(322) scaleDivisor(10.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000135\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].avg_route_accel_lon.value) << 
+                                            logger->print() << "|\033[38;5;94m000135\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].avg_route_accel_lon.value) << 
                                                          " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].avg_route_accel_lon.value: " << ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].avg_route_accel_lon.value;
                                         }
                                         
@@ -3356,7 +3356,7 @@ namespace wind
                                         
                                         // FLOAT  min(-160) max(161) span(322) scaleDivisor(10.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000136\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].avg_route_accel_lat.value) << 
+                                            logger->print() << "|\033[38;5;94m000136\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].avg_route_accel_lat.value) << 
                                                          " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].avg_route_accel_lat.value: " << ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].avg_route_accel_lat.value;
                                         }
                                         
@@ -3397,7 +3397,7 @@ namespace wind
                 char* _tmp_227 = (char*) buffer++;
                 *_tmp_227 = (ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_capabilities.size() != 0 ? 1 : 0);
                 if(debug)
-                    logger->debug() << "|\033[38;5;94m000137\033[0m| Optional field epu_section_capabilities = " << *_tmp_227;
+                    logger->print() << "|\033[38;5;94m000137\033[0m| Optional field epu_section_capabilities = " << *_tmp_227;
                 
                 // Field:  type(EPUSectionDimensions) name(epu_section_dimensions) extGroup(0)
                     // EPUSectionDimensions  SEQUENCE
@@ -3451,15 +3451,15 @@ namespace wind
                                 char* _tmp_229 = (char*) buffer++;
                                 *_tmp_229 = (ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].shape_reference_point.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000140\033[0m| Optional field shape_reference_point = " << *_tmp_229;
+                                    logger->print() << "|\033[38;5;94m000140\033[0m| Optional field shape_reference_point = " << *_tmp_229;
                                 char* _tmp_230 = (char*) buffer++;
                                 *_tmp_230 = (ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].orientation.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000141\033[0m| Optional field orientation = " << *_tmp_230;
+                                    logger->print() << "|\033[38;5;94m000141\033[0m| Optional field orientation = " << *_tmp_230;
                                 char* _tmp_231 = (char*) buffer++;
                                 *_tmp_231 = (ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].height.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000142\033[0m| Optional field height = " << *_tmp_231;
+                                    logger->print() << "|\033[38;5;94m000142\033[0m| Optional field height = " << *_tmp_231;
                                 
                                 if(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].shape_reference_point.size() != 0) {
                                     // Field:  type(CartesianPosition3d) name(shape_reference_point) extGroup(0)
@@ -3471,14 +3471,14 @@ namespace wind
                                         char* _tmp_232 = (char*) buffer++;
                                         *_tmp_232 = (ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].shape_reference_point[0].z_coordinate.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000143\033[0m| Optional field z_coordinate = " << *_tmp_232;
+                                            logger->print() << "|\033[38;5;94m000143\033[0m| Optional field z_coordinate = " << *_tmp_232;
                                         
                                         // Field:  type(CartesianCoordinate) name(x_coordinate) extGroup(0)
                                         // Real
                                         
                                         // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000144\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].shape_reference_point[0].x_coordinate.value) << 
+                                            logger->print() << "|\033[38;5;94m000144\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].shape_reference_point[0].x_coordinate.value) << 
                                                          " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].shape_reference_point[0].x_coordinate.value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].shape_reference_point[0].x_coordinate.value;
                                         }
                                         
@@ -3505,7 +3505,7 @@ namespace wind
                                         
                                         // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000145\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].shape_reference_point[0].y_coordinate.value) << 
+                                            logger->print() << "|\033[38;5;94m000145\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].shape_reference_point[0].y_coordinate.value) << 
                                                          " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].shape_reference_point[0].y_coordinate.value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].shape_reference_point[0].y_coordinate.value;
                                         }
                                         
@@ -3533,7 +3533,7 @@ namespace wind
                                             
                                             // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000146\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].shape_reference_point[0].z_coordinate[0].value) << 
+                                                logger->print() << "|\033[38;5;94m000146\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].shape_reference_point[0].z_coordinate[0].value) << 
                                                              " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].shape_reference_point[0].z_coordinate[0].value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].shape_reference_point[0].z_coordinate[0].value;
                                             }
                                             
@@ -3562,7 +3562,7 @@ namespace wind
                                 
                                 // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000147\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].semi_length.value) << 
+                                    logger->print() << "|\033[38;5;94m000147\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].semi_length.value) << 
                                                  " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].semi_length.value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].semi_length.value;
                                 }
                                 
@@ -3588,7 +3588,7 @@ namespace wind
                                 
                                 // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000148\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].semi_breadth.value) << 
+                                    logger->print() << "|\033[38;5;94m000148\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].semi_breadth.value) << 
                                                  " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].semi_breadth.value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].semi_breadth.value;
                                 }
                                 
@@ -3615,7 +3615,7 @@ namespace wind
                                     
                                     // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000149\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].orientation[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000149\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].orientation[0].value) << 
                                                      " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].orientation[0].value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].orientation[0].value;
                                     }
                                     
@@ -3643,7 +3643,7 @@ namespace wind
                                     
                                     // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000150\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].height[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000150\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].height[0].value) << 
                                                      " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].height[0].value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].height[0].value;
                                     }
                                     
@@ -3681,11 +3681,11 @@ namespace wind
                                 char* _tmp_247 = (char*) buffer++;
                                 *_tmp_247 = (ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].shape_reference_point.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000152\033[0m| Optional field shape_reference_point = " << *_tmp_247;
+                                    logger->print() << "|\033[38;5;94m000152\033[0m| Optional field shape_reference_point = " << *_tmp_247;
                                 char* _tmp_248 = (char*) buffer++;
                                 *_tmp_248 = (ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].height.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000153\033[0m| Optional field height = " << *_tmp_248;
+                                    logger->print() << "|\033[38;5;94m000153\033[0m| Optional field height = " << *_tmp_248;
                                 
                                 if(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].shape_reference_point.size() != 0) {
                                     // Field:  type(CartesianPosition3d) name(shape_reference_point) extGroup(0)
@@ -3697,14 +3697,14 @@ namespace wind
                                         char* _tmp_249 = (char*) buffer++;
                                         *_tmp_249 = (ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].shape_reference_point[0].z_coordinate.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000154\033[0m| Optional field z_coordinate = " << *_tmp_249;
+                                            logger->print() << "|\033[38;5;94m000154\033[0m| Optional field z_coordinate = " << *_tmp_249;
                                         
                                         // Field:  type(CartesianCoordinate) name(x_coordinate) extGroup(0)
                                         // Real
                                         
                                         // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000155\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].shape_reference_point[0].x_coordinate.value) << 
+                                            logger->print() << "|\033[38;5;94m000155\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].shape_reference_point[0].x_coordinate.value) << 
                                                          " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].shape_reference_point[0].x_coordinate.value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].shape_reference_point[0].x_coordinate.value;
                                         }
                                         
@@ -3731,7 +3731,7 @@ namespace wind
                                         
                                         // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000156\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].shape_reference_point[0].y_coordinate.value) << 
+                                            logger->print() << "|\033[38;5;94m000156\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].shape_reference_point[0].y_coordinate.value) << 
                                                          " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].shape_reference_point[0].y_coordinate.value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].shape_reference_point[0].y_coordinate.value;
                                         }
                                         
@@ -3759,7 +3759,7 @@ namespace wind
                                             
                                             // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000157\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].shape_reference_point[0].z_coordinate[0].value) << 
+                                                logger->print() << "|\033[38;5;94m000157\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].shape_reference_point[0].z_coordinate[0].value) << 
                                                              " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].shape_reference_point[0].z_coordinate[0].value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].shape_reference_point[0].z_coordinate[0].value;
                                             }
                                             
@@ -3788,7 +3788,7 @@ namespace wind
                                 
                                 // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000158\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].radius.value) << 
+                                    logger->print() << "|\033[38;5;94m000158\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].radius.value) << 
                                                  " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].radius.value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].radius.value;
                                 }
                                 
@@ -3815,7 +3815,7 @@ namespace wind
                                     
                                     // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000159\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].height[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000159\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].height[0].value) << 
                                                      " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].height[0].value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].height[0].value;
                                     }
                                     
@@ -3853,11 +3853,11 @@ namespace wind
                                 char* _tmp_260 = (char*) buffer++;
                                 *_tmp_260 = (ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].shape_reference_point.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000161\033[0m| Optional field shape_reference_point = " << *_tmp_260;
+                                    logger->print() << "|\033[38;5;94m000161\033[0m| Optional field shape_reference_point = " << *_tmp_260;
                                 char* _tmp_261 = (char*) buffer++;
                                 *_tmp_261 = (ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].height.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000162\033[0m| Optional field height = " << *_tmp_261;
+                                    logger->print() << "|\033[38;5;94m000162\033[0m| Optional field height = " << *_tmp_261;
                                 
                                 if(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].shape_reference_point.size() != 0) {
                                     // Field:  type(CartesianPosition3d) name(shape_reference_point) extGroup(0)
@@ -3869,14 +3869,14 @@ namespace wind
                                         char* _tmp_262 = (char*) buffer++;
                                         *_tmp_262 = (ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].shape_reference_point[0].z_coordinate.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000163\033[0m| Optional field z_coordinate = " << *_tmp_262;
+                                            logger->print() << "|\033[38;5;94m000163\033[0m| Optional field z_coordinate = " << *_tmp_262;
                                         
                                         // Field:  type(CartesianCoordinate) name(x_coordinate) extGroup(0)
                                         // Real
                                         
                                         // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000164\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].shape_reference_point[0].x_coordinate.value) << 
+                                            logger->print() << "|\033[38;5;94m000164\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].shape_reference_point[0].x_coordinate.value) << 
                                                          " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].shape_reference_point[0].x_coordinate.value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].shape_reference_point[0].x_coordinate.value;
                                         }
                                         
@@ -3903,7 +3903,7 @@ namespace wind
                                         
                                         // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000165\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].shape_reference_point[0].y_coordinate.value) << 
+                                            logger->print() << "|\033[38;5;94m000165\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].shape_reference_point[0].y_coordinate.value) << 
                                                          " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].shape_reference_point[0].y_coordinate.value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].shape_reference_point[0].y_coordinate.value;
                                         }
                                         
@@ -3931,7 +3931,7 @@ namespace wind
                                             
                                             // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000166\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].shape_reference_point[0].z_coordinate[0].value) << 
+                                                logger->print() << "|\033[38;5;94m000166\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].shape_reference_point[0].z_coordinate[0].value) << 
                                                              " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].shape_reference_point[0].z_coordinate[0].value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].shape_reference_point[0].z_coordinate[0].value;
                                             }
                                             
@@ -3979,14 +3979,14 @@ namespace wind
                                         char* _tmp_270 = (char*) buffer++;
                                         *_tmp_270 = (ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].polygon.elements[l].z_coordinate.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000168\033[0m| Optional field z_coordinate = " << *_tmp_270;
+                                            logger->print() << "|\033[38;5;94m000168\033[0m| Optional field z_coordinate = " << *_tmp_270;
                                         
                                         // Field:  type(CartesianCoordinate) name(x_coordinate) extGroup(0)
                                         // Real
                                         
                                         // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000169\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].polygon.elements[l].x_coordinate.value) << 
+                                            logger->print() << "|\033[38;5;94m000169\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].polygon.elements[l].x_coordinate.value) << 
                                                          " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].polygon.elements[l].x_coordinate.value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].polygon.elements[l].x_coordinate.value;
                                         }
                                         
@@ -4013,7 +4013,7 @@ namespace wind
                                         
                                         // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000170\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].polygon.elements[l].y_coordinate.value) << 
+                                            logger->print() << "|\033[38;5;94m000170\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].polygon.elements[l].y_coordinate.value) << 
                                                          " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].polygon.elements[l].y_coordinate.value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].polygon.elements[l].y_coordinate.value;
                                         }
                                         
@@ -4041,7 +4041,7 @@ namespace wind
                                             
                                             // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000171\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].polygon.elements[l].z_coordinate[0].value) << 
+                                                logger->print() << "|\033[38;5;94m000171\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].polygon.elements[l].z_coordinate[0].value) << 
                                                              " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].polygon.elements[l].z_coordinate[0].value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].polygon.elements[l].z_coordinate[0].value;
                                             }
                                             
@@ -4072,7 +4072,7 @@ namespace wind
                                     
                                     // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000172\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].height[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000172\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].height[0].value) << 
                                                      " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].height[0].value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].height[0].value;
                                     }
                                     
@@ -4112,15 +4112,15 @@ namespace wind
                                 char* _tmp_279 = (char*) buffer++;
                                 *_tmp_279 = (ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].shape_reference_point.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000174\033[0m| Optional field shape_reference_point = " << *_tmp_279;
+                                    logger->print() << "|\033[38;5;94m000174\033[0m| Optional field shape_reference_point = " << *_tmp_279;
                                 char* _tmp_280 = (char*) buffer++;
                                 *_tmp_280 = (ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].orientation.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000175\033[0m| Optional field orientation = " << *_tmp_280;
+                                    logger->print() << "|\033[38;5;94m000175\033[0m| Optional field orientation = " << *_tmp_280;
                                 char* _tmp_281 = (char*) buffer++;
                                 *_tmp_281 = (ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].height.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000176\033[0m| Optional field height = " << *_tmp_281;
+                                    logger->print() << "|\033[38;5;94m000176\033[0m| Optional field height = " << *_tmp_281;
                                 
                                 if(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].shape_reference_point.size() != 0) {
                                     // Field:  type(CartesianPosition3d) name(shape_reference_point) extGroup(0)
@@ -4132,14 +4132,14 @@ namespace wind
                                         char* _tmp_282 = (char*) buffer++;
                                         *_tmp_282 = (ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].shape_reference_point[0].z_coordinate.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000177\033[0m| Optional field z_coordinate = " << *_tmp_282;
+                                            logger->print() << "|\033[38;5;94m000177\033[0m| Optional field z_coordinate = " << *_tmp_282;
                                         
                                         // Field:  type(CartesianCoordinate) name(x_coordinate) extGroup(0)
                                         // Real
                                         
                                         // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000178\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].shape_reference_point[0].x_coordinate.value) << 
+                                            logger->print() << "|\033[38;5;94m000178\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].shape_reference_point[0].x_coordinate.value) << 
                                                          " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].shape_reference_point[0].x_coordinate.value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].shape_reference_point[0].x_coordinate.value;
                                         }
                                         
@@ -4166,7 +4166,7 @@ namespace wind
                                         
                                         // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000179\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].shape_reference_point[0].y_coordinate.value) << 
+                                            logger->print() << "|\033[38;5;94m000179\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].shape_reference_point[0].y_coordinate.value) << 
                                                          " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].shape_reference_point[0].y_coordinate.value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].shape_reference_point[0].y_coordinate.value;
                                         }
                                         
@@ -4194,7 +4194,7 @@ namespace wind
                                             
                                             // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000180\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].shape_reference_point[0].z_coordinate[0].value) << 
+                                                logger->print() << "|\033[38;5;94m000180\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].shape_reference_point[0].z_coordinate[0].value) << 
                                                              " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].shape_reference_point[0].z_coordinate[0].value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].shape_reference_point[0].z_coordinate[0].value;
                                             }
                                             
@@ -4223,7 +4223,7 @@ namespace wind
                                 
                                 // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000181\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].semi_major_axis_length.value) << 
+                                    logger->print() << "|\033[38;5;94m000181\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].semi_major_axis_length.value) << 
                                                  " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].semi_major_axis_length.value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].semi_major_axis_length.value;
                                 }
                                 
@@ -4249,7 +4249,7 @@ namespace wind
                                 
                                 // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000182\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].semi_minor_axis_length.value) << 
+                                    logger->print() << "|\033[38;5;94m000182\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].semi_minor_axis_length.value) << 
                                                  " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].semi_minor_axis_length.value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].semi_minor_axis_length.value;
                                 }
                                 
@@ -4276,7 +4276,7 @@ namespace wind
                                     
                                     // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000183\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].orientation[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000183\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].orientation[0].value) << 
                                                      " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].orientation[0].value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].orientation[0].value;
                                     }
                                     
@@ -4304,7 +4304,7 @@ namespace wind
                                     
                                     // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000184\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].height[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000184\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].height[0].value) << 
                                                      " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].height[0].value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].height[0].value;
                                     }
                                     
@@ -4345,15 +4345,15 @@ namespace wind
                                 char* _tmp_297 = (char*) buffer++;
                                 *_tmp_297 = (ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].shape_reference_point.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000186\033[0m| Optional field shape_reference_point = " << *_tmp_297;
+                                    logger->print() << "|\033[38;5;94m000186\033[0m| Optional field shape_reference_point = " << *_tmp_297;
                                 char* _tmp_298 = (char*) buffer++;
                                 *_tmp_298 = (ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].vertical_opening_angle_start.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000187\033[0m| Optional field vertical_opening_angle_start = " << *_tmp_298;
+                                    logger->print() << "|\033[38;5;94m000187\033[0m| Optional field vertical_opening_angle_start = " << *_tmp_298;
                                 char* _tmp_299 = (char*) buffer++;
                                 *_tmp_299 = (ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].vertical_opening_angle_end.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000188\033[0m| Optional field vertical_opening_angle_end = " << *_tmp_299;
+                                    logger->print() << "|\033[38;5;94m000188\033[0m| Optional field vertical_opening_angle_end = " << *_tmp_299;
                                 
                                 if(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].shape_reference_point.size() != 0) {
                                     // Field:  type(CartesianPosition3d) name(shape_reference_point) extGroup(0)
@@ -4365,14 +4365,14 @@ namespace wind
                                         char* _tmp_300 = (char*) buffer++;
                                         *_tmp_300 = (ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].shape_reference_point[0].z_coordinate.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000189\033[0m| Optional field z_coordinate = " << *_tmp_300;
+                                            logger->print() << "|\033[38;5;94m000189\033[0m| Optional field z_coordinate = " << *_tmp_300;
                                         
                                         // Field:  type(CartesianCoordinate) name(x_coordinate) extGroup(0)
                                         // Real
                                         
                                         // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000190\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].shape_reference_point[0].x_coordinate.value) << 
+                                            logger->print() << "|\033[38;5;94m000190\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].shape_reference_point[0].x_coordinate.value) << 
                                                          " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].shape_reference_point[0].x_coordinate.value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].shape_reference_point[0].x_coordinate.value;
                                         }
                                         
@@ -4399,7 +4399,7 @@ namespace wind
                                         
                                         // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000191\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].shape_reference_point[0].y_coordinate.value) << 
+                                            logger->print() << "|\033[38;5;94m000191\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].shape_reference_point[0].y_coordinate.value) << 
                                                          " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].shape_reference_point[0].y_coordinate.value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].shape_reference_point[0].y_coordinate.value;
                                         }
                                         
@@ -4427,7 +4427,7 @@ namespace wind
                                             
                                             // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000192\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].shape_reference_point[0].z_coordinate[0].value) << 
+                                                logger->print() << "|\033[38;5;94m000192\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].shape_reference_point[0].z_coordinate[0].value) << 
                                                              " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].shape_reference_point[0].z_coordinate[0].value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].shape_reference_point[0].z_coordinate[0].value;
                                             }
                                             
@@ -4456,7 +4456,7 @@ namespace wind
                                 
                                 // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000193\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].range.value) << 
+                                    logger->print() << "|\033[38;5;94m000193\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].range.value) << 
                                                  " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].range.value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].range.value;
                                 }
                                 
@@ -4482,7 +4482,7 @@ namespace wind
                                 
                                 // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000194\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].horizontal_opening_angle_start.value) << 
+                                    logger->print() << "|\033[38;5;94m000194\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].horizontal_opening_angle_start.value) << 
                                                  " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].horizontal_opening_angle_start.value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].horizontal_opening_angle_start.value;
                                 }
                                 
@@ -4508,7 +4508,7 @@ namespace wind
                                 
                                 // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000195\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].horizontal_opening_angle_end.value) << 
+                                    logger->print() << "|\033[38;5;94m000195\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].horizontal_opening_angle_end.value) << 
                                                  " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].horizontal_opening_angle_end.value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].horizontal_opening_angle_end.value;
                                 }
                                 
@@ -4535,7 +4535,7 @@ namespace wind
                                     
                                     // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000196\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].vertical_opening_angle_start[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000196\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].vertical_opening_angle_start[0].value) << 
                                                      " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].vertical_opening_angle_start[0].value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].vertical_opening_angle_start[0].value;
                                     }
                                     
@@ -4563,7 +4563,7 @@ namespace wind
                                     
                                     // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000197\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].vertical_opening_angle_end[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000197\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].vertical_opening_angle_end[0].value) << 
                                                      " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].vertical_opening_angle_end[0].value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].vertical_opening_angle_end[0].value;
                                     }
                                     
@@ -4603,14 +4603,14 @@ namespace wind
                                 char* _tmp_317 = (char*) buffer++;
                                 *_tmp_317 = (ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].z_coordinate.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000199\033[0m| Optional field z_coordinate = " << *_tmp_317;
+                                    logger->print() << "|\033[38;5;94m000199\033[0m| Optional field z_coordinate = " << *_tmp_317;
                                 
                                 // Field:  type(Identifier1B) name(ref_point_id) extGroup(0)
                                 // Integer
                                 
                                 // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000200\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].ref_point_id.value) << 
+                                    logger->print() << "|\033[38;5;94m000200\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].ref_point_id.value) << 
                                                  " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].ref_point_id.value: " << static_cast<int>(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].ref_point_id.value);
                                 }
                                 
@@ -4634,7 +4634,7 @@ namespace wind
                                 
                                 // FLOAT  min(-3094) max(1001) span(4096) scaleDivisor(100.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000201\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].x_coordinate.value) << 
+                                    logger->print() << "|\033[38;5;94m000201\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].x_coordinate.value) << 
                                                  " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].x_coordinate.value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].x_coordinate.value;
                                 }
                                 
@@ -4661,7 +4661,7 @@ namespace wind
                                 
                                 // FLOAT  min(-3094) max(1001) span(4096) scaleDivisor(100.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000202\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].y_coordinate.value) << 
+                                    logger->print() << "|\033[38;5;94m000202\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].y_coordinate.value) << 
                                                  " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].y_coordinate.value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].y_coordinate.value;
                                 }
                                 
@@ -4689,7 +4689,7 @@ namespace wind
                                     
                                     // FLOAT  min(-3094) max(1001) span(4096) scaleDivisor(100.0) dataType(Float)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000203\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].z_coordinate[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000203\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].z_coordinate[0].value) << 
                                                      " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].z_coordinate[0].value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].z_coordinate[0].value;
                                     }
                                     
@@ -4738,18 +4738,18 @@ namespace wind
                                         char* _tmp_326 = (char*) buffer++;
                                         *_tmp_326 = (ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].vertical_opening_angle_start.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000205\033[0m| Optional field vertical_opening_angle_start = " << *_tmp_326;
+                                            logger->print() << "|\033[38;5;94m000205\033[0m| Optional field vertical_opening_angle_start = " << *_tmp_326;
                                         char* _tmp_327 = (char*) buffer++;
                                         *_tmp_327 = (ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].vertical_opening_angle_end.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000206\033[0m| Optional field vertical_opening_angle_end = " << *_tmp_327;
+                                            logger->print() << "|\033[38;5;94m000206\033[0m| Optional field vertical_opening_angle_end = " << *_tmp_327;
                                         
                                         // Field:  type(StandardLength12b) name(range) extGroup(0)
                                         // Real
                                         
                                         // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000207\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].range.value) << 
+                                            logger->print() << "|\033[38;5;94m000207\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].range.value) << 
                                                          " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].range.value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].range.value;
                                         }
                                         
@@ -4775,7 +4775,7 @@ namespace wind
                                         
                                         // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000208\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].horizontal_opening_angle_start.value) << 
+                                            logger->print() << "|\033[38;5;94m000208\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].horizontal_opening_angle_start.value) << 
                                                          " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].horizontal_opening_angle_start.value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].horizontal_opening_angle_start.value;
                                         }
                                         
@@ -4801,7 +4801,7 @@ namespace wind
                                         
                                         // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000209\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].horizontal_opening_angle_end.value) << 
+                                            logger->print() << "|\033[38;5;94m000209\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].horizontal_opening_angle_end.value) << 
                                                          " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].horizontal_opening_angle_end.value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].horizontal_opening_angle_end.value;
                                         }
                                         
@@ -4828,7 +4828,7 @@ namespace wind
                                             
                                             // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000210\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].vertical_opening_angle_start[0].value) << 
+                                                logger->print() << "|\033[38;5;94m000210\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].vertical_opening_angle_start[0].value) << 
                                                              " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].vertical_opening_angle_start[0].value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].vertical_opening_angle_start[0].value;
                                             }
                                             
@@ -4856,7 +4856,7 @@ namespace wind
                                             
                                             // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000211\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].vertical_opening_angle_end[0].value) << 
+                                                logger->print() << "|\033[38;5;94m000211\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].vertical_opening_angle_end[0].value) << 
                                                              " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].vertical_opening_angle_end[0].value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].vertical_opening_angle_end[0].value;
                                             }
                                             
@@ -4934,15 +4934,15 @@ namespace wind
                                 char* _tmp_339 = (char*) buffer++;
                                 *_tmp_339 = (ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].shape_reference_point.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000214\033[0m| Optional field shape_reference_point = " << *_tmp_339;
+                                    logger->print() << "|\033[38;5;94m000214\033[0m| Optional field shape_reference_point = " << *_tmp_339;
                                 char* _tmp_340 = (char*) buffer++;
                                 *_tmp_340 = (ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].orientation.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000215\033[0m| Optional field orientation = " << *_tmp_340;
+                                    logger->print() << "|\033[38;5;94m000215\033[0m| Optional field orientation = " << *_tmp_340;
                                 char* _tmp_341 = (char*) buffer++;
                                 *_tmp_341 = (ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].height.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000216\033[0m| Optional field height = " << *_tmp_341;
+                                    logger->print() << "|\033[38;5;94m000216\033[0m| Optional field height = " << *_tmp_341;
                                 
                                 if(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].shape_reference_point.size() != 0) {
                                     // Field:  type(CartesianPosition3d) name(shape_reference_point) extGroup(0)
@@ -4954,14 +4954,14 @@ namespace wind
                                         char* _tmp_342 = (char*) buffer++;
                                         *_tmp_342 = (ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].shape_reference_point[0].z_coordinate.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000217\033[0m| Optional field z_coordinate = " << *_tmp_342;
+                                            logger->print() << "|\033[38;5;94m000217\033[0m| Optional field z_coordinate = " << *_tmp_342;
                                         
                                         // Field:  type(CartesianCoordinate) name(x_coordinate) extGroup(0)
                                         // Real
                                         
                                         // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000218\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].shape_reference_point[0].x_coordinate.value) << 
+                                            logger->print() << "|\033[38;5;94m000218\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].shape_reference_point[0].x_coordinate.value) << 
                                                          " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].shape_reference_point[0].x_coordinate.value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].shape_reference_point[0].x_coordinate.value;
                                         }
                                         
@@ -4988,7 +4988,7 @@ namespace wind
                                         
                                         // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000219\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].shape_reference_point[0].y_coordinate.value) << 
+                                            logger->print() << "|\033[38;5;94m000219\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].shape_reference_point[0].y_coordinate.value) << 
                                                          " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].shape_reference_point[0].y_coordinate.value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].shape_reference_point[0].y_coordinate.value;
                                         }
                                         
@@ -5016,7 +5016,7 @@ namespace wind
                                             
                                             // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000220\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].shape_reference_point[0].z_coordinate[0].value) << 
+                                                logger->print() << "|\033[38;5;94m000220\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].shape_reference_point[0].z_coordinate[0].value) << 
                                                              " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].shape_reference_point[0].z_coordinate[0].value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].shape_reference_point[0].z_coordinate[0].value;
                                             }
                                             
@@ -5045,7 +5045,7 @@ namespace wind
                                 
                                 // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000221\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].semi_length.value) << 
+                                    logger->print() << "|\033[38;5;94m000221\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].semi_length.value) << 
                                                  " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].semi_length.value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].semi_length.value;
                                 }
                                 
@@ -5071,7 +5071,7 @@ namespace wind
                                 
                                 // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000222\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].semi_breadth.value) << 
+                                    logger->print() << "|\033[38;5;94m000222\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].semi_breadth.value) << 
                                                  " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].semi_breadth.value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].semi_breadth.value;
                                 }
                                 
@@ -5098,7 +5098,7 @@ namespace wind
                                     
                                     // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000223\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].orientation[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000223\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].orientation[0].value) << 
                                                      " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].orientation[0].value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].orientation[0].value;
                                     }
                                     
@@ -5126,7 +5126,7 @@ namespace wind
                                     
                                     // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000224\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].height[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000224\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].height[0].value) << 
                                                      " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].height[0].value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].height[0].value;
                                     }
                                     
@@ -5164,11 +5164,11 @@ namespace wind
                                 char* _tmp_357 = (char*) buffer++;
                                 *_tmp_357 = (ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].shape_reference_point.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000226\033[0m| Optional field shape_reference_point = " << *_tmp_357;
+                                    logger->print() << "|\033[38;5;94m000226\033[0m| Optional field shape_reference_point = " << *_tmp_357;
                                 char* _tmp_358 = (char*) buffer++;
                                 *_tmp_358 = (ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].height.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000227\033[0m| Optional field height = " << *_tmp_358;
+                                    logger->print() << "|\033[38;5;94m000227\033[0m| Optional field height = " << *_tmp_358;
                                 
                                 if(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].shape_reference_point.size() != 0) {
                                     // Field:  type(CartesianPosition3d) name(shape_reference_point) extGroup(0)
@@ -5180,14 +5180,14 @@ namespace wind
                                         char* _tmp_359 = (char*) buffer++;
                                         *_tmp_359 = (ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].shape_reference_point[0].z_coordinate.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000228\033[0m| Optional field z_coordinate = " << *_tmp_359;
+                                            logger->print() << "|\033[38;5;94m000228\033[0m| Optional field z_coordinate = " << *_tmp_359;
                                         
                                         // Field:  type(CartesianCoordinate) name(x_coordinate) extGroup(0)
                                         // Real
                                         
                                         // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000229\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].shape_reference_point[0].x_coordinate.value) << 
+                                            logger->print() << "|\033[38;5;94m000229\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].shape_reference_point[0].x_coordinate.value) << 
                                                          " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].shape_reference_point[0].x_coordinate.value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].shape_reference_point[0].x_coordinate.value;
                                         }
                                         
@@ -5214,7 +5214,7 @@ namespace wind
                                         
                                         // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000230\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].shape_reference_point[0].y_coordinate.value) << 
+                                            logger->print() << "|\033[38;5;94m000230\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].shape_reference_point[0].y_coordinate.value) << 
                                                          " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].shape_reference_point[0].y_coordinate.value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].shape_reference_point[0].y_coordinate.value;
                                         }
                                         
@@ -5242,7 +5242,7 @@ namespace wind
                                             
                                             // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000231\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].shape_reference_point[0].z_coordinate[0].value) << 
+                                                logger->print() << "|\033[38;5;94m000231\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].shape_reference_point[0].z_coordinate[0].value) << 
                                                              " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].shape_reference_point[0].z_coordinate[0].value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].shape_reference_point[0].z_coordinate[0].value;
                                             }
                                             
@@ -5271,7 +5271,7 @@ namespace wind
                                 
                                 // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000232\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].radius.value) << 
+                                    logger->print() << "|\033[38;5;94m000232\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].radius.value) << 
                                                  " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].radius.value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].radius.value;
                                 }
                                 
@@ -5298,7 +5298,7 @@ namespace wind
                                     
                                     // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000233\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].height[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000233\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].height[0].value) << 
                                                      " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].height[0].value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].height[0].value;
                                     }
                                     
@@ -5336,11 +5336,11 @@ namespace wind
                                 char* _tmp_370 = (char*) buffer++;
                                 *_tmp_370 = (ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].shape_reference_point.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000235\033[0m| Optional field shape_reference_point = " << *_tmp_370;
+                                    logger->print() << "|\033[38;5;94m000235\033[0m| Optional field shape_reference_point = " << *_tmp_370;
                                 char* _tmp_371 = (char*) buffer++;
                                 *_tmp_371 = (ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].height.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000236\033[0m| Optional field height = " << *_tmp_371;
+                                    logger->print() << "|\033[38;5;94m000236\033[0m| Optional field height = " << *_tmp_371;
                                 
                                 if(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].shape_reference_point.size() != 0) {
                                     // Field:  type(CartesianPosition3d) name(shape_reference_point) extGroup(0)
@@ -5352,14 +5352,14 @@ namespace wind
                                         char* _tmp_372 = (char*) buffer++;
                                         *_tmp_372 = (ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].shape_reference_point[0].z_coordinate.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000237\033[0m| Optional field z_coordinate = " << *_tmp_372;
+                                            logger->print() << "|\033[38;5;94m000237\033[0m| Optional field z_coordinate = " << *_tmp_372;
                                         
                                         // Field:  type(CartesianCoordinate) name(x_coordinate) extGroup(0)
                                         // Real
                                         
                                         // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000238\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].shape_reference_point[0].x_coordinate.value) << 
+                                            logger->print() << "|\033[38;5;94m000238\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].shape_reference_point[0].x_coordinate.value) << 
                                                          " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].shape_reference_point[0].x_coordinate.value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].shape_reference_point[0].x_coordinate.value;
                                         }
                                         
@@ -5386,7 +5386,7 @@ namespace wind
                                         
                                         // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000239\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].shape_reference_point[0].y_coordinate.value) << 
+                                            logger->print() << "|\033[38;5;94m000239\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].shape_reference_point[0].y_coordinate.value) << 
                                                          " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].shape_reference_point[0].y_coordinate.value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].shape_reference_point[0].y_coordinate.value;
                                         }
                                         
@@ -5414,7 +5414,7 @@ namespace wind
                                             
                                             // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000240\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].shape_reference_point[0].z_coordinate[0].value) << 
+                                                logger->print() << "|\033[38;5;94m000240\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].shape_reference_point[0].z_coordinate[0].value) << 
                                                              " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].shape_reference_point[0].z_coordinate[0].value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].shape_reference_point[0].z_coordinate[0].value;
                                             }
                                             
@@ -5462,14 +5462,14 @@ namespace wind
                                         char* _tmp_380 = (char*) buffer++;
                                         *_tmp_380 = (ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].polygon.elements[o].z_coordinate.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000242\033[0m| Optional field z_coordinate = " << *_tmp_380;
+                                            logger->print() << "|\033[38;5;94m000242\033[0m| Optional field z_coordinate = " << *_tmp_380;
                                         
                                         // Field:  type(CartesianCoordinate) name(x_coordinate) extGroup(0)
                                         // Real
                                         
                                         // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000243\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].polygon.elements[o].x_coordinate.value) << 
+                                            logger->print() << "|\033[38;5;94m000243\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].polygon.elements[o].x_coordinate.value) << 
                                                          " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].polygon.elements[o].x_coordinate.value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].polygon.elements[o].x_coordinate.value;
                                         }
                                         
@@ -5496,7 +5496,7 @@ namespace wind
                                         
                                         // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000244\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].polygon.elements[o].y_coordinate.value) << 
+                                            logger->print() << "|\033[38;5;94m000244\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].polygon.elements[o].y_coordinate.value) << 
                                                          " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].polygon.elements[o].y_coordinate.value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].polygon.elements[o].y_coordinate.value;
                                         }
                                         
@@ -5524,7 +5524,7 @@ namespace wind
                                             
                                             // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000245\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].polygon.elements[o].z_coordinate[0].value) << 
+                                                logger->print() << "|\033[38;5;94m000245\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].polygon.elements[o].z_coordinate[0].value) << 
                                                              " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].polygon.elements[o].z_coordinate[0].value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].polygon.elements[o].z_coordinate[0].value;
                                             }
                                             
@@ -5555,7 +5555,7 @@ namespace wind
                                     
                                     // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000246\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].height[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000246\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].height[0].value) << 
                                                      " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].height[0].value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].height[0].value;
                                     }
                                     
@@ -5595,15 +5595,15 @@ namespace wind
                                 char* _tmp_389 = (char*) buffer++;
                                 *_tmp_389 = (ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].shape_reference_point.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000248\033[0m| Optional field shape_reference_point = " << *_tmp_389;
+                                    logger->print() << "|\033[38;5;94m000248\033[0m| Optional field shape_reference_point = " << *_tmp_389;
                                 char* _tmp_390 = (char*) buffer++;
                                 *_tmp_390 = (ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].orientation.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000249\033[0m| Optional field orientation = " << *_tmp_390;
+                                    logger->print() << "|\033[38;5;94m000249\033[0m| Optional field orientation = " << *_tmp_390;
                                 char* _tmp_391 = (char*) buffer++;
                                 *_tmp_391 = (ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].height.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000250\033[0m| Optional field height = " << *_tmp_391;
+                                    logger->print() << "|\033[38;5;94m000250\033[0m| Optional field height = " << *_tmp_391;
                                 
                                 if(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].shape_reference_point.size() != 0) {
                                     // Field:  type(CartesianPosition3d) name(shape_reference_point) extGroup(0)
@@ -5615,14 +5615,14 @@ namespace wind
                                         char* _tmp_392 = (char*) buffer++;
                                         *_tmp_392 = (ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].shape_reference_point[0].z_coordinate.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000251\033[0m| Optional field z_coordinate = " << *_tmp_392;
+                                            logger->print() << "|\033[38;5;94m000251\033[0m| Optional field z_coordinate = " << *_tmp_392;
                                         
                                         // Field:  type(CartesianCoordinate) name(x_coordinate) extGroup(0)
                                         // Real
                                         
                                         // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000252\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].shape_reference_point[0].x_coordinate.value) << 
+                                            logger->print() << "|\033[38;5;94m000252\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].shape_reference_point[0].x_coordinate.value) << 
                                                          " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].shape_reference_point[0].x_coordinate.value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].shape_reference_point[0].x_coordinate.value;
                                         }
                                         
@@ -5649,7 +5649,7 @@ namespace wind
                                         
                                         // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000253\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].shape_reference_point[0].y_coordinate.value) << 
+                                            logger->print() << "|\033[38;5;94m000253\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].shape_reference_point[0].y_coordinate.value) << 
                                                          " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].shape_reference_point[0].y_coordinate.value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].shape_reference_point[0].y_coordinate.value;
                                         }
                                         
@@ -5677,7 +5677,7 @@ namespace wind
                                             
                                             // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000254\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].shape_reference_point[0].z_coordinate[0].value) << 
+                                                logger->print() << "|\033[38;5;94m000254\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].shape_reference_point[0].z_coordinate[0].value) << 
                                                              " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].shape_reference_point[0].z_coordinate[0].value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].shape_reference_point[0].z_coordinate[0].value;
                                             }
                                             
@@ -5706,7 +5706,7 @@ namespace wind
                                 
                                 // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000255\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].semi_major_axis_length.value) << 
+                                    logger->print() << "|\033[38;5;94m000255\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].semi_major_axis_length.value) << 
                                                  " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].semi_major_axis_length.value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].semi_major_axis_length.value;
                                 }
                                 
@@ -5732,7 +5732,7 @@ namespace wind
                                 
                                 // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000256\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].semi_minor_axis_length.value) << 
+                                    logger->print() << "|\033[38;5;94m000256\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].semi_minor_axis_length.value) << 
                                                  " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].semi_minor_axis_length.value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].semi_minor_axis_length.value;
                                 }
                                 
@@ -5759,7 +5759,7 @@ namespace wind
                                     
                                     // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000257\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].orientation[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000257\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].orientation[0].value) << 
                                                      " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].orientation[0].value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].orientation[0].value;
                                     }
                                     
@@ -5787,7 +5787,7 @@ namespace wind
                                     
                                     // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000258\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].height[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000258\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].height[0].value) << 
                                                      " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].height[0].value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].height[0].value;
                                     }
                                     
@@ -5828,15 +5828,15 @@ namespace wind
                                 char* _tmp_407 = (char*) buffer++;
                                 *_tmp_407 = (ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].shape_reference_point.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000260\033[0m| Optional field shape_reference_point = " << *_tmp_407;
+                                    logger->print() << "|\033[38;5;94m000260\033[0m| Optional field shape_reference_point = " << *_tmp_407;
                                 char* _tmp_408 = (char*) buffer++;
                                 *_tmp_408 = (ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].vertical_opening_angle_start.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000261\033[0m| Optional field vertical_opening_angle_start = " << *_tmp_408;
+                                    logger->print() << "|\033[38;5;94m000261\033[0m| Optional field vertical_opening_angle_start = " << *_tmp_408;
                                 char* _tmp_409 = (char*) buffer++;
                                 *_tmp_409 = (ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].vertical_opening_angle_end.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000262\033[0m| Optional field vertical_opening_angle_end = " << *_tmp_409;
+                                    logger->print() << "|\033[38;5;94m000262\033[0m| Optional field vertical_opening_angle_end = " << *_tmp_409;
                                 
                                 if(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].shape_reference_point.size() != 0) {
                                     // Field:  type(CartesianPosition3d) name(shape_reference_point) extGroup(0)
@@ -5848,14 +5848,14 @@ namespace wind
                                         char* _tmp_410 = (char*) buffer++;
                                         *_tmp_410 = (ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].shape_reference_point[0].z_coordinate.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000263\033[0m| Optional field z_coordinate = " << *_tmp_410;
+                                            logger->print() << "|\033[38;5;94m000263\033[0m| Optional field z_coordinate = " << *_tmp_410;
                                         
                                         // Field:  type(CartesianCoordinate) name(x_coordinate) extGroup(0)
                                         // Real
                                         
                                         // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000264\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].shape_reference_point[0].x_coordinate.value) << 
+                                            logger->print() << "|\033[38;5;94m000264\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].shape_reference_point[0].x_coordinate.value) << 
                                                          " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].shape_reference_point[0].x_coordinate.value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].shape_reference_point[0].x_coordinate.value;
                                         }
                                         
@@ -5882,7 +5882,7 @@ namespace wind
                                         
                                         // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000265\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].shape_reference_point[0].y_coordinate.value) << 
+                                            logger->print() << "|\033[38;5;94m000265\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].shape_reference_point[0].y_coordinate.value) << 
                                                          " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].shape_reference_point[0].y_coordinate.value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].shape_reference_point[0].y_coordinate.value;
                                         }
                                         
@@ -5910,7 +5910,7 @@ namespace wind
                                             
                                             // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000266\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].shape_reference_point[0].z_coordinate[0].value) << 
+                                                logger->print() << "|\033[38;5;94m000266\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].shape_reference_point[0].z_coordinate[0].value) << 
                                                              " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].shape_reference_point[0].z_coordinate[0].value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].shape_reference_point[0].z_coordinate[0].value;
                                             }
                                             
@@ -5939,7 +5939,7 @@ namespace wind
                                 
                                 // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000267\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].range.value) << 
+                                    logger->print() << "|\033[38;5;94m000267\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].range.value) << 
                                                  " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].range.value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].range.value;
                                 }
                                 
@@ -5965,7 +5965,7 @@ namespace wind
                                 
                                 // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000268\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].horizontal_opening_angle_start.value) << 
+                                    logger->print() << "|\033[38;5;94m000268\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].horizontal_opening_angle_start.value) << 
                                                  " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].horizontal_opening_angle_start.value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].horizontal_opening_angle_start.value;
                                 }
                                 
@@ -5991,7 +5991,7 @@ namespace wind
                                 
                                 // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000269\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].horizontal_opening_angle_end.value) << 
+                                    logger->print() << "|\033[38;5;94m000269\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].horizontal_opening_angle_end.value) << 
                                                  " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].horizontal_opening_angle_end.value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].horizontal_opening_angle_end.value;
                                 }
                                 
@@ -6018,7 +6018,7 @@ namespace wind
                                     
                                     // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000270\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].vertical_opening_angle_start[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000270\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].vertical_opening_angle_start[0].value) << 
                                                      " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].vertical_opening_angle_start[0].value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].vertical_opening_angle_start[0].value;
                                     }
                                     
@@ -6046,7 +6046,7 @@ namespace wind
                                     
                                     // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000271\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].vertical_opening_angle_end[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000271\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].vertical_opening_angle_end[0].value) << 
                                                      " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].vertical_opening_angle_end[0].value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].vertical_opening_angle_end[0].value;
                                     }
                                     
@@ -6086,14 +6086,14 @@ namespace wind
                                 char* _tmp_427 = (char*) buffer++;
                                 *_tmp_427 = (ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].z_coordinate.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000273\033[0m| Optional field z_coordinate = " << *_tmp_427;
+                                    logger->print() << "|\033[38;5;94m000273\033[0m| Optional field z_coordinate = " << *_tmp_427;
                                 
                                 // Field:  type(Identifier1B) name(ref_point_id) extGroup(0)
                                 // Integer
                                 
                                 // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000274\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].ref_point_id.value) << 
+                                    logger->print() << "|\033[38;5;94m000274\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].ref_point_id.value) << 
                                                  " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].ref_point_id.value: " << static_cast<int>(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].ref_point_id.value);
                                 }
                                 
@@ -6117,7 +6117,7 @@ namespace wind
                                 
                                 // FLOAT  min(-3094) max(1001) span(4096) scaleDivisor(100.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000275\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].x_coordinate.value) << 
+                                    logger->print() << "|\033[38;5;94m000275\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].x_coordinate.value) << 
                                                  " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].x_coordinate.value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].x_coordinate.value;
                                 }
                                 
@@ -6144,7 +6144,7 @@ namespace wind
                                 
                                 // FLOAT  min(-3094) max(1001) span(4096) scaleDivisor(100.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000276\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].y_coordinate.value) << 
+                                    logger->print() << "|\033[38;5;94m000276\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].y_coordinate.value) << 
                                                  " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].y_coordinate.value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].y_coordinate.value;
                                 }
                                 
@@ -6172,7 +6172,7 @@ namespace wind
                                     
                                     // FLOAT  min(-3094) max(1001) span(4096) scaleDivisor(100.0) dataType(Float)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000277\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].z_coordinate[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000277\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].z_coordinate[0].value) << 
                                                      " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].z_coordinate[0].value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].z_coordinate[0].value;
                                     }
                                     
@@ -6221,18 +6221,18 @@ namespace wind
                                         char* _tmp_436 = (char*) buffer++;
                                         *_tmp_436 = (ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].vertical_opening_angle_start.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000279\033[0m| Optional field vertical_opening_angle_start = " << *_tmp_436;
+                                            logger->print() << "|\033[38;5;94m000279\033[0m| Optional field vertical_opening_angle_start = " << *_tmp_436;
                                         char* _tmp_437 = (char*) buffer++;
                                         *_tmp_437 = (ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].vertical_opening_angle_end.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000280\033[0m| Optional field vertical_opening_angle_end = " << *_tmp_437;
+                                            logger->print() << "|\033[38;5;94m000280\033[0m| Optional field vertical_opening_angle_end = " << *_tmp_437;
                                         
                                         // Field:  type(StandardLength12b) name(range) extGroup(0)
                                         // Real
                                         
                                         // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000281\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].range.value) << 
+                                            logger->print() << "|\033[38;5;94m000281\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].range.value) << 
                                                          " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].range.value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].range.value;
                                         }
                                         
@@ -6258,7 +6258,7 @@ namespace wind
                                         
                                         // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000282\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].horizontal_opening_angle_start.value) << 
+                                            logger->print() << "|\033[38;5;94m000282\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].horizontal_opening_angle_start.value) << 
                                                          " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].horizontal_opening_angle_start.value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].horizontal_opening_angle_start.value;
                                         }
                                         
@@ -6284,7 +6284,7 @@ namespace wind
                                         
                                         // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000283\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].horizontal_opening_angle_end.value) << 
+                                            logger->print() << "|\033[38;5;94m000283\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].horizontal_opening_angle_end.value) << 
                                                          " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].horizontal_opening_angle_end.value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].horizontal_opening_angle_end.value;
                                         }
                                         
@@ -6311,7 +6311,7 @@ namespace wind
                                             
                                             // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000284\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].vertical_opening_angle_start[0].value) << 
+                                                logger->print() << "|\033[38;5;94m000284\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].vertical_opening_angle_start[0].value) << 
                                                              " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].vertical_opening_angle_start[0].value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].vertical_opening_angle_start[0].value;
                                             }
                                             
@@ -6339,7 +6339,7 @@ namespace wind
                                             
                                             // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000285\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].vertical_opening_angle_end[0].value) << 
+                                                logger->print() << "|\033[38;5;94m000285\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].vertical_opening_angle_end[0].value) << 
                                                              " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].vertical_opening_angle_end[0].value: " << ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].vertical_opening_angle_end[0].value;
                                             }
                                             
@@ -6398,7 +6398,7 @@ namespace wind
                             return -1;
                         }
                         if(debug)
-                            logger->debug() << "|\033[38;5;94m000286\033[0m| epu_to_vehicle.epu_low_frequency_container[0].epu_section_capabilities[0].company_name.value.size(): " << 
+                            logger->print() << "|\033[38;5;94m000286\033[0m| epu_to_vehicle.epu_low_frequency_container[0].epu_section_capabilities[0].company_name.value.size(): " << 
                                         static_cast<int>(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_capabilities[0].company_name.value.size());
                         
                         if(__aux64__ > 24) __aux64__ = 24;
@@ -6415,7 +6415,7 @@ namespace wind
                         // BitString
                         // BIT_STRING  min(16) max(16) span(1)
                         if(debug)
-                            logger->debug() << "|\033[38;5;94m000287\033[0m| epu_to_vehicle.epu_low_frequency_container[0].epu_section_capabilities[0].sensor_types.value: " << static_cast<int>(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_capabilities[0].sensor_types.values.size());
+                            logger->print() << "|\033[38;5;94m000287\033[0m| epu_to_vehicle.epu_low_frequency_container[0].epu_section_capabilities[0].sensor_types.value: " << static_cast<int>(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_capabilities[0].sensor_types.values.size());
                         
                         if(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_capabilities[0].sensor_types.values.size() < 16) {
                                 logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_capabilities[0].sensor_types.value' " << (ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_capabilities[0].sensor_types.values.size()) << " is less than allowable (16); message dropped.";

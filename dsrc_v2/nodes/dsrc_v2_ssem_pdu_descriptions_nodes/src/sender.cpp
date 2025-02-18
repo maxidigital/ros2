@@ -75,8 +75,8 @@ public:
         sender_->set_disk_logger(dlogger_);
         sender_->start();
 
-        slogger_->print() << tools::green("Ready!");
-    
+        slogger_->print() << tools::bold(tools::green("Ready!"));
+
         #if WIND_ROS_VERSION == 1 
           ros::spin();
 		#else
@@ -132,9 +132,8 @@ private:
 
 void printUsage(ScreenLogger* slogger, bool isError = false) {    
     if (!isError) {        
-        slogger->print(tools::bold(tools::custom(100, 100, 100, 
-            "Usage: [--name nodeName] [--topic topic] [--address ipAddress] [--port portNumber] [--debug] [--show-hex] [--log-to-disk]")));
-        slogger->print(tools::custom(80, 80, 80, "Default values in include/wind_constants.h"));
+        slogger->print(tools::bold(tools::purple("Usage: [--name nodeName] [--topic topic] [--address ipAddress] [--port portNumber] [--debug] [--show-hex] [--log-to-disk]")));
+        slogger->print(tools::purple("Default values in include/wind_constants.h"));
         slogger->print("");
     } else {
         slogger->print("Usage: [--name nodeName] [--topic topic] [--address ipAddress] [--port portNumber] [--debug] [--show-hex] [--log-to-disk]");

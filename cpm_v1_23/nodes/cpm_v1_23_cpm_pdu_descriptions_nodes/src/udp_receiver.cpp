@@ -13,72 +13,75 @@
  * SPDX-License-Identifier: EPL-2.0
  * 
  * 
+ * File taken (and slightly modified) from https://gist.github.com/kaimallea/e112f5c22fe8ca6dc627
+ * 
  */
-#include "udp_receiver.h"
+#include <udp_receiver.h>
+#include <boost/bind.hpp>
 
 #if WIND_ROS_VERSION == 2
  using namespace boost::placeholders;
 #endif
 
-namespace wind {
-namespace comm {
-
-UDPReceiver::UDPReceiver(int port)
-    : socket_(io_service_, boost::asio::ip::udp::endpoint(boost::asio::ip::udp::v4(), port))
-    , reading_status_(false)
+wind::comm::UDPReceiver::UDPReceiver(int port)
+  : reading_status_(false), socket_(io_service_, udp::endpoint(udp::v4(), port))
 {
-    io_service_.run();  // Keep this as it was in your original code
+	io_service_.run();
 }
 
-UDPReceiver::~UDPReceiver() {
-    stopReading();
-    socket_.close();
+wind::comm::UDPReceiver::~UDPReceiver()
+{
+	stopReading();
+	socket_.close();
 }
 
-void UDPReceiver::setReceiveCallbackFunction(DataCallbackFunction handler) {
-    data_callback_function_ = std::move(handler);
+void 
+wind::comm::UDPReceiver::setReceiveCallbackFunction(DataCallbackFunction handler)
+{
+	data_callback_function_ = handler;
 }
 
-void UDPReceiver::startReading() {
-    if (reading_status_.load(std::memory_order_acquire)) {
-        return;
-    }
-    
-    reading_status_.store(true, std::memory_order_release);
-    read_thread_ptr_ = std::make_shared<boost::thread>(
-        #if WIND_ROS_VERSION == 2
-            boost::bind(&UDPReceiver::receiveData, this)
-        #else
-            boost::bind(&UDPReceiver::receiveData, this)
-        #endif
-    );
+void
+wind::comm::UDPReceiver::startReading()
+{
+	if (reading_status_)
+		return;
+	
+	reading_status_ = true;
+	read_thread_ptr_ = boost::shared_ptr<boost::thread>(new boost::thread(boost::bind(&wind::comm::UDPReceiver::receiveData, this)));
 }
 
-void UDPReceiver::stopReading() {
-    reading_status_.store(false, std::memory_order_release);
-    if (read_thread_ptr_ && read_thread_ptr_->joinable()) {
-        read_thread_ptr_->join();
-    }
+void
+wind::comm::UDPReceiver::stopReading()
+{
+	reading_status_ = false;
 }
 
-void UDPReceiver::receiveData() {
-    while (reading_status_.load(std::memory_order_acquire)) {
-        try {
-            size_t bytes_transferred = socket_.receive(boost::asio::buffer(buffer_));
-            
-            if (bytes_transferred > 0 && data_callback_function_) {
-                // Create a copy of the received data for the callback
-                std::vector<uint8_t> copied_data(buffer_.begin(), 
-                                               buffer_.begin() + bytes_transferred);
-                data_callback_function_(copied_data.data(), bytes_transferred);
-            }
-        }
-        catch (const std::exception& e) {
-            // Keep the same error handling approach as your original code
-            continue;
-        }
-    }
-}
+void
+wind::comm::UDPReceiver::receiveData()
+{
+	size_t sz = 0;
+	while (reading_status_)
+	{
+		try
+		{
+			sz = socket_.receive(boost::asio::buffer(buffer_));
+		}
+		catch (std::exception& e)
+		{
+			sz = 0;
+		}
 
-} // namespace comm
-} // namespace wind
+		// do the callback to be set in the ROS node.
+		if (sz > 0)
+		{
+			if (data_callback_function_)
+			{
+				uint8_t* copied_data = new uint8_t[sz];
+				memcpy(copied_data, &buffer_[0], sz);
+				data_callback_function_(copied_data, sz);
+				delete[] copied_data;
+			}
+		}
+	}
+}

@@ -66,7 +66,7 @@ namespace wind
         
         // UINT8  min(0) max(255) span(256) dataType(UInt8)
         if(debug) {
-            logger->debug() << "|\033[38;5;94m000000\033[0m| " << tools::getTypeName(ros->its_header.protocol_version.value) << 
+            logger->print() << "|\033[38;5;94m000000\033[0m| " << tools::getTypeName(ros->its_header.protocol_version.value) << 
                          " its_header.protocol_version.value: " << static_cast<int>(ros->its_header.protocol_version.value);
         }
         
@@ -90,7 +90,7 @@ namespace wind
         
         // UINT8  min(0) max(255) span(256) dataType(UInt8)
         if(debug) {
-            logger->debug() << "|\033[38;5;94m000001\033[0m| " << tools::getTypeName(ros->its_header.message_id.value) << 
+            logger->print() << "|\033[38;5;94m000001\033[0m| " << tools::getTypeName(ros->its_header.message_id.value) << 
                          " its_header.message_id.value: " << static_cast<int>(ros->its_header.message_id.value);
         }
         
@@ -114,7 +114,7 @@ namespace wind
         
         // UINT32  min(0) max(4294967295) span(4294967296) dataType(UInt32)
         if(debug) {
-            logger->debug() << "|\033[38;5;94m000002\033[0m| " << tools::getTypeName(ros->its_header.station_id.value) << 
+            logger->print() << "|\033[38;5;94m000002\033[0m| " << tools::getTypeName(ros->its_header.station_id.value) << 
                          " its_header.station_id.value: " << ros->its_header.station_id.value;
         }
         
@@ -157,18 +157,18 @@ namespace wind
             char* _tmp_4 = (char*) buffer++;
             *_tmp_4 = (ros->payload.management_container.segmentation_info.size() != 0 ? 1 : 0);
             if(debug)
-                logger->debug() << "|\033[38;5;94m000003\033[0m| Optional field segmentation_info = " << *_tmp_4;
+                logger->print() << "|\033[38;5;94m000003\033[0m| Optional field segmentation_info = " << *_tmp_4;
             char* _tmp_5 = (char*) buffer++;
             *_tmp_5 = (ros->payload.management_container.message_rate_range.size() != 0 ? 1 : 0);
             if(debug)
-                logger->debug() << "|\033[38;5;94m000004\033[0m| Optional field message_rate_range = " << *_tmp_5;
+                logger->print() << "|\033[38;5;94m000004\033[0m| Optional field message_rate_range = " << *_tmp_5;
             
             // Field:  type(TimestampIts) name(reference_time) extGroup(0)
             // Real
             
             // DOUBLE  min(0) max(4398046511103) span(4398046511104) scaleDivisor(1000.0) dataType(Double)
             if(debug) {
-                logger->debug() << "|\033[38;5;94m000005\033[0m| " << tools::getTypeName(ros->payload.management_container.reference_time.value) << 
+                logger->print() << "|\033[38;5;94m000005\033[0m| " << tools::getTypeName(ros->payload.management_container.reference_time.value) << 
                              " payload.management_container.reference_time.value: " << ros->payload.management_container.reference_time.value;
             }
             
@@ -202,7 +202,7 @@ namespace wind
                 
                 // DOUBLE  min(-900000000) max(900000001) span(1800000002) scaleDivisor(1.0E7) dataType(Double)
                 if(debug) {
-                    logger->debug() << "|\033[38;5;94m000006\033[0m| " << tools::getTypeName(ros->payload.management_container.reference_position.latitude.value) << 
+                    logger->print() << "|\033[38;5;94m000006\033[0m| " << tools::getTypeName(ros->payload.management_container.reference_position.latitude.value) << 
                                  " payload.management_container.reference_position.latitude.value: " << ros->payload.management_container.reference_position.latitude.value;
                 }
                 
@@ -229,7 +229,7 @@ namespace wind
                 
                 // DOUBLE  min(-1800000000) max(1800000001) span(3600000002) scaleDivisor(1.0E7) dataType(Double)
                 if(debug) {
-                    logger->debug() << "|\033[38;5;94m000007\033[0m| " << tools::getTypeName(ros->payload.management_container.reference_position.longitude.value) << 
+                    logger->print() << "|\033[38;5;94m000007\033[0m| " << tools::getTypeName(ros->payload.management_container.reference_position.longitude.value) << 
                                  " payload.management_container.reference_position.longitude.value: " << ros->payload.management_container.reference_position.longitude.value;
                 }
                 
@@ -263,7 +263,7 @@ namespace wind
                     
                     // FLOAT  min(0) max(4095) span(4096) scaleDivisor(100.0) dataType(Float)
                     if(debug) {
-                        logger->debug() << "|\033[38;5;94m000008\033[0m| " << tools::getTypeName(ros->payload.management_container.reference_position.position_confidence_ellipse.semi_major_confidence.value) << 
+                        logger->print() << "|\033[38;5;94m000008\033[0m| " << tools::getTypeName(ros->payload.management_container.reference_position.position_confidence_ellipse.semi_major_confidence.value) << 
                                      " payload.management_container.reference_position.position_confidence_ellipse.semi_major_confidence.value: " << ros->payload.management_container.reference_position.position_confidence_ellipse.semi_major_confidence.value;
                     }
                     
@@ -289,7 +289,7 @@ namespace wind
                     
                     // FLOAT  min(0) max(4095) span(4096) scaleDivisor(100.0) dataType(Float)
                     if(debug) {
-                        logger->debug() << "|\033[38;5;94m000009\033[0m| " << tools::getTypeName(ros->payload.management_container.reference_position.position_confidence_ellipse.semi_minor_confidence.value) << 
+                        logger->print() << "|\033[38;5;94m000009\033[0m| " << tools::getTypeName(ros->payload.management_container.reference_position.position_confidence_ellipse.semi_minor_confidence.value) << 
                                      " payload.management_container.reference_position.position_confidence_ellipse.semi_minor_confidence.value: " << ros->payload.management_container.reference_position.position_confidence_ellipse.semi_minor_confidence.value;
                     }
                     
@@ -315,7 +315,7 @@ namespace wind
                     
                     // UINT16  min(0) max(3601) span(3602) dataType(UInt16)
                     if(debug) {
-                        logger->debug() << "|\033[38;5;94m000010\033[0m| " << tools::getTypeName(ros->payload.management_container.reference_position.position_confidence_ellipse.semi_major_orientation.value) << 
+                        logger->print() << "|\033[38;5;94m000010\033[0m| " << tools::getTypeName(ros->payload.management_container.reference_position.position_confidence_ellipse.semi_major_orientation.value) << 
                                      " payload.management_container.reference_position.position_confidence_ellipse.semi_major_orientation.value: " << ros->payload.management_container.reference_position.position_confidence_ellipse.semi_major_orientation.value;
                     }
                     
@@ -345,7 +345,7 @@ namespace wind
                     
                     // FLOAT  min(-100000) max(800001) span(900002) scaleDivisor(100.0) dataType(Float)
                     if(debug) {
-                        logger->debug() << "|\033[38;5;94m000011\033[0m| " << tools::getTypeName(ros->payload.management_container.reference_position.altitude.altitude_value.value) << 
+                        logger->print() << "|\033[38;5;94m000011\033[0m| " << tools::getTypeName(ros->payload.management_container.reference_position.altitude.altitude_value.value) << 
                                      " payload.management_container.reference_position.altitude.altitude_value.value: " << ros->payload.management_container.reference_position.altitude.altitude_value.value;
                     }
                     
@@ -371,7 +371,7 @@ namespace wind
                     // Enumerated
                     // INT32  min(0) max(15) span(16) dataType(Int32)
                     if(debug) {
-                        logger->debug() << "|\033[38;5;94m000012\033[0m| " << tools::getTypeName(ros->payload.management_container.reference_position.altitude.altitude_confidence.value) << 
+                        logger->print() << "|\033[38;5;94m000012\033[0m| " << tools::getTypeName(ros->payload.management_container.reference_position.altitude.altitude_confidence.value) << 
                                      " payload.management_container.reference_position.altitude.altitude_confidence.value: " << static_cast<int>(ros->payload.management_container.reference_position.altitude.altitude_confidence.value);
                     }
                     
@@ -402,7 +402,7 @@ namespace wind
                     
                     // UINT8  min(1) max(8) span(8) dataType(UInt8)
                     if(debug) {
-                        logger->debug() << "|\033[38;5;94m000013\033[0m| " << tools::getTypeName(ros->payload.management_container.segmentation_info[0].total_msg_no.value) << 
+                        logger->print() << "|\033[38;5;94m000013\033[0m| " << tools::getTypeName(ros->payload.management_container.segmentation_info[0].total_msg_no.value) << 
                                      " payload.management_container.segmentation_info[0].total_msg_no.value: " << static_cast<int>(ros->payload.management_container.segmentation_info[0].total_msg_no.value);
                     }
                     
@@ -427,7 +427,7 @@ namespace wind
                     
                     // UINT8  min(1) max(8) span(8) dataType(UInt8)
                     if(debug) {
-                        logger->debug() << "|\033[38;5;94m000014\033[0m| " << tools::getTypeName(ros->payload.management_container.segmentation_info[0].this_msg_no.value) << 
+                        logger->print() << "|\033[38;5;94m000014\033[0m| " << tools::getTypeName(ros->payload.management_container.segmentation_info[0].this_msg_no.value) << 
                                      " payload.management_container.segmentation_info[0].this_msg_no.value: " << static_cast<int>(ros->payload.management_container.segmentation_info[0].this_msg_no.value);
                     }
                     
@@ -466,7 +466,7 @@ namespace wind
                         
                         // UINT8  min(1) max(100) span(100) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000015\033[0m| " << tools::getTypeName(ros->payload.management_container.message_rate_range[0].message_rate_min.mantissa.value) << 
+                            logger->print() << "|\033[38;5;94m000015\033[0m| " << tools::getTypeName(ros->payload.management_container.message_rate_range[0].message_rate_min.mantissa.value) << 
                                          " payload.management_container.message_rate_range[0].message_rate_min.mantissa.value: " << static_cast<int>(ros->payload.management_container.message_rate_range[0].message_rate_min.mantissa.value);
                         }
                         
@@ -491,7 +491,7 @@ namespace wind
                         
                         // INT8  min(-5) max(2) span(8) dataType(Int8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000016\033[0m| " << tools::getTypeName(ros->payload.management_container.message_rate_range[0].message_rate_min.exponent.value) << 
+                            logger->print() << "|\033[38;5;94m000016\033[0m| " << tools::getTypeName(ros->payload.management_container.message_rate_range[0].message_rate_min.exponent.value) << 
                                          " payload.management_container.message_rate_range[0].message_rate_min.exponent.value: " << static_cast<int>(ros->payload.management_container.message_rate_range[0].message_rate_min.exponent.value);
                         }
                         
@@ -522,7 +522,7 @@ namespace wind
                         
                         // UINT8  min(1) max(100) span(100) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000017\033[0m| " << tools::getTypeName(ros->payload.management_container.message_rate_range[0].message_rate_max.mantissa.value) << 
+                            logger->print() << "|\033[38;5;94m000017\033[0m| " << tools::getTypeName(ros->payload.management_container.message_rate_range[0].message_rate_max.mantissa.value) << 
                                          " payload.management_container.message_rate_range[0].message_rate_max.mantissa.value: " << static_cast<int>(ros->payload.management_container.message_rate_range[0].message_rate_max.mantissa.value);
                         }
                         
@@ -547,7 +547,7 @@ namespace wind
                         
                         // INT8  min(-5) max(2) span(8) dataType(Int8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000018\033[0m| " << tools::getTypeName(ros->payload.management_container.message_rate_range[0].message_rate_max.exponent.value) << 
+                            logger->print() << "|\033[38;5;94m000018\033[0m| " << tools::getTypeName(ros->payload.management_container.message_rate_range[0].message_rate_max.exponent.value) << 
                                          " payload.management_container.message_rate_range[0].message_rate_max.exponent.value: " << static_cast<int>(ros->payload.management_container.message_rate_range[0].message_rate_max.exponent.value);
                         }
                         
@@ -615,15 +615,15 @@ namespace wind
                     char* _tmp_28 = (char*) buffer++;
                     *_tmp_28 = (ros->payload.cpm_containers.elements[a].originating_vehicle_container[0].pitch_angle.size() != 0 ? 1 : 0);
                     if(debug)
-                        logger->debug() << "|\033[38;5;94m000021\033[0m| Optional field pitch_angle = " << *_tmp_28;
+                        logger->print() << "|\033[38;5;94m000021\033[0m| Optional field pitch_angle = " << *_tmp_28;
                     char* _tmp_29 = (char*) buffer++;
                     *_tmp_29 = (ros->payload.cpm_containers.elements[a].originating_vehicle_container[0].roll_angle.size() != 0 ? 1 : 0);
                     if(debug)
-                        logger->debug() << "|\033[38;5;94m000022\033[0m| Optional field roll_angle = " << *_tmp_29;
+                        logger->print() << "|\033[38;5;94m000022\033[0m| Optional field roll_angle = " << *_tmp_29;
                     char* _tmp_30 = (char*) buffer++;
                     *_tmp_30 = (ros->payload.cpm_containers.elements[a].originating_vehicle_container[0].trailer_data_set.size() != 0 ? 1 : 0);
                     if(debug)
-                        logger->debug() << "|\033[38;5;94m000023\033[0m| Optional field trailer_data_set = " << *_tmp_30;
+                        logger->print() << "|\033[38;5;94m000023\033[0m| Optional field trailer_data_set = " << *_tmp_30;
                     
                     // Field:  type(Wgs84Angle) name(orientation_angle) extGroup(0)
                         // Wgs84Angle  SEQUENCE
@@ -636,7 +636,7 @@ namespace wind
                         
                         // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000024\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].originating_vehicle_container[0].orientation_angle.value.value) << 
+                            logger->print() << "|\033[38;5;94m000024\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].originating_vehicle_container[0].orientation_angle.value.value) << 
                                          " payload.cpm_containers.elements[a].originating_vehicle_container[0].orientation_angle.value.value: " << ros->payload.cpm_containers.elements[a].originating_vehicle_container[0].orientation_angle.value.value;
                         }
                         
@@ -662,7 +662,7 @@ namespace wind
                         
                         // FLOAT  min(1) max(127) span(127) scaleDivisor(10.0) dataType(Float)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000025\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].originating_vehicle_container[0].orientation_angle.confidence.value) << 
+                            logger->print() << "|\033[38;5;94m000025\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].originating_vehicle_container[0].orientation_angle.confidence.value) << 
                                          " payload.cpm_containers.elements[a].originating_vehicle_container[0].orientation_angle.confidence.value: " << static_cast<int>(ros->payload.cpm_containers.elements[a].originating_vehicle_container[0].orientation_angle.confidence.value);
                         }
                         
@@ -696,7 +696,7 @@ namespace wind
                             
                             // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000026\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].originating_vehicle_container[0].pitch_angle[0].value.value) << 
+                                logger->print() << "|\033[38;5;94m000026\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].originating_vehicle_container[0].pitch_angle[0].value.value) << 
                                              " payload.cpm_containers.elements[a].originating_vehicle_container[0].pitch_angle[0].value.value: " << ros->payload.cpm_containers.elements[a].originating_vehicle_container[0].pitch_angle[0].value.value;
                             }
                             
@@ -722,7 +722,7 @@ namespace wind
                             
                             // FLOAT  min(1) max(127) span(127) scaleDivisor(10.0) dataType(Float)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000027\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].originating_vehicle_container[0].pitch_angle[0].confidence.value) << 
+                                logger->print() << "|\033[38;5;94m000027\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].originating_vehicle_container[0].pitch_angle[0].confidence.value) << 
                                              " payload.cpm_containers.elements[a].originating_vehicle_container[0].pitch_angle[0].confidence.value: " << static_cast<int>(ros->payload.cpm_containers.elements[a].originating_vehicle_container[0].pitch_angle[0].confidence.value);
                             }
                             
@@ -757,7 +757,7 @@ namespace wind
                             
                             // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000028\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].originating_vehicle_container[0].roll_angle[0].value.value) << 
+                                logger->print() << "|\033[38;5;94m000028\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].originating_vehicle_container[0].roll_angle[0].value.value) << 
                                              " payload.cpm_containers.elements[a].originating_vehicle_container[0].roll_angle[0].value.value: " << ros->payload.cpm_containers.elements[a].originating_vehicle_container[0].roll_angle[0].value.value;
                             }
                             
@@ -783,7 +783,7 @@ namespace wind
                             
                             // FLOAT  min(1) max(127) span(127) scaleDivisor(10.0) dataType(Float)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000029\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].originating_vehicle_container[0].roll_angle[0].confidence.value) << 
+                                logger->print() << "|\033[38;5;94m000029\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].originating_vehicle_container[0].roll_angle[0].confidence.value) << 
                                              " payload.cpm_containers.elements[a].originating_vehicle_container[0].roll_angle[0].confidence.value: " << static_cast<int>(ros->payload.cpm_containers.elements[a].originating_vehicle_container[0].roll_angle[0].confidence.value);
                             }
                             
@@ -838,22 +838,22 @@ namespace wind
                                 char* _tmp_44 = (char*) buffer++;
                                 *_tmp_44 = (ros->payload.cpm_containers.elements[a].originating_vehicle_container[0].trailer_data_set[0].elements[b].front_overhang.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000031\033[0m| Optional field front_overhang = " << *_tmp_44;
+                                    logger->print() << "|\033[38;5;94m000031\033[0m| Optional field front_overhang = " << *_tmp_44;
                                 char* _tmp_45 = (char*) buffer++;
                                 *_tmp_45 = (ros->payload.cpm_containers.elements[a].originating_vehicle_container[0].trailer_data_set[0].elements[b].rear_overhang.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000032\033[0m| Optional field rear_overhang = " << *_tmp_45;
+                                    logger->print() << "|\033[38;5;94m000032\033[0m| Optional field rear_overhang = " << *_tmp_45;
                                 char* _tmp_46 = (char*) buffer++;
                                 *_tmp_46 = (ros->payload.cpm_containers.elements[a].originating_vehicle_container[0].trailer_data_set[0].elements[b].trailer_width.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000033\033[0m| Optional field trailer_width = " << *_tmp_46;
+                                    logger->print() << "|\033[38;5;94m000033\033[0m| Optional field trailer_width = " << *_tmp_46;
                                 
                                 // Field:  type(Identifier1B) name(ref_point_id) extGroup(0)
                                 // Integer
                                 
                                 // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000034\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].originating_vehicle_container[0].trailer_data_set[0].elements[b].ref_point_id.value) << 
+                                    logger->print() << "|\033[38;5;94m000034\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].originating_vehicle_container[0].trailer_data_set[0].elements[b].ref_point_id.value) << 
                                                  " payload.cpm_containers.elements[a].originating_vehicle_container[0].trailer_data_set[0].elements[b].ref_point_id.value: " << static_cast<int>(ros->payload.cpm_containers.elements[a].originating_vehicle_container[0].trailer_data_set[0].elements[b].ref_point_id.value);
                                 }
                                 
@@ -877,7 +877,7 @@ namespace wind
                                 
                                 // FLOAT  min(0) max(255) span(256) scaleDivisor(10.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000035\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].originating_vehicle_container[0].trailer_data_set[0].elements[b].hitch_point_offset.value) << 
+                                    logger->print() << "|\033[38;5;94m000035\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].originating_vehicle_container[0].trailer_data_set[0].elements[b].hitch_point_offset.value) << 
                                                  " payload.cpm_containers.elements[a].originating_vehicle_container[0].trailer_data_set[0].elements[b].hitch_point_offset.value: " << static_cast<int>(ros->payload.cpm_containers.elements[a].originating_vehicle_container[0].trailer_data_set[0].elements[b].hitch_point_offset.value);
                                 }
                                 
@@ -904,7 +904,7 @@ namespace wind
                                     
                                     // FLOAT  min(0) max(255) span(256) scaleDivisor(10.0) dataType(Float)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000036\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].originating_vehicle_container[0].trailer_data_set[0].elements[b].front_overhang[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000036\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].originating_vehicle_container[0].trailer_data_set[0].elements[b].front_overhang[0].value) << 
                                                      " payload.cpm_containers.elements[a].originating_vehicle_container[0].trailer_data_set[0].elements[b].front_overhang[0].value: " << static_cast<int>(ros->payload.cpm_containers.elements[a].originating_vehicle_container[0].trailer_data_set[0].elements[b].front_overhang[0].value);
                                     }
                                     
@@ -932,7 +932,7 @@ namespace wind
                                     
                                     // FLOAT  min(0) max(255) span(256) scaleDivisor(10.0) dataType(Float)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000037\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].originating_vehicle_container[0].trailer_data_set[0].elements[b].rear_overhang[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000037\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].originating_vehicle_container[0].trailer_data_set[0].elements[b].rear_overhang[0].value) << 
                                                      " payload.cpm_containers.elements[a].originating_vehicle_container[0].trailer_data_set[0].elements[b].rear_overhang[0].value: " << static_cast<int>(ros->payload.cpm_containers.elements[a].originating_vehicle_container[0].trailer_data_set[0].elements[b].rear_overhang[0].value);
                                     }
                                     
@@ -960,7 +960,7 @@ namespace wind
                                     
                                     // FLOAT  min(1) max(62) span(62) scaleDivisor(10.0) dataType(Float)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000038\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].originating_vehicle_container[0].trailer_data_set[0].elements[b].trailer_width[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000038\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].originating_vehicle_container[0].trailer_data_set[0].elements[b].trailer_width[0].value) << 
                                                      " payload.cpm_containers.elements[a].originating_vehicle_container[0].trailer_data_set[0].elements[b].trailer_width[0].value: " << static_cast<int>(ros->payload.cpm_containers.elements[a].originating_vehicle_container[0].trailer_data_set[0].elements[b].trailer_width[0].value);
                                     }
                                     
@@ -994,7 +994,7 @@ namespace wind
                                     
                                     // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000039\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].originating_vehicle_container[0].trailer_data_set[0].elements[b].hitch_angle.value.value) << 
+                                        logger->print() << "|\033[38;5;94m000039\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].originating_vehicle_container[0].trailer_data_set[0].elements[b].hitch_angle.value.value) << 
                                                      " payload.cpm_containers.elements[a].originating_vehicle_container[0].trailer_data_set[0].elements[b].hitch_angle.value.value: " << ros->payload.cpm_containers.elements[a].originating_vehicle_container[0].trailer_data_set[0].elements[b].hitch_angle.value.value;
                                     }
                                     
@@ -1020,7 +1020,7 @@ namespace wind
                                     
                                     // FLOAT  min(1) max(127) span(127) scaleDivisor(10.0) dataType(Float)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000040\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].originating_vehicle_container[0].trailer_data_set[0].elements[b].hitch_angle.confidence.value) << 
+                                        logger->print() << "|\033[38;5;94m000040\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].originating_vehicle_container[0].trailer_data_set[0].elements[b].hitch_angle.confidence.value) << 
                                                      " payload.cpm_containers.elements[a].originating_vehicle_container[0].trailer_data_set[0].elements[b].hitch_angle.confidence.value: " << static_cast<int>(ros->payload.cpm_containers.elements[a].originating_vehicle_container[0].trailer_data_set[0].elements[b].hitch_angle.confidence.value);
                                     }
                                     
@@ -1068,7 +1068,7 @@ namespace wind
                     char* _tmp_62 = (char*) buffer++;
                     *_tmp_62 = (ros->payload.cpm_containers.elements[a].originating_rsu_container[0].map_reference.size() != 0 ? 1 : 0);
                     if(debug)
-                        logger->debug() << "|\033[38;5;94m000042\033[0m| Optional field map_reference = " << *_tmp_62;
+                        logger->print() << "|\033[38;5;94m000042\033[0m| Optional field map_reference = " << *_tmp_62;
                     
                     if(ros->payload.cpm_containers.elements[a].originating_rsu_container[0].map_reference.size() != 0) {
                         // Field:  type(MapReference) name(map_reference) extGroup(0)
@@ -1091,7 +1091,7 @@ namespace wind
                                 char* _tmp_63 = (char*) buffer++;
                                 *_tmp_63 = (ros->payload.cpm_containers.elements[a].originating_rsu_container[0].map_reference[0].roadsegment[0].region.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000044\033[0m| Optional field region = " << *_tmp_63;
+                                    logger->print() << "|\033[38;5;94m000044\033[0m| Optional field region = " << *_tmp_63;
                                 
                                 if(ros->payload.cpm_containers.elements[a].originating_rsu_container[0].map_reference[0].roadsegment[0].region.size() != 0) {
                                     // Field:  type(Identifier2B) name(region) extGroup(0)
@@ -1099,7 +1099,7 @@ namespace wind
                                     
                                     // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000045\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].originating_rsu_container[0].map_reference[0].roadsegment[0].region[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000045\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].originating_rsu_container[0].map_reference[0].roadsegment[0].region[0].value) << 
                                                      " payload.cpm_containers.elements[a].originating_rsu_container[0].map_reference[0].roadsegment[0].region[0].value: " << ros->payload.cpm_containers.elements[a].originating_rsu_container[0].map_reference[0].roadsegment[0].region[0].value;
                                     }
                                     
@@ -1124,7 +1124,7 @@ namespace wind
                                 
                                 // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000046\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].originating_rsu_container[0].map_reference[0].roadsegment[0].id.value) << 
+                                    logger->print() << "|\033[38;5;94m000046\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].originating_rsu_container[0].map_reference[0].roadsegment[0].id.value) << 
                                                  " payload.cpm_containers.elements[a].originating_rsu_container[0].map_reference[0].roadsegment[0].id.value: " << ros->payload.cpm_containers.elements[a].originating_rsu_container[0].map_reference[0].roadsegment[0].id.value;
                                 }
                                 
@@ -1158,7 +1158,7 @@ namespace wind
                                 char* _tmp_66 = (char*) buffer++;
                                 *_tmp_66 = (ros->payload.cpm_containers.elements[a].originating_rsu_container[0].map_reference[0].intersection[0].region.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000048\033[0m| Optional field region = " << *_tmp_66;
+                                    logger->print() << "|\033[38;5;94m000048\033[0m| Optional field region = " << *_tmp_66;
                                 
                                 if(ros->payload.cpm_containers.elements[a].originating_rsu_container[0].map_reference[0].intersection[0].region.size() != 0) {
                                     // Field:  type(Identifier2B) name(region) extGroup(0)
@@ -1166,7 +1166,7 @@ namespace wind
                                     
                                     // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000049\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].originating_rsu_container[0].map_reference[0].intersection[0].region[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000049\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].originating_rsu_container[0].map_reference[0].intersection[0].region[0].value) << 
                                                      " payload.cpm_containers.elements[a].originating_rsu_container[0].map_reference[0].intersection[0].region[0].value: " << ros->payload.cpm_containers.elements[a].originating_rsu_container[0].map_reference[0].intersection[0].region[0].value;
                                     }
                                     
@@ -1191,7 +1191,7 @@ namespace wind
                                 
                                 // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000050\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].originating_rsu_container[0].map_reference[0].intersection[0].id.value) << 
+                                    logger->print() << "|\033[38;5;94m000050\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].originating_rsu_container[0].map_reference[0].intersection[0].id.value) << 
                                                  " payload.cpm_containers.elements[a].originating_rsu_container[0].map_reference[0].intersection[0].id.value: " << ros->payload.cpm_containers.elements[a].originating_rsu_container[0].map_reference[0].intersection[0].id.value;
                                 }
                                 
@@ -1258,18 +1258,18 @@ namespace wind
                         char* _tmp_71 = (char*) buffer++;
                         *_tmp_71 = (ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape.size() != 0 ? 1 : 0);
                         if(debug)
-                            logger->debug() << "|\033[38;5;94m000053\033[0m| Optional field perception_region_shape = " << *_tmp_71;
+                            logger->print() << "|\033[38;5;94m000053\033[0m| Optional field perception_region_shape = " << *_tmp_71;
                         char* _tmp_72 = (char*) buffer++;
                         *_tmp_72 = (ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_confidence.size() != 0 ? 1 : 0);
                         if(debug)
-                            logger->debug() << "|\033[38;5;94m000054\033[0m| Optional field perception_region_confidence = " << *_tmp_72;
+                            logger->print() << "|\033[38;5;94m000054\033[0m| Optional field perception_region_confidence = " << *_tmp_72;
                         
                         // Field:  type(Identifier1B) name(sensor_id) extGroup(0)
                         // Integer
                         
                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000055\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].sensor_id.value) << 
+                            logger->print() << "|\033[38;5;94m000055\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].sensor_id.value) << 
                                          " payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].sensor_id.value: " << static_cast<int>(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].sensor_id.value);
                         }
                         
@@ -1293,7 +1293,7 @@ namespace wind
                         
                         // UINT8  min(0) max(31) span(32) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000056\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].sensor_type.value) << 
+                            logger->print() << "|\033[38;5;94m000056\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].sensor_type.value) << 
                                          " payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].sensor_type.value: " << static_cast<int>(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].sensor_type.value);
                         }
                         
@@ -1344,15 +1344,15 @@ namespace wind
                                     char* _tmp_75 = (char*) buffer++;
                                     *_tmp_75 = (ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].rectangular[0].center_point.size() != 0 ? 1 : 0);
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m000058\033[0m| Optional field center_point = " << *_tmp_75;
+                                        logger->print() << "|\033[38;5;94m000058\033[0m| Optional field center_point = " << *_tmp_75;
                                     char* _tmp_76 = (char*) buffer++;
                                     *_tmp_76 = (ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].rectangular[0].orientation.size() != 0 ? 1 : 0);
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m000059\033[0m| Optional field orientation = " << *_tmp_76;
+                                        logger->print() << "|\033[38;5;94m000059\033[0m| Optional field orientation = " << *_tmp_76;
                                     char* _tmp_77 = (char*) buffer++;
                                     *_tmp_77 = (ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].rectangular[0].height.size() != 0 ? 1 : 0);
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m000060\033[0m| Optional field height = " << *_tmp_77;
+                                        logger->print() << "|\033[38;5;94m000060\033[0m| Optional field height = " << *_tmp_77;
                                     
                                     if(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].rectangular[0].center_point.size() != 0) {
                                         // Field:  type(CartesianPosition3d) name(center_point) extGroup(0)
@@ -1364,14 +1364,14 @@ namespace wind
                                             char* _tmp_78 = (char*) buffer++;
                                             *_tmp_78 = (ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].rectangular[0].center_point[0].z_coordinate.size() != 0 ? 1 : 0);
                                             if(debug)
-                                                logger->debug() << "|\033[38;5;94m000061\033[0m| Optional field z_coordinate = " << *_tmp_78;
+                                                logger->print() << "|\033[38;5;94m000061\033[0m| Optional field z_coordinate = " << *_tmp_78;
                                             
                                             // Field:  type(CartesianCoordinate) name(x_coordinate) extGroup(0)
                                             // Real
                                             
                                             // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000062\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].rectangular[0].center_point[0].x_coordinate.value) << 
+                                                logger->print() << "|\033[38;5;94m000062\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].rectangular[0].center_point[0].x_coordinate.value) << 
                                                              " payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].rectangular[0].center_point[0].x_coordinate.value: " << ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].rectangular[0].center_point[0].x_coordinate.value;
                                             }
                                             
@@ -1398,7 +1398,7 @@ namespace wind
                                             
                                             // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000063\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].rectangular[0].center_point[0].y_coordinate.value) << 
+                                                logger->print() << "|\033[38;5;94m000063\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].rectangular[0].center_point[0].y_coordinate.value) << 
                                                              " payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].rectangular[0].center_point[0].y_coordinate.value: " << ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].rectangular[0].center_point[0].y_coordinate.value;
                                             }
                                             
@@ -1426,7 +1426,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000064\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].rectangular[0].center_point[0].z_coordinate[0].value) << 
+                                                    logger->print() << "|\033[38;5;94m000064\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].rectangular[0].center_point[0].z_coordinate[0].value) << 
                                                                  " payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].rectangular[0].center_point[0].z_coordinate[0].value: " << ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].rectangular[0].center_point[0].z_coordinate[0].value;
                                                 }
                                                 
@@ -1455,7 +1455,7 @@ namespace wind
                                     
                                     // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000065\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].rectangular[0].semi_length.value) << 
+                                        logger->print() << "|\033[38;5;94m000065\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].rectangular[0].semi_length.value) << 
                                                      " payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].rectangular[0].semi_length.value: " << ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].rectangular[0].semi_length.value;
                                     }
                                     
@@ -1481,7 +1481,7 @@ namespace wind
                                     
                                     // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000066\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].rectangular[0].semi_breadth.value) << 
+                                        logger->print() << "|\033[38;5;94m000066\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].rectangular[0].semi_breadth.value) << 
                                                      " payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].rectangular[0].semi_breadth.value: " << ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].rectangular[0].semi_breadth.value;
                                     }
                                     
@@ -1508,7 +1508,7 @@ namespace wind
                                         
                                         // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000067\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].rectangular[0].orientation[0].value) << 
+                                            logger->print() << "|\033[38;5;94m000067\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].rectangular[0].orientation[0].value) << 
                                                          " payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].rectangular[0].orientation[0].value: " << ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].rectangular[0].orientation[0].value;
                                         }
                                         
@@ -1536,7 +1536,7 @@ namespace wind
                                         
                                         // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000068\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].rectangular[0].height[0].value) << 
+                                            logger->print() << "|\033[38;5;94m000068\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].rectangular[0].height[0].value) << 
                                                          " payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].rectangular[0].height[0].value: " << ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].rectangular[0].height[0].value;
                                         }
                                         
@@ -1574,11 +1574,11 @@ namespace wind
                                     char* _tmp_93 = (char*) buffer++;
                                     *_tmp_93 = (ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].circular[0].shape_reference_point.size() != 0 ? 1 : 0);
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m000070\033[0m| Optional field shape_reference_point = " << *_tmp_93;
+                                        logger->print() << "|\033[38;5;94m000070\033[0m| Optional field shape_reference_point = " << *_tmp_93;
                                     char* _tmp_94 = (char*) buffer++;
                                     *_tmp_94 = (ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].circular[0].height.size() != 0 ? 1 : 0);
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m000071\033[0m| Optional field height = " << *_tmp_94;
+                                        logger->print() << "|\033[38;5;94m000071\033[0m| Optional field height = " << *_tmp_94;
                                     
                                     if(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].circular[0].shape_reference_point.size() != 0) {
                                         // Field:  type(CartesianPosition3d) name(shape_reference_point) extGroup(0)
@@ -1590,14 +1590,14 @@ namespace wind
                                             char* _tmp_95 = (char*) buffer++;
                                             *_tmp_95 = (ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].circular[0].shape_reference_point[0].z_coordinate.size() != 0 ? 1 : 0);
                                             if(debug)
-                                                logger->debug() << "|\033[38;5;94m000072\033[0m| Optional field z_coordinate = " << *_tmp_95;
+                                                logger->print() << "|\033[38;5;94m000072\033[0m| Optional field z_coordinate = " << *_tmp_95;
                                             
                                             // Field:  type(CartesianCoordinate) name(x_coordinate) extGroup(0)
                                             // Real
                                             
                                             // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000073\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].circular[0].shape_reference_point[0].x_coordinate.value) << 
+                                                logger->print() << "|\033[38;5;94m000073\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].circular[0].shape_reference_point[0].x_coordinate.value) << 
                                                              " payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].circular[0].shape_reference_point[0].x_coordinate.value: " << ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].circular[0].shape_reference_point[0].x_coordinate.value;
                                             }
                                             
@@ -1624,7 +1624,7 @@ namespace wind
                                             
                                             // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000074\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].circular[0].shape_reference_point[0].y_coordinate.value) << 
+                                                logger->print() << "|\033[38;5;94m000074\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].circular[0].shape_reference_point[0].y_coordinate.value) << 
                                                              " payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].circular[0].shape_reference_point[0].y_coordinate.value: " << ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].circular[0].shape_reference_point[0].y_coordinate.value;
                                             }
                                             
@@ -1652,7 +1652,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000075\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].circular[0].shape_reference_point[0].z_coordinate[0].value) << 
+                                                    logger->print() << "|\033[38;5;94m000075\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].circular[0].shape_reference_point[0].z_coordinate[0].value) << 
                                                                  " payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].circular[0].shape_reference_point[0].z_coordinate[0].value: " << ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].circular[0].shape_reference_point[0].z_coordinate[0].value;
                                                 }
                                                 
@@ -1681,7 +1681,7 @@ namespace wind
                                     
                                     // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000076\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].circular[0].radius.value) << 
+                                        logger->print() << "|\033[38;5;94m000076\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].circular[0].radius.value) << 
                                                      " payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].circular[0].radius.value: " << ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].circular[0].radius.value;
                                     }
                                     
@@ -1708,7 +1708,7 @@ namespace wind
                                         
                                         // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000077\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].circular[0].height[0].value) << 
+                                            logger->print() << "|\033[38;5;94m000077\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].circular[0].height[0].value) << 
                                                          " payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].circular[0].height[0].value: " << ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].circular[0].height[0].value;
                                         }
                                         
@@ -1746,11 +1746,11 @@ namespace wind
                                     char* _tmp_106 = (char*) buffer++;
                                     *_tmp_106 = (ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].polygonal[0].shape_reference_point.size() != 0 ? 1 : 0);
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m000079\033[0m| Optional field shape_reference_point = " << *_tmp_106;
+                                        logger->print() << "|\033[38;5;94m000079\033[0m| Optional field shape_reference_point = " << *_tmp_106;
                                     char* _tmp_107 = (char*) buffer++;
                                     *_tmp_107 = (ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].polygonal[0].height.size() != 0 ? 1 : 0);
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m000080\033[0m| Optional field height = " << *_tmp_107;
+                                        logger->print() << "|\033[38;5;94m000080\033[0m| Optional field height = " << *_tmp_107;
                                     
                                     if(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].polygonal[0].shape_reference_point.size() != 0) {
                                         // Field:  type(CartesianPosition3d) name(shape_reference_point) extGroup(0)
@@ -1762,14 +1762,14 @@ namespace wind
                                             char* _tmp_108 = (char*) buffer++;
                                             *_tmp_108 = (ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].polygonal[0].shape_reference_point[0].z_coordinate.size() != 0 ? 1 : 0);
                                             if(debug)
-                                                logger->debug() << "|\033[38;5;94m000081\033[0m| Optional field z_coordinate = " << *_tmp_108;
+                                                logger->print() << "|\033[38;5;94m000081\033[0m| Optional field z_coordinate = " << *_tmp_108;
                                             
                                             // Field:  type(CartesianCoordinate) name(x_coordinate) extGroup(0)
                                             // Real
                                             
                                             // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000082\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].polygonal[0].shape_reference_point[0].x_coordinate.value) << 
+                                                logger->print() << "|\033[38;5;94m000082\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].polygonal[0].shape_reference_point[0].x_coordinate.value) << 
                                                              " payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].polygonal[0].shape_reference_point[0].x_coordinate.value: " << ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].polygonal[0].shape_reference_point[0].x_coordinate.value;
                                             }
                                             
@@ -1796,7 +1796,7 @@ namespace wind
                                             
                                             // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000083\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].polygonal[0].shape_reference_point[0].y_coordinate.value) << 
+                                                logger->print() << "|\033[38;5;94m000083\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].polygonal[0].shape_reference_point[0].y_coordinate.value) << 
                                                              " payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].polygonal[0].shape_reference_point[0].y_coordinate.value: " << ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].polygonal[0].shape_reference_point[0].y_coordinate.value;
                                             }
                                             
@@ -1824,7 +1824,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000084\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].polygonal[0].shape_reference_point[0].z_coordinate[0].value) << 
+                                                    logger->print() << "|\033[38;5;94m000084\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].polygonal[0].shape_reference_point[0].z_coordinate[0].value) << 
                                                                  " payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].polygonal[0].shape_reference_point[0].z_coordinate[0].value: " << ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].polygonal[0].shape_reference_point[0].z_coordinate[0].value;
                                                 }
                                                 
@@ -1872,14 +1872,14 @@ namespace wind
                                             char* _tmp_116 = (char*) buffer++;
                                             *_tmp_116 = (ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].polygonal[0].polygon.elements[d].z_coordinate.size() != 0 ? 1 : 0);
                                             if(debug)
-                                                logger->debug() << "|\033[38;5;94m000086\033[0m| Optional field z_coordinate = " << *_tmp_116;
+                                                logger->print() << "|\033[38;5;94m000086\033[0m| Optional field z_coordinate = " << *_tmp_116;
                                             
                                             // Field:  type(CartesianCoordinate) name(x_coordinate) extGroup(0)
                                             // Real
                                             
                                             // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000087\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].polygonal[0].polygon.elements[d].x_coordinate.value) << 
+                                                logger->print() << "|\033[38;5;94m000087\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].polygonal[0].polygon.elements[d].x_coordinate.value) << 
                                                              " payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].polygonal[0].polygon.elements[d].x_coordinate.value: " << ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].polygonal[0].polygon.elements[d].x_coordinate.value;
                                             }
                                             
@@ -1906,7 +1906,7 @@ namespace wind
                                             
                                             // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000088\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].polygonal[0].polygon.elements[d].y_coordinate.value) << 
+                                                logger->print() << "|\033[38;5;94m000088\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].polygonal[0].polygon.elements[d].y_coordinate.value) << 
                                                              " payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].polygonal[0].polygon.elements[d].y_coordinate.value: " << ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].polygonal[0].polygon.elements[d].y_coordinate.value;
                                             }
                                             
@@ -1934,7 +1934,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000089\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].polygonal[0].polygon.elements[d].z_coordinate[0].value) << 
+                                                    logger->print() << "|\033[38;5;94m000089\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].polygonal[0].polygon.elements[d].z_coordinate[0].value) << 
                                                                  " payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].polygonal[0].polygon.elements[d].z_coordinate[0].value: " << ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].polygonal[0].polygon.elements[d].z_coordinate[0].value;
                                                 }
                                                 
@@ -1965,7 +1965,7 @@ namespace wind
                                         
                                         // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000090\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].polygonal[0].height[0].value) << 
+                                            logger->print() << "|\033[38;5;94m000090\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].polygonal[0].height[0].value) << 
                                                          " payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].polygonal[0].height[0].value: " << ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].polygonal[0].height[0].value;
                                         }
                                         
@@ -2005,15 +2005,15 @@ namespace wind
                                     char* _tmp_125 = (char*) buffer++;
                                     *_tmp_125 = (ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].elliptical[0].shape_reference_point.size() != 0 ? 1 : 0);
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m000092\033[0m| Optional field shape_reference_point = " << *_tmp_125;
+                                        logger->print() << "|\033[38;5;94m000092\033[0m| Optional field shape_reference_point = " << *_tmp_125;
                                     char* _tmp_126 = (char*) buffer++;
                                     *_tmp_126 = (ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].elliptical[0].orientation.size() != 0 ? 1 : 0);
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m000093\033[0m| Optional field orientation = " << *_tmp_126;
+                                        logger->print() << "|\033[38;5;94m000093\033[0m| Optional field orientation = " << *_tmp_126;
                                     char* _tmp_127 = (char*) buffer++;
                                     *_tmp_127 = (ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].elliptical[0].height.size() != 0 ? 1 : 0);
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m000094\033[0m| Optional field height = " << *_tmp_127;
+                                        logger->print() << "|\033[38;5;94m000094\033[0m| Optional field height = " << *_tmp_127;
                                     
                                     if(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].elliptical[0].shape_reference_point.size() != 0) {
                                         // Field:  type(CartesianPosition3d) name(shape_reference_point) extGroup(0)
@@ -2025,14 +2025,14 @@ namespace wind
                                             char* _tmp_128 = (char*) buffer++;
                                             *_tmp_128 = (ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].elliptical[0].shape_reference_point[0].z_coordinate.size() != 0 ? 1 : 0);
                                             if(debug)
-                                                logger->debug() << "|\033[38;5;94m000095\033[0m| Optional field z_coordinate = " << *_tmp_128;
+                                                logger->print() << "|\033[38;5;94m000095\033[0m| Optional field z_coordinate = " << *_tmp_128;
                                             
                                             // Field:  type(CartesianCoordinate) name(x_coordinate) extGroup(0)
                                             // Real
                                             
                                             // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000096\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].elliptical[0].shape_reference_point[0].x_coordinate.value) << 
+                                                logger->print() << "|\033[38;5;94m000096\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].elliptical[0].shape_reference_point[0].x_coordinate.value) << 
                                                              " payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].elliptical[0].shape_reference_point[0].x_coordinate.value: " << ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].elliptical[0].shape_reference_point[0].x_coordinate.value;
                                             }
                                             
@@ -2059,7 +2059,7 @@ namespace wind
                                             
                                             // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000097\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].elliptical[0].shape_reference_point[0].y_coordinate.value) << 
+                                                logger->print() << "|\033[38;5;94m000097\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].elliptical[0].shape_reference_point[0].y_coordinate.value) << 
                                                              " payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].elliptical[0].shape_reference_point[0].y_coordinate.value: " << ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].elliptical[0].shape_reference_point[0].y_coordinate.value;
                                             }
                                             
@@ -2087,7 +2087,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000098\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].elliptical[0].shape_reference_point[0].z_coordinate[0].value) << 
+                                                    logger->print() << "|\033[38;5;94m000098\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].elliptical[0].shape_reference_point[0].z_coordinate[0].value) << 
                                                                  " payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].elliptical[0].shape_reference_point[0].z_coordinate[0].value: " << ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].elliptical[0].shape_reference_point[0].z_coordinate[0].value;
                                                 }
                                                 
@@ -2116,7 +2116,7 @@ namespace wind
                                     
                                     // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000099\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].elliptical[0].semi_major_axis_length.value) << 
+                                        logger->print() << "|\033[38;5;94m000099\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].elliptical[0].semi_major_axis_length.value) << 
                                                      " payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].elliptical[0].semi_major_axis_length.value: " << ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].elliptical[0].semi_major_axis_length.value;
                                     }
                                     
@@ -2142,7 +2142,7 @@ namespace wind
                                     
                                     // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000100\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].elliptical[0].semi_minor_axis_length.value) << 
+                                        logger->print() << "|\033[38;5;94m000100\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].elliptical[0].semi_minor_axis_length.value) << 
                                                      " payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].elliptical[0].semi_minor_axis_length.value: " << ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].elliptical[0].semi_minor_axis_length.value;
                                     }
                                     
@@ -2169,7 +2169,7 @@ namespace wind
                                         
                                         // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000101\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].elliptical[0].orientation[0].value) << 
+                                            logger->print() << "|\033[38;5;94m000101\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].elliptical[0].orientation[0].value) << 
                                                          " payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].elliptical[0].orientation[0].value: " << ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].elliptical[0].orientation[0].value;
                                         }
                                         
@@ -2197,7 +2197,7 @@ namespace wind
                                         
                                         // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000102\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].elliptical[0].height[0].value) << 
+                                            logger->print() << "|\033[38;5;94m000102\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].elliptical[0].height[0].value) << 
                                                          " payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].elliptical[0].height[0].value: " << ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].elliptical[0].height[0].value;
                                         }
                                         
@@ -2238,15 +2238,15 @@ namespace wind
                                     char* _tmp_143 = (char*) buffer++;
                                     *_tmp_143 = (ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial[0].shape_reference_point.size() != 0 ? 1 : 0);
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m000104\033[0m| Optional field shape_reference_point = " << *_tmp_143;
+                                        logger->print() << "|\033[38;5;94m000104\033[0m| Optional field shape_reference_point = " << *_tmp_143;
                                     char* _tmp_144 = (char*) buffer++;
                                     *_tmp_144 = (ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial[0].vertical_opening_angle_start.size() != 0 ? 1 : 0);
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m000105\033[0m| Optional field vertical_opening_angle_start = " << *_tmp_144;
+                                        logger->print() << "|\033[38;5;94m000105\033[0m| Optional field vertical_opening_angle_start = " << *_tmp_144;
                                     char* _tmp_145 = (char*) buffer++;
                                     *_tmp_145 = (ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial[0].vertical_opening_angle_end.size() != 0 ? 1 : 0);
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m000106\033[0m| Optional field vertical_opening_angle_end = " << *_tmp_145;
+                                        logger->print() << "|\033[38;5;94m000106\033[0m| Optional field vertical_opening_angle_end = " << *_tmp_145;
                                     
                                     if(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial[0].shape_reference_point.size() != 0) {
                                         // Field:  type(CartesianPosition3d) name(shape_reference_point) extGroup(0)
@@ -2258,14 +2258,14 @@ namespace wind
                                             char* _tmp_146 = (char*) buffer++;
                                             *_tmp_146 = (ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial[0].shape_reference_point[0].z_coordinate.size() != 0 ? 1 : 0);
                                             if(debug)
-                                                logger->debug() << "|\033[38;5;94m000107\033[0m| Optional field z_coordinate = " << *_tmp_146;
+                                                logger->print() << "|\033[38;5;94m000107\033[0m| Optional field z_coordinate = " << *_tmp_146;
                                             
                                             // Field:  type(CartesianCoordinate) name(x_coordinate) extGroup(0)
                                             // Real
                                             
                                             // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000108\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial[0].shape_reference_point[0].x_coordinate.value) << 
+                                                logger->print() << "|\033[38;5;94m000108\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial[0].shape_reference_point[0].x_coordinate.value) << 
                                                              " payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial[0].shape_reference_point[0].x_coordinate.value: " << ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial[0].shape_reference_point[0].x_coordinate.value;
                                             }
                                             
@@ -2292,7 +2292,7 @@ namespace wind
                                             
                                             // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000109\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial[0].shape_reference_point[0].y_coordinate.value) << 
+                                                logger->print() << "|\033[38;5;94m000109\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial[0].shape_reference_point[0].y_coordinate.value) << 
                                                              " payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial[0].shape_reference_point[0].y_coordinate.value: " << ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial[0].shape_reference_point[0].y_coordinate.value;
                                             }
                                             
@@ -2320,7 +2320,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000110\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial[0].shape_reference_point[0].z_coordinate[0].value) << 
+                                                    logger->print() << "|\033[38;5;94m000110\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial[0].shape_reference_point[0].z_coordinate[0].value) << 
                                                                  " payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial[0].shape_reference_point[0].z_coordinate[0].value: " << ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial[0].shape_reference_point[0].z_coordinate[0].value;
                                                 }
                                                 
@@ -2349,7 +2349,7 @@ namespace wind
                                     
                                     // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000111\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial[0].range.value) << 
+                                        logger->print() << "|\033[38;5;94m000111\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial[0].range.value) << 
                                                      " payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial[0].range.value: " << ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial[0].range.value;
                                     }
                                     
@@ -2375,7 +2375,7 @@ namespace wind
                                     
                                     // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000112\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial[0].stationary_horizontal_opening_angle_start.value) << 
+                                        logger->print() << "|\033[38;5;94m000112\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial[0].stationary_horizontal_opening_angle_start.value) << 
                                                      " payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial[0].stationary_horizontal_opening_angle_start.value: " << ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial[0].stationary_horizontal_opening_angle_start.value;
                                     }
                                     
@@ -2401,7 +2401,7 @@ namespace wind
                                     
                                     // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000113\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial[0].stationary_horizontal_opening_angle_end.value) << 
+                                        logger->print() << "|\033[38;5;94m000113\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial[0].stationary_horizontal_opening_angle_end.value) << 
                                                      " payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial[0].stationary_horizontal_opening_angle_end.value: " << ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial[0].stationary_horizontal_opening_angle_end.value;
                                     }
                                     
@@ -2428,7 +2428,7 @@ namespace wind
                                         
                                         // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000114\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial[0].vertical_opening_angle_start[0].value) << 
+                                            logger->print() << "|\033[38;5;94m000114\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial[0].vertical_opening_angle_start[0].value) << 
                                                          " payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial[0].vertical_opening_angle_start[0].value: " << ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial[0].vertical_opening_angle_start[0].value;
                                         }
                                         
@@ -2456,7 +2456,7 @@ namespace wind
                                         
                                         // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000115\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial[0].vertical_opening_angle_end[0].value) << 
+                                            logger->print() << "|\033[38;5;94m000115\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial[0].vertical_opening_angle_end[0].value) << 
                                                          " payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial[0].vertical_opening_angle_end[0].value: " << ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial[0].vertical_opening_angle_end[0].value;
                                         }
                                         
@@ -2496,14 +2496,14 @@ namespace wind
                                     char* _tmp_163 = (char*) buffer++;
                                     *_tmp_163 = (ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial_shapes[0].z_coordinate.size() != 0 ? 1 : 0);
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m000117\033[0m| Optional field z_coordinate = " << *_tmp_163;
+                                        logger->print() << "|\033[38;5;94m000117\033[0m| Optional field z_coordinate = " << *_tmp_163;
                                     
                                     // Field:  type(Identifier1B) name(ref_point_id) extGroup(0)
                                     // Integer
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000118\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial_shapes[0].ref_point_id.value) << 
+                                        logger->print() << "|\033[38;5;94m000118\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial_shapes[0].ref_point_id.value) << 
                                                      " payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial_shapes[0].ref_point_id.value: " << static_cast<int>(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial_shapes[0].ref_point_id.value);
                                     }
                                     
@@ -2527,7 +2527,7 @@ namespace wind
                                     
                                     // FLOAT  min(-3094) max(1001) span(4096) scaleDivisor(100.0) dataType(Float)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000119\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial_shapes[0].x_coordinate.value) << 
+                                        logger->print() << "|\033[38;5;94m000119\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial_shapes[0].x_coordinate.value) << 
                                                      " payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial_shapes[0].x_coordinate.value: " << ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial_shapes[0].x_coordinate.value;
                                     }
                                     
@@ -2554,7 +2554,7 @@ namespace wind
                                     
                                     // FLOAT  min(-3094) max(1001) span(4096) scaleDivisor(100.0) dataType(Float)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000120\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial_shapes[0].y_coordinate.value) << 
+                                        logger->print() << "|\033[38;5;94m000120\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial_shapes[0].y_coordinate.value) << 
                                                      " payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial_shapes[0].y_coordinate.value: " << ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial_shapes[0].y_coordinate.value;
                                     }
                                     
@@ -2582,7 +2582,7 @@ namespace wind
                                         
                                         // FLOAT  min(-3094) max(1001) span(4096) scaleDivisor(100.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000121\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial_shapes[0].z_coordinate[0].value) << 
+                                            logger->print() << "|\033[38;5;94m000121\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial_shapes[0].z_coordinate[0].value) << 
                                                          " payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial_shapes[0].z_coordinate[0].value: " << ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial_shapes[0].z_coordinate[0].value;
                                         }
                                         
@@ -2631,18 +2631,18 @@ namespace wind
                                             char* _tmp_172 = (char*) buffer++;
                                             *_tmp_172 = (ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial_shapes[0].radial_shapes_list.elements[e].vertical_opening_angle_start.size() != 0 ? 1 : 0);
                                             if(debug)
-                                                logger->debug() << "|\033[38;5;94m000123\033[0m| Optional field vertical_opening_angle_start = " << *_tmp_172;
+                                                logger->print() << "|\033[38;5;94m000123\033[0m| Optional field vertical_opening_angle_start = " << *_tmp_172;
                                             char* _tmp_173 = (char*) buffer++;
                                             *_tmp_173 = (ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial_shapes[0].radial_shapes_list.elements[e].vertical_opening_angle_end.size() != 0 ? 1 : 0);
                                             if(debug)
-                                                logger->debug() << "|\033[38;5;94m000124\033[0m| Optional field vertical_opening_angle_end = " << *_tmp_173;
+                                                logger->print() << "|\033[38;5;94m000124\033[0m| Optional field vertical_opening_angle_end = " << *_tmp_173;
                                             
                                             // Field:  type(StandardLength12b) name(range) extGroup(0)
                                             // Real
                                             
                                             // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000125\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial_shapes[0].radial_shapes_list.elements[e].range.value) << 
+                                                logger->print() << "|\033[38;5;94m000125\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial_shapes[0].radial_shapes_list.elements[e].range.value) << 
                                                              " payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial_shapes[0].radial_shapes_list.elements[e].range.value: " << ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial_shapes[0].radial_shapes_list.elements[e].range.value;
                                             }
                                             
@@ -2668,7 +2668,7 @@ namespace wind
                                             
                                             // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000126\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial_shapes[0].radial_shapes_list.elements[e].horizontal_opening_angle_start.value) << 
+                                                logger->print() << "|\033[38;5;94m000126\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial_shapes[0].radial_shapes_list.elements[e].horizontal_opening_angle_start.value) << 
                                                              " payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial_shapes[0].radial_shapes_list.elements[e].horizontal_opening_angle_start.value: " << ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial_shapes[0].radial_shapes_list.elements[e].horizontal_opening_angle_start.value;
                                             }
                                             
@@ -2694,7 +2694,7 @@ namespace wind
                                             
                                             // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000127\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial_shapes[0].radial_shapes_list.elements[e].horizontal_opening_angle_end.value) << 
+                                                logger->print() << "|\033[38;5;94m000127\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial_shapes[0].radial_shapes_list.elements[e].horizontal_opening_angle_end.value) << 
                                                              " payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial_shapes[0].radial_shapes_list.elements[e].horizontal_opening_angle_end.value: " << ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial_shapes[0].radial_shapes_list.elements[e].horizontal_opening_angle_end.value;
                                             }
                                             
@@ -2721,7 +2721,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000128\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial_shapes[0].radial_shapes_list.elements[e].vertical_opening_angle_start[0].value) << 
+                                                    logger->print() << "|\033[38;5;94m000128\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial_shapes[0].radial_shapes_list.elements[e].vertical_opening_angle_start[0].value) << 
                                                                  " payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial_shapes[0].radial_shapes_list.elements[e].vertical_opening_angle_start[0].value: " << ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial_shapes[0].radial_shapes_list.elements[e].vertical_opening_angle_start[0].value;
                                                 }
                                                 
@@ -2749,7 +2749,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000129\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial_shapes[0].radial_shapes_list.elements[e].vertical_opening_angle_end[0].value) << 
+                                                    logger->print() << "|\033[38;5;94m000129\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial_shapes[0].radial_shapes_list.elements[e].vertical_opening_angle_end[0].value) << 
                                                                  " payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial_shapes[0].radial_shapes_list.elements[e].vertical_opening_angle_end[0].value: " << ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_shape[0].radial_shapes[0].radial_shapes_list.elements[e].vertical_opening_angle_end[0].value;
                                                 }
                                                 
@@ -2787,7 +2787,7 @@ namespace wind
                             
                             // UINT8  min(1) max(101) span(101) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000130\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_confidence[0].value) << 
+                                logger->print() << "|\033[38;5;94m000130\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_confidence[0].value) << 
                                              " payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_confidence[0].value: " << static_cast<int>(ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].perception_region_confidence[0].value);
                             }
                             
@@ -2814,7 +2814,7 @@ namespace wind
                         uint8_t* _tmp_185 = (uint8_t*)buffer++;
                         *_tmp_185 = (ros->payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].shadowing_applies.value ? 1 : 0);
                         if(debug)
-                            logger->debug() << "|\033[38;5;94m000131\033[0m| payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].shadowing_applies: " << (*_tmp_185);
+                            logger->print() << "|\033[38;5;94m000131\033[0m| payload.cpm_containers.elements[a].sensor_information_container[0].elements[c].shadowing_applies: " << (*_tmp_185);
                         
                         if(*_ext_flag_45) {
                         }
@@ -2859,22 +2859,22 @@ namespace wind
                         char* _tmp_188 = (char*) buffer++;
                         *_tmp_188 = (ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].sensor_id_list.size() != 0 ? 1 : 0);
                         if(debug)
-                            logger->debug() << "|\033[38;5;94m000134\033[0m| Optional field sensor_id_list = " << *_tmp_188;
+                            logger->print() << "|\033[38;5;94m000134\033[0m| Optional field sensor_id_list = " << *_tmp_188;
                         char* _tmp_189 = (char*) buffer++;
                         *_tmp_189 = (ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].number_of_perceived_objects.size() != 0 ? 1 : 0);
                         if(debug)
-                            logger->debug() << "|\033[38;5;94m000135\033[0m| Optional field number_of_perceived_objects = " << *_tmp_189;
+                            logger->print() << "|\033[38;5;94m000135\033[0m| Optional field number_of_perceived_objects = " << *_tmp_189;
                         char* _tmp_190 = (char*) buffer++;
                         *_tmp_190 = (ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perceived_object_ids.size() != 0 ? 1 : 0);
                         if(debug)
-                            logger->debug() << "|\033[38;5;94m000136\033[0m| Optional field perceived_object_ids = " << *_tmp_190;
+                            logger->print() << "|\033[38;5;94m000136\033[0m| Optional field perceived_object_ids = " << *_tmp_190;
                         
                         // Field:  type(DeltaTimeMilliSecondSigned) name(measurement_delta_time) extGroup(0)
                         // Real
                         
                         // FLOAT  min(-2048) max(2047) span(4096) scaleDivisor(1000.0) dataType(Float)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000137\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].measurement_delta_time.value) << 
+                            logger->print() << "|\033[38;5;94m000137\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].measurement_delta_time.value) << 
                                          " payload.cpm_containers.elements[a].perception_region_container[0].elements[f].measurement_delta_time.value: " << ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].measurement_delta_time.value;
                         }
                         
@@ -2901,7 +2901,7 @@ namespace wind
                         
                         // UINT8  min(1) max(101) span(101) dataType(UInt8)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000138\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_confidence.value) << 
+                            logger->print() << "|\033[38;5;94m000138\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_confidence.value) << 
                                          " payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_confidence.value: " << static_cast<int>(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_confidence.value);
                         }
                         
@@ -2952,15 +2952,15 @@ namespace wind
                                 char* _tmp_194 = (char*) buffer++;
                                 *_tmp_194 = (ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.rectangular[0].center_point.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000140\033[0m| Optional field center_point = " << *_tmp_194;
+                                    logger->print() << "|\033[38;5;94m000140\033[0m| Optional field center_point = " << *_tmp_194;
                                 char* _tmp_195 = (char*) buffer++;
                                 *_tmp_195 = (ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.rectangular[0].orientation.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000141\033[0m| Optional field orientation = " << *_tmp_195;
+                                    logger->print() << "|\033[38;5;94m000141\033[0m| Optional field orientation = " << *_tmp_195;
                                 char* _tmp_196 = (char*) buffer++;
                                 *_tmp_196 = (ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.rectangular[0].height.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000142\033[0m| Optional field height = " << *_tmp_196;
+                                    logger->print() << "|\033[38;5;94m000142\033[0m| Optional field height = " << *_tmp_196;
                                 
                                 if(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.rectangular[0].center_point.size() != 0) {
                                     // Field:  type(CartesianPosition3d) name(center_point) extGroup(0)
@@ -2972,14 +2972,14 @@ namespace wind
                                         char* _tmp_197 = (char*) buffer++;
                                         *_tmp_197 = (ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.rectangular[0].center_point[0].z_coordinate.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000143\033[0m| Optional field z_coordinate = " << *_tmp_197;
+                                            logger->print() << "|\033[38;5;94m000143\033[0m| Optional field z_coordinate = " << *_tmp_197;
                                         
                                         // Field:  type(CartesianCoordinate) name(x_coordinate) extGroup(0)
                                         // Real
                                         
                                         // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000144\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.rectangular[0].center_point[0].x_coordinate.value) << 
+                                            logger->print() << "|\033[38;5;94m000144\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.rectangular[0].center_point[0].x_coordinate.value) << 
                                                          " payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.rectangular[0].center_point[0].x_coordinate.value: " << ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.rectangular[0].center_point[0].x_coordinate.value;
                                         }
                                         
@@ -3006,7 +3006,7 @@ namespace wind
                                         
                                         // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000145\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.rectangular[0].center_point[0].y_coordinate.value) << 
+                                            logger->print() << "|\033[38;5;94m000145\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.rectangular[0].center_point[0].y_coordinate.value) << 
                                                          " payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.rectangular[0].center_point[0].y_coordinate.value: " << ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.rectangular[0].center_point[0].y_coordinate.value;
                                         }
                                         
@@ -3034,7 +3034,7 @@ namespace wind
                                             
                                             // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000146\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.rectangular[0].center_point[0].z_coordinate[0].value) << 
+                                                logger->print() << "|\033[38;5;94m000146\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.rectangular[0].center_point[0].z_coordinate[0].value) << 
                                                              " payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.rectangular[0].center_point[0].z_coordinate[0].value: " << ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.rectangular[0].center_point[0].z_coordinate[0].value;
                                             }
                                             
@@ -3063,7 +3063,7 @@ namespace wind
                                 
                                 // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000147\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.rectangular[0].semi_length.value) << 
+                                    logger->print() << "|\033[38;5;94m000147\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.rectangular[0].semi_length.value) << 
                                                  " payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.rectangular[0].semi_length.value: " << ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.rectangular[0].semi_length.value;
                                 }
                                 
@@ -3089,7 +3089,7 @@ namespace wind
                                 
                                 // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000148\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.rectangular[0].semi_breadth.value) << 
+                                    logger->print() << "|\033[38;5;94m000148\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.rectangular[0].semi_breadth.value) << 
                                                  " payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.rectangular[0].semi_breadth.value: " << ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.rectangular[0].semi_breadth.value;
                                 }
                                 
@@ -3116,7 +3116,7 @@ namespace wind
                                     
                                     // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000149\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.rectangular[0].orientation[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000149\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.rectangular[0].orientation[0].value) << 
                                                      " payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.rectangular[0].orientation[0].value: " << ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.rectangular[0].orientation[0].value;
                                     }
                                     
@@ -3144,7 +3144,7 @@ namespace wind
                                     
                                     // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000150\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.rectangular[0].height[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000150\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.rectangular[0].height[0].value) << 
                                                      " payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.rectangular[0].height[0].value: " << ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.rectangular[0].height[0].value;
                                     }
                                     
@@ -3182,11 +3182,11 @@ namespace wind
                                 char* _tmp_212 = (char*) buffer++;
                                 *_tmp_212 = (ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.circular[0].shape_reference_point.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000152\033[0m| Optional field shape_reference_point = " << *_tmp_212;
+                                    logger->print() << "|\033[38;5;94m000152\033[0m| Optional field shape_reference_point = " << *_tmp_212;
                                 char* _tmp_213 = (char*) buffer++;
                                 *_tmp_213 = (ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.circular[0].height.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000153\033[0m| Optional field height = " << *_tmp_213;
+                                    logger->print() << "|\033[38;5;94m000153\033[0m| Optional field height = " << *_tmp_213;
                                 
                                 if(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.circular[0].shape_reference_point.size() != 0) {
                                     // Field:  type(CartesianPosition3d) name(shape_reference_point) extGroup(0)
@@ -3198,14 +3198,14 @@ namespace wind
                                         char* _tmp_214 = (char*) buffer++;
                                         *_tmp_214 = (ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.circular[0].shape_reference_point[0].z_coordinate.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000154\033[0m| Optional field z_coordinate = " << *_tmp_214;
+                                            logger->print() << "|\033[38;5;94m000154\033[0m| Optional field z_coordinate = " << *_tmp_214;
                                         
                                         // Field:  type(CartesianCoordinate) name(x_coordinate) extGroup(0)
                                         // Real
                                         
                                         // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000155\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.circular[0].shape_reference_point[0].x_coordinate.value) << 
+                                            logger->print() << "|\033[38;5;94m000155\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.circular[0].shape_reference_point[0].x_coordinate.value) << 
                                                          " payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.circular[0].shape_reference_point[0].x_coordinate.value: " << ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.circular[0].shape_reference_point[0].x_coordinate.value;
                                         }
                                         
@@ -3232,7 +3232,7 @@ namespace wind
                                         
                                         // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000156\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.circular[0].shape_reference_point[0].y_coordinate.value) << 
+                                            logger->print() << "|\033[38;5;94m000156\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.circular[0].shape_reference_point[0].y_coordinate.value) << 
                                                          " payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.circular[0].shape_reference_point[0].y_coordinate.value: " << ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.circular[0].shape_reference_point[0].y_coordinate.value;
                                         }
                                         
@@ -3260,7 +3260,7 @@ namespace wind
                                             
                                             // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000157\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.circular[0].shape_reference_point[0].z_coordinate[0].value) << 
+                                                logger->print() << "|\033[38;5;94m000157\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.circular[0].shape_reference_point[0].z_coordinate[0].value) << 
                                                              " payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.circular[0].shape_reference_point[0].z_coordinate[0].value: " << ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.circular[0].shape_reference_point[0].z_coordinate[0].value;
                                             }
                                             
@@ -3289,7 +3289,7 @@ namespace wind
                                 
                                 // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000158\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.circular[0].radius.value) << 
+                                    logger->print() << "|\033[38;5;94m000158\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.circular[0].radius.value) << 
                                                  " payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.circular[0].radius.value: " << ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.circular[0].radius.value;
                                 }
                                 
@@ -3316,7 +3316,7 @@ namespace wind
                                     
                                     // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000159\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.circular[0].height[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000159\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.circular[0].height[0].value) << 
                                                      " payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.circular[0].height[0].value: " << ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.circular[0].height[0].value;
                                     }
                                     
@@ -3354,11 +3354,11 @@ namespace wind
                                 char* _tmp_225 = (char*) buffer++;
                                 *_tmp_225 = (ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.polygonal[0].shape_reference_point.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000161\033[0m| Optional field shape_reference_point = " << *_tmp_225;
+                                    logger->print() << "|\033[38;5;94m000161\033[0m| Optional field shape_reference_point = " << *_tmp_225;
                                 char* _tmp_226 = (char*) buffer++;
                                 *_tmp_226 = (ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.polygonal[0].height.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000162\033[0m| Optional field height = " << *_tmp_226;
+                                    logger->print() << "|\033[38;5;94m000162\033[0m| Optional field height = " << *_tmp_226;
                                 
                                 if(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.polygonal[0].shape_reference_point.size() != 0) {
                                     // Field:  type(CartesianPosition3d) name(shape_reference_point) extGroup(0)
@@ -3370,14 +3370,14 @@ namespace wind
                                         char* _tmp_227 = (char*) buffer++;
                                         *_tmp_227 = (ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.polygonal[0].shape_reference_point[0].z_coordinate.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000163\033[0m| Optional field z_coordinate = " << *_tmp_227;
+                                            logger->print() << "|\033[38;5;94m000163\033[0m| Optional field z_coordinate = " << *_tmp_227;
                                         
                                         // Field:  type(CartesianCoordinate) name(x_coordinate) extGroup(0)
                                         // Real
                                         
                                         // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000164\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.polygonal[0].shape_reference_point[0].x_coordinate.value) << 
+                                            logger->print() << "|\033[38;5;94m000164\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.polygonal[0].shape_reference_point[0].x_coordinate.value) << 
                                                          " payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.polygonal[0].shape_reference_point[0].x_coordinate.value: " << ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.polygonal[0].shape_reference_point[0].x_coordinate.value;
                                         }
                                         
@@ -3404,7 +3404,7 @@ namespace wind
                                         
                                         // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000165\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.polygonal[0].shape_reference_point[0].y_coordinate.value) << 
+                                            logger->print() << "|\033[38;5;94m000165\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.polygonal[0].shape_reference_point[0].y_coordinate.value) << 
                                                          " payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.polygonal[0].shape_reference_point[0].y_coordinate.value: " << ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.polygonal[0].shape_reference_point[0].y_coordinate.value;
                                         }
                                         
@@ -3432,7 +3432,7 @@ namespace wind
                                             
                                             // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000166\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.polygonal[0].shape_reference_point[0].z_coordinate[0].value) << 
+                                                logger->print() << "|\033[38;5;94m000166\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.polygonal[0].shape_reference_point[0].z_coordinate[0].value) << 
                                                              " payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.polygonal[0].shape_reference_point[0].z_coordinate[0].value: " << ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.polygonal[0].shape_reference_point[0].z_coordinate[0].value;
                                             }
                                             
@@ -3480,14 +3480,14 @@ namespace wind
                                         char* _tmp_235 = (char*) buffer++;
                                         *_tmp_235 = (ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.polygonal[0].polygon.elements[g].z_coordinate.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000168\033[0m| Optional field z_coordinate = " << *_tmp_235;
+                                            logger->print() << "|\033[38;5;94m000168\033[0m| Optional field z_coordinate = " << *_tmp_235;
                                         
                                         // Field:  type(CartesianCoordinate) name(x_coordinate) extGroup(0)
                                         // Real
                                         
                                         // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000169\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.polygonal[0].polygon.elements[g].x_coordinate.value) << 
+                                            logger->print() << "|\033[38;5;94m000169\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.polygonal[0].polygon.elements[g].x_coordinate.value) << 
                                                          " payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.polygonal[0].polygon.elements[g].x_coordinate.value: " << ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.polygonal[0].polygon.elements[g].x_coordinate.value;
                                         }
                                         
@@ -3514,7 +3514,7 @@ namespace wind
                                         
                                         // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000170\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.polygonal[0].polygon.elements[g].y_coordinate.value) << 
+                                            logger->print() << "|\033[38;5;94m000170\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.polygonal[0].polygon.elements[g].y_coordinate.value) << 
                                                          " payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.polygonal[0].polygon.elements[g].y_coordinate.value: " << ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.polygonal[0].polygon.elements[g].y_coordinate.value;
                                         }
                                         
@@ -3542,7 +3542,7 @@ namespace wind
                                             
                                             // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000171\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.polygonal[0].polygon.elements[g].z_coordinate[0].value) << 
+                                                logger->print() << "|\033[38;5;94m000171\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.polygonal[0].polygon.elements[g].z_coordinate[0].value) << 
                                                              " payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.polygonal[0].polygon.elements[g].z_coordinate[0].value: " << ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.polygonal[0].polygon.elements[g].z_coordinate[0].value;
                                             }
                                             
@@ -3573,7 +3573,7 @@ namespace wind
                                     
                                     // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000172\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.polygonal[0].height[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000172\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.polygonal[0].height[0].value) << 
                                                      " payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.polygonal[0].height[0].value: " << ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.polygonal[0].height[0].value;
                                     }
                                     
@@ -3613,15 +3613,15 @@ namespace wind
                                 char* _tmp_244 = (char*) buffer++;
                                 *_tmp_244 = (ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.elliptical[0].shape_reference_point.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000174\033[0m| Optional field shape_reference_point = " << *_tmp_244;
+                                    logger->print() << "|\033[38;5;94m000174\033[0m| Optional field shape_reference_point = " << *_tmp_244;
                                 char* _tmp_245 = (char*) buffer++;
                                 *_tmp_245 = (ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.elliptical[0].orientation.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000175\033[0m| Optional field orientation = " << *_tmp_245;
+                                    logger->print() << "|\033[38;5;94m000175\033[0m| Optional field orientation = " << *_tmp_245;
                                 char* _tmp_246 = (char*) buffer++;
                                 *_tmp_246 = (ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.elliptical[0].height.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000176\033[0m| Optional field height = " << *_tmp_246;
+                                    logger->print() << "|\033[38;5;94m000176\033[0m| Optional field height = " << *_tmp_246;
                                 
                                 if(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.elliptical[0].shape_reference_point.size() != 0) {
                                     // Field:  type(CartesianPosition3d) name(shape_reference_point) extGroup(0)
@@ -3633,14 +3633,14 @@ namespace wind
                                         char* _tmp_247 = (char*) buffer++;
                                         *_tmp_247 = (ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.elliptical[0].shape_reference_point[0].z_coordinate.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000177\033[0m| Optional field z_coordinate = " << *_tmp_247;
+                                            logger->print() << "|\033[38;5;94m000177\033[0m| Optional field z_coordinate = " << *_tmp_247;
                                         
                                         // Field:  type(CartesianCoordinate) name(x_coordinate) extGroup(0)
                                         // Real
                                         
                                         // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000178\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.elliptical[0].shape_reference_point[0].x_coordinate.value) << 
+                                            logger->print() << "|\033[38;5;94m000178\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.elliptical[0].shape_reference_point[0].x_coordinate.value) << 
                                                          " payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.elliptical[0].shape_reference_point[0].x_coordinate.value: " << ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.elliptical[0].shape_reference_point[0].x_coordinate.value;
                                         }
                                         
@@ -3667,7 +3667,7 @@ namespace wind
                                         
                                         // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000179\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.elliptical[0].shape_reference_point[0].y_coordinate.value) << 
+                                            logger->print() << "|\033[38;5;94m000179\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.elliptical[0].shape_reference_point[0].y_coordinate.value) << 
                                                          " payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.elliptical[0].shape_reference_point[0].y_coordinate.value: " << ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.elliptical[0].shape_reference_point[0].y_coordinate.value;
                                         }
                                         
@@ -3695,7 +3695,7 @@ namespace wind
                                             
                                             // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000180\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.elliptical[0].shape_reference_point[0].z_coordinate[0].value) << 
+                                                logger->print() << "|\033[38;5;94m000180\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.elliptical[0].shape_reference_point[0].z_coordinate[0].value) << 
                                                              " payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.elliptical[0].shape_reference_point[0].z_coordinate[0].value: " << ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.elliptical[0].shape_reference_point[0].z_coordinate[0].value;
                                             }
                                             
@@ -3724,7 +3724,7 @@ namespace wind
                                 
                                 // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000181\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.elliptical[0].semi_major_axis_length.value) << 
+                                    logger->print() << "|\033[38;5;94m000181\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.elliptical[0].semi_major_axis_length.value) << 
                                                  " payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.elliptical[0].semi_major_axis_length.value: " << ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.elliptical[0].semi_major_axis_length.value;
                                 }
                                 
@@ -3750,7 +3750,7 @@ namespace wind
                                 
                                 // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000182\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.elliptical[0].semi_minor_axis_length.value) << 
+                                    logger->print() << "|\033[38;5;94m000182\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.elliptical[0].semi_minor_axis_length.value) << 
                                                  " payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.elliptical[0].semi_minor_axis_length.value: " << ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.elliptical[0].semi_minor_axis_length.value;
                                 }
                                 
@@ -3777,7 +3777,7 @@ namespace wind
                                     
                                     // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000183\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.elliptical[0].orientation[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000183\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.elliptical[0].orientation[0].value) << 
                                                      " payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.elliptical[0].orientation[0].value: " << ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.elliptical[0].orientation[0].value;
                                     }
                                     
@@ -3805,7 +3805,7 @@ namespace wind
                                     
                                     // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000184\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.elliptical[0].height[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000184\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.elliptical[0].height[0].value) << 
                                                      " payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.elliptical[0].height[0].value: " << ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.elliptical[0].height[0].value;
                                     }
                                     
@@ -3846,15 +3846,15 @@ namespace wind
                                 char* _tmp_262 = (char*) buffer++;
                                 *_tmp_262 = (ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial[0].shape_reference_point.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000186\033[0m| Optional field shape_reference_point = " << *_tmp_262;
+                                    logger->print() << "|\033[38;5;94m000186\033[0m| Optional field shape_reference_point = " << *_tmp_262;
                                 char* _tmp_263 = (char*) buffer++;
                                 *_tmp_263 = (ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial[0].vertical_opening_angle_start.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000187\033[0m| Optional field vertical_opening_angle_start = " << *_tmp_263;
+                                    logger->print() << "|\033[38;5;94m000187\033[0m| Optional field vertical_opening_angle_start = " << *_tmp_263;
                                 char* _tmp_264 = (char*) buffer++;
                                 *_tmp_264 = (ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial[0].vertical_opening_angle_end.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000188\033[0m| Optional field vertical_opening_angle_end = " << *_tmp_264;
+                                    logger->print() << "|\033[38;5;94m000188\033[0m| Optional field vertical_opening_angle_end = " << *_tmp_264;
                                 
                                 if(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial[0].shape_reference_point.size() != 0) {
                                     // Field:  type(CartesianPosition3d) name(shape_reference_point) extGroup(0)
@@ -3866,14 +3866,14 @@ namespace wind
                                         char* _tmp_265 = (char*) buffer++;
                                         *_tmp_265 = (ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial[0].shape_reference_point[0].z_coordinate.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000189\033[0m| Optional field z_coordinate = " << *_tmp_265;
+                                            logger->print() << "|\033[38;5;94m000189\033[0m| Optional field z_coordinate = " << *_tmp_265;
                                         
                                         // Field:  type(CartesianCoordinate) name(x_coordinate) extGroup(0)
                                         // Real
                                         
                                         // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000190\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial[0].shape_reference_point[0].x_coordinate.value) << 
+                                            logger->print() << "|\033[38;5;94m000190\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial[0].shape_reference_point[0].x_coordinate.value) << 
                                                          " payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial[0].shape_reference_point[0].x_coordinate.value: " << ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial[0].shape_reference_point[0].x_coordinate.value;
                                         }
                                         
@@ -3900,7 +3900,7 @@ namespace wind
                                         
                                         // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000191\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial[0].shape_reference_point[0].y_coordinate.value) << 
+                                            logger->print() << "|\033[38;5;94m000191\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial[0].shape_reference_point[0].y_coordinate.value) << 
                                                          " payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial[0].shape_reference_point[0].y_coordinate.value: " << ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial[0].shape_reference_point[0].y_coordinate.value;
                                         }
                                         
@@ -3928,7 +3928,7 @@ namespace wind
                                             
                                             // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000192\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial[0].shape_reference_point[0].z_coordinate[0].value) << 
+                                                logger->print() << "|\033[38;5;94m000192\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial[0].shape_reference_point[0].z_coordinate[0].value) << 
                                                              " payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial[0].shape_reference_point[0].z_coordinate[0].value: " << ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial[0].shape_reference_point[0].z_coordinate[0].value;
                                             }
                                             
@@ -3957,7 +3957,7 @@ namespace wind
                                 
                                 // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000193\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial[0].range.value) << 
+                                    logger->print() << "|\033[38;5;94m000193\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial[0].range.value) << 
                                                  " payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial[0].range.value: " << ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial[0].range.value;
                                 }
                                 
@@ -3983,7 +3983,7 @@ namespace wind
                                 
                                 // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000194\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial[0].stationary_horizontal_opening_angle_start.value) << 
+                                    logger->print() << "|\033[38;5;94m000194\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial[0].stationary_horizontal_opening_angle_start.value) << 
                                                  " payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial[0].stationary_horizontal_opening_angle_start.value: " << ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial[0].stationary_horizontal_opening_angle_start.value;
                                 }
                                 
@@ -4009,7 +4009,7 @@ namespace wind
                                 
                                 // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000195\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial[0].stationary_horizontal_opening_angle_end.value) << 
+                                    logger->print() << "|\033[38;5;94m000195\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial[0].stationary_horizontal_opening_angle_end.value) << 
                                                  " payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial[0].stationary_horizontal_opening_angle_end.value: " << ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial[0].stationary_horizontal_opening_angle_end.value;
                                 }
                                 
@@ -4036,7 +4036,7 @@ namespace wind
                                     
                                     // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000196\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial[0].vertical_opening_angle_start[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000196\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial[0].vertical_opening_angle_start[0].value) << 
                                                      " payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial[0].vertical_opening_angle_start[0].value: " << ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial[0].vertical_opening_angle_start[0].value;
                                     }
                                     
@@ -4064,7 +4064,7 @@ namespace wind
                                     
                                     // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000197\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial[0].vertical_opening_angle_end[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000197\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial[0].vertical_opening_angle_end[0].value) << 
                                                      " payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial[0].vertical_opening_angle_end[0].value: " << ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial[0].vertical_opening_angle_end[0].value;
                                     }
                                     
@@ -4104,14 +4104,14 @@ namespace wind
                                 char* _tmp_282 = (char*) buffer++;
                                 *_tmp_282 = (ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial_shapes[0].z_coordinate.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000199\033[0m| Optional field z_coordinate = " << *_tmp_282;
+                                    logger->print() << "|\033[38;5;94m000199\033[0m| Optional field z_coordinate = " << *_tmp_282;
                                 
                                 // Field:  type(Identifier1B) name(ref_point_id) extGroup(0)
                                 // Integer
                                 
                                 // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000200\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial_shapes[0].ref_point_id.value) << 
+                                    logger->print() << "|\033[38;5;94m000200\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial_shapes[0].ref_point_id.value) << 
                                                  " payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial_shapes[0].ref_point_id.value: " << static_cast<int>(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial_shapes[0].ref_point_id.value);
                                 }
                                 
@@ -4135,7 +4135,7 @@ namespace wind
                                 
                                 // FLOAT  min(-3094) max(1001) span(4096) scaleDivisor(100.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000201\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial_shapes[0].x_coordinate.value) << 
+                                    logger->print() << "|\033[38;5;94m000201\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial_shapes[0].x_coordinate.value) << 
                                                  " payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial_shapes[0].x_coordinate.value: " << ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial_shapes[0].x_coordinate.value;
                                 }
                                 
@@ -4162,7 +4162,7 @@ namespace wind
                                 
                                 // FLOAT  min(-3094) max(1001) span(4096) scaleDivisor(100.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000202\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial_shapes[0].y_coordinate.value) << 
+                                    logger->print() << "|\033[38;5;94m000202\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial_shapes[0].y_coordinate.value) << 
                                                  " payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial_shapes[0].y_coordinate.value: " << ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial_shapes[0].y_coordinate.value;
                                 }
                                 
@@ -4190,7 +4190,7 @@ namespace wind
                                     
                                     // FLOAT  min(-3094) max(1001) span(4096) scaleDivisor(100.0) dataType(Float)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000203\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial_shapes[0].z_coordinate[0].value) << 
+                                        logger->print() << "|\033[38;5;94m000203\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial_shapes[0].z_coordinate[0].value) << 
                                                      " payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial_shapes[0].z_coordinate[0].value: " << ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial_shapes[0].z_coordinate[0].value;
                                     }
                                     
@@ -4239,18 +4239,18 @@ namespace wind
                                         char* _tmp_291 = (char*) buffer++;
                                         *_tmp_291 = (ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial_shapes[0].radial_shapes_list.elements[h].vertical_opening_angle_start.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000205\033[0m| Optional field vertical_opening_angle_start = " << *_tmp_291;
+                                            logger->print() << "|\033[38;5;94m000205\033[0m| Optional field vertical_opening_angle_start = " << *_tmp_291;
                                         char* _tmp_292 = (char*) buffer++;
                                         *_tmp_292 = (ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial_shapes[0].radial_shapes_list.elements[h].vertical_opening_angle_end.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000206\033[0m| Optional field vertical_opening_angle_end = " << *_tmp_292;
+                                            logger->print() << "|\033[38;5;94m000206\033[0m| Optional field vertical_opening_angle_end = " << *_tmp_292;
                                         
                                         // Field:  type(StandardLength12b) name(range) extGroup(0)
                                         // Real
                                         
                                         // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000207\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial_shapes[0].radial_shapes_list.elements[h].range.value) << 
+                                            logger->print() << "|\033[38;5;94m000207\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial_shapes[0].radial_shapes_list.elements[h].range.value) << 
                                                          " payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial_shapes[0].radial_shapes_list.elements[h].range.value: " << ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial_shapes[0].radial_shapes_list.elements[h].range.value;
                                         }
                                         
@@ -4276,7 +4276,7 @@ namespace wind
                                         
                                         // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000208\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial_shapes[0].radial_shapes_list.elements[h].horizontal_opening_angle_start.value) << 
+                                            logger->print() << "|\033[38;5;94m000208\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial_shapes[0].radial_shapes_list.elements[h].horizontal_opening_angle_start.value) << 
                                                          " payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial_shapes[0].radial_shapes_list.elements[h].horizontal_opening_angle_start.value: " << ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial_shapes[0].radial_shapes_list.elements[h].horizontal_opening_angle_start.value;
                                         }
                                         
@@ -4302,7 +4302,7 @@ namespace wind
                                         
                                         // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000209\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial_shapes[0].radial_shapes_list.elements[h].horizontal_opening_angle_end.value) << 
+                                            logger->print() << "|\033[38;5;94m000209\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial_shapes[0].radial_shapes_list.elements[h].horizontal_opening_angle_end.value) << 
                                                          " payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial_shapes[0].radial_shapes_list.elements[h].horizontal_opening_angle_end.value: " << ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial_shapes[0].radial_shapes_list.elements[h].horizontal_opening_angle_end.value;
                                         }
                                         
@@ -4329,7 +4329,7 @@ namespace wind
                                             
                                             // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000210\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial_shapes[0].radial_shapes_list.elements[h].vertical_opening_angle_start[0].value) << 
+                                                logger->print() << "|\033[38;5;94m000210\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial_shapes[0].radial_shapes_list.elements[h].vertical_opening_angle_start[0].value) << 
                                                              " payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial_shapes[0].radial_shapes_list.elements[h].vertical_opening_angle_start[0].value: " << ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial_shapes[0].radial_shapes_list.elements[h].vertical_opening_angle_start[0].value;
                                             }
                                             
@@ -4357,7 +4357,7 @@ namespace wind
                                             
                                             // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000211\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial_shapes[0].radial_shapes_list.elements[h].vertical_opening_angle_end[0].value) << 
+                                                logger->print() << "|\033[38;5;94m000211\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial_shapes[0].radial_shapes_list.elements[h].vertical_opening_angle_end[0].value) << 
                                                              " payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial_shapes[0].radial_shapes_list.elements[h].vertical_opening_angle_end[0].value: " << ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perception_region_shape.radial_shapes[0].radial_shapes_list.elements[h].vertical_opening_angle_end[0].value;
                                             }
                                             
@@ -4394,7 +4394,7 @@ namespace wind
                         uint8_t* _tmp_303 = (uint8_t*)buffer++;
                         *_tmp_303 = (ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].shadowing_applies.value ? 1 : 0);
                         if(debug)
-                            logger->debug() << "|\033[38;5;94m000212\033[0m| payload.cpm_containers.elements[a].perception_region_container[0].elements[f].shadowing_applies: " << (*_tmp_303);
+                            logger->print() << "|\033[38;5;94m000212\033[0m| payload.cpm_containers.elements[a].perception_region_container[0].elements[f].shadowing_applies: " << (*_tmp_303);
                         
                         if(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].sensor_id_list.size() != 0) {
                             // Field:  type(SequenceOfIdentifier1B) name(sensor_id_list) extGroup(0)
@@ -4417,7 +4417,7 @@ namespace wind
                                 
                                 // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000214\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].sensor_id_list[0].elements[i].value) << 
+                                    logger->print() << "|\033[38;5;94m000214\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].sensor_id_list[0].elements[i].value) << 
                                                  " payload.cpm_containers.elements[a].perception_region_container[0].elements[f].sensor_id_list[0].elements[i].value: " << static_cast<int>(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].sensor_id_list[0].elements[i].value);
                                 }
                                 
@@ -4445,7 +4445,7 @@ namespace wind
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000215\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].number_of_perceived_objects[0].value) << 
+                                logger->print() << "|\033[38;5;94m000215\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].number_of_perceived_objects[0].value) << 
                                              " payload.cpm_containers.elements[a].perception_region_container[0].elements[f].number_of_perceived_objects[0].value: " << static_cast<int>(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].number_of_perceived_objects[0].value);
                             }
                             
@@ -4486,7 +4486,7 @@ namespace wind
                                 
                                 // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000217\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perceived_object_ids[0].elements[j].value) << 
+                                    logger->print() << "|\033[38;5;94m000217\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perceived_object_ids[0].elements[j].value) << 
                                                  " payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perceived_object_ids[0].elements[j].value: " << ros->payload.cpm_containers.elements[a].perception_region_container[0].elements[f].perceived_object_ids[0].elements[j].value;
                                 }
                                 
@@ -4534,7 +4534,7 @@ namespace wind
                     
                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                     if(debug) {
-                        logger->debug() << "|\033[38;5;94m000219\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].number_of_perceived_objects.value) << 
+                        logger->print() << "|\033[38;5;94m000219\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].number_of_perceived_objects.value) << 
                                      " payload.cpm_containers.elements[a].perceived_object_container[0].number_of_perceived_objects.value: " << static_cast<int>(ros->payload.cpm_containers.elements[a].perceived_object_container[0].number_of_perceived_objects.value);
                     }
                     
@@ -4594,59 +4594,59 @@ namespace wind
                             char* _tmp_312 = (char*) buffer++;
                             *_tmp_312 = (ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].object_id.size() != 0 ? 1 : 0);
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m000221\033[0m| Optional field object_id = " << *_tmp_312;
+                                logger->print() << "|\033[38;5;94m000221\033[0m| Optional field object_id = " << *_tmp_312;
                             char* _tmp_313 = (char*) buffer++;
                             *_tmp_313 = (ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].velocity.size() != 0 ? 1 : 0);
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m000222\033[0m| Optional field velocity = " << *_tmp_313;
+                                logger->print() << "|\033[38;5;94m000222\033[0m| Optional field velocity = " << *_tmp_313;
                             char* _tmp_314 = (char*) buffer++;
                             *_tmp_314 = (ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].acceleration.size() != 0 ? 1 : 0);
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m000223\033[0m| Optional field acceleration = " << *_tmp_314;
+                                logger->print() << "|\033[38;5;94m000223\033[0m| Optional field acceleration = " << *_tmp_314;
                             char* _tmp_315 = (char*) buffer++;
                             *_tmp_315 = (ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].angles.size() != 0 ? 1 : 0);
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m000224\033[0m| Optional field angles = " << *_tmp_315;
+                                logger->print() << "|\033[38;5;94m000224\033[0m| Optional field angles = " << *_tmp_315;
                             char* _tmp_316 = (char*) buffer++;
                             *_tmp_316 = (ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].z_angular_velocity.size() != 0 ? 1 : 0);
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m000225\033[0m| Optional field z_angular_velocity = " << *_tmp_316;
+                                logger->print() << "|\033[38;5;94m000225\033[0m| Optional field z_angular_velocity = " << *_tmp_316;
                             char* _tmp_317 = (char*) buffer++;
                             *_tmp_317 = (ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].lower_triangular_correlation_matrices.size() != 0 ? 1 : 0);
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m000226\033[0m| Optional field lower_triangular_correlation_matrices = " << *_tmp_317;
+                                logger->print() << "|\033[38;5;94m000226\033[0m| Optional field lower_triangular_correlation_matrices = " << *_tmp_317;
                             char* _tmp_318 = (char*) buffer++;
                             *_tmp_318 = (ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].object_dimension_z.size() != 0 ? 1 : 0);
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m000227\033[0m| Optional field object_dimension_z = " << *_tmp_318;
+                                logger->print() << "|\033[38;5;94m000227\033[0m| Optional field object_dimension_z = " << *_tmp_318;
                             char* _tmp_319 = (char*) buffer++;
                             *_tmp_319 = (ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].object_dimension_y.size() != 0 ? 1 : 0);
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m000228\033[0m| Optional field object_dimension_y = " << *_tmp_319;
+                                logger->print() << "|\033[38;5;94m000228\033[0m| Optional field object_dimension_y = " << *_tmp_319;
                             char* _tmp_320 = (char*) buffer++;
                             *_tmp_320 = (ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].object_dimension_x.size() != 0 ? 1 : 0);
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m000229\033[0m| Optional field object_dimension_x = " << *_tmp_320;
+                                logger->print() << "|\033[38;5;94m000229\033[0m| Optional field object_dimension_x = " << *_tmp_320;
                             char* _tmp_321 = (char*) buffer++;
                             *_tmp_321 = (ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].object_age.size() != 0 ? 1 : 0);
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m000230\033[0m| Optional field object_age = " << *_tmp_321;
+                                logger->print() << "|\033[38;5;94m000230\033[0m| Optional field object_age = " << *_tmp_321;
                             char* _tmp_322 = (char*) buffer++;
                             *_tmp_322 = (ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].object_perception_quality.size() != 0 ? 1 : 0);
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m000231\033[0m| Optional field object_perception_quality = " << *_tmp_322;
+                                logger->print() << "|\033[38;5;94m000231\033[0m| Optional field object_perception_quality = " << *_tmp_322;
                             char* _tmp_323 = (char*) buffer++;
                             *_tmp_323 = (ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].sensor_id_list.size() != 0 ? 1 : 0);
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m000232\033[0m| Optional field sensor_id_list = " << *_tmp_323;
+                                logger->print() << "|\033[38;5;94m000232\033[0m| Optional field sensor_id_list = " << *_tmp_323;
                             char* _tmp_324 = (char*) buffer++;
                             *_tmp_324 = (ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification.size() != 0 ? 1 : 0);
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m000233\033[0m| Optional field classification = " << *_tmp_324;
+                                logger->print() << "|\033[38;5;94m000233\033[0m| Optional field classification = " << *_tmp_324;
                             char* _tmp_325 = (char*) buffer++;
                             *_tmp_325 = (ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].map_position.size() != 0 ? 1 : 0);
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m000234\033[0m| Optional field map_position = " << *_tmp_325;
+                                logger->print() << "|\033[38;5;94m000234\033[0m| Optional field map_position = " << *_tmp_325;
                             
                             if(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].object_id.size() != 0) {
                                 // Field:  type(Identifier2B) name(object_id) extGroup(0)
@@ -4654,7 +4654,7 @@ namespace wind
                                 
                                 // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000235\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].object_id[0].value) << 
+                                    logger->print() << "|\033[38;5;94m000235\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].object_id[0].value) << 
                                                  " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].object_id[0].value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].object_id[0].value;
                                 }
                                 
@@ -4679,7 +4679,7 @@ namespace wind
                             
                             // FLOAT  min(-2048) max(2047) span(4096) scaleDivisor(1000.0) dataType(Float)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000236\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].measurement_delta_time.value) << 
+                                logger->print() << "|\033[38;5;94m000236\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].measurement_delta_time.value) << 
                                              " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].measurement_delta_time.value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].measurement_delta_time.value;
                             }
                             
@@ -4710,7 +4710,7 @@ namespace wind
                                 char* _tmp_329 = (char*) buffer++;
                                 *_tmp_329 = (ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].position.z_coordinate.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000237\033[0m| Optional field z_coordinate = " << *_tmp_329;
+                                    logger->print() << "|\033[38;5;94m000237\033[0m| Optional field z_coordinate = " << *_tmp_329;
                                 
                                 // Field:  type(CartesianCoordinateWithConfidence) name(x_coordinate) extGroup(0)
                                     // CartesianCoordinateWithConfidence  SEQUENCE
@@ -4723,7 +4723,7 @@ namespace wind
                                     
                                     // FLOAT  min(-131072) max(131071) span(262144) scaleDivisor(100.0) dataType(Float)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000238\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].position.x_coordinate.value.value) << 
+                                        logger->print() << "|\033[38;5;94m000238\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].position.x_coordinate.value.value) << 
                                                      " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].position.x_coordinate.value.value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].position.x_coordinate.value.value;
                                     }
                                     
@@ -4750,7 +4750,7 @@ namespace wind
                                     
                                     // FLOAT  min(1) max(4096) span(4096) scaleDivisor(100.0) dataType(Float)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000239\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].position.x_coordinate.confidence.value) << 
+                                        logger->print() << "|\033[38;5;94m000239\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].position.x_coordinate.confidence.value) << 
                                                      " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].position.x_coordinate.confidence.value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].position.x_coordinate.confidence.value;
                                     }
                                     
@@ -4783,7 +4783,7 @@ namespace wind
                                     
                                     // FLOAT  min(-131072) max(131071) span(262144) scaleDivisor(100.0) dataType(Float)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000240\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].position.y_coordinate.value.value) << 
+                                        logger->print() << "|\033[38;5;94m000240\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].position.y_coordinate.value.value) << 
                                                      " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].position.y_coordinate.value.value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].position.y_coordinate.value.value;
                                     }
                                     
@@ -4810,7 +4810,7 @@ namespace wind
                                     
                                     // FLOAT  min(1) max(4096) span(4096) scaleDivisor(100.0) dataType(Float)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000241\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].position.y_coordinate.confidence.value) << 
+                                        logger->print() << "|\033[38;5;94m000241\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].position.y_coordinate.confidence.value) << 
                                                      " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].position.y_coordinate.confidence.value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].position.y_coordinate.confidence.value;
                                     }
                                     
@@ -4844,7 +4844,7 @@ namespace wind
                                         
                                         // FLOAT  min(-131072) max(131071) span(262144) scaleDivisor(100.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000242\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].position.z_coordinate[0].value.value) << 
+                                            logger->print() << "|\033[38;5;94m000242\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].position.z_coordinate[0].value.value) << 
                                                          " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].position.z_coordinate[0].value.value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].position.z_coordinate[0].value.value;
                                         }
                                         
@@ -4871,7 +4871,7 @@ namespace wind
                                         
                                         // FLOAT  min(1) max(4096) span(4096) scaleDivisor(100.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000243\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].position.z_coordinate[0].confidence.value) << 
+                                            logger->print() << "|\033[38;5;94m000243\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].position.z_coordinate[0].confidence.value) << 
                                                          " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].position.z_coordinate[0].confidence.value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].position.z_coordinate[0].confidence.value;
                                         }
                                         
@@ -4916,7 +4916,7 @@ namespace wind
                                         char* _tmp_342 = (char*) buffer++;
                                         *_tmp_342 = (ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].velocity[0].polar_velocity[0].z_velocity.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000245\033[0m| Optional field z_velocity = " << *_tmp_342;
+                                            logger->print() << "|\033[38;5;94m000245\033[0m| Optional field z_velocity = " << *_tmp_342;
                                         
                                         // Field:  type(Speed) name(velocity_magnitude) extGroup(0)
                                             // Speed  SEQUENCE
@@ -4929,7 +4929,7 @@ namespace wind
                                             
                                             // FLOAT  min(0) max(16383) span(16384) scaleDivisor(100.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000246\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].velocity[0].polar_velocity[0].velocity_magnitude.speed_value.value) << 
+                                                logger->print() << "|\033[38;5;94m000246\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].velocity[0].polar_velocity[0].velocity_magnitude.speed_value.value) << 
                                                              " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].velocity[0].polar_velocity[0].velocity_magnitude.speed_value.value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].velocity[0].polar_velocity[0].velocity_magnitude.speed_value.value;
                                             }
                                             
@@ -4955,7 +4955,7 @@ namespace wind
                                             
                                             // FLOAT  min(1) max(127) span(127) scaleDivisor(100.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000247\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].velocity[0].polar_velocity[0].velocity_magnitude.speed_confidence.value) << 
+                                                logger->print() << "|\033[38;5;94m000247\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].velocity[0].polar_velocity[0].velocity_magnitude.speed_confidence.value) << 
                                                              " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].velocity[0].polar_velocity[0].velocity_magnitude.speed_confidence.value: " << static_cast<int>(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].velocity[0].polar_velocity[0].velocity_magnitude.speed_confidence.value);
                                             }
                                             
@@ -4988,7 +4988,7 @@ namespace wind
                                             
                                             // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000248\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].velocity[0].polar_velocity[0].velocity_direction.value.value) << 
+                                                logger->print() << "|\033[38;5;94m000248\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].velocity[0].polar_velocity[0].velocity_direction.value.value) << 
                                                              " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].velocity[0].polar_velocity[0].velocity_direction.value.value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].velocity[0].polar_velocity[0].velocity_direction.value.value;
                                             }
                                             
@@ -5014,7 +5014,7 @@ namespace wind
                                             
                                             // FLOAT  min(1) max(127) span(127) scaleDivisor(10.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000249\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].velocity[0].polar_velocity[0].velocity_direction.confidence.value) << 
+                                                logger->print() << "|\033[38;5;94m000249\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].velocity[0].polar_velocity[0].velocity_direction.confidence.value) << 
                                                              " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].velocity[0].polar_velocity[0].velocity_direction.confidence.value: " << static_cast<int>(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].velocity[0].polar_velocity[0].velocity_direction.confidence.value);
                                             }
                                             
@@ -5048,7 +5048,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(-16383) max(16383) span(32767) scaleDivisor(100.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000250\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].velocity[0].polar_velocity[0].z_velocity[0].value.value) << 
+                                                    logger->print() << "|\033[38;5;94m000250\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].velocity[0].polar_velocity[0].z_velocity[0].value.value) << 
                                                                  " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].velocity[0].polar_velocity[0].z_velocity[0].value.value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].velocity[0].polar_velocity[0].z_velocity[0].value.value;
                                                 }
                                                 
@@ -5075,7 +5075,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(1) max(127) span(127) scaleDivisor(100.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000251\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].velocity[0].polar_velocity[0].z_velocity[0].confidence.value) << 
+                                                    logger->print() << "|\033[38;5;94m000251\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].velocity[0].polar_velocity[0].z_velocity[0].confidence.value) << 
                                                                  " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].velocity[0].polar_velocity[0].z_velocity[0].confidence.value: " << static_cast<int>(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].velocity[0].polar_velocity[0].z_velocity[0].confidence.value);
                                                 }
                                                 
@@ -5114,7 +5114,7 @@ namespace wind
                                         char* _tmp_355 = (char*) buffer++;
                                         *_tmp_355 = (ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].velocity[0].cartesian_velocity[0].z_velocity.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000253\033[0m| Optional field z_velocity = " << *_tmp_355;
+                                            logger->print() << "|\033[38;5;94m000253\033[0m| Optional field z_velocity = " << *_tmp_355;
                                         
                                         // Field:  type(VelocityComponent) name(x_velocity) extGroup(0)
                                             // VelocityComponent  SEQUENCE
@@ -5127,7 +5127,7 @@ namespace wind
                                             
                                             // FLOAT  min(-16383) max(16383) span(32767) scaleDivisor(100.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000254\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].velocity[0].cartesian_velocity[0].x_velocity.value.value) << 
+                                                logger->print() << "|\033[38;5;94m000254\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].velocity[0].cartesian_velocity[0].x_velocity.value.value) << 
                                                              " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].velocity[0].cartesian_velocity[0].x_velocity.value.value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].velocity[0].cartesian_velocity[0].x_velocity.value.value;
                                             }
                                             
@@ -5154,7 +5154,7 @@ namespace wind
                                             
                                             // FLOAT  min(1) max(127) span(127) scaleDivisor(100.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000255\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].velocity[0].cartesian_velocity[0].x_velocity.confidence.value) << 
+                                                logger->print() << "|\033[38;5;94m000255\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].velocity[0].cartesian_velocity[0].x_velocity.confidence.value) << 
                                                              " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].velocity[0].cartesian_velocity[0].x_velocity.confidence.value: " << static_cast<int>(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].velocity[0].cartesian_velocity[0].x_velocity.confidence.value);
                                             }
                                             
@@ -5187,7 +5187,7 @@ namespace wind
                                             
                                             // FLOAT  min(-16383) max(16383) span(32767) scaleDivisor(100.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000256\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].velocity[0].cartesian_velocity[0].y_velocity.value.value) << 
+                                                logger->print() << "|\033[38;5;94m000256\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].velocity[0].cartesian_velocity[0].y_velocity.value.value) << 
                                                              " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].velocity[0].cartesian_velocity[0].y_velocity.value.value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].velocity[0].cartesian_velocity[0].y_velocity.value.value;
                                             }
                                             
@@ -5214,7 +5214,7 @@ namespace wind
                                             
                                             // FLOAT  min(1) max(127) span(127) scaleDivisor(100.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000257\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].velocity[0].cartesian_velocity[0].y_velocity.confidence.value) << 
+                                                logger->print() << "|\033[38;5;94m000257\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].velocity[0].cartesian_velocity[0].y_velocity.confidence.value) << 
                                                              " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].velocity[0].cartesian_velocity[0].y_velocity.confidence.value: " << static_cast<int>(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].velocity[0].cartesian_velocity[0].y_velocity.confidence.value);
                                             }
                                             
@@ -5248,7 +5248,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(-16383) max(16383) span(32767) scaleDivisor(100.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000258\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].velocity[0].cartesian_velocity[0].z_velocity[0].value.value) << 
+                                                    logger->print() << "|\033[38;5;94m000258\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].velocity[0].cartesian_velocity[0].z_velocity[0].value.value) << 
                                                                  " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].velocity[0].cartesian_velocity[0].z_velocity[0].value.value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].velocity[0].cartesian_velocity[0].z_velocity[0].value.value;
                                                 }
                                                 
@@ -5275,7 +5275,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(1) max(127) span(127) scaleDivisor(100.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000259\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].velocity[0].cartesian_velocity[0].z_velocity[0].confidence.value) << 
+                                                    logger->print() << "|\033[38;5;94m000259\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].velocity[0].cartesian_velocity[0].z_velocity[0].confidence.value) << 
                                                                  " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].velocity[0].cartesian_velocity[0].z_velocity[0].confidence.value: " << static_cast<int>(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].velocity[0].cartesian_velocity[0].z_velocity[0].confidence.value);
                                                 }
                                                 
@@ -5328,7 +5328,7 @@ namespace wind
                                         char* _tmp_368 = (char*) buffer++;
                                         *_tmp_368 = (ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].acceleration[0].polar_acceleration[0].z_acceleration.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000261\033[0m| Optional field z_acceleration = " << *_tmp_368;
+                                            logger->print() << "|\033[38;5;94m000261\033[0m| Optional field z_acceleration = " << *_tmp_368;
                                         
                                         // Field:  type(AccelerationMagnitude) name(acceleration_magnitude) extGroup(0)
                                             // AccelerationMagnitude  SEQUENCE
@@ -5341,7 +5341,7 @@ namespace wind
                                             
                                             // FLOAT  min(0) max(161) span(162) scaleDivisor(10.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000262\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].acceleration[0].polar_acceleration[0].acceleration_magnitude.acceleration_magnitude_value.value) << 
+                                                logger->print() << "|\033[38;5;94m000262\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].acceleration[0].polar_acceleration[0].acceleration_magnitude.acceleration_magnitude_value.value) << 
                                                              " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].acceleration[0].polar_acceleration[0].acceleration_magnitude.acceleration_magnitude_value.value: " << static_cast<int>(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].acceleration[0].polar_acceleration[0].acceleration_magnitude.acceleration_magnitude_value.value);
                                             }
                                             
@@ -5367,7 +5367,7 @@ namespace wind
                                             
                                             // FLOAT  min(0) max(102) span(103) scaleDivisor(10.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000263\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].acceleration[0].polar_acceleration[0].acceleration_magnitude.acceleration_confidence.value) << 
+                                                logger->print() << "|\033[38;5;94m000263\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].acceleration[0].polar_acceleration[0].acceleration_magnitude.acceleration_confidence.value) << 
                                                              " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].acceleration[0].polar_acceleration[0].acceleration_magnitude.acceleration_confidence.value: " << static_cast<int>(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].acceleration[0].polar_acceleration[0].acceleration_magnitude.acceleration_confidence.value);
                                             }
                                             
@@ -5399,7 +5399,7 @@ namespace wind
                                             
                                             // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000264\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].acceleration[0].polar_acceleration[0].acceleration_direction.value.value) << 
+                                                logger->print() << "|\033[38;5;94m000264\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].acceleration[0].polar_acceleration[0].acceleration_direction.value.value) << 
                                                              " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].acceleration[0].polar_acceleration[0].acceleration_direction.value.value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].acceleration[0].polar_acceleration[0].acceleration_direction.value.value;
                                             }
                                             
@@ -5425,7 +5425,7 @@ namespace wind
                                             
                                             // FLOAT  min(1) max(127) span(127) scaleDivisor(10.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000265\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].acceleration[0].polar_acceleration[0].acceleration_direction.confidence.value) << 
+                                                logger->print() << "|\033[38;5;94m000265\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].acceleration[0].polar_acceleration[0].acceleration_direction.confidence.value) << 
                                                              " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].acceleration[0].polar_acceleration[0].acceleration_direction.confidence.value: " << static_cast<int>(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].acceleration[0].polar_acceleration[0].acceleration_direction.confidence.value);
                                             }
                                             
@@ -5459,7 +5459,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(-160) max(161) span(322) scaleDivisor(10.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000266\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].acceleration[0].polar_acceleration[0].z_acceleration[0].value.value) << 
+                                                    logger->print() << "|\033[38;5;94m000266\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].acceleration[0].polar_acceleration[0].z_acceleration[0].value.value) << 
                                                                  " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].acceleration[0].polar_acceleration[0].z_acceleration[0].value.value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].acceleration[0].polar_acceleration[0].z_acceleration[0].value.value;
                                                 }
                                                 
@@ -5486,7 +5486,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(0) max(102) span(103) scaleDivisor(10.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000267\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].acceleration[0].polar_acceleration[0].z_acceleration[0].confidence.value) << 
+                                                    logger->print() << "|\033[38;5;94m000267\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].acceleration[0].polar_acceleration[0].z_acceleration[0].confidence.value) << 
                                                                  " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].acceleration[0].polar_acceleration[0].z_acceleration[0].confidence.value: " << static_cast<int>(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].acceleration[0].polar_acceleration[0].z_acceleration[0].confidence.value);
                                                 }
                                                 
@@ -5524,7 +5524,7 @@ namespace wind
                                         char* _tmp_381 = (char*) buffer++;
                                         *_tmp_381 = (ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].acceleration[0].cartesian_acceleration[0].z_acceleration.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000269\033[0m| Optional field z_acceleration = " << *_tmp_381;
+                                            logger->print() << "|\033[38;5;94m000269\033[0m| Optional field z_acceleration = " << *_tmp_381;
                                         
                                         // Field:  type(AccelerationComponent) name(x_acceleration) extGroup(0)
                                             // AccelerationComponent  SEQUENCE
@@ -5537,7 +5537,7 @@ namespace wind
                                             
                                             // FLOAT  min(-160) max(161) span(322) scaleDivisor(10.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000270\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].acceleration[0].cartesian_acceleration[0].x_acceleration.value.value) << 
+                                                logger->print() << "|\033[38;5;94m000270\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].acceleration[0].cartesian_acceleration[0].x_acceleration.value.value) << 
                                                              " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].acceleration[0].cartesian_acceleration[0].x_acceleration.value.value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].acceleration[0].cartesian_acceleration[0].x_acceleration.value.value;
                                             }
                                             
@@ -5564,7 +5564,7 @@ namespace wind
                                             
                                             // FLOAT  min(0) max(102) span(103) scaleDivisor(10.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000271\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].acceleration[0].cartesian_acceleration[0].x_acceleration.confidence.value) << 
+                                                logger->print() << "|\033[38;5;94m000271\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].acceleration[0].cartesian_acceleration[0].x_acceleration.confidence.value) << 
                                                              " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].acceleration[0].cartesian_acceleration[0].x_acceleration.confidence.value: " << static_cast<int>(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].acceleration[0].cartesian_acceleration[0].x_acceleration.confidence.value);
                                             }
                                             
@@ -5596,7 +5596,7 @@ namespace wind
                                             
                                             // FLOAT  min(-160) max(161) span(322) scaleDivisor(10.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000272\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].acceleration[0].cartesian_acceleration[0].y_acceleration.value.value) << 
+                                                logger->print() << "|\033[38;5;94m000272\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].acceleration[0].cartesian_acceleration[0].y_acceleration.value.value) << 
                                                              " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].acceleration[0].cartesian_acceleration[0].y_acceleration.value.value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].acceleration[0].cartesian_acceleration[0].y_acceleration.value.value;
                                             }
                                             
@@ -5623,7 +5623,7 @@ namespace wind
                                             
                                             // FLOAT  min(0) max(102) span(103) scaleDivisor(10.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000273\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].acceleration[0].cartesian_acceleration[0].y_acceleration.confidence.value) << 
+                                                logger->print() << "|\033[38;5;94m000273\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].acceleration[0].cartesian_acceleration[0].y_acceleration.confidence.value) << 
                                                              " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].acceleration[0].cartesian_acceleration[0].y_acceleration.confidence.value: " << static_cast<int>(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].acceleration[0].cartesian_acceleration[0].y_acceleration.confidence.value);
                                             }
                                             
@@ -5656,7 +5656,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(-160) max(161) span(322) scaleDivisor(10.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000274\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].acceleration[0].cartesian_acceleration[0].z_acceleration[0].value.value) << 
+                                                    logger->print() << "|\033[38;5;94m000274\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].acceleration[0].cartesian_acceleration[0].z_acceleration[0].value.value) << 
                                                                  " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].acceleration[0].cartesian_acceleration[0].z_acceleration[0].value.value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].acceleration[0].cartesian_acceleration[0].z_acceleration[0].value.value;
                                                 }
                                                 
@@ -5683,7 +5683,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(0) max(102) span(103) scaleDivisor(10.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000275\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].acceleration[0].cartesian_acceleration[0].z_acceleration[0].confidence.value) << 
+                                                    logger->print() << "|\033[38;5;94m000275\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].acceleration[0].cartesian_acceleration[0].z_acceleration[0].confidence.value) << 
                                                                  " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].acceleration[0].cartesian_acceleration[0].z_acceleration[0].confidence.value: " << static_cast<int>(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].acceleration[0].cartesian_acceleration[0].z_acceleration[0].confidence.value);
                                                 }
                                                 
@@ -5723,11 +5723,11 @@ namespace wind
                                     char* _tmp_394 = (char*) buffer++;
                                     *_tmp_394 = (ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].angles[0].y_angle.size() != 0 ? 1 : 0);
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m000276\033[0m| Optional field y_angle = " << *_tmp_394;
+                                        logger->print() << "|\033[38;5;94m000276\033[0m| Optional field y_angle = " << *_tmp_394;
                                     char* _tmp_395 = (char*) buffer++;
                                     *_tmp_395 = (ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].angles[0].x_angle.size() != 0 ? 1 : 0);
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m000277\033[0m| Optional field x_angle = " << *_tmp_395;
+                                        logger->print() << "|\033[38;5;94m000277\033[0m| Optional field x_angle = " << *_tmp_395;
                                     
                                     // Field:  type(CartesianAngle) name(z_angle) extGroup(0)
                                         // CartesianAngle  SEQUENCE
@@ -5740,7 +5740,7 @@ namespace wind
                                         
                                         // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000278\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].angles[0].z_angle.value.value) << 
+                                            logger->print() << "|\033[38;5;94m000278\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].angles[0].z_angle.value.value) << 
                                                          " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].angles[0].z_angle.value.value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].angles[0].z_angle.value.value;
                                         }
                                         
@@ -5766,7 +5766,7 @@ namespace wind
                                         
                                         // FLOAT  min(1) max(127) span(127) scaleDivisor(10.0) dataType(Float)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000279\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].angles[0].z_angle.confidence.value) << 
+                                            logger->print() << "|\033[38;5;94m000279\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].angles[0].z_angle.confidence.value) << 
                                                          " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].angles[0].z_angle.confidence.value: " << static_cast<int>(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].angles[0].z_angle.confidence.value);
                                         }
                                         
@@ -5800,7 +5800,7 @@ namespace wind
                                             
                                             // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000280\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].angles[0].y_angle[0].value.value) << 
+                                                logger->print() << "|\033[38;5;94m000280\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].angles[0].y_angle[0].value.value) << 
                                                              " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].angles[0].y_angle[0].value.value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].angles[0].y_angle[0].value.value;
                                             }
                                             
@@ -5826,7 +5826,7 @@ namespace wind
                                             
                                             // FLOAT  min(1) max(127) span(127) scaleDivisor(10.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000281\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].angles[0].y_angle[0].confidence.value) << 
+                                                logger->print() << "|\033[38;5;94m000281\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].angles[0].y_angle[0].confidence.value) << 
                                                              " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].angles[0].y_angle[0].confidence.value: " << static_cast<int>(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].angles[0].y_angle[0].confidence.value);
                                             }
                                             
@@ -5861,7 +5861,7 @@ namespace wind
                                             
                                             // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000282\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].angles[0].x_angle[0].value.value) << 
+                                                logger->print() << "|\033[38;5;94m000282\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].angles[0].x_angle[0].value.value) << 
                                                              " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].angles[0].x_angle[0].value.value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].angles[0].x_angle[0].value.value;
                                             }
                                             
@@ -5887,7 +5887,7 @@ namespace wind
                                             
                                             // FLOAT  min(1) max(127) span(127) scaleDivisor(10.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000283\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].angles[0].x_angle[0].confidence.value) << 
+                                                logger->print() << "|\033[38;5;94m000283\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].angles[0].x_angle[0].confidence.value) << 
                                                              " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].angles[0].x_angle[0].confidence.value: " << static_cast<int>(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].angles[0].x_angle[0].confidence.value);
                                             }
                                             
@@ -5923,7 +5923,7 @@ namespace wind
                                     
                                     // INT16  min(-255) max(256) span(512) dataType(Int16)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000284\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].z_angular_velocity[0].value.value) << 
+                                        logger->print() << "|\033[38;5;94m000284\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].z_angular_velocity[0].value.value) << 
                                                      " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].z_angular_velocity[0].value.value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].z_angular_velocity[0].value.value;
                                     }
                                     
@@ -5947,7 +5947,7 @@ namespace wind
                                     // Enumerated
                                     // INT32  min(0) max(7) span(8) dataType(Int32)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000285\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].z_angular_velocity[0].confidence.value) << 
+                                        logger->print() << "|\033[38;5;94m000285\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].z_angular_velocity[0].confidence.value) << 
                                                      " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].z_angular_velocity[0].confidence.value: " << static_cast<int>(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].z_angular_velocity[0].confidence.value);
                                     }
                                     
@@ -5990,7 +5990,7 @@ namespace wind
                                         // BitString
                                         // BIT_STRING  min(13) max(13) span(1)
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000287\033[0m| payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].lower_triangular_correlation_matrices[0].elements[l].components_included_inthe_matrix.value: " << static_cast<int>(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].lower_triangular_correlation_matrices[0].elements[l].components_included_inthe_matrix.values.size());
+                                            logger->print() << "|\033[38;5;94m000287\033[0m| payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].lower_triangular_correlation_matrices[0].elements[l].components_included_inthe_matrix.value: " << static_cast<int>(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].lower_triangular_correlation_matrices[0].elements[l].components_included_inthe_matrix.values.size());
                                         
                                         if(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].lower_triangular_correlation_matrices[0].elements[l].components_included_inthe_matrix.values.size() < 13) {
                                                 logger->warning() << "Error: Value in 'payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].lower_triangular_correlation_matrices[0].elements[l].components_included_inthe_matrix.value' " << (ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].lower_triangular_correlation_matrices[0].elements[l].components_included_inthe_matrix.values.size()) << " is less than allowable (13); message dropped.";
@@ -6048,7 +6048,7 @@ namespace wind
                                                 
                                                 // INT8  min(-100) max(101) span(202) dataType(Int8)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000290\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].lower_triangular_correlation_matrices[0].elements[l].matrix.elements[n].elements[o].value) << 
+                                                    logger->print() << "|\033[38;5;94m000290\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].lower_triangular_correlation_matrices[0].elements[l].matrix.elements[n].elements[o].value) << 
                                                                  " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].lower_triangular_correlation_matrices[0].elements[l].matrix.elements[n].elements[o].value: " << static_cast<int>(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].lower_triangular_correlation_matrices[0].elements[l].matrix.elements[n].elements[o].value);
                                                 }
                                                 
@@ -6087,7 +6087,7 @@ namespace wind
                                     
                                     // FLOAT  min(1) max(256) span(256) scaleDivisor(10.0) dataType(Float)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000291\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].object_dimension_z[0].value.value) << 
+                                        logger->print() << "|\033[38;5;94m000291\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].object_dimension_z[0].value.value) << 
                                                      " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].object_dimension_z[0].value.value: " << static_cast<int>(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].object_dimension_z[0].value.value);
                                     }
                                     
@@ -6114,7 +6114,7 @@ namespace wind
                                     
                                     // FLOAT  min(1) max(32) span(32) scaleDivisor(10.0) dataType(Float)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000292\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].object_dimension_z[0].confidence.value) << 
+                                        logger->print() << "|\033[38;5;94m000292\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].object_dimension_z[0].confidence.value) << 
                                                      " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].object_dimension_z[0].confidence.value: " << static_cast<int>(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].object_dimension_z[0].confidence.value);
                                     }
                                     
@@ -6149,7 +6149,7 @@ namespace wind
                                     
                                     // FLOAT  min(1) max(256) span(256) scaleDivisor(10.0) dataType(Float)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000293\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].object_dimension_y[0].value.value) << 
+                                        logger->print() << "|\033[38;5;94m000293\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].object_dimension_y[0].value.value) << 
                                                      " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].object_dimension_y[0].value.value: " << static_cast<int>(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].object_dimension_y[0].value.value);
                                     }
                                     
@@ -6176,7 +6176,7 @@ namespace wind
                                     
                                     // FLOAT  min(1) max(32) span(32) scaleDivisor(10.0) dataType(Float)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000294\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].object_dimension_y[0].confidence.value) << 
+                                        logger->print() << "|\033[38;5;94m000294\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].object_dimension_y[0].confidence.value) << 
                                                      " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].object_dimension_y[0].confidence.value: " << static_cast<int>(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].object_dimension_y[0].confidence.value);
                                     }
                                     
@@ -6211,7 +6211,7 @@ namespace wind
                                     
                                     // FLOAT  min(1) max(256) span(256) scaleDivisor(10.0) dataType(Float)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000295\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].object_dimension_x[0].value.value) << 
+                                        logger->print() << "|\033[38;5;94m000295\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].object_dimension_x[0].value.value) << 
                                                      " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].object_dimension_x[0].value.value: " << static_cast<int>(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].object_dimension_x[0].value.value);
                                     }
                                     
@@ -6238,7 +6238,7 @@ namespace wind
                                     
                                     // FLOAT  min(1) max(32) span(32) scaleDivisor(10.0) dataType(Float)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000296\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].object_dimension_x[0].confidence.value) << 
+                                        logger->print() << "|\033[38;5;94m000296\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].object_dimension_x[0].confidence.value) << 
                                                      " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].object_dimension_x[0].confidence.value: " << static_cast<int>(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].object_dimension_x[0].confidence.value);
                                     }
                                     
@@ -6267,7 +6267,7 @@ namespace wind
                                 
                                 // FLOAT  min(0) max(2047) span(2048) scaleDivisor(1000.0) dataType(Float)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000297\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].object_age[0].value) << 
+                                    logger->print() << "|\033[38;5;94m000297\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].object_age[0].value) << 
                                                  " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].object_age[0].value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].object_age[0].value;
                                 }
                                 
@@ -6295,7 +6295,7 @@ namespace wind
                                 
                                 // UINT8  min(0) max(15) span(16) dataType(UInt8)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000298\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].object_perception_quality[0].value) << 
+                                    logger->print() << "|\033[38;5;94m000298\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].object_perception_quality[0].value) << 
                                                  " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].object_perception_quality[0].value: " << static_cast<int>(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].object_perception_quality[0].value);
                                 }
                                 
@@ -6336,7 +6336,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000300\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].sensor_id_list[0].elements[p].value) << 
+                                        logger->print() << "|\033[38;5;94m000300\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].sensor_id_list[0].elements[p].value) << 
                                                      " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].sensor_id_list[0].elements[p].value: " << static_cast<int>(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].sensor_id_list[0].elements[p].value);
                                     }
                                     
@@ -6400,7 +6400,7 @@ namespace wind
                                             
                                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000303\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.vehicle_sub_class[0].value) << 
+                                                logger->print() << "|\033[38;5;94m000303\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.vehicle_sub_class[0].value) << 
                                                              " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.vehicle_sub_class[0].value: " << static_cast<int>(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.vehicle_sub_class[0].value);
                                             }
                                             
@@ -6448,7 +6448,7 @@ namespace wind
                                                 // Enumerated
                                                 // INT32  min(0) max(15) span(16) dataType(Int32)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000306\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.vru_sub_class[0].pedestrian[0].value) << 
+                                                    logger->print() << "|\033[38;5;94m000306\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.vru_sub_class[0].pedestrian[0].value) << 
                                                                  " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.vru_sub_class[0].pedestrian[0].value: " << static_cast<int>(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.vru_sub_class[0].pedestrian[0].value);
                                                 }
                                                 
@@ -6478,7 +6478,7 @@ namespace wind
                                                 // Enumerated
                                                 // INT32  min(0) max(15) span(16) dataType(Int32)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000308\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.vru_sub_class[0].bicyclist_and_light_vru_vehicle[0].value) << 
+                                                    logger->print() << "|\033[38;5;94m000308\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.vru_sub_class[0].bicyclist_and_light_vru_vehicle[0].value) << 
                                                                  " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.vru_sub_class[0].bicyclist_and_light_vru_vehicle[0].value: " << static_cast<int>(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.vru_sub_class[0].bicyclist_and_light_vru_vehicle[0].value);
                                                 }
                                                 
@@ -6508,7 +6508,7 @@ namespace wind
                                                 // Enumerated
                                                 // INT32  min(0) max(15) span(16) dataType(Int32)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000310\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.vru_sub_class[0].motorcyclist[0].value) << 
+                                                    logger->print() << "|\033[38;5;94m000310\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.vru_sub_class[0].motorcyclist[0].value) << 
                                                                  " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.vru_sub_class[0].motorcyclist[0].value: " << static_cast<int>(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.vru_sub_class[0].motorcyclist[0].value);
                                                 }
                                                 
@@ -6538,7 +6538,7 @@ namespace wind
                                                 // Enumerated
                                                 // INT32  min(0) max(15) span(16) dataType(Int32)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000312\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.vru_sub_class[0].animal[0].value) << 
+                                                    logger->print() << "|\033[38;5;94m000312\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.vru_sub_class[0].animal[0].value) << 
                                                                  " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.vru_sub_class[0].animal[0].value: " << static_cast<int>(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.vru_sub_class[0].animal[0].value);
                                                 }
                                                 
@@ -6585,15 +6585,15 @@ namespace wind
                                                 char* _tmp_438 = (char*) buffer++;
                                                 *_tmp_438 = (ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_id.size() != 0 ? 1 : 0);
                                                 if(debug)
-                                                    logger->debug() << "|\033[38;5;94m000314\033[0m| Optional field cluster_id = " << *_tmp_438;
+                                                    logger->print() << "|\033[38;5;94m000314\033[0m| Optional field cluster_id = " << *_tmp_438;
                                                 char* _tmp_439 = (char*) buffer++;
                                                 *_tmp_439 = (ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape.size() != 0 ? 1 : 0);
                                                 if(debug)
-                                                    logger->debug() << "|\033[38;5;94m000315\033[0m| Optional field cluster_bounding_box_shape = " << *_tmp_439;
+                                                    logger->print() << "|\033[38;5;94m000315\033[0m| Optional field cluster_bounding_box_shape = " << *_tmp_439;
                                                 char* _tmp_440 = (char*) buffer++;
                                                 *_tmp_440 = (ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_profiles.size() != 0 ? 1 : 0);
                                                 if(debug)
-                                                    logger->debug() << "|\033[38;5;94m000316\033[0m| Optional field cluster_profiles = " << *_tmp_440;
+                                                    logger->print() << "|\033[38;5;94m000316\033[0m| Optional field cluster_profiles = " << *_tmp_440;
                                                 
                                                 if(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_id.size() != 0) {
                                                     // Field:  type(Identifier1B) name(cluster_id) extGroup(0)
@@ -6601,7 +6601,7 @@ namespace wind
                                                     
                                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m000317\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_id[0].value) << 
+                                                        logger->print() << "|\033[38;5;94m000317\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_id[0].value) << 
                                                                      " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_id[0].value: " << static_cast<int>(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_id[0].value);
                                                     }
                                                     
@@ -6653,15 +6653,15 @@ namespace wind
                                                             char* _tmp_442 = (char*) buffer++;
                                                             *_tmp_442 = (ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].center_point.size() != 0 ? 1 : 0);
                                                             if(debug)
-                                                                logger->debug() << "|\033[38;5;94m000319\033[0m| Optional field center_point = " << *_tmp_442;
+                                                                logger->print() << "|\033[38;5;94m000319\033[0m| Optional field center_point = " << *_tmp_442;
                                                             char* _tmp_443 = (char*) buffer++;
                                                             *_tmp_443 = (ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].orientation.size() != 0 ? 1 : 0);
                                                             if(debug)
-                                                                logger->debug() << "|\033[38;5;94m000320\033[0m| Optional field orientation = " << *_tmp_443;
+                                                                logger->print() << "|\033[38;5;94m000320\033[0m| Optional field orientation = " << *_tmp_443;
                                                             char* _tmp_444 = (char*) buffer++;
                                                             *_tmp_444 = (ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].height.size() != 0 ? 1 : 0);
                                                             if(debug)
-                                                                logger->debug() << "|\033[38;5;94m000321\033[0m| Optional field height = " << *_tmp_444;
+                                                                logger->print() << "|\033[38;5;94m000321\033[0m| Optional field height = " << *_tmp_444;
                                                             
                                                             if(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].center_point.size() != 0) {
                                                                 // Field:  type(CartesianPosition3d) name(center_point) extGroup(0)
@@ -6673,14 +6673,14 @@ namespace wind
                                                                     char* _tmp_445 = (char*) buffer++;
                                                                     *_tmp_445 = (ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].center_point[0].z_coordinate.size() != 0 ? 1 : 0);
                                                                     if(debug)
-                                                                        logger->debug() << "|\033[38;5;94m000322\033[0m| Optional field z_coordinate = " << *_tmp_445;
+                                                                        logger->print() << "|\033[38;5;94m000322\033[0m| Optional field z_coordinate = " << *_tmp_445;
                                                                     
                                                                     // Field:  type(CartesianCoordinate) name(x_coordinate) extGroup(0)
                                                                     // Real
                                                                     
                                                                     // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000323\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].center_point[0].x_coordinate.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000323\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].center_point[0].x_coordinate.value) << 
                                                                                      " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].center_point[0].x_coordinate.value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].center_point[0].x_coordinate.value;
                                                                     }
                                                                     
@@ -6707,7 +6707,7 @@ namespace wind
                                                                     
                                                                     // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000324\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].center_point[0].y_coordinate.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000324\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].center_point[0].y_coordinate.value) << 
                                                                                      " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].center_point[0].y_coordinate.value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].center_point[0].y_coordinate.value;
                                                                     }
                                                                     
@@ -6735,7 +6735,7 @@ namespace wind
                                                                         
                                                                         // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000325\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].center_point[0].z_coordinate[0].value) << 
+                                                                            logger->print() << "|\033[38;5;94m000325\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].center_point[0].z_coordinate[0].value) << 
                                                                                          " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].center_point[0].z_coordinate[0].value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].center_point[0].z_coordinate[0].value;
                                                                         }
                                                                         
@@ -6764,7 +6764,7 @@ namespace wind
                                                             
                                                             // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m000326\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].semi_length.value) << 
+                                                                logger->print() << "|\033[38;5;94m000326\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].semi_length.value) << 
                                                                              " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].semi_length.value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].semi_length.value;
                                                             }
                                                             
@@ -6790,7 +6790,7 @@ namespace wind
                                                             
                                                             // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m000327\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].semi_breadth.value) << 
+                                                                logger->print() << "|\033[38;5;94m000327\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].semi_breadth.value) << 
                                                                              " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].semi_breadth.value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].semi_breadth.value;
                                                             }
                                                             
@@ -6817,7 +6817,7 @@ namespace wind
                                                                 
                                                                 // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000328\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].orientation[0].value) << 
+                                                                    logger->print() << "|\033[38;5;94m000328\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].orientation[0].value) << 
                                                                                  " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].orientation[0].value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].orientation[0].value;
                                                                 }
                                                                 
@@ -6845,7 +6845,7 @@ namespace wind
                                                                 
                                                                 // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000329\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].height[0].value) << 
+                                                                    logger->print() << "|\033[38;5;94m000329\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].height[0].value) << 
                                                                                  " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].height[0].value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].rectangular[0].height[0].value;
                                                                 }
                                                                 
@@ -6883,11 +6883,11 @@ namespace wind
                                                             char* _tmp_460 = (char*) buffer++;
                                                             *_tmp_460 = (ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].circular[0].shape_reference_point.size() != 0 ? 1 : 0);
                                                             if(debug)
-                                                                logger->debug() << "|\033[38;5;94m000331\033[0m| Optional field shape_reference_point = " << *_tmp_460;
+                                                                logger->print() << "|\033[38;5;94m000331\033[0m| Optional field shape_reference_point = " << *_tmp_460;
                                                             char* _tmp_461 = (char*) buffer++;
                                                             *_tmp_461 = (ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].circular[0].height.size() != 0 ? 1 : 0);
                                                             if(debug)
-                                                                logger->debug() << "|\033[38;5;94m000332\033[0m| Optional field height = " << *_tmp_461;
+                                                                logger->print() << "|\033[38;5;94m000332\033[0m| Optional field height = " << *_tmp_461;
                                                             
                                                             if(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].circular[0].shape_reference_point.size() != 0) {
                                                                 // Field:  type(CartesianPosition3d) name(shape_reference_point) extGroup(0)
@@ -6899,14 +6899,14 @@ namespace wind
                                                                     char* _tmp_462 = (char*) buffer++;
                                                                     *_tmp_462 = (ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].circular[0].shape_reference_point[0].z_coordinate.size() != 0 ? 1 : 0);
                                                                     if(debug)
-                                                                        logger->debug() << "|\033[38;5;94m000333\033[0m| Optional field z_coordinate = " << *_tmp_462;
+                                                                        logger->print() << "|\033[38;5;94m000333\033[0m| Optional field z_coordinate = " << *_tmp_462;
                                                                     
                                                                     // Field:  type(CartesianCoordinate) name(x_coordinate) extGroup(0)
                                                                     // Real
                                                                     
                                                                     // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000334\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].circular[0].shape_reference_point[0].x_coordinate.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000334\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].circular[0].shape_reference_point[0].x_coordinate.value) << 
                                                                                      " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].circular[0].shape_reference_point[0].x_coordinate.value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].circular[0].shape_reference_point[0].x_coordinate.value;
                                                                     }
                                                                     
@@ -6933,7 +6933,7 @@ namespace wind
                                                                     
                                                                     // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000335\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].circular[0].shape_reference_point[0].y_coordinate.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000335\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].circular[0].shape_reference_point[0].y_coordinate.value) << 
                                                                                      " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].circular[0].shape_reference_point[0].y_coordinate.value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].circular[0].shape_reference_point[0].y_coordinate.value;
                                                                     }
                                                                     
@@ -6961,7 +6961,7 @@ namespace wind
                                                                         
                                                                         // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000336\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].circular[0].shape_reference_point[0].z_coordinate[0].value) << 
+                                                                            logger->print() << "|\033[38;5;94m000336\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].circular[0].shape_reference_point[0].z_coordinate[0].value) << 
                                                                                          " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].circular[0].shape_reference_point[0].z_coordinate[0].value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].circular[0].shape_reference_point[0].z_coordinate[0].value;
                                                                         }
                                                                         
@@ -6990,7 +6990,7 @@ namespace wind
                                                             
                                                             // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m000337\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].circular[0].radius.value) << 
+                                                                logger->print() << "|\033[38;5;94m000337\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].circular[0].radius.value) << 
                                                                              " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].circular[0].radius.value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].circular[0].radius.value;
                                                             }
                                                             
@@ -7017,7 +7017,7 @@ namespace wind
                                                                 
                                                                 // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000338\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].circular[0].height[0].value) << 
+                                                                    logger->print() << "|\033[38;5;94m000338\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].circular[0].height[0].value) << 
                                                                                  " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].circular[0].height[0].value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].circular[0].height[0].value;
                                                                 }
                                                                 
@@ -7055,11 +7055,11 @@ namespace wind
                                                             char* _tmp_473 = (char*) buffer++;
                                                             *_tmp_473 = (ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].shape_reference_point.size() != 0 ? 1 : 0);
                                                             if(debug)
-                                                                logger->debug() << "|\033[38;5;94m000340\033[0m| Optional field shape_reference_point = " << *_tmp_473;
+                                                                logger->print() << "|\033[38;5;94m000340\033[0m| Optional field shape_reference_point = " << *_tmp_473;
                                                             char* _tmp_474 = (char*) buffer++;
                                                             *_tmp_474 = (ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].height.size() != 0 ? 1 : 0);
                                                             if(debug)
-                                                                logger->debug() << "|\033[38;5;94m000341\033[0m| Optional field height = " << *_tmp_474;
+                                                                logger->print() << "|\033[38;5;94m000341\033[0m| Optional field height = " << *_tmp_474;
                                                             
                                                             if(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].shape_reference_point.size() != 0) {
                                                                 // Field:  type(CartesianPosition3d) name(shape_reference_point) extGroup(0)
@@ -7071,14 +7071,14 @@ namespace wind
                                                                     char* _tmp_475 = (char*) buffer++;
                                                                     *_tmp_475 = (ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].shape_reference_point[0].z_coordinate.size() != 0 ? 1 : 0);
                                                                     if(debug)
-                                                                        logger->debug() << "|\033[38;5;94m000342\033[0m| Optional field z_coordinate = " << *_tmp_475;
+                                                                        logger->print() << "|\033[38;5;94m000342\033[0m| Optional field z_coordinate = " << *_tmp_475;
                                                                     
                                                                     // Field:  type(CartesianCoordinate) name(x_coordinate) extGroup(0)
                                                                     // Real
                                                                     
                                                                     // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000343\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].shape_reference_point[0].x_coordinate.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000343\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].shape_reference_point[0].x_coordinate.value) << 
                                                                                      " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].shape_reference_point[0].x_coordinate.value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].shape_reference_point[0].x_coordinate.value;
                                                                     }
                                                                     
@@ -7105,7 +7105,7 @@ namespace wind
                                                                     
                                                                     // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000344\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].shape_reference_point[0].y_coordinate.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000344\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].shape_reference_point[0].y_coordinate.value) << 
                                                                                      " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].shape_reference_point[0].y_coordinate.value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].shape_reference_point[0].y_coordinate.value;
                                                                     }
                                                                     
@@ -7133,7 +7133,7 @@ namespace wind
                                                                         
                                                                         // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000345\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].shape_reference_point[0].z_coordinate[0].value) << 
+                                                                            logger->print() << "|\033[38;5;94m000345\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].shape_reference_point[0].z_coordinate[0].value) << 
                                                                                          " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].shape_reference_point[0].z_coordinate[0].value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].shape_reference_point[0].z_coordinate[0].value;
                                                                         }
                                                                         
@@ -7181,14 +7181,14 @@ namespace wind
                                                                     char* _tmp_483 = (char*) buffer++;
                                                                     *_tmp_483 = (ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].polygon.elements[r].z_coordinate.size() != 0 ? 1 : 0);
                                                                     if(debug)
-                                                                        logger->debug() << "|\033[38;5;94m000347\033[0m| Optional field z_coordinate = " << *_tmp_483;
+                                                                        logger->print() << "|\033[38;5;94m000347\033[0m| Optional field z_coordinate = " << *_tmp_483;
                                                                     
                                                                     // Field:  type(CartesianCoordinate) name(x_coordinate) extGroup(0)
                                                                     // Real
                                                                     
                                                                     // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000348\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].polygon.elements[r].x_coordinate.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000348\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].polygon.elements[r].x_coordinate.value) << 
                                                                                      " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].polygon.elements[r].x_coordinate.value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].polygon.elements[r].x_coordinate.value;
                                                                     }
                                                                     
@@ -7215,7 +7215,7 @@ namespace wind
                                                                     
                                                                     // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000349\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].polygon.elements[r].y_coordinate.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000349\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].polygon.elements[r].y_coordinate.value) << 
                                                                                      " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].polygon.elements[r].y_coordinate.value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].polygon.elements[r].y_coordinate.value;
                                                                     }
                                                                     
@@ -7243,7 +7243,7 @@ namespace wind
                                                                         
                                                                         // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000350\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].polygon.elements[r].z_coordinate[0].value) << 
+                                                                            logger->print() << "|\033[38;5;94m000350\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].polygon.elements[r].z_coordinate[0].value) << 
                                                                                          " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].polygon.elements[r].z_coordinate[0].value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].polygon.elements[r].z_coordinate[0].value;
                                                                         }
                                                                         
@@ -7274,7 +7274,7 @@ namespace wind
                                                                 
                                                                 // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000351\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].height[0].value) << 
+                                                                    logger->print() << "|\033[38;5;94m000351\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].height[0].value) << 
                                                                                  " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].height[0].value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].polygonal[0].height[0].value;
                                                                 }
                                                                 
@@ -7314,15 +7314,15 @@ namespace wind
                                                             char* _tmp_492 = (char*) buffer++;
                                                             *_tmp_492 = (ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].shape_reference_point.size() != 0 ? 1 : 0);
                                                             if(debug)
-                                                                logger->debug() << "|\033[38;5;94m000353\033[0m| Optional field shape_reference_point = " << *_tmp_492;
+                                                                logger->print() << "|\033[38;5;94m000353\033[0m| Optional field shape_reference_point = " << *_tmp_492;
                                                             char* _tmp_493 = (char*) buffer++;
                                                             *_tmp_493 = (ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].orientation.size() != 0 ? 1 : 0);
                                                             if(debug)
-                                                                logger->debug() << "|\033[38;5;94m000354\033[0m| Optional field orientation = " << *_tmp_493;
+                                                                logger->print() << "|\033[38;5;94m000354\033[0m| Optional field orientation = " << *_tmp_493;
                                                             char* _tmp_494 = (char*) buffer++;
                                                             *_tmp_494 = (ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].height.size() != 0 ? 1 : 0);
                                                             if(debug)
-                                                                logger->debug() << "|\033[38;5;94m000355\033[0m| Optional field height = " << *_tmp_494;
+                                                                logger->print() << "|\033[38;5;94m000355\033[0m| Optional field height = " << *_tmp_494;
                                                             
                                                             if(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].shape_reference_point.size() != 0) {
                                                                 // Field:  type(CartesianPosition3d) name(shape_reference_point) extGroup(0)
@@ -7334,14 +7334,14 @@ namespace wind
                                                                     char* _tmp_495 = (char*) buffer++;
                                                                     *_tmp_495 = (ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].shape_reference_point[0].z_coordinate.size() != 0 ? 1 : 0);
                                                                     if(debug)
-                                                                        logger->debug() << "|\033[38;5;94m000356\033[0m| Optional field z_coordinate = " << *_tmp_495;
+                                                                        logger->print() << "|\033[38;5;94m000356\033[0m| Optional field z_coordinate = " << *_tmp_495;
                                                                     
                                                                     // Field:  type(CartesianCoordinate) name(x_coordinate) extGroup(0)
                                                                     // Real
                                                                     
                                                                     // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000357\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].shape_reference_point[0].x_coordinate.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000357\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].shape_reference_point[0].x_coordinate.value) << 
                                                                                      " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].shape_reference_point[0].x_coordinate.value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].shape_reference_point[0].x_coordinate.value;
                                                                     }
                                                                     
@@ -7368,7 +7368,7 @@ namespace wind
                                                                     
                                                                     // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000358\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].shape_reference_point[0].y_coordinate.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000358\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].shape_reference_point[0].y_coordinate.value) << 
                                                                                      " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].shape_reference_point[0].y_coordinate.value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].shape_reference_point[0].y_coordinate.value;
                                                                     }
                                                                     
@@ -7396,7 +7396,7 @@ namespace wind
                                                                         
                                                                         // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000359\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].shape_reference_point[0].z_coordinate[0].value) << 
+                                                                            logger->print() << "|\033[38;5;94m000359\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].shape_reference_point[0].z_coordinate[0].value) << 
                                                                                          " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].shape_reference_point[0].z_coordinate[0].value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].shape_reference_point[0].z_coordinate[0].value;
                                                                         }
                                                                         
@@ -7425,7 +7425,7 @@ namespace wind
                                                             
                                                             // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m000360\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].semi_major_axis_length.value) << 
+                                                                logger->print() << "|\033[38;5;94m000360\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].semi_major_axis_length.value) << 
                                                                              " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].semi_major_axis_length.value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].semi_major_axis_length.value;
                                                             }
                                                             
@@ -7451,7 +7451,7 @@ namespace wind
                                                             
                                                             // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m000361\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].semi_minor_axis_length.value) << 
+                                                                logger->print() << "|\033[38;5;94m000361\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].semi_minor_axis_length.value) << 
                                                                              " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].semi_minor_axis_length.value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].semi_minor_axis_length.value;
                                                             }
                                                             
@@ -7478,7 +7478,7 @@ namespace wind
                                                                 
                                                                 // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000362\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].orientation[0].value) << 
+                                                                    logger->print() << "|\033[38;5;94m000362\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].orientation[0].value) << 
                                                                                  " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].orientation[0].value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].orientation[0].value;
                                                                 }
                                                                 
@@ -7506,7 +7506,7 @@ namespace wind
                                                                 
                                                                 // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000363\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].height[0].value) << 
+                                                                    logger->print() << "|\033[38;5;94m000363\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].height[0].value) << 
                                                                                  " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].height[0].value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].elliptical[0].height[0].value;
                                                                 }
                                                                 
@@ -7547,15 +7547,15 @@ namespace wind
                                                             char* _tmp_510 = (char*) buffer++;
                                                             *_tmp_510 = (ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].shape_reference_point.size() != 0 ? 1 : 0);
                                                             if(debug)
-                                                                logger->debug() << "|\033[38;5;94m000365\033[0m| Optional field shape_reference_point = " << *_tmp_510;
+                                                                logger->print() << "|\033[38;5;94m000365\033[0m| Optional field shape_reference_point = " << *_tmp_510;
                                                             char* _tmp_511 = (char*) buffer++;
                                                             *_tmp_511 = (ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].vertical_opening_angle_start.size() != 0 ? 1 : 0);
                                                             if(debug)
-                                                                logger->debug() << "|\033[38;5;94m000366\033[0m| Optional field vertical_opening_angle_start = " << *_tmp_511;
+                                                                logger->print() << "|\033[38;5;94m000366\033[0m| Optional field vertical_opening_angle_start = " << *_tmp_511;
                                                             char* _tmp_512 = (char*) buffer++;
                                                             *_tmp_512 = (ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].vertical_opening_angle_end.size() != 0 ? 1 : 0);
                                                             if(debug)
-                                                                logger->debug() << "|\033[38;5;94m000367\033[0m| Optional field vertical_opening_angle_end = " << *_tmp_512;
+                                                                logger->print() << "|\033[38;5;94m000367\033[0m| Optional field vertical_opening_angle_end = " << *_tmp_512;
                                                             
                                                             if(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].shape_reference_point.size() != 0) {
                                                                 // Field:  type(CartesianPosition3d) name(shape_reference_point) extGroup(0)
@@ -7567,14 +7567,14 @@ namespace wind
                                                                     char* _tmp_513 = (char*) buffer++;
                                                                     *_tmp_513 = (ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].shape_reference_point[0].z_coordinate.size() != 0 ? 1 : 0);
                                                                     if(debug)
-                                                                        logger->debug() << "|\033[38;5;94m000368\033[0m| Optional field z_coordinate = " << *_tmp_513;
+                                                                        logger->print() << "|\033[38;5;94m000368\033[0m| Optional field z_coordinate = " << *_tmp_513;
                                                                     
                                                                     // Field:  type(CartesianCoordinate) name(x_coordinate) extGroup(0)
                                                                     // Real
                                                                     
                                                                     // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000369\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].shape_reference_point[0].x_coordinate.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000369\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].shape_reference_point[0].x_coordinate.value) << 
                                                                                      " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].shape_reference_point[0].x_coordinate.value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].shape_reference_point[0].x_coordinate.value;
                                                                     }
                                                                     
@@ -7601,7 +7601,7 @@ namespace wind
                                                                     
                                                                     // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000370\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].shape_reference_point[0].y_coordinate.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000370\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].shape_reference_point[0].y_coordinate.value) << 
                                                                                      " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].shape_reference_point[0].y_coordinate.value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].shape_reference_point[0].y_coordinate.value;
                                                                     }
                                                                     
@@ -7629,7 +7629,7 @@ namespace wind
                                                                         
                                                                         // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000371\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].shape_reference_point[0].z_coordinate[0].value) << 
+                                                                            logger->print() << "|\033[38;5;94m000371\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].shape_reference_point[0].z_coordinate[0].value) << 
                                                                                          " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].shape_reference_point[0].z_coordinate[0].value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].shape_reference_point[0].z_coordinate[0].value;
                                                                         }
                                                                         
@@ -7658,7 +7658,7 @@ namespace wind
                                                             
                                                             // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m000372\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].range.value) << 
+                                                                logger->print() << "|\033[38;5;94m000372\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].range.value) << 
                                                                              " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].range.value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].range.value;
                                                             }
                                                             
@@ -7684,7 +7684,7 @@ namespace wind
                                                             
                                                             // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m000373\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].stationary_horizontal_opening_angle_start.value) << 
+                                                                logger->print() << "|\033[38;5;94m000373\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].stationary_horizontal_opening_angle_start.value) << 
                                                                              " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].stationary_horizontal_opening_angle_start.value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].stationary_horizontal_opening_angle_start.value;
                                                             }
                                                             
@@ -7710,7 +7710,7 @@ namespace wind
                                                             
                                                             // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m000374\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].stationary_horizontal_opening_angle_end.value) << 
+                                                                logger->print() << "|\033[38;5;94m000374\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].stationary_horizontal_opening_angle_end.value) << 
                                                                              " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].stationary_horizontal_opening_angle_end.value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].stationary_horizontal_opening_angle_end.value;
                                                             }
                                                             
@@ -7737,7 +7737,7 @@ namespace wind
                                                                 
                                                                 // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000375\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].vertical_opening_angle_start[0].value) << 
+                                                                    logger->print() << "|\033[38;5;94m000375\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].vertical_opening_angle_start[0].value) << 
                                                                                  " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].vertical_opening_angle_start[0].value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].vertical_opening_angle_start[0].value;
                                                                 }
                                                                 
@@ -7765,7 +7765,7 @@ namespace wind
                                                                 
                                                                 // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000376\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].vertical_opening_angle_end[0].value) << 
+                                                                    logger->print() << "|\033[38;5;94m000376\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].vertical_opening_angle_end[0].value) << 
                                                                                  " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].vertical_opening_angle_end[0].value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial[0].vertical_opening_angle_end[0].value;
                                                                 }
                                                                 
@@ -7805,14 +7805,14 @@ namespace wind
                                                             char* _tmp_530 = (char*) buffer++;
                                                             *_tmp_530 = (ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].z_coordinate.size() != 0 ? 1 : 0);
                                                             if(debug)
-                                                                logger->debug() << "|\033[38;5;94m000378\033[0m| Optional field z_coordinate = " << *_tmp_530;
+                                                                logger->print() << "|\033[38;5;94m000378\033[0m| Optional field z_coordinate = " << *_tmp_530;
                                                             
                                                             // Field:  type(Identifier1B) name(ref_point_id) extGroup(0)
                                                             // Integer
                                                             
                                                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m000379\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].ref_point_id.value) << 
+                                                                logger->print() << "|\033[38;5;94m000379\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].ref_point_id.value) << 
                                                                              " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].ref_point_id.value: " << static_cast<int>(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].ref_point_id.value);
                                                             }
                                                             
@@ -7836,7 +7836,7 @@ namespace wind
                                                             
                                                             // FLOAT  min(-3094) max(1001) span(4096) scaleDivisor(100.0) dataType(Float)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m000380\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].x_coordinate.value) << 
+                                                                logger->print() << "|\033[38;5;94m000380\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].x_coordinate.value) << 
                                                                              " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].x_coordinate.value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].x_coordinate.value;
                                                             }
                                                             
@@ -7863,7 +7863,7 @@ namespace wind
                                                             
                                                             // FLOAT  min(-3094) max(1001) span(4096) scaleDivisor(100.0) dataType(Float)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m000381\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].y_coordinate.value) << 
+                                                                logger->print() << "|\033[38;5;94m000381\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].y_coordinate.value) << 
                                                                              " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].y_coordinate.value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].y_coordinate.value;
                                                             }
                                                             
@@ -7891,7 +7891,7 @@ namespace wind
                                                                 
                                                                 // FLOAT  min(-3094) max(1001) span(4096) scaleDivisor(100.0) dataType(Float)
                                                                 if(debug) {
-                                                                    logger->debug() << "|\033[38;5;94m000382\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].z_coordinate[0].value) << 
+                                                                    logger->print() << "|\033[38;5;94m000382\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].z_coordinate[0].value) << 
                                                                                  " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].z_coordinate[0].value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].z_coordinate[0].value;
                                                                 }
                                                                 
@@ -7940,18 +7940,18 @@ namespace wind
                                                                     char* _tmp_539 = (char*) buffer++;
                                                                     *_tmp_539 = (ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].radial_shapes_list.elements[s].vertical_opening_angle_start.size() != 0 ? 1 : 0);
                                                                     if(debug)
-                                                                        logger->debug() << "|\033[38;5;94m000384\033[0m| Optional field vertical_opening_angle_start = " << *_tmp_539;
+                                                                        logger->print() << "|\033[38;5;94m000384\033[0m| Optional field vertical_opening_angle_start = " << *_tmp_539;
                                                                     char* _tmp_540 = (char*) buffer++;
                                                                     *_tmp_540 = (ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].radial_shapes_list.elements[s].vertical_opening_angle_end.size() != 0 ? 1 : 0);
                                                                     if(debug)
-                                                                        logger->debug() << "|\033[38;5;94m000385\033[0m| Optional field vertical_opening_angle_end = " << *_tmp_540;
+                                                                        logger->print() << "|\033[38;5;94m000385\033[0m| Optional field vertical_opening_angle_end = " << *_tmp_540;
                                                                     
                                                                     // Field:  type(StandardLength12b) name(range) extGroup(0)
                                                                     // Real
                                                                     
                                                                     // FLOAT  min(0) max(4095) span(4096) scaleDivisor(10.0) dataType(Float)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000386\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].radial_shapes_list.elements[s].range.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000386\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].radial_shapes_list.elements[s].range.value) << 
                                                                                      " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].radial_shapes_list.elements[s].range.value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].radial_shapes_list.elements[s].range.value;
                                                                     }
                                                                     
@@ -7977,7 +7977,7 @@ namespace wind
                                                                     
                                                                     // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000387\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].radial_shapes_list.elements[s].horizontal_opening_angle_start.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000387\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].radial_shapes_list.elements[s].horizontal_opening_angle_start.value) << 
                                                                                      " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].radial_shapes_list.elements[s].horizontal_opening_angle_start.value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].radial_shapes_list.elements[s].horizontal_opening_angle_start.value;
                                                                     }
                                                                     
@@ -8003,7 +8003,7 @@ namespace wind
                                                                     
                                                                     // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000388\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].radial_shapes_list.elements[s].horizontal_opening_angle_end.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000388\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].radial_shapes_list.elements[s].horizontal_opening_angle_end.value) << 
                                                                                      " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].radial_shapes_list.elements[s].horizontal_opening_angle_end.value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].radial_shapes_list.elements[s].horizontal_opening_angle_end.value;
                                                                     }
                                                                     
@@ -8030,7 +8030,7 @@ namespace wind
                                                                         
                                                                         // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000389\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].radial_shapes_list.elements[s].vertical_opening_angle_start[0].value) << 
+                                                                            logger->print() << "|\033[38;5;94m000389\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].radial_shapes_list.elements[s].vertical_opening_angle_start[0].value) << 
                                                                                          " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].radial_shapes_list.elements[s].vertical_opening_angle_start[0].value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].radial_shapes_list.elements[s].vertical_opening_angle_start[0].value;
                                                                         }
                                                                         
@@ -8058,7 +8058,7 @@ namespace wind
                                                                         
                                                                         // FLOAT  min(0) max(3601) span(3602) scaleDivisor(10.0) dataType(Float)
                                                                         if(debug) {
-                                                                            logger->debug() << "|\033[38;5;94m000390\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].radial_shapes_list.elements[s].vertical_opening_angle_end[0].value) << 
+                                                                            logger->print() << "|\033[38;5;94m000390\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].radial_shapes_list.elements[s].vertical_opening_angle_end[0].value) << 
                                                                                          " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].radial_shapes_list.elements[s].vertical_opening_angle_end[0].value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_bounding_box_shape[0].radial_shapes[0].radial_shapes_list.elements[s].vertical_opening_angle_end[0].value;
                                                                         }
                                                                         
@@ -8095,7 +8095,7 @@ namespace wind
                                                 
                                                 // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000391\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_cardinality_size.value) << 
+                                                    logger->print() << "|\033[38;5;94m000391\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_cardinality_size.value) << 
                                                                  " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_cardinality_size.value: " << static_cast<int>(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_cardinality_size.value);
                                                 }
                                                 
@@ -8119,7 +8119,7 @@ namespace wind
                                                     // BitString
                                                     // BIT_STRING  min(4) max(4) span(1)
                                                     if(debug)
-                                                        logger->debug() << "|\033[38;5;94m000392\033[0m| payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_profiles[0].value: " << static_cast<int>(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_profiles[0].values.size());
+                                                        logger->print() << "|\033[38;5;94m000392\033[0m| payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_profiles[0].value: " << static_cast<int>(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_profiles[0].values.size());
                                                     
                                                     if(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_profiles[0].values.size() < 4) {
                                                             logger->warning() << "Error: Value in 'payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_profiles[0].value' " << (ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.group_sub_class[0].cluster_profiles[0].values.size()) << " is less than allowable (4); message dropped.";
@@ -8158,7 +8158,7 @@ namespace wind
                                             
                                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000394\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.other_sub_class[0].value) << 
+                                                logger->print() << "|\033[38;5;94m000394\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.other_sub_class[0].value) << 
                                                              " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.other_sub_class[0].value: " << static_cast<int>(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].object_class.other_sub_class[0].value);
                                             }
                                             
@@ -8189,7 +8189,7 @@ namespace wind
                                         
                                         // UINT8  min(1) max(101) span(101) dataType(UInt8)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000395\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].confidence.value) << 
+                                            logger->print() << "|\033[38;5;94m000395\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].confidence.value) << 
                                                          " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].confidence.value: " << static_cast<int>(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].classification[0].elements[q].confidence.value);
                                         }
                                         
@@ -8227,19 +8227,19 @@ namespace wind
                                     char* _tmp_556 = (char*) buffer++;
                                     *_tmp_556 = (ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].map_position[0].map_reference.size() != 0 ? 1 : 0);
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m000396\033[0m| Optional field map_reference = " << *_tmp_556;
+                                        logger->print() << "|\033[38;5;94m000396\033[0m| Optional field map_reference = " << *_tmp_556;
                                     char* _tmp_557 = (char*) buffer++;
                                     *_tmp_557 = (ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].map_position[0].lane_id.size() != 0 ? 1 : 0);
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m000397\033[0m| Optional field lane_id = " << *_tmp_557;
+                                        logger->print() << "|\033[38;5;94m000397\033[0m| Optional field lane_id = " << *_tmp_557;
                                     char* _tmp_558 = (char*) buffer++;
                                     *_tmp_558 = (ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].map_position[0].connection_id.size() != 0 ? 1 : 0);
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m000398\033[0m| Optional field connection_id = " << *_tmp_558;
+                                        logger->print() << "|\033[38;5;94m000398\033[0m| Optional field connection_id = " << *_tmp_558;
                                     char* _tmp_559 = (char*) buffer++;
                                     *_tmp_559 = (ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].map_position[0].longitudinal_lane_position.size() != 0 ? 1 : 0);
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m000399\033[0m| Optional field longitudinal_lane_position = " << *_tmp_559;
+                                        logger->print() << "|\033[38;5;94m000399\033[0m| Optional field longitudinal_lane_position = " << *_tmp_559;
                                     
                                     if(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].map_position[0].map_reference.size() != 0) {
                                         // Field:  type(MapReference) name(map_reference) extGroup(0)
@@ -8262,7 +8262,7 @@ namespace wind
                                                 char* _tmp_560 = (char*) buffer++;
                                                 *_tmp_560 = (ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].map_position[0].map_reference[0].roadsegment[0].region.size() != 0 ? 1 : 0);
                                                 if(debug)
-                                                    logger->debug() << "|\033[38;5;94m000401\033[0m| Optional field region = " << *_tmp_560;
+                                                    logger->print() << "|\033[38;5;94m000401\033[0m| Optional field region = " << *_tmp_560;
                                                 
                                                 if(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].map_position[0].map_reference[0].roadsegment[0].region.size() != 0) {
                                                     // Field:  type(Identifier2B) name(region) extGroup(0)
@@ -8270,7 +8270,7 @@ namespace wind
                                                     
                                                     // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m000402\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].map_position[0].map_reference[0].roadsegment[0].region[0].value) << 
+                                                        logger->print() << "|\033[38;5;94m000402\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].map_position[0].map_reference[0].roadsegment[0].region[0].value) << 
                                                                      " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].map_position[0].map_reference[0].roadsegment[0].region[0].value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].map_position[0].map_reference[0].roadsegment[0].region[0].value;
                                                     }
                                                     
@@ -8295,7 +8295,7 @@ namespace wind
                                                 
                                                 // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000403\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].map_position[0].map_reference[0].roadsegment[0].id.value) << 
+                                                    logger->print() << "|\033[38;5;94m000403\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].map_position[0].map_reference[0].roadsegment[0].id.value) << 
                                                                  " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].map_position[0].map_reference[0].roadsegment[0].id.value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].map_position[0].map_reference[0].roadsegment[0].id.value;
                                                 }
                                                 
@@ -8329,7 +8329,7 @@ namespace wind
                                                 char* _tmp_563 = (char*) buffer++;
                                                 *_tmp_563 = (ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].map_position[0].map_reference[0].intersection[0].region.size() != 0 ? 1 : 0);
                                                 if(debug)
-                                                    logger->debug() << "|\033[38;5;94m000405\033[0m| Optional field region = " << *_tmp_563;
+                                                    logger->print() << "|\033[38;5;94m000405\033[0m| Optional field region = " << *_tmp_563;
                                                 
                                                 if(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].map_position[0].map_reference[0].intersection[0].region.size() != 0) {
                                                     // Field:  type(Identifier2B) name(region) extGroup(0)
@@ -8337,7 +8337,7 @@ namespace wind
                                                     
                                                     // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m000406\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].map_position[0].map_reference[0].intersection[0].region[0].value) << 
+                                                        logger->print() << "|\033[38;5;94m000406\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].map_position[0].map_reference[0].intersection[0].region[0].value) << 
                                                                      " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].map_position[0].map_reference[0].intersection[0].region[0].value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].map_position[0].map_reference[0].intersection[0].region[0].value;
                                                     }
                                                     
@@ -8362,7 +8362,7 @@ namespace wind
                                                 
                                                 // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000407\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].map_position[0].map_reference[0].intersection[0].id.value) << 
+                                                    logger->print() << "|\033[38;5;94m000407\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].map_position[0].map_reference[0].intersection[0].id.value) << 
                                                                  " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].map_position[0].map_reference[0].intersection[0].id.value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].map_position[0].map_reference[0].intersection[0].id.value;
                                                 }
                                                 
@@ -8395,7 +8395,7 @@ namespace wind
                                         
                                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000408\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].map_position[0].lane_id[0].value) << 
+                                            logger->print() << "|\033[38;5;94m000408\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].map_position[0].lane_id[0].value) << 
                                                          " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].map_position[0].lane_id[0].value: " << static_cast<int>(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].map_position[0].lane_id[0].value);
                                         }
                                         
@@ -8421,7 +8421,7 @@ namespace wind
                                         
                                         // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000409\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].map_position[0].connection_id[0].value) << 
+                                            logger->print() << "|\033[38;5;94m000409\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].map_position[0].connection_id[0].value) << 
                                                          " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].map_position[0].connection_id[0].value: " << static_cast<int>(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].map_position[0].connection_id[0].value);
                                         }
                                         
@@ -8453,7 +8453,7 @@ namespace wind
                                             
                                             // FLOAT  min(0) max(32767) span(32768) scaleDivisor(10.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000410\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].map_position[0].longitudinal_lane_position[0].longitudinal_lane_position_value.value) << 
+                                                logger->print() << "|\033[38;5;94m000410\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].map_position[0].longitudinal_lane_position[0].longitudinal_lane_position_value.value) << 
                                                              " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].map_position[0].longitudinal_lane_position[0].longitudinal_lane_position_value.value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].map_position[0].longitudinal_lane_position[0].longitudinal_lane_position_value.value;
                                             }
                                             
@@ -8479,7 +8479,7 @@ namespace wind
                                             
                                             // FLOAT  min(0) max(1023) span(1024) scaleDivisor(10.0) dataType(Float)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000411\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].map_position[0].longitudinal_lane_position[0].longitudinal_lane_position_confidence.value) << 
+                                                logger->print() << "|\033[38;5;94m000411\033[0m| " << tools::getTypeName(ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].map_position[0].longitudinal_lane_position[0].longitudinal_lane_position_confidence.value) << 
                                                              " payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].map_position[0].longitudinal_lane_position[0].longitudinal_lane_position_confidence.value: " << ros->payload.cpm_containers.elements[a].perceived_object_container[0].perceived_objects.elements[k].map_position[0].longitudinal_lane_position[0].longitudinal_lane_position_confidence.value;
                                             }
                                             

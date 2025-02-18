@@ -66,7 +66,7 @@ namespace wind
         
         // UINT8  min(0) max(255) span(256) dataType(UInt8)
         if(debug) {
-            logger->debug() << "|\033[38;5;94m000000\033[0m| " << tools::getTypeName(ros->hheader.protocol_version.value) << 
+            logger->print() << "|\033[38;5;94m000000\033[0m| " << tools::getTypeName(ros->hheader.protocol_version.value) << 
                          " hheader.protocol_version.value: " << static_cast<int>(ros->hheader.protocol_version.value);
         }
         
@@ -90,7 +90,7 @@ namespace wind
         
         // UINT8  min(0) max(255) span(256) dataType(UInt8)
         if(debug) {
-            logger->debug() << "|\033[38;5;94m000001\033[0m| " << tools::getTypeName(ros->hheader.message_id.value) << 
+            logger->print() << "|\033[38;5;94m000001\033[0m| " << tools::getTypeName(ros->hheader.message_id.value) << 
                          " hheader.message_id.value: " << static_cast<int>(ros->hheader.message_id.value);
         }
         
@@ -114,7 +114,7 @@ namespace wind
         
         // UINT32  min(0) max(4294967295) span(4294967296) dataType(UInt32)
         if(debug) {
-            logger->debug() << "|\033[38;5;94m000002\033[0m| " << tools::getTypeName(ros->hheader.station_id.value) << 
+            logger->print() << "|\033[38;5;94m000002\033[0m| " << tools::getTypeName(ros->hheader.station_id.value) << 
                          " hheader.station_id.value: " << ros->hheader.station_id.value;
         }
         
@@ -152,35 +152,35 @@ namespace wind
         char* _tmp_4 = (char*) buffer++;
         *_tmp_4 = (ros->map.time_stamp.size() != 0 ? 1 : 0);
         if(debug)
-            logger->debug() << "|\033[38;5;94m000003\033[0m| Optional field time_stamp = " << *_tmp_4;
+            logger->print() << "|\033[38;5;94m000003\033[0m| Optional field time_stamp = " << *_tmp_4;
         char* _tmp_5 = (char*) buffer++;
         *_tmp_5 = (ros->map.layer_type.size() != 0 ? 1 : 0);
         if(debug)
-            logger->debug() << "|\033[38;5;94m000004\033[0m| Optional field layer_type = " << *_tmp_5;
+            logger->print() << "|\033[38;5;94m000004\033[0m| Optional field layer_type = " << *_tmp_5;
         char* _tmp_6 = (char*) buffer++;
         *_tmp_6 = (ros->map.layer_id.size() != 0 ? 1 : 0);
         if(debug)
-            logger->debug() << "|\033[38;5;94m000005\033[0m| Optional field layer_id = " << *_tmp_6;
+            logger->print() << "|\033[38;5;94m000005\033[0m| Optional field layer_id = " << *_tmp_6;
         char* _tmp_7 = (char*) buffer++;
         *_tmp_7 = (ros->map.intersections.size() != 0 ? 1 : 0);
         if(debug)
-            logger->debug() << "|\033[38;5;94m000006\033[0m| Optional field intersections = " << *_tmp_7;
+            logger->print() << "|\033[38;5;94m000006\033[0m| Optional field intersections = " << *_tmp_7;
         char* _tmp_8 = (char*) buffer++;
         *_tmp_8 = (ros->map.road_segments.size() != 0 ? 1 : 0);
         if(debug)
-            logger->debug() << "|\033[38;5;94m000007\033[0m| Optional field road_segments = " << *_tmp_8;
+            logger->print() << "|\033[38;5;94m000007\033[0m| Optional field road_segments = " << *_tmp_8;
         char* _tmp_9 = (char*) buffer++;
         *_tmp_9 = (ros->map.data_parameters.size() != 0 ? 1 : 0);
         if(debug)
-            logger->debug() << "|\033[38;5;94m000008\033[0m| Optional field data_parameters = " << *_tmp_9;
+            logger->print() << "|\033[38;5;94m000008\033[0m| Optional field data_parameters = " << *_tmp_9;
         char* _tmp_10 = (char*) buffer++;
         *_tmp_10 = (ros->map.restriction_list.size() != 0 ? 1 : 0);
         if(debug)
-            logger->debug() << "|\033[38;5;94m000009\033[0m| Optional field restriction_list = " << *_tmp_10;
+            logger->print() << "|\033[38;5;94m000009\033[0m| Optional field restriction_list = " << *_tmp_10;
         char* _tmp_11 = (char*) buffer++;
         *_tmp_11 = (ros->map.regional.size() != 0 ? 1 : 0);
         if(debug)
-            logger->debug() << "|\033[38;5;94m000010\033[0m| Optional field regional = " << *_tmp_11;
+            logger->print() << "|\033[38;5;94m000010\033[0m| Optional field regional = " << *_tmp_11;
         
         if(ros->map.time_stamp.size() != 0) {
             // Field:  type(MinuteOfTheYear) name(time_stamp) extGroup(0)
@@ -188,7 +188,7 @@ namespace wind
             
             // UINT32  min(0) max(527040) span(527041) dataType(UInt32)
             if(debug) {
-                logger->debug() << "|\033[38;5;94m000011\033[0m| " << tools::getTypeName(ros->map.time_stamp[0].value) << 
+                logger->print() << "|\033[38;5;94m000011\033[0m| " << tools::getTypeName(ros->map.time_stamp[0].value) << 
                              " map.time_stamp[0].value: " << ros->map.time_stamp[0].value;
             }
             
@@ -213,7 +213,7 @@ namespace wind
         
         // UINT8  min(0) max(127) span(128) dataType(UInt8)
         if(debug) {
-            logger->debug() << "|\033[38;5;94m000012\033[0m| " << tools::getTypeName(ros->map.msg_issue_revision.value) << 
+            logger->print() << "|\033[38;5;94m000012\033[0m| " << tools::getTypeName(ros->map.msg_issue_revision.value) << 
                          " map.msg_issue_revision.value: " << static_cast<int>(ros->map.msg_issue_revision.value);
         }
         
@@ -238,7 +238,7 @@ namespace wind
             // INT32  min(0) max(7) span(8) dataType(Int32)
             uint8_t* _ext_flag_7 = (uint8_t*) buffer++; // Write extension flag for ros->map.layer_type[0].
             if(debug) {
-                logger->debug() << "|\033[38;5;94m000013\033[0m| " << tools::getTypeName(ros->map.layer_type[0].value) << 
+                logger->print() << "|\033[38;5;94m000013\033[0m| " << tools::getTypeName(ros->map.layer_type[0].value) << 
                              " map.layer_type[0].value: " << static_cast<int>(ros->map.layer_type[0].value);
             }
             
@@ -264,7 +264,7 @@ namespace wind
             
             // UINT8  min(0) max(100) span(101) dataType(UInt8)
             if(debug) {
-                logger->debug() << "|\033[38;5;94m000014\033[0m| " << tools::getTypeName(ros->map.layer_id[0].value) << 
+                logger->print() << "|\033[38;5;94m000014\033[0m| " << tools::getTypeName(ros->map.layer_id[0].value) << 
                              " map.layer_id[0].value: " << static_cast<int>(ros->map.layer_id[0].value);
             }
             
@@ -316,23 +316,23 @@ namespace wind
                     char* _tmp_17 = (char*) buffer++;
                     *_tmp_17 = (ros->map.intersections[0].elements[a].name.size() != 0 ? 1 : 0);
                     if(debug)
-                        logger->debug() << "|\033[38;5;94m000016\033[0m| Optional field name = " << *_tmp_17;
+                        logger->print() << "|\033[38;5;94m000016\033[0m| Optional field name = " << *_tmp_17;
                     char* _tmp_18 = (char*) buffer++;
                     *_tmp_18 = (ros->map.intersections[0].elements[a].lane_width.size() != 0 ? 1 : 0);
                     if(debug)
-                        logger->debug() << "|\033[38;5;94m000017\033[0m| Optional field lane_width = " << *_tmp_18;
+                        logger->print() << "|\033[38;5;94m000017\033[0m| Optional field lane_width = " << *_tmp_18;
                     char* _tmp_19 = (char*) buffer++;
                     *_tmp_19 = (ros->map.intersections[0].elements[a].speed_limits.size() != 0 ? 1 : 0);
                     if(debug)
-                        logger->debug() << "|\033[38;5;94m000018\033[0m| Optional field speed_limits = " << *_tmp_19;
+                        logger->print() << "|\033[38;5;94m000018\033[0m| Optional field speed_limits = " << *_tmp_19;
                     char* _tmp_20 = (char*) buffer++;
                     *_tmp_20 = (ros->map.intersections[0].elements[a].preempt_priority_data.size() != 0 ? 1 : 0);
                     if(debug)
-                        logger->debug() << "|\033[38;5;94m000019\033[0m| Optional field preempt_priority_data = " << *_tmp_20;
+                        logger->print() << "|\033[38;5;94m000019\033[0m| Optional field preempt_priority_data = " << *_tmp_20;
                     char* _tmp_21 = (char*) buffer++;
                     *_tmp_21 = (ros->map.intersections[0].elements[a].regional.size() != 0 ? 1 : 0);
                     if(debug)
-                        logger->debug() << "|\033[38;5;94m000020\033[0m| Optional field regional = " << *_tmp_21;
+                        logger->print() << "|\033[38;5;94m000020\033[0m| Optional field regional = " << *_tmp_21;
                     
                     if(ros->map.intersections[0].elements[a].name.size() != 0) {
                         // Field:  type(DescriptiveName) name(name) extGroup(0)
@@ -351,7 +351,7 @@ namespace wind
                             return -1;
                         }
                         if(debug)
-                            logger->debug() << "|\033[38;5;94m000021\033[0m| map.intersections[0].elements[a].name[0].value.size(): " << 
+                            logger->print() << "|\033[38;5;94m000021\033[0m| map.intersections[0].elements[a].name[0].value.size(): " << 
                                         static_cast<int>(ros->map.intersections[0].elements[a].name[0].value.size());
                         
                         if(__aux64__ > 63) __aux64__ = 63;
@@ -373,7 +373,7 @@ namespace wind
                         char* _tmp_23 = (char*) buffer++;
                         *_tmp_23 = (ros->map.intersections[0].elements[a].id.region.size() != 0 ? 1 : 0);
                         if(debug)
-                            logger->debug() << "|\033[38;5;94m000022\033[0m| Optional field region = " << *_tmp_23;
+                            logger->print() << "|\033[38;5;94m000022\033[0m| Optional field region = " << *_tmp_23;
                         
                         if(ros->map.intersections[0].elements[a].id.region.size() != 0) {
                             // Field:  type(RoadRegulatorID) name(region) extGroup(0)
@@ -381,7 +381,7 @@ namespace wind
                             
                             // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000023\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].id.region[0].value) << 
+                                logger->print() << "|\033[38;5;94m000023\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].id.region[0].value) << 
                                              " map.intersections[0].elements[a].id.region[0].value: " << ros->map.intersections[0].elements[a].id.region[0].value;
                             }
                             
@@ -406,7 +406,7 @@ namespace wind
                         
                         // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000024\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].id.id.value) << 
+                            logger->print() << "|\033[38;5;94m000024\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].id.id.value) << 
                                          " map.intersections[0].elements[a].id.id.value: " << ros->map.intersections[0].elements[a].id.id.value;
                         }
                         
@@ -430,7 +430,7 @@ namespace wind
                     
                     // UINT8  min(0) max(127) span(128) dataType(UInt8)
                     if(debug) {
-                        logger->debug() << "|\033[38;5;94m000025\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].revision.value) << 
+                        logger->print() << "|\033[38;5;94m000025\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].revision.value) << 
                                      " map.intersections[0].elements[a].revision.value: " << static_cast<int>(ros->map.intersections[0].elements[a].revision.value);
                     }
                     
@@ -463,18 +463,18 @@ namespace wind
                         char* _tmp_27 = (char*) buffer++;
                         *_tmp_27 = (ros->map.intersections[0].elements[a].ref_point.elevation.size() != 0 ? 1 : 0);
                         if(debug)
-                            logger->debug() << "|\033[38;5;94m000026\033[0m| Optional field elevation = " << *_tmp_27;
+                            logger->print() << "|\033[38;5;94m000026\033[0m| Optional field elevation = " << *_tmp_27;
                         char* _tmp_28 = (char*) buffer++;
                         *_tmp_28 = (ros->map.intersections[0].elements[a].ref_point.regional.size() != 0 ? 1 : 0);
                         if(debug)
-                            logger->debug() << "|\033[38;5;94m000027\033[0m| Optional field regional = " << *_tmp_28;
+                            logger->print() << "|\033[38;5;94m000027\033[0m| Optional field regional = " << *_tmp_28;
                         
                         // Field:  type(Latitude) name(lat) extGroup(0)
                         // Real
                         
                         // DOUBLE  min(-900000000) max(900000001) span(1800000002) scaleDivisor(1.0E7) dataType(Double)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000028\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].ref_point.lat.value) << 
+                            logger->print() << "|\033[38;5;94m000028\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].ref_point.lat.value) << 
                                          " map.intersections[0].elements[a].ref_point.lat.value: " << ros->map.intersections[0].elements[a].ref_point.lat.value;
                         }
                         
@@ -501,7 +501,7 @@ namespace wind
                         
                         // DOUBLE  min(-1800000000) max(1800000001) span(3600000002) scaleDivisor(1.0E7) dataType(Double)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000029\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].ref_point.longint.value) << 
+                            logger->print() << "|\033[38;5;94m000029\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].ref_point.longint.value) << 
                                          " map.intersections[0].elements[a].ref_point.longint.value: " << ros->map.intersections[0].elements[a].ref_point.longint.value;
                         }
                         
@@ -529,7 +529,7 @@ namespace wind
                             
                             // FLOAT  min(-4096) max(61439) span(65536) scaleDivisor(10.0) dataType(Float)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000030\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].ref_point.elevation[0].value) << 
+                                logger->print() << "|\033[38;5;94m000030\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].ref_point.elevation[0].value) << 
                                              " map.intersections[0].elements[a].ref_point.elevation[0].value: " << ros->map.intersections[0].elements[a].ref_point.elevation[0].value;
                             }
                             
@@ -562,7 +562,7 @@ namespace wind
                         
                         // UINT16  min(0) max(32767) span(32768) dataType(UInt16)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000031\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_width[0].value) << 
+                            logger->print() << "|\033[38;5;94m000031\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_width[0].value) << 
                                          " map.intersections[0].elements[a].lane_width[0].value: " << ros->map.intersections[0].elements[a].lane_width[0].value;
                         }
                         
@@ -606,7 +606,7 @@ namespace wind
                                 // INT32  min(0) max(12) span(13) dataType(Int32)
                                 uint8_t* _ext_flag_18 = (uint8_t*) buffer++; // Write extension flag for ros->map.intersections[0].elements[a].speed_limits[0].elements[c].type.
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000033\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].speed_limits[0].elements[c].type.value) << 
+                                    logger->print() << "|\033[38;5;94m000033\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].speed_limits[0].elements[c].type.value) << 
                                                  " map.intersections[0].elements[a].speed_limits[0].elements[c].type.value: " << static_cast<int>(ros->map.intersections[0].elements[a].speed_limits[0].elements[c].type.value);
                                 }
                                 
@@ -630,7 +630,7 @@ namespace wind
                                 
                                 // UINT16  min(0) max(8191) span(8192) dataType(UInt16)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000034\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].speed_limits[0].elements[c].speed.value) << 
+                                    logger->print() << "|\033[38;5;94m000034\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].speed_limits[0].elements[c].speed.value) << 
                                                  " map.intersections[0].elements[a].speed_limits[0].elements[c].speed.value: " << ros->map.intersections[0].elements[a].speed_limits[0].elements[c].speed.value;
                                 }
                                 
@@ -684,38 +684,38 @@ namespace wind
                             char* _tmp_41 = (char*) buffer++;
                             *_tmp_41 = (ros->map.intersections[0].elements[a].lane_set.elements[d].name.size() != 0 ? 1 : 0);
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m000036\033[0m| Optional field name = " << *_tmp_41;
+                                logger->print() << "|\033[38;5;94m000036\033[0m| Optional field name = " << *_tmp_41;
                             char* _tmp_42 = (char*) buffer++;
                             *_tmp_42 = (ros->map.intersections[0].elements[a].lane_set.elements[d].ingress_approach.size() != 0 ? 1 : 0);
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m000037\033[0m| Optional field ingress_approach = " << *_tmp_42;
+                                logger->print() << "|\033[38;5;94m000037\033[0m| Optional field ingress_approach = " << *_tmp_42;
                             char* _tmp_43 = (char*) buffer++;
                             *_tmp_43 = (ros->map.intersections[0].elements[a].lane_set.elements[d].egress_approach.size() != 0 ? 1 : 0);
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m000038\033[0m| Optional field egress_approach = " << *_tmp_43;
+                                logger->print() << "|\033[38;5;94m000038\033[0m| Optional field egress_approach = " << *_tmp_43;
                             char* _tmp_44 = (char*) buffer++;
                             *_tmp_44 = (ros->map.intersections[0].elements[a].lane_set.elements[d].maneuvers.size() != 0 ? 1 : 0);
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m000039\033[0m| Optional field maneuvers = " << *_tmp_44;
+                                logger->print() << "|\033[38;5;94m000039\033[0m| Optional field maneuvers = " << *_tmp_44;
                             char* _tmp_45 = (char*) buffer++;
                             *_tmp_45 = (ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to.size() != 0 ? 1 : 0);
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m000040\033[0m| Optional field connects_to = " << *_tmp_45;
+                                logger->print() << "|\033[38;5;94m000040\033[0m| Optional field connects_to = " << *_tmp_45;
                             char* _tmp_46 = (char*) buffer++;
                             *_tmp_46 = (ros->map.intersections[0].elements[a].lane_set.elements[d].overlays.size() != 0 ? 1 : 0);
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m000041\033[0m| Optional field overlays = " << *_tmp_46;
+                                logger->print() << "|\033[38;5;94m000041\033[0m| Optional field overlays = " << *_tmp_46;
                             char* _tmp_47 = (char*) buffer++;
                             *_tmp_47 = (ros->map.intersections[0].elements[a].lane_set.elements[d].regional.size() != 0 ? 1 : 0);
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m000042\033[0m| Optional field regional = " << *_tmp_47;
+                                logger->print() << "|\033[38;5;94m000042\033[0m| Optional field regional = " << *_tmp_47;
                             
                             // Field:  type(LaneID) name(lane_id) extGroup(0)
                             // Integer
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000043\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].lane_id.value) << 
+                                logger->print() << "|\033[38;5;94m000043\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].lane_id.value) << 
                                              " map.intersections[0].elements[a].lane_set.elements[d].lane_id.value: " << static_cast<int>(ros->map.intersections[0].elements[a].lane_set.elements[d].lane_id.value);
                             }
                             
@@ -751,7 +751,7 @@ namespace wind
                                     return -1;
                                 }
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000044\033[0m| map.intersections[0].elements[a].lane_set.elements[d].name[0].value.size(): " << 
+                                    logger->print() << "|\033[38;5;94m000044\033[0m| map.intersections[0].elements[a].lane_set.elements[d].name[0].value.size(): " << 
                                                 static_cast<int>(ros->map.intersections[0].elements[a].lane_set.elements[d].name[0].value.size());
                                 
                                 if(__aux64__ > 63) __aux64__ = 63;
@@ -771,7 +771,7 @@ namespace wind
                                 
                                 // UINT8  min(0) max(15) span(16) dataType(UInt8)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000045\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].ingress_approach[0].value) << 
+                                    logger->print() << "|\033[38;5;94m000045\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].ingress_approach[0].value) << 
                                                  " map.intersections[0].elements[a].lane_set.elements[d].ingress_approach[0].value: " << static_cast<int>(ros->map.intersections[0].elements[a].lane_set.elements[d].ingress_approach[0].value);
                                 }
                                 
@@ -797,7 +797,7 @@ namespace wind
                                 
                                 // UINT8  min(0) max(15) span(16) dataType(UInt8)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000046\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].egress_approach[0].value) << 
+                                    logger->print() << "|\033[38;5;94m000046\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].egress_approach[0].value) << 
                                                  " map.intersections[0].elements[a].lane_set.elements[d].egress_approach[0].value: " << static_cast<int>(ros->map.intersections[0].elements[a].lane_set.elements[d].egress_approach[0].value);
                                 }
                                 
@@ -827,13 +827,13 @@ namespace wind
                                 char* _tmp_52 = (char*) buffer++;
                                 *_tmp_52 = (ros->map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.regional.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000047\033[0m| Optional field regional = " << *_tmp_52;
+                                    logger->print() << "|\033[38;5;94m000047\033[0m| Optional field regional = " << *_tmp_52;
                                 
                                 // Field:  type(LaneDirection) name(directional_use) extGroup(0)
                                 // BitString
                                 // BIT_STRING  min(2) max(2) span(1)
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000048\033[0m| map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.directional_use.value: " << static_cast<int>(ros->map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.directional_use.values.size());
+                                    logger->print() << "|\033[38;5;94m000048\033[0m| map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.directional_use.value: " << static_cast<int>(ros->map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.directional_use.values.size());
                                 
                                 if(ros->map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.directional_use.values.size() < 2) {
                                         logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.directional_use.value' " << (ros->map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.directional_use.values.size()) << " is less than allowable (2); message dropped.";
@@ -860,7 +860,7 @@ namespace wind
                                 // BitString
                                 // BIT_STRING  min(10) max(10) span(1)
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000049\033[0m| map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.shared_with.value: " << static_cast<int>(ros->map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.shared_with.values.size());
+                                    logger->print() << "|\033[38;5;94m000049\033[0m| map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.shared_with.value: " << static_cast<int>(ros->map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.shared_with.values.size());
                                 
                                 if(ros->map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.shared_with.values.size() < 10) {
                                         logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.shared_with.value' " << (ros->map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.shared_with.values.size()) << " is less than allowable (10); message dropped.";
@@ -909,7 +909,7 @@ namespace wind
                                     // BitString
                                     // BIT_STRING  min(8) max(8) span(1)
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m000051\033[0m| map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.vehicle[0].value: " << static_cast<int>(ros->map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.vehicle[0].values.size());
+                                        logger->print() << "|\033[38;5;94m000051\033[0m| map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.vehicle[0].value: " << static_cast<int>(ros->map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.vehicle[0].values.size());
                                     
                                     if(ros->map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.vehicle[0].values.size() < 8) {
                                             logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.vehicle[0].value' " << (ros->map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.vehicle[0].values.size()) << " is less than allowable (8); message dropped.";
@@ -946,7 +946,7 @@ namespace wind
                                     // BitString
                                     // BIT_STRING  min(16) max(16) span(1)
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m000053\033[0m| map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.crosswalk[0].value: " << static_cast<int>(ros->map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.crosswalk[0].values.size());
+                                        logger->print() << "|\033[38;5;94m000053\033[0m| map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.crosswalk[0].value: " << static_cast<int>(ros->map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.crosswalk[0].values.size());
                                     
                                     if(ros->map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.crosswalk[0].values.size() < 16) {
                                             logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.crosswalk[0].value' " << (ros->map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.crosswalk[0].values.size()) << " is less than allowable (16); message dropped.";
@@ -980,7 +980,7 @@ namespace wind
                                     // BitString
                                     // BIT_STRING  min(16) max(16) span(1)
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m000055\033[0m| map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.bike_lane[0].value: " << static_cast<int>(ros->map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.bike_lane[0].values.size());
+                                        logger->print() << "|\033[38;5;94m000055\033[0m| map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.bike_lane[0].value: " << static_cast<int>(ros->map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.bike_lane[0].values.size());
                                     
                                     if(ros->map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.bike_lane[0].values.size() < 16) {
                                             logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.bike_lane[0].value' " << (ros->map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.bike_lane[0].values.size()) << " is less than allowable (16); message dropped.";
@@ -1014,7 +1014,7 @@ namespace wind
                                     // BitString
                                     // BIT_STRING  min(16) max(16) span(1)
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m000057\033[0m| map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.sidewalk[0].value: " << static_cast<int>(ros->map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.sidewalk[0].values.size());
+                                        logger->print() << "|\033[38;5;94m000057\033[0m| map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.sidewalk[0].value: " << static_cast<int>(ros->map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.sidewalk[0].values.size());
                                     
                                     if(ros->map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.sidewalk[0].values.size() < 16) {
                                             logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.sidewalk[0].value' " << (ros->map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.sidewalk[0].values.size()) << " is less than allowable (16); message dropped.";
@@ -1048,7 +1048,7 @@ namespace wind
                                     // BitString
                                     // BIT_STRING  min(16) max(16) span(1)
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m000059\033[0m| map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.median[0].value: " << static_cast<int>(ros->map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.median[0].values.size());
+                                        logger->print() << "|\033[38;5;94m000059\033[0m| map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.median[0].value: " << static_cast<int>(ros->map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.median[0].values.size());
                                     
                                     if(ros->map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.median[0].values.size() < 16) {
                                             logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.median[0].value' " << (ros->map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.median[0].values.size()) << " is less than allowable (16); message dropped.";
@@ -1082,7 +1082,7 @@ namespace wind
                                     // BitString
                                     // BIT_STRING  min(16) max(16) span(1)
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m000061\033[0m| map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.striping[0].value: " << static_cast<int>(ros->map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.striping[0].values.size());
+                                        logger->print() << "|\033[38;5;94m000061\033[0m| map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.striping[0].value: " << static_cast<int>(ros->map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.striping[0].values.size());
                                     
                                     if(ros->map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.striping[0].values.size() < 16) {
                                             logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.striping[0].value' " << (ros->map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.striping[0].values.size()) << " is less than allowable (16); message dropped.";
@@ -1116,7 +1116,7 @@ namespace wind
                                     // BitString
                                     // BIT_STRING  min(16) max(16) span(1)
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m000063\033[0m| map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.tracked_vehicle[0].value: " << static_cast<int>(ros->map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.tracked_vehicle[0].values.size());
+                                        logger->print() << "|\033[38;5;94m000063\033[0m| map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.tracked_vehicle[0].value: " << static_cast<int>(ros->map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.tracked_vehicle[0].values.size());
                                     
                                     if(ros->map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.tracked_vehicle[0].values.size() < 16) {
                                             logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.tracked_vehicle[0].value' " << (ros->map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.tracked_vehicle[0].values.size()) << " is less than allowable (16); message dropped.";
@@ -1150,7 +1150,7 @@ namespace wind
                                     // BitString
                                     // BIT_STRING  min(16) max(16) span(1)
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m000065\033[0m| map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.parking[0].value: " << static_cast<int>(ros->map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.parking[0].values.size());
+                                        logger->print() << "|\033[38;5;94m000065\033[0m| map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.parking[0].value: " << static_cast<int>(ros->map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.parking[0].values.size());
                                     
                                     if(ros->map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.parking[0].values.size() < 16) {
                                             logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.parking[0].value' " << (ros->map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.parking[0].values.size()) << " is less than allowable (16); message dropped.";
@@ -1187,7 +1187,7 @@ namespace wind
                                 // BitString
                                 // BIT_STRING  min(12) max(12) span(1)
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000066\033[0m| map.intersections[0].elements[a].lane_set.elements[d].maneuvers[0].value: " << static_cast<int>(ros->map.intersections[0].elements[a].lane_set.elements[d].maneuvers[0].values.size());
+                                    logger->print() << "|\033[38;5;94m000066\033[0m| map.intersections[0].elements[a].lane_set.elements[d].maneuvers[0].value: " << static_cast<int>(ros->map.intersections[0].elements[a].lane_set.elements[d].maneuvers[0].values.size());
                                 
                                 if(ros->map.intersections[0].elements[a].lane_set.elements[d].maneuvers[0].values.size() < 12) {
                                         logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].maneuvers[0].value' " << (ros->map.intersections[0].elements[a].lane_set.elements[d].maneuvers[0].values.size()) << " is less than allowable (12); message dropped.";
@@ -1251,7 +1251,7 @@ namespace wind
                                         char* _tmp_65 = (char*) buffer++;
                                         *_tmp_65 = (ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000069\033[0m| Optional field attributes = " << *_tmp_65;
+                                            logger->print() << "|\033[38;5;94m000069\033[0m| Optional field attributes = " << *_tmp_65;
                                         
                                         // Field:  type(NodeOffsetPointXY) name(delta) extGroup(0)
                                         // Choice
@@ -1282,7 +1282,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(-512) max(511) span(1024) scaleDivisor(100.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000071\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy1[0].x.value) << 
+                                                    logger->print() << "|\033[38;5;94m000071\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy1[0].x.value) << 
                                                                  " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy1[0].x.value: " << ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy1[0].x.value;
                                                 }
                                                 
@@ -1309,7 +1309,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(-512) max(511) span(1024) scaleDivisor(100.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000072\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy1[0].y.value) << 
+                                                    logger->print() << "|\033[38;5;94m000072\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy1[0].y.value) << 
                                                                  " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy1[0].y.value: " << ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy1[0].y.value;
                                                 }
                                                 
@@ -1349,7 +1349,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(-1024) max(1023) span(2048) scaleDivisor(100.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000074\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy2[0].x.value) << 
+                                                    logger->print() << "|\033[38;5;94m000074\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy2[0].x.value) << 
                                                                  " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy2[0].x.value: " << ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy2[0].x.value;
                                                 }
                                                 
@@ -1376,7 +1376,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(-1024) max(1023) span(2048) scaleDivisor(100.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000075\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy2[0].y.value) << 
+                                                    logger->print() << "|\033[38;5;94m000075\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy2[0].y.value) << 
                                                                  " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy2[0].y.value: " << ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy2[0].y.value;
                                                 }
                                                 
@@ -1416,7 +1416,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(-2048) max(2047) span(4096) scaleDivisor(100.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000077\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy3[0].x.value) << 
+                                                    logger->print() << "|\033[38;5;94m000077\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy3[0].x.value) << 
                                                                  " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy3[0].x.value: " << ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy3[0].x.value;
                                                 }
                                                 
@@ -1443,7 +1443,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(-2048) max(2047) span(4096) scaleDivisor(100.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000078\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy3[0].y.value) << 
+                                                    logger->print() << "|\033[38;5;94m000078\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy3[0].y.value) << 
                                                                  " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy3[0].y.value: " << ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy3[0].y.value;
                                                 }
                                                 
@@ -1483,7 +1483,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(-4096) max(4095) span(8192) scaleDivisor(100.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000080\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy4[0].x.value) << 
+                                                    logger->print() << "|\033[38;5;94m000080\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy4[0].x.value) << 
                                                                  " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy4[0].x.value: " << ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy4[0].x.value;
                                                 }
                                                 
@@ -1510,7 +1510,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(-4096) max(4095) span(8192) scaleDivisor(100.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000081\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy4[0].y.value) << 
+                                                    logger->print() << "|\033[38;5;94m000081\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy4[0].y.value) << 
                                                                  " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy4[0].y.value: " << ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy4[0].y.value;
                                                 }
                                                 
@@ -1550,7 +1550,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(-8192) max(8191) span(16384) scaleDivisor(100.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000083\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy5[0].x.value) << 
+                                                    logger->print() << "|\033[38;5;94m000083\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy5[0].x.value) << 
                                                                  " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy5[0].x.value: " << ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy5[0].x.value;
                                                 }
                                                 
@@ -1577,7 +1577,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(-8192) max(8191) span(16384) scaleDivisor(100.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000084\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy5[0].y.value) << 
+                                                    logger->print() << "|\033[38;5;94m000084\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy5[0].y.value) << 
                                                                  " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy5[0].y.value: " << ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy5[0].y.value;
                                                 }
                                                 
@@ -1617,7 +1617,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000086\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy6[0].x.value) << 
+                                                    logger->print() << "|\033[38;5;94m000086\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy6[0].x.value) << 
                                                                  " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy6[0].x.value: " << ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy6[0].x.value;
                                                 }
                                                 
@@ -1644,7 +1644,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000087\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy6[0].y.value) << 
+                                                    logger->print() << "|\033[38;5;94m000087\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy6[0].y.value) << 
                                                                  " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy6[0].y.value: " << ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy6[0].y.value;
                                                 }
                                                 
@@ -1684,7 +1684,7 @@ namespace wind
                                                 
                                                 // DOUBLE  min(-1800000000) max(1800000001) span(3600000002) scaleDivisor(1.0E7) dataType(Double)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000089\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_lat_lon[0].lon.value) << 
+                                                    logger->print() << "|\033[38;5;94m000089\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_lat_lon[0].lon.value) << 
                                                                  " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_lat_lon[0].lon.value: " << ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_lat_lon[0].lon.value;
                                                 }
                                                 
@@ -1711,7 +1711,7 @@ namespace wind
                                                 
                                                 // DOUBLE  min(-900000000) max(900000001) span(1800000002) scaleDivisor(1.0E7) dataType(Double)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000090\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_lat_lon[0].lat.value) << 
+                                                    logger->print() << "|\033[38;5;94m000090\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_lat_lon[0].lat.value) << 
                                                                  " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_lat_lon[0].lat.value: " << ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_lat_lon[0].lat.value;
                                                 }
                                                 
@@ -1759,31 +1759,31 @@ namespace wind
                                                 char* _tmp_94 = (char*) buffer++;
                                                 *_tmp_94 = (ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].local_node.size() != 0 ? 1 : 0);
                                                 if(debug)
-                                                    logger->debug() << "|\033[38;5;94m000091\033[0m| Optional field local_node = " << *_tmp_94;
+                                                    logger->print() << "|\033[38;5;94m000091\033[0m| Optional field local_node = " << *_tmp_94;
                                                 char* _tmp_95 = (char*) buffer++;
                                                 *_tmp_95 = (ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].disabled.size() != 0 ? 1 : 0);
                                                 if(debug)
-                                                    logger->debug() << "|\033[38;5;94m000092\033[0m| Optional field disabled = " << *_tmp_95;
+                                                    logger->print() << "|\033[38;5;94m000092\033[0m| Optional field disabled = " << *_tmp_95;
                                                 char* _tmp_96 = (char*) buffer++;
                                                 *_tmp_96 = (ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].enabled.size() != 0 ? 1 : 0);
                                                 if(debug)
-                                                    logger->debug() << "|\033[38;5;94m000093\033[0m| Optional field enabled = " << *_tmp_96;
+                                                    logger->print() << "|\033[38;5;94m000093\033[0m| Optional field enabled = " << *_tmp_96;
                                                 char* _tmp_97 = (char*) buffer++;
                                                 *_tmp_97 = (ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data.size() != 0 ? 1 : 0);
                                                 if(debug)
-                                                    logger->debug() << "|\033[38;5;94m000094\033[0m| Optional field data = " << *_tmp_97;
+                                                    logger->print() << "|\033[38;5;94m000094\033[0m| Optional field data = " << *_tmp_97;
                                                 char* _tmp_98 = (char*) buffer++;
                                                 *_tmp_98 = (ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].d_width.size() != 0 ? 1 : 0);
                                                 if(debug)
-                                                    logger->debug() << "|\033[38;5;94m000095\033[0m| Optional field d_width = " << *_tmp_98;
+                                                    logger->print() << "|\033[38;5;94m000095\033[0m| Optional field d_width = " << *_tmp_98;
                                                 char* _tmp_99 = (char*) buffer++;
                                                 *_tmp_99 = (ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].d_elevation.size() != 0 ? 1 : 0);
                                                 if(debug)
-                                                    logger->debug() << "|\033[38;5;94m000096\033[0m| Optional field d_elevation = " << *_tmp_99;
+                                                    logger->print() << "|\033[38;5;94m000096\033[0m| Optional field d_elevation = " << *_tmp_99;
                                                 char* _tmp_100 = (char*) buffer++;
                                                 *_tmp_100 = (ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].regional.size() != 0 ? 1 : 0);
                                                 if(debug)
-                                                    logger->debug() << "|\033[38;5;94m000097\033[0m| Optional field regional = " << *_tmp_100;
+                                                    logger->print() << "|\033[38;5;94m000097\033[0m| Optional field regional = " << *_tmp_100;
                                                 
                                                 if(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].local_node.size() != 0) {
                                                     // Field:  type(NodeAttributeXYList) name(local_node) extGroup(0)
@@ -1803,7 +1803,7 @@ namespace wind
                                                         // INT32  min(0) max(11) span(12) dataType(Int32)
                                                         uint8_t* _ext_flag_44 = (uint8_t*) buffer++; // Write extension flag for ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].local_node[0].elements[r].
                                                         if(debug) {
-                                                            logger->debug() << "|\033[38;5;94m000099\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].local_node[0].elements[r].value) << 
+                                                            logger->print() << "|\033[38;5;94m000099\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].local_node[0].elements[r].value) << 
                                                                          " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].local_node[0].elements[r].value: " << static_cast<int>(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].local_node[0].elements[r].value);
                                                         }
                                                         
@@ -1844,7 +1844,7 @@ namespace wind
                                                         // INT32  min(0) max(37) span(38) dataType(Int32)
                                                         uint8_t* _ext_flag_45 = (uint8_t*) buffer++; // Write extension flag for ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].disabled[0].elements[s].
                                                         if(debug) {
-                                                            logger->debug() << "|\033[38;5;94m000101\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].disabled[0].elements[s].value) << 
+                                                            logger->print() << "|\033[38;5;94m000101\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].disabled[0].elements[s].value) << 
                                                                          " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].disabled[0].elements[s].value: " << static_cast<int>(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].disabled[0].elements[s].value);
                                                         }
                                                         
@@ -1885,7 +1885,7 @@ namespace wind
                                                         // INT32  min(0) max(37) span(38) dataType(Int32)
                                                         uint8_t* _ext_flag_46 = (uint8_t*) buffer++; // Write extension flag for ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].enabled[0].elements[t].
                                                         if(debug) {
-                                                            logger->debug() << "|\033[38;5;94m000103\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].enabled[0].elements[t].value) << 
+                                                            logger->print() << "|\033[38;5;94m000103\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].enabled[0].elements[t].value) << 
                                                                          " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].enabled[0].elements[t].value: " << static_cast<int>(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].enabled[0].elements[t].value);
                                                         }
                                                         
@@ -1947,7 +1947,7 @@ namespace wind
                                                             
                                                             // INT16  min(-150) max(150) span(301) dataType(Int16)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m000106\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].path_end_point_angle[0].value) << 
+                                                                logger->print() << "|\033[38;5;94m000106\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].path_end_point_angle[0].value) << 
                                                                              " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].path_end_point_angle[0].value: " << ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].path_end_point_angle[0].value;
                                                             }
                                                             
@@ -1979,7 +1979,7 @@ namespace wind
                                                             
                                                             // INT8  min(-128) max(127) span(256) dataType(Int8)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m000108\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].lane_crown_point_center[0].value) << 
+                                                                logger->print() << "|\033[38;5;94m000108\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].lane_crown_point_center[0].value) << 
                                                                              " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].lane_crown_point_center[0].value: " << static_cast<int>(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].lane_crown_point_center[0].value);
                                                             }
                                                             
@@ -2011,7 +2011,7 @@ namespace wind
                                                             
                                                             // INT8  min(-128) max(127) span(256) dataType(Int8)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m000110\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].lane_crown_point_left[0].value) << 
+                                                                logger->print() << "|\033[38;5;94m000110\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].lane_crown_point_left[0].value) << 
                                                                              " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].lane_crown_point_left[0].value: " << static_cast<int>(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].lane_crown_point_left[0].value);
                                                             }
                                                             
@@ -2043,7 +2043,7 @@ namespace wind
                                                             
                                                             // INT8  min(-128) max(127) span(256) dataType(Int8)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m000112\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].lane_crown_point_right[0].value) << 
+                                                                logger->print() << "|\033[38;5;94m000112\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].lane_crown_point_right[0].value) << 
                                                                              " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].lane_crown_point_right[0].value: " << static_cast<int>(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].lane_crown_point_right[0].value);
                                                             }
                                                             
@@ -2075,7 +2075,7 @@ namespace wind
                                                             
                                                             // INT16  min(-180) max(180) span(361) dataType(Int16)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m000114\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].lane_angle[0].value) << 
+                                                                logger->print() << "|\033[38;5;94m000114\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].lane_angle[0].value) << 
                                                                              " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].lane_angle[0].value: " << ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].lane_angle[0].value;
                                                             }
                                                             
@@ -2125,7 +2125,7 @@ namespace wind
                                                                     // INT32  min(0) max(12) span(13) dataType(Int32)
                                                                     uint8_t* _ext_flag_53 = (uint8_t*) buffer++; // Write extension flag for ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].speed_limits[0].elements[v].type.
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000117\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].speed_limits[0].elements[v].type.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000117\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].speed_limits[0].elements[v].type.value) << 
                                                                                      " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].speed_limits[0].elements[v].type.value: " << static_cast<int>(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].speed_limits[0].elements[v].type.value);
                                                                     }
                                                                     
@@ -2149,7 +2149,7 @@ namespace wind
                                                                     
                                                                     // UINT16  min(0) max(8191) span(8192) dataType(UInt16)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000118\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].speed_limits[0].elements[v].speed.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000118\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].speed_limits[0].elements[v].speed.value) << 
                                                                                      " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].speed_limits[0].elements[v].speed.value: " << ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].speed_limits[0].elements[v].speed.value;
                                                                     }
                                                                     
@@ -2186,7 +2186,7 @@ namespace wind
                                                     
                                                     // FLOAT  min(-512) max(511) span(1024) scaleDivisor(100.0) dataType(Float)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m000119\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].d_width[0].value) << 
+                                                        logger->print() << "|\033[38;5;94m000119\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].d_width[0].value) << 
                                                                      " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].d_width[0].value: " << ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].d_width[0].value;
                                                     }
                                                     
@@ -2215,7 +2215,7 @@ namespace wind
                                                     
                                                     // FLOAT  min(-512) max(511) span(1024) scaleDivisor(100.0) dataType(Float)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m000120\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].d_elevation[0].value) << 
+                                                        logger->print() << "|\033[38;5;94m000120\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].d_elevation[0].value) << 
                                                                      " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].d_elevation[0].value: " << ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].d_elevation[0].value;
                                                     }
                                                     
@@ -2271,26 +2271,26 @@ namespace wind
                                     char* _tmp_122 = (char*) buffer++;
                                     *_tmp_122 = (ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].rotate_xy.size() != 0 ? 1 : 0);
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m000122\033[0m| Optional field rotate_xy = " << *_tmp_122;
+                                        logger->print() << "|\033[38;5;94m000122\033[0m| Optional field rotate_xy = " << *_tmp_122;
                                     char* _tmp_123 = (char*) buffer++;
                                     *_tmp_123 = (ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].scale_xaxis.size() != 0 ? 1 : 0);
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m000123\033[0m| Optional field scale_xaxis = " << *_tmp_123;
+                                        logger->print() << "|\033[38;5;94m000123\033[0m| Optional field scale_xaxis = " << *_tmp_123;
                                     char* _tmp_124 = (char*) buffer++;
                                     *_tmp_124 = (ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].scale_yaxis.size() != 0 ? 1 : 0);
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m000124\033[0m| Optional field scale_yaxis = " << *_tmp_124;
+                                        logger->print() << "|\033[38;5;94m000124\033[0m| Optional field scale_yaxis = " << *_tmp_124;
                                     char* _tmp_125 = (char*) buffer++;
                                     *_tmp_125 = (ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].regional.size() != 0 ? 1 : 0);
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m000125\033[0m| Optional field regional = " << *_tmp_125;
+                                        logger->print() << "|\033[38;5;94m000125\033[0m| Optional field regional = " << *_tmp_125;
                                     
                                     // Field:  type(LaneID) name(reference_lane_id) extGroup(0)
                                     // Integer
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000126\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].reference_lane_id.value) << 
+                                        logger->print() << "|\033[38;5;94m000126\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].reference_lane_id.value) << 
                                                      " map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].reference_lane_id.value: " << static_cast<int>(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].reference_lane_id.value);
                                     }
                                     
@@ -2326,7 +2326,7 @@ namespace wind
                                         
                                         // INT16  min(-2047) max(2047) span(4095) dataType(Int16)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000128\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].offset_xaxis.small[0].value) << 
+                                            logger->print() << "|\033[38;5;94m000128\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].offset_xaxis.small[0].value) << 
                                                          " map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].offset_xaxis.small[0].value: " << ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].offset_xaxis.small[0].value;
                                         }
                                         
@@ -2358,7 +2358,7 @@ namespace wind
                                         
                                         // INT16  min(-32767) max(32767) span(65535) dataType(Int16)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000130\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].offset_xaxis.large[0].value) << 
+                                            logger->print() << "|\033[38;5;94m000130\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].offset_xaxis.large[0].value) << 
                                                          " map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].offset_xaxis.large[0].value: " << ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].offset_xaxis.large[0].value;
                                         }
                                         
@@ -2402,7 +2402,7 @@ namespace wind
                                         
                                         // INT16  min(-2047) max(2047) span(4095) dataType(Int16)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000132\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].offset_yaxis.small[0].value) << 
+                                            logger->print() << "|\033[38;5;94m000132\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].offset_yaxis.small[0].value) << 
                                                          " map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].offset_yaxis.small[0].value: " << ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].offset_yaxis.small[0].value;
                                         }
                                         
@@ -2434,7 +2434,7 @@ namespace wind
                                         
                                         // INT16  min(-32767) max(32767) span(65535) dataType(Int16)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000134\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].offset_yaxis.large[0].value) << 
+                                            logger->print() << "|\033[38;5;94m000134\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].offset_yaxis.large[0].value) << 
                                                          " map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].offset_yaxis.large[0].value: " << ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].offset_yaxis.large[0].value;
                                         }
                                         
@@ -2467,7 +2467,7 @@ namespace wind
                                         
                                         // UINT16  min(0) max(28800) span(28801) dataType(UInt16)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000135\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].rotate_xy[0].value) << 
+                                            logger->print() << "|\033[38;5;94m000135\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].rotate_xy[0].value) << 
                                                          " map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].rotate_xy[0].value: " << ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].rotate_xy[0].value;
                                         }
                                         
@@ -2493,7 +2493,7 @@ namespace wind
                                         
                                         // INT16  min(-2048) max(2047) span(4096) dataType(Int16)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000136\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].scale_xaxis[0].value) << 
+                                            logger->print() << "|\033[38;5;94m000136\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].scale_xaxis[0].value) << 
                                                          " map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].scale_xaxis[0].value: " << ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].scale_xaxis[0].value;
                                         }
                                         
@@ -2520,7 +2520,7 @@ namespace wind
                                         
                                         // INT16  min(-2048) max(2047) span(4096) dataType(Int16)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000137\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].scale_yaxis[0].value) << 
+                                            logger->print() << "|\033[38;5;94m000137\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].scale_yaxis[0].value) << 
                                                          " map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].scale_yaxis[0].value: " << ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].scale_yaxis[0].value;
                                         }
                                         
@@ -2576,19 +2576,19 @@ namespace wind
                                         char* _tmp_136 = (char*) buffer++;
                                         *_tmp_136 = (ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].remote_intersection.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000139\033[0m| Optional field remote_intersection = " << *_tmp_136;
+                                            logger->print() << "|\033[38;5;94m000139\033[0m| Optional field remote_intersection = " << *_tmp_136;
                                         char* _tmp_137 = (char*) buffer++;
                                         *_tmp_137 = (ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].signal_group.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000140\033[0m| Optional field signal_group = " << *_tmp_137;
+                                            logger->print() << "|\033[38;5;94m000140\033[0m| Optional field signal_group = " << *_tmp_137;
                                         char* _tmp_138 = (char*) buffer++;
                                         *_tmp_138 = (ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].user_class.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000141\033[0m| Optional field user_class = " << *_tmp_138;
+                                            logger->print() << "|\033[38;5;94m000141\033[0m| Optional field user_class = " << *_tmp_138;
                                         char* _tmp_139 = (char*) buffer++;
                                         *_tmp_139 = (ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].connection_id.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000142\033[0m| Optional field connection_id = " << *_tmp_139;
+                                            logger->print() << "|\033[38;5;94m000142\033[0m| Optional field connection_id = " << *_tmp_139;
                                         
                                         // Field:  type(ConnectingLane) name(connecting_lane) extGroup(0)
                                             // ConnectingLane  SEQUENCE
@@ -2598,14 +2598,14 @@ namespace wind
                                             char* _tmp_140 = (char*) buffer++;
                                             *_tmp_140 = (ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].connecting_lane.maneuver.size() != 0 ? 1 : 0);
                                             if(debug)
-                                                logger->debug() << "|\033[38;5;94m000143\033[0m| Optional field maneuver = " << *_tmp_140;
+                                                logger->print() << "|\033[38;5;94m000143\033[0m| Optional field maneuver = " << *_tmp_140;
                                             
                                             // Field:  type(LaneID) name(lane) extGroup(0)
                                             // Integer
                                             
                                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000144\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].connecting_lane.lane.value) << 
+                                                logger->print() << "|\033[38;5;94m000144\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].connecting_lane.lane.value) << 
                                                              " map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].connecting_lane.lane.value: " << static_cast<int>(ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].connecting_lane.lane.value);
                                             }
                                             
@@ -2629,7 +2629,7 @@ namespace wind
                                                 // BitString
                                                 // BIT_STRING  min(12) max(12) span(1)
                                                 if(debug)
-                                                    logger->debug() << "|\033[38;5;94m000145\033[0m| map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].connecting_lane.maneuver[0].value: " << static_cast<int>(ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].connecting_lane.maneuver[0].values.size());
+                                                    logger->print() << "|\033[38;5;94m000145\033[0m| map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].connecting_lane.maneuver[0].value: " << static_cast<int>(ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].connecting_lane.maneuver[0].values.size());
                                                 
                                                 if(ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].connecting_lane.maneuver[0].values.size() < 12) {
                                                         logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].connecting_lane.maneuver[0].value' " << (ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].connecting_lane.maneuver[0].values.size()) << " is less than allowable (12); message dropped.";
@@ -2662,7 +2662,7 @@ namespace wind
                                                 char* _tmp_143 = (char*) buffer++;
                                                 *_tmp_143 = (ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].remote_intersection[0].region.size() != 0 ? 1 : 0);
                                                 if(debug)
-                                                    logger->debug() << "|\033[38;5;94m000146\033[0m| Optional field region = " << *_tmp_143;
+                                                    logger->print() << "|\033[38;5;94m000146\033[0m| Optional field region = " << *_tmp_143;
                                                 
                                                 if(ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].remote_intersection[0].region.size() != 0) {
                                                     // Field:  type(RoadRegulatorID) name(region) extGroup(0)
@@ -2670,7 +2670,7 @@ namespace wind
                                                     
                                                     // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m000147\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].remote_intersection[0].region[0].value) << 
+                                                        logger->print() << "|\033[38;5;94m000147\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].remote_intersection[0].region[0].value) << 
                                                                      " map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].remote_intersection[0].region[0].value: " << ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].remote_intersection[0].region[0].value;
                                                     }
                                                     
@@ -2695,7 +2695,7 @@ namespace wind
                                                 
                                                 // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000148\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].remote_intersection[0].id.value) << 
+                                                    logger->print() << "|\033[38;5;94m000148\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].remote_intersection[0].id.value) << 
                                                                  " map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].remote_intersection[0].id.value: " << ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].remote_intersection[0].id.value;
                                                 }
                                                 
@@ -2721,7 +2721,7 @@ namespace wind
                                             
                                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000149\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].signal_group[0].value) << 
+                                                logger->print() << "|\033[38;5;94m000149\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].signal_group[0].value) << 
                                                              " map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].signal_group[0].value: " << static_cast<int>(ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].signal_group[0].value);
                                             }
                                             
@@ -2747,7 +2747,7 @@ namespace wind
                                             
                                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000150\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].user_class[0].value) << 
+                                                logger->print() << "|\033[38;5;94m000150\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].user_class[0].value) << 
                                                              " map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].user_class[0].value: " << static_cast<int>(ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].user_class[0].value);
                                             }
                                             
@@ -2773,7 +2773,7 @@ namespace wind
                                             
                                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000151\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].connection_id[0].value) << 
+                                                logger->print() << "|\033[38;5;94m000151\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].connection_id[0].value) << 
                                                              " map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].connection_id[0].value: " << static_cast<int>(ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].connection_id[0].value);
                                             }
                                             
@@ -2814,7 +2814,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000153\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].overlays[0].elements[y].value) << 
+                                        logger->print() << "|\033[38;5;94m000153\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].overlays[0].elements[y].value) << 
                                                      " map.intersections[0].elements[a].lane_set.elements[d].overlays[0].elements[y].value: " << static_cast<int>(ros->map.intersections[0].elements[a].lane_set.elements[d].overlays[0].elements[y].value);
                                     }
                                     
@@ -2879,19 +2879,19 @@ namespace wind
                     char* _tmp_154 = (char*) buffer++;
                     *_tmp_154 = (ros->map.road_segments[0].elements[z].name.size() != 0 ? 1 : 0);
                     if(debug)
-                        logger->debug() << "|\033[38;5;94m000155\033[0m| Optional field name = " << *_tmp_154;
+                        logger->print() << "|\033[38;5;94m000155\033[0m| Optional field name = " << *_tmp_154;
                     char* _tmp_155 = (char*) buffer++;
                     *_tmp_155 = (ros->map.road_segments[0].elements[z].lane_width.size() != 0 ? 1 : 0);
                     if(debug)
-                        logger->debug() << "|\033[38;5;94m000156\033[0m| Optional field lane_width = " << *_tmp_155;
+                        logger->print() << "|\033[38;5;94m000156\033[0m| Optional field lane_width = " << *_tmp_155;
                     char* _tmp_156 = (char*) buffer++;
                     *_tmp_156 = (ros->map.road_segments[0].elements[z].speed_limits.size() != 0 ? 1 : 0);
                     if(debug)
-                        logger->debug() << "|\033[38;5;94m000157\033[0m| Optional field speed_limits = " << *_tmp_156;
+                        logger->print() << "|\033[38;5;94m000157\033[0m| Optional field speed_limits = " << *_tmp_156;
                     char* _tmp_157 = (char*) buffer++;
                     *_tmp_157 = (ros->map.road_segments[0].elements[z].regional.size() != 0 ? 1 : 0);
                     if(debug)
-                        logger->debug() << "|\033[38;5;94m000158\033[0m| Optional field regional = " << *_tmp_157;
+                        logger->print() << "|\033[38;5;94m000158\033[0m| Optional field regional = " << *_tmp_157;
                     
                     if(ros->map.road_segments[0].elements[z].name.size() != 0) {
                         // Field:  type(DescriptiveName) name(name) extGroup(0)
@@ -2910,7 +2910,7 @@ namespace wind
                             return -1;
                         }
                         if(debug)
-                            logger->debug() << "|\033[38;5;94m000159\033[0m| map.road_segments[0].elements[z].name[0].value.size(): " << 
+                            logger->print() << "|\033[38;5;94m000159\033[0m| map.road_segments[0].elements[z].name[0].value.size(): " << 
                                         static_cast<int>(ros->map.road_segments[0].elements[z].name[0].value.size());
                         
                         if(__aux64__ > 63) __aux64__ = 63;
@@ -2932,7 +2932,7 @@ namespace wind
                         char* _tmp_159 = (char*) buffer++;
                         *_tmp_159 = (ros->map.road_segments[0].elements[z].id.region.size() != 0 ? 1 : 0);
                         if(debug)
-                            logger->debug() << "|\033[38;5;94m000160\033[0m| Optional field region = " << *_tmp_159;
+                            logger->print() << "|\033[38;5;94m000160\033[0m| Optional field region = " << *_tmp_159;
                         
                         if(ros->map.road_segments[0].elements[z].id.region.size() != 0) {
                             // Field:  type(RoadRegulatorID) name(region) extGroup(0)
@@ -2940,7 +2940,7 @@ namespace wind
                             
                             // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000161\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].id.region[0].value) << 
+                                logger->print() << "|\033[38;5;94m000161\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].id.region[0].value) << 
                                              " map.road_segments[0].elements[z].id.region[0].value: " << ros->map.road_segments[0].elements[z].id.region[0].value;
                             }
                             
@@ -2965,7 +2965,7 @@ namespace wind
                         
                         // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000162\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].id.id.value) << 
+                            logger->print() << "|\033[38;5;94m000162\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].id.id.value) << 
                                          " map.road_segments[0].elements[z].id.id.value: " << ros->map.road_segments[0].elements[z].id.id.value;
                         }
                         
@@ -2989,7 +2989,7 @@ namespace wind
                     
                     // UINT8  min(0) max(127) span(128) dataType(UInt8)
                     if(debug) {
-                        logger->debug() << "|\033[38;5;94m000163\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].revision.value) << 
+                        logger->print() << "|\033[38;5;94m000163\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].revision.value) << 
                                      " map.road_segments[0].elements[z].revision.value: " << static_cast<int>(ros->map.road_segments[0].elements[z].revision.value);
                     }
                     
@@ -3022,18 +3022,18 @@ namespace wind
                         char* _tmp_163 = (char*) buffer++;
                         *_tmp_163 = (ros->map.road_segments[0].elements[z].ref_point.elevation.size() != 0 ? 1 : 0);
                         if(debug)
-                            logger->debug() << "|\033[38;5;94m000164\033[0m| Optional field elevation = " << *_tmp_163;
+                            logger->print() << "|\033[38;5;94m000164\033[0m| Optional field elevation = " << *_tmp_163;
                         char* _tmp_164 = (char*) buffer++;
                         *_tmp_164 = (ros->map.road_segments[0].elements[z].ref_point.regional.size() != 0 ? 1 : 0);
                         if(debug)
-                            logger->debug() << "|\033[38;5;94m000165\033[0m| Optional field regional = " << *_tmp_164;
+                            logger->print() << "|\033[38;5;94m000165\033[0m| Optional field regional = " << *_tmp_164;
                         
                         // Field:  type(Latitude) name(lat) extGroup(0)
                         // Real
                         
                         // DOUBLE  min(-900000000) max(900000001) span(1800000002) scaleDivisor(1.0E7) dataType(Double)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000166\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].ref_point.lat.value) << 
+                            logger->print() << "|\033[38;5;94m000166\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].ref_point.lat.value) << 
                                          " map.road_segments[0].elements[z].ref_point.lat.value: " << ros->map.road_segments[0].elements[z].ref_point.lat.value;
                         }
                         
@@ -3060,7 +3060,7 @@ namespace wind
                         
                         // DOUBLE  min(-1800000000) max(1800000001) span(3600000002) scaleDivisor(1.0E7) dataType(Double)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000167\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].ref_point.longint.value) << 
+                            logger->print() << "|\033[38;5;94m000167\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].ref_point.longint.value) << 
                                          " map.road_segments[0].elements[z].ref_point.longint.value: " << ros->map.road_segments[0].elements[z].ref_point.longint.value;
                         }
                         
@@ -3088,7 +3088,7 @@ namespace wind
                             
                             // FLOAT  min(-4096) max(61439) span(65536) scaleDivisor(10.0) dataType(Float)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000168\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].ref_point.elevation[0].value) << 
+                                logger->print() << "|\033[38;5;94m000168\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].ref_point.elevation[0].value) << 
                                              " map.road_segments[0].elements[z].ref_point.elevation[0].value: " << ros->map.road_segments[0].elements[z].ref_point.elevation[0].value;
                             }
                             
@@ -3121,7 +3121,7 @@ namespace wind
                         
                         // UINT16  min(0) max(32767) span(32768) dataType(UInt16)
                         if(debug) {
-                            logger->debug() << "|\033[38;5;94m000169\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].lane_width[0].value) << 
+                            logger->print() << "|\033[38;5;94m000169\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].lane_width[0].value) << 
                                          " map.road_segments[0].elements[z].lane_width[0].value: " << ros->map.road_segments[0].elements[z].lane_width[0].value;
                         }
                         
@@ -3165,7 +3165,7 @@ namespace wind
                                 // INT32  min(0) max(12) span(13) dataType(Int32)
                                 uint8_t* _ext_flag_84 = (uint8_t*) buffer++; // Write extension flag for ros->map.road_segments[0].elements[z].speed_limits[0].elements[b].type.
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000171\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].speed_limits[0].elements[b].type.value) << 
+                                    logger->print() << "|\033[38;5;94m000171\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].speed_limits[0].elements[b].type.value) << 
                                                  " map.road_segments[0].elements[z].speed_limits[0].elements[b].type.value: " << static_cast<int>(ros->map.road_segments[0].elements[z].speed_limits[0].elements[b].type.value);
                                 }
                                 
@@ -3189,7 +3189,7 @@ namespace wind
                                 
                                 // UINT16  min(0) max(8191) span(8192) dataType(UInt16)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000172\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].speed_limits[0].elements[b].speed.value) << 
+                                    logger->print() << "|\033[38;5;94m000172\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].speed_limits[0].elements[b].speed.value) << 
                                                  " map.road_segments[0].elements[z].speed_limits[0].elements[b].speed.value: " << ros->map.road_segments[0].elements[z].speed_limits[0].elements[b].speed.value;
                                 }
                                 
@@ -3243,38 +3243,38 @@ namespace wind
                             char* _tmp_177 = (char*) buffer++;
                             *_tmp_177 = (ros->map.road_segments[0].elements[z].road_lane_set.elements[c].name.size() != 0 ? 1 : 0);
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m000174\033[0m| Optional field name = " << *_tmp_177;
+                                logger->print() << "|\033[38;5;94m000174\033[0m| Optional field name = " << *_tmp_177;
                             char* _tmp_178 = (char*) buffer++;
                             *_tmp_178 = (ros->map.road_segments[0].elements[z].road_lane_set.elements[c].ingress_approach.size() != 0 ? 1 : 0);
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m000175\033[0m| Optional field ingress_approach = " << *_tmp_178;
+                                logger->print() << "|\033[38;5;94m000175\033[0m| Optional field ingress_approach = " << *_tmp_178;
                             char* _tmp_179 = (char*) buffer++;
                             *_tmp_179 = (ros->map.road_segments[0].elements[z].road_lane_set.elements[c].egress_approach.size() != 0 ? 1 : 0);
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m000176\033[0m| Optional field egress_approach = " << *_tmp_179;
+                                logger->print() << "|\033[38;5;94m000176\033[0m| Optional field egress_approach = " << *_tmp_179;
                             char* _tmp_180 = (char*) buffer++;
                             *_tmp_180 = (ros->map.road_segments[0].elements[z].road_lane_set.elements[c].maneuvers.size() != 0 ? 1 : 0);
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m000177\033[0m| Optional field maneuvers = " << *_tmp_180;
+                                logger->print() << "|\033[38;5;94m000177\033[0m| Optional field maneuvers = " << *_tmp_180;
                             char* _tmp_181 = (char*) buffer++;
                             *_tmp_181 = (ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to.size() != 0 ? 1 : 0);
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m000178\033[0m| Optional field connects_to = " << *_tmp_181;
+                                logger->print() << "|\033[38;5;94m000178\033[0m| Optional field connects_to = " << *_tmp_181;
                             char* _tmp_182 = (char*) buffer++;
                             *_tmp_182 = (ros->map.road_segments[0].elements[z].road_lane_set.elements[c].overlays.size() != 0 ? 1 : 0);
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m000179\033[0m| Optional field overlays = " << *_tmp_182;
+                                logger->print() << "|\033[38;5;94m000179\033[0m| Optional field overlays = " << *_tmp_182;
                             char* _tmp_183 = (char*) buffer++;
                             *_tmp_183 = (ros->map.road_segments[0].elements[z].road_lane_set.elements[c].regional.size() != 0 ? 1 : 0);
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m000180\033[0m| Optional field regional = " << *_tmp_183;
+                                logger->print() << "|\033[38;5;94m000180\033[0m| Optional field regional = " << *_tmp_183;
                             
                             // Field:  type(LaneID) name(lane_id) extGroup(0)
                             // Integer
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->debug() << "|\033[38;5;94m000181\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].lane_id.value) << 
+                                logger->print() << "|\033[38;5;94m000181\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].lane_id.value) << 
                                              " map.road_segments[0].elements[z].road_lane_set.elements[c].lane_id.value: " << static_cast<int>(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].lane_id.value);
                             }
                             
@@ -3310,7 +3310,7 @@ namespace wind
                                     return -1;
                                 }
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000182\033[0m| map.road_segments[0].elements[z].road_lane_set.elements[c].name[0].value.size(): " << 
+                                    logger->print() << "|\033[38;5;94m000182\033[0m| map.road_segments[0].elements[z].road_lane_set.elements[c].name[0].value.size(): " << 
                                                 static_cast<int>(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].name[0].value.size());
                                 
                                 if(__aux64__ > 63) __aux64__ = 63;
@@ -3330,7 +3330,7 @@ namespace wind
                                 
                                 // UINT8  min(0) max(15) span(16) dataType(UInt8)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000183\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].ingress_approach[0].value) << 
+                                    logger->print() << "|\033[38;5;94m000183\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].ingress_approach[0].value) << 
                                                  " map.road_segments[0].elements[z].road_lane_set.elements[c].ingress_approach[0].value: " << static_cast<int>(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].ingress_approach[0].value);
                                 }
                                 
@@ -3356,7 +3356,7 @@ namespace wind
                                 
                                 // UINT8  min(0) max(15) span(16) dataType(UInt8)
                                 if(debug) {
-                                    logger->debug() << "|\033[38;5;94m000184\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].egress_approach[0].value) << 
+                                    logger->print() << "|\033[38;5;94m000184\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].egress_approach[0].value) << 
                                                  " map.road_segments[0].elements[z].road_lane_set.elements[c].egress_approach[0].value: " << static_cast<int>(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].egress_approach[0].value);
                                 }
                                 
@@ -3386,13 +3386,13 @@ namespace wind
                                 char* _tmp_188 = (char*) buffer++;
                                 *_tmp_188 = (ros->map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.regional.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000185\033[0m| Optional field regional = " << *_tmp_188;
+                                    logger->print() << "|\033[38;5;94m000185\033[0m| Optional field regional = " << *_tmp_188;
                                 
                                 // Field:  type(LaneDirection) name(directional_use) extGroup(0)
                                 // BitString
                                 // BIT_STRING  min(2) max(2) span(1)
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000186\033[0m| map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.directional_use.value: " << static_cast<int>(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.directional_use.values.size());
+                                    logger->print() << "|\033[38;5;94m000186\033[0m| map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.directional_use.value: " << static_cast<int>(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.directional_use.values.size());
                                 
                                 if(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.directional_use.values.size() < 2) {
                                         logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.directional_use.value' " << (ros->map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.directional_use.values.size()) << " is less than allowable (2); message dropped.";
@@ -3419,7 +3419,7 @@ namespace wind
                                 // BitString
                                 // BIT_STRING  min(10) max(10) span(1)
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000187\033[0m| map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.shared_with.value: " << static_cast<int>(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.shared_with.values.size());
+                                    logger->print() << "|\033[38;5;94m000187\033[0m| map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.shared_with.value: " << static_cast<int>(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.shared_with.values.size());
                                 
                                 if(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.shared_with.values.size() < 10) {
                                         logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.shared_with.value' " << (ros->map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.shared_with.values.size()) << " is less than allowable (10); message dropped.";
@@ -3468,7 +3468,7 @@ namespace wind
                                     // BitString
                                     // BIT_STRING  min(8) max(8) span(1)
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m000189\033[0m| map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.vehicle[0].value: " << static_cast<int>(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.vehicle[0].values.size());
+                                        logger->print() << "|\033[38;5;94m000189\033[0m| map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.vehicle[0].value: " << static_cast<int>(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.vehicle[0].values.size());
                                     
                                     if(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.vehicle[0].values.size() < 8) {
                                             logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.vehicle[0].value' " << (ros->map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.vehicle[0].values.size()) << " is less than allowable (8); message dropped.";
@@ -3505,7 +3505,7 @@ namespace wind
                                     // BitString
                                     // BIT_STRING  min(16) max(16) span(1)
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m000191\033[0m| map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.crosswalk[0].value: " << static_cast<int>(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.crosswalk[0].values.size());
+                                        logger->print() << "|\033[38;5;94m000191\033[0m| map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.crosswalk[0].value: " << static_cast<int>(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.crosswalk[0].values.size());
                                     
                                     if(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.crosswalk[0].values.size() < 16) {
                                             logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.crosswalk[0].value' " << (ros->map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.crosswalk[0].values.size()) << " is less than allowable (16); message dropped.";
@@ -3539,7 +3539,7 @@ namespace wind
                                     // BitString
                                     // BIT_STRING  min(16) max(16) span(1)
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m000193\033[0m| map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.bike_lane[0].value: " << static_cast<int>(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.bike_lane[0].values.size());
+                                        logger->print() << "|\033[38;5;94m000193\033[0m| map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.bike_lane[0].value: " << static_cast<int>(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.bike_lane[0].values.size());
                                     
                                     if(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.bike_lane[0].values.size() < 16) {
                                             logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.bike_lane[0].value' " << (ros->map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.bike_lane[0].values.size()) << " is less than allowable (16); message dropped.";
@@ -3573,7 +3573,7 @@ namespace wind
                                     // BitString
                                     // BIT_STRING  min(16) max(16) span(1)
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m000195\033[0m| map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.sidewalk[0].value: " << static_cast<int>(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.sidewalk[0].values.size());
+                                        logger->print() << "|\033[38;5;94m000195\033[0m| map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.sidewalk[0].value: " << static_cast<int>(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.sidewalk[0].values.size());
                                     
                                     if(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.sidewalk[0].values.size() < 16) {
                                             logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.sidewalk[0].value' " << (ros->map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.sidewalk[0].values.size()) << " is less than allowable (16); message dropped.";
@@ -3607,7 +3607,7 @@ namespace wind
                                     // BitString
                                     // BIT_STRING  min(16) max(16) span(1)
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m000197\033[0m| map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.median[0].value: " << static_cast<int>(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.median[0].values.size());
+                                        logger->print() << "|\033[38;5;94m000197\033[0m| map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.median[0].value: " << static_cast<int>(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.median[0].values.size());
                                     
                                     if(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.median[0].values.size() < 16) {
                                             logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.median[0].value' " << (ros->map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.median[0].values.size()) << " is less than allowable (16); message dropped.";
@@ -3641,7 +3641,7 @@ namespace wind
                                     // BitString
                                     // BIT_STRING  min(16) max(16) span(1)
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m000199\033[0m| map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.striping[0].value: " << static_cast<int>(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.striping[0].values.size());
+                                        logger->print() << "|\033[38;5;94m000199\033[0m| map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.striping[0].value: " << static_cast<int>(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.striping[0].values.size());
                                     
                                     if(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.striping[0].values.size() < 16) {
                                             logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.striping[0].value' " << (ros->map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.striping[0].values.size()) << " is less than allowable (16); message dropped.";
@@ -3675,7 +3675,7 @@ namespace wind
                                     // BitString
                                     // BIT_STRING  min(16) max(16) span(1)
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m000201\033[0m| map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.tracked_vehicle[0].value: " << static_cast<int>(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.tracked_vehicle[0].values.size());
+                                        logger->print() << "|\033[38;5;94m000201\033[0m| map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.tracked_vehicle[0].value: " << static_cast<int>(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.tracked_vehicle[0].values.size());
                                     
                                     if(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.tracked_vehicle[0].values.size() < 16) {
                                             logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.tracked_vehicle[0].value' " << (ros->map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.tracked_vehicle[0].values.size()) << " is less than allowable (16); message dropped.";
@@ -3709,7 +3709,7 @@ namespace wind
                                     // BitString
                                     // BIT_STRING  min(16) max(16) span(1)
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m000203\033[0m| map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.parking[0].value: " << static_cast<int>(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.parking[0].values.size());
+                                        logger->print() << "|\033[38;5;94m000203\033[0m| map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.parking[0].value: " << static_cast<int>(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.parking[0].values.size());
                                     
                                     if(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.parking[0].values.size() < 16) {
                                             logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.parking[0].value' " << (ros->map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.parking[0].values.size()) << " is less than allowable (16); message dropped.";
@@ -3746,7 +3746,7 @@ namespace wind
                                 // BitString
                                 // BIT_STRING  min(12) max(12) span(1)
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000204\033[0m| map.road_segments[0].elements[z].road_lane_set.elements[c].maneuvers[0].value: " << static_cast<int>(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].maneuvers[0].values.size());
+                                    logger->print() << "|\033[38;5;94m000204\033[0m| map.road_segments[0].elements[z].road_lane_set.elements[c].maneuvers[0].value: " << static_cast<int>(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].maneuvers[0].values.size());
                                 
                                 if(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].maneuvers[0].values.size() < 12) {
                                         logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].maneuvers[0].value' " << (ros->map.road_segments[0].elements[z].road_lane_set.elements[c].maneuvers[0].values.size()) << " is less than allowable (12); message dropped.";
@@ -3810,7 +3810,7 @@ namespace wind
                                         char* _tmp_201 = (char*) buffer++;
                                         *_tmp_201 = (ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000207\033[0m| Optional field attributes = " << *_tmp_201;
+                                            logger->print() << "|\033[38;5;94m000207\033[0m| Optional field attributes = " << *_tmp_201;
                                         
                                         // Field:  type(NodeOffsetPointXY) name(delta) extGroup(0)
                                         // Choice
@@ -3841,7 +3841,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(-512) max(511) span(1024) scaleDivisor(100.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000209\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy1[0].x.value) << 
+                                                    logger->print() << "|\033[38;5;94m000209\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy1[0].x.value) << 
                                                                  " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy1[0].x.value: " << ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy1[0].x.value;
                                                 }
                                                 
@@ -3868,7 +3868,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(-512) max(511) span(1024) scaleDivisor(100.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000210\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy1[0].y.value) << 
+                                                    logger->print() << "|\033[38;5;94m000210\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy1[0].y.value) << 
                                                                  " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy1[0].y.value: " << ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy1[0].y.value;
                                                 }
                                                 
@@ -3908,7 +3908,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(-1024) max(1023) span(2048) scaleDivisor(100.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000212\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy2[0].x.value) << 
+                                                    logger->print() << "|\033[38;5;94m000212\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy2[0].x.value) << 
                                                                  " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy2[0].x.value: " << ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy2[0].x.value;
                                                 }
                                                 
@@ -3935,7 +3935,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(-1024) max(1023) span(2048) scaleDivisor(100.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000213\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy2[0].y.value) << 
+                                                    logger->print() << "|\033[38;5;94m000213\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy2[0].y.value) << 
                                                                  " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy2[0].y.value: " << ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy2[0].y.value;
                                                 }
                                                 
@@ -3975,7 +3975,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(-2048) max(2047) span(4096) scaleDivisor(100.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000215\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy3[0].x.value) << 
+                                                    logger->print() << "|\033[38;5;94m000215\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy3[0].x.value) << 
                                                                  " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy3[0].x.value: " << ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy3[0].x.value;
                                                 }
                                                 
@@ -4002,7 +4002,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(-2048) max(2047) span(4096) scaleDivisor(100.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000216\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy3[0].y.value) << 
+                                                    logger->print() << "|\033[38;5;94m000216\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy3[0].y.value) << 
                                                                  " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy3[0].y.value: " << ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy3[0].y.value;
                                                 }
                                                 
@@ -4042,7 +4042,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(-4096) max(4095) span(8192) scaleDivisor(100.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000218\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy4[0].x.value) << 
+                                                    logger->print() << "|\033[38;5;94m000218\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy4[0].x.value) << 
                                                                  " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy4[0].x.value: " << ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy4[0].x.value;
                                                 }
                                                 
@@ -4069,7 +4069,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(-4096) max(4095) span(8192) scaleDivisor(100.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000219\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy4[0].y.value) << 
+                                                    logger->print() << "|\033[38;5;94m000219\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy4[0].y.value) << 
                                                                  " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy4[0].y.value: " << ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy4[0].y.value;
                                                 }
                                                 
@@ -4109,7 +4109,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(-8192) max(8191) span(16384) scaleDivisor(100.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000221\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy5[0].x.value) << 
+                                                    logger->print() << "|\033[38;5;94m000221\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy5[0].x.value) << 
                                                                  " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy5[0].x.value: " << ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy5[0].x.value;
                                                 }
                                                 
@@ -4136,7 +4136,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(-8192) max(8191) span(16384) scaleDivisor(100.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000222\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy5[0].y.value) << 
+                                                    logger->print() << "|\033[38;5;94m000222\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy5[0].y.value) << 
                                                                  " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy5[0].y.value: " << ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy5[0].y.value;
                                                 }
                                                 
@@ -4176,7 +4176,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000224\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy6[0].x.value) << 
+                                                    logger->print() << "|\033[38;5;94m000224\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy6[0].x.value) << 
                                                                  " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy6[0].x.value: " << ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy6[0].x.value;
                                                 }
                                                 
@@ -4203,7 +4203,7 @@ namespace wind
                                                 
                                                 // FLOAT  min(-32768) max(32767) span(65536) scaleDivisor(100.0) dataType(Float)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000225\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy6[0].y.value) << 
+                                                    logger->print() << "|\033[38;5;94m000225\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy6[0].y.value) << 
                                                                  " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy6[0].y.value: " << ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy6[0].y.value;
                                                 }
                                                 
@@ -4243,7 +4243,7 @@ namespace wind
                                                 
                                                 // DOUBLE  min(-1800000000) max(1800000001) span(3600000002) scaleDivisor(1.0E7) dataType(Double)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000227\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_lat_lon[0].lon.value) << 
+                                                    logger->print() << "|\033[38;5;94m000227\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_lat_lon[0].lon.value) << 
                                                                  " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_lat_lon[0].lon.value: " << ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_lat_lon[0].lon.value;
                                                 }
                                                 
@@ -4270,7 +4270,7 @@ namespace wind
                                                 
                                                 // DOUBLE  min(-900000000) max(900000001) span(1800000002) scaleDivisor(1.0E7) dataType(Double)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000228\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_lat_lon[0].lat.value) << 
+                                                    logger->print() << "|\033[38;5;94m000228\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_lat_lon[0].lat.value) << 
                                                                  " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_lat_lon[0].lat.value: " << ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_lat_lon[0].lat.value;
                                                 }
                                                 
@@ -4318,31 +4318,31 @@ namespace wind
                                                 char* _tmp_230 = (char*) buffer++;
                                                 *_tmp_230 = (ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].local_node.size() != 0 ? 1 : 0);
                                                 if(debug)
-                                                    logger->debug() << "|\033[38;5;94m000229\033[0m| Optional field local_node = " << *_tmp_230;
+                                                    logger->print() << "|\033[38;5;94m000229\033[0m| Optional field local_node = " << *_tmp_230;
                                                 char* _tmp_231 = (char*) buffer++;
                                                 *_tmp_231 = (ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].disabled.size() != 0 ? 1 : 0);
                                                 if(debug)
-                                                    logger->debug() << "|\033[38;5;94m000230\033[0m| Optional field disabled = " << *_tmp_231;
+                                                    logger->print() << "|\033[38;5;94m000230\033[0m| Optional field disabled = " << *_tmp_231;
                                                 char* _tmp_232 = (char*) buffer++;
                                                 *_tmp_232 = (ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].enabled.size() != 0 ? 1 : 0);
                                                 if(debug)
-                                                    logger->debug() << "|\033[38;5;94m000231\033[0m| Optional field enabled = " << *_tmp_232;
+                                                    logger->print() << "|\033[38;5;94m000231\033[0m| Optional field enabled = " << *_tmp_232;
                                                 char* _tmp_233 = (char*) buffer++;
                                                 *_tmp_233 = (ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data.size() != 0 ? 1 : 0);
                                                 if(debug)
-                                                    logger->debug() << "|\033[38;5;94m000232\033[0m| Optional field data = " << *_tmp_233;
+                                                    logger->print() << "|\033[38;5;94m000232\033[0m| Optional field data = " << *_tmp_233;
                                                 char* _tmp_234 = (char*) buffer++;
                                                 *_tmp_234 = (ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].d_width.size() != 0 ? 1 : 0);
                                                 if(debug)
-                                                    logger->debug() << "|\033[38;5;94m000233\033[0m| Optional field d_width = " << *_tmp_234;
+                                                    logger->print() << "|\033[38;5;94m000233\033[0m| Optional field d_width = " << *_tmp_234;
                                                 char* _tmp_235 = (char*) buffer++;
                                                 *_tmp_235 = (ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].d_elevation.size() != 0 ? 1 : 0);
                                                 if(debug)
-                                                    logger->debug() << "|\033[38;5;94m000234\033[0m| Optional field d_elevation = " << *_tmp_235;
+                                                    logger->print() << "|\033[38;5;94m000234\033[0m| Optional field d_elevation = " << *_tmp_235;
                                                 char* _tmp_236 = (char*) buffer++;
                                                 *_tmp_236 = (ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].regional.size() != 0 ? 1 : 0);
                                                 if(debug)
-                                                    logger->debug() << "|\033[38;5;94m000235\033[0m| Optional field regional = " << *_tmp_236;
+                                                    logger->print() << "|\033[38;5;94m000235\033[0m| Optional field regional = " << *_tmp_236;
                                                 
                                                 if(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].local_node.size() != 0) {
                                                     // Field:  type(NodeAttributeXYList) name(local_node) extGroup(0)
@@ -4362,7 +4362,7 @@ namespace wind
                                                         // INT32  min(0) max(11) span(12) dataType(Int32)
                                                         uint8_t* _ext_flag_110 = (uint8_t*) buffer++; // Write extension flag for ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].local_node[0].elements[q].
                                                         if(debug) {
-                                                            logger->debug() << "|\033[38;5;94m000237\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].local_node[0].elements[q].value) << 
+                                                            logger->print() << "|\033[38;5;94m000237\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].local_node[0].elements[q].value) << 
                                                                          " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].local_node[0].elements[q].value: " << static_cast<int>(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].local_node[0].elements[q].value);
                                                         }
                                                         
@@ -4403,7 +4403,7 @@ namespace wind
                                                         // INT32  min(0) max(37) span(38) dataType(Int32)
                                                         uint8_t* _ext_flag_111 = (uint8_t*) buffer++; // Write extension flag for ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].disabled[0].elements[r].
                                                         if(debug) {
-                                                            logger->debug() << "|\033[38;5;94m000239\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].disabled[0].elements[r].value) << 
+                                                            logger->print() << "|\033[38;5;94m000239\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].disabled[0].elements[r].value) << 
                                                                          " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].disabled[0].elements[r].value: " << static_cast<int>(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].disabled[0].elements[r].value);
                                                         }
                                                         
@@ -4444,7 +4444,7 @@ namespace wind
                                                         // INT32  min(0) max(37) span(38) dataType(Int32)
                                                         uint8_t* _ext_flag_112 = (uint8_t*) buffer++; // Write extension flag for ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].enabled[0].elements[s].
                                                         if(debug) {
-                                                            logger->debug() << "|\033[38;5;94m000241\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].enabled[0].elements[s].value) << 
+                                                            logger->print() << "|\033[38;5;94m000241\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].enabled[0].elements[s].value) << 
                                                                          " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].enabled[0].elements[s].value: " << static_cast<int>(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].enabled[0].elements[s].value);
                                                         }
                                                         
@@ -4506,7 +4506,7 @@ namespace wind
                                                             
                                                             // INT16  min(-150) max(150) span(301) dataType(Int16)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m000244\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].path_end_point_angle[0].value) << 
+                                                                logger->print() << "|\033[38;5;94m000244\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].path_end_point_angle[0].value) << 
                                                                              " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].path_end_point_angle[0].value: " << ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].path_end_point_angle[0].value;
                                                             }
                                                             
@@ -4538,7 +4538,7 @@ namespace wind
                                                             
                                                             // INT8  min(-128) max(127) span(256) dataType(Int8)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m000246\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].lane_crown_point_center[0].value) << 
+                                                                logger->print() << "|\033[38;5;94m000246\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].lane_crown_point_center[0].value) << 
                                                                              " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].lane_crown_point_center[0].value: " << static_cast<int>(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].lane_crown_point_center[0].value);
                                                             }
                                                             
@@ -4570,7 +4570,7 @@ namespace wind
                                                             
                                                             // INT8  min(-128) max(127) span(256) dataType(Int8)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m000248\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].lane_crown_point_left[0].value) << 
+                                                                logger->print() << "|\033[38;5;94m000248\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].lane_crown_point_left[0].value) << 
                                                                              " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].lane_crown_point_left[0].value: " << static_cast<int>(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].lane_crown_point_left[0].value);
                                                             }
                                                             
@@ -4602,7 +4602,7 @@ namespace wind
                                                             
                                                             // INT8  min(-128) max(127) span(256) dataType(Int8)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m000250\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].lane_crown_point_right[0].value) << 
+                                                                logger->print() << "|\033[38;5;94m000250\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].lane_crown_point_right[0].value) << 
                                                                              " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].lane_crown_point_right[0].value: " << static_cast<int>(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].lane_crown_point_right[0].value);
                                                             }
                                                             
@@ -4634,7 +4634,7 @@ namespace wind
                                                             
                                                             // INT16  min(-180) max(180) span(361) dataType(Int16)
                                                             if(debug) {
-                                                                logger->debug() << "|\033[38;5;94m000252\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].lane_angle[0].value) << 
+                                                                logger->print() << "|\033[38;5;94m000252\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].lane_angle[0].value) << 
                                                                              " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].lane_angle[0].value: " << ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].lane_angle[0].value;
                                                             }
                                                             
@@ -4684,7 +4684,7 @@ namespace wind
                                                                     // INT32  min(0) max(12) span(13) dataType(Int32)
                                                                     uint8_t* _ext_flag_119 = (uint8_t*) buffer++; // Write extension flag for ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].speed_limits[0].elements[u].type.
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000255\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].speed_limits[0].elements[u].type.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000255\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].speed_limits[0].elements[u].type.value) << 
                                                                                      " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].speed_limits[0].elements[u].type.value: " << static_cast<int>(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].speed_limits[0].elements[u].type.value);
                                                                     }
                                                                     
@@ -4708,7 +4708,7 @@ namespace wind
                                                                     
                                                                     // UINT16  min(0) max(8191) span(8192) dataType(UInt16)
                                                                     if(debug) {
-                                                                        logger->debug() << "|\033[38;5;94m000256\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].speed_limits[0].elements[u].speed.value) << 
+                                                                        logger->print() << "|\033[38;5;94m000256\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].speed_limits[0].elements[u].speed.value) << 
                                                                                      " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].speed_limits[0].elements[u].speed.value: " << ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].speed_limits[0].elements[u].speed.value;
                                                                     }
                                                                     
@@ -4745,7 +4745,7 @@ namespace wind
                                                     
                                                     // FLOAT  min(-512) max(511) span(1024) scaleDivisor(100.0) dataType(Float)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m000257\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].d_width[0].value) << 
+                                                        logger->print() << "|\033[38;5;94m000257\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].d_width[0].value) << 
                                                                      " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].d_width[0].value: " << ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].d_width[0].value;
                                                     }
                                                     
@@ -4774,7 +4774,7 @@ namespace wind
                                                     
                                                     // FLOAT  min(-512) max(511) span(1024) scaleDivisor(100.0) dataType(Float)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m000258\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].d_elevation[0].value) << 
+                                                        logger->print() << "|\033[38;5;94m000258\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].d_elevation[0].value) << 
                                                                      " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].d_elevation[0].value: " << ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].d_elevation[0].value;
                                                     }
                                                     
@@ -4830,26 +4830,26 @@ namespace wind
                                     char* _tmp_258 = (char*) buffer++;
                                     *_tmp_258 = (ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].rotate_xy.size() != 0 ? 1 : 0);
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m000260\033[0m| Optional field rotate_xy = " << *_tmp_258;
+                                        logger->print() << "|\033[38;5;94m000260\033[0m| Optional field rotate_xy = " << *_tmp_258;
                                     char* _tmp_259 = (char*) buffer++;
                                     *_tmp_259 = (ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].scale_xaxis.size() != 0 ? 1 : 0);
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m000261\033[0m| Optional field scale_xaxis = " << *_tmp_259;
+                                        logger->print() << "|\033[38;5;94m000261\033[0m| Optional field scale_xaxis = " << *_tmp_259;
                                     char* _tmp_260 = (char*) buffer++;
                                     *_tmp_260 = (ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].scale_yaxis.size() != 0 ? 1 : 0);
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m000262\033[0m| Optional field scale_yaxis = " << *_tmp_260;
+                                        logger->print() << "|\033[38;5;94m000262\033[0m| Optional field scale_yaxis = " << *_tmp_260;
                                     char* _tmp_261 = (char*) buffer++;
                                     *_tmp_261 = (ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].regional.size() != 0 ? 1 : 0);
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m000263\033[0m| Optional field regional = " << *_tmp_261;
+                                        logger->print() << "|\033[38;5;94m000263\033[0m| Optional field regional = " << *_tmp_261;
                                     
                                     // Field:  type(LaneID) name(reference_lane_id) extGroup(0)
                                     // Integer
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000264\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].reference_lane_id.value) << 
+                                        logger->print() << "|\033[38;5;94m000264\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].reference_lane_id.value) << 
                                                      " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].reference_lane_id.value: " << static_cast<int>(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].reference_lane_id.value);
                                     }
                                     
@@ -4885,7 +4885,7 @@ namespace wind
                                         
                                         // INT16  min(-2047) max(2047) span(4095) dataType(Int16)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000266\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].offset_xaxis.small[0].value) << 
+                                            logger->print() << "|\033[38;5;94m000266\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].offset_xaxis.small[0].value) << 
                                                          " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].offset_xaxis.small[0].value: " << ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].offset_xaxis.small[0].value;
                                         }
                                         
@@ -4917,7 +4917,7 @@ namespace wind
                                         
                                         // INT16  min(-32767) max(32767) span(65535) dataType(Int16)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000268\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].offset_xaxis.large[0].value) << 
+                                            logger->print() << "|\033[38;5;94m000268\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].offset_xaxis.large[0].value) << 
                                                          " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].offset_xaxis.large[0].value: " << ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].offset_xaxis.large[0].value;
                                         }
                                         
@@ -4961,7 +4961,7 @@ namespace wind
                                         
                                         // INT16  min(-2047) max(2047) span(4095) dataType(Int16)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000270\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].offset_yaxis.small[0].value) << 
+                                            logger->print() << "|\033[38;5;94m000270\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].offset_yaxis.small[0].value) << 
                                                          " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].offset_yaxis.small[0].value: " << ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].offset_yaxis.small[0].value;
                                         }
                                         
@@ -4993,7 +4993,7 @@ namespace wind
                                         
                                         // INT16  min(-32767) max(32767) span(65535) dataType(Int16)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000272\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].offset_yaxis.large[0].value) << 
+                                            logger->print() << "|\033[38;5;94m000272\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].offset_yaxis.large[0].value) << 
                                                          " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].offset_yaxis.large[0].value: " << ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].offset_yaxis.large[0].value;
                                         }
                                         
@@ -5026,7 +5026,7 @@ namespace wind
                                         
                                         // UINT16  min(0) max(28800) span(28801) dataType(UInt16)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000273\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].rotate_xy[0].value) << 
+                                            logger->print() << "|\033[38;5;94m000273\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].rotate_xy[0].value) << 
                                                          " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].rotate_xy[0].value: " << ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].rotate_xy[0].value;
                                         }
                                         
@@ -5052,7 +5052,7 @@ namespace wind
                                         
                                         // INT16  min(-2048) max(2047) span(4096) dataType(Int16)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000274\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].scale_xaxis[0].value) << 
+                                            logger->print() << "|\033[38;5;94m000274\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].scale_xaxis[0].value) << 
                                                          " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].scale_xaxis[0].value: " << ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].scale_xaxis[0].value;
                                         }
                                         
@@ -5079,7 +5079,7 @@ namespace wind
                                         
                                         // INT16  min(-2048) max(2047) span(4096) dataType(Int16)
                                         if(debug) {
-                                            logger->debug() << "|\033[38;5;94m000275\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].scale_yaxis[0].value) << 
+                                            logger->print() << "|\033[38;5;94m000275\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].scale_yaxis[0].value) << 
                                                          " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].scale_yaxis[0].value: " << ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].scale_yaxis[0].value;
                                         }
                                         
@@ -5135,19 +5135,19 @@ namespace wind
                                         char* _tmp_272 = (char*) buffer++;
                                         *_tmp_272 = (ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].remote_intersection.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000277\033[0m| Optional field remote_intersection = " << *_tmp_272;
+                                            logger->print() << "|\033[38;5;94m000277\033[0m| Optional field remote_intersection = " << *_tmp_272;
                                         char* _tmp_273 = (char*) buffer++;
                                         *_tmp_273 = (ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].signal_group.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000278\033[0m| Optional field signal_group = " << *_tmp_273;
+                                            logger->print() << "|\033[38;5;94m000278\033[0m| Optional field signal_group = " << *_tmp_273;
                                         char* _tmp_274 = (char*) buffer++;
                                         *_tmp_274 = (ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].user_class.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000279\033[0m| Optional field user_class = " << *_tmp_274;
+                                            logger->print() << "|\033[38;5;94m000279\033[0m| Optional field user_class = " << *_tmp_274;
                                         char* _tmp_275 = (char*) buffer++;
                                         *_tmp_275 = (ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].connection_id.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->debug() << "|\033[38;5;94m000280\033[0m| Optional field connection_id = " << *_tmp_275;
+                                            logger->print() << "|\033[38;5;94m000280\033[0m| Optional field connection_id = " << *_tmp_275;
                                         
                                         // Field:  type(ConnectingLane) name(connecting_lane) extGroup(0)
                                             // ConnectingLane  SEQUENCE
@@ -5157,14 +5157,14 @@ namespace wind
                                             char* _tmp_276 = (char*) buffer++;
                                             *_tmp_276 = (ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].connecting_lane.maneuver.size() != 0 ? 1 : 0);
                                             if(debug)
-                                                logger->debug() << "|\033[38;5;94m000281\033[0m| Optional field maneuver = " << *_tmp_276;
+                                                logger->print() << "|\033[38;5;94m000281\033[0m| Optional field maneuver = " << *_tmp_276;
                                             
                                             // Field:  type(LaneID) name(lane) extGroup(0)
                                             // Integer
                                             
                                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000282\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].connecting_lane.lane.value) << 
+                                                logger->print() << "|\033[38;5;94m000282\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].connecting_lane.lane.value) << 
                                                              " map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].connecting_lane.lane.value: " << static_cast<int>(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].connecting_lane.lane.value);
                                             }
                                             
@@ -5188,7 +5188,7 @@ namespace wind
                                                 // BitString
                                                 // BIT_STRING  min(12) max(12) span(1)
                                                 if(debug)
-                                                    logger->debug() << "|\033[38;5;94m000283\033[0m| map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].connecting_lane.maneuver[0].value: " << static_cast<int>(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].connecting_lane.maneuver[0].values.size());
+                                                    logger->print() << "|\033[38;5;94m000283\033[0m| map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].connecting_lane.maneuver[0].value: " << static_cast<int>(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].connecting_lane.maneuver[0].values.size());
                                                 
                                                 if(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].connecting_lane.maneuver[0].values.size() < 12) {
                                                         logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].connecting_lane.maneuver[0].value' " << (ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].connecting_lane.maneuver[0].values.size()) << " is less than allowable (12); message dropped.";
@@ -5221,7 +5221,7 @@ namespace wind
                                                 char* _tmp_279 = (char*) buffer++;
                                                 *_tmp_279 = (ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].remote_intersection[0].region.size() != 0 ? 1 : 0);
                                                 if(debug)
-                                                    logger->debug() << "|\033[38;5;94m000284\033[0m| Optional field region = " << *_tmp_279;
+                                                    logger->print() << "|\033[38;5;94m000284\033[0m| Optional field region = " << *_tmp_279;
                                                 
                                                 if(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].remote_intersection[0].region.size() != 0) {
                                                     // Field:  type(RoadRegulatorID) name(region) extGroup(0)
@@ -5229,7 +5229,7 @@ namespace wind
                                                     
                                                     // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                     if(debug) {
-                                                        logger->debug() << "|\033[38;5;94m000285\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].remote_intersection[0].region[0].value) << 
+                                                        logger->print() << "|\033[38;5;94m000285\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].remote_intersection[0].region[0].value) << 
                                                                      " map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].remote_intersection[0].region[0].value: " << ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].remote_intersection[0].region[0].value;
                                                     }
                                                     
@@ -5254,7 +5254,7 @@ namespace wind
                                                 
                                                 // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                                                 if(debug) {
-                                                    logger->debug() << "|\033[38;5;94m000286\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].remote_intersection[0].id.value) << 
+                                                    logger->print() << "|\033[38;5;94m000286\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].remote_intersection[0].id.value) << 
                                                                  " map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].remote_intersection[0].id.value: " << ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].remote_intersection[0].id.value;
                                                 }
                                                 
@@ -5280,7 +5280,7 @@ namespace wind
                                             
                                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000287\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].signal_group[0].value) << 
+                                                logger->print() << "|\033[38;5;94m000287\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].signal_group[0].value) << 
                                                              " map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].signal_group[0].value: " << static_cast<int>(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].signal_group[0].value);
                                             }
                                             
@@ -5306,7 +5306,7 @@ namespace wind
                                             
                                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000288\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].user_class[0].value) << 
+                                                logger->print() << "|\033[38;5;94m000288\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].user_class[0].value) << 
                                                              " map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].user_class[0].value: " << static_cast<int>(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].user_class[0].value);
                                             }
                                             
@@ -5332,7 +5332,7 @@ namespace wind
                                             
                                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                             if(debug) {
-                                                logger->debug() << "|\033[38;5;94m000289\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].connection_id[0].value) << 
+                                                logger->print() << "|\033[38;5;94m000289\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].connection_id[0].value) << 
                                                              " map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].connection_id[0].value: " << static_cast<int>(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].connection_id[0].value);
                                             }
                                             
@@ -5373,7 +5373,7 @@ namespace wind
                                     
                                     // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                     if(debug) {
-                                        logger->debug() << "|\033[38;5;94m000291\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].overlays[0].elements[x].value) << 
+                                        logger->print() << "|\033[38;5;94m000291\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].overlays[0].elements[x].value) << 
                                                      " map.road_segments[0].elements[z].road_lane_set.elements[c].overlays[0].elements[x].value: " << static_cast<int>(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].overlays[0].elements[x].value);
                                     }
                                     
@@ -5421,19 +5421,19 @@ namespace wind
                 char* _tmp_289 = (char*) buffer++;
                 *_tmp_289 = (ros->map.data_parameters[0].process_method.size() != 0 ? 1 : 0);
                 if(debug)
-                    logger->debug() << "|\033[38;5;94m000292\033[0m| Optional field process_method = " << *_tmp_289;
+                    logger->print() << "|\033[38;5;94m000292\033[0m| Optional field process_method = " << *_tmp_289;
                 char* _tmp_290 = (char*) buffer++;
                 *_tmp_290 = (ros->map.data_parameters[0].process_agency.size() != 0 ? 1 : 0);
                 if(debug)
-                    logger->debug() << "|\033[38;5;94m000293\033[0m| Optional field process_agency = " << *_tmp_290;
+                    logger->print() << "|\033[38;5;94m000293\033[0m| Optional field process_agency = " << *_tmp_290;
                 char* _tmp_291 = (char*) buffer++;
                 *_tmp_291 = (ros->map.data_parameters[0].last_checked_date.size() != 0 ? 1 : 0);
                 if(debug)
-                    logger->debug() << "|\033[38;5;94m000294\033[0m| Optional field last_checked_date = " << *_tmp_291;
+                    logger->print() << "|\033[38;5;94m000294\033[0m| Optional field last_checked_date = " << *_tmp_291;
                 char* _tmp_292 = (char*) buffer++;
                 *_tmp_292 = (ros->map.data_parameters[0].geoid_used.size() != 0 ? 1 : 0);
                 if(debug)
-                    logger->debug() << "|\033[38;5;94m000295\033[0m| Optional field geoid_used = " << *_tmp_292;
+                    logger->print() << "|\033[38;5;94m000295\033[0m| Optional field geoid_used = " << *_tmp_292;
                 
                 if(ros->map.data_parameters[0].process_method.size() != 0) {
                     // Field:  type(DataParameters_processMethod) name(process_method) extGroup(0)
@@ -5452,7 +5452,7 @@ namespace wind
                         return -1;
                     }
                     if(debug)
-                        logger->debug() << "|\033[38;5;94m000296\033[0m| map.data_parameters[0].process_method[0].value.size(): " << 
+                        logger->print() << "|\033[38;5;94m000296\033[0m| map.data_parameters[0].process_method[0].value.size(): " << 
                                     static_cast<int>(ros->map.data_parameters[0].process_method[0].value.size());
                     
                     if(__aux64__ > 255) __aux64__ = 255;
@@ -5483,7 +5483,7 @@ namespace wind
                         return -1;
                     }
                     if(debug)
-                        logger->debug() << "|\033[38;5;94m000297\033[0m| map.data_parameters[0].process_agency[0].value.size(): " << 
+                        logger->print() << "|\033[38;5;94m000297\033[0m| map.data_parameters[0].process_agency[0].value.size(): " << 
                                     static_cast<int>(ros->map.data_parameters[0].process_agency[0].value.size());
                     
                     if(__aux64__ > 255) __aux64__ = 255;
@@ -5514,7 +5514,7 @@ namespace wind
                         return -1;
                     }
                     if(debug)
-                        logger->debug() << "|\033[38;5;94m000298\033[0m| map.data_parameters[0].last_checked_date[0].value.size(): " << 
+                        logger->print() << "|\033[38;5;94m000298\033[0m| map.data_parameters[0].last_checked_date[0].value.size(): " << 
                                     static_cast<int>(ros->map.data_parameters[0].last_checked_date[0].value.size());
                     
                     if(__aux64__ > 255) __aux64__ = 255;
@@ -5545,7 +5545,7 @@ namespace wind
                         return -1;
                     }
                     if(debug)
-                        logger->debug() << "|\033[38;5;94m000299\033[0m| map.data_parameters[0].geoid_used[0].value.size(): " << 
+                        logger->print() << "|\033[38;5;94m000299\033[0m| map.data_parameters[0].geoid_used[0].value.size(): " << 
                                     static_cast<int>(ros->map.data_parameters[0].geoid_used[0].value.size());
                     
                     if(__aux64__ > 255) __aux64__ = 255;
