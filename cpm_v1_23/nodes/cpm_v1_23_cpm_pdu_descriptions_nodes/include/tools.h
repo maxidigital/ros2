@@ -241,6 +241,11 @@ std::string purple(const std::string& text) {
 }
 
 inline
+std::string brown(const std::string& text) {
+    return BROWN + text + RESET;
+}
+
+inline
 std::string bold(const std::string& text) {
     return BOLD + text + RESET;
 }

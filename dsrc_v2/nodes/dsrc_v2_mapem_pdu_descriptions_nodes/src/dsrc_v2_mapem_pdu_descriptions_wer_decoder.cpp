@@ -63,18 +63,18 @@ namespace wind
         ros->hheader.protocol_version.value = __aux64__;
         
         if(debug) {
-            logger->print() << "|\033[38;5;94m000000\033[0m| " << tools::getTypeName(ros->hheader.protocol_version.value) << 
+            logger->print() << "|" << tools::brown("000000") << "| " << tools::getTypeName(ros->hheader.protocol_version.value) << 
                          " hheader.protocol_version.value: " << static_cast<int>(ros->hheader.protocol_version.value);
         }
         
         // ******************* MIN validator *******************
         if(VALIDATORS_ENABLED && __aux64__ < 0) {
-            logger->warning() << "Error: Value in 'hheader.protocol_version.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+            logger->error() << "Error: Value in 'hheader.protocol_version.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
             return false;
         }
         // ******************* MAX validator *******************
         if(VALIDATORS_ENABLED && __aux64__ > 255) {
-            logger->warning() << "Error: Value in 'hheader.protocol_version.value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
+            logger->error() << "Error: Value in 'hheader.protocol_version.value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
             return false;
         }
         
@@ -86,18 +86,18 @@ namespace wind
         ros->hheader.message_id.value = __aux64__;
         
         if(debug) {
-            logger->print() << "|\033[38;5;94m000001\033[0m| " << tools::getTypeName(ros->hheader.message_id.value) << 
+            logger->print() << "|" << tools::brown("000001") << "| " << tools::getTypeName(ros->hheader.message_id.value) << 
                          " hheader.message_id.value: " << static_cast<int>(ros->hheader.message_id.value);
         }
         
         // ******************* MIN validator *******************
         if(VALIDATORS_ENABLED && __aux64__ < 0) {
-            logger->warning() << "Error: Value in 'hheader.message_id.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+            logger->error() << "Error: Value in 'hheader.message_id.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
             return false;
         }
         // ******************* MAX validator *******************
         if(VALIDATORS_ENABLED && __aux64__ > 255) {
-            logger->warning() << "Error: Value in 'hheader.message_id.value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
+            logger->error() << "Error: Value in 'hheader.message_id.value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
             return false;
         }
         
@@ -109,18 +109,18 @@ namespace wind
         ros->hheader.station_id.value = __aux64__;
         
         if(debug) {
-            logger->print() << "|\033[38;5;94m000002\033[0m| " << tools::getTypeName(ros->hheader.station_id.value) << 
+            logger->print() << "|" << tools::brown("000002") << "| " << tools::getTypeName(ros->hheader.station_id.value) << 
                          " hheader.station_id.value: " << ros->hheader.station_id.value;
         }
         
         // ******************* MIN validator *******************
         if(VALIDATORS_ENABLED && __aux64__ < 0) {
-            logger->warning() << "Error: Value in 'hheader.station_id.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+            logger->error() << "Error: Value in 'hheader.station_id.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
             return false;
         }
         // ******************* MAX validator *******************
         if(VALIDATORS_ENABLED && __aux64__ > 4294967295) {
-            logger->warning() << "Error: Value in 'hheader.station_id.value' " << (__aux64__) << " exceeds max allowable (4294967295); message dropped.";
+            logger->error() << "Error: Value in 'hheader.station_id.value' " << (__aux64__) << " exceeds max allowable (4294967295); message dropped.";
             return false;
         }
     
@@ -139,7 +139,7 @@ namespace wind
         uint8_t* _ext_flag_1 = (uint8_t*) buffer++;  // Read ext flag from ros->map.
         
         if(debug) {
-            logger->print() << "|\033[38;5;94m000003\033[0m| Reading ext flag from ros->map.: " << int(*_ext_flag_1);
+            logger->print() << "|" << tools::brown("000003") << "| Reading ext flag from ros->map.: " << int(*_ext_flag_1);
         }
         
         if(*(buffer++)) { 
@@ -147,56 +147,56 @@ namespace wind
             ros->map.time_stamp.push_back(_tmp_4);
         
             if(debug)
-                logger->print() << "|\033[38;5;94m000004\033[0m| ros->map.time_stamp " << tools::green("present");
+                logger->print() << "|" << tools::brown("000004") << "| ros->map.time_stamp " << tools::green("present");
         }
         if(*(buffer++)) { 
             dsrc_v2_dsrc_msgs::msg::LayerType _tmp_5;
             ros->map.layer_type.push_back(_tmp_5);
         
             if(debug)
-                logger->print() << "|\033[38;5;94m000005\033[0m| ros->map.layer_type " << tools::green("present");
+                logger->print() << "|" << tools::brown("000005") << "| ros->map.layer_type " << tools::green("present");
         }
         if(*(buffer++)) { 
             dsrc_v2_dsrc_msgs::msg::LayerID _tmp_6;
             ros->map.layer_id.push_back(_tmp_6);
         
             if(debug)
-                logger->print() << "|\033[38;5;94m000006\033[0m| ros->map.layer_id " << tools::green("present");
+                logger->print() << "|" << tools::brown("000006") << "| ros->map.layer_id " << tools::green("present");
         }
         if(*(buffer++)) { 
             dsrc_v2_dsrc_msgs::msg::IntersectionGeometryList _tmp_7;
             ros->map.intersections.push_back(_tmp_7);
         
             if(debug)
-                logger->print() << "|\033[38;5;94m000007\033[0m| ros->map.intersections " << tools::green("present");
+                logger->print() << "|" << tools::brown("000007") << "| ros->map.intersections " << tools::green("present");
         }
         if(*(buffer++)) { 
             dsrc_v2_dsrc_msgs::msg::RoadSegmentList _tmp_8;
             ros->map.road_segments.push_back(_tmp_8);
         
             if(debug)
-                logger->print() << "|\033[38;5;94m000008\033[0m| ros->map.road_segments " << tools::green("present");
+                logger->print() << "|" << tools::brown("000008") << "| ros->map.road_segments " << tools::green("present");
         }
         if(*(buffer++)) { 
             dsrc_v2_dsrc_msgs::msg::DataParameters _tmp_9;
             ros->map.data_parameters.push_back(_tmp_9);
         
             if(debug)
-                logger->print() << "|\033[38;5;94m000009\033[0m| ros->map.data_parameters " << tools::green("present");
+                logger->print() << "|" << tools::brown("000009") << "| ros->map.data_parameters " << tools::green("present");
         }
         if(*(buffer++)) { 
             dsrc_v2_dsrc_msgs::msg::RestrictionClassList _tmp_10;
             ros->map.restriction_list.push_back(_tmp_10);
         
             if(debug)
-                logger->print() << "|\033[38;5;94m000010\033[0m| ros->map.restriction_list " << tools::green("present");
+                logger->print() << "|" << tools::brown("000010") << "| ros->map.restriction_list " << tools::green("present");
         }
         if(*(buffer++)) { 
             dsrc_v2_dsrc_msgs::msg::MapDataRegional _tmp_11;
             ros->map.regional.push_back(_tmp_11);
         
             if(debug)
-                logger->print() << "|\033[38;5;94m000011\033[0m| ros->map.regional " << tools::green("present");
+                logger->print() << "|" << tools::brown("000011") << "| ros->map.regional " << tools::green("present");
         }
         
         if(ros->map.time_stamp.size() != 0) {
@@ -208,18 +208,18 @@ namespace wind
             ros->map.time_stamp[0].value = __aux64__;
             
             if(debug) {
-                logger->print() << "|\033[38;5;94m000012\033[0m| " << tools::getTypeName(ros->map.time_stamp[0].value) << 
+                logger->print() << "|" << tools::brown("000012") << "| " << tools::getTypeName(ros->map.time_stamp[0].value) << 
                              " map.time_stamp[0].value: " << ros->map.time_stamp[0].value;
             }
             
             // ******************* MIN validator *******************
             if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                logger->warning() << "Error: Value in 'map.time_stamp[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                logger->error() << "Error: Value in 'map.time_stamp[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                 return false;
             }
             // ******************* MAX validator *******************
             if(VALIDATORS_ENABLED && __aux64__ > 527040) {
-                logger->warning() << "Error: Value in 'map.time_stamp[0].value' " << (__aux64__) << " exceeds max allowable (527040); message dropped.";
+                logger->error() << "Error: Value in 'map.time_stamp[0].value' " << (__aux64__) << " exceeds max allowable (527040); message dropped.";
                 return false;
             }
         }
@@ -232,18 +232,18 @@ namespace wind
         ros->map.msg_issue_revision.value = __aux64__;
         
         if(debug) {
-            logger->print() << "|\033[38;5;94m000013\033[0m| " << tools::getTypeName(ros->map.msg_issue_revision.value) << 
+            logger->print() << "|" << tools::brown("000013") << "| " << tools::getTypeName(ros->map.msg_issue_revision.value) << 
                          " map.msg_issue_revision.value: " << static_cast<int>(ros->map.msg_issue_revision.value);
         }
         
         // ******************* MIN validator *******************
         if(VALIDATORS_ENABLED && __aux64__ < 0) {
-            logger->warning() << "Error: Value in 'map.msg_issue_revision.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+            logger->error() << "Error: Value in 'map.msg_issue_revision.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
             return false;
         }
         // ******************* MAX validator *******************
         if(VALIDATORS_ENABLED && __aux64__ > 127) {
-            logger->warning() << "Error: Value in 'map.msg_issue_revision.value' " << (__aux64__) << " exceeds max allowable (127); message dropped.";
+            logger->error() << "Error: Value in 'map.msg_issue_revision.value' " << (__aux64__) << " exceeds max allowable (127); message dropped.";
             return false;
         }
         
@@ -254,7 +254,7 @@ namespace wind
             uint8_t* _ext_flag_2 = (uint8_t*) buffer++;  // Read ext flag from ros->map.layer_type[0].
             
             if(debug) {
-                logger->print() << "|\033[38;5;94m000014\033[0m| Reading ext flag from ros->map.layer_type[0].: " << int(*_ext_flag_2);
+                logger->print() << "|" << tools::brown("000014") << "| Reading ext flag from ros->map.layer_type[0].: " << int(*_ext_flag_2);
             }
             
             uint8_t* _tmp_14 = (uint8_t*) buffer++;
@@ -263,18 +263,18 @@ namespace wind
             ros->map.layer_type[0].value = __aux64__;
             // ******************* MIN validator *******************
             if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                logger->warning() << "Error: Value in 'map.layer_type[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                logger->error() << "Error: Value in 'map.layer_type[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                 return false;
             }
             // ******************* MAX validator *******************
             if(VALIDATORS_ENABLED && __aux64__ > 7) {
-                logger->warning() << "Error: Value in 'map.layer_type[0].value' " << (__aux64__) << " exceeds max allowable (7); message dropped.";
+                logger->error() << "Error: Value in 'map.layer_type[0].value' " << (__aux64__) << " exceeds max allowable (7); message dropped.";
                 return false;
             }
             
             
             if(debug) {
-                logger->print() << "|\033[38;5;94m000015\033[0m| " << tools::getTypeName(ros->map.layer_type[0].value) << 
+                logger->print() << "|" << tools::brown("000015") << "| " << tools::getTypeName(ros->map.layer_type[0].value) << 
                              " map.layer_type[0].value: " << static_cast<int>(ros->map.layer_type[0].value);
             }
         }
@@ -288,18 +288,18 @@ namespace wind
             ros->map.layer_id[0].value = __aux64__;
             
             if(debug) {
-                logger->print() << "|\033[38;5;94m000016\033[0m| " << tools::getTypeName(ros->map.layer_id[0].value) << 
+                logger->print() << "|" << tools::brown("000016") << "| " << tools::getTypeName(ros->map.layer_id[0].value) << 
                              " map.layer_id[0].value: " << static_cast<int>(ros->map.layer_id[0].value);
             }
             
             // ******************* MIN validator *******************
             if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                logger->warning() << "Error: Value in 'map.layer_id[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                logger->error() << "Error: Value in 'map.layer_id[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                 return false;
             }
             // ******************* MAX validator *******************
             if(VALIDATORS_ENABLED && __aux64__ > 100) {
-                logger->warning() << "Error: Value in 'map.layer_id[0].value' " << (__aux64__) << " exceeds max allowable (100); message dropped.";
+                logger->error() << "Error: Value in 'map.layer_id[0].value' " << (__aux64__) << " exceeds max allowable (100); message dropped.";
                 return false;
             }
         }
@@ -317,17 +317,17 @@ namespace wind
             int _if__tmp_16 = __aux64__;
             
             if(debug) {
-                logger->print() << "|\033[38;5;94m000017\033[0m| SequenceOf ros->map.intersections[0]. size: " << int(__aux64__);
+                logger->print() << "|" << tools::brown("000017") << "| SequenceOf ros->map.intersections[0]. size: " << int(__aux64__);
             }
             
             // ******************* MIN validator *******************
             if(VALIDATORS_ENABLED && __aux64__ < 1) {
-                logger->warning() << "Error: Value in 'map.intersections[0].value' " << (__aux64__) << " is less than allowable (1); message dropped.";
+                logger->error() << "Error: Value in 'map.intersections[0].value' " << (__aux64__) << " is less than allowable (1); message dropped.";
                 return false;
             }
             // ******************* MAX validator *******************
             if(VALIDATORS_ENABLED && __aux64__ > 32) {
-                logger->warning() << "Error: Value in 'map.intersections[0].value' " << (__aux64__) << " exceeds max allowable (32); message dropped.";
+                logger->error() << "Error: Value in 'map.intersections[0].value' " << (__aux64__) << " exceeds max allowable (32); message dropped.";
                 return false;
             }
             
@@ -350,7 +350,7 @@ namespace wind
                     uint8_t* _ext_flag_3 = (uint8_t*) buffer++;  // Read ext flag from ros->map.intersections[0].elements[a].
                     
                     if(debug) {
-                        logger->print() << "|\033[38;5;94m000018\033[0m| Reading ext flag from ros->map.intersections[0].elements[a].: " << int(*_ext_flag_3);
+                        logger->print() << "|" << tools::brown("000018") << "| Reading ext flag from ros->map.intersections[0].elements[a].: " << int(*_ext_flag_3);
                     }
                     
                     if(*(buffer++)) { 
@@ -358,35 +358,35 @@ namespace wind
                         ros->map.intersections[0].elements[a].name.push_back(_tmp_17);
                     
                         if(debug)
-                            logger->print() << "|\033[38;5;94m000019\033[0m| ros->map.intersections[0].elements[a].name " << tools::green("present");
+                            logger->print() << "|" << tools::brown("000019") << "| ros->map.intersections[0].elements[a].name " << tools::green("present");
                     }
                     if(*(buffer++)) { 
                         dsrc_v2_dsrc_msgs::msg::LaneWidth _tmp_18;
                         ros->map.intersections[0].elements[a].lane_width.push_back(_tmp_18);
                     
                         if(debug)
-                            logger->print() << "|\033[38;5;94m000020\033[0m| ros->map.intersections[0].elements[a].lane_width " << tools::green("present");
+                            logger->print() << "|" << tools::brown("000020") << "| ros->map.intersections[0].elements[a].lane_width " << tools::green("present");
                     }
                     if(*(buffer++)) { 
                         dsrc_v2_dsrc_msgs::msg::SpeedLimitList _tmp_19;
                         ros->map.intersections[0].elements[a].speed_limits.push_back(_tmp_19);
                     
                         if(debug)
-                            logger->print() << "|\033[38;5;94m000021\033[0m| ros->map.intersections[0].elements[a].speed_limits " << tools::green("present");
+                            logger->print() << "|" << tools::brown("000021") << "| ros->map.intersections[0].elements[a].speed_limits " << tools::green("present");
                     }
                     if(*(buffer++)) { 
                         dsrc_v2_dsrc_msgs::msg::PreemptPriorityList _tmp_20;
                         ros->map.intersections[0].elements[a].preempt_priority_data.push_back(_tmp_20);
                     
                         if(debug)
-                            logger->print() << "|\033[38;5;94m000022\033[0m| ros->map.intersections[0].elements[a].preempt_priority_data " << tools::green("present");
+                            logger->print() << "|" << tools::brown("000022") << "| ros->map.intersections[0].elements[a].preempt_priority_data " << tools::green("present");
                     }
                     if(*(buffer++)) { 
                         dsrc_v2_dsrc_msgs::msg::IntersectionGeometryRegional _tmp_21;
                         ros->map.intersections[0].elements[a].regional.push_back(_tmp_21);
                     
                         if(debug)
-                            logger->print() << "|\033[38;5;94m000023\033[0m| ros->map.intersections[0].elements[a].regional " << tools::green("present");
+                            logger->print() << "|" << tools::brown("000023") << "| ros->map.intersections[0].elements[a].regional " << tools::green("present");
                     }
                     
                     if(ros->map.intersections[0].elements[a].name.size() != 0) {
@@ -414,7 +414,7 @@ namespace wind
                             ros->map.intersections[0].elements[a].id.region.push_back(_tmp_23);
                         
                             if(debug)
-                                logger->print() << "|\033[38;5;94m000024\033[0m| ros->map.intersections[0].elements[a].id.region " << tools::green("present");
+                                logger->print() << "|" << tools::brown("000024") << "| ros->map.intersections[0].elements[a].id.region " << tools::green("present");
                         }
                         
                         if(ros->map.intersections[0].elements[a].id.region.size() != 0) {
@@ -426,18 +426,18 @@ namespace wind
                             ros->map.intersections[0].elements[a].id.region[0].value = __aux64__;
                             
                             if(debug) {
-                                logger->print() << "|\033[38;5;94m000025\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].id.region[0].value) << 
+                                logger->print() << "|" << tools::brown("000025") << "| " << tools::getTypeName(ros->map.intersections[0].elements[a].id.region[0].value) << 
                                              " map.intersections[0].elements[a].id.region[0].value: " << ros->map.intersections[0].elements[a].id.region[0].value;
                             }
                             
                             // ******************* MIN validator *******************
                             if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                logger->warning() << "Error: Value in 'map.intersections[0].elements[a].id.region[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                logger->error() << "Error: Value in 'map.intersections[0].elements[a].id.region[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                 return false;
                             }
                             // ******************* MAX validator *******************
                             if(VALIDATORS_ENABLED && __aux64__ > 65535) {
-                                logger->warning() << "Error: Value in 'map.intersections[0].elements[a].id.region[0].value' " << (__aux64__) << " exceeds max allowable (65535); message dropped.";
+                                logger->error() << "Error: Value in 'map.intersections[0].elements[a].id.region[0].value' " << (__aux64__) << " exceeds max allowable (65535); message dropped.";
                                 return false;
                             }
                         }
@@ -450,18 +450,18 @@ namespace wind
                         ros->map.intersections[0].elements[a].id.id.value = __aux64__;
                         
                         if(debug) {
-                            logger->print() << "|\033[38;5;94m000026\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].id.id.value) << 
+                            logger->print() << "|" << tools::brown("000026") << "| " << tools::getTypeName(ros->map.intersections[0].elements[a].id.id.value) << 
                                          " map.intersections[0].elements[a].id.id.value: " << ros->map.intersections[0].elements[a].id.id.value;
                         }
                         
                         // ******************* MIN validator *******************
                         if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                            logger->warning() << "Error: Value in 'map.intersections[0].elements[a].id.id.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                            logger->error() << "Error: Value in 'map.intersections[0].elements[a].id.id.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                             return false;
                         }
                         // ******************* MAX validator *******************
                         if(VALIDATORS_ENABLED && __aux64__ > 65535) {
-                            logger->warning() << "Error: Value in 'map.intersections[0].elements[a].id.id.value' " << (__aux64__) << " exceeds max allowable (65535); message dropped.";
+                            logger->error() << "Error: Value in 'map.intersections[0].elements[a].id.id.value' " << (__aux64__) << " exceeds max allowable (65535); message dropped.";
                             return false;
                         }
                     
@@ -473,18 +473,18 @@ namespace wind
                     ros->map.intersections[0].elements[a].revision.value = __aux64__;
                     
                     if(debug) {
-                        logger->print() << "|\033[38;5;94m000027\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].revision.value) << 
+                        logger->print() << "|" << tools::brown("000027") << "| " << tools::getTypeName(ros->map.intersections[0].elements[a].revision.value) << 
                                      " map.intersections[0].elements[a].revision.value: " << static_cast<int>(ros->map.intersections[0].elements[a].revision.value);
                     }
                     
                     // ******************* MIN validator *******************
                     if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                        logger->warning() << "Error: Value in 'map.intersections[0].elements[a].revision.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                        logger->error() << "Error: Value in 'map.intersections[0].elements[a].revision.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                         return false;
                     }
                     // ******************* MAX validator *******************
                     if(VALIDATORS_ENABLED && __aux64__ > 127) {
-                        logger->warning() << "Error: Value in 'map.intersections[0].elements[a].revision.value' " << (__aux64__) << " exceeds max allowable (127); message dropped.";
+                        logger->error() << "Error: Value in 'map.intersections[0].elements[a].revision.value' " << (__aux64__) << " exceeds max allowable (127); message dropped.";
                         return false;
                     }
                     
@@ -498,7 +498,7 @@ namespace wind
                         uint8_t* _ext_flag_4 = (uint8_t*) buffer++;  // Read ext flag from ros->map.intersections[0].elements[a].ref_point.
                         
                         if(debug) {
-                            logger->print() << "|\033[38;5;94m000028\033[0m| Reading ext flag from ros->map.intersections[0].elements[a].ref_point.: " << int(*_ext_flag_4);
+                            logger->print() << "|" << tools::brown("000028") << "| Reading ext flag from ros->map.intersections[0].elements[a].ref_point.: " << int(*_ext_flag_4);
                         }
                         
                         if(*(buffer++)) { 
@@ -506,14 +506,14 @@ namespace wind
                             ros->map.intersections[0].elements[a].ref_point.elevation.push_back(_tmp_27);
                         
                             if(debug)
-                                logger->print() << "|\033[38;5;94m000029\033[0m| ros->map.intersections[0].elements[a].ref_point.elevation " << tools::green("present");
+                                logger->print() << "|" << tools::brown("000029") << "| ros->map.intersections[0].elements[a].ref_point.elevation " << tools::green("present");
                         }
                         if(*(buffer++)) { 
                             dsrc_v2_dsrc_msgs::msg::Position3DRegional _tmp_28;
                             ros->map.intersections[0].elements[a].ref_point.regional.push_back(_tmp_28);
                         
                             if(debug)
-                                logger->print() << "|\033[38;5;94m000030\033[0m| ros->map.intersections[0].elements[a].ref_point.regional " << tools::green("present");
+                                logger->print() << "|" << tools::brown("000030") << "| ros->map.intersections[0].elements[a].ref_point.regional " << tools::green("present");
                         }
                         
                         // Field name: lat
@@ -528,17 +528,17 @@ namespace wind
                         
                         // ******************* MIN validator *******************
                         if(VALIDATORS_ENABLED && __aux64__ < -900000000) {
-                            logger->warning() << "Error: Value in 'map.intersections[0].elements[a].ref_point.lat.value' " << (__aux64__) << " is less than allowable (-900000000); message dropped.";
+                            logger->error() << "Error: Value in 'map.intersections[0].elements[a].ref_point.lat.value' " << (__aux64__) << " is less than allowable (-900000000); message dropped.";
                             return false;
                         }
                         // ******************* MAX validator *******************
                         if(VALIDATORS_ENABLED && __aux64__ > 900000001) {
-                            logger->warning() << "Error: Value in 'map.intersections[0].elements[a].ref_point.lat.value' " << (__aux64__) << " exceeds max allowable (900000001); message dropped.";
+                            logger->error() << "Error: Value in 'map.intersections[0].elements[a].ref_point.lat.value' " << (__aux64__) << " exceeds max allowable (900000001); message dropped.";
                             return false;
                         }
                         
                         if(debug) {
-                            logger->print() << "|\033[38;5;94m000031\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].ref_point.lat.value) << " map.intersections[0].elements[a].ref_point.lat: " <<
+                            logger->print() << "|" << tools::brown("000031") << "| " << tools::getTypeName(ros->map.intersections[0].elements[a].ref_point.lat.value) << " map.intersections[0].elements[a].ref_point.lat: " <<
                                          ros->map.intersections[0].elements[a].ref_point.lat.value << " (" << __aux64__ << ")";
                         }
                         
@@ -554,17 +554,17 @@ namespace wind
                         
                         // ******************* MIN validator *******************
                         if(VALIDATORS_ENABLED && __aux64__ < -1800000000) {
-                            logger->warning() << "Error: Value in 'map.intersections[0].elements[a].ref_point.longint.value' " << (__aux64__) << " is less than allowable (-1800000000); message dropped.";
+                            logger->error() << "Error: Value in 'map.intersections[0].elements[a].ref_point.longint.value' " << (__aux64__) << " is less than allowable (-1800000000); message dropped.";
                             return false;
                         }
                         // ******************* MAX validator *******************
                         if(VALIDATORS_ENABLED && __aux64__ > 1800000001) {
-                            logger->warning() << "Error: Value in 'map.intersections[0].elements[a].ref_point.longint.value' " << (__aux64__) << " exceeds max allowable (1800000001); message dropped.";
+                            logger->error() << "Error: Value in 'map.intersections[0].elements[a].ref_point.longint.value' " << (__aux64__) << " exceeds max allowable (1800000001); message dropped.";
                             return false;
                         }
                         
                         if(debug) {
-                            logger->print() << "|\033[38;5;94m000032\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].ref_point.longint.value) << " map.intersections[0].elements[a].ref_point.longint: " <<
+                            logger->print() << "|" << tools::brown("000032") << "| " << tools::getTypeName(ros->map.intersections[0].elements[a].ref_point.longint.value) << " map.intersections[0].elements[a].ref_point.longint: " <<
                                          ros->map.intersections[0].elements[a].ref_point.longint.value << " (" << __aux64__ << ")";
                         }
                         
@@ -581,17 +581,17 @@ namespace wind
                             
                             // ******************* MIN validator *******************
                             if(VALIDATORS_ENABLED && __aux64__ < -4096) {
-                                logger->warning() << "Error: Value in 'map.intersections[0].elements[a].ref_point.elevation[0].value' " << (__aux64__) << " is less than allowable (-4096); message dropped.";
+                                logger->error() << "Error: Value in 'map.intersections[0].elements[a].ref_point.elevation[0].value' " << (__aux64__) << " is less than allowable (-4096); message dropped.";
                                 return false;
                             }
                             // ******************* MAX validator *******************
                             if(VALIDATORS_ENABLED && __aux64__ > 61439) {
-                                logger->warning() << "Error: Value in 'map.intersections[0].elements[a].ref_point.elevation[0].value' " << (__aux64__) << " exceeds max allowable (61439); message dropped.";
+                                logger->error() << "Error: Value in 'map.intersections[0].elements[a].ref_point.elevation[0].value' " << (__aux64__) << " exceeds max allowable (61439); message dropped.";
                                 return false;
                             }
                             
                             if(debug) {
-                                logger->print() << "|\033[38;5;94m000033\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].ref_point.elevation[0].value) << " map.intersections[0].elements[a].ref_point.elevation[0]: " <<
+                                logger->print() << "|" << tools::brown("000033") << "| " << tools::getTypeName(ros->map.intersections[0].elements[a].ref_point.elevation[0].value) << " map.intersections[0].elements[a].ref_point.elevation[0]: " <<
                                              ros->map.intersections[0].elements[a].ref_point.elevation[0].value << " (" << __aux64__ << ")";
                             }
                         }
@@ -602,7 +602,7 @@ namespace wind
                             bool _array_1[*_tmp_32];
                             
                             if(debug)
-                                logger->print() << "|\033[38;5;94m000034\033[0m| Reading number of exts from ros->map.intersections[0].elements[a].ref_point.: " << static_cast<unsigned int>(*_tmp_32);
+                                logger->print() << "|" << tools::brown("000034") << "| Reading number of exts from ros->map.intersections[0].elements[a].ref_point.: " << static_cast<unsigned int>(*_tmp_32);
                             
                             // Extensions bytemap
                             for(int i = 0; i < *_tmp_32; i++)
@@ -631,18 +631,18 @@ namespace wind
                         ros->map.intersections[0].elements[a].lane_width[0].value = __aux64__;
                         
                         if(debug) {
-                            logger->print() << "|\033[38;5;94m000035\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_width[0].value) << 
+                            logger->print() << "|" << tools::brown("000035") << "| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_width[0].value) << 
                                          " map.intersections[0].elements[a].lane_width[0].value: " << ros->map.intersections[0].elements[a].lane_width[0].value;
                         }
                         
                         // ******************* MIN validator *******************
                         if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                            logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_width[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                            logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_width[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                             return false;
                         }
                         // ******************* MAX validator *******************
                         if(VALIDATORS_ENABLED && __aux64__ > 32767) {
-                            logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_width[0].value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
+                            logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_width[0].value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
                             return false;
                         }
                     }
@@ -660,17 +660,17 @@ namespace wind
                         int _if__tmp_35 = __aux64__;
                         
                         if(debug) {
-                            logger->print() << "|\033[38;5;94m000036\033[0m| SequenceOf ros->map.intersections[0].elements[a].speed_limits[0]. size: " << int(__aux64__);
+                            logger->print() << "|" << tools::brown("000036") << "| SequenceOf ros->map.intersections[0].elements[a].speed_limits[0]. size: " << int(__aux64__);
                         }
                         
                         // ******************* MIN validator *******************
                         if(VALIDATORS_ENABLED && __aux64__ < 1) {
-                            logger->warning() << "Error: Value in 'map.intersections[0].elements[a].speed_limits[0].value' " << (__aux64__) << " is less than allowable (1); message dropped.";
+                            logger->error() << "Error: Value in 'map.intersections[0].elements[a].speed_limits[0].value' " << (__aux64__) << " is less than allowable (1); message dropped.";
                             return false;
                         }
                         // ******************* MAX validator *******************
                         if(VALIDATORS_ENABLED && __aux64__ > 9) {
-                            logger->warning() << "Error: Value in 'map.intersections[0].elements[a].speed_limits[0].value' " << (__aux64__) << " exceeds max allowable (9); message dropped.";
+                            logger->error() << "Error: Value in 'map.intersections[0].elements[a].speed_limits[0].value' " << (__aux64__) << " exceeds max allowable (9); message dropped.";
                             return false;
                         }
                         
@@ -689,7 +689,7 @@ namespace wind
                                 uint8_t* _ext_flag_8 = (uint8_t*) buffer++;  // Read ext flag from ros->map.intersections[0].elements[a].speed_limits[0].elements[c].type.
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000037\033[0m| Reading ext flag from ros->map.intersections[0].elements[a].speed_limits[0].elements[c].type.: " << int(*_ext_flag_8);
+                                    logger->print() << "|" << tools::brown("000037") << "| Reading ext flag from ros->map.intersections[0].elements[a].speed_limits[0].elements[c].type.: " << int(*_ext_flag_8);
                                 }
                                 
                                 uint8_t* _tmp_36 = (uint8_t*) buffer++;
@@ -698,18 +698,18 @@ namespace wind
                                 ros->map.intersections[0].elements[a].speed_limits[0].elements[c].type.value = __aux64__;
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                    logger->warning() << "Error: Value in 'map.intersections[0].elements[a].speed_limits[0].elements[c].type.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                    logger->error() << "Error: Value in 'map.intersections[0].elements[a].speed_limits[0].elements[c].type.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 12) {
-                                    logger->warning() << "Error: Value in 'map.intersections[0].elements[a].speed_limits[0].elements[c].type.value' " << (__aux64__) << " exceeds max allowable (12); message dropped.";
+                                    logger->error() << "Error: Value in 'map.intersections[0].elements[a].speed_limits[0].elements[c].type.value' " << (__aux64__) << " exceeds max allowable (12); message dropped.";
                                     return false;
                                 }
                                 
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000038\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].speed_limits[0].elements[c].type.value) << 
+                                    logger->print() << "|" << tools::brown("000038") << "| " << tools::getTypeName(ros->map.intersections[0].elements[a].speed_limits[0].elements[c].type.value) << 
                                                  " map.intersections[0].elements[a].speed_limits[0].elements[c].type.value: " << static_cast<int>(ros->map.intersections[0].elements[a].speed_limits[0].elements[c].type.value);
                                 }
                                 
@@ -721,18 +721,18 @@ namespace wind
                                 ros->map.intersections[0].elements[a].speed_limits[0].elements[c].speed.value = __aux64__;
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000039\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].speed_limits[0].elements[c].speed.value) << 
+                                    logger->print() << "|" << tools::brown("000039") << "| " << tools::getTypeName(ros->map.intersections[0].elements[a].speed_limits[0].elements[c].speed.value) << 
                                                  " map.intersections[0].elements[a].speed_limits[0].elements[c].speed.value: " << ros->map.intersections[0].elements[a].speed_limits[0].elements[c].speed.value;
                                 }
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                    logger->warning() << "Error: Value in 'map.intersections[0].elements[a].speed_limits[0].elements[c].speed.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                    logger->error() << "Error: Value in 'map.intersections[0].elements[a].speed_limits[0].elements[c].speed.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 8191) {
-                                    logger->warning() << "Error: Value in 'map.intersections[0].elements[a].speed_limits[0].elements[c].speed.value' " << (__aux64__) << " exceeds max allowable (8191); message dropped.";
+                                    logger->error() << "Error: Value in 'map.intersections[0].elements[a].speed_limits[0].elements[c].speed.value' " << (__aux64__) << " exceeds max allowable (8191); message dropped.";
                                     return false;
                                 }
                         }
@@ -750,17 +750,17 @@ namespace wind
                     int _if__tmp_38 = __aux64__;
                     
                     if(debug) {
-                        logger->print() << "|\033[38;5;94m000040\033[0m| SequenceOf ros->map.intersections[0].elements[a].lane_set. size: " << int(__aux64__);
+                        logger->print() << "|" << tools::brown("000040") << "| SequenceOf ros->map.intersections[0].elements[a].lane_set. size: " << int(__aux64__);
                     }
                     
                     // ******************* MIN validator *******************
                     if(VALIDATORS_ENABLED && __aux64__ < 1) {
-                        logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.value' " << (__aux64__) << " is less than allowable (1); message dropped.";
+                        logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.value' " << (__aux64__) << " is less than allowable (1); message dropped.";
                         return false;
                     }
                     // ******************* MAX validator *******************
                     if(VALIDATORS_ENABLED && __aux64__ > 255) {
-                        logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
+                        logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
                         return false;
                     }
                     
@@ -784,7 +784,7 @@ namespace wind
                             uint8_t* _ext_flag_9 = (uint8_t*) buffer++;  // Read ext flag from ros->map.intersections[0].elements[a].lane_set.elements[d].
                             
                             if(debug) {
-                                logger->print() << "|\033[38;5;94m000041\033[0m| Reading ext flag from ros->map.intersections[0].elements[a].lane_set.elements[d].: " << int(*_ext_flag_9);
+                                logger->print() << "|" << tools::brown("000041") << "| Reading ext flag from ros->map.intersections[0].elements[a].lane_set.elements[d].: " << int(*_ext_flag_9);
                             }
                             
                             if(*(buffer++)) { 
@@ -792,49 +792,49 @@ namespace wind
                                 ros->map.intersections[0].elements[a].lane_set.elements[d].name.push_back(_tmp_39);
                             
                                 if(debug)
-                                    logger->print() << "|\033[38;5;94m000042\033[0m| ros->map.intersections[0].elements[a].lane_set.elements[d].name " << tools::green("present");
+                                    logger->print() << "|" << tools::brown("000042") << "| ros->map.intersections[0].elements[a].lane_set.elements[d].name " << tools::green("present");
                             }
                             if(*(buffer++)) { 
                                 dsrc_v2_dsrc_msgs::msg::ApproachID _tmp_40;
                                 ros->map.intersections[0].elements[a].lane_set.elements[d].ingress_approach.push_back(_tmp_40);
                             
                                 if(debug)
-                                    logger->print() << "|\033[38;5;94m000043\033[0m| ros->map.intersections[0].elements[a].lane_set.elements[d].ingress_approach " << tools::green("present");
+                                    logger->print() << "|" << tools::brown("000043") << "| ros->map.intersections[0].elements[a].lane_set.elements[d].ingress_approach " << tools::green("present");
                             }
                             if(*(buffer++)) { 
                                 dsrc_v2_dsrc_msgs::msg::ApproachID _tmp_41;
                                 ros->map.intersections[0].elements[a].lane_set.elements[d].egress_approach.push_back(_tmp_41);
                             
                                 if(debug)
-                                    logger->print() << "|\033[38;5;94m000044\033[0m| ros->map.intersections[0].elements[a].lane_set.elements[d].egress_approach " << tools::green("present");
+                                    logger->print() << "|" << tools::brown("000044") << "| ros->map.intersections[0].elements[a].lane_set.elements[d].egress_approach " << tools::green("present");
                             }
                             if(*(buffer++)) { 
                                 dsrc_v2_dsrc_msgs::msg::AllowedManeuvers _tmp_42;
                                 ros->map.intersections[0].elements[a].lane_set.elements[d].maneuvers.push_back(_tmp_42);
                             
                                 if(debug)
-                                    logger->print() << "|\033[38;5;94m000045\033[0m| ros->map.intersections[0].elements[a].lane_set.elements[d].maneuvers " << tools::green("present");
+                                    logger->print() << "|" << tools::brown("000045") << "| ros->map.intersections[0].elements[a].lane_set.elements[d].maneuvers " << tools::green("present");
                             }
                             if(*(buffer++)) { 
                                 dsrc_v2_dsrc_msgs::msg::ConnectsToList _tmp_43;
                                 ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to.push_back(_tmp_43);
                             
                                 if(debug)
-                                    logger->print() << "|\033[38;5;94m000046\033[0m| ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to " << tools::green("present");
+                                    logger->print() << "|" << tools::brown("000046") << "| ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to " << tools::green("present");
                             }
                             if(*(buffer++)) { 
                                 dsrc_v2_dsrc_msgs::msg::OverlayLaneList _tmp_44;
                                 ros->map.intersections[0].elements[a].lane_set.elements[d].overlays.push_back(_tmp_44);
                             
                                 if(debug)
-                                    logger->print() << "|\033[38;5;94m000047\033[0m| ros->map.intersections[0].elements[a].lane_set.elements[d].overlays " << tools::green("present");
+                                    logger->print() << "|" << tools::brown("000047") << "| ros->map.intersections[0].elements[a].lane_set.elements[d].overlays " << tools::green("present");
                             }
                             if(*(buffer++)) { 
                                 dsrc_v2_dsrc_msgs::msg::GenericLaneRegional _tmp_45;
                                 ros->map.intersections[0].elements[a].lane_set.elements[d].regional.push_back(_tmp_45);
                             
                                 if(debug)
-                                    logger->print() << "|\033[38;5;94m000048\033[0m| ros->map.intersections[0].elements[a].lane_set.elements[d].regional " << tools::green("present");
+                                    logger->print() << "|" << tools::brown("000048") << "| ros->map.intersections[0].elements[a].lane_set.elements[d].regional " << tools::green("present");
                             }
                             
                             // Field name: lane_id
@@ -845,18 +845,18 @@ namespace wind
                             ros->map.intersections[0].elements[a].lane_set.elements[d].lane_id.value = __aux64__;
                             
                             if(debug) {
-                                logger->print() << "|\033[38;5;94m000049\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].lane_id.value) << 
+                                logger->print() << "|" << tools::brown("000049") << "| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].lane_id.value) << 
                                              " map.intersections[0].elements[a].lane_set.elements[d].lane_id.value: " << static_cast<int>(ros->map.intersections[0].elements[a].lane_set.elements[d].lane_id.value);
                             }
                             
                             // ******************* MIN validator *******************
                             if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].lane_id.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].lane_id.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                 return false;
                             }
                             // ******************* MAX validator *******************
                             if(VALIDATORS_ENABLED && __aux64__ > 255) {
-                                logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].lane_id.value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
+                                logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].lane_id.value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
                                 return false;
                             }
                             
@@ -885,18 +885,18 @@ namespace wind
                                 ros->map.intersections[0].elements[a].lane_set.elements[d].ingress_approach[0].value = __aux64__;
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000050\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].ingress_approach[0].value) << 
+                                    logger->print() << "|" << tools::brown("000050") << "| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].ingress_approach[0].value) << 
                                                  " map.intersections[0].elements[a].lane_set.elements[d].ingress_approach[0].value: " << static_cast<int>(ros->map.intersections[0].elements[a].lane_set.elements[d].ingress_approach[0].value);
                                 }
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                    logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].ingress_approach[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                    logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].ingress_approach[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 15) {
-                                    logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].ingress_approach[0].value' " << (__aux64__) << " exceeds max allowable (15); message dropped.";
+                                    logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].ingress_approach[0].value' " << (__aux64__) << " exceeds max allowable (15); message dropped.";
                                     return false;
                                 }
                             }
@@ -910,18 +910,18 @@ namespace wind
                                 ros->map.intersections[0].elements[a].lane_set.elements[d].egress_approach[0].value = __aux64__;
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000051\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].egress_approach[0].value) << 
+                                    logger->print() << "|" << tools::brown("000051") << "| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].egress_approach[0].value) << 
                                                  " map.intersections[0].elements[a].lane_set.elements[d].egress_approach[0].value: " << static_cast<int>(ros->map.intersections[0].elements[a].lane_set.elements[d].egress_approach[0].value);
                                 }
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                    logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].egress_approach[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                    logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].egress_approach[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 15) {
-                                    logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].egress_approach[0].value' " << (__aux64__) << " exceeds max allowable (15); message dropped.";
+                                    logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].egress_approach[0].value' " << (__aux64__) << " exceeds max allowable (15); message dropped.";
                                     return false;
                                 }
                             }
@@ -937,7 +937,7 @@ namespace wind
                                     ros->map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.regional.push_back(_tmp_50);
                                 
                                     if(debug)
-                                        logger->print() << "|\033[38;5;94m000052\033[0m| ros->map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.regional " << tools::green("present");
+                                        logger->print() << "|" << tools::brown("000052") << "| ros->map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.regional " << tools::green("present");
                                 }
                                 
                                 // Field name: directional_use
@@ -948,7 +948,7 @@ namespace wind
                                 buffer += 1;
                                 
                                 if(debug)
-                                    logger->print() << "|\033[38;5;94m000053\033[0m| map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.directional_use.value: " << __aux64__;
+                                    logger->print() << "|" << tools::brown("000053") << "| map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.directional_use.value: " << __aux64__;
                                 
                                 int _if__tmp_51 = __aux64__;
                                 for(int f = 0; f < _if__tmp_51; f++) {
@@ -960,12 +960,12 @@ namespace wind
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 2) {
-                                    logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.directional_use.value' " << (__aux64__) << " is less than allowable (2); message dropped.";
+                                    logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.directional_use.value' " << (__aux64__) << " is less than allowable (2); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 2) {
-                                    logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.directional_use.value' " << (__aux64__) << " exceeds max allowable (2); message dropped.";
+                                    logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.directional_use.value' " << (__aux64__) << " exceeds max allowable (2); message dropped.";
                                     return false;
                                 }
                                 
@@ -977,7 +977,7 @@ namespace wind
                                 buffer += 1;
                                 
                                 if(debug)
-                                    logger->print() << "|\033[38;5;94m000054\033[0m| map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.shared_with.value: " << __aux64__;
+                                    logger->print() << "|" << tools::brown("000054") << "| map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.shared_with.value: " << __aux64__;
                                 
                                 int _if__tmp_52 = __aux64__;
                                 for(int g = 0; g < _if__tmp_52; g++) {
@@ -989,12 +989,12 @@ namespace wind
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 10) {
-                                    logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.shared_with.value' " << (__aux64__) << " is less than allowable (10); message dropped.";
+                                    logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.shared_with.value' " << (__aux64__) << " is less than allowable (10); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 10) {
-                                    logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.shared_with.value' " << (__aux64__) << " exceeds max allowable (10); message dropped.";
+                                    logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.shared_with.value' " << (__aux64__) << " exceeds max allowable (10); message dropped.";
                                     return false;
                                 }
                                 
@@ -1024,7 +1024,7 @@ namespace wind
                                     uint8_t* _ext_flag_11 = (uint8_t*) buffer++;  // Read ext flag from ros->map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.vehicle[0].
                                     
                                     if(debug) {
-                                        logger->print() << "|\033[38;5;94m000055\033[0m| Reading ext flag from ros->map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.vehicle[0].: " << int(*_ext_flag_11);
+                                        logger->print() << "|" << tools::brown("000055") << "| Reading ext flag from ros->map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.vehicle[0].: " << int(*_ext_flag_11);
                                     }
                                     
                                     uint8_t* _tmp_54 = (uint8_t*)buffer;
@@ -1032,7 +1032,7 @@ namespace wind
                                     buffer += 1;
                                     
                                     if(debug)
-                                        logger->print() << "|\033[38;5;94m000056\033[0m| map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.vehicle[0].value: " << __aux64__;
+                                        logger->print() << "|" << tools::brown("000056") << "| map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.vehicle[0].value: " << __aux64__;
                                     
                                     int _if__tmp_54 = __aux64__;
                                     for(int h = 0; h < _if__tmp_54; h++) {
@@ -1044,12 +1044,12 @@ namespace wind
                                     
                                     // ******************* MIN validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ < 8) {
-                                        logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.vehicle[0].value' " << (__aux64__) << " is less than allowable (8); message dropped.";
+                                        logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.vehicle[0].value' " << (__aux64__) << " is less than allowable (8); message dropped.";
                                         return false;
                                     }
                                     // ******************* MAX validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ > 8) {
-                                        logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.vehicle[0].value' " << (__aux64__) << " exceeds max allowable (8); message dropped.";
+                                        logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.vehicle[0].value' " << (__aux64__) << " exceeds max allowable (8); message dropped.";
                                         return false;
                                     }
                                 }
@@ -1065,7 +1065,7 @@ namespace wind
                                     buffer += 1;
                                     
                                     if(debug)
-                                        logger->print() << "|\033[38;5;94m000057\033[0m| map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.crosswalk[0].value: " << __aux64__;
+                                        logger->print() << "|" << tools::brown("000057") << "| map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.crosswalk[0].value: " << __aux64__;
                                     
                                     int _if__tmp_56 = __aux64__;
                                     for(int i = 0; i < _if__tmp_56; i++) {
@@ -1077,12 +1077,12 @@ namespace wind
                                     
                                     // ******************* MIN validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ < 16) {
-                                        logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.crosswalk[0].value' " << (__aux64__) << " is less than allowable (16); message dropped.";
+                                        logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.crosswalk[0].value' " << (__aux64__) << " is less than allowable (16); message dropped.";
                                         return false;
                                     }
                                     // ******************* MAX validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ > 16) {
-                                        logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.crosswalk[0].value' " << (__aux64__) << " exceeds max allowable (16); message dropped.";
+                                        logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.crosswalk[0].value' " << (__aux64__) << " exceeds max allowable (16); message dropped.";
                                         return false;
                                     }
                                 }
@@ -1098,7 +1098,7 @@ namespace wind
                                     buffer += 1;
                                     
                                     if(debug)
-                                        logger->print() << "|\033[38;5;94m000058\033[0m| map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.bike_lane[0].value: " << __aux64__;
+                                        logger->print() << "|" << tools::brown("000058") << "| map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.bike_lane[0].value: " << __aux64__;
                                     
                                     int _if__tmp_58 = __aux64__;
                                     for(int j = 0; j < _if__tmp_58; j++) {
@@ -1110,12 +1110,12 @@ namespace wind
                                     
                                     // ******************* MIN validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ < 16) {
-                                        logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.bike_lane[0].value' " << (__aux64__) << " is less than allowable (16); message dropped.";
+                                        logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.bike_lane[0].value' " << (__aux64__) << " is less than allowable (16); message dropped.";
                                         return false;
                                     }
                                     // ******************* MAX validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ > 16) {
-                                        logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.bike_lane[0].value' " << (__aux64__) << " exceeds max allowable (16); message dropped.";
+                                        logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.bike_lane[0].value' " << (__aux64__) << " exceeds max allowable (16); message dropped.";
                                         return false;
                                     }
                                 }
@@ -1131,7 +1131,7 @@ namespace wind
                                     buffer += 1;
                                     
                                     if(debug)
-                                        logger->print() << "|\033[38;5;94m000059\033[0m| map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.sidewalk[0].value: " << __aux64__;
+                                        logger->print() << "|" << tools::brown("000059") << "| map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.sidewalk[0].value: " << __aux64__;
                                     
                                     int _if__tmp_60 = __aux64__;
                                     for(int k = 0; k < _if__tmp_60; k++) {
@@ -1143,12 +1143,12 @@ namespace wind
                                     
                                     // ******************* MIN validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ < 16) {
-                                        logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.sidewalk[0].value' " << (__aux64__) << " is less than allowable (16); message dropped.";
+                                        logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.sidewalk[0].value' " << (__aux64__) << " is less than allowable (16); message dropped.";
                                         return false;
                                     }
                                     // ******************* MAX validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ > 16) {
-                                        logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.sidewalk[0].value' " << (__aux64__) << " exceeds max allowable (16); message dropped.";
+                                        logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.sidewalk[0].value' " << (__aux64__) << " exceeds max allowable (16); message dropped.";
                                         return false;
                                     }
                                 }
@@ -1164,7 +1164,7 @@ namespace wind
                                     buffer += 1;
                                     
                                     if(debug)
-                                        logger->print() << "|\033[38;5;94m000060\033[0m| map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.median[0].value: " << __aux64__;
+                                        logger->print() << "|" << tools::brown("000060") << "| map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.median[0].value: " << __aux64__;
                                     
                                     int _if__tmp_62 = __aux64__;
                                     for(int l = 0; l < _if__tmp_62; l++) {
@@ -1176,12 +1176,12 @@ namespace wind
                                     
                                     // ******************* MIN validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ < 16) {
-                                        logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.median[0].value' " << (__aux64__) << " is less than allowable (16); message dropped.";
+                                        logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.median[0].value' " << (__aux64__) << " is less than allowable (16); message dropped.";
                                         return false;
                                     }
                                     // ******************* MAX validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ > 16) {
-                                        logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.median[0].value' " << (__aux64__) << " exceeds max allowable (16); message dropped.";
+                                        logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.median[0].value' " << (__aux64__) << " exceeds max allowable (16); message dropped.";
                                         return false;
                                     }
                                 }
@@ -1197,7 +1197,7 @@ namespace wind
                                     buffer += 1;
                                     
                                     if(debug)
-                                        logger->print() << "|\033[38;5;94m000061\033[0m| map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.striping[0].value: " << __aux64__;
+                                        logger->print() << "|" << tools::brown("000061") << "| map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.striping[0].value: " << __aux64__;
                                     
                                     int _if__tmp_64 = __aux64__;
                                     for(int m = 0; m < _if__tmp_64; m++) {
@@ -1209,12 +1209,12 @@ namespace wind
                                     
                                     // ******************* MIN validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ < 16) {
-                                        logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.striping[0].value' " << (__aux64__) << " is less than allowable (16); message dropped.";
+                                        logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.striping[0].value' " << (__aux64__) << " is less than allowable (16); message dropped.";
                                         return false;
                                     }
                                     // ******************* MAX validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ > 16) {
-                                        logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.striping[0].value' " << (__aux64__) << " exceeds max allowable (16); message dropped.";
+                                        logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.striping[0].value' " << (__aux64__) << " exceeds max allowable (16); message dropped.";
                                         return false;
                                     }
                                 }
@@ -1230,7 +1230,7 @@ namespace wind
                                     buffer += 1;
                                     
                                     if(debug)
-                                        logger->print() << "|\033[38;5;94m000062\033[0m| map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.tracked_vehicle[0].value: " << __aux64__;
+                                        logger->print() << "|" << tools::brown("000062") << "| map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.tracked_vehicle[0].value: " << __aux64__;
                                     
                                     int _if__tmp_66 = __aux64__;
                                     for(int n = 0; n < _if__tmp_66; n++) {
@@ -1242,12 +1242,12 @@ namespace wind
                                     
                                     // ******************* MIN validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ < 16) {
-                                        logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.tracked_vehicle[0].value' " << (__aux64__) << " is less than allowable (16); message dropped.";
+                                        logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.tracked_vehicle[0].value' " << (__aux64__) << " is less than allowable (16); message dropped.";
                                         return false;
                                     }
                                     // ******************* MAX validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ > 16) {
-                                        logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.tracked_vehicle[0].value' " << (__aux64__) << " exceeds max allowable (16); message dropped.";
+                                        logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.tracked_vehicle[0].value' " << (__aux64__) << " exceeds max allowable (16); message dropped.";
                                         return false;
                                     }
                                 }
@@ -1263,7 +1263,7 @@ namespace wind
                                     buffer += 1;
                                     
                                     if(debug)
-                                        logger->print() << "|\033[38;5;94m000063\033[0m| map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.parking[0].value: " << __aux64__;
+                                        logger->print() << "|" << tools::brown("000063") << "| map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.parking[0].value: " << __aux64__;
                                     
                                     int _if__tmp_68 = __aux64__;
                                     for(int o = 0; o < _if__tmp_68; o++) {
@@ -1275,12 +1275,12 @@ namespace wind
                                     
                                     // ******************* MIN validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ < 16) {
-                                        logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.parking[0].value' " << (__aux64__) << " is less than allowable (16); message dropped.";
+                                        logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.parking[0].value' " << (__aux64__) << " is less than allowable (16); message dropped.";
                                         return false;
                                     }
                                     // ******************* MAX validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ > 16) {
-                                        logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.parking[0].value' " << (__aux64__) << " exceeds max allowable (16); message dropped.";
+                                        logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].lane_attributes.lane_type.parking[0].value' " << (__aux64__) << " exceeds max allowable (16); message dropped.";
                                         return false;
                                     }
                                 }
@@ -1301,7 +1301,7 @@ namespace wind
                                 buffer += 1;
                                 
                                 if(debug)
-                                    logger->print() << "|\033[38;5;94m000064\033[0m| map.intersections[0].elements[a].lane_set.elements[d].maneuvers[0].value: " << __aux64__;
+                                    logger->print() << "|" << tools::brown("000064") << "| map.intersections[0].elements[a].lane_set.elements[d].maneuvers[0].value: " << __aux64__;
                                 
                                 int _if__tmp_70 = __aux64__;
                                 for(int p = 0; p < _if__tmp_70; p++) {
@@ -1313,12 +1313,12 @@ namespace wind
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 12) {
-                                    logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].maneuvers[0].value' " << (__aux64__) << " is less than allowable (12); message dropped.";
+                                    logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].maneuvers[0].value' " << (__aux64__) << " is less than allowable (12); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 12) {
-                                    logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].maneuvers[0].value' " << (__aux64__) << " exceeds max allowable (12); message dropped.";
+                                    logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].maneuvers[0].value' " << (__aux64__) << " exceeds max allowable (12); message dropped.";
                                     return false;
                                 }
                             }
@@ -1349,17 +1349,17 @@ namespace wind
                                 int _if__tmp_72 = __aux64__;
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000065\033[0m| SequenceOf ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0]. size: " << int(__aux64__);
+                                    logger->print() << "|" << tools::brown("000065") << "| SequenceOf ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0]. size: " << int(__aux64__);
                                 }
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 2) {
-                                    logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].value' " << (__aux64__) << " is less than allowable (2); message dropped.";
+                                    logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].value' " << (__aux64__) << " is less than allowable (2); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 63) {
-                                    logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].value' " << (__aux64__) << " exceeds max allowable (63); message dropped.";
+                                    logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].value' " << (__aux64__) << " exceeds max allowable (63); message dropped.";
                                     return false;
                                 }
                                 
@@ -1375,7 +1375,7 @@ namespace wind
                                         uint8_t* _ext_flag_13 = (uint8_t*) buffer++;  // Read ext flag from ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000066\033[0m| Reading ext flag from ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].: " << int(*_ext_flag_13);
+                                            logger->print() << "|" << tools::brown("000066") << "| Reading ext flag from ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].: " << int(*_ext_flag_13);
                                         }
                                         
                                         if(*(buffer++)) { 
@@ -1383,7 +1383,7 @@ namespace wind
                                             ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes.push_back(_tmp_73);
                                         
                                             if(debug)
-                                                logger->print() << "|\033[38;5;94m000067\033[0m| ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes " << tools::green("present");
+                                                logger->print() << "|" << tools::brown("000067") << "| ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes " << tools::green("present");
                                         }
                                         
                                         // Field name: delta
@@ -1418,17 +1418,17 @@ namespace wind
                                                 
                                                 // ******************* MIN validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ < -512) {
-                                                    logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy1[0].x.value' " << (__aux64__) << " is less than allowable (-512); message dropped.";
+                                                    logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy1[0].x.value' " << (__aux64__) << " is less than allowable (-512); message dropped.";
                                                     return false;
                                                 }
                                                 // ******************* MAX validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ > 511) {
-                                                    logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy1[0].x.value' " << (__aux64__) << " exceeds max allowable (511); message dropped.";
+                                                    logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy1[0].x.value' " << (__aux64__) << " exceeds max allowable (511); message dropped.";
                                                     return false;
                                                 }
                                                 
                                                 if(debug) {
-                                                    logger->print() << "|\033[38;5;94m000068\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy1[0].x.value) << " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy1[0].x: " <<
+                                                    logger->print() << "|" << tools::brown("000068") << "| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy1[0].x.value) << " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy1[0].x: " <<
                                                                  ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy1[0].x.value << " (" << __aux64__ << ")";
                                                 }
                                                 
@@ -1444,17 +1444,17 @@ namespace wind
                                                 
                                                 // ******************* MIN validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ < -512) {
-                                                    logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy1[0].y.value' " << (__aux64__) << " is less than allowable (-512); message dropped.";
+                                                    logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy1[0].y.value' " << (__aux64__) << " is less than allowable (-512); message dropped.";
                                                     return false;
                                                 }
                                                 // ******************* MAX validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ > 511) {
-                                                    logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy1[0].y.value' " << (__aux64__) << " exceeds max allowable (511); message dropped.";
+                                                    logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy1[0].y.value' " << (__aux64__) << " exceeds max allowable (511); message dropped.";
                                                     return false;
                                                 }
                                                 
                                                 if(debug) {
-                                                    logger->print() << "|\033[38;5;94m000069\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy1[0].y.value) << " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy1[0].y: " <<
+                                                    logger->print() << "|" << tools::brown("000069") << "| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy1[0].y.value) << " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy1[0].y: " <<
                                                                  ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy1[0].y.value << " (" << __aux64__ << ")";
                                                 }
                                         }
@@ -1479,17 +1479,17 @@ namespace wind
                                                 
                                                 // ******************* MIN validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ < -1024) {
-                                                    logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy2[0].x.value' " << (__aux64__) << " is less than allowable (-1024); message dropped.";
+                                                    logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy2[0].x.value' " << (__aux64__) << " is less than allowable (-1024); message dropped.";
                                                     return false;
                                                 }
                                                 // ******************* MAX validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ > 1023) {
-                                                    logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy2[0].x.value' " << (__aux64__) << " exceeds max allowable (1023); message dropped.";
+                                                    logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy2[0].x.value' " << (__aux64__) << " exceeds max allowable (1023); message dropped.";
                                                     return false;
                                                 }
                                                 
                                                 if(debug) {
-                                                    logger->print() << "|\033[38;5;94m000070\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy2[0].x.value) << " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy2[0].x: " <<
+                                                    logger->print() << "|" << tools::brown("000070") << "| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy2[0].x.value) << " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy2[0].x: " <<
                                                                  ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy2[0].x.value << " (" << __aux64__ << ")";
                                                 }
                                                 
@@ -1505,17 +1505,17 @@ namespace wind
                                                 
                                                 // ******************* MIN validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ < -1024) {
-                                                    logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy2[0].y.value' " << (__aux64__) << " is less than allowable (-1024); message dropped.";
+                                                    logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy2[0].y.value' " << (__aux64__) << " is less than allowable (-1024); message dropped.";
                                                     return false;
                                                 }
                                                 // ******************* MAX validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ > 1023) {
-                                                    logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy2[0].y.value' " << (__aux64__) << " exceeds max allowable (1023); message dropped.";
+                                                    logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy2[0].y.value' " << (__aux64__) << " exceeds max allowable (1023); message dropped.";
                                                     return false;
                                                 }
                                                 
                                                 if(debug) {
-                                                    logger->print() << "|\033[38;5;94m000071\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy2[0].y.value) << " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy2[0].y: " <<
+                                                    logger->print() << "|" << tools::brown("000071") << "| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy2[0].y.value) << " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy2[0].y: " <<
                                                                  ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy2[0].y.value << " (" << __aux64__ << ")";
                                                 }
                                         }
@@ -1540,17 +1540,17 @@ namespace wind
                                                 
                                                 // ******************* MIN validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ < -2048) {
-                                                    logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy3[0].x.value' " << (__aux64__) << " is less than allowable (-2048); message dropped.";
+                                                    logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy3[0].x.value' " << (__aux64__) << " is less than allowable (-2048); message dropped.";
                                                     return false;
                                                 }
                                                 // ******************* MAX validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ > 2047) {
-                                                    logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy3[0].x.value' " << (__aux64__) << " exceeds max allowable (2047); message dropped.";
+                                                    logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy3[0].x.value' " << (__aux64__) << " exceeds max allowable (2047); message dropped.";
                                                     return false;
                                                 }
                                                 
                                                 if(debug) {
-                                                    logger->print() << "|\033[38;5;94m000072\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy3[0].x.value) << " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy3[0].x: " <<
+                                                    logger->print() << "|" << tools::brown("000072") << "| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy3[0].x.value) << " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy3[0].x: " <<
                                                                  ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy3[0].x.value << " (" << __aux64__ << ")";
                                                 }
                                                 
@@ -1566,17 +1566,17 @@ namespace wind
                                                 
                                                 // ******************* MIN validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ < -2048) {
-                                                    logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy3[0].y.value' " << (__aux64__) << " is less than allowable (-2048); message dropped.";
+                                                    logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy3[0].y.value' " << (__aux64__) << " is less than allowable (-2048); message dropped.";
                                                     return false;
                                                 }
                                                 // ******************* MAX validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ > 2047) {
-                                                    logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy3[0].y.value' " << (__aux64__) << " exceeds max allowable (2047); message dropped.";
+                                                    logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy3[0].y.value' " << (__aux64__) << " exceeds max allowable (2047); message dropped.";
                                                     return false;
                                                 }
                                                 
                                                 if(debug) {
-                                                    logger->print() << "|\033[38;5;94m000073\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy3[0].y.value) << " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy3[0].y: " <<
+                                                    logger->print() << "|" << tools::brown("000073") << "| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy3[0].y.value) << " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy3[0].y: " <<
                                                                  ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy3[0].y.value << " (" << __aux64__ << ")";
                                                 }
                                         }
@@ -1601,17 +1601,17 @@ namespace wind
                                                 
                                                 // ******************* MIN validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ < -4096) {
-                                                    logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy4[0].x.value' " << (__aux64__) << " is less than allowable (-4096); message dropped.";
+                                                    logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy4[0].x.value' " << (__aux64__) << " is less than allowable (-4096); message dropped.";
                                                     return false;
                                                 }
                                                 // ******************* MAX validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ > 4095) {
-                                                    logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy4[0].x.value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
+                                                    logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy4[0].x.value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
                                                     return false;
                                                 }
                                                 
                                                 if(debug) {
-                                                    logger->print() << "|\033[38;5;94m000074\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy4[0].x.value) << " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy4[0].x: " <<
+                                                    logger->print() << "|" << tools::brown("000074") << "| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy4[0].x.value) << " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy4[0].x: " <<
                                                                  ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy4[0].x.value << " (" << __aux64__ << ")";
                                                 }
                                                 
@@ -1627,17 +1627,17 @@ namespace wind
                                                 
                                                 // ******************* MIN validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ < -4096) {
-                                                    logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy4[0].y.value' " << (__aux64__) << " is less than allowable (-4096); message dropped.";
+                                                    logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy4[0].y.value' " << (__aux64__) << " is less than allowable (-4096); message dropped.";
                                                     return false;
                                                 }
                                                 // ******************* MAX validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ > 4095) {
-                                                    logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy4[0].y.value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
+                                                    logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy4[0].y.value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
                                                     return false;
                                                 }
                                                 
                                                 if(debug) {
-                                                    logger->print() << "|\033[38;5;94m000075\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy4[0].y.value) << " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy4[0].y: " <<
+                                                    logger->print() << "|" << tools::brown("000075") << "| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy4[0].y.value) << " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy4[0].y: " <<
                                                                  ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy4[0].y.value << " (" << __aux64__ << ")";
                                                 }
                                         }
@@ -1662,17 +1662,17 @@ namespace wind
                                                 
                                                 // ******************* MIN validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ < -8192) {
-                                                    logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy5[0].x.value' " << (__aux64__) << " is less than allowable (-8192); message dropped.";
+                                                    logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy5[0].x.value' " << (__aux64__) << " is less than allowable (-8192); message dropped.";
                                                     return false;
                                                 }
                                                 // ******************* MAX validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ > 8191) {
-                                                    logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy5[0].x.value' " << (__aux64__) << " exceeds max allowable (8191); message dropped.";
+                                                    logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy5[0].x.value' " << (__aux64__) << " exceeds max allowable (8191); message dropped.";
                                                     return false;
                                                 }
                                                 
                                                 if(debug) {
-                                                    logger->print() << "|\033[38;5;94m000076\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy5[0].x.value) << " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy5[0].x: " <<
+                                                    logger->print() << "|" << tools::brown("000076") << "| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy5[0].x.value) << " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy5[0].x: " <<
                                                                  ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy5[0].x.value << " (" << __aux64__ << ")";
                                                 }
                                                 
@@ -1688,17 +1688,17 @@ namespace wind
                                                 
                                                 // ******************* MIN validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ < -8192) {
-                                                    logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy5[0].y.value' " << (__aux64__) << " is less than allowable (-8192); message dropped.";
+                                                    logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy5[0].y.value' " << (__aux64__) << " is less than allowable (-8192); message dropped.";
                                                     return false;
                                                 }
                                                 // ******************* MAX validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ > 8191) {
-                                                    logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy5[0].y.value' " << (__aux64__) << " exceeds max allowable (8191); message dropped.";
+                                                    logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy5[0].y.value' " << (__aux64__) << " exceeds max allowable (8191); message dropped.";
                                                     return false;
                                                 }
                                                 
                                                 if(debug) {
-                                                    logger->print() << "|\033[38;5;94m000077\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy5[0].y.value) << " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy5[0].y: " <<
+                                                    logger->print() << "|" << tools::brown("000077") << "| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy5[0].y.value) << " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy5[0].y: " <<
                                                                  ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy5[0].y.value << " (" << __aux64__ << ")";
                                                 }
                                         }
@@ -1723,17 +1723,17 @@ namespace wind
                                                 
                                                 // ******************* MIN validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ < -32768) {
-                                                    logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy6[0].x.value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
+                                                    logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy6[0].x.value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
                                                     return false;
                                                 }
                                                 // ******************* MAX validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ > 32767) {
-                                                    logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy6[0].x.value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
+                                                    logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy6[0].x.value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
                                                     return false;
                                                 }
                                                 
                                                 if(debug) {
-                                                    logger->print() << "|\033[38;5;94m000078\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy6[0].x.value) << " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy6[0].x: " <<
+                                                    logger->print() << "|" << tools::brown("000078") << "| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy6[0].x.value) << " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy6[0].x: " <<
                                                                  ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy6[0].x.value << " (" << __aux64__ << ")";
                                                 }
                                                 
@@ -1749,17 +1749,17 @@ namespace wind
                                                 
                                                 // ******************* MIN validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ < -32768) {
-                                                    logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy6[0].y.value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
+                                                    logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy6[0].y.value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
                                                     return false;
                                                 }
                                                 // ******************* MAX validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ > 32767) {
-                                                    logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy6[0].y.value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
+                                                    logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy6[0].y.value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
                                                     return false;
                                                 }
                                                 
                                                 if(debug) {
-                                                    logger->print() << "|\033[38;5;94m000079\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy6[0].y.value) << " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy6[0].y: " <<
+                                                    logger->print() << "|" << tools::brown("000079") << "| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy6[0].y.value) << " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy6[0].y: " <<
                                                                  ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_xy6[0].y.value << " (" << __aux64__ << ")";
                                                 }
                                         }
@@ -1784,17 +1784,17 @@ namespace wind
                                                 
                                                 // ******************* MIN validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ < -1800000000) {
-                                                    logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_lat_lon[0].lon.value' " << (__aux64__) << " is less than allowable (-1800000000); message dropped.";
+                                                    logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_lat_lon[0].lon.value' " << (__aux64__) << " is less than allowable (-1800000000); message dropped.";
                                                     return false;
                                                 }
                                                 // ******************* MAX validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ > 1800000001) {
-                                                    logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_lat_lon[0].lon.value' " << (__aux64__) << " exceeds max allowable (1800000001); message dropped.";
+                                                    logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_lat_lon[0].lon.value' " << (__aux64__) << " exceeds max allowable (1800000001); message dropped.";
                                                     return false;
                                                 }
                                                 
                                                 if(debug) {
-                                                    logger->print() << "|\033[38;5;94m000080\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_lat_lon[0].lon.value) << " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_lat_lon[0].lon: " <<
+                                                    logger->print() << "|" << tools::brown("000080") << "| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_lat_lon[0].lon.value) << " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_lat_lon[0].lon: " <<
                                                                  ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_lat_lon[0].lon.value << " (" << __aux64__ << ")";
                                                 }
                                                 
@@ -1810,17 +1810,17 @@ namespace wind
                                                 
                                                 // ******************* MIN validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ < -900000000) {
-                                                    logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_lat_lon[0].lat.value' " << (__aux64__) << " is less than allowable (-900000000); message dropped.";
+                                                    logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_lat_lon[0].lat.value' " << (__aux64__) << " is less than allowable (-900000000); message dropped.";
                                                     return false;
                                                 }
                                                 // ******************* MAX validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ > 900000001) {
-                                                    logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_lat_lon[0].lat.value' " << (__aux64__) << " exceeds max allowable (900000001); message dropped.";
+                                                    logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_lat_lon[0].lat.value' " << (__aux64__) << " exceeds max allowable (900000001); message dropped.";
                                                     return false;
                                                 }
                                                 
                                                 if(debug) {
-                                                    logger->print() << "|\033[38;5;94m000081\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_lat_lon[0].lat.value) << " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_lat_lon[0].lat: " <<
+                                                    logger->print() << "|" << tools::brown("000081") << "| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_lat_lon[0].lat.value) << " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_lat_lon[0].lat: " <<
                                                                  ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].delta.node_lat_lon[0].lat.value << " (" << __aux64__ << ")";
                                                 }
                                         }
@@ -1845,7 +1845,7 @@ namespace wind
                                                 uint8_t* _ext_flag_29 = (uint8_t*) buffer++;  // Read ext flag from ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].
                                                 
                                                 if(debug) {
-                                                    logger->print() << "|\033[38;5;94m000082\033[0m| Reading ext flag from ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].: " << int(*_ext_flag_29);
+                                                    logger->print() << "|" << tools::brown("000082") << "| Reading ext flag from ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].: " << int(*_ext_flag_29);
                                                 }
                                                 
                                                 if(*(buffer++)) { 
@@ -1853,49 +1853,49 @@ namespace wind
                                                     ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].local_node.push_back(_tmp_95);
                                                 
                                                     if(debug)
-                                                        logger->print() << "|\033[38;5;94m000083\033[0m| ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].local_node " << tools::green("present");
+                                                        logger->print() << "|" << tools::brown("000083") << "| ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].local_node " << tools::green("present");
                                                 }
                                                 if(*(buffer++)) { 
                                                     dsrc_v2_dsrc_msgs::msg::SegmentAttributeXYList _tmp_96;
                                                     ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].disabled.push_back(_tmp_96);
                                                 
                                                     if(debug)
-                                                        logger->print() << "|\033[38;5;94m000084\033[0m| ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].disabled " << tools::green("present");
+                                                        logger->print() << "|" << tools::brown("000084") << "| ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].disabled " << tools::green("present");
                                                 }
                                                 if(*(buffer++)) { 
                                                     dsrc_v2_dsrc_msgs::msg::SegmentAttributeXYList _tmp_97;
                                                     ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].enabled.push_back(_tmp_97);
                                                 
                                                     if(debug)
-                                                        logger->print() << "|\033[38;5;94m000085\033[0m| ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].enabled " << tools::green("present");
+                                                        logger->print() << "|" << tools::brown("000085") << "| ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].enabled " << tools::green("present");
                                                 }
                                                 if(*(buffer++)) { 
                                                     dsrc_v2_dsrc_msgs::msg::LaneDataAttributeList _tmp_98;
                                                     ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data.push_back(_tmp_98);
                                                 
                                                     if(debug)
-                                                        logger->print() << "|\033[38;5;94m000086\033[0m| ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data " << tools::green("present");
+                                                        logger->print() << "|" << tools::brown("000086") << "| ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data " << tools::green("present");
                                                 }
                                                 if(*(buffer++)) { 
                                                     dsrc_v2_dsrc_msgs::msg::OffsetB10 _tmp_99;
                                                     ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].d_width.push_back(_tmp_99);
                                                 
                                                     if(debug)
-                                                        logger->print() << "|\033[38;5;94m000087\033[0m| ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].d_width " << tools::green("present");
+                                                        logger->print() << "|" << tools::brown("000087") << "| ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].d_width " << tools::green("present");
                                                 }
                                                 if(*(buffer++)) { 
                                                     dsrc_v2_dsrc_msgs::msg::OffsetB10 _tmp_100;
                                                     ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].d_elevation.push_back(_tmp_100);
                                                 
                                                     if(debug)
-                                                        logger->print() << "|\033[38;5;94m000088\033[0m| ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].d_elevation " << tools::green("present");
+                                                        logger->print() << "|" << tools::brown("000088") << "| ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].d_elevation " << tools::green("present");
                                                 }
                                                 if(*(buffer++)) { 
                                                     dsrc_v2_dsrc_msgs::msg::NodeAttributeSetXYRegional _tmp_101;
                                                     ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].regional.push_back(_tmp_101);
                                                 
                                                     if(debug)
-                                                        logger->print() << "|\033[38;5;94m000089\033[0m| ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].regional " << tools::green("present");
+                                                        logger->print() << "|" << tools::brown("000089") << "| ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].regional " << tools::green("present");
                                                 }
                                                 
                                                 if(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].local_node.size() != 0) {
@@ -1911,17 +1911,17 @@ namespace wind
                                                     int _if__tmp_102 = __aux64__;
                                                     
                                                     if(debug) {
-                                                        logger->print() << "|\033[38;5;94m000090\033[0m| SequenceOf ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].local_node[0]. size: " << int(__aux64__);
+                                                        logger->print() << "|" << tools::brown("000090") << "| SequenceOf ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].local_node[0]. size: " << int(__aux64__);
                                                     }
                                                     
                                                     // ******************* MIN validator *******************
                                                     if(VALIDATORS_ENABLED && __aux64__ < 1) {
-                                                        logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].local_node[0].value' " << (__aux64__) << " is less than allowable (1); message dropped.";
+                                                        logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].local_node[0].value' " << (__aux64__) << " is less than allowable (1); message dropped.";
                                                         return false;
                                                     }
                                                     // ******************* MAX validator *******************
                                                     if(VALIDATORS_ENABLED && __aux64__ > 8) {
-                                                        logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].local_node[0].value' " << (__aux64__) << " exceeds max allowable (8); message dropped.";
+                                                        logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].local_node[0].value' " << (__aux64__) << " exceeds max allowable (8); message dropped.";
                                                         return false;
                                                     }
                                                     
@@ -1935,7 +1935,7 @@ namespace wind
                                                         uint8_t* _ext_flag_30 = (uint8_t*) buffer++;  // Read ext flag from ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].local_node[0].elements[r].
                                                         
                                                         if(debug) {
-                                                            logger->print() << "|\033[38;5;94m000091\033[0m| Reading ext flag from ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].local_node[0].elements[r].: " << int(*_ext_flag_30);
+                                                            logger->print() << "|" << tools::brown("000091") << "| Reading ext flag from ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].local_node[0].elements[r].: " << int(*_ext_flag_30);
                                                         }
                                                         
                                                         uint8_t* _tmp_103 = (uint8_t*) buffer++;
@@ -1944,18 +1944,18 @@ namespace wind
                                                         ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].local_node[0].elements[r].value = __aux64__;
                                                         // ******************* MIN validator *******************
                                                         if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                                            logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].local_node[0].elements[r].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                                            logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].local_node[0].elements[r].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                                             return false;
                                                         }
                                                         // ******************* MAX validator *******************
                                                         if(VALIDATORS_ENABLED && __aux64__ > 11) {
-                                                            logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].local_node[0].elements[r].value' " << (__aux64__) << " exceeds max allowable (11); message dropped.";
+                                                            logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].local_node[0].elements[r].value' " << (__aux64__) << " exceeds max allowable (11); message dropped.";
                                                             return false;
                                                         }
                                                         
                                                         
                                                         if(debug) {
-                                                            logger->print() << "|\033[38;5;94m000092\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].local_node[0].elements[r].value) << 
+                                                            logger->print() << "|" << tools::brown("000092") << "| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].local_node[0].elements[r].value) << 
                                                                          " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].local_node[0].elements[r].value: " << static_cast<int>(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].local_node[0].elements[r].value);
                                                         }
                                                         
@@ -1975,17 +1975,17 @@ namespace wind
                                                     int _if__tmp_104 = __aux64__;
                                                     
                                                     if(debug) {
-                                                        logger->print() << "|\033[38;5;94m000093\033[0m| SequenceOf ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].disabled[0]. size: " << int(__aux64__);
+                                                        logger->print() << "|" << tools::brown("000093") << "| SequenceOf ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].disabled[0]. size: " << int(__aux64__);
                                                     }
                                                     
                                                     // ******************* MIN validator *******************
                                                     if(VALIDATORS_ENABLED && __aux64__ < 1) {
-                                                        logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].disabled[0].value' " << (__aux64__) << " is less than allowable (1); message dropped.";
+                                                        logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].disabled[0].value' " << (__aux64__) << " is less than allowable (1); message dropped.";
                                                         return false;
                                                     }
                                                     // ******************* MAX validator *******************
                                                     if(VALIDATORS_ENABLED && __aux64__ > 8) {
-                                                        logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].disabled[0].value' " << (__aux64__) << " exceeds max allowable (8); message dropped.";
+                                                        logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].disabled[0].value' " << (__aux64__) << " exceeds max allowable (8); message dropped.";
                                                         return false;
                                                     }
                                                     
@@ -1999,7 +1999,7 @@ namespace wind
                                                         uint8_t* _ext_flag_31 = (uint8_t*) buffer++;  // Read ext flag from ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].disabled[0].elements[s].
                                                         
                                                         if(debug) {
-                                                            logger->print() << "|\033[38;5;94m000094\033[0m| Reading ext flag from ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].disabled[0].elements[s].: " << int(*_ext_flag_31);
+                                                            logger->print() << "|" << tools::brown("000094") << "| Reading ext flag from ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].disabled[0].elements[s].: " << int(*_ext_flag_31);
                                                         }
                                                         
                                                         uint8_t* _tmp_105 = (uint8_t*) buffer++;
@@ -2008,18 +2008,18 @@ namespace wind
                                                         ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].disabled[0].elements[s].value = __aux64__;
                                                         // ******************* MIN validator *******************
                                                         if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                                            logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].disabled[0].elements[s].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                                            logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].disabled[0].elements[s].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                                             return false;
                                                         }
                                                         // ******************* MAX validator *******************
                                                         if(VALIDATORS_ENABLED && __aux64__ > 37) {
-                                                            logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].disabled[0].elements[s].value' " << (__aux64__) << " exceeds max allowable (37); message dropped.";
+                                                            logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].disabled[0].elements[s].value' " << (__aux64__) << " exceeds max allowable (37); message dropped.";
                                                             return false;
                                                         }
                                                         
                                                         
                                                         if(debug) {
-                                                            logger->print() << "|\033[38;5;94m000095\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].disabled[0].elements[s].value) << 
+                                                            logger->print() << "|" << tools::brown("000095") << "| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].disabled[0].elements[s].value) << 
                                                                          " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].disabled[0].elements[s].value: " << static_cast<int>(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].disabled[0].elements[s].value);
                                                         }
                                                         
@@ -2039,17 +2039,17 @@ namespace wind
                                                     int _if__tmp_106 = __aux64__;
                                                     
                                                     if(debug) {
-                                                        logger->print() << "|\033[38;5;94m000096\033[0m| SequenceOf ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].enabled[0]. size: " << int(__aux64__);
+                                                        logger->print() << "|" << tools::brown("000096") << "| SequenceOf ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].enabled[0]. size: " << int(__aux64__);
                                                     }
                                                     
                                                     // ******************* MIN validator *******************
                                                     if(VALIDATORS_ENABLED && __aux64__ < 1) {
-                                                        logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].enabled[0].value' " << (__aux64__) << " is less than allowable (1); message dropped.";
+                                                        logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].enabled[0].value' " << (__aux64__) << " is less than allowable (1); message dropped.";
                                                         return false;
                                                     }
                                                     // ******************* MAX validator *******************
                                                     if(VALIDATORS_ENABLED && __aux64__ > 8) {
-                                                        logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].enabled[0].value' " << (__aux64__) << " exceeds max allowable (8); message dropped.";
+                                                        logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].enabled[0].value' " << (__aux64__) << " exceeds max allowable (8); message dropped.";
                                                         return false;
                                                     }
                                                     
@@ -2063,7 +2063,7 @@ namespace wind
                                                         uint8_t* _ext_flag_32 = (uint8_t*) buffer++;  // Read ext flag from ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].enabled[0].elements[t].
                                                         
                                                         if(debug) {
-                                                            logger->print() << "|\033[38;5;94m000097\033[0m| Reading ext flag from ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].enabled[0].elements[t].: " << int(*_ext_flag_32);
+                                                            logger->print() << "|" << tools::brown("000097") << "| Reading ext flag from ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].enabled[0].elements[t].: " << int(*_ext_flag_32);
                                                         }
                                                         
                                                         uint8_t* _tmp_107 = (uint8_t*) buffer++;
@@ -2072,18 +2072,18 @@ namespace wind
                                                         ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].enabled[0].elements[t].value = __aux64__;
                                                         // ******************* MIN validator *******************
                                                         if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                                            logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].enabled[0].elements[t].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                                            logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].enabled[0].elements[t].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                                             return false;
                                                         }
                                                         // ******************* MAX validator *******************
                                                         if(VALIDATORS_ENABLED && __aux64__ > 37) {
-                                                            logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].enabled[0].elements[t].value' " << (__aux64__) << " exceeds max allowable (37); message dropped.";
+                                                            logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].enabled[0].elements[t].value' " << (__aux64__) << " exceeds max allowable (37); message dropped.";
                                                             return false;
                                                         }
                                                         
                                                         
                                                         if(debug) {
-                                                            logger->print() << "|\033[38;5;94m000098\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].enabled[0].elements[t].value) << 
+                                                            logger->print() << "|" << tools::brown("000098") << "| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].enabled[0].elements[t].value) << 
                                                                          " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].enabled[0].elements[t].value: " << static_cast<int>(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].enabled[0].elements[t].value);
                                                         }
                                                         
@@ -2103,17 +2103,17 @@ namespace wind
                                                     int _if__tmp_108 = __aux64__;
                                                     
                                                     if(debug) {
-                                                        logger->print() << "|\033[38;5;94m000099\033[0m| SequenceOf ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0]. size: " << int(__aux64__);
+                                                        logger->print() << "|" << tools::brown("000099") << "| SequenceOf ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0]. size: " << int(__aux64__);
                                                     }
                                                     
                                                     // ******************* MIN validator *******************
                                                     if(VALIDATORS_ENABLED && __aux64__ < 1) {
-                                                        logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].value' " << (__aux64__) << " is less than allowable (1); message dropped.";
+                                                        logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].value' " << (__aux64__) << " is less than allowable (1); message dropped.";
                                                         return false;
                                                     }
                                                     // ******************* MAX validator *******************
                                                     if(VALIDATORS_ENABLED && __aux64__ > 8) {
-                                                        logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].value' " << (__aux64__) << " exceeds max allowable (8); message dropped.";
+                                                        logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].value' " << (__aux64__) << " exceeds max allowable (8); message dropped.";
                                                         return false;
                                                     }
                                                     
@@ -2149,18 +2149,18 @@ namespace wind
                                                             ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].path_end_point_angle[0].value = __aux64__;
                                                             
                                                             if(debug) {
-                                                                logger->print() << "|\033[38;5;94m000100\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].path_end_point_angle[0].value) << 
+                                                                logger->print() << "|" << tools::brown("000100") << "| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].path_end_point_angle[0].value) << 
                                                                              " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].path_end_point_angle[0].value: " << ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].path_end_point_angle[0].value;
                                                             }
                                                             
                                                             // ******************* MIN validator *******************
                                                             if(VALIDATORS_ENABLED && __aux64__ < -150) {
-                                                                logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].path_end_point_angle[0].value' " << (__aux64__) << " is less than allowable (-150); message dropped.";
+                                                                logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].path_end_point_angle[0].value' " << (__aux64__) << " is less than allowable (-150); message dropped.";
                                                                 return false;
                                                             }
                                                             // ******************* MAX validator *******************
                                                             if(VALIDATORS_ENABLED && __aux64__ > 150) {
-                                                                logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].path_end_point_angle[0].value' " << (__aux64__) << " exceeds max allowable (150); message dropped.";
+                                                                logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].path_end_point_angle[0].value' " << (__aux64__) << " exceeds max allowable (150); message dropped.";
                                                                 return false;
                                                             }
                                                         }
@@ -2177,18 +2177,18 @@ namespace wind
                                                             ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].lane_crown_point_center[0].value = __aux64__;
                                                             
                                                             if(debug) {
-                                                                logger->print() << "|\033[38;5;94m000101\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].lane_crown_point_center[0].value) << 
+                                                                logger->print() << "|" << tools::brown("000101") << "| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].lane_crown_point_center[0].value) << 
                                                                              " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].lane_crown_point_center[0].value: " << static_cast<int>(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].lane_crown_point_center[0].value);
                                                             }
                                                             
                                                             // ******************* MIN validator *******************
                                                             if(VALIDATORS_ENABLED && __aux64__ < -128) {
-                                                                logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].lane_crown_point_center[0].value' " << (__aux64__) << " is less than allowable (-128); message dropped.";
+                                                                logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].lane_crown_point_center[0].value' " << (__aux64__) << " is less than allowable (-128); message dropped.";
                                                                 return false;
                                                             }
                                                             // ******************* MAX validator *******************
                                                             if(VALIDATORS_ENABLED && __aux64__ > 127) {
-                                                                logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].lane_crown_point_center[0].value' " << (__aux64__) << " exceeds max allowable (127); message dropped.";
+                                                                logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].lane_crown_point_center[0].value' " << (__aux64__) << " exceeds max allowable (127); message dropped.";
                                                                 return false;
                                                             }
                                                         }
@@ -2205,18 +2205,18 @@ namespace wind
                                                             ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].lane_crown_point_left[0].value = __aux64__;
                                                             
                                                             if(debug) {
-                                                                logger->print() << "|\033[38;5;94m000102\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].lane_crown_point_left[0].value) << 
+                                                                logger->print() << "|" << tools::brown("000102") << "| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].lane_crown_point_left[0].value) << 
                                                                              " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].lane_crown_point_left[0].value: " << static_cast<int>(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].lane_crown_point_left[0].value);
                                                             }
                                                             
                                                             // ******************* MIN validator *******************
                                                             if(VALIDATORS_ENABLED && __aux64__ < -128) {
-                                                                logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].lane_crown_point_left[0].value' " << (__aux64__) << " is less than allowable (-128); message dropped.";
+                                                                logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].lane_crown_point_left[0].value' " << (__aux64__) << " is less than allowable (-128); message dropped.";
                                                                 return false;
                                                             }
                                                             // ******************* MAX validator *******************
                                                             if(VALIDATORS_ENABLED && __aux64__ > 127) {
-                                                                logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].lane_crown_point_left[0].value' " << (__aux64__) << " exceeds max allowable (127); message dropped.";
+                                                                logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].lane_crown_point_left[0].value' " << (__aux64__) << " exceeds max allowable (127); message dropped.";
                                                                 return false;
                                                             }
                                                         }
@@ -2233,18 +2233,18 @@ namespace wind
                                                             ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].lane_crown_point_right[0].value = __aux64__;
                                                             
                                                             if(debug) {
-                                                                logger->print() << "|\033[38;5;94m000103\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].lane_crown_point_right[0].value) << 
+                                                                logger->print() << "|" << tools::brown("000103") << "| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].lane_crown_point_right[0].value) << 
                                                                              " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].lane_crown_point_right[0].value: " << static_cast<int>(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].lane_crown_point_right[0].value);
                                                             }
                                                             
                                                             // ******************* MIN validator *******************
                                                             if(VALIDATORS_ENABLED && __aux64__ < -128) {
-                                                                logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].lane_crown_point_right[0].value' " << (__aux64__) << " is less than allowable (-128); message dropped.";
+                                                                logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].lane_crown_point_right[0].value' " << (__aux64__) << " is less than allowable (-128); message dropped.";
                                                                 return false;
                                                             }
                                                             // ******************* MAX validator *******************
                                                             if(VALIDATORS_ENABLED && __aux64__ > 127) {
-                                                                logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].lane_crown_point_right[0].value' " << (__aux64__) << " exceeds max allowable (127); message dropped.";
+                                                                logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].lane_crown_point_right[0].value' " << (__aux64__) << " exceeds max allowable (127); message dropped.";
                                                                 return false;
                                                             }
                                                         }
@@ -2261,18 +2261,18 @@ namespace wind
                                                             ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].lane_angle[0].value = __aux64__;
                                                             
                                                             if(debug) {
-                                                                logger->print() << "|\033[38;5;94m000104\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].lane_angle[0].value) << 
+                                                                logger->print() << "|" << tools::brown("000104") << "| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].lane_angle[0].value) << 
                                                                              " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].lane_angle[0].value: " << ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].lane_angle[0].value;
                                                             }
                                                             
                                                             // ******************* MIN validator *******************
                                                             if(VALIDATORS_ENABLED && __aux64__ < -180) {
-                                                                logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].lane_angle[0].value' " << (__aux64__) << " is less than allowable (-180); message dropped.";
+                                                                logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].lane_angle[0].value' " << (__aux64__) << " is less than allowable (-180); message dropped.";
                                                                 return false;
                                                             }
                                                             // ******************* MAX validator *******************
                                                             if(VALIDATORS_ENABLED && __aux64__ > 180) {
-                                                                logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].lane_angle[0].value' " << (__aux64__) << " exceeds max allowable (180); message dropped.";
+                                                                logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].lane_angle[0].value' " << (__aux64__) << " exceeds max allowable (180); message dropped.";
                                                                 return false;
                                                             }
                                                         }
@@ -2292,17 +2292,17 @@ namespace wind
                                                             int _if__tmp_120 = __aux64__;
                                                             
                                                             if(debug) {
-                                                                logger->print() << "|\033[38;5;94m000105\033[0m| SequenceOf ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].speed_limits[0]. size: " << int(__aux64__);
+                                                                logger->print() << "|" << tools::brown("000105") << "| SequenceOf ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].speed_limits[0]. size: " << int(__aux64__);
                                                             }
                                                             
                                                             // ******************* MIN validator *******************
                                                             if(VALIDATORS_ENABLED && __aux64__ < 1) {
-                                                                logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].speed_limits[0].value' " << (__aux64__) << " is less than allowable (1); message dropped.";
+                                                                logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].speed_limits[0].value' " << (__aux64__) << " is less than allowable (1); message dropped.";
                                                                 return false;
                                                             }
                                                             // ******************* MAX validator *******************
                                                             if(VALIDATORS_ENABLED && __aux64__ > 9) {
-                                                                logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].speed_limits[0].value' " << (__aux64__) << " exceeds max allowable (9); message dropped.";
+                                                                logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].speed_limits[0].value' " << (__aux64__) << " exceeds max allowable (9); message dropped.";
                                                                 return false;
                                                             }
                                                             
@@ -2321,7 +2321,7 @@ namespace wind
                                                                     uint8_t* _ext_flag_34 = (uint8_t*) buffer++;  // Read ext flag from ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].speed_limits[0].elements[v].type.
                                                                     
                                                                     if(debug) {
-                                                                        logger->print() << "|\033[38;5;94m000106\033[0m| Reading ext flag from ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].speed_limits[0].elements[v].type.: " << int(*_ext_flag_34);
+                                                                        logger->print() << "|" << tools::brown("000106") << "| Reading ext flag from ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].speed_limits[0].elements[v].type.: " << int(*_ext_flag_34);
                                                                     }
                                                                     
                                                                     uint8_t* _tmp_121 = (uint8_t*) buffer++;
@@ -2330,18 +2330,18 @@ namespace wind
                                                                     ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].speed_limits[0].elements[v].type.value = __aux64__;
                                                                     // ******************* MIN validator *******************
                                                                     if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                                                        logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].speed_limits[0].elements[v].type.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                                                        logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].speed_limits[0].elements[v].type.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                                                         return false;
                                                                     }
                                                                     // ******************* MAX validator *******************
                                                                     if(VALIDATORS_ENABLED && __aux64__ > 12) {
-                                                                        logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].speed_limits[0].elements[v].type.value' " << (__aux64__) << " exceeds max allowable (12); message dropped.";
+                                                                        logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].speed_limits[0].elements[v].type.value' " << (__aux64__) << " exceeds max allowable (12); message dropped.";
                                                                         return false;
                                                                     }
                                                                     
                                                                     
                                                                     if(debug) {
-                                                                        logger->print() << "|\033[38;5;94m000107\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].speed_limits[0].elements[v].type.value) << 
+                                                                        logger->print() << "|" << tools::brown("000107") << "| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].speed_limits[0].elements[v].type.value) << 
                                                                                      " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].speed_limits[0].elements[v].type.value: " << static_cast<int>(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].speed_limits[0].elements[v].type.value);
                                                                     }
                                                                     
@@ -2353,18 +2353,18 @@ namespace wind
                                                                     ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].speed_limits[0].elements[v].speed.value = __aux64__;
                                                                     
                                                                     if(debug) {
-                                                                        logger->print() << "|\033[38;5;94m000108\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].speed_limits[0].elements[v].speed.value) << 
+                                                                        logger->print() << "|" << tools::brown("000108") << "| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].speed_limits[0].elements[v].speed.value) << 
                                                                                      " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].speed_limits[0].elements[v].speed.value: " << ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].speed_limits[0].elements[v].speed.value;
                                                                     }
                                                                     
                                                                     // ******************* MIN validator *******************
                                                                     if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                                                        logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].speed_limits[0].elements[v].speed.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                                                        logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].speed_limits[0].elements[v].speed.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                                                         return false;
                                                                     }
                                                                     // ******************* MAX validator *******************
                                                                     if(VALIDATORS_ENABLED && __aux64__ > 8191) {
-                                                                        logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].speed_limits[0].elements[v].speed.value' " << (__aux64__) << " exceeds max allowable (8191); message dropped.";
+                                                                        logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].data[0].elements[u].speed_limits[0].elements[v].speed.value' " << (__aux64__) << " exceeds max allowable (8191); message dropped.";
                                                                         return false;
                                                                     }
                                                             }
@@ -2391,17 +2391,17 @@ namespace wind
                                                     
                                                     // ******************* MIN validator *******************
                                                     if(VALIDATORS_ENABLED && __aux64__ < -512) {
-                                                        logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].d_width[0].value' " << (__aux64__) << " is less than allowable (-512); message dropped.";
+                                                        logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].d_width[0].value' " << (__aux64__) << " is less than allowable (-512); message dropped.";
                                                         return false;
                                                     }
                                                     // ******************* MAX validator *******************
                                                     if(VALIDATORS_ENABLED && __aux64__ > 511) {
-                                                        logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].d_width[0].value' " << (__aux64__) << " exceeds max allowable (511); message dropped.";
+                                                        logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].d_width[0].value' " << (__aux64__) << " exceeds max allowable (511); message dropped.";
                                                         return false;
                                                     }
                                                     
                                                     if(debug) {
-                                                        logger->print() << "|\033[38;5;94m000109\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].d_width[0].value) << " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].d_width[0]: " <<
+                                                        logger->print() << "|" << tools::brown("000109") << "| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].d_width[0].value) << " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].d_width[0]: " <<
                                                                      ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].d_width[0].value << " (" << __aux64__ << ")";
                                                     }
                                                 }
@@ -2419,17 +2419,17 @@ namespace wind
                                                     
                                                     // ******************* MIN validator *******************
                                                     if(VALIDATORS_ENABLED && __aux64__ < -512) {
-                                                        logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].d_elevation[0].value' " << (__aux64__) << " is less than allowable (-512); message dropped.";
+                                                        logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].d_elevation[0].value' " << (__aux64__) << " is less than allowable (-512); message dropped.";
                                                         return false;
                                                     }
                                                     // ******************* MAX validator *******************
                                                     if(VALIDATORS_ENABLED && __aux64__ > 511) {
-                                                        logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].d_elevation[0].value' " << (__aux64__) << " exceeds max allowable (511); message dropped.";
+                                                        logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].d_elevation[0].value' " << (__aux64__) << " exceeds max allowable (511); message dropped.";
                                                         return false;
                                                     }
                                                     
                                                     if(debug) {
-                                                        logger->print() << "|\033[38;5;94m000110\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].d_elevation[0].value) << " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].d_elevation[0]: " <<
+                                                        logger->print() << "|" << tools::brown("000110") << "| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].d_elevation[0].value) << " map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].d_elevation[0]: " <<
                                                                      ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].d_elevation[0].value << " (" << __aux64__ << ")";
                                                     }
                                                 }
@@ -2440,7 +2440,7 @@ namespace wind
                                                     bool _array_2[*_tmp_126];
                                                     
                                                     if(debug)
-                                                        logger->print() << "|\033[38;5;94m000111\033[0m| Reading number of exts from ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].: " << static_cast<unsigned int>(*_tmp_126);
+                                                        logger->print() << "|" << tools::brown("000111") << "| Reading number of exts from ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].attributes[0].: " << static_cast<unsigned int>(*_tmp_126);
                                                     
                                                     // Extensions bytemap
                                                     for(int i = 0; i < *_tmp_126; i++)
@@ -2465,7 +2465,7 @@ namespace wind
                                             bool _array_3[*_tmp_128];
                                             
                                             if(debug)
-                                                logger->print() << "|\033[38;5;94m000112\033[0m| Reading number of exts from ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].: " << static_cast<unsigned int>(*_tmp_128);
+                                                logger->print() << "|" << tools::brown("000112") << "| Reading number of exts from ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.nodes[0].elements[q].: " << static_cast<unsigned int>(*_tmp_128);
                                             
                                             // Extensions bytemap
                                             for(int i = 0; i < *_tmp_128; i++)
@@ -2503,7 +2503,7 @@ namespace wind
                                     uint8_t* _ext_flag_37 = (uint8_t*) buffer++;  // Read ext flag from ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].
                                     
                                     if(debug) {
-                                        logger->print() << "|\033[38;5;94m000113\033[0m| Reading ext flag from ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].: " << int(*_ext_flag_37);
+                                        logger->print() << "|" << tools::brown("000113") << "| Reading ext flag from ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].: " << int(*_ext_flag_37);
                                     }
                                     
                                     if(*(buffer++)) { 
@@ -2511,28 +2511,28 @@ namespace wind
                                         ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].rotate_xy.push_back(_tmp_131);
                                     
                                         if(debug)
-                                            logger->print() << "|\033[38;5;94m000114\033[0m| ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].rotate_xy " << tools::green("present");
+                                            logger->print() << "|" << tools::brown("000114") << "| ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].rotate_xy " << tools::green("present");
                                     }
                                     if(*(buffer++)) { 
                                         dsrc_v2_dsrc_msgs::msg::ScaleB12 _tmp_132;
                                         ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].scale_xaxis.push_back(_tmp_132);
                                     
                                         if(debug)
-                                            logger->print() << "|\033[38;5;94m000115\033[0m| ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].scale_xaxis " << tools::green("present");
+                                            logger->print() << "|" << tools::brown("000115") << "| ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].scale_xaxis " << tools::green("present");
                                     }
                                     if(*(buffer++)) { 
                                         dsrc_v2_dsrc_msgs::msg::ScaleB12 _tmp_133;
                                         ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].scale_yaxis.push_back(_tmp_133);
                                     
                                         if(debug)
-                                            logger->print() << "|\033[38;5;94m000116\033[0m| ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].scale_yaxis " << tools::green("present");
+                                            logger->print() << "|" << tools::brown("000116") << "| ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].scale_yaxis " << tools::green("present");
                                     }
                                     if(*(buffer++)) { 
                                         dsrc_v2_dsrc_msgs::msg::ComputedLaneRegional _tmp_134;
                                         ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].regional.push_back(_tmp_134);
                                     
                                         if(debug)
-                                            logger->print() << "|\033[38;5;94m000117\033[0m| ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].regional " << tools::green("present");
+                                            logger->print() << "|" << tools::brown("000117") << "| ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].regional " << tools::green("present");
                                     }
                                     
                                     // Field name: reference_lane_id
@@ -2543,18 +2543,18 @@ namespace wind
                                     ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].reference_lane_id.value = __aux64__;
                                     
                                     if(debug) {
-                                        logger->print() << "|\033[38;5;94m000118\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].reference_lane_id.value) << 
+                                        logger->print() << "|" << tools::brown("000118") << "| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].reference_lane_id.value) << 
                                                      " map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].reference_lane_id.value: " << static_cast<int>(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].reference_lane_id.value);
                                     }
                                     
                                     // ******************* MIN validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                        logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].reference_lane_id.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                        logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].reference_lane_id.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                         return false;
                                     }
                                     // ******************* MAX validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ > 255) {
-                                        logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].reference_lane_id.value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
+                                        logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].reference_lane_id.value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
                                         return false;
                                     }
                                     
@@ -2576,18 +2576,18 @@ namespace wind
                                         ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].offset_xaxis.small[0].value = __aux64__;
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000119\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].offset_xaxis.small[0].value) << 
+                                            logger->print() << "|" << tools::brown("000119") << "| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].offset_xaxis.small[0].value) << 
                                                          " map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].offset_xaxis.small[0].value: " << ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].offset_xaxis.small[0].value;
                                         }
                                         
                                         // ******************* MIN validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ < -2047) {
-                                            logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].offset_xaxis.small[0].value' " << (__aux64__) << " is less than allowable (-2047); message dropped.";
+                                            logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].offset_xaxis.small[0].value' " << (__aux64__) << " is less than allowable (-2047); message dropped.";
                                             return false;
                                         }
                                         // ******************* MAX validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ > 2047) {
-                                            logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].offset_xaxis.small[0].value' " << (__aux64__) << " exceeds max allowable (2047); message dropped.";
+                                            logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].offset_xaxis.small[0].value' " << (__aux64__) << " exceeds max allowable (2047); message dropped.";
                                             return false;
                                         }
                                     }
@@ -2604,18 +2604,18 @@ namespace wind
                                         ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].offset_xaxis.large[0].value = __aux64__;
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000120\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].offset_xaxis.large[0].value) << 
+                                            logger->print() << "|" << tools::brown("000120") << "| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].offset_xaxis.large[0].value) << 
                                                          " map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].offset_xaxis.large[0].value: " << ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].offset_xaxis.large[0].value;
                                         }
                                         
                                         // ******************* MIN validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ < -32767) {
-                                            logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].offset_xaxis.large[0].value' " << (__aux64__) << " is less than allowable (-32767); message dropped.";
+                                            logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].offset_xaxis.large[0].value' " << (__aux64__) << " is less than allowable (-32767); message dropped.";
                                             return false;
                                         }
                                         // ******************* MAX validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ > 32767) {
-                                            logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].offset_xaxis.large[0].value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
+                                            logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].offset_xaxis.large[0].value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
                                             return false;
                                         }
                                     }
@@ -2643,18 +2643,18 @@ namespace wind
                                         ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].offset_yaxis.small[0].value = __aux64__;
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000121\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].offset_yaxis.small[0].value) << 
+                                            logger->print() << "|" << tools::brown("000121") << "| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].offset_yaxis.small[0].value) << 
                                                          " map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].offset_yaxis.small[0].value: " << ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].offset_yaxis.small[0].value;
                                         }
                                         
                                         // ******************* MIN validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ < -2047) {
-                                            logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].offset_yaxis.small[0].value' " << (__aux64__) << " is less than allowable (-2047); message dropped.";
+                                            logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].offset_yaxis.small[0].value' " << (__aux64__) << " is less than allowable (-2047); message dropped.";
                                             return false;
                                         }
                                         // ******************* MAX validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ > 2047) {
-                                            logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].offset_yaxis.small[0].value' " << (__aux64__) << " exceeds max allowable (2047); message dropped.";
+                                            logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].offset_yaxis.small[0].value' " << (__aux64__) << " exceeds max allowable (2047); message dropped.";
                                             return false;
                                         }
                                     }
@@ -2671,18 +2671,18 @@ namespace wind
                                         ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].offset_yaxis.large[0].value = __aux64__;
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000122\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].offset_yaxis.large[0].value) << 
+                                            logger->print() << "|" << tools::brown("000122") << "| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].offset_yaxis.large[0].value) << 
                                                          " map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].offset_yaxis.large[0].value: " << ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].offset_yaxis.large[0].value;
                                         }
                                         
                                         // ******************* MIN validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ < -32767) {
-                                            logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].offset_yaxis.large[0].value' " << (__aux64__) << " is less than allowable (-32767); message dropped.";
+                                            logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].offset_yaxis.large[0].value' " << (__aux64__) << " is less than allowable (-32767); message dropped.";
                                             return false;
                                         }
                                         // ******************* MAX validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ > 32767) {
-                                            logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].offset_yaxis.large[0].value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
+                                            logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].offset_yaxis.large[0].value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
                                             return false;
                                         }
                                     }
@@ -2701,18 +2701,18 @@ namespace wind
                                         ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].rotate_xy[0].value = __aux64__;
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000123\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].rotate_xy[0].value) << 
+                                            logger->print() << "|" << tools::brown("000123") << "| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].rotate_xy[0].value) << 
                                                          " map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].rotate_xy[0].value: " << ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].rotate_xy[0].value;
                                         }
                                         
                                         // ******************* MIN validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                            logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].rotate_xy[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                            logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].rotate_xy[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                             return false;
                                         }
                                         // ******************* MAX validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ > 28800) {
-                                            logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].rotate_xy[0].value' " << (__aux64__) << " exceeds max allowable (28800); message dropped.";
+                                            logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].rotate_xy[0].value' " << (__aux64__) << " exceeds max allowable (28800); message dropped.";
                                             return false;
                                         }
                                     }
@@ -2727,18 +2727,18 @@ namespace wind
                                         ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].scale_xaxis[0].value = __aux64__;
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000124\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].scale_xaxis[0].value) << 
+                                            logger->print() << "|" << tools::brown("000124") << "| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].scale_xaxis[0].value) << 
                                                          " map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].scale_xaxis[0].value: " << ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].scale_xaxis[0].value;
                                         }
                                         
                                         // ******************* MIN validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ < -2048) {
-                                            logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].scale_xaxis[0].value' " << (__aux64__) << " is less than allowable (-2048); message dropped.";
+                                            logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].scale_xaxis[0].value' " << (__aux64__) << " is less than allowable (-2048); message dropped.";
                                             return false;
                                         }
                                         // ******************* MAX validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ > 2047) {
-                                            logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].scale_xaxis[0].value' " << (__aux64__) << " exceeds max allowable (2047); message dropped.";
+                                            logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].scale_xaxis[0].value' " << (__aux64__) << " exceeds max allowable (2047); message dropped.";
                                             return false;
                                         }
                                     }
@@ -2753,18 +2753,18 @@ namespace wind
                                         ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].scale_yaxis[0].value = __aux64__;
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000125\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].scale_yaxis[0].value) << 
+                                            logger->print() << "|" << tools::brown("000125") << "| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].scale_yaxis[0].value) << 
                                                          " map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].scale_yaxis[0].value: " << ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].scale_yaxis[0].value;
                                         }
                                         
                                         // ******************* MIN validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ < -2048) {
-                                            logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].scale_yaxis[0].value' " << (__aux64__) << " is less than allowable (-2048); message dropped.";
+                                            logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].scale_yaxis[0].value' " << (__aux64__) << " is less than allowable (-2048); message dropped.";
                                             return false;
                                         }
                                         // ******************* MAX validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ > 2047) {
-                                            logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].scale_yaxis[0].value' " << (__aux64__) << " exceeds max allowable (2047); message dropped.";
+                                            logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].scale_yaxis[0].value' " << (__aux64__) << " exceeds max allowable (2047); message dropped.";
                                             return false;
                                         }
                                     }
@@ -2775,7 +2775,7 @@ namespace wind
                                         bool _array_4[*_tmp_147];
                                         
                                         if(debug)
-                                            logger->print() << "|\033[38;5;94m000126\033[0m| Reading number of exts from ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].: " << static_cast<unsigned int>(*_tmp_147);
+                                            logger->print() << "|" << tools::brown("000126") << "| Reading number of exts from ros->map.intersections[0].elements[a].lane_set.elements[d].node_list.computed[0].: " << static_cast<unsigned int>(*_tmp_147);
                                         
                                         // Extensions bytemap
                                         for(int i = 0; i < *_tmp_147; i++)
@@ -2814,17 +2814,17 @@ namespace wind
                                 int _if__tmp_150 = __aux64__;
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000127\033[0m| SequenceOf ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0]. size: " << int(__aux64__);
+                                    logger->print() << "|" << tools::brown("000127") << "| SequenceOf ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0]. size: " << int(__aux64__);
                                 }
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 1) {
-                                    logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].value' " << (__aux64__) << " is less than allowable (1); message dropped.";
+                                    logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].value' " << (__aux64__) << " is less than allowable (1); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 16) {
-                                    logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].value' " << (__aux64__) << " exceeds max allowable (16); message dropped.";
+                                    logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].value' " << (__aux64__) << " exceeds max allowable (16); message dropped.";
                                     return false;
                                 }
                                 
@@ -2844,28 +2844,28 @@ namespace wind
                                             ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].remote_intersection.push_back(_tmp_151);
                                         
                                             if(debug)
-                                                logger->print() << "|\033[38;5;94m000128\033[0m| ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].remote_intersection " << tools::green("present");
+                                                logger->print() << "|" << tools::brown("000128") << "| ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].remote_intersection " << tools::green("present");
                                         }
                                         if(*(buffer++)) { 
                                             dsrc_v2_dsrc_msgs::msg::SignalGroupID _tmp_152;
                                             ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].signal_group.push_back(_tmp_152);
                                         
                                             if(debug)
-                                                logger->print() << "|\033[38;5;94m000129\033[0m| ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].signal_group " << tools::green("present");
+                                                logger->print() << "|" << tools::brown("000129") << "| ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].signal_group " << tools::green("present");
                                         }
                                         if(*(buffer++)) { 
                                             dsrc_v2_dsrc_msgs::msg::RestrictionClassID _tmp_153;
                                             ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].user_class.push_back(_tmp_153);
                                         
                                             if(debug)
-                                                logger->print() << "|\033[38;5;94m000130\033[0m| ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].user_class " << tools::green("present");
+                                                logger->print() << "|" << tools::brown("000130") << "| ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].user_class " << tools::green("present");
                                         }
                                         if(*(buffer++)) { 
                                             dsrc_v2_dsrc_msgs::msg::LaneConnectionID _tmp_154;
                                             ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].connection_id.push_back(_tmp_154);
                                         
                                             if(debug)
-                                                logger->print() << "|\033[38;5;94m000131\033[0m| ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].connection_id " << tools::green("present");
+                                                logger->print() << "|" << tools::brown("000131") << "| ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].connection_id " << tools::green("present");
                                         }
                                         
                                         // Field name: connecting_lane
@@ -2877,7 +2877,7 @@ namespace wind
                                                 ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].connecting_lane.maneuver.push_back(_tmp_155);
                                             
                                                 if(debug)
-                                                    logger->print() << "|\033[38;5;94m000132\033[0m| ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].connecting_lane.maneuver " << tools::green("present");
+                                                    logger->print() << "|" << tools::brown("000132") << "| ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].connecting_lane.maneuver " << tools::green("present");
                                             }
                                             
                                             // Field name: lane
@@ -2888,18 +2888,18 @@ namespace wind
                                             ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].connecting_lane.lane.value = __aux64__;
                                             
                                             if(debug) {
-                                                logger->print() << "|\033[38;5;94m000133\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].connecting_lane.lane.value) << 
+                                                logger->print() << "|" << tools::brown("000133") << "| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].connecting_lane.lane.value) << 
                                                              " map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].connecting_lane.lane.value: " << static_cast<int>(ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].connecting_lane.lane.value);
                                             }
                                             
                                             // ******************* MIN validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                                logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].connecting_lane.lane.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                                logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].connecting_lane.lane.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                                 return false;
                                             }
                                             // ******************* MAX validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ > 255) {
-                                                logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].connecting_lane.lane.value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
+                                                logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].connecting_lane.lane.value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
                                                 return false;
                                             }
                                             
@@ -2912,7 +2912,7 @@ namespace wind
                                                 buffer += 1;
                                                 
                                                 if(debug)
-                                                    logger->print() << "|\033[38;5;94m000134\033[0m| map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].connecting_lane.maneuver[0].value: " << __aux64__;
+                                                    logger->print() << "|" << tools::brown("000134") << "| map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].connecting_lane.maneuver[0].value: " << __aux64__;
                                                 
                                                 int _if__tmp_157 = __aux64__;
                                                 for(int x = 0; x < _if__tmp_157; x++) {
@@ -2924,12 +2924,12 @@ namespace wind
                                                 
                                                 // ******************* MIN validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ < 12) {
-                                                    logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].connecting_lane.maneuver[0].value' " << (__aux64__) << " is less than allowable (12); message dropped.";
+                                                    logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].connecting_lane.maneuver[0].value' " << (__aux64__) << " is less than allowable (12); message dropped.";
                                                     return false;
                                                 }
                                                 // ******************* MAX validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ > 12) {
-                                                    logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].connecting_lane.maneuver[0].value' " << (__aux64__) << " exceeds max allowable (12); message dropped.";
+                                                    logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].connecting_lane.maneuver[0].value' " << (__aux64__) << " exceeds max allowable (12); message dropped.";
                                                     return false;
                                                 }
                                             }
@@ -2944,7 +2944,7 @@ namespace wind
                                                     ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].remote_intersection[0].region.push_back(_tmp_158);
                                                 
                                                     if(debug)
-                                                        logger->print() << "|\033[38;5;94m000135\033[0m| ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].remote_intersection[0].region " << tools::green("present");
+                                                        logger->print() << "|" << tools::brown("000135") << "| ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].remote_intersection[0].region " << tools::green("present");
                                                 }
                                                 
                                                 if(ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].remote_intersection[0].region.size() != 0) {
@@ -2956,18 +2956,18 @@ namespace wind
                                                     ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].remote_intersection[0].region[0].value = __aux64__;
                                                     
                                                     if(debug) {
-                                                        logger->print() << "|\033[38;5;94m000136\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].remote_intersection[0].region[0].value) << 
+                                                        logger->print() << "|" << tools::brown("000136") << "| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].remote_intersection[0].region[0].value) << 
                                                                      " map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].remote_intersection[0].region[0].value: " << ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].remote_intersection[0].region[0].value;
                                                     }
                                                     
                                                     // ******************* MIN validator *******************
                                                     if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                                        logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].remote_intersection[0].region[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                                        logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].remote_intersection[0].region[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                                         return false;
                                                     }
                                                     // ******************* MAX validator *******************
                                                     if(VALIDATORS_ENABLED && __aux64__ > 65535) {
-                                                        logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].remote_intersection[0].region[0].value' " << (__aux64__) << " exceeds max allowable (65535); message dropped.";
+                                                        logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].remote_intersection[0].region[0].value' " << (__aux64__) << " exceeds max allowable (65535); message dropped.";
                                                         return false;
                                                     }
                                                 }
@@ -2980,18 +2980,18 @@ namespace wind
                                                 ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].remote_intersection[0].id.value = __aux64__;
                                                 
                                                 if(debug) {
-                                                    logger->print() << "|\033[38;5;94m000137\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].remote_intersection[0].id.value) << 
+                                                    logger->print() << "|" << tools::brown("000137") << "| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].remote_intersection[0].id.value) << 
                                                                  " map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].remote_intersection[0].id.value: " << ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].remote_intersection[0].id.value;
                                                 }
                                                 
                                                 // ******************* MIN validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                                    logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].remote_intersection[0].id.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                                    logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].remote_intersection[0].id.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                                     return false;
                                                 }
                                                 // ******************* MAX validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ > 65535) {
-                                                    logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].remote_intersection[0].id.value' " << (__aux64__) << " exceeds max allowable (65535); message dropped.";
+                                                    logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].remote_intersection[0].id.value' " << (__aux64__) << " exceeds max allowable (65535); message dropped.";
                                                     return false;
                                                 }
                                         }
@@ -3005,18 +3005,18 @@ namespace wind
                                             ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].signal_group[0].value = __aux64__;
                                             
                                             if(debug) {
-                                                logger->print() << "|\033[38;5;94m000138\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].signal_group[0].value) << 
+                                                logger->print() << "|" << tools::brown("000138") << "| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].signal_group[0].value) << 
                                                              " map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].signal_group[0].value: " << static_cast<int>(ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].signal_group[0].value);
                                             }
                                             
                                             // ******************* MIN validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                                logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].signal_group[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                                logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].signal_group[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                                 return false;
                                             }
                                             // ******************* MAX validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ > 255) {
-                                                logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].signal_group[0].value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
+                                                logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].signal_group[0].value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
                                                 return false;
                                             }
                                         }
@@ -3030,18 +3030,18 @@ namespace wind
                                             ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].user_class[0].value = __aux64__;
                                             
                                             if(debug) {
-                                                logger->print() << "|\033[38;5;94m000139\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].user_class[0].value) << 
+                                                logger->print() << "|" << tools::brown("000139") << "| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].user_class[0].value) << 
                                                              " map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].user_class[0].value: " << static_cast<int>(ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].user_class[0].value);
                                             }
                                             
                                             // ******************* MIN validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                                logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].user_class[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                                logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].user_class[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                                 return false;
                                             }
                                             // ******************* MAX validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ > 255) {
-                                                logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].user_class[0].value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
+                                                logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].user_class[0].value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
                                                 return false;
                                             }
                                         }
@@ -3055,18 +3055,18 @@ namespace wind
                                             ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].connection_id[0].value = __aux64__;
                                             
                                             if(debug) {
-                                                logger->print() << "|\033[38;5;94m000140\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].connection_id[0].value) << 
+                                                logger->print() << "|" << tools::brown("000140") << "| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].connection_id[0].value) << 
                                                              " map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].connection_id[0].value: " << static_cast<int>(ros->map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].connection_id[0].value);
                                             }
                                             
                                             // ******************* MIN validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                                logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].connection_id[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                                logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].connection_id[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                                 return false;
                                             }
                                             // ******************* MAX validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ > 255) {
-                                                logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].connection_id[0].value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
+                                                logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].connects_to[0].elements[w].connection_id[0].value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
                                                 return false;
                                             }
                                         }
@@ -3086,17 +3086,17 @@ namespace wind
                                 int _if__tmp_164 = __aux64__;
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000141\033[0m| SequenceOf ros->map.intersections[0].elements[a].lane_set.elements[d].overlays[0]. size: " << int(__aux64__);
+                                    logger->print() << "|" << tools::brown("000141") << "| SequenceOf ros->map.intersections[0].elements[a].lane_set.elements[d].overlays[0]. size: " << int(__aux64__);
                                 }
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 1) {
-                                    logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].overlays[0].value' " << (__aux64__) << " is less than allowable (1); message dropped.";
+                                    logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].overlays[0].value' " << (__aux64__) << " is less than allowable (1); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 5) {
-                                    logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].overlays[0].value' " << (__aux64__) << " exceeds max allowable (5); message dropped.";
+                                    logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].overlays[0].value' " << (__aux64__) << " exceeds max allowable (5); message dropped.";
                                     return false;
                                 }
                                 
@@ -3112,18 +3112,18 @@ namespace wind
                                     ros->map.intersections[0].elements[a].lane_set.elements[d].overlays[0].elements[y].value = __aux64__;
                                     
                                     if(debug) {
-                                        logger->print() << "|\033[38;5;94m000142\033[0m| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].overlays[0].elements[y].value) << 
+                                        logger->print() << "|" << tools::brown("000142") << "| " << tools::getTypeName(ros->map.intersections[0].elements[a].lane_set.elements[d].overlays[0].elements[y].value) << 
                                                      " map.intersections[0].elements[a].lane_set.elements[d].overlays[0].elements[y].value: " << static_cast<int>(ros->map.intersections[0].elements[a].lane_set.elements[d].overlays[0].elements[y].value);
                                     }
                                     
                                     // ******************* MIN validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                        logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].overlays[0].elements[y].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                        logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].overlays[0].elements[y].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                         return false;
                                     }
                                     // ******************* MAX validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ > 255) {
-                                        logger->warning() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].overlays[0].elements[y].value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
+                                        logger->error() << "Error: Value in 'map.intersections[0].elements[a].lane_set.elements[d].overlays[0].elements[y].value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
                                         return false;
                                     }
                                     
@@ -3137,7 +3137,7 @@ namespace wind
                                 bool _array_5[*_tmp_166];
                                 
                                 if(debug)
-                                    logger->print() << "|\033[38;5;94m000143\033[0m| Reading number of exts from ros->map.intersections[0].elements[a].lane_set.elements[d].: " << static_cast<unsigned int>(*_tmp_166);
+                                    logger->print() << "|" << tools::brown("000143") << "| Reading number of exts from ros->map.intersections[0].elements[a].lane_set.elements[d].: " << static_cast<unsigned int>(*_tmp_166);
                                 
                                 // Extensions bytemap
                                 for(int i = 0; i < *_tmp_166; i++)
@@ -3165,7 +3165,7 @@ namespace wind
                         bool _array_6[*_tmp_168];
                         
                         if(debug)
-                            logger->print() << "|\033[38;5;94m000144\033[0m| Reading number of exts from ros->map.intersections[0].elements[a].: " << static_cast<unsigned int>(*_tmp_168);
+                            logger->print() << "|" << tools::brown("000144") << "| Reading number of exts from ros->map.intersections[0].elements[a].: " << static_cast<unsigned int>(*_tmp_168);
                         
                         // Extensions bytemap
                         for(int i = 0; i < *_tmp_168; i++)
@@ -3200,17 +3200,17 @@ namespace wind
             int _if__tmp_170 = __aux64__;
             
             if(debug) {
-                logger->print() << "|\033[38;5;94m000145\033[0m| SequenceOf ros->map.road_segments[0]. size: " << int(__aux64__);
+                logger->print() << "|" << tools::brown("000145") << "| SequenceOf ros->map.road_segments[0]. size: " << int(__aux64__);
             }
             
             // ******************* MIN validator *******************
             if(VALIDATORS_ENABLED && __aux64__ < 1) {
-                logger->warning() << "Error: Value in 'map.road_segments[0].value' " << (__aux64__) << " is less than allowable (1); message dropped.";
+                logger->error() << "Error: Value in 'map.road_segments[0].value' " << (__aux64__) << " is less than allowable (1); message dropped.";
                 return false;
             }
             // ******************* MAX validator *******************
             if(VALIDATORS_ENABLED && __aux64__ > 32) {
-                logger->warning() << "Error: Value in 'map.road_segments[0].value' " << (__aux64__) << " exceeds max allowable (32); message dropped.";
+                logger->error() << "Error: Value in 'map.road_segments[0].value' " << (__aux64__) << " exceeds max allowable (32); message dropped.";
                 return false;
             }
             
@@ -3232,7 +3232,7 @@ namespace wind
                     uint8_t* _ext_flag_40 = (uint8_t*) buffer++;  // Read ext flag from ros->map.road_segments[0].elements[z].
                     
                     if(debug) {
-                        logger->print() << "|\033[38;5;94m000146\033[0m| Reading ext flag from ros->map.road_segments[0].elements[z].: " << int(*_ext_flag_40);
+                        logger->print() << "|" << tools::brown("000146") << "| Reading ext flag from ros->map.road_segments[0].elements[z].: " << int(*_ext_flag_40);
                     }
                     
                     if(*(buffer++)) { 
@@ -3240,28 +3240,28 @@ namespace wind
                         ros->map.road_segments[0].elements[z].name.push_back(_tmp_171);
                     
                         if(debug)
-                            logger->print() << "|\033[38;5;94m000147\033[0m| ros->map.road_segments[0].elements[z].name " << tools::green("present");
+                            logger->print() << "|" << tools::brown("000147") << "| ros->map.road_segments[0].elements[z].name " << tools::green("present");
                     }
                     if(*(buffer++)) { 
                         dsrc_v2_dsrc_msgs::msg::LaneWidth _tmp_172;
                         ros->map.road_segments[0].elements[z].lane_width.push_back(_tmp_172);
                     
                         if(debug)
-                            logger->print() << "|\033[38;5;94m000148\033[0m| ros->map.road_segments[0].elements[z].lane_width " << tools::green("present");
+                            logger->print() << "|" << tools::brown("000148") << "| ros->map.road_segments[0].elements[z].lane_width " << tools::green("present");
                     }
                     if(*(buffer++)) { 
                         dsrc_v2_dsrc_msgs::msg::SpeedLimitList _tmp_173;
                         ros->map.road_segments[0].elements[z].speed_limits.push_back(_tmp_173);
                     
                         if(debug)
-                            logger->print() << "|\033[38;5;94m000149\033[0m| ros->map.road_segments[0].elements[z].speed_limits " << tools::green("present");
+                            logger->print() << "|" << tools::brown("000149") << "| ros->map.road_segments[0].elements[z].speed_limits " << tools::green("present");
                     }
                     if(*(buffer++)) { 
                         dsrc_v2_dsrc_msgs::msg::RoadSegmentRegional _tmp_174;
                         ros->map.road_segments[0].elements[z].regional.push_back(_tmp_174);
                     
                         if(debug)
-                            logger->print() << "|\033[38;5;94m000150\033[0m| ros->map.road_segments[0].elements[z].regional " << tools::green("present");
+                            logger->print() << "|" << tools::brown("000150") << "| ros->map.road_segments[0].elements[z].regional " << tools::green("present");
                     }
                     
                     if(ros->map.road_segments[0].elements[z].name.size() != 0) {
@@ -3289,7 +3289,7 @@ namespace wind
                             ros->map.road_segments[0].elements[z].id.region.push_back(_tmp_176);
                         
                             if(debug)
-                                logger->print() << "|\033[38;5;94m000151\033[0m| ros->map.road_segments[0].elements[z].id.region " << tools::green("present");
+                                logger->print() << "|" << tools::brown("000151") << "| ros->map.road_segments[0].elements[z].id.region " << tools::green("present");
                         }
                         
                         if(ros->map.road_segments[0].elements[z].id.region.size() != 0) {
@@ -3301,18 +3301,18 @@ namespace wind
                             ros->map.road_segments[0].elements[z].id.region[0].value = __aux64__;
                             
                             if(debug) {
-                                logger->print() << "|\033[38;5;94m000152\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].id.region[0].value) << 
+                                logger->print() << "|" << tools::brown("000152") << "| " << tools::getTypeName(ros->map.road_segments[0].elements[z].id.region[0].value) << 
                                              " map.road_segments[0].elements[z].id.region[0].value: " << ros->map.road_segments[0].elements[z].id.region[0].value;
                             }
                             
                             // ******************* MIN validator *******************
                             if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].id.region[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                logger->error() << "Error: Value in 'map.road_segments[0].elements[z].id.region[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                 return false;
                             }
                             // ******************* MAX validator *******************
                             if(VALIDATORS_ENABLED && __aux64__ > 65535) {
-                                logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].id.region[0].value' " << (__aux64__) << " exceeds max allowable (65535); message dropped.";
+                                logger->error() << "Error: Value in 'map.road_segments[0].elements[z].id.region[0].value' " << (__aux64__) << " exceeds max allowable (65535); message dropped.";
                                 return false;
                             }
                         }
@@ -3325,18 +3325,18 @@ namespace wind
                         ros->map.road_segments[0].elements[z].id.id.value = __aux64__;
                         
                         if(debug) {
-                            logger->print() << "|\033[38;5;94m000153\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].id.id.value) << 
+                            logger->print() << "|" << tools::brown("000153") << "| " << tools::getTypeName(ros->map.road_segments[0].elements[z].id.id.value) << 
                                          " map.road_segments[0].elements[z].id.id.value: " << ros->map.road_segments[0].elements[z].id.id.value;
                         }
                         
                         // ******************* MIN validator *******************
                         if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                            logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].id.id.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                            logger->error() << "Error: Value in 'map.road_segments[0].elements[z].id.id.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                             return false;
                         }
                         // ******************* MAX validator *******************
                         if(VALIDATORS_ENABLED && __aux64__ > 65535) {
-                            logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].id.id.value' " << (__aux64__) << " exceeds max allowable (65535); message dropped.";
+                            logger->error() << "Error: Value in 'map.road_segments[0].elements[z].id.id.value' " << (__aux64__) << " exceeds max allowable (65535); message dropped.";
                             return false;
                         }
                     
@@ -3348,18 +3348,18 @@ namespace wind
                     ros->map.road_segments[0].elements[z].revision.value = __aux64__;
                     
                     if(debug) {
-                        logger->print() << "|\033[38;5;94m000154\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].revision.value) << 
+                        logger->print() << "|" << tools::brown("000154") << "| " << tools::getTypeName(ros->map.road_segments[0].elements[z].revision.value) << 
                                      " map.road_segments[0].elements[z].revision.value: " << static_cast<int>(ros->map.road_segments[0].elements[z].revision.value);
                     }
                     
                     // ******************* MIN validator *******************
                     if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                        logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].revision.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                        logger->error() << "Error: Value in 'map.road_segments[0].elements[z].revision.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                         return false;
                     }
                     // ******************* MAX validator *******************
                     if(VALIDATORS_ENABLED && __aux64__ > 127) {
-                        logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].revision.value' " << (__aux64__) << " exceeds max allowable (127); message dropped.";
+                        logger->error() << "Error: Value in 'map.road_segments[0].elements[z].revision.value' " << (__aux64__) << " exceeds max allowable (127); message dropped.";
                         return false;
                     }
                     
@@ -3373,7 +3373,7 @@ namespace wind
                         uint8_t* _ext_flag_41 = (uint8_t*) buffer++;  // Read ext flag from ros->map.road_segments[0].elements[z].ref_point.
                         
                         if(debug) {
-                            logger->print() << "|\033[38;5;94m000155\033[0m| Reading ext flag from ros->map.road_segments[0].elements[z].ref_point.: " << int(*_ext_flag_41);
+                            logger->print() << "|" << tools::brown("000155") << "| Reading ext flag from ros->map.road_segments[0].elements[z].ref_point.: " << int(*_ext_flag_41);
                         }
                         
                         if(*(buffer++)) { 
@@ -3381,14 +3381,14 @@ namespace wind
                             ros->map.road_segments[0].elements[z].ref_point.elevation.push_back(_tmp_180);
                         
                             if(debug)
-                                logger->print() << "|\033[38;5;94m000156\033[0m| ros->map.road_segments[0].elements[z].ref_point.elevation " << tools::green("present");
+                                logger->print() << "|" << tools::brown("000156") << "| ros->map.road_segments[0].elements[z].ref_point.elevation " << tools::green("present");
                         }
                         if(*(buffer++)) { 
                             dsrc_v2_dsrc_msgs::msg::Position3DRegional _tmp_181;
                             ros->map.road_segments[0].elements[z].ref_point.regional.push_back(_tmp_181);
                         
                             if(debug)
-                                logger->print() << "|\033[38;5;94m000157\033[0m| ros->map.road_segments[0].elements[z].ref_point.regional " << tools::green("present");
+                                logger->print() << "|" << tools::brown("000157") << "| ros->map.road_segments[0].elements[z].ref_point.regional " << tools::green("present");
                         }
                         
                         // Field name: lat
@@ -3403,17 +3403,17 @@ namespace wind
                         
                         // ******************* MIN validator *******************
                         if(VALIDATORS_ENABLED && __aux64__ < -900000000) {
-                            logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].ref_point.lat.value' " << (__aux64__) << " is less than allowable (-900000000); message dropped.";
+                            logger->error() << "Error: Value in 'map.road_segments[0].elements[z].ref_point.lat.value' " << (__aux64__) << " is less than allowable (-900000000); message dropped.";
                             return false;
                         }
                         // ******************* MAX validator *******************
                         if(VALIDATORS_ENABLED && __aux64__ > 900000001) {
-                            logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].ref_point.lat.value' " << (__aux64__) << " exceeds max allowable (900000001); message dropped.";
+                            logger->error() << "Error: Value in 'map.road_segments[0].elements[z].ref_point.lat.value' " << (__aux64__) << " exceeds max allowable (900000001); message dropped.";
                             return false;
                         }
                         
                         if(debug) {
-                            logger->print() << "|\033[38;5;94m000158\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].ref_point.lat.value) << " map.road_segments[0].elements[z].ref_point.lat: " <<
+                            logger->print() << "|" << tools::brown("000158") << "| " << tools::getTypeName(ros->map.road_segments[0].elements[z].ref_point.lat.value) << " map.road_segments[0].elements[z].ref_point.lat: " <<
                                          ros->map.road_segments[0].elements[z].ref_point.lat.value << " (" << __aux64__ << ")";
                         }
                         
@@ -3429,17 +3429,17 @@ namespace wind
                         
                         // ******************* MIN validator *******************
                         if(VALIDATORS_ENABLED && __aux64__ < -1800000000) {
-                            logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].ref_point.longint.value' " << (__aux64__) << " is less than allowable (-1800000000); message dropped.";
+                            logger->error() << "Error: Value in 'map.road_segments[0].elements[z].ref_point.longint.value' " << (__aux64__) << " is less than allowable (-1800000000); message dropped.";
                             return false;
                         }
                         // ******************* MAX validator *******************
                         if(VALIDATORS_ENABLED && __aux64__ > 1800000001) {
-                            logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].ref_point.longint.value' " << (__aux64__) << " exceeds max allowable (1800000001); message dropped.";
+                            logger->error() << "Error: Value in 'map.road_segments[0].elements[z].ref_point.longint.value' " << (__aux64__) << " exceeds max allowable (1800000001); message dropped.";
                             return false;
                         }
                         
                         if(debug) {
-                            logger->print() << "|\033[38;5;94m000159\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].ref_point.longint.value) << " map.road_segments[0].elements[z].ref_point.longint: " <<
+                            logger->print() << "|" << tools::brown("000159") << "| " << tools::getTypeName(ros->map.road_segments[0].elements[z].ref_point.longint.value) << " map.road_segments[0].elements[z].ref_point.longint: " <<
                                          ros->map.road_segments[0].elements[z].ref_point.longint.value << " (" << __aux64__ << ")";
                         }
                         
@@ -3456,17 +3456,17 @@ namespace wind
                             
                             // ******************* MIN validator *******************
                             if(VALIDATORS_ENABLED && __aux64__ < -4096) {
-                                logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].ref_point.elevation[0].value' " << (__aux64__) << " is less than allowable (-4096); message dropped.";
+                                logger->error() << "Error: Value in 'map.road_segments[0].elements[z].ref_point.elevation[0].value' " << (__aux64__) << " is less than allowable (-4096); message dropped.";
                                 return false;
                             }
                             // ******************* MAX validator *******************
                             if(VALIDATORS_ENABLED && __aux64__ > 61439) {
-                                logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].ref_point.elevation[0].value' " << (__aux64__) << " exceeds max allowable (61439); message dropped.";
+                                logger->error() << "Error: Value in 'map.road_segments[0].elements[z].ref_point.elevation[0].value' " << (__aux64__) << " exceeds max allowable (61439); message dropped.";
                                 return false;
                             }
                             
                             if(debug) {
-                                logger->print() << "|\033[38;5;94m000160\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].ref_point.elevation[0].value) << " map.road_segments[0].elements[z].ref_point.elevation[0]: " <<
+                                logger->print() << "|" << tools::brown("000160") << "| " << tools::getTypeName(ros->map.road_segments[0].elements[z].ref_point.elevation[0].value) << " map.road_segments[0].elements[z].ref_point.elevation[0]: " <<
                                              ros->map.road_segments[0].elements[z].ref_point.elevation[0].value << " (" << __aux64__ << ")";
                             }
                         }
@@ -3477,7 +3477,7 @@ namespace wind
                             bool _array_7[*_tmp_185];
                             
                             if(debug)
-                                logger->print() << "|\033[38;5;94m000161\033[0m| Reading number of exts from ros->map.road_segments[0].elements[z].ref_point.: " << static_cast<unsigned int>(*_tmp_185);
+                                logger->print() << "|" << tools::brown("000161") << "| Reading number of exts from ros->map.road_segments[0].elements[z].ref_point.: " << static_cast<unsigned int>(*_tmp_185);
                             
                             // Extensions bytemap
                             for(int i = 0; i < *_tmp_185; i++)
@@ -3506,18 +3506,18 @@ namespace wind
                         ros->map.road_segments[0].elements[z].lane_width[0].value = __aux64__;
                         
                         if(debug) {
-                            logger->print() << "|\033[38;5;94m000162\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].lane_width[0].value) << 
+                            logger->print() << "|" << tools::brown("000162") << "| " << tools::getTypeName(ros->map.road_segments[0].elements[z].lane_width[0].value) << 
                                          " map.road_segments[0].elements[z].lane_width[0].value: " << ros->map.road_segments[0].elements[z].lane_width[0].value;
                         }
                         
                         // ******************* MIN validator *******************
                         if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                            logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].lane_width[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                            logger->error() << "Error: Value in 'map.road_segments[0].elements[z].lane_width[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                             return false;
                         }
                         // ******************* MAX validator *******************
                         if(VALIDATORS_ENABLED && __aux64__ > 32767) {
-                            logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].lane_width[0].value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
+                            logger->error() << "Error: Value in 'map.road_segments[0].elements[z].lane_width[0].value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
                             return false;
                         }
                     }
@@ -3535,17 +3535,17 @@ namespace wind
                         int _if__tmp_188 = __aux64__;
                         
                         if(debug) {
-                            logger->print() << "|\033[38;5;94m000163\033[0m| SequenceOf ros->map.road_segments[0].elements[z].speed_limits[0]. size: " << int(__aux64__);
+                            logger->print() << "|" << tools::brown("000163") << "| SequenceOf ros->map.road_segments[0].elements[z].speed_limits[0]. size: " << int(__aux64__);
                         }
                         
                         // ******************* MIN validator *******************
                         if(VALIDATORS_ENABLED && __aux64__ < 1) {
-                            logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].speed_limits[0].value' " << (__aux64__) << " is less than allowable (1); message dropped.";
+                            logger->error() << "Error: Value in 'map.road_segments[0].elements[z].speed_limits[0].value' " << (__aux64__) << " is less than allowable (1); message dropped.";
                             return false;
                         }
                         // ******************* MAX validator *******************
                         if(VALIDATORS_ENABLED && __aux64__ > 9) {
-                            logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].speed_limits[0].value' " << (__aux64__) << " exceeds max allowable (9); message dropped.";
+                            logger->error() << "Error: Value in 'map.road_segments[0].elements[z].speed_limits[0].value' " << (__aux64__) << " exceeds max allowable (9); message dropped.";
                             return false;
                         }
                         
@@ -3564,7 +3564,7 @@ namespace wind
                                 uint8_t* _ext_flag_45 = (uint8_t*) buffer++;  // Read ext flag from ros->map.road_segments[0].elements[z].speed_limits[0].elements[b].type.
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000164\033[0m| Reading ext flag from ros->map.road_segments[0].elements[z].speed_limits[0].elements[b].type.: " << int(*_ext_flag_45);
+                                    logger->print() << "|" << tools::brown("000164") << "| Reading ext flag from ros->map.road_segments[0].elements[z].speed_limits[0].elements[b].type.: " << int(*_ext_flag_45);
                                 }
                                 
                                 uint8_t* _tmp_189 = (uint8_t*) buffer++;
@@ -3573,18 +3573,18 @@ namespace wind
                                 ros->map.road_segments[0].elements[z].speed_limits[0].elements[b].type.value = __aux64__;
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                    logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].speed_limits[0].elements[b].type.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                    logger->error() << "Error: Value in 'map.road_segments[0].elements[z].speed_limits[0].elements[b].type.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 12) {
-                                    logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].speed_limits[0].elements[b].type.value' " << (__aux64__) << " exceeds max allowable (12); message dropped.";
+                                    logger->error() << "Error: Value in 'map.road_segments[0].elements[z].speed_limits[0].elements[b].type.value' " << (__aux64__) << " exceeds max allowable (12); message dropped.";
                                     return false;
                                 }
                                 
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000165\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].speed_limits[0].elements[b].type.value) << 
+                                    logger->print() << "|" << tools::brown("000165") << "| " << tools::getTypeName(ros->map.road_segments[0].elements[z].speed_limits[0].elements[b].type.value) << 
                                                  " map.road_segments[0].elements[z].speed_limits[0].elements[b].type.value: " << static_cast<int>(ros->map.road_segments[0].elements[z].speed_limits[0].elements[b].type.value);
                                 }
                                 
@@ -3596,18 +3596,18 @@ namespace wind
                                 ros->map.road_segments[0].elements[z].speed_limits[0].elements[b].speed.value = __aux64__;
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000166\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].speed_limits[0].elements[b].speed.value) << 
+                                    logger->print() << "|" << tools::brown("000166") << "| " << tools::getTypeName(ros->map.road_segments[0].elements[z].speed_limits[0].elements[b].speed.value) << 
                                                  " map.road_segments[0].elements[z].speed_limits[0].elements[b].speed.value: " << ros->map.road_segments[0].elements[z].speed_limits[0].elements[b].speed.value;
                                 }
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                    logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].speed_limits[0].elements[b].speed.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                    logger->error() << "Error: Value in 'map.road_segments[0].elements[z].speed_limits[0].elements[b].speed.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 8191) {
-                                    logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].speed_limits[0].elements[b].speed.value' " << (__aux64__) << " exceeds max allowable (8191); message dropped.";
+                                    logger->error() << "Error: Value in 'map.road_segments[0].elements[z].speed_limits[0].elements[b].speed.value' " << (__aux64__) << " exceeds max allowable (8191); message dropped.";
                                     return false;
                                 }
                         }
@@ -3625,17 +3625,17 @@ namespace wind
                     int _if__tmp_191 = __aux64__;
                     
                     if(debug) {
-                        logger->print() << "|\033[38;5;94m000167\033[0m| SequenceOf ros->map.road_segments[0].elements[z].road_lane_set. size: " << int(__aux64__);
+                        logger->print() << "|" << tools::brown("000167") << "| SequenceOf ros->map.road_segments[0].elements[z].road_lane_set. size: " << int(__aux64__);
                     }
                     
                     // ******************* MIN validator *******************
                     if(VALIDATORS_ENABLED && __aux64__ < 1) {
-                        logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.value' " << (__aux64__) << " is less than allowable (1); message dropped.";
+                        logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.value' " << (__aux64__) << " is less than allowable (1); message dropped.";
                         return false;
                     }
                     // ******************* MAX validator *******************
                     if(VALIDATORS_ENABLED && __aux64__ > 255) {
-                        logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
+                        logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
                         return false;
                     }
                     
@@ -3659,7 +3659,7 @@ namespace wind
                             uint8_t* _ext_flag_46 = (uint8_t*) buffer++;  // Read ext flag from ros->map.road_segments[0].elements[z].road_lane_set.elements[c].
                             
                             if(debug) {
-                                logger->print() << "|\033[38;5;94m000168\033[0m| Reading ext flag from ros->map.road_segments[0].elements[z].road_lane_set.elements[c].: " << int(*_ext_flag_46);
+                                logger->print() << "|" << tools::brown("000168") << "| Reading ext flag from ros->map.road_segments[0].elements[z].road_lane_set.elements[c].: " << int(*_ext_flag_46);
                             }
                             
                             if(*(buffer++)) { 
@@ -3667,49 +3667,49 @@ namespace wind
                                 ros->map.road_segments[0].elements[z].road_lane_set.elements[c].name.push_back(_tmp_192);
                             
                                 if(debug)
-                                    logger->print() << "|\033[38;5;94m000169\033[0m| ros->map.road_segments[0].elements[z].road_lane_set.elements[c].name " << tools::green("present");
+                                    logger->print() << "|" << tools::brown("000169") << "| ros->map.road_segments[0].elements[z].road_lane_set.elements[c].name " << tools::green("present");
                             }
                             if(*(buffer++)) { 
                                 dsrc_v2_dsrc_msgs::msg::ApproachID _tmp_193;
                                 ros->map.road_segments[0].elements[z].road_lane_set.elements[c].ingress_approach.push_back(_tmp_193);
                             
                                 if(debug)
-                                    logger->print() << "|\033[38;5;94m000170\033[0m| ros->map.road_segments[0].elements[z].road_lane_set.elements[c].ingress_approach " << tools::green("present");
+                                    logger->print() << "|" << tools::brown("000170") << "| ros->map.road_segments[0].elements[z].road_lane_set.elements[c].ingress_approach " << tools::green("present");
                             }
                             if(*(buffer++)) { 
                                 dsrc_v2_dsrc_msgs::msg::ApproachID _tmp_194;
                                 ros->map.road_segments[0].elements[z].road_lane_set.elements[c].egress_approach.push_back(_tmp_194);
                             
                                 if(debug)
-                                    logger->print() << "|\033[38;5;94m000171\033[0m| ros->map.road_segments[0].elements[z].road_lane_set.elements[c].egress_approach " << tools::green("present");
+                                    logger->print() << "|" << tools::brown("000171") << "| ros->map.road_segments[0].elements[z].road_lane_set.elements[c].egress_approach " << tools::green("present");
                             }
                             if(*(buffer++)) { 
                                 dsrc_v2_dsrc_msgs::msg::AllowedManeuvers _tmp_195;
                                 ros->map.road_segments[0].elements[z].road_lane_set.elements[c].maneuvers.push_back(_tmp_195);
                             
                                 if(debug)
-                                    logger->print() << "|\033[38;5;94m000172\033[0m| ros->map.road_segments[0].elements[z].road_lane_set.elements[c].maneuvers " << tools::green("present");
+                                    logger->print() << "|" << tools::brown("000172") << "| ros->map.road_segments[0].elements[z].road_lane_set.elements[c].maneuvers " << tools::green("present");
                             }
                             if(*(buffer++)) { 
                                 dsrc_v2_dsrc_msgs::msg::ConnectsToList _tmp_196;
                                 ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to.push_back(_tmp_196);
                             
                                 if(debug)
-                                    logger->print() << "|\033[38;5;94m000173\033[0m| ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to " << tools::green("present");
+                                    logger->print() << "|" << tools::brown("000173") << "| ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to " << tools::green("present");
                             }
                             if(*(buffer++)) { 
                                 dsrc_v2_dsrc_msgs::msg::OverlayLaneList _tmp_197;
                                 ros->map.road_segments[0].elements[z].road_lane_set.elements[c].overlays.push_back(_tmp_197);
                             
                                 if(debug)
-                                    logger->print() << "|\033[38;5;94m000174\033[0m| ros->map.road_segments[0].elements[z].road_lane_set.elements[c].overlays " << tools::green("present");
+                                    logger->print() << "|" << tools::brown("000174") << "| ros->map.road_segments[0].elements[z].road_lane_set.elements[c].overlays " << tools::green("present");
                             }
                             if(*(buffer++)) { 
                                 dsrc_v2_dsrc_msgs::msg::GenericLaneRegional _tmp_198;
                                 ros->map.road_segments[0].elements[z].road_lane_set.elements[c].regional.push_back(_tmp_198);
                             
                                 if(debug)
-                                    logger->print() << "|\033[38;5;94m000175\033[0m| ros->map.road_segments[0].elements[z].road_lane_set.elements[c].regional " << tools::green("present");
+                                    logger->print() << "|" << tools::brown("000175") << "| ros->map.road_segments[0].elements[z].road_lane_set.elements[c].regional " << tools::green("present");
                             }
                             
                             // Field name: lane_id
@@ -3720,18 +3720,18 @@ namespace wind
                             ros->map.road_segments[0].elements[z].road_lane_set.elements[c].lane_id.value = __aux64__;
                             
                             if(debug) {
-                                logger->print() << "|\033[38;5;94m000176\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].lane_id.value) << 
+                                logger->print() << "|" << tools::brown("000176") << "| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].lane_id.value) << 
                                              " map.road_segments[0].elements[z].road_lane_set.elements[c].lane_id.value: " << static_cast<int>(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].lane_id.value);
                             }
                             
                             // ******************* MIN validator *******************
                             if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].lane_id.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].lane_id.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                 return false;
                             }
                             // ******************* MAX validator *******************
                             if(VALIDATORS_ENABLED && __aux64__ > 255) {
-                                logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].lane_id.value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
+                                logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].lane_id.value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
                                 return false;
                             }
                             
@@ -3760,18 +3760,18 @@ namespace wind
                                 ros->map.road_segments[0].elements[z].road_lane_set.elements[c].ingress_approach[0].value = __aux64__;
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000177\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].ingress_approach[0].value) << 
+                                    logger->print() << "|" << tools::brown("000177") << "| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].ingress_approach[0].value) << 
                                                  " map.road_segments[0].elements[z].road_lane_set.elements[c].ingress_approach[0].value: " << static_cast<int>(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].ingress_approach[0].value);
                                 }
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                    logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].ingress_approach[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                    logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].ingress_approach[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 15) {
-                                    logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].ingress_approach[0].value' " << (__aux64__) << " exceeds max allowable (15); message dropped.";
+                                    logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].ingress_approach[0].value' " << (__aux64__) << " exceeds max allowable (15); message dropped.";
                                     return false;
                                 }
                             }
@@ -3785,18 +3785,18 @@ namespace wind
                                 ros->map.road_segments[0].elements[z].road_lane_set.elements[c].egress_approach[0].value = __aux64__;
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000178\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].egress_approach[0].value) << 
+                                    logger->print() << "|" << tools::brown("000178") << "| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].egress_approach[0].value) << 
                                                  " map.road_segments[0].elements[z].road_lane_set.elements[c].egress_approach[0].value: " << static_cast<int>(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].egress_approach[0].value);
                                 }
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                    logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].egress_approach[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                    logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].egress_approach[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 15) {
-                                    logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].egress_approach[0].value' " << (__aux64__) << " exceeds max allowable (15); message dropped.";
+                                    logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].egress_approach[0].value' " << (__aux64__) << " exceeds max allowable (15); message dropped.";
                                     return false;
                                 }
                             }
@@ -3812,7 +3812,7 @@ namespace wind
                                     ros->map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.regional.push_back(_tmp_203);
                                 
                                     if(debug)
-                                        logger->print() << "|\033[38;5;94m000179\033[0m| ros->map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.regional " << tools::green("present");
+                                        logger->print() << "|" << tools::brown("000179") << "| ros->map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.regional " << tools::green("present");
                                 }
                                 
                                 // Field name: directional_use
@@ -3823,7 +3823,7 @@ namespace wind
                                 buffer += 1;
                                 
                                 if(debug)
-                                    logger->print() << "|\033[38;5;94m000180\033[0m| map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.directional_use.value: " << __aux64__;
+                                    logger->print() << "|" << tools::brown("000180") << "| map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.directional_use.value: " << __aux64__;
                                 
                                 int _if__tmp_204 = __aux64__;
                                 for(int e = 0; e < _if__tmp_204; e++) {
@@ -3835,12 +3835,12 @@ namespace wind
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 2) {
-                                    logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.directional_use.value' " << (__aux64__) << " is less than allowable (2); message dropped.";
+                                    logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.directional_use.value' " << (__aux64__) << " is less than allowable (2); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 2) {
-                                    logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.directional_use.value' " << (__aux64__) << " exceeds max allowable (2); message dropped.";
+                                    logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.directional_use.value' " << (__aux64__) << " exceeds max allowable (2); message dropped.";
                                     return false;
                                 }
                                 
@@ -3852,7 +3852,7 @@ namespace wind
                                 buffer += 1;
                                 
                                 if(debug)
-                                    logger->print() << "|\033[38;5;94m000181\033[0m| map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.shared_with.value: " << __aux64__;
+                                    logger->print() << "|" << tools::brown("000181") << "| map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.shared_with.value: " << __aux64__;
                                 
                                 int _if__tmp_205 = __aux64__;
                                 for(int f = 0; f < _if__tmp_205; f++) {
@@ -3864,12 +3864,12 @@ namespace wind
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 10) {
-                                    logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.shared_with.value' " << (__aux64__) << " is less than allowable (10); message dropped.";
+                                    logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.shared_with.value' " << (__aux64__) << " is less than allowable (10); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 10) {
-                                    logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.shared_with.value' " << (__aux64__) << " exceeds max allowable (10); message dropped.";
+                                    logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.shared_with.value' " << (__aux64__) << " exceeds max allowable (10); message dropped.";
                                     return false;
                                 }
                                 
@@ -3899,7 +3899,7 @@ namespace wind
                                     uint8_t* _ext_flag_48 = (uint8_t*) buffer++;  // Read ext flag from ros->map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.vehicle[0].
                                     
                                     if(debug) {
-                                        logger->print() << "|\033[38;5;94m000182\033[0m| Reading ext flag from ros->map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.vehicle[0].: " << int(*_ext_flag_48);
+                                        logger->print() << "|" << tools::brown("000182") << "| Reading ext flag from ros->map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.vehicle[0].: " << int(*_ext_flag_48);
                                     }
                                     
                                     uint8_t* _tmp_207 = (uint8_t*)buffer;
@@ -3907,7 +3907,7 @@ namespace wind
                                     buffer += 1;
                                     
                                     if(debug)
-                                        logger->print() << "|\033[38;5;94m000183\033[0m| map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.vehicle[0].value: " << __aux64__;
+                                        logger->print() << "|" << tools::brown("000183") << "| map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.vehicle[0].value: " << __aux64__;
                                     
                                     int _if__tmp_207 = __aux64__;
                                     for(int g = 0; g < _if__tmp_207; g++) {
@@ -3919,12 +3919,12 @@ namespace wind
                                     
                                     // ******************* MIN validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ < 8) {
-                                        logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.vehicle[0].value' " << (__aux64__) << " is less than allowable (8); message dropped.";
+                                        logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.vehicle[0].value' " << (__aux64__) << " is less than allowable (8); message dropped.";
                                         return false;
                                     }
                                     // ******************* MAX validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ > 8) {
-                                        logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.vehicle[0].value' " << (__aux64__) << " exceeds max allowable (8); message dropped.";
+                                        logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.vehicle[0].value' " << (__aux64__) << " exceeds max allowable (8); message dropped.";
                                         return false;
                                     }
                                 }
@@ -3940,7 +3940,7 @@ namespace wind
                                     buffer += 1;
                                     
                                     if(debug)
-                                        logger->print() << "|\033[38;5;94m000184\033[0m| map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.crosswalk[0].value: " << __aux64__;
+                                        logger->print() << "|" << tools::brown("000184") << "| map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.crosswalk[0].value: " << __aux64__;
                                     
                                     int _if__tmp_209 = __aux64__;
                                     for(int h = 0; h < _if__tmp_209; h++) {
@@ -3952,12 +3952,12 @@ namespace wind
                                     
                                     // ******************* MIN validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ < 16) {
-                                        logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.crosswalk[0].value' " << (__aux64__) << " is less than allowable (16); message dropped.";
+                                        logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.crosswalk[0].value' " << (__aux64__) << " is less than allowable (16); message dropped.";
                                         return false;
                                     }
                                     // ******************* MAX validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ > 16) {
-                                        logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.crosswalk[0].value' " << (__aux64__) << " exceeds max allowable (16); message dropped.";
+                                        logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.crosswalk[0].value' " << (__aux64__) << " exceeds max allowable (16); message dropped.";
                                         return false;
                                     }
                                 }
@@ -3973,7 +3973,7 @@ namespace wind
                                     buffer += 1;
                                     
                                     if(debug)
-                                        logger->print() << "|\033[38;5;94m000185\033[0m| map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.bike_lane[0].value: " << __aux64__;
+                                        logger->print() << "|" << tools::brown("000185") << "| map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.bike_lane[0].value: " << __aux64__;
                                     
                                     int _if__tmp_211 = __aux64__;
                                     for(int i = 0; i < _if__tmp_211; i++) {
@@ -3985,12 +3985,12 @@ namespace wind
                                     
                                     // ******************* MIN validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ < 16) {
-                                        logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.bike_lane[0].value' " << (__aux64__) << " is less than allowable (16); message dropped.";
+                                        logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.bike_lane[0].value' " << (__aux64__) << " is less than allowable (16); message dropped.";
                                         return false;
                                     }
                                     // ******************* MAX validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ > 16) {
-                                        logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.bike_lane[0].value' " << (__aux64__) << " exceeds max allowable (16); message dropped.";
+                                        logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.bike_lane[0].value' " << (__aux64__) << " exceeds max allowable (16); message dropped.";
                                         return false;
                                     }
                                 }
@@ -4006,7 +4006,7 @@ namespace wind
                                     buffer += 1;
                                     
                                     if(debug)
-                                        logger->print() << "|\033[38;5;94m000186\033[0m| map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.sidewalk[0].value: " << __aux64__;
+                                        logger->print() << "|" << tools::brown("000186") << "| map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.sidewalk[0].value: " << __aux64__;
                                     
                                     int _if__tmp_213 = __aux64__;
                                     for(int j = 0; j < _if__tmp_213; j++) {
@@ -4018,12 +4018,12 @@ namespace wind
                                     
                                     // ******************* MIN validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ < 16) {
-                                        logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.sidewalk[0].value' " << (__aux64__) << " is less than allowable (16); message dropped.";
+                                        logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.sidewalk[0].value' " << (__aux64__) << " is less than allowable (16); message dropped.";
                                         return false;
                                     }
                                     // ******************* MAX validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ > 16) {
-                                        logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.sidewalk[0].value' " << (__aux64__) << " exceeds max allowable (16); message dropped.";
+                                        logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.sidewalk[0].value' " << (__aux64__) << " exceeds max allowable (16); message dropped.";
                                         return false;
                                     }
                                 }
@@ -4039,7 +4039,7 @@ namespace wind
                                     buffer += 1;
                                     
                                     if(debug)
-                                        logger->print() << "|\033[38;5;94m000187\033[0m| map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.median[0].value: " << __aux64__;
+                                        logger->print() << "|" << tools::brown("000187") << "| map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.median[0].value: " << __aux64__;
                                     
                                     int _if__tmp_215 = __aux64__;
                                     for(int k = 0; k < _if__tmp_215; k++) {
@@ -4051,12 +4051,12 @@ namespace wind
                                     
                                     // ******************* MIN validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ < 16) {
-                                        logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.median[0].value' " << (__aux64__) << " is less than allowable (16); message dropped.";
+                                        logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.median[0].value' " << (__aux64__) << " is less than allowable (16); message dropped.";
                                         return false;
                                     }
                                     // ******************* MAX validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ > 16) {
-                                        logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.median[0].value' " << (__aux64__) << " exceeds max allowable (16); message dropped.";
+                                        logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.median[0].value' " << (__aux64__) << " exceeds max allowable (16); message dropped.";
                                         return false;
                                     }
                                 }
@@ -4072,7 +4072,7 @@ namespace wind
                                     buffer += 1;
                                     
                                     if(debug)
-                                        logger->print() << "|\033[38;5;94m000188\033[0m| map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.striping[0].value: " << __aux64__;
+                                        logger->print() << "|" << tools::brown("000188") << "| map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.striping[0].value: " << __aux64__;
                                     
                                     int _if__tmp_217 = __aux64__;
                                     for(int l = 0; l < _if__tmp_217; l++) {
@@ -4084,12 +4084,12 @@ namespace wind
                                     
                                     // ******************* MIN validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ < 16) {
-                                        logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.striping[0].value' " << (__aux64__) << " is less than allowable (16); message dropped.";
+                                        logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.striping[0].value' " << (__aux64__) << " is less than allowable (16); message dropped.";
                                         return false;
                                     }
                                     // ******************* MAX validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ > 16) {
-                                        logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.striping[0].value' " << (__aux64__) << " exceeds max allowable (16); message dropped.";
+                                        logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.striping[0].value' " << (__aux64__) << " exceeds max allowable (16); message dropped.";
                                         return false;
                                     }
                                 }
@@ -4105,7 +4105,7 @@ namespace wind
                                     buffer += 1;
                                     
                                     if(debug)
-                                        logger->print() << "|\033[38;5;94m000189\033[0m| map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.tracked_vehicle[0].value: " << __aux64__;
+                                        logger->print() << "|" << tools::brown("000189") << "| map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.tracked_vehicle[0].value: " << __aux64__;
                                     
                                     int _if__tmp_219 = __aux64__;
                                     for(int m = 0; m < _if__tmp_219; m++) {
@@ -4117,12 +4117,12 @@ namespace wind
                                     
                                     // ******************* MIN validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ < 16) {
-                                        logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.tracked_vehicle[0].value' " << (__aux64__) << " is less than allowable (16); message dropped.";
+                                        logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.tracked_vehicle[0].value' " << (__aux64__) << " is less than allowable (16); message dropped.";
                                         return false;
                                     }
                                     // ******************* MAX validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ > 16) {
-                                        logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.tracked_vehicle[0].value' " << (__aux64__) << " exceeds max allowable (16); message dropped.";
+                                        logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.tracked_vehicle[0].value' " << (__aux64__) << " exceeds max allowable (16); message dropped.";
                                         return false;
                                     }
                                 }
@@ -4138,7 +4138,7 @@ namespace wind
                                     buffer += 1;
                                     
                                     if(debug)
-                                        logger->print() << "|\033[38;5;94m000190\033[0m| map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.parking[0].value: " << __aux64__;
+                                        logger->print() << "|" << tools::brown("000190") << "| map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.parking[0].value: " << __aux64__;
                                     
                                     int _if__tmp_221 = __aux64__;
                                     for(int n = 0; n < _if__tmp_221; n++) {
@@ -4150,12 +4150,12 @@ namespace wind
                                     
                                     // ******************* MIN validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ < 16) {
-                                        logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.parking[0].value' " << (__aux64__) << " is less than allowable (16); message dropped.";
+                                        logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.parking[0].value' " << (__aux64__) << " is less than allowable (16); message dropped.";
                                         return false;
                                     }
                                     // ******************* MAX validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ > 16) {
-                                        logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.parking[0].value' " << (__aux64__) << " exceeds max allowable (16); message dropped.";
+                                        logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].lane_attributes.lane_type.parking[0].value' " << (__aux64__) << " exceeds max allowable (16); message dropped.";
                                         return false;
                                     }
                                 }
@@ -4176,7 +4176,7 @@ namespace wind
                                 buffer += 1;
                                 
                                 if(debug)
-                                    logger->print() << "|\033[38;5;94m000191\033[0m| map.road_segments[0].elements[z].road_lane_set.elements[c].maneuvers[0].value: " << __aux64__;
+                                    logger->print() << "|" << tools::brown("000191") << "| map.road_segments[0].elements[z].road_lane_set.elements[c].maneuvers[0].value: " << __aux64__;
                                 
                                 int _if__tmp_223 = __aux64__;
                                 for(int o = 0; o < _if__tmp_223; o++) {
@@ -4188,12 +4188,12 @@ namespace wind
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 12) {
-                                    logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].maneuvers[0].value' " << (__aux64__) << " is less than allowable (12); message dropped.";
+                                    logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].maneuvers[0].value' " << (__aux64__) << " is less than allowable (12); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 12) {
-                                    logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].maneuvers[0].value' " << (__aux64__) << " exceeds max allowable (12); message dropped.";
+                                    logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].maneuvers[0].value' " << (__aux64__) << " exceeds max allowable (12); message dropped.";
                                     return false;
                                 }
                             }
@@ -4224,17 +4224,17 @@ namespace wind
                                 int _if__tmp_225 = __aux64__;
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000192\033[0m| SequenceOf ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0]. size: " << int(__aux64__);
+                                    logger->print() << "|" << tools::brown("000192") << "| SequenceOf ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0]. size: " << int(__aux64__);
                                 }
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 2) {
-                                    logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].value' " << (__aux64__) << " is less than allowable (2); message dropped.";
+                                    logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].value' " << (__aux64__) << " is less than allowable (2); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 63) {
-                                    logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].value' " << (__aux64__) << " exceeds max allowable (63); message dropped.";
+                                    logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].value' " << (__aux64__) << " exceeds max allowable (63); message dropped.";
                                     return false;
                                 }
                                 
@@ -4250,7 +4250,7 @@ namespace wind
                                         uint8_t* _ext_flag_50 = (uint8_t*) buffer++;  // Read ext flag from ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000193\033[0m| Reading ext flag from ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].: " << int(*_ext_flag_50);
+                                            logger->print() << "|" << tools::brown("000193") << "| Reading ext flag from ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].: " << int(*_ext_flag_50);
                                         }
                                         
                                         if(*(buffer++)) { 
@@ -4258,7 +4258,7 @@ namespace wind
                                             ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes.push_back(_tmp_226);
                                         
                                             if(debug)
-                                                logger->print() << "|\033[38;5;94m000194\033[0m| ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes " << tools::green("present");
+                                                logger->print() << "|" << tools::brown("000194") << "| ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes " << tools::green("present");
                                         }
                                         
                                         // Field name: delta
@@ -4293,17 +4293,17 @@ namespace wind
                                                 
                                                 // ******************* MIN validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ < -512) {
-                                                    logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy1[0].x.value' " << (__aux64__) << " is less than allowable (-512); message dropped.";
+                                                    logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy1[0].x.value' " << (__aux64__) << " is less than allowable (-512); message dropped.";
                                                     return false;
                                                 }
                                                 // ******************* MAX validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ > 511) {
-                                                    logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy1[0].x.value' " << (__aux64__) << " exceeds max allowable (511); message dropped.";
+                                                    logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy1[0].x.value' " << (__aux64__) << " exceeds max allowable (511); message dropped.";
                                                     return false;
                                                 }
                                                 
                                                 if(debug) {
-                                                    logger->print() << "|\033[38;5;94m000195\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy1[0].x.value) << " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy1[0].x: " <<
+                                                    logger->print() << "|" << tools::brown("000195") << "| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy1[0].x.value) << " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy1[0].x: " <<
                                                                  ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy1[0].x.value << " (" << __aux64__ << ")";
                                                 }
                                                 
@@ -4319,17 +4319,17 @@ namespace wind
                                                 
                                                 // ******************* MIN validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ < -512) {
-                                                    logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy1[0].y.value' " << (__aux64__) << " is less than allowable (-512); message dropped.";
+                                                    logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy1[0].y.value' " << (__aux64__) << " is less than allowable (-512); message dropped.";
                                                     return false;
                                                 }
                                                 // ******************* MAX validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ > 511) {
-                                                    logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy1[0].y.value' " << (__aux64__) << " exceeds max allowable (511); message dropped.";
+                                                    logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy1[0].y.value' " << (__aux64__) << " exceeds max allowable (511); message dropped.";
                                                     return false;
                                                 }
                                                 
                                                 if(debug) {
-                                                    logger->print() << "|\033[38;5;94m000196\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy1[0].y.value) << " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy1[0].y: " <<
+                                                    logger->print() << "|" << tools::brown("000196") << "| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy1[0].y.value) << " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy1[0].y: " <<
                                                                  ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy1[0].y.value << " (" << __aux64__ << ")";
                                                 }
                                         }
@@ -4354,17 +4354,17 @@ namespace wind
                                                 
                                                 // ******************* MIN validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ < -1024) {
-                                                    logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy2[0].x.value' " << (__aux64__) << " is less than allowable (-1024); message dropped.";
+                                                    logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy2[0].x.value' " << (__aux64__) << " is less than allowable (-1024); message dropped.";
                                                     return false;
                                                 }
                                                 // ******************* MAX validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ > 1023) {
-                                                    logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy2[0].x.value' " << (__aux64__) << " exceeds max allowable (1023); message dropped.";
+                                                    logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy2[0].x.value' " << (__aux64__) << " exceeds max allowable (1023); message dropped.";
                                                     return false;
                                                 }
                                                 
                                                 if(debug) {
-                                                    logger->print() << "|\033[38;5;94m000197\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy2[0].x.value) << " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy2[0].x: " <<
+                                                    logger->print() << "|" << tools::brown("000197") << "| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy2[0].x.value) << " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy2[0].x: " <<
                                                                  ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy2[0].x.value << " (" << __aux64__ << ")";
                                                 }
                                                 
@@ -4380,17 +4380,17 @@ namespace wind
                                                 
                                                 // ******************* MIN validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ < -1024) {
-                                                    logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy2[0].y.value' " << (__aux64__) << " is less than allowable (-1024); message dropped.";
+                                                    logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy2[0].y.value' " << (__aux64__) << " is less than allowable (-1024); message dropped.";
                                                     return false;
                                                 }
                                                 // ******************* MAX validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ > 1023) {
-                                                    logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy2[0].y.value' " << (__aux64__) << " exceeds max allowable (1023); message dropped.";
+                                                    logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy2[0].y.value' " << (__aux64__) << " exceeds max allowable (1023); message dropped.";
                                                     return false;
                                                 }
                                                 
                                                 if(debug) {
-                                                    logger->print() << "|\033[38;5;94m000198\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy2[0].y.value) << " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy2[0].y: " <<
+                                                    logger->print() << "|" << tools::brown("000198") << "| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy2[0].y.value) << " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy2[0].y: " <<
                                                                  ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy2[0].y.value << " (" << __aux64__ << ")";
                                                 }
                                         }
@@ -4415,17 +4415,17 @@ namespace wind
                                                 
                                                 // ******************* MIN validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ < -2048) {
-                                                    logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy3[0].x.value' " << (__aux64__) << " is less than allowable (-2048); message dropped.";
+                                                    logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy3[0].x.value' " << (__aux64__) << " is less than allowable (-2048); message dropped.";
                                                     return false;
                                                 }
                                                 // ******************* MAX validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ > 2047) {
-                                                    logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy3[0].x.value' " << (__aux64__) << " exceeds max allowable (2047); message dropped.";
+                                                    logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy3[0].x.value' " << (__aux64__) << " exceeds max allowable (2047); message dropped.";
                                                     return false;
                                                 }
                                                 
                                                 if(debug) {
-                                                    logger->print() << "|\033[38;5;94m000199\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy3[0].x.value) << " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy3[0].x: " <<
+                                                    logger->print() << "|" << tools::brown("000199") << "| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy3[0].x.value) << " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy3[0].x: " <<
                                                                  ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy3[0].x.value << " (" << __aux64__ << ")";
                                                 }
                                                 
@@ -4441,17 +4441,17 @@ namespace wind
                                                 
                                                 // ******************* MIN validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ < -2048) {
-                                                    logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy3[0].y.value' " << (__aux64__) << " is less than allowable (-2048); message dropped.";
+                                                    logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy3[0].y.value' " << (__aux64__) << " is less than allowable (-2048); message dropped.";
                                                     return false;
                                                 }
                                                 // ******************* MAX validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ > 2047) {
-                                                    logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy3[0].y.value' " << (__aux64__) << " exceeds max allowable (2047); message dropped.";
+                                                    logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy3[0].y.value' " << (__aux64__) << " exceeds max allowable (2047); message dropped.";
                                                     return false;
                                                 }
                                                 
                                                 if(debug) {
-                                                    logger->print() << "|\033[38;5;94m000200\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy3[0].y.value) << " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy3[0].y: " <<
+                                                    logger->print() << "|" << tools::brown("000200") << "| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy3[0].y.value) << " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy3[0].y: " <<
                                                                  ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy3[0].y.value << " (" << __aux64__ << ")";
                                                 }
                                         }
@@ -4476,17 +4476,17 @@ namespace wind
                                                 
                                                 // ******************* MIN validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ < -4096) {
-                                                    logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy4[0].x.value' " << (__aux64__) << " is less than allowable (-4096); message dropped.";
+                                                    logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy4[0].x.value' " << (__aux64__) << " is less than allowable (-4096); message dropped.";
                                                     return false;
                                                 }
                                                 // ******************* MAX validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ > 4095) {
-                                                    logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy4[0].x.value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
+                                                    logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy4[0].x.value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
                                                     return false;
                                                 }
                                                 
                                                 if(debug) {
-                                                    logger->print() << "|\033[38;5;94m000201\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy4[0].x.value) << " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy4[0].x: " <<
+                                                    logger->print() << "|" << tools::brown("000201") << "| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy4[0].x.value) << " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy4[0].x: " <<
                                                                  ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy4[0].x.value << " (" << __aux64__ << ")";
                                                 }
                                                 
@@ -4502,17 +4502,17 @@ namespace wind
                                                 
                                                 // ******************* MIN validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ < -4096) {
-                                                    logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy4[0].y.value' " << (__aux64__) << " is less than allowable (-4096); message dropped.";
+                                                    logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy4[0].y.value' " << (__aux64__) << " is less than allowable (-4096); message dropped.";
                                                     return false;
                                                 }
                                                 // ******************* MAX validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ > 4095) {
-                                                    logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy4[0].y.value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
+                                                    logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy4[0].y.value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
                                                     return false;
                                                 }
                                                 
                                                 if(debug) {
-                                                    logger->print() << "|\033[38;5;94m000202\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy4[0].y.value) << " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy4[0].y: " <<
+                                                    logger->print() << "|" << tools::brown("000202") << "| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy4[0].y.value) << " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy4[0].y: " <<
                                                                  ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy4[0].y.value << " (" << __aux64__ << ")";
                                                 }
                                         }
@@ -4537,17 +4537,17 @@ namespace wind
                                                 
                                                 // ******************* MIN validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ < -8192) {
-                                                    logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy5[0].x.value' " << (__aux64__) << " is less than allowable (-8192); message dropped.";
+                                                    logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy5[0].x.value' " << (__aux64__) << " is less than allowable (-8192); message dropped.";
                                                     return false;
                                                 }
                                                 // ******************* MAX validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ > 8191) {
-                                                    logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy5[0].x.value' " << (__aux64__) << " exceeds max allowable (8191); message dropped.";
+                                                    logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy5[0].x.value' " << (__aux64__) << " exceeds max allowable (8191); message dropped.";
                                                     return false;
                                                 }
                                                 
                                                 if(debug) {
-                                                    logger->print() << "|\033[38;5;94m000203\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy5[0].x.value) << " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy5[0].x: " <<
+                                                    logger->print() << "|" << tools::brown("000203") << "| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy5[0].x.value) << " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy5[0].x: " <<
                                                                  ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy5[0].x.value << " (" << __aux64__ << ")";
                                                 }
                                                 
@@ -4563,17 +4563,17 @@ namespace wind
                                                 
                                                 // ******************* MIN validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ < -8192) {
-                                                    logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy5[0].y.value' " << (__aux64__) << " is less than allowable (-8192); message dropped.";
+                                                    logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy5[0].y.value' " << (__aux64__) << " is less than allowable (-8192); message dropped.";
                                                     return false;
                                                 }
                                                 // ******************* MAX validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ > 8191) {
-                                                    logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy5[0].y.value' " << (__aux64__) << " exceeds max allowable (8191); message dropped.";
+                                                    logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy5[0].y.value' " << (__aux64__) << " exceeds max allowable (8191); message dropped.";
                                                     return false;
                                                 }
                                                 
                                                 if(debug) {
-                                                    logger->print() << "|\033[38;5;94m000204\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy5[0].y.value) << " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy5[0].y: " <<
+                                                    logger->print() << "|" << tools::brown("000204") << "| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy5[0].y.value) << " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy5[0].y: " <<
                                                                  ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy5[0].y.value << " (" << __aux64__ << ")";
                                                 }
                                         }
@@ -4598,17 +4598,17 @@ namespace wind
                                                 
                                                 // ******************* MIN validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ < -32768) {
-                                                    logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy6[0].x.value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
+                                                    logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy6[0].x.value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
                                                     return false;
                                                 }
                                                 // ******************* MAX validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ > 32767) {
-                                                    logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy6[0].x.value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
+                                                    logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy6[0].x.value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
                                                     return false;
                                                 }
                                                 
                                                 if(debug) {
-                                                    logger->print() << "|\033[38;5;94m000205\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy6[0].x.value) << " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy6[0].x: " <<
+                                                    logger->print() << "|" << tools::brown("000205") << "| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy6[0].x.value) << " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy6[0].x: " <<
                                                                  ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy6[0].x.value << " (" << __aux64__ << ")";
                                                 }
                                                 
@@ -4624,17 +4624,17 @@ namespace wind
                                                 
                                                 // ******************* MIN validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ < -32768) {
-                                                    logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy6[0].y.value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
+                                                    logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy6[0].y.value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
                                                     return false;
                                                 }
                                                 // ******************* MAX validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ > 32767) {
-                                                    logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy6[0].y.value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
+                                                    logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy6[0].y.value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
                                                     return false;
                                                 }
                                                 
                                                 if(debug) {
-                                                    logger->print() << "|\033[38;5;94m000206\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy6[0].y.value) << " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy6[0].y: " <<
+                                                    logger->print() << "|" << tools::brown("000206") << "| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy6[0].y.value) << " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy6[0].y: " <<
                                                                  ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_xy6[0].y.value << " (" << __aux64__ << ")";
                                                 }
                                         }
@@ -4659,17 +4659,17 @@ namespace wind
                                                 
                                                 // ******************* MIN validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ < -1800000000) {
-                                                    logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_lat_lon[0].lon.value' " << (__aux64__) << " is less than allowable (-1800000000); message dropped.";
+                                                    logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_lat_lon[0].lon.value' " << (__aux64__) << " is less than allowable (-1800000000); message dropped.";
                                                     return false;
                                                 }
                                                 // ******************* MAX validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ > 1800000001) {
-                                                    logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_lat_lon[0].lon.value' " << (__aux64__) << " exceeds max allowable (1800000001); message dropped.";
+                                                    logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_lat_lon[0].lon.value' " << (__aux64__) << " exceeds max allowable (1800000001); message dropped.";
                                                     return false;
                                                 }
                                                 
                                                 if(debug) {
-                                                    logger->print() << "|\033[38;5;94m000207\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_lat_lon[0].lon.value) << " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_lat_lon[0].lon: " <<
+                                                    logger->print() << "|" << tools::brown("000207") << "| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_lat_lon[0].lon.value) << " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_lat_lon[0].lon: " <<
                                                                  ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_lat_lon[0].lon.value << " (" << __aux64__ << ")";
                                                 }
                                                 
@@ -4685,17 +4685,17 @@ namespace wind
                                                 
                                                 // ******************* MIN validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ < -900000000) {
-                                                    logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_lat_lon[0].lat.value' " << (__aux64__) << " is less than allowable (-900000000); message dropped.";
+                                                    logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_lat_lon[0].lat.value' " << (__aux64__) << " is less than allowable (-900000000); message dropped.";
                                                     return false;
                                                 }
                                                 // ******************* MAX validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ > 900000001) {
-                                                    logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_lat_lon[0].lat.value' " << (__aux64__) << " exceeds max allowable (900000001); message dropped.";
+                                                    logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_lat_lon[0].lat.value' " << (__aux64__) << " exceeds max allowable (900000001); message dropped.";
                                                     return false;
                                                 }
                                                 
                                                 if(debug) {
-                                                    logger->print() << "|\033[38;5;94m000208\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_lat_lon[0].lat.value) << " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_lat_lon[0].lat: " <<
+                                                    logger->print() << "|" << tools::brown("000208") << "| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_lat_lon[0].lat.value) << " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_lat_lon[0].lat: " <<
                                                                  ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].delta.node_lat_lon[0].lat.value << " (" << __aux64__ << ")";
                                                 }
                                         }
@@ -4720,7 +4720,7 @@ namespace wind
                                                 uint8_t* _ext_flag_66 = (uint8_t*) buffer++;  // Read ext flag from ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].
                                                 
                                                 if(debug) {
-                                                    logger->print() << "|\033[38;5;94m000209\033[0m| Reading ext flag from ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].: " << int(*_ext_flag_66);
+                                                    logger->print() << "|" << tools::brown("000209") << "| Reading ext flag from ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].: " << int(*_ext_flag_66);
                                                 }
                                                 
                                                 if(*(buffer++)) { 
@@ -4728,49 +4728,49 @@ namespace wind
                                                     ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].local_node.push_back(_tmp_248);
                                                 
                                                     if(debug)
-                                                        logger->print() << "|\033[38;5;94m000210\033[0m| ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].local_node " << tools::green("present");
+                                                        logger->print() << "|" << tools::brown("000210") << "| ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].local_node " << tools::green("present");
                                                 }
                                                 if(*(buffer++)) { 
                                                     dsrc_v2_dsrc_msgs::msg::SegmentAttributeXYList _tmp_249;
                                                     ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].disabled.push_back(_tmp_249);
                                                 
                                                     if(debug)
-                                                        logger->print() << "|\033[38;5;94m000211\033[0m| ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].disabled " << tools::green("present");
+                                                        logger->print() << "|" << tools::brown("000211") << "| ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].disabled " << tools::green("present");
                                                 }
                                                 if(*(buffer++)) { 
                                                     dsrc_v2_dsrc_msgs::msg::SegmentAttributeXYList _tmp_250;
                                                     ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].enabled.push_back(_tmp_250);
                                                 
                                                     if(debug)
-                                                        logger->print() << "|\033[38;5;94m000212\033[0m| ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].enabled " << tools::green("present");
+                                                        logger->print() << "|" << tools::brown("000212") << "| ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].enabled " << tools::green("present");
                                                 }
                                                 if(*(buffer++)) { 
                                                     dsrc_v2_dsrc_msgs::msg::LaneDataAttributeList _tmp_251;
                                                     ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data.push_back(_tmp_251);
                                                 
                                                     if(debug)
-                                                        logger->print() << "|\033[38;5;94m000213\033[0m| ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data " << tools::green("present");
+                                                        logger->print() << "|" << tools::brown("000213") << "| ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data " << tools::green("present");
                                                 }
                                                 if(*(buffer++)) { 
                                                     dsrc_v2_dsrc_msgs::msg::OffsetB10 _tmp_252;
                                                     ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].d_width.push_back(_tmp_252);
                                                 
                                                     if(debug)
-                                                        logger->print() << "|\033[38;5;94m000214\033[0m| ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].d_width " << tools::green("present");
+                                                        logger->print() << "|" << tools::brown("000214") << "| ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].d_width " << tools::green("present");
                                                 }
                                                 if(*(buffer++)) { 
                                                     dsrc_v2_dsrc_msgs::msg::OffsetB10 _tmp_253;
                                                     ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].d_elevation.push_back(_tmp_253);
                                                 
                                                     if(debug)
-                                                        logger->print() << "|\033[38;5;94m000215\033[0m| ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].d_elevation " << tools::green("present");
+                                                        logger->print() << "|" << tools::brown("000215") << "| ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].d_elevation " << tools::green("present");
                                                 }
                                                 if(*(buffer++)) { 
                                                     dsrc_v2_dsrc_msgs::msg::NodeAttributeSetXYRegional _tmp_254;
                                                     ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].regional.push_back(_tmp_254);
                                                 
                                                     if(debug)
-                                                        logger->print() << "|\033[38;5;94m000216\033[0m| ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].regional " << tools::green("present");
+                                                        logger->print() << "|" << tools::brown("000216") << "| ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].regional " << tools::green("present");
                                                 }
                                                 
                                                 if(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].local_node.size() != 0) {
@@ -4786,17 +4786,17 @@ namespace wind
                                                     int _if__tmp_255 = __aux64__;
                                                     
                                                     if(debug) {
-                                                        logger->print() << "|\033[38;5;94m000217\033[0m| SequenceOf ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].local_node[0]. size: " << int(__aux64__);
+                                                        logger->print() << "|" << tools::brown("000217") << "| SequenceOf ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].local_node[0]. size: " << int(__aux64__);
                                                     }
                                                     
                                                     // ******************* MIN validator *******************
                                                     if(VALIDATORS_ENABLED && __aux64__ < 1) {
-                                                        logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].local_node[0].value' " << (__aux64__) << " is less than allowable (1); message dropped.";
+                                                        logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].local_node[0].value' " << (__aux64__) << " is less than allowable (1); message dropped.";
                                                         return false;
                                                     }
                                                     // ******************* MAX validator *******************
                                                     if(VALIDATORS_ENABLED && __aux64__ > 8) {
-                                                        logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].local_node[0].value' " << (__aux64__) << " exceeds max allowable (8); message dropped.";
+                                                        logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].local_node[0].value' " << (__aux64__) << " exceeds max allowable (8); message dropped.";
                                                         return false;
                                                     }
                                                     
@@ -4810,7 +4810,7 @@ namespace wind
                                                         uint8_t* _ext_flag_67 = (uint8_t*) buffer++;  // Read ext flag from ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].local_node[0].elements[q].
                                                         
                                                         if(debug) {
-                                                            logger->print() << "|\033[38;5;94m000218\033[0m| Reading ext flag from ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].local_node[0].elements[q].: " << int(*_ext_flag_67);
+                                                            logger->print() << "|" << tools::brown("000218") << "| Reading ext flag from ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].local_node[0].elements[q].: " << int(*_ext_flag_67);
                                                         }
                                                         
                                                         uint8_t* _tmp_256 = (uint8_t*) buffer++;
@@ -4819,18 +4819,18 @@ namespace wind
                                                         ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].local_node[0].elements[q].value = __aux64__;
                                                         // ******************* MIN validator *******************
                                                         if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                                            logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].local_node[0].elements[q].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                                            logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].local_node[0].elements[q].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                                             return false;
                                                         }
                                                         // ******************* MAX validator *******************
                                                         if(VALIDATORS_ENABLED && __aux64__ > 11) {
-                                                            logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].local_node[0].elements[q].value' " << (__aux64__) << " exceeds max allowable (11); message dropped.";
+                                                            logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].local_node[0].elements[q].value' " << (__aux64__) << " exceeds max allowable (11); message dropped.";
                                                             return false;
                                                         }
                                                         
                                                         
                                                         if(debug) {
-                                                            logger->print() << "|\033[38;5;94m000219\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].local_node[0].elements[q].value) << 
+                                                            logger->print() << "|" << tools::brown("000219") << "| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].local_node[0].elements[q].value) << 
                                                                          " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].local_node[0].elements[q].value: " << static_cast<int>(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].local_node[0].elements[q].value);
                                                         }
                                                         
@@ -4850,17 +4850,17 @@ namespace wind
                                                     int _if__tmp_257 = __aux64__;
                                                     
                                                     if(debug) {
-                                                        logger->print() << "|\033[38;5;94m000220\033[0m| SequenceOf ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].disabled[0]. size: " << int(__aux64__);
+                                                        logger->print() << "|" << tools::brown("000220") << "| SequenceOf ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].disabled[0]. size: " << int(__aux64__);
                                                     }
                                                     
                                                     // ******************* MIN validator *******************
                                                     if(VALIDATORS_ENABLED && __aux64__ < 1) {
-                                                        logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].disabled[0].value' " << (__aux64__) << " is less than allowable (1); message dropped.";
+                                                        logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].disabled[0].value' " << (__aux64__) << " is less than allowable (1); message dropped.";
                                                         return false;
                                                     }
                                                     // ******************* MAX validator *******************
                                                     if(VALIDATORS_ENABLED && __aux64__ > 8) {
-                                                        logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].disabled[0].value' " << (__aux64__) << " exceeds max allowable (8); message dropped.";
+                                                        logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].disabled[0].value' " << (__aux64__) << " exceeds max allowable (8); message dropped.";
                                                         return false;
                                                     }
                                                     
@@ -4874,7 +4874,7 @@ namespace wind
                                                         uint8_t* _ext_flag_68 = (uint8_t*) buffer++;  // Read ext flag from ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].disabled[0].elements[r].
                                                         
                                                         if(debug) {
-                                                            logger->print() << "|\033[38;5;94m000221\033[0m| Reading ext flag from ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].disabled[0].elements[r].: " << int(*_ext_flag_68);
+                                                            logger->print() << "|" << tools::brown("000221") << "| Reading ext flag from ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].disabled[0].elements[r].: " << int(*_ext_flag_68);
                                                         }
                                                         
                                                         uint8_t* _tmp_258 = (uint8_t*) buffer++;
@@ -4883,18 +4883,18 @@ namespace wind
                                                         ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].disabled[0].elements[r].value = __aux64__;
                                                         // ******************* MIN validator *******************
                                                         if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                                            logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].disabled[0].elements[r].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                                            logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].disabled[0].elements[r].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                                             return false;
                                                         }
                                                         // ******************* MAX validator *******************
                                                         if(VALIDATORS_ENABLED && __aux64__ > 37) {
-                                                            logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].disabled[0].elements[r].value' " << (__aux64__) << " exceeds max allowable (37); message dropped.";
+                                                            logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].disabled[0].elements[r].value' " << (__aux64__) << " exceeds max allowable (37); message dropped.";
                                                             return false;
                                                         }
                                                         
                                                         
                                                         if(debug) {
-                                                            logger->print() << "|\033[38;5;94m000222\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].disabled[0].elements[r].value) << 
+                                                            logger->print() << "|" << tools::brown("000222") << "| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].disabled[0].elements[r].value) << 
                                                                          " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].disabled[0].elements[r].value: " << static_cast<int>(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].disabled[0].elements[r].value);
                                                         }
                                                         
@@ -4914,17 +4914,17 @@ namespace wind
                                                     int _if__tmp_259 = __aux64__;
                                                     
                                                     if(debug) {
-                                                        logger->print() << "|\033[38;5;94m000223\033[0m| SequenceOf ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].enabled[0]. size: " << int(__aux64__);
+                                                        logger->print() << "|" << tools::brown("000223") << "| SequenceOf ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].enabled[0]. size: " << int(__aux64__);
                                                     }
                                                     
                                                     // ******************* MIN validator *******************
                                                     if(VALIDATORS_ENABLED && __aux64__ < 1) {
-                                                        logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].enabled[0].value' " << (__aux64__) << " is less than allowable (1); message dropped.";
+                                                        logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].enabled[0].value' " << (__aux64__) << " is less than allowable (1); message dropped.";
                                                         return false;
                                                     }
                                                     // ******************* MAX validator *******************
                                                     if(VALIDATORS_ENABLED && __aux64__ > 8) {
-                                                        logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].enabled[0].value' " << (__aux64__) << " exceeds max allowable (8); message dropped.";
+                                                        logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].enabled[0].value' " << (__aux64__) << " exceeds max allowable (8); message dropped.";
                                                         return false;
                                                     }
                                                     
@@ -4938,7 +4938,7 @@ namespace wind
                                                         uint8_t* _ext_flag_69 = (uint8_t*) buffer++;  // Read ext flag from ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].enabled[0].elements[s].
                                                         
                                                         if(debug) {
-                                                            logger->print() << "|\033[38;5;94m000224\033[0m| Reading ext flag from ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].enabled[0].elements[s].: " << int(*_ext_flag_69);
+                                                            logger->print() << "|" << tools::brown("000224") << "| Reading ext flag from ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].enabled[0].elements[s].: " << int(*_ext_flag_69);
                                                         }
                                                         
                                                         uint8_t* _tmp_260 = (uint8_t*) buffer++;
@@ -4947,18 +4947,18 @@ namespace wind
                                                         ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].enabled[0].elements[s].value = __aux64__;
                                                         // ******************* MIN validator *******************
                                                         if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                                            logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].enabled[0].elements[s].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                                            logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].enabled[0].elements[s].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                                             return false;
                                                         }
                                                         // ******************* MAX validator *******************
                                                         if(VALIDATORS_ENABLED && __aux64__ > 37) {
-                                                            logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].enabled[0].elements[s].value' " << (__aux64__) << " exceeds max allowable (37); message dropped.";
+                                                            logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].enabled[0].elements[s].value' " << (__aux64__) << " exceeds max allowable (37); message dropped.";
                                                             return false;
                                                         }
                                                         
                                                         
                                                         if(debug) {
-                                                            logger->print() << "|\033[38;5;94m000225\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].enabled[0].elements[s].value) << 
+                                                            logger->print() << "|" << tools::brown("000225") << "| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].enabled[0].elements[s].value) << 
                                                                          " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].enabled[0].elements[s].value: " << static_cast<int>(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].enabled[0].elements[s].value);
                                                         }
                                                         
@@ -4978,17 +4978,17 @@ namespace wind
                                                     int _if__tmp_261 = __aux64__;
                                                     
                                                     if(debug) {
-                                                        logger->print() << "|\033[38;5;94m000226\033[0m| SequenceOf ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0]. size: " << int(__aux64__);
+                                                        logger->print() << "|" << tools::brown("000226") << "| SequenceOf ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0]. size: " << int(__aux64__);
                                                     }
                                                     
                                                     // ******************* MIN validator *******************
                                                     if(VALIDATORS_ENABLED && __aux64__ < 1) {
-                                                        logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].value' " << (__aux64__) << " is less than allowable (1); message dropped.";
+                                                        logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].value' " << (__aux64__) << " is less than allowable (1); message dropped.";
                                                         return false;
                                                     }
                                                     // ******************* MAX validator *******************
                                                     if(VALIDATORS_ENABLED && __aux64__ > 8) {
-                                                        logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].value' " << (__aux64__) << " exceeds max allowable (8); message dropped.";
+                                                        logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].value' " << (__aux64__) << " exceeds max allowable (8); message dropped.";
                                                         return false;
                                                     }
                                                     
@@ -5024,18 +5024,18 @@ namespace wind
                                                             ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].path_end_point_angle[0].value = __aux64__;
                                                             
                                                             if(debug) {
-                                                                logger->print() << "|\033[38;5;94m000227\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].path_end_point_angle[0].value) << 
+                                                                logger->print() << "|" << tools::brown("000227") << "| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].path_end_point_angle[0].value) << 
                                                                              " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].path_end_point_angle[0].value: " << ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].path_end_point_angle[0].value;
                                                             }
                                                             
                                                             // ******************* MIN validator *******************
                                                             if(VALIDATORS_ENABLED && __aux64__ < -150) {
-                                                                logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].path_end_point_angle[0].value' " << (__aux64__) << " is less than allowable (-150); message dropped.";
+                                                                logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].path_end_point_angle[0].value' " << (__aux64__) << " is less than allowable (-150); message dropped.";
                                                                 return false;
                                                             }
                                                             // ******************* MAX validator *******************
                                                             if(VALIDATORS_ENABLED && __aux64__ > 150) {
-                                                                logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].path_end_point_angle[0].value' " << (__aux64__) << " exceeds max allowable (150); message dropped.";
+                                                                logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].path_end_point_angle[0].value' " << (__aux64__) << " exceeds max allowable (150); message dropped.";
                                                                 return false;
                                                             }
                                                         }
@@ -5052,18 +5052,18 @@ namespace wind
                                                             ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].lane_crown_point_center[0].value = __aux64__;
                                                             
                                                             if(debug) {
-                                                                logger->print() << "|\033[38;5;94m000228\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].lane_crown_point_center[0].value) << 
+                                                                logger->print() << "|" << tools::brown("000228") << "| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].lane_crown_point_center[0].value) << 
                                                                              " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].lane_crown_point_center[0].value: " << static_cast<int>(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].lane_crown_point_center[0].value);
                                                             }
                                                             
                                                             // ******************* MIN validator *******************
                                                             if(VALIDATORS_ENABLED && __aux64__ < -128) {
-                                                                logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].lane_crown_point_center[0].value' " << (__aux64__) << " is less than allowable (-128); message dropped.";
+                                                                logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].lane_crown_point_center[0].value' " << (__aux64__) << " is less than allowable (-128); message dropped.";
                                                                 return false;
                                                             }
                                                             // ******************* MAX validator *******************
                                                             if(VALIDATORS_ENABLED && __aux64__ > 127) {
-                                                                logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].lane_crown_point_center[0].value' " << (__aux64__) << " exceeds max allowable (127); message dropped.";
+                                                                logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].lane_crown_point_center[0].value' " << (__aux64__) << " exceeds max allowable (127); message dropped.";
                                                                 return false;
                                                             }
                                                         }
@@ -5080,18 +5080,18 @@ namespace wind
                                                             ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].lane_crown_point_left[0].value = __aux64__;
                                                             
                                                             if(debug) {
-                                                                logger->print() << "|\033[38;5;94m000229\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].lane_crown_point_left[0].value) << 
+                                                                logger->print() << "|" << tools::brown("000229") << "| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].lane_crown_point_left[0].value) << 
                                                                              " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].lane_crown_point_left[0].value: " << static_cast<int>(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].lane_crown_point_left[0].value);
                                                             }
                                                             
                                                             // ******************* MIN validator *******************
                                                             if(VALIDATORS_ENABLED && __aux64__ < -128) {
-                                                                logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].lane_crown_point_left[0].value' " << (__aux64__) << " is less than allowable (-128); message dropped.";
+                                                                logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].lane_crown_point_left[0].value' " << (__aux64__) << " is less than allowable (-128); message dropped.";
                                                                 return false;
                                                             }
                                                             // ******************* MAX validator *******************
                                                             if(VALIDATORS_ENABLED && __aux64__ > 127) {
-                                                                logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].lane_crown_point_left[0].value' " << (__aux64__) << " exceeds max allowable (127); message dropped.";
+                                                                logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].lane_crown_point_left[0].value' " << (__aux64__) << " exceeds max allowable (127); message dropped.";
                                                                 return false;
                                                             }
                                                         }
@@ -5108,18 +5108,18 @@ namespace wind
                                                             ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].lane_crown_point_right[0].value = __aux64__;
                                                             
                                                             if(debug) {
-                                                                logger->print() << "|\033[38;5;94m000230\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].lane_crown_point_right[0].value) << 
+                                                                logger->print() << "|" << tools::brown("000230") << "| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].lane_crown_point_right[0].value) << 
                                                                              " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].lane_crown_point_right[0].value: " << static_cast<int>(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].lane_crown_point_right[0].value);
                                                             }
                                                             
                                                             // ******************* MIN validator *******************
                                                             if(VALIDATORS_ENABLED && __aux64__ < -128) {
-                                                                logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].lane_crown_point_right[0].value' " << (__aux64__) << " is less than allowable (-128); message dropped.";
+                                                                logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].lane_crown_point_right[0].value' " << (__aux64__) << " is less than allowable (-128); message dropped.";
                                                                 return false;
                                                             }
                                                             // ******************* MAX validator *******************
                                                             if(VALIDATORS_ENABLED && __aux64__ > 127) {
-                                                                logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].lane_crown_point_right[0].value' " << (__aux64__) << " exceeds max allowable (127); message dropped.";
+                                                                logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].lane_crown_point_right[0].value' " << (__aux64__) << " exceeds max allowable (127); message dropped.";
                                                                 return false;
                                                             }
                                                         }
@@ -5136,18 +5136,18 @@ namespace wind
                                                             ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].lane_angle[0].value = __aux64__;
                                                             
                                                             if(debug) {
-                                                                logger->print() << "|\033[38;5;94m000231\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].lane_angle[0].value) << 
+                                                                logger->print() << "|" << tools::brown("000231") << "| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].lane_angle[0].value) << 
                                                                              " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].lane_angle[0].value: " << ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].lane_angle[0].value;
                                                             }
                                                             
                                                             // ******************* MIN validator *******************
                                                             if(VALIDATORS_ENABLED && __aux64__ < -180) {
-                                                                logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].lane_angle[0].value' " << (__aux64__) << " is less than allowable (-180); message dropped.";
+                                                                logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].lane_angle[0].value' " << (__aux64__) << " is less than allowable (-180); message dropped.";
                                                                 return false;
                                                             }
                                                             // ******************* MAX validator *******************
                                                             if(VALIDATORS_ENABLED && __aux64__ > 180) {
-                                                                logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].lane_angle[0].value' " << (__aux64__) << " exceeds max allowable (180); message dropped.";
+                                                                logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].lane_angle[0].value' " << (__aux64__) << " exceeds max allowable (180); message dropped.";
                                                                 return false;
                                                             }
                                                         }
@@ -5167,17 +5167,17 @@ namespace wind
                                                             int _if__tmp_273 = __aux64__;
                                                             
                                                             if(debug) {
-                                                                logger->print() << "|\033[38;5;94m000232\033[0m| SequenceOf ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].speed_limits[0]. size: " << int(__aux64__);
+                                                                logger->print() << "|" << tools::brown("000232") << "| SequenceOf ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].speed_limits[0]. size: " << int(__aux64__);
                                                             }
                                                             
                                                             // ******************* MIN validator *******************
                                                             if(VALIDATORS_ENABLED && __aux64__ < 1) {
-                                                                logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].speed_limits[0].value' " << (__aux64__) << " is less than allowable (1); message dropped.";
+                                                                logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].speed_limits[0].value' " << (__aux64__) << " is less than allowable (1); message dropped.";
                                                                 return false;
                                                             }
                                                             // ******************* MAX validator *******************
                                                             if(VALIDATORS_ENABLED && __aux64__ > 9) {
-                                                                logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].speed_limits[0].value' " << (__aux64__) << " exceeds max allowable (9); message dropped.";
+                                                                logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].speed_limits[0].value' " << (__aux64__) << " exceeds max allowable (9); message dropped.";
                                                                 return false;
                                                             }
                                                             
@@ -5196,7 +5196,7 @@ namespace wind
                                                                     uint8_t* _ext_flag_71 = (uint8_t*) buffer++;  // Read ext flag from ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].speed_limits[0].elements[u].type.
                                                                     
                                                                     if(debug) {
-                                                                        logger->print() << "|\033[38;5;94m000233\033[0m| Reading ext flag from ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].speed_limits[0].elements[u].type.: " << int(*_ext_flag_71);
+                                                                        logger->print() << "|" << tools::brown("000233") << "| Reading ext flag from ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].speed_limits[0].elements[u].type.: " << int(*_ext_flag_71);
                                                                     }
                                                                     
                                                                     uint8_t* _tmp_274 = (uint8_t*) buffer++;
@@ -5205,18 +5205,18 @@ namespace wind
                                                                     ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].speed_limits[0].elements[u].type.value = __aux64__;
                                                                     // ******************* MIN validator *******************
                                                                     if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                                                        logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].speed_limits[0].elements[u].type.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                                                        logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].speed_limits[0].elements[u].type.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                                                         return false;
                                                                     }
                                                                     // ******************* MAX validator *******************
                                                                     if(VALIDATORS_ENABLED && __aux64__ > 12) {
-                                                                        logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].speed_limits[0].elements[u].type.value' " << (__aux64__) << " exceeds max allowable (12); message dropped.";
+                                                                        logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].speed_limits[0].elements[u].type.value' " << (__aux64__) << " exceeds max allowable (12); message dropped.";
                                                                         return false;
                                                                     }
                                                                     
                                                                     
                                                                     if(debug) {
-                                                                        logger->print() << "|\033[38;5;94m000234\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].speed_limits[0].elements[u].type.value) << 
+                                                                        logger->print() << "|" << tools::brown("000234") << "| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].speed_limits[0].elements[u].type.value) << 
                                                                                      " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].speed_limits[0].elements[u].type.value: " << static_cast<int>(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].speed_limits[0].elements[u].type.value);
                                                                     }
                                                                     
@@ -5228,18 +5228,18 @@ namespace wind
                                                                     ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].speed_limits[0].elements[u].speed.value = __aux64__;
                                                                     
                                                                     if(debug) {
-                                                                        logger->print() << "|\033[38;5;94m000235\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].speed_limits[0].elements[u].speed.value) << 
+                                                                        logger->print() << "|" << tools::brown("000235") << "| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].speed_limits[0].elements[u].speed.value) << 
                                                                                      " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].speed_limits[0].elements[u].speed.value: " << ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].speed_limits[0].elements[u].speed.value;
                                                                     }
                                                                     
                                                                     // ******************* MIN validator *******************
                                                                     if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                                                        logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].speed_limits[0].elements[u].speed.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                                                        logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].speed_limits[0].elements[u].speed.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                                                         return false;
                                                                     }
                                                                     // ******************* MAX validator *******************
                                                                     if(VALIDATORS_ENABLED && __aux64__ > 8191) {
-                                                                        logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].speed_limits[0].elements[u].speed.value' " << (__aux64__) << " exceeds max allowable (8191); message dropped.";
+                                                                        logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].data[0].elements[t].speed_limits[0].elements[u].speed.value' " << (__aux64__) << " exceeds max allowable (8191); message dropped.";
                                                                         return false;
                                                                     }
                                                             }
@@ -5266,17 +5266,17 @@ namespace wind
                                                     
                                                     // ******************* MIN validator *******************
                                                     if(VALIDATORS_ENABLED && __aux64__ < -512) {
-                                                        logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].d_width[0].value' " << (__aux64__) << " is less than allowable (-512); message dropped.";
+                                                        logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].d_width[0].value' " << (__aux64__) << " is less than allowable (-512); message dropped.";
                                                         return false;
                                                     }
                                                     // ******************* MAX validator *******************
                                                     if(VALIDATORS_ENABLED && __aux64__ > 511) {
-                                                        logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].d_width[0].value' " << (__aux64__) << " exceeds max allowable (511); message dropped.";
+                                                        logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].d_width[0].value' " << (__aux64__) << " exceeds max allowable (511); message dropped.";
                                                         return false;
                                                     }
                                                     
                                                     if(debug) {
-                                                        logger->print() << "|\033[38;5;94m000236\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].d_width[0].value) << " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].d_width[0]: " <<
+                                                        logger->print() << "|" << tools::brown("000236") << "| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].d_width[0].value) << " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].d_width[0]: " <<
                                                                      ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].d_width[0].value << " (" << __aux64__ << ")";
                                                     }
                                                 }
@@ -5294,17 +5294,17 @@ namespace wind
                                                     
                                                     // ******************* MIN validator *******************
                                                     if(VALIDATORS_ENABLED && __aux64__ < -512) {
-                                                        logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].d_elevation[0].value' " << (__aux64__) << " is less than allowable (-512); message dropped.";
+                                                        logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].d_elevation[0].value' " << (__aux64__) << " is less than allowable (-512); message dropped.";
                                                         return false;
                                                     }
                                                     // ******************* MAX validator *******************
                                                     if(VALIDATORS_ENABLED && __aux64__ > 511) {
-                                                        logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].d_elevation[0].value' " << (__aux64__) << " exceeds max allowable (511); message dropped.";
+                                                        logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].d_elevation[0].value' " << (__aux64__) << " exceeds max allowable (511); message dropped.";
                                                         return false;
                                                     }
                                                     
                                                     if(debug) {
-                                                        logger->print() << "|\033[38;5;94m000237\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].d_elevation[0].value) << " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].d_elevation[0]: " <<
+                                                        logger->print() << "|" << tools::brown("000237") << "| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].d_elevation[0].value) << " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].d_elevation[0]: " <<
                                                                      ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].d_elevation[0].value << " (" << __aux64__ << ")";
                                                     }
                                                 }
@@ -5315,7 +5315,7 @@ namespace wind
                                                     bool _array_8[*_tmp_279];
                                                     
                                                     if(debug)
-                                                        logger->print() << "|\033[38;5;94m000238\033[0m| Reading number of exts from ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].: " << static_cast<unsigned int>(*_tmp_279);
+                                                        logger->print() << "|" << tools::brown("000238") << "| Reading number of exts from ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].attributes[0].: " << static_cast<unsigned int>(*_tmp_279);
                                                     
                                                     // Extensions bytemap
                                                     for(int i = 0; i < *_tmp_279; i++)
@@ -5340,7 +5340,7 @@ namespace wind
                                             bool _array_9[*_tmp_281];
                                             
                                             if(debug)
-                                                logger->print() << "|\033[38;5;94m000239\033[0m| Reading number of exts from ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].: " << static_cast<unsigned int>(*_tmp_281);
+                                                logger->print() << "|" << tools::brown("000239") << "| Reading number of exts from ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.nodes[0].elements[p].: " << static_cast<unsigned int>(*_tmp_281);
                                             
                                             // Extensions bytemap
                                             for(int i = 0; i < *_tmp_281; i++)
@@ -5378,7 +5378,7 @@ namespace wind
                                     uint8_t* _ext_flag_74 = (uint8_t*) buffer++;  // Read ext flag from ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].
                                     
                                     if(debug) {
-                                        logger->print() << "|\033[38;5;94m000240\033[0m| Reading ext flag from ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].: " << int(*_ext_flag_74);
+                                        logger->print() << "|" << tools::brown("000240") << "| Reading ext flag from ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].: " << int(*_ext_flag_74);
                                     }
                                     
                                     if(*(buffer++)) { 
@@ -5386,28 +5386,28 @@ namespace wind
                                         ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].rotate_xy.push_back(_tmp_284);
                                     
                                         if(debug)
-                                            logger->print() << "|\033[38;5;94m000241\033[0m| ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].rotate_xy " << tools::green("present");
+                                            logger->print() << "|" << tools::brown("000241") << "| ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].rotate_xy " << tools::green("present");
                                     }
                                     if(*(buffer++)) { 
                                         dsrc_v2_dsrc_msgs::msg::ScaleB12 _tmp_285;
                                         ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].scale_xaxis.push_back(_tmp_285);
                                     
                                         if(debug)
-                                            logger->print() << "|\033[38;5;94m000242\033[0m| ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].scale_xaxis " << tools::green("present");
+                                            logger->print() << "|" << tools::brown("000242") << "| ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].scale_xaxis " << tools::green("present");
                                     }
                                     if(*(buffer++)) { 
                                         dsrc_v2_dsrc_msgs::msg::ScaleB12 _tmp_286;
                                         ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].scale_yaxis.push_back(_tmp_286);
                                     
                                         if(debug)
-                                            logger->print() << "|\033[38;5;94m000243\033[0m| ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].scale_yaxis " << tools::green("present");
+                                            logger->print() << "|" << tools::brown("000243") << "| ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].scale_yaxis " << tools::green("present");
                                     }
                                     if(*(buffer++)) { 
                                         dsrc_v2_dsrc_msgs::msg::ComputedLaneRegional _tmp_287;
                                         ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].regional.push_back(_tmp_287);
                                     
                                         if(debug)
-                                            logger->print() << "|\033[38;5;94m000244\033[0m| ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].regional " << tools::green("present");
+                                            logger->print() << "|" << tools::brown("000244") << "| ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].regional " << tools::green("present");
                                     }
                                     
                                     // Field name: reference_lane_id
@@ -5418,18 +5418,18 @@ namespace wind
                                     ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].reference_lane_id.value = __aux64__;
                                     
                                     if(debug) {
-                                        logger->print() << "|\033[38;5;94m000245\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].reference_lane_id.value) << 
+                                        logger->print() << "|" << tools::brown("000245") << "| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].reference_lane_id.value) << 
                                                      " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].reference_lane_id.value: " << static_cast<int>(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].reference_lane_id.value);
                                     }
                                     
                                     // ******************* MIN validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                        logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].reference_lane_id.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                        logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].reference_lane_id.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                         return false;
                                     }
                                     // ******************* MAX validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ > 255) {
-                                        logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].reference_lane_id.value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
+                                        logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].reference_lane_id.value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
                                         return false;
                                     }
                                     
@@ -5451,18 +5451,18 @@ namespace wind
                                         ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].offset_xaxis.small[0].value = __aux64__;
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000246\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].offset_xaxis.small[0].value) << 
+                                            logger->print() << "|" << tools::brown("000246") << "| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].offset_xaxis.small[0].value) << 
                                                          " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].offset_xaxis.small[0].value: " << ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].offset_xaxis.small[0].value;
                                         }
                                         
                                         // ******************* MIN validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ < -2047) {
-                                            logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].offset_xaxis.small[0].value' " << (__aux64__) << " is less than allowable (-2047); message dropped.";
+                                            logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].offset_xaxis.small[0].value' " << (__aux64__) << " is less than allowable (-2047); message dropped.";
                                             return false;
                                         }
                                         // ******************* MAX validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ > 2047) {
-                                            logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].offset_xaxis.small[0].value' " << (__aux64__) << " exceeds max allowable (2047); message dropped.";
+                                            logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].offset_xaxis.small[0].value' " << (__aux64__) << " exceeds max allowable (2047); message dropped.";
                                             return false;
                                         }
                                     }
@@ -5479,18 +5479,18 @@ namespace wind
                                         ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].offset_xaxis.large[0].value = __aux64__;
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000247\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].offset_xaxis.large[0].value) << 
+                                            logger->print() << "|" << tools::brown("000247") << "| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].offset_xaxis.large[0].value) << 
                                                          " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].offset_xaxis.large[0].value: " << ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].offset_xaxis.large[0].value;
                                         }
                                         
                                         // ******************* MIN validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ < -32767) {
-                                            logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].offset_xaxis.large[0].value' " << (__aux64__) << " is less than allowable (-32767); message dropped.";
+                                            logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].offset_xaxis.large[0].value' " << (__aux64__) << " is less than allowable (-32767); message dropped.";
                                             return false;
                                         }
                                         // ******************* MAX validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ > 32767) {
-                                            logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].offset_xaxis.large[0].value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
+                                            logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].offset_xaxis.large[0].value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
                                             return false;
                                         }
                                     }
@@ -5518,18 +5518,18 @@ namespace wind
                                         ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].offset_yaxis.small[0].value = __aux64__;
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000248\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].offset_yaxis.small[0].value) << 
+                                            logger->print() << "|" << tools::brown("000248") << "| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].offset_yaxis.small[0].value) << 
                                                          " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].offset_yaxis.small[0].value: " << ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].offset_yaxis.small[0].value;
                                         }
                                         
                                         // ******************* MIN validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ < -2047) {
-                                            logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].offset_yaxis.small[0].value' " << (__aux64__) << " is less than allowable (-2047); message dropped.";
+                                            logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].offset_yaxis.small[0].value' " << (__aux64__) << " is less than allowable (-2047); message dropped.";
                                             return false;
                                         }
                                         // ******************* MAX validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ > 2047) {
-                                            logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].offset_yaxis.small[0].value' " << (__aux64__) << " exceeds max allowable (2047); message dropped.";
+                                            logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].offset_yaxis.small[0].value' " << (__aux64__) << " exceeds max allowable (2047); message dropped.";
                                             return false;
                                         }
                                     }
@@ -5546,18 +5546,18 @@ namespace wind
                                         ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].offset_yaxis.large[0].value = __aux64__;
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000249\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].offset_yaxis.large[0].value) << 
+                                            logger->print() << "|" << tools::brown("000249") << "| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].offset_yaxis.large[0].value) << 
                                                          " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].offset_yaxis.large[0].value: " << ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].offset_yaxis.large[0].value;
                                         }
                                         
                                         // ******************* MIN validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ < -32767) {
-                                            logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].offset_yaxis.large[0].value' " << (__aux64__) << " is less than allowable (-32767); message dropped.";
+                                            logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].offset_yaxis.large[0].value' " << (__aux64__) << " is less than allowable (-32767); message dropped.";
                                             return false;
                                         }
                                         // ******************* MAX validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ > 32767) {
-                                            logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].offset_yaxis.large[0].value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
+                                            logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].offset_yaxis.large[0].value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
                                             return false;
                                         }
                                     }
@@ -5576,18 +5576,18 @@ namespace wind
                                         ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].rotate_xy[0].value = __aux64__;
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000250\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].rotate_xy[0].value) << 
+                                            logger->print() << "|" << tools::brown("000250") << "| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].rotate_xy[0].value) << 
                                                          " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].rotate_xy[0].value: " << ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].rotate_xy[0].value;
                                         }
                                         
                                         // ******************* MIN validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                            logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].rotate_xy[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                            logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].rotate_xy[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                             return false;
                                         }
                                         // ******************* MAX validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ > 28800) {
-                                            logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].rotate_xy[0].value' " << (__aux64__) << " exceeds max allowable (28800); message dropped.";
+                                            logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].rotate_xy[0].value' " << (__aux64__) << " exceeds max allowable (28800); message dropped.";
                                             return false;
                                         }
                                     }
@@ -5602,18 +5602,18 @@ namespace wind
                                         ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].scale_xaxis[0].value = __aux64__;
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000251\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].scale_xaxis[0].value) << 
+                                            logger->print() << "|" << tools::brown("000251") << "| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].scale_xaxis[0].value) << 
                                                          " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].scale_xaxis[0].value: " << ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].scale_xaxis[0].value;
                                         }
                                         
                                         // ******************* MIN validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ < -2048) {
-                                            logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].scale_xaxis[0].value' " << (__aux64__) << " is less than allowable (-2048); message dropped.";
+                                            logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].scale_xaxis[0].value' " << (__aux64__) << " is less than allowable (-2048); message dropped.";
                                             return false;
                                         }
                                         // ******************* MAX validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ > 2047) {
-                                            logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].scale_xaxis[0].value' " << (__aux64__) << " exceeds max allowable (2047); message dropped.";
+                                            logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].scale_xaxis[0].value' " << (__aux64__) << " exceeds max allowable (2047); message dropped.";
                                             return false;
                                         }
                                     }
@@ -5628,18 +5628,18 @@ namespace wind
                                         ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].scale_yaxis[0].value = __aux64__;
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000252\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].scale_yaxis[0].value) << 
+                                            logger->print() << "|" << tools::brown("000252") << "| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].scale_yaxis[0].value) << 
                                                          " map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].scale_yaxis[0].value: " << ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].scale_yaxis[0].value;
                                         }
                                         
                                         // ******************* MIN validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ < -2048) {
-                                            logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].scale_yaxis[0].value' " << (__aux64__) << " is less than allowable (-2048); message dropped.";
+                                            logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].scale_yaxis[0].value' " << (__aux64__) << " is less than allowable (-2048); message dropped.";
                                             return false;
                                         }
                                         // ******************* MAX validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ > 2047) {
-                                            logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].scale_yaxis[0].value' " << (__aux64__) << " exceeds max allowable (2047); message dropped.";
+                                            logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].scale_yaxis[0].value' " << (__aux64__) << " exceeds max allowable (2047); message dropped.";
                                             return false;
                                         }
                                     }
@@ -5650,7 +5650,7 @@ namespace wind
                                         bool _array_10[*_tmp_300];
                                         
                                         if(debug)
-                                            logger->print() << "|\033[38;5;94m000253\033[0m| Reading number of exts from ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].: " << static_cast<unsigned int>(*_tmp_300);
+                                            logger->print() << "|" << tools::brown("000253") << "| Reading number of exts from ros->map.road_segments[0].elements[z].road_lane_set.elements[c].node_list.computed[0].: " << static_cast<unsigned int>(*_tmp_300);
                                         
                                         // Extensions bytemap
                                         for(int i = 0; i < *_tmp_300; i++)
@@ -5689,17 +5689,17 @@ namespace wind
                                 int _if__tmp_303 = __aux64__;
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000254\033[0m| SequenceOf ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0]. size: " << int(__aux64__);
+                                    logger->print() << "|" << tools::brown("000254") << "| SequenceOf ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0]. size: " << int(__aux64__);
                                 }
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 1) {
-                                    logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].value' " << (__aux64__) << " is less than allowable (1); message dropped.";
+                                    logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].value' " << (__aux64__) << " is less than allowable (1); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 16) {
-                                    logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].value' " << (__aux64__) << " exceeds max allowable (16); message dropped.";
+                                    logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].value' " << (__aux64__) << " exceeds max allowable (16); message dropped.";
                                     return false;
                                 }
                                 
@@ -5719,28 +5719,28 @@ namespace wind
                                             ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].remote_intersection.push_back(_tmp_304);
                                         
                                             if(debug)
-                                                logger->print() << "|\033[38;5;94m000255\033[0m| ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].remote_intersection " << tools::green("present");
+                                                logger->print() << "|" << tools::brown("000255") << "| ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].remote_intersection " << tools::green("present");
                                         }
                                         if(*(buffer++)) { 
                                             dsrc_v2_dsrc_msgs::msg::SignalGroupID _tmp_305;
                                             ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].signal_group.push_back(_tmp_305);
                                         
                                             if(debug)
-                                                logger->print() << "|\033[38;5;94m000256\033[0m| ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].signal_group " << tools::green("present");
+                                                logger->print() << "|" << tools::brown("000256") << "| ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].signal_group " << tools::green("present");
                                         }
                                         if(*(buffer++)) { 
                                             dsrc_v2_dsrc_msgs::msg::RestrictionClassID _tmp_306;
                                             ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].user_class.push_back(_tmp_306);
                                         
                                             if(debug)
-                                                logger->print() << "|\033[38;5;94m000257\033[0m| ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].user_class " << tools::green("present");
+                                                logger->print() << "|" << tools::brown("000257") << "| ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].user_class " << tools::green("present");
                                         }
                                         if(*(buffer++)) { 
                                             dsrc_v2_dsrc_msgs::msg::LaneConnectionID _tmp_307;
                                             ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].connection_id.push_back(_tmp_307);
                                         
                                             if(debug)
-                                                logger->print() << "|\033[38;5;94m000258\033[0m| ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].connection_id " << tools::green("present");
+                                                logger->print() << "|" << tools::brown("000258") << "| ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].connection_id " << tools::green("present");
                                         }
                                         
                                         // Field name: connecting_lane
@@ -5752,7 +5752,7 @@ namespace wind
                                                 ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].connecting_lane.maneuver.push_back(_tmp_308);
                                             
                                                 if(debug)
-                                                    logger->print() << "|\033[38;5;94m000259\033[0m| ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].connecting_lane.maneuver " << tools::green("present");
+                                                    logger->print() << "|" << tools::brown("000259") << "| ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].connecting_lane.maneuver " << tools::green("present");
                                             }
                                             
                                             // Field name: lane
@@ -5763,18 +5763,18 @@ namespace wind
                                             ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].connecting_lane.lane.value = __aux64__;
                                             
                                             if(debug) {
-                                                logger->print() << "|\033[38;5;94m000260\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].connecting_lane.lane.value) << 
+                                                logger->print() << "|" << tools::brown("000260") << "| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].connecting_lane.lane.value) << 
                                                              " map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].connecting_lane.lane.value: " << static_cast<int>(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].connecting_lane.lane.value);
                                             }
                                             
                                             // ******************* MIN validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                                logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].connecting_lane.lane.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                                logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].connecting_lane.lane.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                                 return false;
                                             }
                                             // ******************* MAX validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ > 255) {
-                                                logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].connecting_lane.lane.value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
+                                                logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].connecting_lane.lane.value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
                                                 return false;
                                             }
                                             
@@ -5787,7 +5787,7 @@ namespace wind
                                                 buffer += 1;
                                                 
                                                 if(debug)
-                                                    logger->print() << "|\033[38;5;94m000261\033[0m| map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].connecting_lane.maneuver[0].value: " << __aux64__;
+                                                    logger->print() << "|" << tools::brown("000261") << "| map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].connecting_lane.maneuver[0].value: " << __aux64__;
                                                 
                                                 int _if__tmp_310 = __aux64__;
                                                 for(int w = 0; w < _if__tmp_310; w++) {
@@ -5799,12 +5799,12 @@ namespace wind
                                                 
                                                 // ******************* MIN validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ < 12) {
-                                                    logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].connecting_lane.maneuver[0].value' " << (__aux64__) << " is less than allowable (12); message dropped.";
+                                                    logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].connecting_lane.maneuver[0].value' " << (__aux64__) << " is less than allowable (12); message dropped.";
                                                     return false;
                                                 }
                                                 // ******************* MAX validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ > 12) {
-                                                    logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].connecting_lane.maneuver[0].value' " << (__aux64__) << " exceeds max allowable (12); message dropped.";
+                                                    logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].connecting_lane.maneuver[0].value' " << (__aux64__) << " exceeds max allowable (12); message dropped.";
                                                     return false;
                                                 }
                                             }
@@ -5819,7 +5819,7 @@ namespace wind
                                                     ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].remote_intersection[0].region.push_back(_tmp_311);
                                                 
                                                     if(debug)
-                                                        logger->print() << "|\033[38;5;94m000262\033[0m| ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].remote_intersection[0].region " << tools::green("present");
+                                                        logger->print() << "|" << tools::brown("000262") << "| ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].remote_intersection[0].region " << tools::green("present");
                                                 }
                                                 
                                                 if(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].remote_intersection[0].region.size() != 0) {
@@ -5831,18 +5831,18 @@ namespace wind
                                                     ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].remote_intersection[0].region[0].value = __aux64__;
                                                     
                                                     if(debug) {
-                                                        logger->print() << "|\033[38;5;94m000263\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].remote_intersection[0].region[0].value) << 
+                                                        logger->print() << "|" << tools::brown("000263") << "| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].remote_intersection[0].region[0].value) << 
                                                                      " map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].remote_intersection[0].region[0].value: " << ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].remote_intersection[0].region[0].value;
                                                     }
                                                     
                                                     // ******************* MIN validator *******************
                                                     if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                                        logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].remote_intersection[0].region[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                                        logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].remote_intersection[0].region[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                                         return false;
                                                     }
                                                     // ******************* MAX validator *******************
                                                     if(VALIDATORS_ENABLED && __aux64__ > 65535) {
-                                                        logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].remote_intersection[0].region[0].value' " << (__aux64__) << " exceeds max allowable (65535); message dropped.";
+                                                        logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].remote_intersection[0].region[0].value' " << (__aux64__) << " exceeds max allowable (65535); message dropped.";
                                                         return false;
                                                     }
                                                 }
@@ -5855,18 +5855,18 @@ namespace wind
                                                 ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].remote_intersection[0].id.value = __aux64__;
                                                 
                                                 if(debug) {
-                                                    logger->print() << "|\033[38;5;94m000264\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].remote_intersection[0].id.value) << 
+                                                    logger->print() << "|" << tools::brown("000264") << "| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].remote_intersection[0].id.value) << 
                                                                  " map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].remote_intersection[0].id.value: " << ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].remote_intersection[0].id.value;
                                                 }
                                                 
                                                 // ******************* MIN validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                                    logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].remote_intersection[0].id.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                                    logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].remote_intersection[0].id.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                                     return false;
                                                 }
                                                 // ******************* MAX validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ > 65535) {
-                                                    logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].remote_intersection[0].id.value' " << (__aux64__) << " exceeds max allowable (65535); message dropped.";
+                                                    logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].remote_intersection[0].id.value' " << (__aux64__) << " exceeds max allowable (65535); message dropped.";
                                                     return false;
                                                 }
                                         }
@@ -5880,18 +5880,18 @@ namespace wind
                                             ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].signal_group[0].value = __aux64__;
                                             
                                             if(debug) {
-                                                logger->print() << "|\033[38;5;94m000265\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].signal_group[0].value) << 
+                                                logger->print() << "|" << tools::brown("000265") << "| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].signal_group[0].value) << 
                                                              " map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].signal_group[0].value: " << static_cast<int>(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].signal_group[0].value);
                                             }
                                             
                                             // ******************* MIN validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                                logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].signal_group[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                                logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].signal_group[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                                 return false;
                                             }
                                             // ******************* MAX validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ > 255) {
-                                                logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].signal_group[0].value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
+                                                logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].signal_group[0].value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
                                                 return false;
                                             }
                                         }
@@ -5905,18 +5905,18 @@ namespace wind
                                             ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].user_class[0].value = __aux64__;
                                             
                                             if(debug) {
-                                                logger->print() << "|\033[38;5;94m000266\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].user_class[0].value) << 
+                                                logger->print() << "|" << tools::brown("000266") << "| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].user_class[0].value) << 
                                                              " map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].user_class[0].value: " << static_cast<int>(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].user_class[0].value);
                                             }
                                             
                                             // ******************* MIN validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                                logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].user_class[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                                logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].user_class[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                                 return false;
                                             }
                                             // ******************* MAX validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ > 255) {
-                                                logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].user_class[0].value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
+                                                logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].user_class[0].value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
                                                 return false;
                                             }
                                         }
@@ -5930,18 +5930,18 @@ namespace wind
                                             ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].connection_id[0].value = __aux64__;
                                             
                                             if(debug) {
-                                                logger->print() << "|\033[38;5;94m000267\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].connection_id[0].value) << 
+                                                logger->print() << "|" << tools::brown("000267") << "| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].connection_id[0].value) << 
                                                              " map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].connection_id[0].value: " << static_cast<int>(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].connection_id[0].value);
                                             }
                                             
                                             // ******************* MIN validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                                logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].connection_id[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                                logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].connection_id[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                                 return false;
                                             }
                                             // ******************* MAX validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ > 255) {
-                                                logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].connection_id[0].value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
+                                                logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].connects_to[0].elements[v].connection_id[0].value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
                                                 return false;
                                             }
                                         }
@@ -5961,17 +5961,17 @@ namespace wind
                                 int _if__tmp_317 = __aux64__;
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000268\033[0m| SequenceOf ros->map.road_segments[0].elements[z].road_lane_set.elements[c].overlays[0]. size: " << int(__aux64__);
+                                    logger->print() << "|" << tools::brown("000268") << "| SequenceOf ros->map.road_segments[0].elements[z].road_lane_set.elements[c].overlays[0]. size: " << int(__aux64__);
                                 }
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 1) {
-                                    logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].overlays[0].value' " << (__aux64__) << " is less than allowable (1); message dropped.";
+                                    logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].overlays[0].value' " << (__aux64__) << " is less than allowable (1); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 5) {
-                                    logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].overlays[0].value' " << (__aux64__) << " exceeds max allowable (5); message dropped.";
+                                    logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].overlays[0].value' " << (__aux64__) << " exceeds max allowable (5); message dropped.";
                                     return false;
                                 }
                                 
@@ -5987,18 +5987,18 @@ namespace wind
                                     ros->map.road_segments[0].elements[z].road_lane_set.elements[c].overlays[0].elements[x].value = __aux64__;
                                     
                                     if(debug) {
-                                        logger->print() << "|\033[38;5;94m000269\033[0m| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].overlays[0].elements[x].value) << 
+                                        logger->print() << "|" << tools::brown("000269") << "| " << tools::getTypeName(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].overlays[0].elements[x].value) << 
                                                      " map.road_segments[0].elements[z].road_lane_set.elements[c].overlays[0].elements[x].value: " << static_cast<int>(ros->map.road_segments[0].elements[z].road_lane_set.elements[c].overlays[0].elements[x].value);
                                     }
                                     
                                     // ******************* MIN validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                        logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].overlays[0].elements[x].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                        logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].overlays[0].elements[x].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                         return false;
                                     }
                                     // ******************* MAX validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ > 255) {
-                                        logger->warning() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].overlays[0].elements[x].value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
+                                        logger->error() << "Error: Value in 'map.road_segments[0].elements[z].road_lane_set.elements[c].overlays[0].elements[x].value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
                                         return false;
                                     }
                                     
@@ -6012,7 +6012,7 @@ namespace wind
                                 bool _array_11[*_tmp_319];
                                 
                                 if(debug)
-                                    logger->print() << "|\033[38;5;94m000270\033[0m| Reading number of exts from ros->map.road_segments[0].elements[z].road_lane_set.elements[c].: " << static_cast<unsigned int>(*_tmp_319);
+                                    logger->print() << "|" << tools::brown("000270") << "| Reading number of exts from ros->map.road_segments[0].elements[z].road_lane_set.elements[c].: " << static_cast<unsigned int>(*_tmp_319);
                                 
                                 // Extensions bytemap
                                 for(int i = 0; i < *_tmp_319; i++)
@@ -6039,7 +6039,7 @@ namespace wind
                         bool _array_12[*_tmp_321];
                         
                         if(debug)
-                            logger->print() << "|\033[38;5;94m000271\033[0m| Reading number of exts from ros->map.road_segments[0].elements[z].: " << static_cast<unsigned int>(*_tmp_321);
+                            logger->print() << "|" << tools::brown("000271") << "| Reading number of exts from ros->map.road_segments[0].elements[z].: " << static_cast<unsigned int>(*_tmp_321);
                         
                         // Extensions bytemap
                         for(int i = 0; i < *_tmp_321; i++)
@@ -6072,7 +6072,7 @@ namespace wind
                 uint8_t* _ext_flag_77 = (uint8_t*) buffer++;  // Read ext flag from ros->map.data_parameters[0].
                 
                 if(debug) {
-                    logger->print() << "|\033[38;5;94m000272\033[0m| Reading ext flag from ros->map.data_parameters[0].: " << int(*_ext_flag_77);
+                    logger->print() << "|" << tools::brown("000272") << "| Reading ext flag from ros->map.data_parameters[0].: " << int(*_ext_flag_77);
                 }
                 
                 if(*(buffer++)) { 
@@ -6080,28 +6080,28 @@ namespace wind
                     ros->map.data_parameters[0].process_method.push_back(_tmp_323);
                 
                     if(debug)
-                        logger->print() << "|\033[38;5;94m000273\033[0m| ros->map.data_parameters[0].process_method " << tools::green("present");
+                        logger->print() << "|" << tools::brown("000273") << "| ros->map.data_parameters[0].process_method " << tools::green("present");
                 }
                 if(*(buffer++)) { 
                     dsrc_v2_dsrc_msgs::msg::DataParametersProcessAgency _tmp_324;
                     ros->map.data_parameters[0].process_agency.push_back(_tmp_324);
                 
                     if(debug)
-                        logger->print() << "|\033[38;5;94m000274\033[0m| ros->map.data_parameters[0].process_agency " << tools::green("present");
+                        logger->print() << "|" << tools::brown("000274") << "| ros->map.data_parameters[0].process_agency " << tools::green("present");
                 }
                 if(*(buffer++)) { 
                     dsrc_v2_dsrc_msgs::msg::DataParametersLastCheckedDate _tmp_325;
                     ros->map.data_parameters[0].last_checked_date.push_back(_tmp_325);
                 
                     if(debug)
-                        logger->print() << "|\033[38;5;94m000275\033[0m| ros->map.data_parameters[0].last_checked_date " << tools::green("present");
+                        logger->print() << "|" << tools::brown("000275") << "| ros->map.data_parameters[0].last_checked_date " << tools::green("present");
                 }
                 if(*(buffer++)) { 
                     dsrc_v2_dsrc_msgs::msg::DataParametersGeoidUsed _tmp_326;
                     ros->map.data_parameters[0].geoid_used.push_back(_tmp_326);
                 
                     if(debug)
-                        logger->print() << "|\033[38;5;94m000276\033[0m| ros->map.data_parameters[0].geoid_used " << tools::green("present");
+                        logger->print() << "|" << tools::brown("000276") << "| ros->map.data_parameters[0].geoid_used " << tools::green("present");
                 }
                 
                 if(ros->map.data_parameters[0].process_method.size() != 0) {
@@ -6172,7 +6172,7 @@ namespace wind
                     bool _array_13[*_tmp_331];
                     
                     if(debug)
-                        logger->print() << "|\033[38;5;94m000277\033[0m| Reading number of exts from ros->map.data_parameters[0].: " << static_cast<unsigned int>(*_tmp_331);
+                        logger->print() << "|" << tools::brown("000277") << "| Reading number of exts from ros->map.data_parameters[0].: " << static_cast<unsigned int>(*_tmp_331);
                     
                     // Extensions bytemap
                     for(int i = 0; i < *_tmp_331; i++)
@@ -6200,7 +6200,7 @@ namespace wind
             bool _array_14[*_tmp_333];
             
             if(debug)
-                logger->print() << "|\033[38;5;94m000278\033[0m| Reading number of exts from ros->map.: " << static_cast<unsigned int>(*_tmp_333);
+                logger->print() << "|" << tools::brown("000278") << "| Reading number of exts from ros->map.: " << static_cast<unsigned int>(*_tmp_333);
             
             // Extensions bytemap
             for(int i = 0; i < *_tmp_333; i++)

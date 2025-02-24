@@ -29,8 +29,8 @@
 #define WIND_CONSTANTS_H
 
 // V2X
-#define MESSAGE_ID                14
-#define PROTOCOL_VERSION          1
+#define MESSAGE_ID                   V2X_MESSAGE_ID
+#define PROTOCOL_VERSION      V2X_PROTOCOL_VERSION
 
 // Flags
 #define WIND_DEBUG_ENABLED        0

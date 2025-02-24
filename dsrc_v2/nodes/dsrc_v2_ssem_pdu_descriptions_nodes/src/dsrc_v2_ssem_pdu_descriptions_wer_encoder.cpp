@@ -66,7 +66,7 @@ namespace wind
         
         // UINT8  min(0) max(255) span(256) dataType(UInt8)
         if(debug) {
-            logger->print() << "|\033[38;5;94m000000\033[0m| " << tools::getTypeName(ros->hheader.protocol_version.value) << 
+            logger->print() << "|" << tools::brown("000000") << "| " << tools::getTypeName(ros->hheader.protocol_version.value) << 
                          " hheader.protocol_version.value: " << static_cast<int>(ros->hheader.protocol_version.value);
         }
         
@@ -76,12 +76,12 @@ namespace wind
         
         // MIN validator
         if (VALIDATORS_ENABLED && __aux64__ < 0) {
-            logger->warning() << "Error: Value in 'hheader.protocol_version.value' (" << __aux64__ << ") less than (0); message dropped.";
+            logger->error() << "Error: Value in 'hheader.protocol_version.value' (" << __aux64__ << ") less than (0); message dropped.";
             return -1;
         }
         // MAX validator
         if (VALIDATORS_ENABLED && __aux64__ > 255) {
-            logger->warning() << "Error: Value in 'hheader.protocol_version.value' (" << __aux64__ << ") exceeds max allowable (255); message dropped.";
+            logger->error() << "Error: Value in 'hheader.protocol_version.value' (" << __aux64__ << ") exceeds max allowable (255); message dropped.";
             return -1;
         }
         
@@ -90,7 +90,7 @@ namespace wind
         
         // UINT8  min(0) max(255) span(256) dataType(UInt8)
         if(debug) {
-            logger->print() << "|\033[38;5;94m000001\033[0m| " << tools::getTypeName(ros->hheader.message_id.value) << 
+            logger->print() << "|" << tools::brown("000001") << "| " << tools::getTypeName(ros->hheader.message_id.value) << 
                          " hheader.message_id.value: " << static_cast<int>(ros->hheader.message_id.value);
         }
         
@@ -100,12 +100,12 @@ namespace wind
         
         // MIN validator
         if (VALIDATORS_ENABLED && __aux64__ < 0) {
-            logger->warning() << "Error: Value in 'hheader.message_id.value' (" << __aux64__ << ") less than (0); message dropped.";
+            logger->error() << "Error: Value in 'hheader.message_id.value' (" << __aux64__ << ") less than (0); message dropped.";
             return -1;
         }
         // MAX validator
         if (VALIDATORS_ENABLED && __aux64__ > 255) {
-            logger->warning() << "Error: Value in 'hheader.message_id.value' (" << __aux64__ << ") exceeds max allowable (255); message dropped.";
+            logger->error() << "Error: Value in 'hheader.message_id.value' (" << __aux64__ << ") exceeds max allowable (255); message dropped.";
             return -1;
         }
         
@@ -114,7 +114,7 @@ namespace wind
         
         // UINT32  min(0) max(4294967295) span(4294967296) dataType(UInt32)
         if(debug) {
-            logger->print() << "|\033[38;5;94m000002\033[0m| " << tools::getTypeName(ros->hheader.station_id.value) << 
+            logger->print() << "|" << tools::brown("000002") << "| " << tools::getTypeName(ros->hheader.station_id.value) << 
                          " hheader.station_id.value: " << ros->hheader.station_id.value;
         }
         
@@ -124,12 +124,12 @@ namespace wind
         
         // MIN validator
         if (VALIDATORS_ENABLED && __aux64__ < 0) {
-            logger->warning() << "Error: Value in 'hheader.station_id.value' (" << __aux64__ << ") less than (0); message dropped.";
+            logger->error() << "Error: Value in 'hheader.station_id.value' (" << __aux64__ << ") less than (0); message dropped.";
             return -1;
         }
         // MAX validator
         if (VALIDATORS_ENABLED && __aux64__ > 4294967295) {
-            logger->warning() << "Error: Value in 'hheader.station_id.value' (" << __aux64__ << ") exceeds max allowable (4294967295); message dropped.";
+            logger->error() << "Error: Value in 'hheader.station_id.value' (" << __aux64__ << ") exceeds max allowable (4294967295); message dropped.";
             return -1;
         }
     
@@ -148,23 +148,23 @@ namespace wind
         char* _tmp_4 = (char*) buffer++;
         *_tmp_4 = (ros->ssm.time_stamp.size() != 0 ? 1 : 0);
         if(debug)
-            logger->print() << "|\033[38;5;94m000003\033[0m| Optional field time_stamp = " << *_tmp_4;
+            logger->print() << "|" << tools::brown("000003") << "| Optional field time_stamp = " << *_tmp_4;
         char* _tmp_5 = (char*) buffer++;
         *_tmp_5 = (ros->ssm.sequence_number.size() != 0 ? 1 : 0);
         if(debug)
-            logger->print() << "|\033[38;5;94m000004\033[0m| Optional field sequence_number = " << *_tmp_5;
+            logger->print() << "|" << tools::brown("000004") << "| Optional field sequence_number = " << *_tmp_5;
         char* _tmp_6 = (char*) buffer++;
         *_tmp_6 = (ros->ssm.regional.size() != 0 ? 1 : 0);
         if(debug)
-            logger->print() << "|\033[38;5;94m000005\033[0m| Optional field regional = " << *_tmp_6;
+            logger->print() << "|" << tools::brown("000005") << "| Optional field regional = " << *_tmp_6;
         
-        if(ros->ssm.time_stamp.size() != 0) {
+        if(ros->ssm.time_stamp.size() == 1) {
             // Field:  type(MinuteOfTheYear) name(time_stamp) extGroup(0)
             // Integer
             
             // UINT32  min(0) max(527040) span(527041) dataType(UInt32)
             if(debug) {
-                logger->print() << "|\033[38;5;94m000006\033[0m| " << tools::getTypeName(ros->ssm.time_stamp[0].value) << 
+                logger->print() << "|" << tools::brown("000006") << "| " << tools::getTypeName(ros->ssm.time_stamp[0].value) << 
                              " ssm.time_stamp[0].value: " << ros->ssm.time_stamp[0].value;
             }
             
@@ -174,14 +174,18 @@ namespace wind
             
             // MIN validator
             if (VALIDATORS_ENABLED && __aux64__ < 0) {
-                logger->warning() << "Error: Value in 'ssm.time_stamp[0].value' (" << __aux64__ << ") less than (0); message dropped.";
+                logger->error() << "Error: Value in 'ssm.time_stamp[0].value' (" << __aux64__ << ") less than (0); message dropped.";
                 return -1;
             }
             // MAX validator
             if (VALIDATORS_ENABLED && __aux64__ > 527040) {
-                logger->warning() << "Error: Value in 'ssm.time_stamp[0].value' (" << __aux64__ << ") exceeds max allowable (527040); message dropped.";
+                logger->error() << "Error: Value in 'ssm.time_stamp[0].value' (" << __aux64__ << ") exceeds max allowable (527040); message dropped.";
                 return -1;
             }
+        }
+        else if(ros->ssm.time_stamp.size() > 1) {
+            logger->error() << "Error: In 'ros->ssm.time_stamp', invalid optional field implementation. Optional fields must contain 0 elements (not present) or 1 element (present). Multiple elements are not allowed. Message dropped.";
+            return -1;
         }
         
         // Field:  type(DSecond) name(second) extGroup(0)
@@ -189,7 +193,7 @@ namespace wind
         
         // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
         if(debug) {
-            logger->print() << "|\033[38;5;94m000007\033[0m| " << tools::getTypeName(ros->ssm.second.value) << 
+            logger->print() << "|" << tools::brown("000007") << "| " << tools::getTypeName(ros->ssm.second.value) << 
                          " ssm.second.value: " << ros->ssm.second.value;
         }
         
@@ -199,22 +203,22 @@ namespace wind
         
         // MIN validator
         if (VALIDATORS_ENABLED && __aux64__ < 0) {
-            logger->warning() << "Error: Value in 'ssm.second.value' (" << __aux64__ << ") less than (0); message dropped.";
+            logger->error() << "Error: Value in 'ssm.second.value' (" << __aux64__ << ") less than (0); message dropped.";
             return -1;
         }
         // MAX validator
         if (VALIDATORS_ENABLED && __aux64__ > 65535) {
-            logger->warning() << "Error: Value in 'ssm.second.value' (" << __aux64__ << ") exceeds max allowable (65535); message dropped.";
+            logger->error() << "Error: Value in 'ssm.second.value' (" << __aux64__ << ") exceeds max allowable (65535); message dropped.";
             return -1;
         }
         
-        if(ros->ssm.sequence_number.size() != 0) {
+        if(ros->ssm.sequence_number.size() == 1) {
             // Field:  type(MsgCount) name(sequence_number) extGroup(0)
             // Integer
             
             // UINT8  min(0) max(127) span(128) dataType(UInt8)
             if(debug) {
-                logger->print() << "|\033[38;5;94m000008\033[0m| " << tools::getTypeName(ros->ssm.sequence_number[0].value) << 
+                logger->print() << "|" << tools::brown("000008") << "| " << tools::getTypeName(ros->ssm.sequence_number[0].value) << 
                              " ssm.sequence_number[0].value: " << static_cast<int>(ros->ssm.sequence_number[0].value);
             }
             
@@ -224,14 +228,18 @@ namespace wind
             
             // MIN validator
             if (VALIDATORS_ENABLED && __aux64__ < 0) {
-                logger->warning() << "Error: Value in 'ssm.sequence_number[0].value' (" << __aux64__ << ") less than (0); message dropped.";
+                logger->error() << "Error: Value in 'ssm.sequence_number[0].value' (" << __aux64__ << ") less than (0); message dropped.";
                 return -1;
             }
             // MAX validator
             if (VALIDATORS_ENABLED && __aux64__ > 127) {
-                logger->warning() << "Error: Value in 'ssm.sequence_number[0].value' (" << __aux64__ << ") exceeds max allowable (127); message dropped.";
+                logger->error() << "Error: Value in 'ssm.sequence_number[0].value' (" << __aux64__ << ") exceeds max allowable (127); message dropped.";
                 return -1;
             }
+        }
+        else if(ros->ssm.sequence_number.size() > 1) {
+            logger->error() << "Error: In 'ros->ssm.sequence_number', invalid optional field implementation. Optional fields must contain 0 elements (not present) or 1 element (present). Multiple elements are not allowed. Message dropped.";
+            return -1;
         }
         
         // Field:  type(SignalStatusList) name(status) extGroup(0)
@@ -260,14 +268,14 @@ namespace wind
                 char* _tmp_11 = (char*) buffer++;
                 *_tmp_11 = (ros->ssm.status.elements[a].regional.size() != 0 ? 1 : 0);
                 if(debug)
-                    logger->print() << "|\033[38;5;94m000010\033[0m| Optional field regional = " << *_tmp_11;
+                    logger->print() << "|" << tools::brown("000010") << "| Optional field regional = " << *_tmp_11;
                 
                 // Field:  type(MsgCount) name(sequence_number) extGroup(0)
                 // Integer
                 
                 // UINT8  min(0) max(127) span(128) dataType(UInt8)
                 if(debug) {
-                    logger->print() << "|\033[38;5;94m000011\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sequence_number.value) << 
+                    logger->print() << "|" << tools::brown("000011") << "| " << tools::getTypeName(ros->ssm.status.elements[a].sequence_number.value) << 
                                  " ssm.status.elements[a].sequence_number.value: " << static_cast<int>(ros->ssm.status.elements[a].sequence_number.value);
                 }
                 
@@ -277,12 +285,12 @@ namespace wind
                 
                 // MIN validator
                 if (VALIDATORS_ENABLED && __aux64__ < 0) {
-                    logger->warning() << "Error: Value in 'ssm.status.elements[a].sequence_number.value' (" << __aux64__ << ") less than (0); message dropped.";
+                    logger->error() << "Error: Value in 'ssm.status.elements[a].sequence_number.value' (" << __aux64__ << ") less than (0); message dropped.";
                     return -1;
                 }
                 // MAX validator
                 if (VALIDATORS_ENABLED && __aux64__ > 127) {
-                    logger->warning() << "Error: Value in 'ssm.status.elements[a].sequence_number.value' (" << __aux64__ << ") exceeds max allowable (127); message dropped.";
+                    logger->error() << "Error: Value in 'ssm.status.elements[a].sequence_number.value' (" << __aux64__ << ") exceeds max allowable (127); message dropped.";
                     return -1;
                 }
                 
@@ -294,15 +302,15 @@ namespace wind
                     char* _tmp_13 = (char*) buffer++;
                     *_tmp_13 = (ros->ssm.status.elements[a].id.region.size() != 0 ? 1 : 0);
                     if(debug)
-                        logger->print() << "|\033[38;5;94m000012\033[0m| Optional field region = " << *_tmp_13;
+                        logger->print() << "|" << tools::brown("000012") << "| Optional field region = " << *_tmp_13;
                     
-                    if(ros->ssm.status.elements[a].id.region.size() != 0) {
+                    if(ros->ssm.status.elements[a].id.region.size() == 1) {
                         // Field:  type(RoadRegulatorID) name(region) extGroup(0)
                         // Integer
                         
                         // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                         if(debug) {
-                            logger->print() << "|\033[38;5;94m000013\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].id.region[0].value) << 
+                            logger->print() << "|" << tools::brown("000013") << "| " << tools::getTypeName(ros->ssm.status.elements[a].id.region[0].value) << 
                                          " ssm.status.elements[a].id.region[0].value: " << ros->ssm.status.elements[a].id.region[0].value;
                         }
                         
@@ -312,14 +320,18 @@ namespace wind
                         
                         // MIN validator
                         if (VALIDATORS_ENABLED && __aux64__ < 0) {
-                            logger->warning() << "Error: Value in 'ssm.status.elements[a].id.region[0].value' (" << __aux64__ << ") less than (0); message dropped.";
+                            logger->error() << "Error: Value in 'ssm.status.elements[a].id.region[0].value' (" << __aux64__ << ") less than (0); message dropped.";
                             return -1;
                         }
                         // MAX validator
                         if (VALIDATORS_ENABLED && __aux64__ > 65535) {
-                            logger->warning() << "Error: Value in 'ssm.status.elements[a].id.region[0].value' (" << __aux64__ << ") exceeds max allowable (65535); message dropped.";
+                            logger->error() << "Error: Value in 'ssm.status.elements[a].id.region[0].value' (" << __aux64__ << ") exceeds max allowable (65535); message dropped.";
                             return -1;
                         }
+                    }
+                    else if(ros->ssm.status.elements[a].id.region.size() > 1) {
+                        logger->error() << "Error: In 'ros->ssm.status.elements[a].id.region', invalid optional field implementation. Optional fields must contain 0 elements (not present) or 1 element (present). Multiple elements are not allowed. Message dropped.";
+                        return -1;
                     }
                     
                     // Field:  type(IntersectionID) name(id) extGroup(0)
@@ -327,7 +339,7 @@ namespace wind
                     
                     // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                     if(debug) {
-                        logger->print() << "|\033[38;5;94m000014\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].id.id.value) << 
+                        logger->print() << "|" << tools::brown("000014") << "| " << tools::getTypeName(ros->ssm.status.elements[a].id.id.value) << 
                                      " ssm.status.elements[a].id.id.value: " << ros->ssm.status.elements[a].id.id.value;
                     }
                     
@@ -337,12 +349,12 @@ namespace wind
                     
                     // MIN validator
                     if (VALIDATORS_ENABLED && __aux64__ < 0) {
-                        logger->warning() << "Error: Value in 'ssm.status.elements[a].id.id.value' (" << __aux64__ << ") less than (0); message dropped.";
+                        logger->error() << "Error: Value in 'ssm.status.elements[a].id.id.value' (" << __aux64__ << ") less than (0); message dropped.";
                         return -1;
                     }
                     // MAX validator
                     if (VALIDATORS_ENABLED && __aux64__ > 65535) {
-                        logger->warning() << "Error: Value in 'ssm.status.elements[a].id.id.value' (" << __aux64__ << ") exceeds max allowable (65535); message dropped.";
+                        logger->error() << "Error: Value in 'ssm.status.elements[a].id.id.value' (" << __aux64__ << ") exceeds max allowable (65535); message dropped.";
                         return -1;
                     }
                 
@@ -376,29 +388,29 @@ namespace wind
                         char* _tmp_17 = (char*) buffer++;
                         *_tmp_17 = (ros->ssm.status.elements[a].sig_status.elements[b].requester.size() != 0 ? 1 : 0);
                         if(debug)
-                            logger->print() << "|\033[38;5;94m000016\033[0m| Optional field requester = " << *_tmp_17;
+                            logger->print() << "|" << tools::brown("000016") << "| Optional field requester = " << *_tmp_17;
                         char* _tmp_18 = (char*) buffer++;
                         *_tmp_18 = (ros->ssm.status.elements[a].sig_status.elements[b].outbound_on.size() != 0 ? 1 : 0);
                         if(debug)
-                            logger->print() << "|\033[38;5;94m000017\033[0m| Optional field outbound_on = " << *_tmp_18;
+                            logger->print() << "|" << tools::brown("000017") << "| Optional field outbound_on = " << *_tmp_18;
                         char* _tmp_19 = (char*) buffer++;
                         *_tmp_19 = (ros->ssm.status.elements[a].sig_status.elements[b].minute.size() != 0 ? 1 : 0);
                         if(debug)
-                            logger->print() << "|\033[38;5;94m000018\033[0m| Optional field minute = " << *_tmp_19;
+                            logger->print() << "|" << tools::brown("000018") << "| Optional field minute = " << *_tmp_19;
                         char* _tmp_20 = (char*) buffer++;
                         *_tmp_20 = (ros->ssm.status.elements[a].sig_status.elements[b].second.size() != 0 ? 1 : 0);
                         if(debug)
-                            logger->print() << "|\033[38;5;94m000019\033[0m| Optional field second = " << *_tmp_20;
+                            logger->print() << "|" << tools::brown("000019") << "| Optional field second = " << *_tmp_20;
                         char* _tmp_21 = (char*) buffer++;
                         *_tmp_21 = (ros->ssm.status.elements[a].sig_status.elements[b].duration.size() != 0 ? 1 : 0);
                         if(debug)
-                            logger->print() << "|\033[38;5;94m000020\033[0m| Optional field duration = " << *_tmp_21;
+                            logger->print() << "|" << tools::brown("000020") << "| Optional field duration = " << *_tmp_21;
                         char* _tmp_22 = (char*) buffer++;
                         *_tmp_22 = (ros->ssm.status.elements[a].sig_status.elements[b].regional.size() != 0 ? 1 : 0);
                         if(debug)
-                            logger->print() << "|\033[38;5;94m000021\033[0m| Optional field regional = " << *_tmp_22;
+                            logger->print() << "|" << tools::brown("000021") << "| Optional field regional = " << *_tmp_22;
                         
-                        if(ros->ssm.status.elements[a].sig_status.elements[b].requester.size() != 0) {
+                        if(ros->ssm.status.elements[a].sig_status.elements[b].requester.size() == 1) {
                             // Field:  type(SignalRequesterInfo) name(requester) extGroup(0)
                                 // SignalRequesterInfo  SEQUENCE
                                     //  id             VehicleID            
@@ -414,11 +426,11 @@ namespace wind
                                 char* _tmp_23 = (char*) buffer++;
                                 *_tmp_23 = (ros->ssm.status.elements[a].sig_status.elements[b].requester[0].role.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->print() << "|\033[38;5;94m000022\033[0m| Optional field role = " << *_tmp_23;
+                                    logger->print() << "|" << tools::brown("000022") << "| Optional field role = " << *_tmp_23;
                                 char* _tmp_24 = (char*) buffer++;
                                 *_tmp_24 = (ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data.size() != 0 ? 1 : 0);
                                 if(debug)
-                                    logger->print() << "|\033[38;5;94m000023\033[0m| Optional field type_data = " << *_tmp_24;
+                                    logger->print() << "|" << tools::brown("000023") << "| Optional field type_data = " << *_tmp_24;
                                 
                                 // Field:  type(VehicleID) name(id) extGroup(0)
                                 // Choice
@@ -431,13 +443,13 @@ namespace wind
                                     *_choice_1 = 0;  // Setting choice selection
                                 
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m000024\033[0m| Choice selection: 0";
+                                        logger->debug() << "|" << tools::brown("000024") << "| Choice selection: 0";
                                 
                                     // OctetString
                                     // OCTET_STRING  min(4) max(4) span(1)
                                     
                                     if(debug)
-                                        logger->print() << "|\033[38;5;94m000025\033[0m| ssm.status.elements[a].sig_status.elements[b].requester[0].id.entity_id[0].values.size(): ssm.status.elements[a].sig_status.elements[b].requester[0].id.entity_id[0]" << static_cast<int>(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].id.entity_id[0].values.size());
+                                        logger->print() << "|" << tools::brown("000025") << "| ssm.status.elements[a].sig_status.elements[b].requester[0].id.entity_id[0].values.size(): ssm.status.elements[a].sig_status.elements[b].requester[0].id.entity_id[0]" << static_cast<int>(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].id.entity_id[0].values.size());
                                     
                                     if(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].id.entity_id[0].values.size() < 4) {
                                         logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].id.entity_id[0].value' (" << 
@@ -467,13 +479,13 @@ namespace wind
                                     *_choice_1 = 1;  // Setting choice selection
                                 
                                     if(debug)
-                                        logger->debug() << "|\033[38;5;94m000026\033[0m| Choice selection: 1";
+                                        logger->debug() << "|" << tools::brown("000026") << "| Choice selection: 1";
                                 
                                     // Integer
                                     
                                     // UINT32  min(0) max(4294967295) span(4294967296) dataType(UInt32)
                                     if(debug) {
-                                        logger->print() << "|\033[38;5;94m000027\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].id.station_id[0].value) << 
+                                        logger->print() << "|" << tools::brown("000027") << "| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].id.station_id[0].value) << 
                                                      " ssm.status.elements[a].sig_status.elements[b].requester[0].id.station_id[0].value: " << ros->ssm.status.elements[a].sig_status.elements[b].requester[0].id.station_id[0].value;
                                     }
                                     
@@ -483,12 +495,12 @@ namespace wind
                                     
                                     // MIN validator
                                     if (VALIDATORS_ENABLED && __aux64__ < 0) {
-                                        logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].id.station_id[0].value' (" << __aux64__ << ") less than (0); message dropped.";
+                                        logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].id.station_id[0].value' (" << __aux64__ << ") less than (0); message dropped.";
                                         return -1;
                                     }
                                     // MAX validator
                                     if (VALIDATORS_ENABLED && __aux64__ > 4294967295) {
-                                        logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].id.station_id[0].value' (" << __aux64__ << ") exceeds max allowable (4294967295); message dropped.";
+                                        logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].id.station_id[0].value' (" << __aux64__ << ") exceeds max allowable (4294967295); message dropped.";
                                         return -1;
                                     }
                                 
@@ -504,7 +516,7 @@ namespace wind
                                 
                                 // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000028\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].request.value) << 
+                                    logger->print() << "|" << tools::brown("000028") << "| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].request.value) << 
                                                  " ssm.status.elements[a].sig_status.elements[b].requester[0].request.value: " << static_cast<int>(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].request.value);
                                 }
                                 
@@ -514,12 +526,12 @@ namespace wind
                                 
                                 // MIN validator
                                 if (VALIDATORS_ENABLED && __aux64__ < 0) {
-                                    logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].request.value' (" << __aux64__ << ") less than (0); message dropped.";
+                                    logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].request.value' (" << __aux64__ << ") less than (0); message dropped.";
                                     return -1;
                                 }
                                 // MAX validator
                                 if (VALIDATORS_ENABLED && __aux64__ > 255) {
-                                    logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].request.value' (" << __aux64__ << ") exceeds max allowable (255); message dropped.";
+                                    logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].request.value' (" << __aux64__ << ") exceeds max allowable (255); message dropped.";
                                     return -1;
                                 }
                                 
@@ -528,7 +540,7 @@ namespace wind
                                 
                                 // UINT8  min(0) max(127) span(128) dataType(UInt8)
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000029\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].sequence_number.value) << 
+                                    logger->print() << "|" << tools::brown("000029") << "| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].sequence_number.value) << 
                                                  " ssm.status.elements[a].sig_status.elements[b].requester[0].sequence_number.value: " << static_cast<int>(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].sequence_number.value);
                                 }
                                 
@@ -538,22 +550,22 @@ namespace wind
                                 
                                 // MIN validator
                                 if (VALIDATORS_ENABLED && __aux64__ < 0) {
-                                    logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].sequence_number.value' (" << __aux64__ << ") less than (0); message dropped.";
+                                    logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].sequence_number.value' (" << __aux64__ << ") less than (0); message dropped.";
                                     return -1;
                                 }
                                 // MAX validator
                                 if (VALIDATORS_ENABLED && __aux64__ > 127) {
-                                    logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].sequence_number.value' (" << __aux64__ << ") exceeds max allowable (127); message dropped.";
+                                    logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].sequence_number.value' (" << __aux64__ << ") exceeds max allowable (127); message dropped.";
                                     return -1;
                                 }
                                 
-                                if(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].role.size() != 0) {
+                                if(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].role.size() == 1) {
                                     // Field:  type(BasicVehicleRole) name(role) extGroup(0)
                                     // Enumerated
                                     // INT32  min(0) max(22) span(23) dataType(Int32)
                                     uint8_t* _ext_flag_18 = (uint8_t*) buffer++; // Write extension flag for ros->ssm.status.elements[a].sig_status.elements[b].requester[0].role[0].
                                     if(debug) {
-                                        logger->print() << "|\033[38;5;94m000030\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].role[0].value) << 
+                                        logger->print() << "|" << tools::brown("000030") << "| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].role[0].value) << 
                                                      " ssm.status.elements[a].sig_status.elements[b].requester[0].role[0].value: " << static_cast<int>(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].role[0].value);
                                     }
                                     
@@ -563,17 +575,21 @@ namespace wind
                                     __aux64__ = ros->ssm.status.elements[a].sig_status.elements[b].requester[0].role[0].value; 
                                     // MIN validator
                                     if (VALIDATORS_ENABLED && __aux64__ < 0) {
-                                        logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].role[0].value' (" << __aux64__ << ") less than (0); message dropped.";
+                                        logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].role[0].value' (" << __aux64__ << ") less than (0); message dropped.";
                                         return -1;
                                     }
                                     // MAX validator
                                     if (VALIDATORS_ENABLED && __aux64__ > 22) {
-                                        logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].role[0].value' (" << __aux64__ << ") exceeds max allowable (22); message dropped.";
+                                        logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].role[0].value' (" << __aux64__ << ") exceeds max allowable (22); message dropped.";
                                         return -1;
                                     }
                                 }
+                                else if(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].role.size() > 1) {
+                                    logger->error() << "Error: In 'ros->ssm.status.elements[a].sig_status.elements[b].requester[0].role', invalid optional field implementation. Optional fields must contain 0 elements (not present) or 1 element (present). Multiple elements are not allowed. Message dropped.";
+                                    return -1;
+                                }
                                 
-                                if(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data.size() != 0) {
+                                if(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data.size() == 1) {
                                     // Field:  type(RequestorType) name(type_data) extGroup(0)
                                         // RequestorType  SEQUENCE
                                             //  role       BasicVehicleRole           
@@ -590,30 +606,30 @@ namespace wind
                                         char* _tmp_30 = (char*) buffer++;
                                         *_tmp_30 = (ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].subrole.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->print() << "|\033[38;5;94m000031\033[0m| Optional field subrole = " << *_tmp_30;
+                                            logger->print() << "|" << tools::brown("000031") << "| Optional field subrole = " << *_tmp_30;
                                         char* _tmp_31 = (char*) buffer++;
                                         *_tmp_31 = (ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].request.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->print() << "|\033[38;5;94m000032\033[0m| Optional field request = " << *_tmp_31;
+                                            logger->print() << "|" << tools::brown("000032") << "| Optional field request = " << *_tmp_31;
                                         char* _tmp_32 = (char*) buffer++;
                                         *_tmp_32 = (ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].iso3883.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->print() << "|\033[38;5;94m000033\033[0m| Optional field iso3883 = " << *_tmp_32;
+                                            logger->print() << "|" << tools::brown("000033") << "| Optional field iso3883 = " << *_tmp_32;
                                         char* _tmp_33 = (char*) buffer++;
                                         *_tmp_33 = (ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].hpms_type.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->print() << "|\033[38;5;94m000034\033[0m| Optional field hpms_type = " << *_tmp_33;
+                                            logger->print() << "|" << tools::brown("000034") << "| Optional field hpms_type = " << *_tmp_33;
                                         char* _tmp_34 = (char*) buffer++;
                                         *_tmp_34 = (ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].regional.size() != 0 ? 1 : 0);
                                         if(debug)
-                                            logger->print() << "|\033[38;5;94m000035\033[0m| Optional field regional = " << *_tmp_34;
+                                            logger->print() << "|" << tools::brown("000035") << "| Optional field regional = " << *_tmp_34;
                                         
                                         // Field:  type(BasicVehicleRole) name(role) extGroup(0)
                                         // Enumerated
                                         // INT32  min(0) max(22) span(23) dataType(Int32)
                                         uint8_t* _ext_flag_20 = (uint8_t*) buffer++; // Write extension flag for ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].role.
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000036\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].role.value) << 
+                                            logger->print() << "|" << tools::brown("000036") << "| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].role.value) << 
                                                          " ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].role.value: " << static_cast<int>(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].role.value);
                                         }
                                         
@@ -623,21 +639,21 @@ namespace wind
                                         __aux64__ = ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].role.value; 
                                         // MIN validator
                                         if (VALIDATORS_ENABLED && __aux64__ < 0) {
-                                            logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].role.value' (" << __aux64__ << ") less than (0); message dropped.";
+                                            logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].role.value' (" << __aux64__ << ") less than (0); message dropped.";
                                             return -1;
                                         }
                                         // MAX validator
                                         if (VALIDATORS_ENABLED && __aux64__ > 22) {
-                                            logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].role.value' (" << __aux64__ << ") exceeds max allowable (22); message dropped.";
+                                            logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].role.value' (" << __aux64__ << ") exceeds max allowable (22); message dropped.";
                                             return -1;
                                         }
                                         
-                                        if(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].subrole.size() != 0) {
+                                        if(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].subrole.size() == 1) {
                                             // Field:  type(RequestSubRole) name(subrole) extGroup(0)
                                             // Enumerated
                                             // INT32  min(0) max(15) span(16) dataType(Int32)
                                             if(debug) {
-                                                logger->print() << "|\033[38;5;94m000037\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].subrole[0].value) << 
+                                                logger->print() << "|" << tools::brown("000037") << "| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].subrole[0].value) << 
                                                              " ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].subrole[0].value: " << static_cast<int>(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].subrole[0].value);
                                             }
                                             
@@ -647,22 +663,26 @@ namespace wind
                                             __aux64__ = ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].subrole[0].value; 
                                             // MIN validator
                                             if (VALIDATORS_ENABLED && __aux64__ < 0) {
-                                                logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].subrole[0].value' (" << __aux64__ << ") less than (0); message dropped.";
+                                                logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].subrole[0].value' (" << __aux64__ << ") less than (0); message dropped.";
                                                 return -1;
                                             }
                                             // MAX validator
                                             if (VALIDATORS_ENABLED && __aux64__ > 15) {
-                                                logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].subrole[0].value' (" << __aux64__ << ") exceeds max allowable (15); message dropped.";
+                                                logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].subrole[0].value' (" << __aux64__ << ") exceeds max allowable (15); message dropped.";
                                                 return -1;
                                             }
                                         }
+                                        else if(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].subrole.size() > 1) {
+                                            logger->error() << "Error: In 'ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].subrole', invalid optional field implementation. Optional fields must contain 0 elements (not present) or 1 element (present). Multiple elements are not allowed. Message dropped.";
+                                            return -1;
+                                        }
                                         
-                                        if(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].request.size() != 0) {
+                                        if(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].request.size() == 1) {
                                             // Field:  type(RequestImportanceLevel) name(request) extGroup(0)
                                             // Enumerated
                                             // INT32  min(0) max(15) span(16) dataType(Int32)
                                             if(debug) {
-                                                logger->print() << "|\033[38;5;94m000038\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].request[0].value) << 
+                                                logger->print() << "|" << tools::brown("000038") << "| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].request[0].value) << 
                                                              " ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].request[0].value: " << static_cast<int>(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].request[0].value);
                                             }
                                             
@@ -672,23 +692,27 @@ namespace wind
                                             __aux64__ = ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].request[0].value; 
                                             // MIN validator
                                             if (VALIDATORS_ENABLED && __aux64__ < 0) {
-                                                logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].request[0].value' (" << __aux64__ << ") less than (0); message dropped.";
+                                                logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].request[0].value' (" << __aux64__ << ") less than (0); message dropped.";
                                                 return -1;
                                             }
                                             // MAX validator
                                             if (VALIDATORS_ENABLED && __aux64__ > 15) {
-                                                logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].request[0].value' (" << __aux64__ << ") exceeds max allowable (15); message dropped.";
+                                                logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].request[0].value' (" << __aux64__ << ") exceeds max allowable (15); message dropped.";
                                                 return -1;
                                             }
                                         }
+                                        else if(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].request.size() > 1) {
+                                            logger->error() << "Error: In 'ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].request', invalid optional field implementation. Optional fields must contain 0 elements (not present) or 1 element (present). Multiple elements are not allowed. Message dropped.";
+                                            return -1;
+                                        }
                                         
-                                        if(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].iso3883.size() != 0) {
+                                        if(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].iso3883.size() == 1) {
                                             // Field:  type(Iso3833VehicleType) name(iso3883) extGroup(0)
                                             // Integer
                                             
                                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                             if(debug) {
-                                                logger->print() << "|\033[38;5;94m000039\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].iso3883[0].value) << 
+                                                logger->print() << "|" << tools::brown("000039") << "| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].iso3883[0].value) << 
                                                              " ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].iso3883[0].value: " << static_cast<int>(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].iso3883[0].value);
                                             }
                                             
@@ -698,23 +722,27 @@ namespace wind
                                             
                                             // MIN validator
                                             if (VALIDATORS_ENABLED && __aux64__ < 0) {
-                                                logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].iso3883[0].value' (" << __aux64__ << ") less than (0); message dropped.";
+                                                logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].iso3883[0].value' (" << __aux64__ << ") less than (0); message dropped.";
                                                 return -1;
                                             }
                                             // MAX validator
                                             if (VALIDATORS_ENABLED && __aux64__ > 255) {
-                                                logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].iso3883[0].value' (" << __aux64__ << ") exceeds max allowable (255); message dropped.";
+                                                logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].iso3883[0].value' (" << __aux64__ << ") exceeds max allowable (255); message dropped.";
                                                 return -1;
                                             }
                                         }
+                                        else if(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].iso3883.size() > 1) {
+                                            logger->error() << "Error: In 'ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].iso3883', invalid optional field implementation. Optional fields must contain 0 elements (not present) or 1 element (present). Multiple elements are not allowed. Message dropped.";
+                                            return -1;
+                                        }
                                         
-                                        if(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].hpms_type.size() != 0) {
+                                        if(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].hpms_type.size() == 1) {
                                             // Field:  type(VehicleType) name(hpms_type) extGroup(0)
                                             // Enumerated
                                             // INT32  min(0) max(15) span(16) dataType(Int32)
                                             uint8_t* _ext_flag_24 = (uint8_t*) buffer++; // Write extension flag for ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].hpms_type[0].
                                             if(debug) {
-                                                logger->print() << "|\033[38;5;94m000040\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].hpms_type[0].value) << 
+                                                logger->print() << "|" << tools::brown("000040") << "| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].hpms_type[0].value) << 
                                                              " ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].hpms_type[0].value: " << static_cast<int>(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].hpms_type[0].value);
                                             }
                                             
@@ -724,23 +752,35 @@ namespace wind
                                             __aux64__ = ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].hpms_type[0].value; 
                                             // MIN validator
                                             if (VALIDATORS_ENABLED && __aux64__ < 0) {
-                                                logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].hpms_type[0].value' (" << __aux64__ << ") less than (0); message dropped.";
+                                                logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].hpms_type[0].value' (" << __aux64__ << ") less than (0); message dropped.";
                                                 return -1;
                                             }
                                             // MAX validator
                                             if (VALIDATORS_ENABLED && __aux64__ > 15) {
-                                                logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].hpms_type[0].value' (" << __aux64__ << ") exceeds max allowable (15); message dropped.";
+                                                logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].hpms_type[0].value' (" << __aux64__ << ") exceeds max allowable (15); message dropped.";
                                                 return -1;
                                             }
+                                        }
+                                        else if(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].hpms_type.size() > 1) {
+                                            logger->error() << "Error: In 'ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].hpms_type', invalid optional field implementation. Optional fields must contain 0 elements (not present) or 1 element (present). Multiple elements are not allowed. Message dropped.";
+                                            return -1;
                                         }
                                         
                                         // Field name: regional  // avoided
                                         if(*_ext_flag_19) {
                                         }
                                 }
+                                else if(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data.size() > 1) {
+                                    logger->error() << "Error: In 'ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data', invalid optional field implementation. Optional fields must contain 0 elements (not present) or 1 element (present). Multiple elements are not allowed. Message dropped.";
+                                    return -1;
+                                }
                                 
                                 if(*_ext_flag_13) {
                                 }
+                        }
+                        else if(ros->ssm.status.elements[a].sig_status.elements[b].requester.size() > 1) {
+                            logger->error() << "Error: In 'ros->ssm.status.elements[a].sig_status.elements[b].requester', invalid optional field implementation. Optional fields must contain 0 elements (not present) or 1 element (present). Multiple elements are not allowed. Message dropped.";
+                            return -1;
                         }
                         
                         // Field:  type(IntersectionAccessPoint) name(inbound_on) extGroup(0)
@@ -759,13 +799,13 @@ namespace wind
                             *_choice_2 = 0;  // Setting choice selection
                         
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m000041\033[0m| Choice selection: 0";
+                                logger->debug() << "|" << tools::brown("000041") << "| Choice selection: 0";
                         
                             // Integer
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->print() << "|\033[38;5;94m000042\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].inbound_on.lane[0].value) << 
+                                logger->print() << "|" << tools::brown("000042") << "| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].inbound_on.lane[0].value) << 
                                              " ssm.status.elements[a].sig_status.elements[b].inbound_on.lane[0].value: " << static_cast<int>(ros->ssm.status.elements[a].sig_status.elements[b].inbound_on.lane[0].value);
                             }
                             
@@ -775,12 +815,12 @@ namespace wind
                             
                             // MIN validator
                             if (VALIDATORS_ENABLED && __aux64__ < 0) {
-                                logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].inbound_on.lane[0].value' (" << __aux64__ << ") less than (0); message dropped.";
+                                logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].inbound_on.lane[0].value' (" << __aux64__ << ") less than (0); message dropped.";
                                 return -1;
                             }
                             // MAX validator
                             if (VALIDATORS_ENABLED && __aux64__ > 255) {
-                                logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].inbound_on.lane[0].value' (" << __aux64__ << ") exceeds max allowable (255); message dropped.";
+                                logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].inbound_on.lane[0].value' (" << __aux64__ << ") exceeds max allowable (255); message dropped.";
                                 return -1;
                             }
                         
@@ -790,13 +830,13 @@ namespace wind
                             *_choice_2 = 1;  // Setting choice selection
                         
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m000043\033[0m| Choice selection: 1";
+                                logger->debug() << "|" << tools::brown("000043") << "| Choice selection: 1";
                         
                             // Integer
                             
                             // UINT8  min(0) max(15) span(16) dataType(UInt8)
                             if(debug) {
-                                logger->print() << "|\033[38;5;94m000044\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].inbound_on.approach[0].value) << 
+                                logger->print() << "|" << tools::brown("000044") << "| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].inbound_on.approach[0].value) << 
                                              " ssm.status.elements[a].sig_status.elements[b].inbound_on.approach[0].value: " << static_cast<int>(ros->ssm.status.elements[a].sig_status.elements[b].inbound_on.approach[0].value);
                             }
                             
@@ -806,12 +846,12 @@ namespace wind
                             
                             // MIN validator
                             if (VALIDATORS_ENABLED && __aux64__ < 0) {
-                                logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].inbound_on.approach[0].value' (" << __aux64__ << ") less than (0); message dropped.";
+                                logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].inbound_on.approach[0].value' (" << __aux64__ << ") less than (0); message dropped.";
                                 return -1;
                             }
                             // MAX validator
                             if (VALIDATORS_ENABLED && __aux64__ > 15) {
-                                logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].inbound_on.approach[0].value' (" << __aux64__ << ") exceeds max allowable (15); message dropped.";
+                                logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].inbound_on.approach[0].value' (" << __aux64__ << ") exceeds max allowable (15); message dropped.";
                                 return -1;
                             }
                         
@@ -821,13 +861,13 @@ namespace wind
                             *_choice_2 = 2;  // Setting choice selection
                         
                             if(debug)
-                                logger->debug() << "|\033[38;5;94m000045\033[0m| Choice selection: 2";
+                                logger->debug() << "|" << tools::brown("000045") << "| Choice selection: 2";
                         
                             // Integer
                             
                             // UINT8  min(0) max(255) span(256) dataType(UInt8)
                             if(debug) {
-                                logger->print() << "|\033[38;5;94m000046\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].inbound_on.connection[0].value) << 
+                                logger->print() << "|" << tools::brown("000046") << "| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].inbound_on.connection[0].value) << 
                                              " ssm.status.elements[a].sig_status.elements[b].inbound_on.connection[0].value: " << static_cast<int>(ros->ssm.status.elements[a].sig_status.elements[b].inbound_on.connection[0].value);
                             }
                             
@@ -837,12 +877,12 @@ namespace wind
                             
                             // MIN validator
                             if (VALIDATORS_ENABLED && __aux64__ < 0) {
-                                logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].inbound_on.connection[0].value' (" << __aux64__ << ") less than (0); message dropped.";
+                                logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].inbound_on.connection[0].value' (" << __aux64__ << ") less than (0); message dropped.";
                                 return -1;
                             }
                             // MAX validator
                             if (VALIDATORS_ENABLED && __aux64__ > 255) {
-                                logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].inbound_on.connection[0].value' (" << __aux64__ << ") exceeds max allowable (255); message dropped.";
+                                logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].inbound_on.connection[0].value' (" << __aux64__ << ") exceeds max allowable (255); message dropped.";
                                 return -1;
                             }
                         
@@ -853,7 +893,7 @@ namespace wind
                             return -1;
                         }
                         
-                        if(ros->ssm.status.elements[a].sig_status.elements[b].outbound_on.size() != 0) {
+                        if(ros->ssm.status.elements[a].sig_status.elements[b].outbound_on.size() == 1) {
                             // Field:  type(IntersectionAccessPoint) name(outbound_on) extGroup(0)
                             // Choice
                                // #0  lane   LaneID
@@ -870,13 +910,13 @@ namespace wind
                                 *_choice_3 = 0;  // Setting choice selection
                             
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000047\033[0m| Choice selection: 0";
+                                    logger->debug() << "|" << tools::brown("000047") << "| Choice selection: 0";
                             
                                 // Integer
                                 
                                 // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000048\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].outbound_on[0].lane[0].value) << 
+                                    logger->print() << "|" << tools::brown("000048") << "| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].outbound_on[0].lane[0].value) << 
                                                  " ssm.status.elements[a].sig_status.elements[b].outbound_on[0].lane[0].value: " << static_cast<int>(ros->ssm.status.elements[a].sig_status.elements[b].outbound_on[0].lane[0].value);
                                 }
                                 
@@ -886,12 +926,12 @@ namespace wind
                                 
                                 // MIN validator
                                 if (VALIDATORS_ENABLED && __aux64__ < 0) {
-                                    logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].outbound_on[0].lane[0].value' (" << __aux64__ << ") less than (0); message dropped.";
+                                    logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].outbound_on[0].lane[0].value' (" << __aux64__ << ") less than (0); message dropped.";
                                     return -1;
                                 }
                                 // MAX validator
                                 if (VALIDATORS_ENABLED && __aux64__ > 255) {
-                                    logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].outbound_on[0].lane[0].value' (" << __aux64__ << ") exceeds max allowable (255); message dropped.";
+                                    logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].outbound_on[0].lane[0].value' (" << __aux64__ << ") exceeds max allowable (255); message dropped.";
                                     return -1;
                                 }
                             
@@ -901,13 +941,13 @@ namespace wind
                                 *_choice_3 = 1;  // Setting choice selection
                             
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000049\033[0m| Choice selection: 1";
+                                    logger->debug() << "|" << tools::brown("000049") << "| Choice selection: 1";
                             
                                 // Integer
                                 
                                 // UINT8  min(0) max(15) span(16) dataType(UInt8)
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000050\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].outbound_on[0].approach[0].value) << 
+                                    logger->print() << "|" << tools::brown("000050") << "| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].outbound_on[0].approach[0].value) << 
                                                  " ssm.status.elements[a].sig_status.elements[b].outbound_on[0].approach[0].value: " << static_cast<int>(ros->ssm.status.elements[a].sig_status.elements[b].outbound_on[0].approach[0].value);
                                 }
                                 
@@ -917,12 +957,12 @@ namespace wind
                                 
                                 // MIN validator
                                 if (VALIDATORS_ENABLED && __aux64__ < 0) {
-                                    logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].outbound_on[0].approach[0].value' (" << __aux64__ << ") less than (0); message dropped.";
+                                    logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].outbound_on[0].approach[0].value' (" << __aux64__ << ") less than (0); message dropped.";
                                     return -1;
                                 }
                                 // MAX validator
                                 if (VALIDATORS_ENABLED && __aux64__ > 15) {
-                                    logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].outbound_on[0].approach[0].value' (" << __aux64__ << ") exceeds max allowable (15); message dropped.";
+                                    logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].outbound_on[0].approach[0].value' (" << __aux64__ << ") exceeds max allowable (15); message dropped.";
                                     return -1;
                                 }
                             
@@ -932,13 +972,13 @@ namespace wind
                                 *_choice_3 = 2;  // Setting choice selection
                             
                                 if(debug)
-                                    logger->debug() << "|\033[38;5;94m000051\033[0m| Choice selection: 2";
+                                    logger->debug() << "|" << tools::brown("000051") << "| Choice selection: 2";
                             
                                 // Integer
                                 
                                 // UINT8  min(0) max(255) span(256) dataType(UInt8)
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000052\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].outbound_on[0].connection[0].value) << 
+                                    logger->print() << "|" << tools::brown("000052") << "| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].outbound_on[0].connection[0].value) << 
                                                  " ssm.status.elements[a].sig_status.elements[b].outbound_on[0].connection[0].value: " << static_cast<int>(ros->ssm.status.elements[a].sig_status.elements[b].outbound_on[0].connection[0].value);
                                 }
                                 
@@ -948,12 +988,12 @@ namespace wind
                                 
                                 // MIN validator
                                 if (VALIDATORS_ENABLED && __aux64__ < 0) {
-                                    logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].outbound_on[0].connection[0].value' (" << __aux64__ << ") less than (0); message dropped.";
+                                    logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].outbound_on[0].connection[0].value' (" << __aux64__ << ") less than (0); message dropped.";
                                     return -1;
                                 }
                                 // MAX validator
                                 if (VALIDATORS_ENABLED && __aux64__ > 255) {
-                                    logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].outbound_on[0].connection[0].value' (" << __aux64__ << ") exceeds max allowable (255); message dropped.";
+                                    logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].outbound_on[0].connection[0].value' (" << __aux64__ << ") exceeds max allowable (255); message dropped.";
                                     return -1;
                                 }
                             
@@ -964,14 +1004,18 @@ namespace wind
                                 return -1;
                             }
                         }
+                        else if(ros->ssm.status.elements[a].sig_status.elements[b].outbound_on.size() > 1) {
+                            logger->error() << "Error: In 'ros->ssm.status.elements[a].sig_status.elements[b].outbound_on', invalid optional field implementation. Optional fields must contain 0 elements (not present) or 1 element (present). Multiple elements are not allowed. Message dropped.";
+                            return -1;
+                        }
                         
-                        if(ros->ssm.status.elements[a].sig_status.elements[b].minute.size() != 0) {
+                        if(ros->ssm.status.elements[a].sig_status.elements[b].minute.size() == 1) {
                             // Field:  type(MinuteOfTheYear) name(minute) extGroup(0)
                             // Integer
                             
                             // UINT32  min(0) max(527040) span(527041) dataType(UInt32)
                             if(debug) {
-                                logger->print() << "|\033[38;5;94m000053\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].minute[0].value) << 
+                                logger->print() << "|" << tools::brown("000053") << "| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].minute[0].value) << 
                                              " ssm.status.elements[a].sig_status.elements[b].minute[0].value: " << ros->ssm.status.elements[a].sig_status.elements[b].minute[0].value;
                             }
                             
@@ -981,23 +1025,27 @@ namespace wind
                             
                             // MIN validator
                             if (VALIDATORS_ENABLED && __aux64__ < 0) {
-                                logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].minute[0].value' (" << __aux64__ << ") less than (0); message dropped.";
+                                logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].minute[0].value' (" << __aux64__ << ") less than (0); message dropped.";
                                 return -1;
                             }
                             // MAX validator
                             if (VALIDATORS_ENABLED && __aux64__ > 527040) {
-                                logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].minute[0].value' (" << __aux64__ << ") exceeds max allowable (527040); message dropped.";
+                                logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].minute[0].value' (" << __aux64__ << ") exceeds max allowable (527040); message dropped.";
                                 return -1;
                             }
                         }
+                        else if(ros->ssm.status.elements[a].sig_status.elements[b].minute.size() > 1) {
+                            logger->error() << "Error: In 'ros->ssm.status.elements[a].sig_status.elements[b].minute', invalid optional field implementation. Optional fields must contain 0 elements (not present) or 1 element (present). Multiple elements are not allowed. Message dropped.";
+                            return -1;
+                        }
                         
-                        if(ros->ssm.status.elements[a].sig_status.elements[b].second.size() != 0) {
+                        if(ros->ssm.status.elements[a].sig_status.elements[b].second.size() == 1) {
                             // Field:  type(DSecond) name(second) extGroup(0)
                             // Integer
                             
                             // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                             if(debug) {
-                                logger->print() << "|\033[38;5;94m000054\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].second[0].value) << 
+                                logger->print() << "|" << tools::brown("000054") << "| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].second[0].value) << 
                                              " ssm.status.elements[a].sig_status.elements[b].second[0].value: " << ros->ssm.status.elements[a].sig_status.elements[b].second[0].value;
                             }
                             
@@ -1007,23 +1055,27 @@ namespace wind
                             
                             // MIN validator
                             if (VALIDATORS_ENABLED && __aux64__ < 0) {
-                                logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].second[0].value' (" << __aux64__ << ") less than (0); message dropped.";
+                                logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].second[0].value' (" << __aux64__ << ") less than (0); message dropped.";
                                 return -1;
                             }
                             // MAX validator
                             if (VALIDATORS_ENABLED && __aux64__ > 65535) {
-                                logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].second[0].value' (" << __aux64__ << ") exceeds max allowable (65535); message dropped.";
+                                logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].second[0].value' (" << __aux64__ << ") exceeds max allowable (65535); message dropped.";
                                 return -1;
                             }
                         }
+                        else if(ros->ssm.status.elements[a].sig_status.elements[b].second.size() > 1) {
+                            logger->error() << "Error: In 'ros->ssm.status.elements[a].sig_status.elements[b].second', invalid optional field implementation. Optional fields must contain 0 elements (not present) or 1 element (present). Multiple elements are not allowed. Message dropped.";
+                            return -1;
+                        }
                         
-                        if(ros->ssm.status.elements[a].sig_status.elements[b].duration.size() != 0) {
+                        if(ros->ssm.status.elements[a].sig_status.elements[b].duration.size() == 1) {
                             // Field:  type(DSecond) name(duration) extGroup(0)
                             // Integer
                             
                             // UINT16  min(0) max(65535) span(65536) dataType(UInt16)
                             if(debug) {
-                                logger->print() << "|\033[38;5;94m000055\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].duration[0].value) << 
+                                logger->print() << "|" << tools::brown("000055") << "| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].duration[0].value) << 
                                              " ssm.status.elements[a].sig_status.elements[b].duration[0].value: " << ros->ssm.status.elements[a].sig_status.elements[b].duration[0].value;
                             }
                             
@@ -1033,14 +1085,18 @@ namespace wind
                             
                             // MIN validator
                             if (VALIDATORS_ENABLED && __aux64__ < 0) {
-                                logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].duration[0].value' (" << __aux64__ << ") less than (0); message dropped.";
+                                logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].duration[0].value' (" << __aux64__ << ") less than (0); message dropped.";
                                 return -1;
                             }
                             // MAX validator
                             if (VALIDATORS_ENABLED && __aux64__ > 65535) {
-                                logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].duration[0].value' (" << __aux64__ << ") exceeds max allowable (65535); message dropped.";
+                                logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].duration[0].value' (" << __aux64__ << ") exceeds max allowable (65535); message dropped.";
                                 return -1;
                             }
+                        }
+                        else if(ros->ssm.status.elements[a].sig_status.elements[b].duration.size() > 1) {
+                            logger->error() << "Error: In 'ros->ssm.status.elements[a].sig_status.elements[b].duration', invalid optional field implementation. Optional fields must contain 0 elements (not present) or 1 element (present). Multiple elements are not allowed. Message dropped.";
+                            return -1;
                         }
                         
                         // Field:  type(PrioritizationResponseStatus) name(status) extGroup(0)
@@ -1048,7 +1104,7 @@ namespace wind
                         // INT32  min(0) max(7) span(8) dataType(Int32)
                         uint8_t* _ext_flag_36 = (uint8_t*) buffer++; // Write extension flag for ros->ssm.status.elements[a].sig_status.elements[b].status.
                         if(debug) {
-                            logger->print() << "|\033[38;5;94m000056\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].status.value) << 
+                            logger->print() << "|" << tools::brown("000056") << "| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].status.value) << 
                                          " ssm.status.elements[a].sig_status.elements[b].status.value: " << static_cast<int>(ros->ssm.status.elements[a].sig_status.elements[b].status.value);
                         }
                         
@@ -1058,12 +1114,12 @@ namespace wind
                         __aux64__ = ros->ssm.status.elements[a].sig_status.elements[b].status.value; 
                         // MIN validator
                         if (VALIDATORS_ENABLED && __aux64__ < 0) {
-                            logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].status.value' (" << __aux64__ << ") less than (0); message dropped.";
+                            logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].status.value' (" << __aux64__ << ") less than (0); message dropped.";
                             return -1;
                         }
                         // MAX validator
                         if (VALIDATORS_ENABLED && __aux64__ > 7) {
-                            logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].status.value' (" << __aux64__ << ") exceeds max allowable (7); message dropped.";
+                            logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].status.value' (" << __aux64__ << ") exceeds max allowable (7); message dropped.";
                             return -1;
                         }
                         

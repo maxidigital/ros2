@@ -63,18 +63,18 @@ namespace wind
         ros->hheader.protocol_version.value = __aux64__;
         
         if(debug) {
-            logger->print() << "|\033[38;5;94m000000\033[0m| " << tools::getTypeName(ros->hheader.protocol_version.value) << 
+            logger->print() << "|" << tools::brown("000000") << "| " << tools::getTypeName(ros->hheader.protocol_version.value) << 
                          " hheader.protocol_version.value: " << static_cast<int>(ros->hheader.protocol_version.value);
         }
         
         // ******************* MIN validator *******************
         if(VALIDATORS_ENABLED && __aux64__ < 0) {
-            logger->warning() << "Error: Value in 'hheader.protocol_version.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+            logger->error() << "Error: Value in 'hheader.protocol_version.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
             return false;
         }
         // ******************* MAX validator *******************
         if(VALIDATORS_ENABLED && __aux64__ > 255) {
-            logger->warning() << "Error: Value in 'hheader.protocol_version.value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
+            logger->error() << "Error: Value in 'hheader.protocol_version.value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
             return false;
         }
         
@@ -86,18 +86,18 @@ namespace wind
         ros->hheader.message_id.value = __aux64__;
         
         if(debug) {
-            logger->print() << "|\033[38;5;94m000001\033[0m| " << tools::getTypeName(ros->hheader.message_id.value) << 
+            logger->print() << "|" << tools::brown("000001") << "| " << tools::getTypeName(ros->hheader.message_id.value) << 
                          " hheader.message_id.value: " << static_cast<int>(ros->hheader.message_id.value);
         }
         
         // ******************* MIN validator *******************
         if(VALIDATORS_ENABLED && __aux64__ < 0) {
-            logger->warning() << "Error: Value in 'hheader.message_id.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+            logger->error() << "Error: Value in 'hheader.message_id.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
             return false;
         }
         // ******************* MAX validator *******************
         if(VALIDATORS_ENABLED && __aux64__ > 255) {
-            logger->warning() << "Error: Value in 'hheader.message_id.value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
+            logger->error() << "Error: Value in 'hheader.message_id.value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
             return false;
         }
         
@@ -109,18 +109,18 @@ namespace wind
         ros->hheader.station_id.value = __aux64__;
         
         if(debug) {
-            logger->print() << "|\033[38;5;94m000002\033[0m| " << tools::getTypeName(ros->hheader.station_id.value) << 
+            logger->print() << "|" << tools::brown("000002") << "| " << tools::getTypeName(ros->hheader.station_id.value) << 
                          " hheader.station_id.value: " << ros->hheader.station_id.value;
         }
         
         // ******************* MIN validator *******************
         if(VALIDATORS_ENABLED && __aux64__ < 0) {
-            logger->warning() << "Error: Value in 'hheader.station_id.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+            logger->error() << "Error: Value in 'hheader.station_id.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
             return false;
         }
         // ******************* MAX validator *******************
         if(VALIDATORS_ENABLED && __aux64__ > 4294967295) {
-            logger->warning() << "Error: Value in 'hheader.station_id.value' " << (__aux64__) << " exceeds max allowable (4294967295); message dropped.";
+            logger->error() << "Error: Value in 'hheader.station_id.value' " << (__aux64__) << " exceeds max allowable (4294967295); message dropped.";
             return false;
         }
     
@@ -136,7 +136,7 @@ namespace wind
         uint8_t* _ext_flag_1 = (uint8_t*) buffer++;  // Read ext flag from ros->srm.
         
         if(debug) {
-            logger->print() << "|\033[38;5;94m000003\033[0m| Reading ext flag from ros->srm.: " << int(*_ext_flag_1);
+            logger->print() << "|" << tools::brown("000003") << "| Reading ext flag from ros->srm.: " << int(*_ext_flag_1);
         }
         
         if(*(buffer++)) { 
@@ -144,28 +144,28 @@ namespace wind
             ros->srm.time_stamp.push_back(_tmp_4);
         
             if(debug)
-                logger->print() << "|\033[38;5;94m000004\033[0m| ros->srm.time_stamp " << tools::green("present");
+                logger->print() << "|" << tools::brown("000004") << "| ros->srm.time_stamp " << tools::green("present");
         }
         if(*(buffer++)) { 
             dsrc_v2_dsrc_msgs::msg::MsgCount _tmp_5;
             ros->srm.sequence_number.push_back(_tmp_5);
         
             if(debug)
-                logger->print() << "|\033[38;5;94m000005\033[0m| ros->srm.sequence_number " << tools::green("present");
+                logger->print() << "|" << tools::brown("000005") << "| ros->srm.sequence_number " << tools::green("present");
         }
         if(*(buffer++)) { 
             dsrc_v2_dsrc_msgs::msg::SignalRequestList _tmp_6;
             ros->srm.requests.push_back(_tmp_6);
         
             if(debug)
-                logger->print() << "|\033[38;5;94m000006\033[0m| ros->srm.requests " << tools::green("present");
+                logger->print() << "|" << tools::brown("000006") << "| ros->srm.requests " << tools::green("present");
         }
         if(*(buffer++)) { 
             dsrc_v2_dsrc_msgs::msg::SignalRequestMessageRegional _tmp_7;
             ros->srm.regional.push_back(_tmp_7);
         
             if(debug)
-                logger->print() << "|\033[38;5;94m000007\033[0m| ros->srm.regional " << tools::green("present");
+                logger->print() << "|" << tools::brown("000007") << "| ros->srm.regional " << tools::green("present");
         }
         
         if(ros->srm.time_stamp.size() != 0) {
@@ -177,18 +177,18 @@ namespace wind
             ros->srm.time_stamp[0].value = __aux64__;
             
             if(debug) {
-                logger->print() << "|\033[38;5;94m000008\033[0m| " << tools::getTypeName(ros->srm.time_stamp[0].value) << 
+                logger->print() << "|" << tools::brown("000008") << "| " << tools::getTypeName(ros->srm.time_stamp[0].value) << 
                              " srm.time_stamp[0].value: " << ros->srm.time_stamp[0].value;
             }
             
             // ******************* MIN validator *******************
             if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                logger->warning() << "Error: Value in 'srm.time_stamp[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                logger->error() << "Error: Value in 'srm.time_stamp[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                 return false;
             }
             // ******************* MAX validator *******************
             if(VALIDATORS_ENABLED && __aux64__ > 527040) {
-                logger->warning() << "Error: Value in 'srm.time_stamp[0].value' " << (__aux64__) << " exceeds max allowable (527040); message dropped.";
+                logger->error() << "Error: Value in 'srm.time_stamp[0].value' " << (__aux64__) << " exceeds max allowable (527040); message dropped.";
                 return false;
             }
         }
@@ -201,18 +201,18 @@ namespace wind
         ros->srm.second.value = __aux64__;
         
         if(debug) {
-            logger->print() << "|\033[38;5;94m000009\033[0m| " << tools::getTypeName(ros->srm.second.value) << 
+            logger->print() << "|" << tools::brown("000009") << "| " << tools::getTypeName(ros->srm.second.value) << 
                          " srm.second.value: " << ros->srm.second.value;
         }
         
         // ******************* MIN validator *******************
         if(VALIDATORS_ENABLED && __aux64__ < 0) {
-            logger->warning() << "Error: Value in 'srm.second.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+            logger->error() << "Error: Value in 'srm.second.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
             return false;
         }
         // ******************* MAX validator *******************
         if(VALIDATORS_ENABLED && __aux64__ > 65535) {
-            logger->warning() << "Error: Value in 'srm.second.value' " << (__aux64__) << " exceeds max allowable (65535); message dropped.";
+            logger->error() << "Error: Value in 'srm.second.value' " << (__aux64__) << " exceeds max allowable (65535); message dropped.";
             return false;
         }
         
@@ -225,18 +225,18 @@ namespace wind
             ros->srm.sequence_number[0].value = __aux64__;
             
             if(debug) {
-                logger->print() << "|\033[38;5;94m000010\033[0m| " << tools::getTypeName(ros->srm.sequence_number[0].value) << 
+                logger->print() << "|" << tools::brown("000010") << "| " << tools::getTypeName(ros->srm.sequence_number[0].value) << 
                              " srm.sequence_number[0].value: " << static_cast<int>(ros->srm.sequence_number[0].value);
             }
             
             // ******************* MIN validator *******************
             if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                logger->warning() << "Error: Value in 'srm.sequence_number[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                logger->error() << "Error: Value in 'srm.sequence_number[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                 return false;
             }
             // ******************* MAX validator *******************
             if(VALIDATORS_ENABLED && __aux64__ > 127) {
-                logger->warning() << "Error: Value in 'srm.sequence_number[0].value' " << (__aux64__) << " exceeds max allowable (127); message dropped.";
+                logger->error() << "Error: Value in 'srm.sequence_number[0].value' " << (__aux64__) << " exceeds max allowable (127); message dropped.";
                 return false;
             }
         }
@@ -254,17 +254,17 @@ namespace wind
             int _if__tmp_11 = __aux64__;
             
             if(debug) {
-                logger->print() << "|\033[38;5;94m000011\033[0m| SequenceOf ros->srm.requests[0]. size: " << int(__aux64__);
+                logger->print() << "|" << tools::brown("000011") << "| SequenceOf ros->srm.requests[0]. size: " << int(__aux64__);
             }
             
             // ******************* MIN validator *******************
             if(VALIDATORS_ENABLED && __aux64__ < 1) {
-                logger->warning() << "Error: Value in 'srm.requests[0].value' " << (__aux64__) << " is less than allowable (1); message dropped.";
+                logger->error() << "Error: Value in 'srm.requests[0].value' " << (__aux64__) << " is less than allowable (1); message dropped.";
                 return false;
             }
             // ******************* MAX validator *******************
             if(VALIDATORS_ENABLED && __aux64__ > 32) {
-                logger->warning() << "Error: Value in 'srm.requests[0].value' " << (__aux64__) << " exceeds max allowable (32); message dropped.";
+                logger->error() << "Error: Value in 'srm.requests[0].value' " << (__aux64__) << " exceeds max allowable (32); message dropped.";
                 return false;
             }
             
@@ -283,7 +283,7 @@ namespace wind
                     uint8_t* _ext_flag_2 = (uint8_t*) buffer++;  // Read ext flag from ros->srm.requests[0].elements[a].
                     
                     if(debug) {
-                        logger->print() << "|\033[38;5;94m000012\033[0m| Reading ext flag from ros->srm.requests[0].elements[a].: " << int(*_ext_flag_2);
+                        logger->print() << "|" << tools::brown("000012") << "| Reading ext flag from ros->srm.requests[0].elements[a].: " << int(*_ext_flag_2);
                     }
                     
                     if(*(buffer++)) { 
@@ -291,28 +291,28 @@ namespace wind
                         ros->srm.requests[0].elements[a].minute.push_back(_tmp_12);
                     
                         if(debug)
-                            logger->print() << "|\033[38;5;94m000013\033[0m| ros->srm.requests[0].elements[a].minute " << tools::green("present");
+                            logger->print() << "|" << tools::brown("000013") << "| ros->srm.requests[0].elements[a].minute " << tools::green("present");
                     }
                     if(*(buffer++)) { 
                         dsrc_v2_dsrc_msgs::msg::DSecond _tmp_13;
                         ros->srm.requests[0].elements[a].second.push_back(_tmp_13);
                     
                         if(debug)
-                            logger->print() << "|\033[38;5;94m000014\033[0m| ros->srm.requests[0].elements[a].second " << tools::green("present");
+                            logger->print() << "|" << tools::brown("000014") << "| ros->srm.requests[0].elements[a].second " << tools::green("present");
                     }
                     if(*(buffer++)) { 
                         dsrc_v2_dsrc_msgs::msg::DSecond _tmp_14;
                         ros->srm.requests[0].elements[a].duration.push_back(_tmp_14);
                     
                         if(debug)
-                            logger->print() << "|\033[38;5;94m000015\033[0m| ros->srm.requests[0].elements[a].duration " << tools::green("present");
+                            logger->print() << "|" << tools::brown("000015") << "| ros->srm.requests[0].elements[a].duration " << tools::green("present");
                     }
                     if(*(buffer++)) { 
                         dsrc_v2_dsrc_msgs::msg::SignalRequestPackageRegional _tmp_15;
                         ros->srm.requests[0].elements[a].regional.push_back(_tmp_15);
                     
                         if(debug)
-                            logger->print() << "|\033[38;5;94m000016\033[0m| ros->srm.requests[0].elements[a].regional " << tools::green("present");
+                            logger->print() << "|" << tools::brown("000016") << "| ros->srm.requests[0].elements[a].regional " << tools::green("present");
                     }
                     
                     // Field name: request
@@ -327,7 +327,7 @@ namespace wind
                         uint8_t* _ext_flag_3 = (uint8_t*) buffer++;  // Read ext flag from ros->srm.requests[0].elements[a].request.
                         
                         if(debug) {
-                            logger->print() << "|\033[38;5;94m000017\033[0m| Reading ext flag from ros->srm.requests[0].elements[a].request.: " << int(*_ext_flag_3);
+                            logger->print() << "|" << tools::brown("000017") << "| Reading ext flag from ros->srm.requests[0].elements[a].request.: " << int(*_ext_flag_3);
                         }
                         
                         if(*(buffer++)) { 
@@ -335,14 +335,14 @@ namespace wind
                             ros->srm.requests[0].elements[a].request.out_bound_lane.push_back(_tmp_16);
                         
                             if(debug)
-                                logger->print() << "|\033[38;5;94m000018\033[0m| ros->srm.requests[0].elements[a].request.out_bound_lane " << tools::green("present");
+                                logger->print() << "|" << tools::brown("000018") << "| ros->srm.requests[0].elements[a].request.out_bound_lane " << tools::green("present");
                         }
                         if(*(buffer++)) { 
                             dsrc_v2_dsrc_msgs::msg::SignalRequestRegional _tmp_17;
                             ros->srm.requests[0].elements[a].request.regional.push_back(_tmp_17);
                         
                             if(debug)
-                                logger->print() << "|\033[38;5;94m000019\033[0m| ros->srm.requests[0].elements[a].request.regional " << tools::green("present");
+                                logger->print() << "|" << tools::brown("000019") << "| ros->srm.requests[0].elements[a].request.regional " << tools::green("present");
                         }
                         
                         // Field name: id
@@ -354,7 +354,7 @@ namespace wind
                                 ros->srm.requests[0].elements[a].request.id.region.push_back(_tmp_18);
                             
                                 if(debug)
-                                    logger->print() << "|\033[38;5;94m000020\033[0m| ros->srm.requests[0].elements[a].request.id.region " << tools::green("present");
+                                    logger->print() << "|" << tools::brown("000020") << "| ros->srm.requests[0].elements[a].request.id.region " << tools::green("present");
                             }
                             
                             if(ros->srm.requests[0].elements[a].request.id.region.size() != 0) {
@@ -366,18 +366,18 @@ namespace wind
                                 ros->srm.requests[0].elements[a].request.id.region[0].value = __aux64__;
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000021\033[0m| " << tools::getTypeName(ros->srm.requests[0].elements[a].request.id.region[0].value) << 
+                                    logger->print() << "|" << tools::brown("000021") << "| " << tools::getTypeName(ros->srm.requests[0].elements[a].request.id.region[0].value) << 
                                                  " srm.requests[0].elements[a].request.id.region[0].value: " << ros->srm.requests[0].elements[a].request.id.region[0].value;
                                 }
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                    logger->warning() << "Error: Value in 'srm.requests[0].elements[a].request.id.region[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                    logger->error() << "Error: Value in 'srm.requests[0].elements[a].request.id.region[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 65535) {
-                                    logger->warning() << "Error: Value in 'srm.requests[0].elements[a].request.id.region[0].value' " << (__aux64__) << " exceeds max allowable (65535); message dropped.";
+                                    logger->error() << "Error: Value in 'srm.requests[0].elements[a].request.id.region[0].value' " << (__aux64__) << " exceeds max allowable (65535); message dropped.";
                                     return false;
                                 }
                             }
@@ -390,18 +390,18 @@ namespace wind
                             ros->srm.requests[0].elements[a].request.id.id.value = __aux64__;
                             
                             if(debug) {
-                                logger->print() << "|\033[38;5;94m000022\033[0m| " << tools::getTypeName(ros->srm.requests[0].elements[a].request.id.id.value) << 
+                                logger->print() << "|" << tools::brown("000022") << "| " << tools::getTypeName(ros->srm.requests[0].elements[a].request.id.id.value) << 
                                              " srm.requests[0].elements[a].request.id.id.value: " << ros->srm.requests[0].elements[a].request.id.id.value;
                             }
                             
                             // ******************* MIN validator *******************
                             if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                logger->warning() << "Error: Value in 'srm.requests[0].elements[a].request.id.id.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                logger->error() << "Error: Value in 'srm.requests[0].elements[a].request.id.id.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                 return false;
                             }
                             // ******************* MAX validator *******************
                             if(VALIDATORS_ENABLED && __aux64__ > 65535) {
-                                logger->warning() << "Error: Value in 'srm.requests[0].elements[a].request.id.id.value' " << (__aux64__) << " exceeds max allowable (65535); message dropped.";
+                                logger->error() << "Error: Value in 'srm.requests[0].elements[a].request.id.id.value' " << (__aux64__) << " exceeds max allowable (65535); message dropped.";
                                 return false;
                             }
                         
@@ -413,18 +413,18 @@ namespace wind
                         ros->srm.requests[0].elements[a].request.request_id.value = __aux64__;
                         
                         if(debug) {
-                            logger->print() << "|\033[38;5;94m000023\033[0m| " << tools::getTypeName(ros->srm.requests[0].elements[a].request.request_id.value) << 
+                            logger->print() << "|" << tools::brown("000023") << "| " << tools::getTypeName(ros->srm.requests[0].elements[a].request.request_id.value) << 
                                          " srm.requests[0].elements[a].request.request_id.value: " << static_cast<int>(ros->srm.requests[0].elements[a].request.request_id.value);
                         }
                         
                         // ******************* MIN validator *******************
                         if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                            logger->warning() << "Error: Value in 'srm.requests[0].elements[a].request.request_id.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                            logger->error() << "Error: Value in 'srm.requests[0].elements[a].request.request_id.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                             return false;
                         }
                         // ******************* MAX validator *******************
                         if(VALIDATORS_ENABLED && __aux64__ > 255) {
-                            logger->warning() << "Error: Value in 'srm.requests[0].elements[a].request.request_id.value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
+                            logger->error() << "Error: Value in 'srm.requests[0].elements[a].request.request_id.value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
                             return false;
                         }
                         
@@ -434,7 +434,7 @@ namespace wind
                         uint8_t* _ext_flag_4 = (uint8_t*) buffer++;  // Read ext flag from ros->srm.requests[0].elements[a].request.request_type.
                         
                         if(debug) {
-                            logger->print() << "|\033[38;5;94m000024\033[0m| Reading ext flag from ros->srm.requests[0].elements[a].request.request_type.: " << int(*_ext_flag_4);
+                            logger->print() << "|" << tools::brown("000024") << "| Reading ext flag from ros->srm.requests[0].elements[a].request.request_type.: " << int(*_ext_flag_4);
                         }
                         
                         uint8_t* _tmp_22 = (uint8_t*) buffer++;
@@ -443,18 +443,18 @@ namespace wind
                         ros->srm.requests[0].elements[a].request.request_type.value = __aux64__;
                         // ******************* MIN validator *******************
                         if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                            logger->warning() << "Error: Value in 'srm.requests[0].elements[a].request.request_type.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                            logger->error() << "Error: Value in 'srm.requests[0].elements[a].request.request_type.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                             return false;
                         }
                         // ******************* MAX validator *******************
                         if(VALIDATORS_ENABLED && __aux64__ > 3) {
-                            logger->warning() << "Error: Value in 'srm.requests[0].elements[a].request.request_type.value' " << (__aux64__) << " exceeds max allowable (3); message dropped.";
+                            logger->error() << "Error: Value in 'srm.requests[0].elements[a].request.request_type.value' " << (__aux64__) << " exceeds max allowable (3); message dropped.";
                             return false;
                         }
                         
                         
                         if(debug) {
-                            logger->print() << "|\033[38;5;94m000025\033[0m| " << tools::getTypeName(ros->srm.requests[0].elements[a].request.request_type.value) << 
+                            logger->print() << "|" << tools::brown("000025") << "| " << tools::getTypeName(ros->srm.requests[0].elements[a].request.request_type.value) << 
                                          " srm.requests[0].elements[a].request.request_type.value: " << static_cast<int>(ros->srm.requests[0].elements[a].request.request_type.value);
                         }
                         
@@ -481,18 +481,18 @@ namespace wind
                             ros->srm.requests[0].elements[a].request.in_bound_lane.lane[0].value = __aux64__;
                             
                             if(debug) {
-                                logger->print() << "|\033[38;5;94m000026\033[0m| " << tools::getTypeName(ros->srm.requests[0].elements[a].request.in_bound_lane.lane[0].value) << 
+                                logger->print() << "|" << tools::brown("000026") << "| " << tools::getTypeName(ros->srm.requests[0].elements[a].request.in_bound_lane.lane[0].value) << 
                                              " srm.requests[0].elements[a].request.in_bound_lane.lane[0].value: " << static_cast<int>(ros->srm.requests[0].elements[a].request.in_bound_lane.lane[0].value);
                             }
                             
                             // ******************* MIN validator *******************
                             if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                logger->warning() << "Error: Value in 'srm.requests[0].elements[a].request.in_bound_lane.lane[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                logger->error() << "Error: Value in 'srm.requests[0].elements[a].request.in_bound_lane.lane[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                 return false;
                             }
                             // ******************* MAX validator *******************
                             if(VALIDATORS_ENABLED && __aux64__ > 255) {
-                                logger->warning() << "Error: Value in 'srm.requests[0].elements[a].request.in_bound_lane.lane[0].value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
+                                logger->error() << "Error: Value in 'srm.requests[0].elements[a].request.in_bound_lane.lane[0].value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
                                 return false;
                             }
                         }
@@ -508,18 +508,18 @@ namespace wind
                             ros->srm.requests[0].elements[a].request.in_bound_lane.approach[0].value = __aux64__;
                             
                             if(debug) {
-                                logger->print() << "|\033[38;5;94m000027\033[0m| " << tools::getTypeName(ros->srm.requests[0].elements[a].request.in_bound_lane.approach[0].value) << 
+                                logger->print() << "|" << tools::brown("000027") << "| " << tools::getTypeName(ros->srm.requests[0].elements[a].request.in_bound_lane.approach[0].value) << 
                                              " srm.requests[0].elements[a].request.in_bound_lane.approach[0].value: " << static_cast<int>(ros->srm.requests[0].elements[a].request.in_bound_lane.approach[0].value);
                             }
                             
                             // ******************* MIN validator *******************
                             if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                logger->warning() << "Error: Value in 'srm.requests[0].elements[a].request.in_bound_lane.approach[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                logger->error() << "Error: Value in 'srm.requests[0].elements[a].request.in_bound_lane.approach[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                 return false;
                             }
                             // ******************* MAX validator *******************
                             if(VALIDATORS_ENABLED && __aux64__ > 15) {
-                                logger->warning() << "Error: Value in 'srm.requests[0].elements[a].request.in_bound_lane.approach[0].value' " << (__aux64__) << " exceeds max allowable (15); message dropped.";
+                                logger->error() << "Error: Value in 'srm.requests[0].elements[a].request.in_bound_lane.approach[0].value' " << (__aux64__) << " exceeds max allowable (15); message dropped.";
                                 return false;
                             }
                         }
@@ -535,18 +535,18 @@ namespace wind
                             ros->srm.requests[0].elements[a].request.in_bound_lane.connection[0].value = __aux64__;
                             
                             if(debug) {
-                                logger->print() << "|\033[38;5;94m000028\033[0m| " << tools::getTypeName(ros->srm.requests[0].elements[a].request.in_bound_lane.connection[0].value) << 
+                                logger->print() << "|" << tools::brown("000028") << "| " << tools::getTypeName(ros->srm.requests[0].elements[a].request.in_bound_lane.connection[0].value) << 
                                              " srm.requests[0].elements[a].request.in_bound_lane.connection[0].value: " << static_cast<int>(ros->srm.requests[0].elements[a].request.in_bound_lane.connection[0].value);
                             }
                             
                             // ******************* MIN validator *******************
                             if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                logger->warning() << "Error: Value in 'srm.requests[0].elements[a].request.in_bound_lane.connection[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                logger->error() << "Error: Value in 'srm.requests[0].elements[a].request.in_bound_lane.connection[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                 return false;
                             }
                             // ******************* MAX validator *******************
                             if(VALIDATORS_ENABLED && __aux64__ > 255) {
-                                logger->warning() << "Error: Value in 'srm.requests[0].elements[a].request.in_bound_lane.connection[0].value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
+                                logger->error() << "Error: Value in 'srm.requests[0].elements[a].request.in_bound_lane.connection[0].value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
                                 return false;
                             }
                         }
@@ -580,18 +580,18 @@ namespace wind
                                 ros->srm.requests[0].elements[a].request.out_bound_lane[0].lane[0].value = __aux64__;
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000029\033[0m| " << tools::getTypeName(ros->srm.requests[0].elements[a].request.out_bound_lane[0].lane[0].value) << 
+                                    logger->print() << "|" << tools::brown("000029") << "| " << tools::getTypeName(ros->srm.requests[0].elements[a].request.out_bound_lane[0].lane[0].value) << 
                                                  " srm.requests[0].elements[a].request.out_bound_lane[0].lane[0].value: " << static_cast<int>(ros->srm.requests[0].elements[a].request.out_bound_lane[0].lane[0].value);
                                 }
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                    logger->warning() << "Error: Value in 'srm.requests[0].elements[a].request.out_bound_lane[0].lane[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                    logger->error() << "Error: Value in 'srm.requests[0].elements[a].request.out_bound_lane[0].lane[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 255) {
-                                    logger->warning() << "Error: Value in 'srm.requests[0].elements[a].request.out_bound_lane[0].lane[0].value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
+                                    logger->error() << "Error: Value in 'srm.requests[0].elements[a].request.out_bound_lane[0].lane[0].value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
                                     return false;
                                 }
                             }
@@ -607,18 +607,18 @@ namespace wind
                                 ros->srm.requests[0].elements[a].request.out_bound_lane[0].approach[0].value = __aux64__;
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000030\033[0m| " << tools::getTypeName(ros->srm.requests[0].elements[a].request.out_bound_lane[0].approach[0].value) << 
+                                    logger->print() << "|" << tools::brown("000030") << "| " << tools::getTypeName(ros->srm.requests[0].elements[a].request.out_bound_lane[0].approach[0].value) << 
                                                  " srm.requests[0].elements[a].request.out_bound_lane[0].approach[0].value: " << static_cast<int>(ros->srm.requests[0].elements[a].request.out_bound_lane[0].approach[0].value);
                                 }
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                    logger->warning() << "Error: Value in 'srm.requests[0].elements[a].request.out_bound_lane[0].approach[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                    logger->error() << "Error: Value in 'srm.requests[0].elements[a].request.out_bound_lane[0].approach[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 15) {
-                                    logger->warning() << "Error: Value in 'srm.requests[0].elements[a].request.out_bound_lane[0].approach[0].value' " << (__aux64__) << " exceeds max allowable (15); message dropped.";
+                                    logger->error() << "Error: Value in 'srm.requests[0].elements[a].request.out_bound_lane[0].approach[0].value' " << (__aux64__) << " exceeds max allowable (15); message dropped.";
                                     return false;
                                 }
                             }
@@ -634,18 +634,18 @@ namespace wind
                                 ros->srm.requests[0].elements[a].request.out_bound_lane[0].connection[0].value = __aux64__;
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000031\033[0m| " << tools::getTypeName(ros->srm.requests[0].elements[a].request.out_bound_lane[0].connection[0].value) << 
+                                    logger->print() << "|" << tools::brown("000031") << "| " << tools::getTypeName(ros->srm.requests[0].elements[a].request.out_bound_lane[0].connection[0].value) << 
                                                  " srm.requests[0].elements[a].request.out_bound_lane[0].connection[0].value: " << static_cast<int>(ros->srm.requests[0].elements[a].request.out_bound_lane[0].connection[0].value);
                                 }
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                    logger->warning() << "Error: Value in 'srm.requests[0].elements[a].request.out_bound_lane[0].connection[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                    logger->error() << "Error: Value in 'srm.requests[0].elements[a].request.out_bound_lane[0].connection[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 255) {
-                                    logger->warning() << "Error: Value in 'srm.requests[0].elements[a].request.out_bound_lane[0].connection[0].value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
+                                    logger->error() << "Error: Value in 'srm.requests[0].elements[a].request.out_bound_lane[0].connection[0].value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
                                     return false;
                                 }
                             }
@@ -662,7 +662,7 @@ namespace wind
                             bool _array_1[*_tmp_37];
                             
                             if(debug)
-                                logger->print() << "|\033[38;5;94m000032\033[0m| Reading number of exts from ros->srm.requests[0].elements[a].request.: " << static_cast<unsigned int>(*_tmp_37);
+                                logger->print() << "|" << tools::brown("000032") << "| Reading number of exts from ros->srm.requests[0].elements[a].request.: " << static_cast<unsigned int>(*_tmp_37);
                             
                             // Extensions bytemap
                             for(int i = 0; i < *_tmp_37; i++)
@@ -691,18 +691,18 @@ namespace wind
                         ros->srm.requests[0].elements[a].minute[0].value = __aux64__;
                         
                         if(debug) {
-                            logger->print() << "|\033[38;5;94m000033\033[0m| " << tools::getTypeName(ros->srm.requests[0].elements[a].minute[0].value) << 
+                            logger->print() << "|" << tools::brown("000033") << "| " << tools::getTypeName(ros->srm.requests[0].elements[a].minute[0].value) << 
                                          " srm.requests[0].elements[a].minute[0].value: " << ros->srm.requests[0].elements[a].minute[0].value;
                         }
                         
                         // ******************* MIN validator *******************
                         if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                            logger->warning() << "Error: Value in 'srm.requests[0].elements[a].minute[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                            logger->error() << "Error: Value in 'srm.requests[0].elements[a].minute[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                             return false;
                         }
                         // ******************* MAX validator *******************
                         if(VALIDATORS_ENABLED && __aux64__ > 527040) {
-                            logger->warning() << "Error: Value in 'srm.requests[0].elements[a].minute[0].value' " << (__aux64__) << " exceeds max allowable (527040); message dropped.";
+                            logger->error() << "Error: Value in 'srm.requests[0].elements[a].minute[0].value' " << (__aux64__) << " exceeds max allowable (527040); message dropped.";
                             return false;
                         }
                     }
@@ -716,18 +716,18 @@ namespace wind
                         ros->srm.requests[0].elements[a].second[0].value = __aux64__;
                         
                         if(debug) {
-                            logger->print() << "|\033[38;5;94m000034\033[0m| " << tools::getTypeName(ros->srm.requests[0].elements[a].second[0].value) << 
+                            logger->print() << "|" << tools::brown("000034") << "| " << tools::getTypeName(ros->srm.requests[0].elements[a].second[0].value) << 
                                          " srm.requests[0].elements[a].second[0].value: " << ros->srm.requests[0].elements[a].second[0].value;
                         }
                         
                         // ******************* MIN validator *******************
                         if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                            logger->warning() << "Error: Value in 'srm.requests[0].elements[a].second[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                            logger->error() << "Error: Value in 'srm.requests[0].elements[a].second[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                             return false;
                         }
                         // ******************* MAX validator *******************
                         if(VALIDATORS_ENABLED && __aux64__ > 65535) {
-                            logger->warning() << "Error: Value in 'srm.requests[0].elements[a].second[0].value' " << (__aux64__) << " exceeds max allowable (65535); message dropped.";
+                            logger->error() << "Error: Value in 'srm.requests[0].elements[a].second[0].value' " << (__aux64__) << " exceeds max allowable (65535); message dropped.";
                             return false;
                         }
                     }
@@ -741,18 +741,18 @@ namespace wind
                         ros->srm.requests[0].elements[a].duration[0].value = __aux64__;
                         
                         if(debug) {
-                            logger->print() << "|\033[38;5;94m000035\033[0m| " << tools::getTypeName(ros->srm.requests[0].elements[a].duration[0].value) << 
+                            logger->print() << "|" << tools::brown("000035") << "| " << tools::getTypeName(ros->srm.requests[0].elements[a].duration[0].value) << 
                                          " srm.requests[0].elements[a].duration[0].value: " << ros->srm.requests[0].elements[a].duration[0].value;
                         }
                         
                         // ******************* MIN validator *******************
                         if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                            logger->warning() << "Error: Value in 'srm.requests[0].elements[a].duration[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                            logger->error() << "Error: Value in 'srm.requests[0].elements[a].duration[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                             return false;
                         }
                         // ******************* MAX validator *******************
                         if(VALIDATORS_ENABLED && __aux64__ > 65535) {
-                            logger->warning() << "Error: Value in 'srm.requests[0].elements[a].duration[0].value' " << (__aux64__) << " exceeds max allowable (65535); message dropped.";
+                            logger->error() << "Error: Value in 'srm.requests[0].elements[a].duration[0].value' " << (__aux64__) << " exceeds max allowable (65535); message dropped.";
                             return false;
                         }
                     }
@@ -763,7 +763,7 @@ namespace wind
                         bool _array_2[*_tmp_42];
                         
                         if(debug)
-                            logger->print() << "|\033[38;5;94m000036\033[0m| Reading number of exts from ros->srm.requests[0].elements[a].: " << static_cast<unsigned int>(*_tmp_42);
+                            logger->print() << "|" << tools::brown("000036") << "| Reading number of exts from ros->srm.requests[0].elements[a].: " << static_cast<unsigned int>(*_tmp_42);
                         
                         // Extensions bytemap
                         for(int i = 0; i < *_tmp_42; i++)
@@ -800,7 +800,7 @@ namespace wind
             uint8_t* _ext_flag_7 = (uint8_t*) buffer++;  // Read ext flag from ros->srm.requestor.
             
             if(debug) {
-                logger->print() << "|\033[38;5;94m000037\033[0m| Reading ext flag from ros->srm.requestor.: " << int(*_ext_flag_7);
+                logger->print() << "|" << tools::brown("000037") << "| Reading ext flag from ros->srm.requestor.: " << int(*_ext_flag_7);
             }
             
             if(*(buffer++)) { 
@@ -808,56 +808,56 @@ namespace wind
                 ros->srm.requestor.type.push_back(_tmp_44);
             
                 if(debug)
-                    logger->print() << "|\033[38;5;94m000038\033[0m| ros->srm.requestor.type " << tools::green("present");
+                    logger->print() << "|" << tools::brown("000038") << "| ros->srm.requestor.type " << tools::green("present");
             }
             if(*(buffer++)) { 
                 dsrc_v2_dsrc_msgs::msg::RequestorPositionVector _tmp_45;
                 ros->srm.requestor.position.push_back(_tmp_45);
             
                 if(debug)
-                    logger->print() << "|\033[38;5;94m000039\033[0m| ros->srm.requestor.position " << tools::green("present");
+                    logger->print() << "|" << tools::brown("000039") << "| ros->srm.requestor.position " << tools::green("present");
             }
             if(*(buffer++)) { 
                 dsrc_v2_dsrc_msgs::msg::DescriptiveName _tmp_46;
                 ros->srm.requestor.name.push_back(_tmp_46);
             
                 if(debug)
-                    logger->print() << "|\033[38;5;94m000040\033[0m| ros->srm.requestor.name " << tools::green("present");
+                    logger->print() << "|" << tools::brown("000040") << "| ros->srm.requestor.name " << tools::green("present");
             }
             if(*(buffer++)) { 
                 dsrc_v2_dsrc_msgs::msg::DescriptiveName _tmp_47;
                 ros->srm.requestor.route_name.push_back(_tmp_47);
             
                 if(debug)
-                    logger->print() << "|\033[38;5;94m000041\033[0m| ros->srm.requestor.route_name " << tools::green("present");
+                    logger->print() << "|" << tools::brown("000041") << "| ros->srm.requestor.route_name " << tools::green("present");
             }
             if(*(buffer++)) { 
                 dsrc_v2_dsrc_msgs::msg::TransitVehicleStatus _tmp_48;
                 ros->srm.requestor.transit_status.push_back(_tmp_48);
             
                 if(debug)
-                    logger->print() << "|\033[38;5;94m000042\033[0m| ros->srm.requestor.transit_status " << tools::green("present");
+                    logger->print() << "|" << tools::brown("000042") << "| ros->srm.requestor.transit_status " << tools::green("present");
             }
             if(*(buffer++)) { 
                 dsrc_v2_dsrc_msgs::msg::TransitVehicleOccupancy _tmp_49;
                 ros->srm.requestor.transit_occupancy.push_back(_tmp_49);
             
                 if(debug)
-                    logger->print() << "|\033[38;5;94m000043\033[0m| ros->srm.requestor.transit_occupancy " << tools::green("present");
+                    logger->print() << "|" << tools::brown("000043") << "| ros->srm.requestor.transit_occupancy " << tools::green("present");
             }
             if(*(buffer++)) { 
                 dsrc_v2_dsrc_msgs::msg::DeltaTime _tmp_50;
                 ros->srm.requestor.transit_schedule.push_back(_tmp_50);
             
                 if(debug)
-                    logger->print() << "|\033[38;5;94m000044\033[0m| ros->srm.requestor.transit_schedule " << tools::green("present");
+                    logger->print() << "|" << tools::brown("000044") << "| ros->srm.requestor.transit_schedule " << tools::green("present");
             }
             if(*(buffer++)) { 
                 dsrc_v2_dsrc_msgs::msg::RequestorDescriptionRegional _tmp_51;
                 ros->srm.requestor.regional.push_back(_tmp_51);
             
                 if(debug)
-                    logger->print() << "|\033[38;5;94m000045\033[0m| ros->srm.requestor.regional " << tools::green("present");
+                    logger->print() << "|" << tools::brown("000045") << "| ros->srm.requestor.regional " << tools::green("present");
             }
             
             // Field name: id
@@ -894,18 +894,18 @@ namespace wind
                 ros->srm.requestor.id.station_id[0].value = __aux64__;
                 
                 if(debug) {
-                    logger->print() << "|\033[38;5;94m000046\033[0m| " << tools::getTypeName(ros->srm.requestor.id.station_id[0].value) << 
+                    logger->print() << "|" << tools::brown("000046") << "| " << tools::getTypeName(ros->srm.requestor.id.station_id[0].value) << 
                                  " srm.requestor.id.station_id[0].value: " << ros->srm.requestor.id.station_id[0].value;
                 }
                 
                 // ******************* MIN validator *******************
                 if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                    logger->warning() << "Error: Value in 'srm.requestor.id.station_id[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                    logger->error() << "Error: Value in 'srm.requestor.id.station_id[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                     return false;
                 }
                 // ******************* MAX validator *******************
                 if(VALIDATORS_ENABLED && __aux64__ > 4294967295) {
-                    logger->warning() << "Error: Value in 'srm.requestor.id.station_id[0].value' " << (__aux64__) << " exceeds max allowable (4294967295); message dropped.";
+                    logger->error() << "Error: Value in 'srm.requestor.id.station_id[0].value' " << (__aux64__) << " exceeds max allowable (4294967295); message dropped.";
                     return false;
                 }
             }
@@ -928,7 +928,7 @@ namespace wind
                     uint8_t* _ext_flag_9 = (uint8_t*) buffer++;  // Read ext flag from ros->srm.requestor.type[0].
                     
                     if(debug) {
-                        logger->print() << "|\033[38;5;94m000047\033[0m| Reading ext flag from ros->srm.requestor.type[0].: " << int(*_ext_flag_9);
+                        logger->print() << "|" << tools::brown("000047") << "| Reading ext flag from ros->srm.requestor.type[0].: " << int(*_ext_flag_9);
                     }
                     
                     if(*(buffer++)) { 
@@ -936,35 +936,35 @@ namespace wind
                         ros->srm.requestor.type[0].subrole.push_back(_tmp_56);
                     
                         if(debug)
-                            logger->print() << "|\033[38;5;94m000048\033[0m| ros->srm.requestor.type[0].subrole " << tools::green("present");
+                            logger->print() << "|" << tools::brown("000048") << "| ros->srm.requestor.type[0].subrole " << tools::green("present");
                     }
                     if(*(buffer++)) { 
                         dsrc_v2_dsrc_msgs::msg::RequestImportanceLevel _tmp_57;
                         ros->srm.requestor.type[0].request.push_back(_tmp_57);
                     
                         if(debug)
-                            logger->print() << "|\033[38;5;94m000049\033[0m| ros->srm.requestor.type[0].request " << tools::green("present");
+                            logger->print() << "|" << tools::brown("000049") << "| ros->srm.requestor.type[0].request " << tools::green("present");
                     }
                     if(*(buffer++)) { 
                         dsrc_v2_electronicregistrationidentificationvehicledatamodule_msgs::msg::Iso3833VehicleType _tmp_58;
                         ros->srm.requestor.type[0].iso3883.push_back(_tmp_58);
                     
                         if(debug)
-                            logger->print() << "|\033[38;5;94m000050\033[0m| ros->srm.requestor.type[0].iso3883 " << tools::green("present");
+                            logger->print() << "|" << tools::brown("000050") << "| ros->srm.requestor.type[0].iso3883 " << tools::green("present");
                     }
                     if(*(buffer++)) { 
                         dsrc_v2_dsrc_msgs::msg::VehicleType _tmp_59;
                         ros->srm.requestor.type[0].hpms_type.push_back(_tmp_59);
                     
                         if(debug)
-                            logger->print() << "|\033[38;5;94m000051\033[0m| ros->srm.requestor.type[0].hpms_type " << tools::green("present");
+                            logger->print() << "|" << tools::brown("000051") << "| ros->srm.requestor.type[0].hpms_type " << tools::green("present");
                     }
                     if(*(buffer++)) { 
                         dsrc_v2_dsrc_msgs::msg::RegionalExtension _tmp_60;
                         ros->srm.requestor.type[0].regional.push_back(_tmp_60);
                     
                         if(debug)
-                            logger->print() << "|\033[38;5;94m000052\033[0m| ros->srm.requestor.type[0].regional " << tools::green("present");
+                            logger->print() << "|" << tools::brown("000052") << "| ros->srm.requestor.type[0].regional " << tools::green("present");
                     }
                     
                     // Field name: role
@@ -973,7 +973,7 @@ namespace wind
                     uint8_t* _ext_flag_10 = (uint8_t*) buffer++;  // Read ext flag from ros->srm.requestor.type[0].role.
                     
                     if(debug) {
-                        logger->print() << "|\033[38;5;94m000053\033[0m| Reading ext flag from ros->srm.requestor.type[0].role.: " << int(*_ext_flag_10);
+                        logger->print() << "|" << tools::brown("000053") << "| Reading ext flag from ros->srm.requestor.type[0].role.: " << int(*_ext_flag_10);
                     }
                     
                     uint8_t* _tmp_61 = (uint8_t*) buffer++;
@@ -982,18 +982,18 @@ namespace wind
                     ros->srm.requestor.type[0].role.value = __aux64__;
                     // ******************* MIN validator *******************
                     if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                        logger->warning() << "Error: Value in 'srm.requestor.type[0].role.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                        logger->error() << "Error: Value in 'srm.requestor.type[0].role.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                         return false;
                     }
                     // ******************* MAX validator *******************
                     if(VALIDATORS_ENABLED && __aux64__ > 22) {
-                        logger->warning() << "Error: Value in 'srm.requestor.type[0].role.value' " << (__aux64__) << " exceeds max allowable (22); message dropped.";
+                        logger->error() << "Error: Value in 'srm.requestor.type[0].role.value' " << (__aux64__) << " exceeds max allowable (22); message dropped.";
                         return false;
                     }
                     
                     
                     if(debug) {
-                        logger->print() << "|\033[38;5;94m000054\033[0m| " << tools::getTypeName(ros->srm.requestor.type[0].role.value) << 
+                        logger->print() << "|" << tools::brown("000054") << "| " << tools::getTypeName(ros->srm.requestor.type[0].role.value) << 
                                      " srm.requestor.type[0].role.value: " << static_cast<int>(ros->srm.requestor.type[0].role.value);
                     }
                     
@@ -1007,18 +1007,18 @@ namespace wind
                         ros->srm.requestor.type[0].subrole[0].value = __aux64__;
                         // ******************* MIN validator *******************
                         if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                            logger->warning() << "Error: Value in 'srm.requestor.type[0].subrole[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                            logger->error() << "Error: Value in 'srm.requestor.type[0].subrole[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                             return false;
                         }
                         // ******************* MAX validator *******************
                         if(VALIDATORS_ENABLED && __aux64__ > 15) {
-                            logger->warning() << "Error: Value in 'srm.requestor.type[0].subrole[0].value' " << (__aux64__) << " exceeds max allowable (15); message dropped.";
+                            logger->error() << "Error: Value in 'srm.requestor.type[0].subrole[0].value' " << (__aux64__) << " exceeds max allowable (15); message dropped.";
                             return false;
                         }
                         
                         
                         if(debug) {
-                            logger->print() << "|\033[38;5;94m000055\033[0m| " << tools::getTypeName(ros->srm.requestor.type[0].subrole[0].value) << 
+                            logger->print() << "|" << tools::brown("000055") << "| " << tools::getTypeName(ros->srm.requestor.type[0].subrole[0].value) << 
                                          " srm.requestor.type[0].subrole[0].value: " << static_cast<int>(ros->srm.requestor.type[0].subrole[0].value);
                         }
                     }
@@ -1033,18 +1033,18 @@ namespace wind
                         ros->srm.requestor.type[0].request[0].value = __aux64__;
                         // ******************* MIN validator *******************
                         if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                            logger->warning() << "Error: Value in 'srm.requestor.type[0].request[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                            logger->error() << "Error: Value in 'srm.requestor.type[0].request[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                             return false;
                         }
                         // ******************* MAX validator *******************
                         if(VALIDATORS_ENABLED && __aux64__ > 15) {
-                            logger->warning() << "Error: Value in 'srm.requestor.type[0].request[0].value' " << (__aux64__) << " exceeds max allowable (15); message dropped.";
+                            logger->error() << "Error: Value in 'srm.requestor.type[0].request[0].value' " << (__aux64__) << " exceeds max allowable (15); message dropped.";
                             return false;
                         }
                         
                         
                         if(debug) {
-                            logger->print() << "|\033[38;5;94m000056\033[0m| " << tools::getTypeName(ros->srm.requestor.type[0].request[0].value) << 
+                            logger->print() << "|" << tools::brown("000056") << "| " << tools::getTypeName(ros->srm.requestor.type[0].request[0].value) << 
                                          " srm.requestor.type[0].request[0].value: " << static_cast<int>(ros->srm.requestor.type[0].request[0].value);
                         }
                     }
@@ -1058,18 +1058,18 @@ namespace wind
                         ros->srm.requestor.type[0].iso3883[0].value = __aux64__;
                         
                         if(debug) {
-                            logger->print() << "|\033[38;5;94m000057\033[0m| " << tools::getTypeName(ros->srm.requestor.type[0].iso3883[0].value) << 
+                            logger->print() << "|" << tools::brown("000057") << "| " << tools::getTypeName(ros->srm.requestor.type[0].iso3883[0].value) << 
                                          " srm.requestor.type[0].iso3883[0].value: " << static_cast<int>(ros->srm.requestor.type[0].iso3883[0].value);
                         }
                         
                         // ******************* MIN validator *******************
                         if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                            logger->warning() << "Error: Value in 'srm.requestor.type[0].iso3883[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                            logger->error() << "Error: Value in 'srm.requestor.type[0].iso3883[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                             return false;
                         }
                         // ******************* MAX validator *******************
                         if(VALIDATORS_ENABLED && __aux64__ > 255) {
-                            logger->warning() << "Error: Value in 'srm.requestor.type[0].iso3883[0].value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
+                            logger->error() << "Error: Value in 'srm.requestor.type[0].iso3883[0].value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
                             return false;
                         }
                     }
@@ -1081,7 +1081,7 @@ namespace wind
                         uint8_t* _ext_flag_13 = (uint8_t*) buffer++;  // Read ext flag from ros->srm.requestor.type[0].hpms_type[0].
                         
                         if(debug) {
-                            logger->print() << "|\033[38;5;94m000058\033[0m| Reading ext flag from ros->srm.requestor.type[0].hpms_type[0].: " << int(*_ext_flag_13);
+                            logger->print() << "|" << tools::brown("000058") << "| Reading ext flag from ros->srm.requestor.type[0].hpms_type[0].: " << int(*_ext_flag_13);
                         }
                         
                         uint8_t* _tmp_65 = (uint8_t*) buffer++;
@@ -1090,18 +1090,18 @@ namespace wind
                         ros->srm.requestor.type[0].hpms_type[0].value = __aux64__;
                         // ******************* MIN validator *******************
                         if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                            logger->warning() << "Error: Value in 'srm.requestor.type[0].hpms_type[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                            logger->error() << "Error: Value in 'srm.requestor.type[0].hpms_type[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                             return false;
                         }
                         // ******************* MAX validator *******************
                         if(VALIDATORS_ENABLED && __aux64__ > 15) {
-                            logger->warning() << "Error: Value in 'srm.requestor.type[0].hpms_type[0].value' " << (__aux64__) << " exceeds max allowable (15); message dropped.";
+                            logger->error() << "Error: Value in 'srm.requestor.type[0].hpms_type[0].value' " << (__aux64__) << " exceeds max allowable (15); message dropped.";
                             return false;
                         }
                         
                         
                         if(debug) {
-                            logger->print() << "|\033[38;5;94m000059\033[0m| " << tools::getTypeName(ros->srm.requestor.type[0].hpms_type[0].value) << 
+                            logger->print() << "|" << tools::brown("000059") << "| " << tools::getTypeName(ros->srm.requestor.type[0].hpms_type[0].value) << 
                                          " srm.requestor.type[0].hpms_type[0].value: " << static_cast<int>(ros->srm.requestor.type[0].hpms_type[0].value);
                         }
                     }
@@ -1112,7 +1112,7 @@ namespace wind
                         bool _array_3[*_tmp_66];
                         
                         if(debug)
-                            logger->print() << "|\033[38;5;94m000060\033[0m| Reading number of exts from ros->srm.requestor.type[0].: " << static_cast<unsigned int>(*_tmp_66);
+                            logger->print() << "|" << tools::brown("000060") << "| Reading number of exts from ros->srm.requestor.type[0].: " << static_cast<unsigned int>(*_tmp_66);
                         
                         // Extensions bytemap
                         for(int i = 0; i < *_tmp_66; i++)
@@ -1143,7 +1143,7 @@ namespace wind
                     uint8_t* _ext_flag_14 = (uint8_t*) buffer++;  // Read ext flag from ros->srm.requestor.position[0].
                     
                     if(debug) {
-                        logger->print() << "|\033[38;5;94m000061\033[0m| Reading ext flag from ros->srm.requestor.position[0].: " << int(*_ext_flag_14);
+                        logger->print() << "|" << tools::brown("000061") << "| Reading ext flag from ros->srm.requestor.position[0].: " << int(*_ext_flag_14);
                     }
                     
                     if(*(buffer++)) { 
@@ -1151,14 +1151,14 @@ namespace wind
                         ros->srm.requestor.position[0].heading.push_back(_tmp_68);
                     
                         if(debug)
-                            logger->print() << "|\033[38;5;94m000062\033[0m| ros->srm.requestor.position[0].heading " << tools::green("present");
+                            logger->print() << "|" << tools::brown("000062") << "| ros->srm.requestor.position[0].heading " << tools::green("present");
                     }
                     if(*(buffer++)) { 
                         dsrc_v2_dsrc_msgs::msg::TransmissionAndSpeed _tmp_69;
                         ros->srm.requestor.position[0].speed.push_back(_tmp_69);
                     
                         if(debug)
-                            logger->print() << "|\033[38;5;94m000063\033[0m| ros->srm.requestor.position[0].speed " << tools::green("present");
+                            logger->print() << "|" << tools::brown("000063") << "| ros->srm.requestor.position[0].speed " << tools::green("present");
                     }
                     
                     // Field name: position
@@ -1171,7 +1171,7 @@ namespace wind
                         uint8_t* _ext_flag_15 = (uint8_t*) buffer++;  // Read ext flag from ros->srm.requestor.position[0].position.
                         
                         if(debug) {
-                            logger->print() << "|\033[38;5;94m000064\033[0m| Reading ext flag from ros->srm.requestor.position[0].position.: " << int(*_ext_flag_15);
+                            logger->print() << "|" << tools::brown("000064") << "| Reading ext flag from ros->srm.requestor.position[0].position.: " << int(*_ext_flag_15);
                         }
                         
                         if(*(buffer++)) { 
@@ -1179,14 +1179,14 @@ namespace wind
                             ros->srm.requestor.position[0].position.elevation.push_back(_tmp_70);
                         
                             if(debug)
-                                logger->print() << "|\033[38;5;94m000065\033[0m| ros->srm.requestor.position[0].position.elevation " << tools::green("present");
+                                logger->print() << "|" << tools::brown("000065") << "| ros->srm.requestor.position[0].position.elevation " << tools::green("present");
                         }
                         if(*(buffer++)) { 
                             dsrc_v2_dsrc_msgs::msg::Position3DRegional _tmp_71;
                             ros->srm.requestor.position[0].position.regional.push_back(_tmp_71);
                         
                             if(debug)
-                                logger->print() << "|\033[38;5;94m000066\033[0m| ros->srm.requestor.position[0].position.regional " << tools::green("present");
+                                logger->print() << "|" << tools::brown("000066") << "| ros->srm.requestor.position[0].position.regional " << tools::green("present");
                         }
                         
                         // Field name: lat
@@ -1201,17 +1201,17 @@ namespace wind
                         
                         // ******************* MIN validator *******************
                         if(VALIDATORS_ENABLED && __aux64__ < -900000000) {
-                            logger->warning() << "Error: Value in 'srm.requestor.position[0].position.lat.value' " << (__aux64__) << " is less than allowable (-900000000); message dropped.";
+                            logger->error() << "Error: Value in 'srm.requestor.position[0].position.lat.value' " << (__aux64__) << " is less than allowable (-900000000); message dropped.";
                             return false;
                         }
                         // ******************* MAX validator *******************
                         if(VALIDATORS_ENABLED && __aux64__ > 900000001) {
-                            logger->warning() << "Error: Value in 'srm.requestor.position[0].position.lat.value' " << (__aux64__) << " exceeds max allowable (900000001); message dropped.";
+                            logger->error() << "Error: Value in 'srm.requestor.position[0].position.lat.value' " << (__aux64__) << " exceeds max allowable (900000001); message dropped.";
                             return false;
                         }
                         
                         if(debug) {
-                            logger->print() << "|\033[38;5;94m000067\033[0m| " << tools::getTypeName(ros->srm.requestor.position[0].position.lat.value) << " srm.requestor.position[0].position.lat: " <<
+                            logger->print() << "|" << tools::brown("000067") << "| " << tools::getTypeName(ros->srm.requestor.position[0].position.lat.value) << " srm.requestor.position[0].position.lat: " <<
                                          ros->srm.requestor.position[0].position.lat.value << " (" << __aux64__ << ")";
                         }
                         
@@ -1227,17 +1227,17 @@ namespace wind
                         
                         // ******************* MIN validator *******************
                         if(VALIDATORS_ENABLED && __aux64__ < -1800000000) {
-                            logger->warning() << "Error: Value in 'srm.requestor.position[0].position.longint.value' " << (__aux64__) << " is less than allowable (-1800000000); message dropped.";
+                            logger->error() << "Error: Value in 'srm.requestor.position[0].position.longint.value' " << (__aux64__) << " is less than allowable (-1800000000); message dropped.";
                             return false;
                         }
                         // ******************* MAX validator *******************
                         if(VALIDATORS_ENABLED && __aux64__ > 1800000001) {
-                            logger->warning() << "Error: Value in 'srm.requestor.position[0].position.longint.value' " << (__aux64__) << " exceeds max allowable (1800000001); message dropped.";
+                            logger->error() << "Error: Value in 'srm.requestor.position[0].position.longint.value' " << (__aux64__) << " exceeds max allowable (1800000001); message dropped.";
                             return false;
                         }
                         
                         if(debug) {
-                            logger->print() << "|\033[38;5;94m000068\033[0m| " << tools::getTypeName(ros->srm.requestor.position[0].position.longint.value) << " srm.requestor.position[0].position.longint: " <<
+                            logger->print() << "|" << tools::brown("000068") << "| " << tools::getTypeName(ros->srm.requestor.position[0].position.longint.value) << " srm.requestor.position[0].position.longint: " <<
                                          ros->srm.requestor.position[0].position.longint.value << " (" << __aux64__ << ")";
                         }
                         
@@ -1254,17 +1254,17 @@ namespace wind
                             
                             // ******************* MIN validator *******************
                             if(VALIDATORS_ENABLED && __aux64__ < -4096) {
-                                logger->warning() << "Error: Value in 'srm.requestor.position[0].position.elevation[0].value' " << (__aux64__) << " is less than allowable (-4096); message dropped.";
+                                logger->error() << "Error: Value in 'srm.requestor.position[0].position.elevation[0].value' " << (__aux64__) << " is less than allowable (-4096); message dropped.";
                                 return false;
                             }
                             // ******************* MAX validator *******************
                             if(VALIDATORS_ENABLED && __aux64__ > 61439) {
-                                logger->warning() << "Error: Value in 'srm.requestor.position[0].position.elevation[0].value' " << (__aux64__) << " exceeds max allowable (61439); message dropped.";
+                                logger->error() << "Error: Value in 'srm.requestor.position[0].position.elevation[0].value' " << (__aux64__) << " exceeds max allowable (61439); message dropped.";
                                 return false;
                             }
                             
                             if(debug) {
-                                logger->print() << "|\033[38;5;94m000069\033[0m| " << tools::getTypeName(ros->srm.requestor.position[0].position.elevation[0].value) << " srm.requestor.position[0].position.elevation[0]: " <<
+                                logger->print() << "|" << tools::brown("000069") << "| " << tools::getTypeName(ros->srm.requestor.position[0].position.elevation[0].value) << " srm.requestor.position[0].position.elevation[0]: " <<
                                              ros->srm.requestor.position[0].position.elevation[0].value << " (" << __aux64__ << ")";
                             }
                         }
@@ -1275,7 +1275,7 @@ namespace wind
                             bool _array_4[*_tmp_75];
                             
                             if(debug)
-                                logger->print() << "|\033[38;5;94m000070\033[0m| Reading number of exts from ros->srm.requestor.position[0].position.: " << static_cast<unsigned int>(*_tmp_75);
+                                logger->print() << "|" << tools::brown("000070") << "| Reading number of exts from ros->srm.requestor.position[0].position.: " << static_cast<unsigned int>(*_tmp_75);
                             
                             // Extensions bytemap
                             for(int i = 0; i < *_tmp_75; i++)
@@ -1304,18 +1304,18 @@ namespace wind
                         ros->srm.requestor.position[0].heading[0].value = __aux64__;
                         
                         if(debug) {
-                            logger->print() << "|\033[38;5;94m000071\033[0m| " << tools::getTypeName(ros->srm.requestor.position[0].heading[0].value) << 
+                            logger->print() << "|" << tools::brown("000071") << "| " << tools::getTypeName(ros->srm.requestor.position[0].heading[0].value) << 
                                          " srm.requestor.position[0].heading[0].value: " << ros->srm.requestor.position[0].heading[0].value;
                         }
                         
                         // ******************* MIN validator *******************
                         if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                            logger->warning() << "Error: Value in 'srm.requestor.position[0].heading[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                            logger->error() << "Error: Value in 'srm.requestor.position[0].heading[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                             return false;
                         }
                         // ******************* MAX validator *******************
                         if(VALIDATORS_ENABLED && __aux64__ > 28800) {
-                            logger->warning() << "Error: Value in 'srm.requestor.position[0].heading[0].value' " << (__aux64__) << " exceeds max allowable (28800); message dropped.";
+                            logger->error() << "Error: Value in 'srm.requestor.position[0].heading[0].value' " << (__aux64__) << " exceeds max allowable (28800); message dropped.";
                             return false;
                         }
                     }
@@ -1335,18 +1335,18 @@ namespace wind
                             ros->srm.requestor.position[0].speed[0].transmisson.value = __aux64__;
                             // ******************* MIN validator *******************
                             if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                logger->warning() << "Error: Value in 'srm.requestor.position[0].speed[0].transmisson.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                logger->error() << "Error: Value in 'srm.requestor.position[0].speed[0].transmisson.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                 return false;
                             }
                             // ******************* MAX validator *******************
                             if(VALIDATORS_ENABLED && __aux64__ > 7) {
-                                logger->warning() << "Error: Value in 'srm.requestor.position[0].speed[0].transmisson.value' " << (__aux64__) << " exceeds max allowable (7); message dropped.";
+                                logger->error() << "Error: Value in 'srm.requestor.position[0].speed[0].transmisson.value' " << (__aux64__) << " exceeds max allowable (7); message dropped.";
                                 return false;
                             }
                             
                             
                             if(debug) {
-                                logger->print() << "|\033[38;5;94m000072\033[0m| " << tools::getTypeName(ros->srm.requestor.position[0].speed[0].transmisson.value) << 
+                                logger->print() << "|" << tools::brown("000072") << "| " << tools::getTypeName(ros->srm.requestor.position[0].speed[0].transmisson.value) << 
                                              " srm.requestor.position[0].speed[0].transmisson.value: " << static_cast<int>(ros->srm.requestor.position[0].speed[0].transmisson.value);
                             }
                             
@@ -1358,18 +1358,18 @@ namespace wind
                             ros->srm.requestor.position[0].speed[0].speed.value = __aux64__;
                             
                             if(debug) {
-                                logger->print() << "|\033[38;5;94m000073\033[0m| " << tools::getTypeName(ros->srm.requestor.position[0].speed[0].speed.value) << 
+                                logger->print() << "|" << tools::brown("000073") << "| " << tools::getTypeName(ros->srm.requestor.position[0].speed[0].speed.value) << 
                                              " srm.requestor.position[0].speed[0].speed.value: " << ros->srm.requestor.position[0].speed[0].speed.value;
                             }
                             
                             // ******************* MIN validator *******************
                             if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                logger->warning() << "Error: Value in 'srm.requestor.position[0].speed[0].speed.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                logger->error() << "Error: Value in 'srm.requestor.position[0].speed[0].speed.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                 return false;
                             }
                             // ******************* MAX validator *******************
                             if(VALIDATORS_ENABLED && __aux64__ > 8191) {
-                                logger->warning() << "Error: Value in 'srm.requestor.position[0].speed[0].speed.value' " << (__aux64__) << " exceeds max allowable (8191); message dropped.";
+                                logger->error() << "Error: Value in 'srm.requestor.position[0].speed[0].speed.value' " << (__aux64__) << " exceeds max allowable (8191); message dropped.";
                                 return false;
                             }
                     }
@@ -1378,7 +1378,7 @@ namespace wind
                         bool _array_5[*_tmp_80];
                         
                         if(debug)
-                            logger->print() << "|\033[38;5;94m000074\033[0m| Reading number of exts from ros->srm.requestor.position[0].: " << static_cast<unsigned int>(*_tmp_80);
+                            logger->print() << "|" << tools::brown("000074") << "| Reading number of exts from ros->srm.requestor.position[0].: " << static_cast<unsigned int>(*_tmp_80);
                         
                         // Extensions bytemap
                         for(int i = 0; i < *_tmp_80; i++)
@@ -1440,7 +1440,7 @@ namespace wind
                 buffer += 1;
                 
                 if(debug)
-                    logger->print() << "|\033[38;5;94m000075\033[0m| srm.requestor.transit_status[0].value: " << __aux64__;
+                    logger->print() << "|" << tools::brown("000075") << "| srm.requestor.transit_status[0].value: " << __aux64__;
                 
                 int _if__tmp_84 = __aux64__;
                 for(int e = 0; e < _if__tmp_84; e++) {
@@ -1452,12 +1452,12 @@ namespace wind
                 
                 // ******************* MIN validator *******************
                 if(VALIDATORS_ENABLED && __aux64__ < 8) {
-                    logger->warning() << "Error: Value in 'srm.requestor.transit_status[0].value' " << (__aux64__) << " is less than allowable (8); message dropped.";
+                    logger->error() << "Error: Value in 'srm.requestor.transit_status[0].value' " << (__aux64__) << " is less than allowable (8); message dropped.";
                     return false;
                 }
                 // ******************* MAX validator *******************
                 if(VALIDATORS_ENABLED && __aux64__ > 8) {
-                    logger->warning() << "Error: Value in 'srm.requestor.transit_status[0].value' " << (__aux64__) << " exceeds max allowable (8); message dropped.";
+                    logger->error() << "Error: Value in 'srm.requestor.transit_status[0].value' " << (__aux64__) << " exceeds max allowable (8); message dropped.";
                     return false;
                 }
             }
@@ -1472,18 +1472,18 @@ namespace wind
                 ros->srm.requestor.transit_occupancy[0].value = __aux64__;
                 // ******************* MIN validator *******************
                 if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                    logger->warning() << "Error: Value in 'srm.requestor.transit_occupancy[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                    logger->error() << "Error: Value in 'srm.requestor.transit_occupancy[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                     return false;
                 }
                 // ******************* MAX validator *******************
                 if(VALIDATORS_ENABLED && __aux64__ > 7) {
-                    logger->warning() << "Error: Value in 'srm.requestor.transit_occupancy[0].value' " << (__aux64__) << " exceeds max allowable (7); message dropped.";
+                    logger->error() << "Error: Value in 'srm.requestor.transit_occupancy[0].value' " << (__aux64__) << " exceeds max allowable (7); message dropped.";
                     return false;
                 }
                 
                 
                 if(debug) {
-                    logger->print() << "|\033[38;5;94m000076\033[0m| " << tools::getTypeName(ros->srm.requestor.transit_occupancy[0].value) << 
+                    logger->print() << "|" << tools::brown("000076") << "| " << tools::getTypeName(ros->srm.requestor.transit_occupancy[0].value) << 
                                  " srm.requestor.transit_occupancy[0].value: " << static_cast<int>(ros->srm.requestor.transit_occupancy[0].value);
                 }
             }
@@ -1498,18 +1498,18 @@ namespace wind
                 ros->srm.requestor.transit_schedule[0].value = __aux64__;
                 
                 if(debug) {
-                    logger->print() << "|\033[38;5;94m000077\033[0m| " << tools::getTypeName(ros->srm.requestor.transit_schedule[0].value) << 
+                    logger->print() << "|" << tools::brown("000077") << "| " << tools::getTypeName(ros->srm.requestor.transit_schedule[0].value) << 
                                  " srm.requestor.transit_schedule[0].value: " << static_cast<int>(ros->srm.requestor.transit_schedule[0].value);
                 }
                 
                 // ******************* MIN validator *******************
                 if(VALIDATORS_ENABLED && __aux64__ < -122) {
-                    logger->warning() << "Error: Value in 'srm.requestor.transit_schedule[0].value' " << (__aux64__) << " is less than allowable (-122); message dropped.";
+                    logger->error() << "Error: Value in 'srm.requestor.transit_schedule[0].value' " << (__aux64__) << " is less than allowable (-122); message dropped.";
                     return false;
                 }
                 // ******************* MAX validator *******************
                 if(VALIDATORS_ENABLED && __aux64__ > 121) {
-                    logger->warning() << "Error: Value in 'srm.requestor.transit_schedule[0].value' " << (__aux64__) << " exceeds max allowable (121); message dropped.";
+                    logger->error() << "Error: Value in 'srm.requestor.transit_schedule[0].value' " << (__aux64__) << " exceeds max allowable (121); message dropped.";
                     return false;
                 }
             }
@@ -1520,7 +1520,7 @@ namespace wind
                 bool _array_6[*_tmp_87];
                 
                 if(debug)
-                    logger->print() << "|\033[38;5;94m000078\033[0m| Reading number of exts from ros->srm.requestor.: " << static_cast<unsigned int>(*_tmp_87);
+                    logger->print() << "|" << tools::brown("000078") << "| Reading number of exts from ros->srm.requestor.: " << static_cast<unsigned int>(*_tmp_87);
                 
                 // Extensions bytemap
                 for(int i = 0; i < *_tmp_87; i++)
@@ -1546,7 +1546,7 @@ namespace wind
             bool _array_7[*_tmp_89];
             
             if(debug)
-                logger->print() << "|\033[38;5;94m000079\033[0m| Reading number of exts from ros->srm.: " << static_cast<unsigned int>(*_tmp_89);
+                logger->print() << "|" << tools::brown("000079") << "| Reading number of exts from ros->srm.: " << static_cast<unsigned int>(*_tmp_89);
             
             // Extensions bytemap
             for(int i = 0; i < *_tmp_89; i++)

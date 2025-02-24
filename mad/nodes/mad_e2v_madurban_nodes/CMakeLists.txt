@@ -28,7 +28,8 @@ project(mad_e2v_madurban_nodes)
 
 set(CMAKE_CXX_STANDARD 14)
 add_definitions(-DWIND_ROS_VERSION=2)
-#unset(CATKIN_INSTALL_INTO_PREFIX_ROOT CACHE)
+add_definitions(-DV2X_MESSAGE_ID=108)
+add_definitions(-DV2X_PROTOCOL_VERSION=3)
 
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp      REQUIRED)

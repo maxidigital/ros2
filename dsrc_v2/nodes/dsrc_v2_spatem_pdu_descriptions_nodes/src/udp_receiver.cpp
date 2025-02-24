@@ -17,7 +17,7 @@
  * 
  */
 #include <udp_receiver.h>
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 #if WIND_ROS_VERSION == 2
  using namespace boost::placeholders;

@@ -1,9 +1,10 @@
 /home/maxi/Documents/gits/repository/de.dlr.ts.v2x/cpm_v1_23/1.0/
+/home/maxi/Documents/gits/repository/de.dlr.ts.v2x/cpm_v2_23/1.0/
 /home/maxi/Documents/gits/repository/de.dlr.ts.v2x/denm_v2_23/1.0/
 /home/maxi/Documents/gits/repository/de.dlr.ts.v2x/dsrc_v2/4.0/
 /home/maxi/Documents/gits/repository/de.dlr.ts.v2x/its_container_v1/4.0/
 /home/maxi/Documents/gits/repository/de.dlr.ts.v2x/its_container_v2/4.0/
-/home/maxi/Documents/gits/repository/de.dlr.ts.v2x/its_container_v3/2.0/
+/home/maxi/Documents/gits/repository/de.dlr.ts.v2x/its_container_v3/3.0/
 /home/maxi/Documents/gits/repository/de.dlr.ts.v2x/its_container_v4/1.0/
 /home/maxi/Documents/gits/repository/de.dlr.ts.v2x.mad/mad/2.0/
 

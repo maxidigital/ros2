@@ -63,18 +63,18 @@ namespace wind
         ros->hheader.protocol_version.value = __aux64__;
         
         if(debug) {
-            logger->print() << "|\033[38;5;94m000000\033[0m| " << tools::getTypeName(ros->hheader.protocol_version.value) << 
+            logger->print() << "|" << tools::brown("000000") << "| " << tools::getTypeName(ros->hheader.protocol_version.value) << 
                          " hheader.protocol_version.value: " << static_cast<int>(ros->hheader.protocol_version.value);
         }
         
         // ******************* MIN validator *******************
         if(VALIDATORS_ENABLED && __aux64__ < 0) {
-            logger->warning() << "Error: Value in 'hheader.protocol_version.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+            logger->error() << "Error: Value in 'hheader.protocol_version.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
             return false;
         }
         // ******************* MAX validator *******************
         if(VALIDATORS_ENABLED && __aux64__ > 255) {
-            logger->warning() << "Error: Value in 'hheader.protocol_version.value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
+            logger->error() << "Error: Value in 'hheader.protocol_version.value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
             return false;
         }
         
@@ -86,18 +86,18 @@ namespace wind
         ros->hheader.message_id.value = __aux64__;
         
         if(debug) {
-            logger->print() << "|\033[38;5;94m000001\033[0m| " << tools::getTypeName(ros->hheader.message_id.value) << 
+            logger->print() << "|" << tools::brown("000001") << "| " << tools::getTypeName(ros->hheader.message_id.value) << 
                          " hheader.message_id.value: " << static_cast<int>(ros->hheader.message_id.value);
         }
         
         // ******************* MIN validator *******************
         if(VALIDATORS_ENABLED && __aux64__ < 0) {
-            logger->warning() << "Error: Value in 'hheader.message_id.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+            logger->error() << "Error: Value in 'hheader.message_id.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
             return false;
         }
         // ******************* MAX validator *******************
         if(VALIDATORS_ENABLED && __aux64__ > 255) {
-            logger->warning() << "Error: Value in 'hheader.message_id.value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
+            logger->error() << "Error: Value in 'hheader.message_id.value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
             return false;
         }
         
@@ -109,18 +109,18 @@ namespace wind
         ros->hheader.station_id.value = __aux64__;
         
         if(debug) {
-            logger->print() << "|\033[38;5;94m000002\033[0m| " << tools::getTypeName(ros->hheader.station_id.value) << 
+            logger->print() << "|" << tools::brown("000002") << "| " << tools::getTypeName(ros->hheader.station_id.value) << 
                          " hheader.station_id.value: " << ros->hheader.station_id.value;
         }
         
         // ******************* MIN validator *******************
         if(VALIDATORS_ENABLED && __aux64__ < 0) {
-            logger->warning() << "Error: Value in 'hheader.station_id.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+            logger->error() << "Error: Value in 'hheader.station_id.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
             return false;
         }
         // ******************* MAX validator *******************
         if(VALIDATORS_ENABLED && __aux64__ > 4294967295) {
-            logger->warning() << "Error: Value in 'hheader.station_id.value' " << (__aux64__) << " exceeds max allowable (4294967295); message dropped.";
+            logger->error() << "Error: Value in 'hheader.station_id.value' " << (__aux64__) << " exceeds max allowable (4294967295); message dropped.";
             return false;
         }
     
@@ -134,7 +134,7 @@ namespace wind
             ros->epu_to_vehicle.epu_low_frequency_container.push_back(_tmp_4);
         
             if(debug)
-                logger->print() << "|\033[38;5;94m000003\033[0m| ros->epu_to_vehicle.epu_low_frequency_container " << tools::green("present");
+                logger->print() << "|" << tools::brown("000003") << "| ros->epu_to_vehicle.epu_low_frequency_container " << tools::green("present");
         }
         
         // Field name: management_container
@@ -145,7 +145,7 @@ namespace wind
             uint8_t* _ext_flag_1 = (uint8_t*) buffer++;  // Read ext flag from ros->epu_to_vehicle.management_container.
             
             if(debug) {
-                logger->print() << "|\033[38;5;94m000004\033[0m| Reading ext flag from ros->epu_to_vehicle.management_container.: " << int(*_ext_flag_1);
+                logger->print() << "|" << tools::brown("000004") << "| Reading ext flag from ros->epu_to_vehicle.management_container.: " << int(*_ext_flag_1);
             }
             
             
@@ -157,18 +157,18 @@ namespace wind
             ros->epu_to_vehicle.management_container.reference_time.value = __aux64__;
             
             if(debug) {
-                logger->print() << "|\033[38;5;94m000005\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.management_container.reference_time.value) << 
+                logger->print() << "|" << tools::brown("000005") << "| " << tools::getTypeName(ros->epu_to_vehicle.management_container.reference_time.value) << 
                              " epu_to_vehicle.management_container.reference_time.value: " << ros->epu_to_vehicle.management_container.reference_time.value;
             }
             
             // ******************* MIN validator *******************
             if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                logger->warning() << "Error: Value in 'epu_to_vehicle.management_container.reference_time.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                logger->error() << "Error: Value in 'epu_to_vehicle.management_container.reference_time.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                 return false;
             }
             // ******************* MAX validator *******************
             if(VALIDATORS_ENABLED && __aux64__ > 65535) {
-                logger->warning() << "Error: Value in 'epu_to_vehicle.management_container.reference_time.value' " << (__aux64__) << " exceeds max allowable (65535); message dropped.";
+                logger->error() << "Error: Value in 'epu_to_vehicle.management_container.reference_time.value' " << (__aux64__) << " exceeds max allowable (65535); message dropped.";
                 return false;
             }
             
@@ -191,17 +191,17 @@ namespace wind
                 
                 // ******************* MIN validator *******************
                 if(VALIDATORS_ENABLED && __aux64__ < -900000000) {
-                    logger->warning() << "Error: Value in 'epu_to_vehicle.management_container.reference_position.latitude.value' " << (__aux64__) << " is less than allowable (-900000000); message dropped.";
+                    logger->error() << "Error: Value in 'epu_to_vehicle.management_container.reference_position.latitude.value' " << (__aux64__) << " is less than allowable (-900000000); message dropped.";
                     return false;
                 }
                 // ******************* MAX validator *******************
                 if(VALIDATORS_ENABLED && __aux64__ > 900000001) {
-                    logger->warning() << "Error: Value in 'epu_to_vehicle.management_container.reference_position.latitude.value' " << (__aux64__) << " exceeds max allowable (900000001); message dropped.";
+                    logger->error() << "Error: Value in 'epu_to_vehicle.management_container.reference_position.latitude.value' " << (__aux64__) << " exceeds max allowable (900000001); message dropped.";
                     return false;
                 }
                 
                 if(debug) {
-                    logger->print() << "|\033[38;5;94m000006\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.management_container.reference_position.latitude.value) << " epu_to_vehicle.management_container.reference_position.latitude: " <<
+                    logger->print() << "|" << tools::brown("000006") << "| " << tools::getTypeName(ros->epu_to_vehicle.management_container.reference_position.latitude.value) << " epu_to_vehicle.management_container.reference_position.latitude: " <<
                                  ros->epu_to_vehicle.management_container.reference_position.latitude.value << " (" << __aux64__ << ")";
                 }
                 
@@ -217,17 +217,17 @@ namespace wind
                 
                 // ******************* MIN validator *******************
                 if(VALIDATORS_ENABLED && __aux64__ < -1800000000) {
-                    logger->warning() << "Error: Value in 'epu_to_vehicle.management_container.reference_position.longitude.value' " << (__aux64__) << " is less than allowable (-1800000000); message dropped.";
+                    logger->error() << "Error: Value in 'epu_to_vehicle.management_container.reference_position.longitude.value' " << (__aux64__) << " is less than allowable (-1800000000); message dropped.";
                     return false;
                 }
                 // ******************* MAX validator *******************
                 if(VALIDATORS_ENABLED && __aux64__ > 1800000001) {
-                    logger->warning() << "Error: Value in 'epu_to_vehicle.management_container.reference_position.longitude.value' " << (__aux64__) << " exceeds max allowable (1800000001); message dropped.";
+                    logger->error() << "Error: Value in 'epu_to_vehicle.management_container.reference_position.longitude.value' " << (__aux64__) << " exceeds max allowable (1800000001); message dropped.";
                     return false;
                 }
                 
                 if(debug) {
-                    logger->print() << "|\033[38;5;94m000007\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.management_container.reference_position.longitude.value) << " epu_to_vehicle.management_container.reference_position.longitude: " <<
+                    logger->print() << "|" << tools::brown("000007") << "| " << tools::getTypeName(ros->epu_to_vehicle.management_container.reference_position.longitude.value) << " epu_to_vehicle.management_container.reference_position.longitude: " <<
                                  ros->epu_to_vehicle.management_container.reference_position.longitude.value << " (" << __aux64__ << ")";
                 }
                 
@@ -248,17 +248,17 @@ namespace wind
                     
                     // ******************* MIN validator *******************
                     if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                        logger->warning() << "Error: Value in 'epu_to_vehicle.management_container.reference_position.position_confidence_ellipse.semi_major_confidence.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                        logger->error() << "Error: Value in 'epu_to_vehicle.management_container.reference_position.position_confidence_ellipse.semi_major_confidence.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                         return false;
                     }
                     // ******************* MAX validator *******************
                     if(VALIDATORS_ENABLED && __aux64__ > 4095) {
-                        logger->warning() << "Error: Value in 'epu_to_vehicle.management_container.reference_position.position_confidence_ellipse.semi_major_confidence.value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
+                        logger->error() << "Error: Value in 'epu_to_vehicle.management_container.reference_position.position_confidence_ellipse.semi_major_confidence.value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
                         return false;
                     }
                     
                     if(debug) {
-                        logger->print() << "|\033[38;5;94m000008\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.management_container.reference_position.position_confidence_ellipse.semi_major_confidence.value) << " epu_to_vehicle.management_container.reference_position.position_confidence_ellipse.semi_major_confidence: " <<
+                        logger->print() << "|" << tools::brown("000008") << "| " << tools::getTypeName(ros->epu_to_vehicle.management_container.reference_position.position_confidence_ellipse.semi_major_confidence.value) << " epu_to_vehicle.management_container.reference_position.position_confidence_ellipse.semi_major_confidence: " <<
                                      ros->epu_to_vehicle.management_container.reference_position.position_confidence_ellipse.semi_major_confidence.value << " (" << __aux64__ << ")";
                     }
                     
@@ -273,17 +273,17 @@ namespace wind
                     
                     // ******************* MIN validator *******************
                     if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                        logger->warning() << "Error: Value in 'epu_to_vehicle.management_container.reference_position.position_confidence_ellipse.semi_minor_confidence.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                        logger->error() << "Error: Value in 'epu_to_vehicle.management_container.reference_position.position_confidence_ellipse.semi_minor_confidence.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                         return false;
                     }
                     // ******************* MAX validator *******************
                     if(VALIDATORS_ENABLED && __aux64__ > 4095) {
-                        logger->warning() << "Error: Value in 'epu_to_vehicle.management_container.reference_position.position_confidence_ellipse.semi_minor_confidence.value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
+                        logger->error() << "Error: Value in 'epu_to_vehicle.management_container.reference_position.position_confidence_ellipse.semi_minor_confidence.value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
                         return false;
                     }
                     
                     if(debug) {
-                        logger->print() << "|\033[38;5;94m000009\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.management_container.reference_position.position_confidence_ellipse.semi_minor_confidence.value) << " epu_to_vehicle.management_container.reference_position.position_confidence_ellipse.semi_minor_confidence: " <<
+                        logger->print() << "|" << tools::brown("000009") << "| " << tools::getTypeName(ros->epu_to_vehicle.management_container.reference_position.position_confidence_ellipse.semi_minor_confidence.value) << " epu_to_vehicle.management_container.reference_position.position_confidence_ellipse.semi_minor_confidence: " <<
                                      ros->epu_to_vehicle.management_container.reference_position.position_confidence_ellipse.semi_minor_confidence.value << " (" << __aux64__ << ")";
                     }
                     
@@ -298,17 +298,17 @@ namespace wind
                     
                     // ******************* MIN validator *******************
                     if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                        logger->warning() << "Error: Value in 'epu_to_vehicle.management_container.reference_position.position_confidence_ellipse.semi_major_orientation.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                        logger->error() << "Error: Value in 'epu_to_vehicle.management_container.reference_position.position_confidence_ellipse.semi_major_orientation.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                         return false;
                     }
                     // ******************* MAX validator *******************
                     if(VALIDATORS_ENABLED && __aux64__ > 3601) {
-                        logger->warning() << "Error: Value in 'epu_to_vehicle.management_container.reference_position.position_confidence_ellipse.semi_major_orientation.value' " << (__aux64__) << " exceeds max allowable (3601); message dropped.";
+                        logger->error() << "Error: Value in 'epu_to_vehicle.management_container.reference_position.position_confidence_ellipse.semi_major_orientation.value' " << (__aux64__) << " exceeds max allowable (3601); message dropped.";
                         return false;
                     }
                     
                     if(debug) {
-                        logger->print() << "|\033[38;5;94m000010\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.management_container.reference_position.position_confidence_ellipse.semi_major_orientation.value) << " epu_to_vehicle.management_container.reference_position.position_confidence_ellipse.semi_major_orientation: " <<
+                        logger->print() << "|" << tools::brown("000010") << "| " << tools::getTypeName(ros->epu_to_vehicle.management_container.reference_position.position_confidence_ellipse.semi_major_orientation.value) << " epu_to_vehicle.management_container.reference_position.position_confidence_ellipse.semi_major_orientation: " <<
                                      ros->epu_to_vehicle.management_container.reference_position.position_confidence_ellipse.semi_major_orientation.value << " (" << __aux64__ << ")";
                     }
                 
@@ -329,17 +329,17 @@ namespace wind
                     
                     // ******************* MIN validator *******************
                     if(VALIDATORS_ENABLED && __aux64__ < -100000) {
-                        logger->warning() << "Error: Value in 'epu_to_vehicle.management_container.reference_position.altitude.altitude_value.value' " << (__aux64__) << " is less than allowable (-100000); message dropped.";
+                        logger->error() << "Error: Value in 'epu_to_vehicle.management_container.reference_position.altitude.altitude_value.value' " << (__aux64__) << " is less than allowable (-100000); message dropped.";
                         return false;
                     }
                     // ******************* MAX validator *******************
                     if(VALIDATORS_ENABLED && __aux64__ > 800001) {
-                        logger->warning() << "Error: Value in 'epu_to_vehicle.management_container.reference_position.altitude.altitude_value.value' " << (__aux64__) << " exceeds max allowable (800001); message dropped.";
+                        logger->error() << "Error: Value in 'epu_to_vehicle.management_container.reference_position.altitude.altitude_value.value' " << (__aux64__) << " exceeds max allowable (800001); message dropped.";
                         return false;
                     }
                     
                     if(debug) {
-                        logger->print() << "|\033[38;5;94m000011\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.management_container.reference_position.altitude.altitude_value.value) << " epu_to_vehicle.management_container.reference_position.altitude.altitude_value: " <<
+                        logger->print() << "|" << tools::brown("000011") << "| " << tools::getTypeName(ros->epu_to_vehicle.management_container.reference_position.altitude.altitude_value.value) << " epu_to_vehicle.management_container.reference_position.altitude.altitude_value: " <<
                                      ros->epu_to_vehicle.management_container.reference_position.altitude.altitude_value.value << " (" << __aux64__ << ")";
                     }
                     
@@ -352,18 +352,18 @@ namespace wind
                     ros->epu_to_vehicle.management_container.reference_position.altitude.altitude_confidence.value = __aux64__;
                     // ******************* MIN validator *******************
                     if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                        logger->warning() << "Error: Value in 'epu_to_vehicle.management_container.reference_position.altitude.altitude_confidence.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                        logger->error() << "Error: Value in 'epu_to_vehicle.management_container.reference_position.altitude.altitude_confidence.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                         return false;
                     }
                     // ******************* MAX validator *******************
                     if(VALIDATORS_ENABLED && __aux64__ > 15) {
-                        logger->warning() << "Error: Value in 'epu_to_vehicle.management_container.reference_position.altitude.altitude_confidence.value' " << (__aux64__) << " exceeds max allowable (15); message dropped.";
+                        logger->error() << "Error: Value in 'epu_to_vehicle.management_container.reference_position.altitude.altitude_confidence.value' " << (__aux64__) << " exceeds max allowable (15); message dropped.";
                         return false;
                     }
                     
                     
                     if(debug) {
-                        logger->print() << "|\033[38;5;94m000012\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.management_container.reference_position.altitude.altitude_confidence.value) << 
+                        logger->print() << "|" << tools::brown("000012") << "| " << tools::getTypeName(ros->epu_to_vehicle.management_container.reference_position.altitude.altitude_confidence.value) << 
                                      " epu_to_vehicle.management_container.reference_position.altitude.altitude_confidence.value: " << static_cast<int>(ros->epu_to_vehicle.management_container.reference_position.altitude.altitude_confidence.value);
                     }
             if(*_ext_flag_1) { // from ros->epu_to_vehicle.management_container. 
@@ -371,7 +371,7 @@ namespace wind
                 bool _array_1[*_tmp_13];
                 
                 if(debug)
-                    logger->print() << "|\033[38;5;94m000013\033[0m| Reading number of exts from ros->epu_to_vehicle.management_container.: " << static_cast<unsigned int>(*_tmp_13);
+                    logger->print() << "|" << tools::brown("000013") << "| Reading number of exts from ros->epu_to_vehicle.management_container.: " << static_cast<unsigned int>(*_tmp_13);
                 
                 // Extensions bytemap
                 for(int i = 0; i < *_tmp_13; i++)
@@ -400,14 +400,14 @@ namespace wind
                 ros->epu_to_vehicle.epu_high_frequency_container.behaviours.push_back(_tmp_15);
             
                 if(debug)
-                    logger->print() << "|\033[38;5;94m000014\033[0m| ros->epu_to_vehicle.epu_high_frequency_container.behaviours " << tools::green("present");
+                    logger->print() << "|" << tools::brown("000014") << "| ros->epu_to_vehicle.epu_high_frequency_container.behaviours " << tools::green("present");
             }
             if(*(buffer++)) { 
                 mad_e2v_madurban_msgs::msg::SafetyAdvices _tmp_16;
                 ros->epu_to_vehicle.epu_high_frequency_container.safety.push_back(_tmp_16);
             
                 if(debug)
-                    logger->print() << "|\033[38;5;94m000015\033[0m| ros->epu_to_vehicle.epu_high_frequency_container.safety " << tools::green("present");
+                    logger->print() << "|" << tools::brown("000015") << "| ros->epu_to_vehicle.epu_high_frequency_container.safety " << tools::green("present");
             }
             
             if(ros->epu_to_vehicle.epu_high_frequency_container.behaviours.size() != 0) {
@@ -418,7 +418,7 @@ namespace wind
                 uint8_t* _ext_flag_9 = (uint8_t*) buffer++;  // Read ext flag from ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].
                 
                 if(debug) {
-                    logger->print() << "|\033[38;5;94m000016\033[0m| Reading ext flag from ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].: " << int(*_ext_flag_9);
+                    logger->print() << "|" << tools::brown("000016") << "| Reading ext flag from ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].: " << int(*_ext_flag_9);
                 }
                 
                 int16_t* _tmp_17 = (int16_t*)buffer;
@@ -429,17 +429,17 @@ namespace wind
                 int _if__tmp_17 = __aux64__;
                 
                 if(debug) {
-                    logger->print() << "|\033[38;5;94m000017\033[0m| SequenceOf ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0]. size: " << int(__aux64__);
+                    logger->print() << "|" << tools::brown("000017") << "| SequenceOf ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0]. size: " << int(__aux64__);
                 }
                 
                 // ******************* MIN validator *******************
                 if(VALIDATORS_ENABLED && __aux64__ < 1) {
-                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].value' " << (__aux64__) << " is less than allowable (1); message dropped.";
+                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].value' " << (__aux64__) << " is less than allowable (1); message dropped.";
                     return false;
                 }
                 // ******************* MAX validator *******************
                 if(VALIDATORS_ENABLED && __aux64__ > 10) {
-                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].value' " << (__aux64__) << " exceeds max allowable (10); message dropped.";
+                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].value' " << (__aux64__) << " exceeds max allowable (10); message dropped.";
                     return false;
                 }
                 
@@ -457,7 +457,7 @@ namespace wind
                         uint8_t* _ext_flag_10 = (uint8_t*) buffer++;  // Read ext flag from ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].
                         
                         if(debug) {
-                            logger->print() << "|\033[38;5;94m000018\033[0m| Reading ext flag from ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].: " << int(*_ext_flag_10);
+                            logger->print() << "|" << tools::brown("000018") << "| Reading ext flag from ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].: " << int(*_ext_flag_10);
                         }
                         
                         if(*(buffer++)) { 
@@ -465,14 +465,14 @@ namespace wind
                             ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].exterior_lights_advice.push_back(_tmp_18);
                         
                             if(debug)
-                                logger->print() << "|\033[38;5;94m000019\033[0m| ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].exterior_lights_advice " << tools::green("present");
+                                logger->print() << "|" << tools::brown("000019") << "| ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].exterior_lights_advice " << tools::green("present");
                         }
                         if(*(buffer++)) { 
                             mad_e2v_madurban_msgs::msg::HornAdvice _tmp_19;
                             ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].horn_advice.push_back(_tmp_19);
                         
                             if(debug)
-                                logger->print() << "|\033[38;5;94m000020\033[0m| ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].horn_advice " << tools::green("present");
+                                logger->print() << "|" << tools::brown("000020") << "| ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].horn_advice " << tools::green("present");
                         }
                         
                         // Field name: subject_station_id
@@ -483,18 +483,18 @@ namespace wind
                         ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].subject_station_id.value = __aux64__;
                         
                         if(debug) {
-                            logger->print() << "|\033[38;5;94m000021\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].subject_station_id.value) << 
+                            logger->print() << "|" << tools::brown("000021") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].subject_station_id.value) << 
                                          " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].subject_station_id.value: " << ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].subject_station_id.value;
                         }
                         
                         // ******************* MIN validator *******************
                         if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].subject_station_id.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].subject_station_id.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                             return false;
                         }
                         // ******************* MAX validator *******************
                         if(VALIDATORS_ENABLED && __aux64__ > 4294967295) {
-                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].subject_station_id.value' " << (__aux64__) << " exceeds max allowable (4294967295); message dropped.";
+                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].subject_station_id.value' " << (__aux64__) << " exceeds max allowable (4294967295); message dropped.";
                             return false;
                         }
                         
@@ -508,21 +508,21 @@ namespace wind
                                 ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.maneuver_advice.push_back(_tmp_21);
                             
                                 if(debug)
-                                    logger->print() << "|\033[38;5;94m000022\033[0m| ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.maneuver_advice " << tools::green("present");
+                                    logger->print() << "|" << tools::brown("000022") << "| ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.maneuver_advice " << tools::green("present");
                             }
                             if(*(buffer++)) { 
                                 mad_e2v_madurban_msgs::msg::TrajectoryAdvice _tmp_22;
                                 ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice.push_back(_tmp_22);
                             
                                 if(debug)
-                                    logger->print() << "|\033[38;5;94m000023\033[0m| ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice " << tools::green("present");
+                                    logger->print() << "|" << tools::brown("000023") << "| ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice " << tools::green("present");
                             }
                             if(*(buffer++)) { 
                                 mad_e2v_madurban_msgs::msg::ControlAdvice _tmp_23;
                                 ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.control_advice.push_back(_tmp_23);
                             
                                 if(debug)
-                                    logger->print() << "|\033[38;5;94m000024\033[0m| ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.control_advice " << tools::green("present");
+                                    logger->print() << "|" << tools::brown("000024") << "| ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.control_advice " << tools::green("present");
                             }
                             
                             if(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.maneuver_advice.size() != 0) {
@@ -537,7 +537,7 @@ namespace wind
                                     uint8_t* _ext_flag_11 = (uint8_t*) buffer++;  // Read ext flag from ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.maneuver_advice[0].nominal_maneuver.
                                     
                                     if(debug) {
-                                        logger->print() << "|\033[38;5;94m000025\033[0m| Reading ext flag from ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.maneuver_advice[0].nominal_maneuver.: " << int(*_ext_flag_11);
+                                        logger->print() << "|" << tools::brown("000025") << "| Reading ext flag from ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.maneuver_advice[0].nominal_maneuver.: " << int(*_ext_flag_11);
                                     }
                                     
                                     uint8_t* _tmp_24 = (uint8_t*) buffer++;
@@ -546,18 +546,18 @@ namespace wind
                                     ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.maneuver_advice[0].nominal_maneuver.value = __aux64__;
                                     // ******************* MIN validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.maneuver_advice[0].nominal_maneuver.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.maneuver_advice[0].nominal_maneuver.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                         return false;
                                     }
                                     // ******************* MAX validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ > 12) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.maneuver_advice[0].nominal_maneuver.value' " << (__aux64__) << " exceeds max allowable (12); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.maneuver_advice[0].nominal_maneuver.value' " << (__aux64__) << " exceeds max allowable (12); message dropped.";
                                         return false;
                                     }
                                     
                                     
                                     if(debug) {
-                                        logger->print() << "|\033[38;5;94m000026\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.maneuver_advice[0].nominal_maneuver.value) << 
+                                        logger->print() << "|" << tools::brown("000026") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.maneuver_advice[0].nominal_maneuver.value) << 
                                                      " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.maneuver_advice[0].nominal_maneuver.value: " << static_cast<int>(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.maneuver_advice[0].nominal_maneuver.value);
                                     }
                                     
@@ -567,7 +567,7 @@ namespace wind
                                     uint8_t* _ext_flag_12 = (uint8_t*) buffer++;  // Read ext flag from ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.maneuver_advice[0].mrm_maneuver.
                                     
                                     if(debug) {
-                                        logger->print() << "|\033[38;5;94m000027\033[0m| Reading ext flag from ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.maneuver_advice[0].mrm_maneuver.: " << int(*_ext_flag_12);
+                                        logger->print() << "|" << tools::brown("000027") << "| Reading ext flag from ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.maneuver_advice[0].mrm_maneuver.: " << int(*_ext_flag_12);
                                     }
                                     
                                     uint8_t* _tmp_25 = (uint8_t*) buffer++;
@@ -576,18 +576,18 @@ namespace wind
                                     ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.maneuver_advice[0].mrm_maneuver.value = __aux64__;
                                     // ******************* MIN validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.maneuver_advice[0].mrm_maneuver.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.maneuver_advice[0].mrm_maneuver.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                         return false;
                                     }
                                     // ******************* MAX validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ > 6) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.maneuver_advice[0].mrm_maneuver.value' " << (__aux64__) << " exceeds max allowable (6); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.maneuver_advice[0].mrm_maneuver.value' " << (__aux64__) << " exceeds max allowable (6); message dropped.";
                                         return false;
                                     }
                                     
                                     
                                     if(debug) {
-                                        logger->print() << "|\033[38;5;94m000028\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.maneuver_advice[0].mrm_maneuver.value) << 
+                                        logger->print() << "|" << tools::brown("000028") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.maneuver_advice[0].mrm_maneuver.value) << 
                                                      " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.maneuver_advice[0].mrm_maneuver.value: " << static_cast<int>(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.maneuver_advice[0].mrm_maneuver.value);
                                     }
                             }
@@ -605,7 +605,7 @@ namespace wind
                                     uint8_t* _ext_flag_13 = (uint8_t*) buffer++;  // Read ext flag from ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.
                                     
                                     if(debug) {
-                                        logger->print() << "|\033[38;5;94m000029\033[0m| Reading ext flag from ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.: " << int(*_ext_flag_13);
+                                        logger->print() << "|" << tools::brown("000029") << "| Reading ext flag from ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.: " << int(*_ext_flag_13);
                                     }
                                     
                                     int16_t* _tmp_26 = (int16_t*)buffer;
@@ -616,17 +616,17 @@ namespace wind
                                     int _if__tmp_26 = __aux64__;
                                     
                                     if(debug) {
-                                        logger->print() << "|\033[38;5;94m000030\033[0m| SequenceOf ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory. size: " << int(__aux64__);
+                                        logger->print() << "|" << tools::brown("000030") << "| SequenceOf ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory. size: " << int(__aux64__);
                                     }
                                     
                                     // ******************* MIN validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ < 1) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.value' " << (__aux64__) << " is less than allowable (1); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.value' " << (__aux64__) << " is less than allowable (1); message dropped.";
                                         return false;
                                     }
                                     // ******************* MAX validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ > 16) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.value' " << (__aux64__) << " exceeds max allowable (16); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.value' " << (__aux64__) << " exceeds max allowable (16); message dropped.";
                                         return false;
                                     }
                                     
@@ -650,7 +650,7 @@ namespace wind
                                             uint8_t* _ext_flag_14 = (uint8_t*) buffer++;  // Read ext flag from ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].
                                             
                                             if(debug) {
-                                                logger->print() << "|\033[38;5;94m000031\033[0m| Reading ext flag from ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].: " << int(*_ext_flag_14);
+                                                logger->print() << "|" << tools::brown("000031") << "| Reading ext flag from ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].: " << int(*_ext_flag_14);
                                             }
                                             
                                             if(*(buffer++)) { 
@@ -658,28 +658,28 @@ namespace wind
                                                 ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].horizontal_position_confidence.push_back(_tmp_27);
                                             
                                                 if(debug)
-                                                    logger->print() << "|\033[38;5;94m000032\033[0m| ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].horizontal_position_confidence " << tools::green("present");
+                                                    logger->print() << "|" << tools::brown("000032") << "| ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].horizontal_position_confidence " << tools::green("present");
                                             }
                                             if(*(buffer++)) { 
                                                 its_container_v4_etsi_its_cdd_msgs::msg::PathDeltaTimeChoice _tmp_28;
                                                 ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].path_delta_time.push_back(_tmp_28);
                                             
                                                 if(debug)
-                                                    logger->print() << "|\033[38;5;94m000033\033[0m| ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].path_delta_time " << tools::green("present");
+                                                    logger->print() << "|" << tools::brown("000033") << "| ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].path_delta_time " << tools::green("present");
                                             }
                                             if(*(buffer++)) { 
                                                 its_container_v4_etsi_its_cdd_msgs::msg::StandardLength9b _tmp_29;
                                                 ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].symmetric_area_offset.push_back(_tmp_29);
                                             
                                                 if(debug)
-                                                    logger->print() << "|\033[38;5;94m000034\033[0m| ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].symmetric_area_offset " << tools::green("present");
+                                                    logger->print() << "|" << tools::brown("000034") << "| ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].symmetric_area_offset " << tools::green("present");
                                             }
                                             if(*(buffer++)) { 
                                                 its_container_v4_etsi_its_cdd_msgs::msg::StandardLength9b _tmp_30;
                                                 ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].asymmetric_area_offset.push_back(_tmp_30);
                                             
                                                 if(debug)
-                                                    logger->print() << "|\033[38;5;94m000035\033[0m| ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].asymmetric_area_offset " << tools::green("present");
+                                                    logger->print() << "|" << tools::brown("000035") << "| ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].asymmetric_area_offset " << tools::green("present");
                                             }
                                             
                                             // Field name: delta_latitude
@@ -694,17 +694,17 @@ namespace wind
                                             
                                             // ******************* MIN validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ < -131071) {
-                                                logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].delta_latitude.value' " << (__aux64__) << " is less than allowable (-131071); message dropped.";
+                                                logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].delta_latitude.value' " << (__aux64__) << " is less than allowable (-131071); message dropped.";
                                                 return false;
                                             }
                                             // ******************* MAX validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ > 131072) {
-                                                logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].delta_latitude.value' " << (__aux64__) << " exceeds max allowable (131072); message dropped.";
+                                                logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].delta_latitude.value' " << (__aux64__) << " exceeds max allowable (131072); message dropped.";
                                                 return false;
                                             }
                                             
                                             if(debug) {
-                                                logger->print() << "|\033[38;5;94m000036\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].delta_latitude.value) << " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].delta_latitude: " <<
+                                                logger->print() << "|" << tools::brown("000036") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].delta_latitude.value) << " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].delta_latitude: " <<
                                                              ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].delta_latitude.value << " (" << __aux64__ << ")";
                                             }
                                             
@@ -720,17 +720,17 @@ namespace wind
                                             
                                             // ******************* MIN validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ < -131071) {
-                                                logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].delta_longitude.value' " << (__aux64__) << " is less than allowable (-131071); message dropped.";
+                                                logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].delta_longitude.value' " << (__aux64__) << " is less than allowable (-131071); message dropped.";
                                                 return false;
                                             }
                                             // ******************* MAX validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ > 131072) {
-                                                logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].delta_longitude.value' " << (__aux64__) << " exceeds max allowable (131072); message dropped.";
+                                                logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].delta_longitude.value' " << (__aux64__) << " exceeds max allowable (131072); message dropped.";
                                                 return false;
                                             }
                                             
                                             if(debug) {
-                                                logger->print() << "|\033[38;5;94m000037\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].delta_longitude.value) << " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].delta_longitude: " <<
+                                                logger->print() << "|" << tools::brown("000037") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].delta_longitude.value) << " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].delta_longitude: " <<
                                                              ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].delta_longitude.value << " (" << __aux64__ << ")";
                                             }
                                             
@@ -752,17 +752,17 @@ namespace wind
                                                     
                                                     // ******************* MIN validator *******************
                                                     if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].horizontal_position_confidence[0].semi_major_confidence.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].horizontal_position_confidence[0].semi_major_confidence.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                                         return false;
                                                     }
                                                     // ******************* MAX validator *******************
                                                     if(VALIDATORS_ENABLED && __aux64__ > 4095) {
-                                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].horizontal_position_confidence[0].semi_major_confidence.value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
+                                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].horizontal_position_confidence[0].semi_major_confidence.value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
                                                         return false;
                                                     }
                                                     
                                                     if(debug) {
-                                                        logger->print() << "|\033[38;5;94m000038\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].horizontal_position_confidence[0].semi_major_confidence.value) << " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].horizontal_position_confidence[0].semi_major_confidence: " <<
+                                                        logger->print() << "|" << tools::brown("000038") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].horizontal_position_confidence[0].semi_major_confidence.value) << " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].horizontal_position_confidence[0].semi_major_confidence: " <<
                                                                      ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].horizontal_position_confidence[0].semi_major_confidence.value << " (" << __aux64__ << ")";
                                                     }
                                                     
@@ -777,17 +777,17 @@ namespace wind
                                                     
                                                     // ******************* MIN validator *******************
                                                     if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].horizontal_position_confidence[0].semi_minor_confidence.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].horizontal_position_confidence[0].semi_minor_confidence.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                                         return false;
                                                     }
                                                     // ******************* MAX validator *******************
                                                     if(VALIDATORS_ENABLED && __aux64__ > 4095) {
-                                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].horizontal_position_confidence[0].semi_minor_confidence.value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
+                                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].horizontal_position_confidence[0].semi_minor_confidence.value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
                                                         return false;
                                                     }
                                                     
                                                     if(debug) {
-                                                        logger->print() << "|\033[38;5;94m000039\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].horizontal_position_confidence[0].semi_minor_confidence.value) << " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].horizontal_position_confidence[0].semi_minor_confidence: " <<
+                                                        logger->print() << "|" << tools::brown("000039") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].horizontal_position_confidence[0].semi_minor_confidence.value) << " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].horizontal_position_confidence[0].semi_minor_confidence: " <<
                                                                      ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].horizontal_position_confidence[0].semi_minor_confidence.value << " (" << __aux64__ << ")";
                                                     }
                                                     
@@ -802,17 +802,17 @@ namespace wind
                                                     
                                                     // ******************* MIN validator *******************
                                                     if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].horizontal_position_confidence[0].semi_major_orientation.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].horizontal_position_confidence[0].semi_major_orientation.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                                         return false;
                                                     }
                                                     // ******************* MAX validator *******************
                                                     if(VALIDATORS_ENABLED && __aux64__ > 3601) {
-                                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].horizontal_position_confidence[0].semi_major_orientation.value' " << (__aux64__) << " exceeds max allowable (3601); message dropped.";
+                                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].horizontal_position_confidence[0].semi_major_orientation.value' " << (__aux64__) << " exceeds max allowable (3601); message dropped.";
                                                         return false;
                                                     }
                                                     
                                                     if(debug) {
-                                                        logger->print() << "|\033[38;5;94m000040\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].horizontal_position_confidence[0].semi_major_orientation.value) << " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].horizontal_position_confidence[0].semi_major_orientation: " <<
+                                                        logger->print() << "|" << tools::brown("000040") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].horizontal_position_confidence[0].semi_major_orientation.value) << " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].horizontal_position_confidence[0].semi_major_orientation: " <<
                                                                      ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].horizontal_position_confidence[0].semi_major_orientation.value << " (" << __aux64__ << ")";
                                                     }
                                             }
@@ -829,17 +829,17 @@ namespace wind
                                             
                                             // ******************* MIN validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ < -12700) {
-                                                logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].delta_altitude.value' " << (__aux64__) << " is less than allowable (-12700); message dropped.";
+                                                logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].delta_altitude.value' " << (__aux64__) << " is less than allowable (-12700); message dropped.";
                                                 return false;
                                             }
                                             // ******************* MAX validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ > 12800) {
-                                                logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].delta_altitude.value' " << (__aux64__) << " exceeds max allowable (12800); message dropped.";
+                                                logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].delta_altitude.value' " << (__aux64__) << " exceeds max allowable (12800); message dropped.";
                                                 return false;
                                             }
                                             
                                             if(debug) {
-                                                logger->print() << "|\033[38;5;94m000041\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].delta_altitude.value) << " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].delta_altitude: " <<
+                                                logger->print() << "|" << tools::brown("000041") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].delta_altitude.value) << " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].delta_altitude: " <<
                                                              ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].delta_altitude.value << " (" << __aux64__ << ")";
                                             }
                                             
@@ -852,18 +852,18 @@ namespace wind
                                             ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].altitude_confidence.value = __aux64__;
                                             // ******************* MIN validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                                logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].altitude_confidence.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                                logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].altitude_confidence.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                                 return false;
                                             }
                                             // ******************* MAX validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ > 15) {
-                                                logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].altitude_confidence.value' " << (__aux64__) << " exceeds max allowable (15); message dropped.";
+                                                logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].altitude_confidence.value' " << (__aux64__) << " exceeds max allowable (15); message dropped.";
                                                 return false;
                                             }
                                             
                                             
                                             if(debug) {
-                                                logger->print() << "|\033[38;5;94m000042\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].altitude_confidence.value) << 
+                                                logger->print() << "|" << tools::brown("000042") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].altitude_confidence.value) << 
                                                              " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].altitude_confidence.value: " << static_cast<int>(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].altitude_confidence.value);
                                             }
                                             
@@ -888,17 +888,17 @@ namespace wind
                                                     
                                                     // ******************* MIN validator *******************
                                                     if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].path_delta_time[0].delta_time_high_precision[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].path_delta_time[0].delta_time_high_precision[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                                         return false;
                                                     }
                                                     // ******************* MAX validator *******************
                                                     if(VALIDATORS_ENABLED && __aux64__ > 127) {
-                                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].path_delta_time[0].delta_time_high_precision[0].value' " << (__aux64__) << " exceeds max allowable (127); message dropped.";
+                                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].path_delta_time[0].delta_time_high_precision[0].value' " << (__aux64__) << " exceeds max allowable (127); message dropped.";
                                                         return false;
                                                     }
                                                     
                                                     if(debug) {
-                                                        logger->print() << "|\033[38;5;94m000043\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].path_delta_time[0].delta_time_high_precision[0].value) << " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].path_delta_time[0].delta_time_high_precision[0]: " <<
+                                                        logger->print() << "|" << tools::brown("000043") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].path_delta_time[0].delta_time_high_precision[0].value) << " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].path_delta_time[0].delta_time_high_precision[0]: " <<
                                                                      ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].path_delta_time[0].delta_time_high_precision[0].value << " (" << __aux64__ << ")";
                                                     }
                                                 }
@@ -917,17 +917,17 @@ namespace wind
                                                     
                                                     // ******************* MIN validator *******************
                                                     if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].path_delta_time[0].delta_time_big_range[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].path_delta_time[0].delta_time_big_range[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                                         return false;
                                                     }
                                                     // ******************* MAX validator *******************
                                                     if(VALIDATORS_ENABLED && __aux64__ > 127) {
-                                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].path_delta_time[0].delta_time_big_range[0].value' " << (__aux64__) << " exceeds max allowable (127); message dropped.";
+                                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].path_delta_time[0].delta_time_big_range[0].value' " << (__aux64__) << " exceeds max allowable (127); message dropped.";
                                                         return false;
                                                     }
                                                     
                                                     if(debug) {
-                                                        logger->print() << "|\033[38;5;94m000044\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].path_delta_time[0].delta_time_big_range[0].value) << " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].path_delta_time[0].delta_time_big_range[0]: " <<
+                                                        logger->print() << "|" << tools::brown("000044") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].path_delta_time[0].delta_time_big_range[0].value) << " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].path_delta_time[0].delta_time_big_range[0]: " <<
                                                                      ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].path_delta_time[0].delta_time_big_range[0].value << " (" << __aux64__ << ")";
                                                     }
                                                 }
@@ -950,17 +950,17 @@ namespace wind
                                                 
                                                 // ******************* MIN validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].symmetric_area_offset[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].symmetric_area_offset[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                                     return false;
                                                 }
                                                 // ******************* MAX validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ > 511) {
-                                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].symmetric_area_offset[0].value' " << (__aux64__) << " exceeds max allowable (511); message dropped.";
+                                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].symmetric_area_offset[0].value' " << (__aux64__) << " exceeds max allowable (511); message dropped.";
                                                     return false;
                                                 }
                                                 
                                                 if(debug) {
-                                                    logger->print() << "|\033[38;5;94m000045\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].symmetric_area_offset[0].value) << " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].symmetric_area_offset[0]: " <<
+                                                    logger->print() << "|" << tools::brown("000045") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].symmetric_area_offset[0].value) << " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].symmetric_area_offset[0]: " <<
                                                                  ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].symmetric_area_offset[0].value << " (" << __aux64__ << ")";
                                                 }
                                             }
@@ -977,17 +977,17 @@ namespace wind
                                                 
                                                 // ******************* MIN validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].asymmetric_area_offset[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].asymmetric_area_offset[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                                     return false;
                                                 }
                                                 // ******************* MAX validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ > 511) {
-                                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].asymmetric_area_offset[0].value' " << (__aux64__) << " exceeds max allowable (511); message dropped.";
+                                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].asymmetric_area_offset[0].value' " << (__aux64__) << " exceeds max allowable (511); message dropped.";
                                                     return false;
                                                 }
                                                 
                                                 if(debug) {
-                                                    logger->print() << "|\033[38;5;94m000046\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].asymmetric_area_offset[0].value) << " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].asymmetric_area_offset[0]: " <<
+                                                    logger->print() << "|" << tools::brown("000046") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].asymmetric_area_offset[0].value) << " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].asymmetric_area_offset[0]: " <<
                                                                  ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].asymmetric_area_offset[0].value << " (" << __aux64__ << ")";
                                                 }
                                             }
@@ -996,7 +996,7 @@ namespace wind
                                                 bool _array_2[*_tmp_44];
                                                 
                                                 if(debug)
-                                                    logger->print() << "|\033[38;5;94m000047\033[0m| Reading number of exts from ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].: " << static_cast<unsigned int>(*_tmp_44);
+                                                    logger->print() << "|" << tools::brown("000047") << "| Reading number of exts from ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].: " << static_cast<unsigned int>(*_tmp_44);
                                                 
                                                 // Extensions bytemap
                                                 for(int i = 0; i < *_tmp_44; i++)
@@ -1007,7 +1007,7 @@ namespace wind
                                                     buffer += 2;
                                                 
                                                     if(debug) 
-                                                        logger->print() << "|\033[38;5;94m000048\033[0m| Reading open type len from ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].: " << _tmp_45;
+                                                        logger->print() << "|" << tools::brown("000048") << "| Reading open type len from ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].: " << _tmp_45;
                                                 
                                                     // Optional fields bytemap
                                                     if(*(buffer++)) { 
@@ -1015,21 +1015,21 @@ namespace wind
                                                         ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].heading_value.push_back(_tmp_46);
                                                     
                                                         if(debug)
-                                                            logger->print() << "|\033[38;5;94m000049\033[0m| ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].heading_value " << tools::green("present");
+                                                            logger->print() << "|" << tools::brown("000049") << "| ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].heading_value " << tools::green("present");
                                                     }
                                                     if(*(buffer++)) { 
                                                         its_container_v4_etsi_its_cdd_msgs::msg::SpeedValue _tmp_47;
                                                         ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].abs_speed.push_back(_tmp_47);
                                                     
                                                         if(debug)
-                                                            logger->print() << "|\033[38;5;94m000050\033[0m| ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].abs_speed " << tools::green("present");
+                                                            logger->print() << "|" << tools::brown("000050") << "| ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].abs_speed " << tools::green("present");
                                                     }
                                                     if(*(buffer++)) { 
                                                         its_container_v4_etsi_its_cdd_msgs::msg::AccelerationValue _tmp_48;
                                                         ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].longitudinal_acceleration.push_back(_tmp_48);
                                                     
                                                         if(debug)
-                                                            logger->print() << "|\033[38;5;94m000051\033[0m| ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].longitudinal_acceleration " << tools::green("present");
+                                                            logger->print() << "|" << tools::brown("000051") << "| ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].longitudinal_acceleration " << tools::green("present");
                                                     }
                                                     
                                                     if(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].heading_value.size() != 0) {
@@ -1044,17 +1044,17 @@ namespace wind
                                                         
                                                         // ******************* MIN validator *******************
                                                         if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].heading_value[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].heading_value[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                                             return false;
                                                         }
                                                         // ******************* MAX validator *******************
                                                         if(VALIDATORS_ENABLED && __aux64__ > 3601) {
-                                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].heading_value[0].value' " << (__aux64__) << " exceeds max allowable (3601); message dropped.";
+                                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].heading_value[0].value' " << (__aux64__) << " exceeds max allowable (3601); message dropped.";
                                                             return false;
                                                         }
                                                         
                                                         if(debug) {
-                                                            logger->print() << "|\033[38;5;94m000052\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].heading_value[0].value) << " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].heading_value[0]: " <<
+                                                            logger->print() << "|" << tools::brown("000052") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].heading_value[0].value) << " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].heading_value[0]: " <<
                                                                          ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].heading_value[0].value << " (" << __aux64__ << ")";
                                                         }
                                                     }
@@ -1071,17 +1071,17 @@ namespace wind
                                                         
                                                         // ******************* MIN validator *******************
                                                         if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].abs_speed[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].abs_speed[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                                             return false;
                                                         }
                                                         // ******************* MAX validator *******************
                                                         if(VALIDATORS_ENABLED && __aux64__ > 16383) {
-                                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].abs_speed[0].value' " << (__aux64__) << " exceeds max allowable (16383); message dropped.";
+                                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].abs_speed[0].value' " << (__aux64__) << " exceeds max allowable (16383); message dropped.";
                                                             return false;
                                                         }
                                                         
                                                         if(debug) {
-                                                            logger->print() << "|\033[38;5;94m000053\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].abs_speed[0].value) << " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].abs_speed[0]: " <<
+                                                            logger->print() << "|" << tools::brown("000053") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].abs_speed[0].value) << " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].abs_speed[0]: " <<
                                                                          ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].abs_speed[0].value << " (" << __aux64__ << ")";
                                                         }
                                                     }
@@ -1099,17 +1099,17 @@ namespace wind
                                                         
                                                         // ******************* MIN validator *******************
                                                         if(VALIDATORS_ENABLED && __aux64__ < -160) {
-                                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].longitudinal_acceleration[0].value' " << (__aux64__) << " is less than allowable (-160); message dropped.";
+                                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].longitudinal_acceleration[0].value' " << (__aux64__) << " is less than allowable (-160); message dropped.";
                                                             return false;
                                                         }
                                                         // ******************* MAX validator *******************
                                                         if(VALIDATORS_ENABLED && __aux64__ > 161) {
-                                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].longitudinal_acceleration[0].value' " << (__aux64__) << " exceeds max allowable (161); message dropped.";
+                                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].longitudinal_acceleration[0].value' " << (__aux64__) << " exceeds max allowable (161); message dropped.";
                                                             return false;
                                                         }
                                                         
                                                         if(debug) {
-                                                            logger->print() << "|\033[38;5;94m000054\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].longitudinal_acceleration[0].value) << " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].longitudinal_acceleration[0]: " <<
+                                                            logger->print() << "|" << tools::brown("000054") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].longitudinal_acceleration[0].value) << " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].longitudinal_acceleration[0]: " <<
                                                                          ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].nominal_trajectory.elements[b].longitudinal_acceleration[0].value << " (" << __aux64__ << ")";
                                                         }
                                                     }
@@ -1138,7 +1138,7 @@ namespace wind
                                     uint8_t* _ext_flag_30 = (uint8_t*) buffer++;  // Read ext flag from ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.
                                     
                                     if(debug) {
-                                        logger->print() << "|\033[38;5;94m000055\033[0m| Reading ext flag from ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.: " << int(*_ext_flag_30);
+                                        logger->print() << "|" << tools::brown("000055") << "| Reading ext flag from ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.: " << int(*_ext_flag_30);
                                     }
                                     
                                     int16_t* _tmp_53 = (int16_t*)buffer;
@@ -1149,17 +1149,17 @@ namespace wind
                                     int _if__tmp_53 = __aux64__;
                                     
                                     if(debug) {
-                                        logger->print() << "|\033[38;5;94m000056\033[0m| SequenceOf ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory. size: " << int(__aux64__);
+                                        logger->print() << "|" << tools::brown("000056") << "| SequenceOf ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory. size: " << int(__aux64__);
                                     }
                                     
                                     // ******************* MIN validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ < 1) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.value' " << (__aux64__) << " is less than allowable (1); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.value' " << (__aux64__) << " is less than allowable (1); message dropped.";
                                         return false;
                                     }
                                     // ******************* MAX validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ > 16) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.value' " << (__aux64__) << " exceeds max allowable (16); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.value' " << (__aux64__) << " exceeds max allowable (16); message dropped.";
                                         return false;
                                     }
                                     
@@ -1183,7 +1183,7 @@ namespace wind
                                             uint8_t* _ext_flag_31 = (uint8_t*) buffer++;  // Read ext flag from ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].
                                             
                                             if(debug) {
-                                                logger->print() << "|\033[38;5;94m000057\033[0m| Reading ext flag from ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].: " << int(*_ext_flag_31);
+                                                logger->print() << "|" << tools::brown("000057") << "| Reading ext flag from ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].: " << int(*_ext_flag_31);
                                             }
                                             
                                             if(*(buffer++)) { 
@@ -1191,28 +1191,28 @@ namespace wind
                                                 ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].horizontal_position_confidence.push_back(_tmp_54);
                                             
                                                 if(debug)
-                                                    logger->print() << "|\033[38;5;94m000058\033[0m| ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].horizontal_position_confidence " << tools::green("present");
+                                                    logger->print() << "|" << tools::brown("000058") << "| ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].horizontal_position_confidence " << tools::green("present");
                                             }
                                             if(*(buffer++)) { 
                                                 its_container_v4_etsi_its_cdd_msgs::msg::PathDeltaTimeChoice _tmp_55;
                                                 ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].path_delta_time.push_back(_tmp_55);
                                             
                                                 if(debug)
-                                                    logger->print() << "|\033[38;5;94m000059\033[0m| ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].path_delta_time " << tools::green("present");
+                                                    logger->print() << "|" << tools::brown("000059") << "| ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].path_delta_time " << tools::green("present");
                                             }
                                             if(*(buffer++)) { 
                                                 its_container_v4_etsi_its_cdd_msgs::msg::StandardLength9b _tmp_56;
                                                 ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].symmetric_area_offset.push_back(_tmp_56);
                                             
                                                 if(debug)
-                                                    logger->print() << "|\033[38;5;94m000060\033[0m| ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].symmetric_area_offset " << tools::green("present");
+                                                    logger->print() << "|" << tools::brown("000060") << "| ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].symmetric_area_offset " << tools::green("present");
                                             }
                                             if(*(buffer++)) { 
                                                 its_container_v4_etsi_its_cdd_msgs::msg::StandardLength9b _tmp_57;
                                                 ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].asymmetric_area_offset.push_back(_tmp_57);
                                             
                                                 if(debug)
-                                                    logger->print() << "|\033[38;5;94m000061\033[0m| ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].asymmetric_area_offset " << tools::green("present");
+                                                    logger->print() << "|" << tools::brown("000061") << "| ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].asymmetric_area_offset " << tools::green("present");
                                             }
                                             
                                             // Field name: delta_latitude
@@ -1227,17 +1227,17 @@ namespace wind
                                             
                                             // ******************* MIN validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ < -131071) {
-                                                logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].delta_latitude.value' " << (__aux64__) << " is less than allowable (-131071); message dropped.";
+                                                logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].delta_latitude.value' " << (__aux64__) << " is less than allowable (-131071); message dropped.";
                                                 return false;
                                             }
                                             // ******************* MAX validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ > 131072) {
-                                                logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].delta_latitude.value' " << (__aux64__) << " exceeds max allowable (131072); message dropped.";
+                                                logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].delta_latitude.value' " << (__aux64__) << " exceeds max allowable (131072); message dropped.";
                                                 return false;
                                             }
                                             
                                             if(debug) {
-                                                logger->print() << "|\033[38;5;94m000062\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].delta_latitude.value) << " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].delta_latitude: " <<
+                                                logger->print() << "|" << tools::brown("000062") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].delta_latitude.value) << " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].delta_latitude: " <<
                                                              ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].delta_latitude.value << " (" << __aux64__ << ")";
                                             }
                                             
@@ -1253,17 +1253,17 @@ namespace wind
                                             
                                             // ******************* MIN validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ < -131071) {
-                                                logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].delta_longitude.value' " << (__aux64__) << " is less than allowable (-131071); message dropped.";
+                                                logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].delta_longitude.value' " << (__aux64__) << " is less than allowable (-131071); message dropped.";
                                                 return false;
                                             }
                                             // ******************* MAX validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ > 131072) {
-                                                logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].delta_longitude.value' " << (__aux64__) << " exceeds max allowable (131072); message dropped.";
+                                                logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].delta_longitude.value' " << (__aux64__) << " exceeds max allowable (131072); message dropped.";
                                                 return false;
                                             }
                                             
                                             if(debug) {
-                                                logger->print() << "|\033[38;5;94m000063\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].delta_longitude.value) << " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].delta_longitude: " <<
+                                                logger->print() << "|" << tools::brown("000063") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].delta_longitude.value) << " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].delta_longitude: " <<
                                                              ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].delta_longitude.value << " (" << __aux64__ << ")";
                                             }
                                             
@@ -1285,17 +1285,17 @@ namespace wind
                                                     
                                                     // ******************* MIN validator *******************
                                                     if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].horizontal_position_confidence[0].semi_major_confidence.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].horizontal_position_confidence[0].semi_major_confidence.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                                         return false;
                                                     }
                                                     // ******************* MAX validator *******************
                                                     if(VALIDATORS_ENABLED && __aux64__ > 4095) {
-                                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].horizontal_position_confidence[0].semi_major_confidence.value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
+                                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].horizontal_position_confidence[0].semi_major_confidence.value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
                                                         return false;
                                                     }
                                                     
                                                     if(debug) {
-                                                        logger->print() << "|\033[38;5;94m000064\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].horizontal_position_confidence[0].semi_major_confidence.value) << " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].horizontal_position_confidence[0].semi_major_confidence: " <<
+                                                        logger->print() << "|" << tools::brown("000064") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].horizontal_position_confidence[0].semi_major_confidence.value) << " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].horizontal_position_confidence[0].semi_major_confidence: " <<
                                                                      ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].horizontal_position_confidence[0].semi_major_confidence.value << " (" << __aux64__ << ")";
                                                     }
                                                     
@@ -1310,17 +1310,17 @@ namespace wind
                                                     
                                                     // ******************* MIN validator *******************
                                                     if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].horizontal_position_confidence[0].semi_minor_confidence.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].horizontal_position_confidence[0].semi_minor_confidence.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                                         return false;
                                                     }
                                                     // ******************* MAX validator *******************
                                                     if(VALIDATORS_ENABLED && __aux64__ > 4095) {
-                                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].horizontal_position_confidence[0].semi_minor_confidence.value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
+                                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].horizontal_position_confidence[0].semi_minor_confidence.value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
                                                         return false;
                                                     }
                                                     
                                                     if(debug) {
-                                                        logger->print() << "|\033[38;5;94m000065\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].horizontal_position_confidence[0].semi_minor_confidence.value) << " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].horizontal_position_confidence[0].semi_minor_confidence: " <<
+                                                        logger->print() << "|" << tools::brown("000065") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].horizontal_position_confidence[0].semi_minor_confidence.value) << " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].horizontal_position_confidence[0].semi_minor_confidence: " <<
                                                                      ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].horizontal_position_confidence[0].semi_minor_confidence.value << " (" << __aux64__ << ")";
                                                     }
                                                     
@@ -1335,17 +1335,17 @@ namespace wind
                                                     
                                                     // ******************* MIN validator *******************
                                                     if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].horizontal_position_confidence[0].semi_major_orientation.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].horizontal_position_confidence[0].semi_major_orientation.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                                         return false;
                                                     }
                                                     // ******************* MAX validator *******************
                                                     if(VALIDATORS_ENABLED && __aux64__ > 3601) {
-                                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].horizontal_position_confidence[0].semi_major_orientation.value' " << (__aux64__) << " exceeds max allowable (3601); message dropped.";
+                                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].horizontal_position_confidence[0].semi_major_orientation.value' " << (__aux64__) << " exceeds max allowable (3601); message dropped.";
                                                         return false;
                                                     }
                                                     
                                                     if(debug) {
-                                                        logger->print() << "|\033[38;5;94m000066\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].horizontal_position_confidence[0].semi_major_orientation.value) << " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].horizontal_position_confidence[0].semi_major_orientation: " <<
+                                                        logger->print() << "|" << tools::brown("000066") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].horizontal_position_confidence[0].semi_major_orientation.value) << " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].horizontal_position_confidence[0].semi_major_orientation: " <<
                                                                      ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].horizontal_position_confidence[0].semi_major_orientation.value << " (" << __aux64__ << ")";
                                                     }
                                             }
@@ -1362,17 +1362,17 @@ namespace wind
                                             
                                             // ******************* MIN validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ < -12700) {
-                                                logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].delta_altitude.value' " << (__aux64__) << " is less than allowable (-12700); message dropped.";
+                                                logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].delta_altitude.value' " << (__aux64__) << " is less than allowable (-12700); message dropped.";
                                                 return false;
                                             }
                                             // ******************* MAX validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ > 12800) {
-                                                logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].delta_altitude.value' " << (__aux64__) << " exceeds max allowable (12800); message dropped.";
+                                                logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].delta_altitude.value' " << (__aux64__) << " exceeds max allowable (12800); message dropped.";
                                                 return false;
                                             }
                                             
                                             if(debug) {
-                                                logger->print() << "|\033[38;5;94m000067\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].delta_altitude.value) << " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].delta_altitude: " <<
+                                                logger->print() << "|" << tools::brown("000067") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].delta_altitude.value) << " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].delta_altitude: " <<
                                                              ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].delta_altitude.value << " (" << __aux64__ << ")";
                                             }
                                             
@@ -1385,18 +1385,18 @@ namespace wind
                                             ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].altitude_confidence.value = __aux64__;
                                             // ******************* MIN validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                                logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].altitude_confidence.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                                logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].altitude_confidence.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                                 return false;
                                             }
                                             // ******************* MAX validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ > 15) {
-                                                logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].altitude_confidence.value' " << (__aux64__) << " exceeds max allowable (15); message dropped.";
+                                                logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].altitude_confidence.value' " << (__aux64__) << " exceeds max allowable (15); message dropped.";
                                                 return false;
                                             }
                                             
                                             
                                             if(debug) {
-                                                logger->print() << "|\033[38;5;94m000068\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].altitude_confidence.value) << 
+                                                logger->print() << "|" << tools::brown("000068") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].altitude_confidence.value) << 
                                                              " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].altitude_confidence.value: " << static_cast<int>(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].altitude_confidence.value);
                                             }
                                             
@@ -1421,17 +1421,17 @@ namespace wind
                                                     
                                                     // ******************* MIN validator *******************
                                                     if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].path_delta_time[0].delta_time_high_precision[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].path_delta_time[0].delta_time_high_precision[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                                         return false;
                                                     }
                                                     // ******************* MAX validator *******************
                                                     if(VALIDATORS_ENABLED && __aux64__ > 127) {
-                                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].path_delta_time[0].delta_time_high_precision[0].value' " << (__aux64__) << " exceeds max allowable (127); message dropped.";
+                                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].path_delta_time[0].delta_time_high_precision[0].value' " << (__aux64__) << " exceeds max allowable (127); message dropped.";
                                                         return false;
                                                     }
                                                     
                                                     if(debug) {
-                                                        logger->print() << "|\033[38;5;94m000069\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].path_delta_time[0].delta_time_high_precision[0].value) << " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].path_delta_time[0].delta_time_high_precision[0]: " <<
+                                                        logger->print() << "|" << tools::brown("000069") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].path_delta_time[0].delta_time_high_precision[0].value) << " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].path_delta_time[0].delta_time_high_precision[0]: " <<
                                                                      ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].path_delta_time[0].delta_time_high_precision[0].value << " (" << __aux64__ << ")";
                                                     }
                                                 }
@@ -1450,17 +1450,17 @@ namespace wind
                                                     
                                                     // ******************* MIN validator *******************
                                                     if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].path_delta_time[0].delta_time_big_range[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].path_delta_time[0].delta_time_big_range[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                                         return false;
                                                     }
                                                     // ******************* MAX validator *******************
                                                     if(VALIDATORS_ENABLED && __aux64__ > 127) {
-                                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].path_delta_time[0].delta_time_big_range[0].value' " << (__aux64__) << " exceeds max allowable (127); message dropped.";
+                                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].path_delta_time[0].delta_time_big_range[0].value' " << (__aux64__) << " exceeds max allowable (127); message dropped.";
                                                         return false;
                                                     }
                                                     
                                                     if(debug) {
-                                                        logger->print() << "|\033[38;5;94m000070\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].path_delta_time[0].delta_time_big_range[0].value) << " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].path_delta_time[0].delta_time_big_range[0]: " <<
+                                                        logger->print() << "|" << tools::brown("000070") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].path_delta_time[0].delta_time_big_range[0].value) << " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].path_delta_time[0].delta_time_big_range[0]: " <<
                                                                      ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].path_delta_time[0].delta_time_big_range[0].value << " (" << __aux64__ << ")";
                                                     }
                                                 }
@@ -1483,17 +1483,17 @@ namespace wind
                                                 
                                                 // ******************* MIN validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].symmetric_area_offset[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].symmetric_area_offset[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                                     return false;
                                                 }
                                                 // ******************* MAX validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ > 511) {
-                                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].symmetric_area_offset[0].value' " << (__aux64__) << " exceeds max allowable (511); message dropped.";
+                                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].symmetric_area_offset[0].value' " << (__aux64__) << " exceeds max allowable (511); message dropped.";
                                                     return false;
                                                 }
                                                 
                                                 if(debug) {
-                                                    logger->print() << "|\033[38;5;94m000071\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].symmetric_area_offset[0].value) << " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].symmetric_area_offset[0]: " <<
+                                                    logger->print() << "|" << tools::brown("000071") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].symmetric_area_offset[0].value) << " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].symmetric_area_offset[0]: " <<
                                                                  ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].symmetric_area_offset[0].value << " (" << __aux64__ << ")";
                                                 }
                                             }
@@ -1510,17 +1510,17 @@ namespace wind
                                                 
                                                 // ******************* MIN validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].asymmetric_area_offset[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].asymmetric_area_offset[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                                     return false;
                                                 }
                                                 // ******************* MAX validator *******************
                                                 if(VALIDATORS_ENABLED && __aux64__ > 511) {
-                                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].asymmetric_area_offset[0].value' " << (__aux64__) << " exceeds max allowable (511); message dropped.";
+                                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].asymmetric_area_offset[0].value' " << (__aux64__) << " exceeds max allowable (511); message dropped.";
                                                     return false;
                                                 }
                                                 
                                                 if(debug) {
-                                                    logger->print() << "|\033[38;5;94m000072\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].asymmetric_area_offset[0].value) << " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].asymmetric_area_offset[0]: " <<
+                                                    logger->print() << "|" << tools::brown("000072") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].asymmetric_area_offset[0].value) << " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].asymmetric_area_offset[0]: " <<
                                                                  ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].asymmetric_area_offset[0].value << " (" << __aux64__ << ")";
                                                 }
                                             }
@@ -1529,7 +1529,7 @@ namespace wind
                                                 bool _array_3[*_tmp_71];
                                                 
                                                 if(debug)
-                                                    logger->print() << "|\033[38;5;94m000073\033[0m| Reading number of exts from ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].: " << static_cast<unsigned int>(*_tmp_71);
+                                                    logger->print() << "|" << tools::brown("000073") << "| Reading number of exts from ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].: " << static_cast<unsigned int>(*_tmp_71);
                                                 
                                                 // Extensions bytemap
                                                 for(int i = 0; i < *_tmp_71; i++)
@@ -1540,7 +1540,7 @@ namespace wind
                                                     buffer += 2;
                                                 
                                                     if(debug) 
-                                                        logger->print() << "|\033[38;5;94m000074\033[0m| Reading open type len from ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].: " << _tmp_72;
+                                                        logger->print() << "|" << tools::brown("000074") << "| Reading open type len from ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].: " << _tmp_72;
                                                 
                                                     // Optional fields bytemap
                                                     if(*(buffer++)) { 
@@ -1548,21 +1548,21 @@ namespace wind
                                                         ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].heading_value.push_back(_tmp_73);
                                                     
                                                         if(debug)
-                                                            logger->print() << "|\033[38;5;94m000075\033[0m| ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].heading_value " << tools::green("present");
+                                                            logger->print() << "|" << tools::brown("000075") << "| ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].heading_value " << tools::green("present");
                                                     }
                                                     if(*(buffer++)) { 
                                                         its_container_v4_etsi_its_cdd_msgs::msg::SpeedValue _tmp_74;
                                                         ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].abs_speed.push_back(_tmp_74);
                                                     
                                                         if(debug)
-                                                            logger->print() << "|\033[38;5;94m000076\033[0m| ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].abs_speed " << tools::green("present");
+                                                            logger->print() << "|" << tools::brown("000076") << "| ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].abs_speed " << tools::green("present");
                                                     }
                                                     if(*(buffer++)) { 
                                                         its_container_v4_etsi_its_cdd_msgs::msg::AccelerationValue _tmp_75;
                                                         ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].longitudinal_acceleration.push_back(_tmp_75);
                                                     
                                                         if(debug)
-                                                            logger->print() << "|\033[38;5;94m000077\033[0m| ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].longitudinal_acceleration " << tools::green("present");
+                                                            logger->print() << "|" << tools::brown("000077") << "| ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].longitudinal_acceleration " << tools::green("present");
                                                     }
                                                     
                                                     if(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].heading_value.size() != 0) {
@@ -1577,17 +1577,17 @@ namespace wind
                                                         
                                                         // ******************* MIN validator *******************
                                                         if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].heading_value[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].heading_value[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                                             return false;
                                                         }
                                                         // ******************* MAX validator *******************
                                                         if(VALIDATORS_ENABLED && __aux64__ > 3601) {
-                                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].heading_value[0].value' " << (__aux64__) << " exceeds max allowable (3601); message dropped.";
+                                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].heading_value[0].value' " << (__aux64__) << " exceeds max allowable (3601); message dropped.";
                                                             return false;
                                                         }
                                                         
                                                         if(debug) {
-                                                            logger->print() << "|\033[38;5;94m000078\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].heading_value[0].value) << " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].heading_value[0]: " <<
+                                                            logger->print() << "|" << tools::brown("000078") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].heading_value[0].value) << " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].heading_value[0]: " <<
                                                                          ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].heading_value[0].value << " (" << __aux64__ << ")";
                                                         }
                                                     }
@@ -1604,17 +1604,17 @@ namespace wind
                                                         
                                                         // ******************* MIN validator *******************
                                                         if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].abs_speed[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].abs_speed[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                                             return false;
                                                         }
                                                         // ******************* MAX validator *******************
                                                         if(VALIDATORS_ENABLED && __aux64__ > 16383) {
-                                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].abs_speed[0].value' " << (__aux64__) << " exceeds max allowable (16383); message dropped.";
+                                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].abs_speed[0].value' " << (__aux64__) << " exceeds max allowable (16383); message dropped.";
                                                             return false;
                                                         }
                                                         
                                                         if(debug) {
-                                                            logger->print() << "|\033[38;5;94m000079\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].abs_speed[0].value) << " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].abs_speed[0]: " <<
+                                                            logger->print() << "|" << tools::brown("000079") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].abs_speed[0].value) << " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].abs_speed[0]: " <<
                                                                          ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].abs_speed[0].value << " (" << __aux64__ << ")";
                                                         }
                                                     }
@@ -1632,17 +1632,17 @@ namespace wind
                                                         
                                                         // ******************* MIN validator *******************
                                                         if(VALIDATORS_ENABLED && __aux64__ < -160) {
-                                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].longitudinal_acceleration[0].value' " << (__aux64__) << " is less than allowable (-160); message dropped.";
+                                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].longitudinal_acceleration[0].value' " << (__aux64__) << " is less than allowable (-160); message dropped.";
                                                             return false;
                                                         }
                                                         // ******************* MAX validator *******************
                                                         if(VALIDATORS_ENABLED && __aux64__ > 161) {
-                                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].longitudinal_acceleration[0].value' " << (__aux64__) << " exceeds max allowable (161); message dropped.";
+                                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].longitudinal_acceleration[0].value' " << (__aux64__) << " exceeds max allowable (161); message dropped.";
                                                             return false;
                                                         }
                                                         
                                                         if(debug) {
-                                                            logger->print() << "|\033[38;5;94m000080\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].longitudinal_acceleration[0].value) << " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].longitudinal_acceleration[0]: " <<
+                                                            logger->print() << "|" << tools::brown("000080") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].longitudinal_acceleration[0].value) << " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].longitudinal_acceleration[0]: " <<
                                                                          ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.trajectory_advice[0].mrm_trajectory.elements[c].longitudinal_acceleration[0].value << " (" << __aux64__ << ")";
                                                         }
                                                     }
@@ -1681,18 +1681,18 @@ namespace wind
                                     ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.control_advice[0].drive_direction.value = __aux64__;
                                     // ******************* MIN validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.control_advice[0].drive_direction.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.control_advice[0].drive_direction.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                         return false;
                                     }
                                     // ******************* MAX validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ > 2) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.control_advice[0].drive_direction.value' " << (__aux64__) << " exceeds max allowable (2); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.control_advice[0].drive_direction.value' " << (__aux64__) << " exceeds max allowable (2); message dropped.";
                                         return false;
                                     }
                                     
                                     
                                     if(debug) {
-                                        logger->print() << "|\033[38;5;94m000081\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.control_advice[0].drive_direction.value) << 
+                                        logger->print() << "|" << tools::brown("000081") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.control_advice[0].drive_direction.value) << 
                                                      " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.control_advice[0].drive_direction.value: " << static_cast<int>(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.control_advice[0].drive_direction.value);
                                     }
                                     
@@ -1708,17 +1708,17 @@ namespace wind
                                     
                                     // ******************* MIN validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ < -160) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.control_advice[0].acceleration.value' " << (__aux64__) << " is less than allowable (-160); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.control_advice[0].acceleration.value' " << (__aux64__) << " is less than allowable (-160); message dropped.";
                                         return false;
                                     }
                                     // ******************* MAX validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ > 161) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.control_advice[0].acceleration.value' " << (__aux64__) << " exceeds max allowable (161); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.control_advice[0].acceleration.value' " << (__aux64__) << " exceeds max allowable (161); message dropped.";
                                         return false;
                                     }
                                     
                                     if(debug) {
-                                        logger->print() << "|\033[38;5;94m000082\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.control_advice[0].acceleration.value) << " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.control_advice[0].acceleration: " <<
+                                        logger->print() << "|" << tools::brown("000082") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.control_advice[0].acceleration.value) << " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.control_advice[0].acceleration: " <<
                                                      ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.control_advice[0].acceleration.value << " (" << __aux64__ << ")";
                                     }
                                     
@@ -1731,18 +1731,18 @@ namespace wind
                                     ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.control_advice[0].steering_angle.value = __aux64__;
                                     
                                     if(debug) {
-                                        logger->print() << "|\033[38;5;94m000083\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.control_advice[0].steering_angle.value) << 
+                                        logger->print() << "|" << tools::brown("000083") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.control_advice[0].steering_angle.value) << 
                                                      " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.control_advice[0].steering_angle.value: " << ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.control_advice[0].steering_angle.value;
                                     }
                                     
                                     // ******************* MIN validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ < -160) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.control_advice[0].steering_angle.value' " << (__aux64__) << " is less than allowable (-160); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.control_advice[0].steering_angle.value' " << (__aux64__) << " is less than allowable (-160); message dropped.";
                                         return false;
                                     }
                                     // ******************* MAX validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ > 160) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.control_advice[0].steering_angle.value' " << (__aux64__) << " exceeds max allowable (160); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].movement_advice.control_advice[0].steering_angle.value' " << (__aux64__) << " exceeds max allowable (160); message dropped.";
                                         return false;
                                     }
                             }
@@ -1756,7 +1756,7 @@ namespace wind
                             buffer += 1;
                             
                             if(debug)
-                                logger->print() << "|\033[38;5;94m000084\033[0m| epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].exterior_lights_advice[0].value: " << __aux64__;
+                                logger->print() << "|" << tools::brown("000084") << "| epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].exterior_lights_advice[0].value: " << __aux64__;
                             
                             int _if__tmp_83 = __aux64__;
                             for(int d = 0; d < _if__tmp_83; d++) {
@@ -1768,12 +1768,12 @@ namespace wind
                             
                             // ******************* MIN validator *******************
                             if(VALIDATORS_ENABLED && __aux64__ < 8) {
-                                logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].exterior_lights_advice[0].value' " << (__aux64__) << " is less than allowable (8); message dropped.";
+                                logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].exterior_lights_advice[0].value' " << (__aux64__) << " is less than allowable (8); message dropped.";
                                 return false;
                             }
                             // ******************* MAX validator *******************
                             if(VALIDATORS_ENABLED && __aux64__ > 8) {
-                                logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].exterior_lights_advice[0].value' " << (__aux64__) << " exceeds max allowable (8); message dropped.";
+                                logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].exterior_lights_advice[0].value' " << (__aux64__) << " exceeds max allowable (8); message dropped.";
                                 return false;
                             }
                         }
@@ -1788,18 +1788,18 @@ namespace wind
                             ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].horn_advice[0].value = __aux64__;
                             // ******************* MIN validator *******************
                             if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].horn_advice[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].horn_advice[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                 return false;
                             }
                             // ******************* MAX validator *******************
                             if(VALIDATORS_ENABLED && __aux64__ > 3) {
-                                logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].horn_advice[0].value' " << (__aux64__) << " exceeds max allowable (3); message dropped.";
+                                logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].horn_advice[0].value' " << (__aux64__) << " exceeds max allowable (3); message dropped.";
                                 return false;
                             }
                             
                             
                             if(debug) {
-                                logger->print() << "|\033[38;5;94m000085\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].horn_advice[0].value) << 
+                                logger->print() << "|" << tools::brown("000085") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].horn_advice[0].value) << 
                                              " epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].horn_advice[0].value: " << static_cast<int>(ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].horn_advice[0].value);
                             }
                         }
@@ -1808,7 +1808,7 @@ namespace wind
                             bool _array_4[*_tmp_85];
                             
                             if(debug)
-                                logger->print() << "|\033[38;5;94m000086\033[0m| Reading number of exts from ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].: " << static_cast<unsigned int>(*_tmp_85);
+                                logger->print() << "|" << tools::brown("000086") << "| Reading number of exts from ros->epu_to_vehicle.epu_high_frequency_container.behaviours[0].elements[a].: " << static_cast<unsigned int>(*_tmp_85);
                             
                             // Extensions bytemap
                             for(int i = 0; i < *_tmp_85; i++)
@@ -1838,7 +1838,7 @@ namespace wind
                 uint8_t* _ext_flag_50 = (uint8_t*) buffer++;  // Read ext flag from ros->epu_to_vehicle.epu_high_frequency_container.safety[0].
                 
                 if(debug) {
-                    logger->print() << "|\033[38;5;94m000087\033[0m| Reading ext flag from ros->epu_to_vehicle.epu_high_frequency_container.safety[0].: " << int(*_ext_flag_50);
+                    logger->print() << "|" << tools::brown("000087") << "| Reading ext flag from ros->epu_to_vehicle.epu_high_frequency_container.safety[0].: " << int(*_ext_flag_50);
                 }
                 
                 int16_t* _tmp_87 = (int16_t*)buffer;
@@ -1849,17 +1849,17 @@ namespace wind
                 int _if__tmp_87 = __aux64__;
                 
                 if(debug) {
-                    logger->print() << "|\033[38;5;94m000088\033[0m| SequenceOf ros->epu_to_vehicle.epu_high_frequency_container.safety[0]. size: " << int(__aux64__);
+                    logger->print() << "|" << tools::brown("000088") << "| SequenceOf ros->epu_to_vehicle.epu_high_frequency_container.safety[0]. size: " << int(__aux64__);
                 }
                 
                 // ******************* MIN validator *******************
                 if(VALIDATORS_ENABLED && __aux64__ < 1) {
-                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].value' " << (__aux64__) << " is less than allowable (1); message dropped.";
+                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].value' " << (__aux64__) << " is less than allowable (1); message dropped.";
                     return false;
                 }
                 // ******************* MAX validator *******************
                 if(VALIDATORS_ENABLED && __aux64__ > 10) {
-                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].value' " << (__aux64__) << " exceeds max allowable (10); message dropped.";
+                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].value' " << (__aux64__) << " exceeds max allowable (10); message dropped.";
                     return false;
                 }
                 
@@ -1878,14 +1878,14 @@ namespace wind
                             ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data.push_back(_tmp_88);
                         
                             if(debug)
-                                logger->print() << "|\033[38;5;94m000089\033[0m| ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data " << tools::green("present");
+                                logger->print() << "|" << tools::brown("000089") << "| ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data " << tools::green("present");
                         }
                         if(*(buffer++)) { 
                             mad_e2v_madurban_msgs::msg::RssDynamics _tmp_89;
                             ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics.push_back(_tmp_89);
                         
                             if(debug)
-                                logger->print() << "|\033[38;5;94m000090\033[0m| ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics " << tools::green("present");
+                                logger->print() << "|" << tools::brown("000090") << "| ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics " << tools::green("present");
                         }
                         
                         // Field name: subject_station_id
@@ -1896,18 +1896,18 @@ namespace wind
                         ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].subject_station_id.value = __aux64__;
                         
                         if(debug) {
-                            logger->print() << "|\033[38;5;94m000091\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].subject_station_id.value) << 
+                            logger->print() << "|" << tools::brown("000091") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].subject_station_id.value) << 
                                          " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].subject_station_id.value: " << ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].subject_station_id.value;
                         }
                         
                         // ******************* MIN validator *******************
                         if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].subject_station_id.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].subject_station_id.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                             return false;
                         }
                         // ******************* MAX validator *******************
                         if(VALIDATORS_ENABLED && __aux64__ > 4294967295) {
-                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].subject_station_id.value' " << (__aux64__) << " exceeds max allowable (4294967295); message dropped.";
+                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].subject_station_id.value' " << (__aux64__) << " exceeds max allowable (4294967295); message dropped.";
                             return false;
                         }
                         
@@ -1931,7 +1931,7 @@ namespace wind
                                     ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].steering_angle.push_back(_tmp_91);
                                 
                                     if(debug)
-                                        logger->print() << "|\033[38;5;94m000092\033[0m| ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].steering_angle " << tools::green("present");
+                                        logger->print() << "|" << tools::brown("000092") << "| ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].steering_angle " << tools::green("present");
                                 }
                                 
                                 // Field name: id
@@ -1942,18 +1942,18 @@ namespace wind
                                 ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].id.value = __aux64__;
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000093\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].id.value) << 
+                                    logger->print() << "|" << tools::brown("000093") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].id.value) << 
                                                  " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].id.value: " << ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].id.value;
                                 }
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].id.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].id.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 65535) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].id.value' " << (__aux64__) << " exceeds max allowable (65535); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].id.value' " << (__aux64__) << " exceeds max allowable (65535); message dropped.";
                                     return false;
                                 }
                                 
@@ -1965,18 +1965,18 @@ namespace wind
                                 ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].type.value = __aux64__;
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000094\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].type.value) << 
+                                    logger->print() << "|" << tools::brown("000094") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].type.value) << 
                                                  " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].type.value: " << static_cast<int>(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].type.value);
                                 }
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].type.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].type.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 255) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].type.value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].type.value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
                                     return false;
                                 }
                                 
@@ -1998,17 +1998,17 @@ namespace wind
                                     
                                     // ******************* MIN validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ < -131071) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].delta_position.delta_latitude.value' " << (__aux64__) << " is less than allowable (-131071); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].delta_position.delta_latitude.value' " << (__aux64__) << " is less than allowable (-131071); message dropped.";
                                         return false;
                                     }
                                     // ******************* MAX validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ > 131072) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].delta_position.delta_latitude.value' " << (__aux64__) << " exceeds max allowable (131072); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].delta_position.delta_latitude.value' " << (__aux64__) << " exceeds max allowable (131072); message dropped.";
                                         return false;
                                     }
                                     
                                     if(debug) {
-                                        logger->print() << "|\033[38;5;94m000095\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].delta_position.delta_latitude.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].delta_position.delta_latitude: " <<
+                                        logger->print() << "|" << tools::brown("000095") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].delta_position.delta_latitude.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].delta_position.delta_latitude: " <<
                                                      ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].delta_position.delta_latitude.value << " (" << __aux64__ << ")";
                                     }
                                     
@@ -2024,17 +2024,17 @@ namespace wind
                                     
                                     // ******************* MIN validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ < -131071) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].delta_position.delta_longitude.value' " << (__aux64__) << " is less than allowable (-131071); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].delta_position.delta_longitude.value' " << (__aux64__) << " is less than allowable (-131071); message dropped.";
                                         return false;
                                     }
                                     // ******************* MAX validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ > 131072) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].delta_position.delta_longitude.value' " << (__aux64__) << " exceeds max allowable (131072); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].delta_position.delta_longitude.value' " << (__aux64__) << " exceeds max allowable (131072); message dropped.";
                                         return false;
                                     }
                                     
                                     if(debug) {
-                                        logger->print() << "|\033[38;5;94m000096\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].delta_position.delta_longitude.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].delta_position.delta_longitude: " <<
+                                        logger->print() << "|" << tools::brown("000096") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].delta_position.delta_longitude.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].delta_position.delta_longitude: " <<
                                                      ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].delta_position.delta_longitude.value << " (" << __aux64__ << ")";
                                     }
                                     
@@ -2050,17 +2050,17 @@ namespace wind
                                     
                                     // ******************* MIN validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ < -12700) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].delta_position.delta_altitude.value' " << (__aux64__) << " is less than allowable (-12700); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].delta_position.delta_altitude.value' " << (__aux64__) << " is less than allowable (-12700); message dropped.";
                                         return false;
                                     }
                                     // ******************* MAX validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ > 12800) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].delta_position.delta_altitude.value' " << (__aux64__) << " exceeds max allowable (12800); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].delta_position.delta_altitude.value' " << (__aux64__) << " exceeds max allowable (12800); message dropped.";
                                         return false;
                                     }
                                     
                                     if(debug) {
-                                        logger->print() << "|\033[38;5;94m000097\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].delta_position.delta_altitude.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].delta_position.delta_altitude: " <<
+                                        logger->print() << "|" << tools::brown("000097") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].delta_position.delta_altitude.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].delta_position.delta_altitude: " <<
                                                      ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].delta_position.delta_altitude.value << " (" << __aux64__ << ")";
                                     }
                                 
@@ -2075,17 +2075,17 @@ namespace wind
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].heading.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].heading.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 3601) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].heading.value' " << (__aux64__) << " exceeds max allowable (3601); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].heading.value' " << (__aux64__) << " exceeds max allowable (3601); message dropped.";
                                     return false;
                                 }
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000098\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].heading.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].heading: " <<
+                                    logger->print() << "|" << tools::brown("000098") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].heading.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].heading: " <<
                                                  ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].heading.value << " (" << __aux64__ << ")";
                                 }
                                 
@@ -2100,17 +2100,17 @@ namespace wind
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].semi_major_position_confidence.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].semi_major_position_confidence.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 4095) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].semi_major_position_confidence.value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].semi_major_position_confidence.value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
                                     return false;
                                 }
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000099\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].semi_major_position_confidence.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].semi_major_position_confidence: " <<
+                                    logger->print() << "|" << tools::brown("000099") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].semi_major_position_confidence.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].semi_major_position_confidence: " <<
                                                  ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].semi_major_position_confidence.value << " (" << __aux64__ << ")";
                                 }
                                 
@@ -2125,17 +2125,17 @@ namespace wind
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].semi_minor_position_confidence.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].semi_minor_position_confidence.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 4095) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].semi_minor_position_confidence.value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].semi_minor_position_confidence.value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
                                     return false;
                                 }
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000100\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].semi_minor_position_confidence.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].semi_minor_position_confidence: " <<
+                                    logger->print() << "|" << tools::brown("000100") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].semi_minor_position_confidence.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].semi_minor_position_confidence: " <<
                                                  ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].semi_minor_position_confidence.value << " (" << __aux64__ << ")";
                                 }
                                 
@@ -2151,17 +2151,17 @@ namespace wind
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 1) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].dimension_length.value' " << (__aux64__) << " is less than allowable (1); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].dimension_length.value' " << (__aux64__) << " is less than allowable (1); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 1023) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].dimension_length.value' " << (__aux64__) << " exceeds max allowable (1023); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].dimension_length.value' " << (__aux64__) << " exceeds max allowable (1023); message dropped.";
                                     return false;
                                 }
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000101\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].dimension_length.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].dimension_length: " <<
+                                    logger->print() << "|" << tools::brown("000101") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].dimension_length.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].dimension_length: " <<
                                                  ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].dimension_length.value << " (" << __aux64__ << ")";
                                 }
                                 
@@ -2177,17 +2177,17 @@ namespace wind
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 1) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].dimension_width.value' " << (__aux64__) << " is less than allowable (1); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].dimension_width.value' " << (__aux64__) << " is less than allowable (1); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 62) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].dimension_width.value' " << (__aux64__) << " exceeds max allowable (62); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].dimension_width.value' " << (__aux64__) << " exceeds max allowable (62); message dropped.";
                                     return false;
                                 }
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000102\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].dimension_width.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].dimension_width: " <<
+                                    logger->print() << "|" << tools::brown("000102") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].dimension_width.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].dimension_width: " <<
                                                  ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].dimension_width.value << " (" << __aux64__ << ")";
                                 }
                                 
@@ -2203,17 +2203,17 @@ namespace wind
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 1) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].dimension_height.value' " << (__aux64__) << " is less than allowable (1); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].dimension_height.value' " << (__aux64__) << " is less than allowable (1); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 62) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].dimension_height.value' " << (__aux64__) << " exceeds max allowable (62); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].dimension_height.value' " << (__aux64__) << " exceeds max allowable (62); message dropped.";
                                     return false;
                                 }
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000103\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].dimension_height.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].dimension_height: " <<
+                                    logger->print() << "|" << tools::brown("000103") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].dimension_height.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].dimension_height: " <<
                                                  ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].dimension_height.value << " (" << __aux64__ << ")";
                                 }
                                 
@@ -2234,17 +2234,17 @@ namespace wind
                                     
                                     // ******************* MIN validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ < -16383) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].speed_range.minimum.value' " << (__aux64__) << " is less than allowable (-16383); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].speed_range.minimum.value' " << (__aux64__) << " is less than allowable (-16383); message dropped.";
                                         return false;
                                     }
                                     // ******************* MAX validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ > 16383) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].speed_range.minimum.value' " << (__aux64__) << " exceeds max allowable (16383); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].speed_range.minimum.value' " << (__aux64__) << " exceeds max allowable (16383); message dropped.";
                                         return false;
                                     }
                                     
                                     if(debug) {
-                                        logger->print() << "|\033[38;5;94m000104\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].speed_range.minimum.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].speed_range.minimum: " <<
+                                        logger->print() << "|" << tools::brown("000104") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].speed_range.minimum.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].speed_range.minimum: " <<
                                                      ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].speed_range.minimum.value << " (" << __aux64__ << ")";
                                     }
                                     
@@ -2260,17 +2260,17 @@ namespace wind
                                     
                                     // ******************* MIN validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ < -16383) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].speed_range.maximum.value' " << (__aux64__) << " is less than allowable (-16383); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].speed_range.maximum.value' " << (__aux64__) << " is less than allowable (-16383); message dropped.";
                                         return false;
                                     }
                                     // ******************* MAX validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ > 16383) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].speed_range.maximum.value' " << (__aux64__) << " exceeds max allowable (16383); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].speed_range.maximum.value' " << (__aux64__) << " exceeds max allowable (16383); message dropped.";
                                         return false;
                                     }
                                     
                                     if(debug) {
-                                        logger->print() << "|\033[38;5;94m000105\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].speed_range.maximum.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].speed_range.maximum: " <<
+                                        logger->print() << "|" << tools::brown("000105") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].speed_range.maximum.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].speed_range.maximum: " <<
                                                      ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].speed_range.maximum.value << " (" << __aux64__ << ")";
                                     }
                                 
@@ -2286,17 +2286,17 @@ namespace wind
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < -32766) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].yaw_rate.value' " << (__aux64__) << " is less than allowable (-32766); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].yaw_rate.value' " << (__aux64__) << " is less than allowable (-32766); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 32767) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].yaw_rate.value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].yaw_rate.value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
                                     return false;
                                 }
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000106\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].yaw_rate.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].yaw_rate: " <<
+                                    logger->print() << "|" << tools::brown("000106") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].yaw_rate.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].yaw_rate: " <<
                                                  ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].yaw_rate.value << " (" << __aux64__ << ")";
                                 }
                                 
@@ -2310,18 +2310,18 @@ namespace wind
                                     ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].steering_angle[0].value = __aux64__;
                                     
                                     if(debug) {
-                                        logger->print() << "|\033[38;5;94m000107\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].steering_angle[0].value) << 
+                                        logger->print() << "|" << tools::brown("000107") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].steering_angle[0].value) << 
                                                      " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].steering_angle[0].value: " << ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].steering_angle[0].value;
                                     }
                                     
                                     // ******************* MIN validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ < -160) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].steering_angle[0].value' " << (__aux64__) << " is less than allowable (-160); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].steering_angle[0].value' " << (__aux64__) << " is less than allowable (-160); message dropped.";
                                         return false;
                                     }
                                     // ******************* MAX validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ > 160) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].steering_angle[0].value' " << (__aux64__) << " exceeds max allowable (160); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].object_data[0].steering_angle[0].value' " << (__aux64__) << " exceeds max allowable (160); message dropped.";
                                         return false;
                                     }
                                 }
@@ -2357,17 +2357,17 @@ namespace wind
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < -160) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lon_accel_max.value' " << (__aux64__) << " is less than allowable (-160); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lon_accel_max.value' " << (__aux64__) << " is less than allowable (-160); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 161) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lon_accel_max.value' " << (__aux64__) << " exceeds max allowable (161); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lon_accel_max.value' " << (__aux64__) << " exceeds max allowable (161); message dropped.";
                                     return false;
                                 }
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000108\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lon_accel_max.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lon_accel_max: " <<
+                                    logger->print() << "|" << tools::brown("000108") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lon_accel_max.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lon_accel_max: " <<
                                                  ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lon_accel_max.value << " (" << __aux64__ << ")";
                                 }
                                 
@@ -2383,17 +2383,17 @@ namespace wind
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < -160) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lon_brake_max.value' " << (__aux64__) << " is less than allowable (-160); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lon_brake_max.value' " << (__aux64__) << " is less than allowable (-160); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 161) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lon_brake_max.value' " << (__aux64__) << " exceeds max allowable (161); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lon_brake_max.value' " << (__aux64__) << " exceeds max allowable (161); message dropped.";
                                     return false;
                                 }
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000109\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lon_brake_max.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lon_brake_max: " <<
+                                    logger->print() << "|" << tools::brown("000109") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lon_brake_max.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lon_brake_max: " <<
                                                  ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lon_brake_max.value << " (" << __aux64__ << ")";
                                 }
                                 
@@ -2409,17 +2409,17 @@ namespace wind
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < -160) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lon_brake_min.value' " << (__aux64__) << " is less than allowable (-160); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lon_brake_min.value' " << (__aux64__) << " is less than allowable (-160); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 161) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lon_brake_min.value' " << (__aux64__) << " exceeds max allowable (161); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lon_brake_min.value' " << (__aux64__) << " exceeds max allowable (161); message dropped.";
                                     return false;
                                 }
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000110\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lon_brake_min.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lon_brake_min: " <<
+                                    logger->print() << "|" << tools::brown("000110") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lon_brake_min.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lon_brake_min: " <<
                                                  ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lon_brake_min.value << " (" << __aux64__ << ")";
                                 }
                                 
@@ -2435,17 +2435,17 @@ namespace wind
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < -160) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lon_brake_min_correct.value' " << (__aux64__) << " is less than allowable (-160); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lon_brake_min_correct.value' " << (__aux64__) << " is less than allowable (-160); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 161) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lon_brake_min_correct.value' " << (__aux64__) << " exceeds max allowable (161); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lon_brake_min_correct.value' " << (__aux64__) << " exceeds max allowable (161); message dropped.";
                                     return false;
                                 }
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000111\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lon_brake_min_correct.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lon_brake_min_correct: " <<
+                                    logger->print() << "|" << tools::brown("000111") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lon_brake_min_correct.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lon_brake_min_correct: " <<
                                                  ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lon_brake_min_correct.value << " (" << __aux64__ << ")";
                                 }
                                 
@@ -2461,17 +2461,17 @@ namespace wind
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < -160) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lat_accel_max.value' " << (__aux64__) << " is less than allowable (-160); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lat_accel_max.value' " << (__aux64__) << " is less than allowable (-160); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 161) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lat_accel_max.value' " << (__aux64__) << " exceeds max allowable (161); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lat_accel_max.value' " << (__aux64__) << " exceeds max allowable (161); message dropped.";
                                     return false;
                                 }
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000112\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lat_accel_max.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lat_accel_max: " <<
+                                    logger->print() << "|" << tools::brown("000112") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lat_accel_max.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lat_accel_max: " <<
                                                  ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lat_accel_max.value << " (" << __aux64__ << ")";
                                 }
                                 
@@ -2487,17 +2487,17 @@ namespace wind
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < -160) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lat_brake_min.value' " << (__aux64__) << " is less than allowable (-160); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lat_brake_min.value' " << (__aux64__) << " is less than allowable (-160); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 161) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lat_brake_min.value' " << (__aux64__) << " exceeds max allowable (161); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lat_brake_min.value' " << (__aux64__) << " exceeds max allowable (161); message dropped.";
                                     return false;
                                 }
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000113\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lat_brake_min.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lat_brake_min: " <<
+                                    logger->print() << "|" << tools::brown("000113") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lat_brake_min.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lat_brake_min: " <<
                                                  ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lat_brake_min.value << " (" << __aux64__ << ")";
                                 }
                                 
@@ -2509,18 +2509,18 @@ namespace wind
                                 ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lateral_fluctuation_margin.value = __aux64__;
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000114\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lateral_fluctuation_margin.value) << 
+                                    logger->print() << "|" << tools::brown("000114") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lateral_fluctuation_margin.value) << 
                                                  " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lateral_fluctuation_margin.value: " << static_cast<int>(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lateral_fluctuation_margin.value);
                                 }
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lateral_fluctuation_margin.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lateral_fluctuation_margin.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 15) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lateral_fluctuation_margin.value' " << (__aux64__) << " exceeds max allowable (15); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].lateral_fluctuation_margin.value' " << (__aux64__) << " exceeds max allowable (15); message dropped.";
                                     return false;
                                 }
                                 
@@ -2535,17 +2535,17 @@ namespace wind
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].response_time.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].response_time.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 127) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].response_time.value' " << (__aux64__) << " exceeds max allowable (127); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].response_time.value' " << (__aux64__) << " exceeds max allowable (127); message dropped.";
                                     return false;
                                 }
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000115\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].response_time.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].response_time: " <<
+                                    logger->print() << "|" << tools::brown("000115") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].response_time.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].response_time: " <<
                                                  ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].response_time.value << " (" << __aux64__ << ")";
                                 }
                                 
@@ -2560,17 +2560,17 @@ namespace wind
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].max_speed_on_acceleration.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].max_speed_on_acceleration.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 16383) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].max_speed_on_acceleration.value' " << (__aux64__) << " exceeds max allowable (16383); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].max_speed_on_acceleration.value' " << (__aux64__) << " exceeds max allowable (16383); message dropped.";
                                     return false;
                                 }
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000116\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].max_speed_on_acceleration.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].max_speed_on_acceleration: " <<
+                                    logger->print() << "|" << tools::brown("000116") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].max_speed_on_acceleration.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].max_speed_on_acceleration: " <<
                                                  ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].max_speed_on_acceleration.value << " (" << __aux64__ << ")";
                                 }
                                 
@@ -2585,17 +2585,17 @@ namespace wind
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].min_longitudinal_safety_distance.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].min_longitudinal_safety_distance.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 255) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].min_longitudinal_safety_distance.value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].min_longitudinal_safety_distance.value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
                                     return false;
                                 }
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000117\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].min_longitudinal_safety_distance.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].min_longitudinal_safety_distance: " <<
+                                    logger->print() << "|" << tools::brown("000117") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].min_longitudinal_safety_distance.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].min_longitudinal_safety_distance: " <<
                                                  ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].min_longitudinal_safety_distance.value << " (" << __aux64__ << ")";
                                 }
                                 
@@ -2610,17 +2610,17 @@ namespace wind
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].unstructured_pedestrian_turning_radius.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].unstructured_pedestrian_turning_radius.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 255) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].unstructured_pedestrian_turning_radius.value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].unstructured_pedestrian_turning_radius.value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
                                     return false;
                                 }
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000118\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].unstructured_pedestrian_turning_radius.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].unstructured_pedestrian_turning_radius: " <<
+                                    logger->print() << "|" << tools::brown("000118") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].unstructured_pedestrian_turning_radius.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].unstructured_pedestrian_turning_radius: " <<
                                                  ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].unstructured_pedestrian_turning_radius.value << " (" << __aux64__ << ")";
                                 }
                                 
@@ -2635,17 +2635,17 @@ namespace wind
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].unstructured_vehicle_min_radius.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].unstructured_vehicle_min_radius.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 255) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].unstructured_vehicle_min_radius.value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].unstructured_vehicle_min_radius.value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
                                     return false;
                                 }
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000119\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].unstructured_vehicle_min_radius.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].unstructured_vehicle_min_radius: " <<
+                                    logger->print() << "|" << tools::brown("000119") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].unstructured_vehicle_min_radius.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].unstructured_vehicle_min_radius: " <<
                                                  ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].unstructured_vehicle_min_radius.value << " (" << __aux64__ << ")";
                                 }
                                 
@@ -2658,18 +2658,18 @@ namespace wind
                                 ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].unstructured_vehicle_yaw_rate_change.value = __aux64__;
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000120\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].unstructured_vehicle_yaw_rate_change.value) << 
+                                    logger->print() << "|" << tools::brown("000120") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].unstructured_vehicle_yaw_rate_change.value) << 
                                                  " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].unstructured_vehicle_yaw_rate_change.value: " << ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].unstructured_vehicle_yaw_rate_change.value;
                                 }
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < -2040) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].unstructured_vehicle_yaw_rate_change.value' " << (__aux64__) << " is less than allowable (-2040); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].unstructured_vehicle_yaw_rate_change.value' " << (__aux64__) << " is less than allowable (-2040); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 2041) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].unstructured_vehicle_yaw_rate_change.value' " << (__aux64__) << " exceeds max allowable (2041); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].unstructured_vehicle_yaw_rate_change.value' " << (__aux64__) << " exceeds max allowable (2041); message dropped.";
                                     return false;
                                 }
                                 
@@ -2684,17 +2684,17 @@ namespace wind
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].unstructured_drive_away_max_angle.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].unstructured_drive_away_max_angle.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 3601) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].unstructured_drive_away_max_angle.value' " << (__aux64__) << " exceeds max allowable (3601); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].unstructured_drive_away_max_angle.value' " << (__aux64__) << " exceeds max allowable (3601); message dropped.";
                                     return false;
                                 }
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000121\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].unstructured_drive_away_max_angle.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].unstructured_drive_away_max_angle: " <<
+                                    logger->print() << "|" << tools::brown("000121") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].unstructured_drive_away_max_angle.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].unstructured_drive_away_max_angle: " <<
                                                  ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_dynamics[0].unstructured_drive_away_max_angle.value << " (" << __aux64__ << ")";
                                 }
                         }
@@ -2710,17 +2710,17 @@ namespace wind
                         int _if__tmp_121 = __aux64__;
                         
                         if(debug) {
-                            logger->print() << "|\033[38;5;94m000122\033[0m| SequenceOf ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results. size: " << int(__aux64__);
+                            logger->print() << "|" << tools::brown("000122") << "| SequenceOf ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results. size: " << int(__aux64__);
                         }
                         
                         // ******************* MIN validator *******************
                         if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                             return false;
                         }
                         // ******************* MAX validator *******************
                         if(VALIDATORS_ENABLED && __aux64__ > 4) {
-                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.value' " << (__aux64__) << " exceeds max allowable (4); message dropped.";
+                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.value' " << (__aux64__) << " exceeds max allowable (4); message dropped.";
                             return false;
                         }
                         
@@ -2739,14 +2739,14 @@ namespace wind
                                     ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].rss_route.push_back(_tmp_122);
                                 
                                     if(debug)
-                                        logger->print() << "|\033[38;5;94m000123\033[0m| ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].rss_route " << tools::green("present");
+                                        logger->print() << "|" << tools::brown("000123") << "| ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].rss_route " << tools::green("present");
                                 }
                                 if(*(buffer++)) { 
                                     mad_e2v_madurban_msgs::msg::RssVehicleRouteState _tmp_123;
                                     ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state.push_back(_tmp_123);
                                 
                                     if(debug)
-                                        logger->print() << "|\033[38;5;94m000124\033[0m| ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state " << tools::green("present");
+                                        logger->print() << "|" << tools::brown("000124") << "| ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state " << tools::green("present");
                                 }
                                 
                                 // Field name: v2x_latency
@@ -2760,17 +2760,17 @@ namespace wind
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].v2x_latency.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].v2x_latency.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 127) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].v2x_latency.value' " << (__aux64__) << " exceeds max allowable (127); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].v2x_latency.value' " << (__aux64__) << " exceeds max allowable (127); message dropped.";
                                     return false;
                                 }
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000125\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].v2x_latency.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].v2x_latency: " <<
+                                    logger->print() << "|" << tools::brown("000125") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].v2x_latency.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].v2x_latency: " <<
                                                  ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].v2x_latency.value << " (" << __aux64__ << ")";
                                 }
                                 
@@ -2793,7 +2793,7 @@ namespace wind
                                     uint8_t* _ext_flag_76 = (uint8_t*) buffer++;  // Read ext flag from ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.response_flags.
                                     
                                     if(debug) {
-                                        logger->print() << "|\033[38;5;94m000126\033[0m| Reading ext flag from ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.response_flags.: " << int(*_ext_flag_76);
+                                        logger->print() << "|" << tools::brown("000126") << "| Reading ext flag from ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.response_flags.: " << int(*_ext_flag_76);
                                     }
                                     
                                     uint8_t* _tmp_125 = (uint8_t*)buffer;
@@ -2801,7 +2801,7 @@ namespace wind
                                     buffer += 1;
                                     
                                     if(debug)
-                                        logger->print() << "|\033[38;5;94m000127\033[0m| epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.response_flags.value: " << __aux64__;
+                                        logger->print() << "|" << tools::brown("000127") << "| epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.response_flags.value: " << __aux64__;
                                     
                                     int _if__tmp_125 = __aux64__;
                                     for(int g = 0; g < _if__tmp_125; g++) {
@@ -2813,12 +2813,12 @@ namespace wind
                                     
                                     // ******************* MIN validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ < 8) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.response_flags.value' " << (__aux64__) << " is less than allowable (8); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.response_flags.value' " << (__aux64__) << " is less than allowable (8); message dropped.";
                                         return false;
                                     }
                                     // ******************* MAX validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ > 8) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.response_flags.value' " << (__aux64__) << " exceeds max allowable (8); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.response_flags.value' " << (__aux64__) << " exceeds max allowable (8); message dropped.";
                                         return false;
                                     }
                                     
@@ -2831,18 +2831,18 @@ namespace wind
                                     ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.longitudinal_response.value = __aux64__;
                                     // ******************* MIN validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.longitudinal_response.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.longitudinal_response.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                         return false;
                                     }
                                     // ******************* MAX validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ > 2) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.longitudinal_response.value' " << (__aux64__) << " exceeds max allowable (2); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.longitudinal_response.value' " << (__aux64__) << " exceeds max allowable (2); message dropped.";
                                         return false;
                                     }
                                     
                                     
                                     if(debug) {
-                                        logger->print() << "|\033[38;5;94m000128\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.longitudinal_response.value) << 
+                                        logger->print() << "|" << tools::brown("000128") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.longitudinal_response.value) << 
                                                      " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.longitudinal_response.value: " << static_cast<int>(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.longitudinal_response.value);
                                     }
                                     
@@ -2855,18 +2855,18 @@ namespace wind
                                     ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_response_right.value = __aux64__;
                                     // ******************* MIN validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_response_right.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_response_right.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                         return false;
                                     }
                                     // ******************* MAX validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ > 1) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_response_right.value' " << (__aux64__) << " exceeds max allowable (1); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_response_right.value' " << (__aux64__) << " exceeds max allowable (1); message dropped.";
                                         return false;
                                     }
                                     
                                     
                                     if(debug) {
-                                        logger->print() << "|\033[38;5;94m000129\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_response_right.value) << 
+                                        logger->print() << "|" << tools::brown("000129") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_response_right.value) << 
                                                      " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_response_right.value: " << static_cast<int>(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_response_right.value);
                                     }
                                     
@@ -2879,18 +2879,18 @@ namespace wind
                                     ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_response_left.value = __aux64__;
                                     // ******************* MIN validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_response_left.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_response_left.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                         return false;
                                     }
                                     // ******************* MAX validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ > 1) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_response_left.value' " << (__aux64__) << " exceeds max allowable (1); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_response_left.value' " << (__aux64__) << " exceeds max allowable (1); message dropped.";
                                         return false;
                                     }
                                     
                                     
                                     if(debug) {
-                                        logger->print() << "|\033[38;5;94m000130\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_response_left.value) << 
+                                        logger->print() << "|" << tools::brown("000130") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_response_left.value) << 
                                                      " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_response_left.value: " << static_cast<int>(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_response_left.value);
                                     }
                                     
@@ -2903,18 +2903,18 @@ namespace wind
                                     ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.unstructured_constellation_response.value = __aux64__;
                                     // ******************* MIN validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.unstructured_constellation_response.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.unstructured_constellation_response.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                         return false;
                                     }
                                     // ******************* MAX validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ > 3) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.unstructured_constellation_response.value' " << (__aux64__) << " exceeds max allowable (3); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.unstructured_constellation_response.value' " << (__aux64__) << " exceeds max allowable (3); message dropped.";
                                         return false;
                                     }
                                     
                                     
                                     if(debug) {
-                                        logger->print() << "|\033[38;5;94m000131\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.unstructured_constellation_response.value) << 
+                                        logger->print() << "|" << tools::brown("000131") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.unstructured_constellation_response.value) << 
                                                      " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.unstructured_constellation_response.value: " << static_cast<int>(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.unstructured_constellation_response.value);
                                     }
                                     
@@ -2929,17 +2929,17 @@ namespace wind
                                     int _if__tmp_130 = __aux64__;
                                     
                                     if(debug) {
-                                        logger->print() << "|\033[38;5;94m000132\033[0m| SequenceOf ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.heading_ranges. size: " << int(__aux64__);
+                                        logger->print() << "|" << tools::brown("000132") << "| SequenceOf ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.heading_ranges. size: " << int(__aux64__);
                                     }
                                     
                                     // ******************* MIN validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.heading_ranges.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.heading_ranges.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                         return false;
                                     }
                                     // ******************* MAX validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ > 4) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.heading_ranges.value' " << (__aux64__) << " exceeds max allowable (4); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.heading_ranges.value' " << (__aux64__) << " exceeds max allowable (4); message dropped.";
                                         return false;
                                     }
                                     
@@ -2963,17 +2963,17 @@ namespace wind
                                             
                                             // ******************* MIN validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                                logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.heading_ranges.elements[h].begin.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                                logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.heading_ranges.elements[h].begin.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                                 return false;
                                             }
                                             // ******************* MAX validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ > 3601) {
-                                                logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.heading_ranges.elements[h].begin.value' " << (__aux64__) << " exceeds max allowable (3601); message dropped.";
+                                                logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.heading_ranges.elements[h].begin.value' " << (__aux64__) << " exceeds max allowable (3601); message dropped.";
                                                 return false;
                                             }
                                             
                                             if(debug) {
-                                                logger->print() << "|\033[38;5;94m000133\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.heading_ranges.elements[h].begin.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.heading_ranges.elements[h].begin: " <<
+                                                logger->print() << "|" << tools::brown("000133") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.heading_ranges.elements[h].begin.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.heading_ranges.elements[h].begin: " <<
                                                              ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.heading_ranges.elements[h].begin.value << " (" << __aux64__ << ")";
                                             }
                                             
@@ -2988,17 +2988,17 @@ namespace wind
                                             
                                             // ******************* MIN validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                                logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.heading_ranges.elements[h].end.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                                logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.heading_ranges.elements[h].end.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                                 return false;
                                             }
                                             // ******************* MAX validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ > 3601) {
-                                                logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.heading_ranges.elements[h].end.value' " << (__aux64__) << " exceeds max allowable (3601); message dropped.";
+                                                logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.heading_ranges.elements[h].end.value' " << (__aux64__) << " exceeds max allowable (3601); message dropped.";
                                                 return false;
                                             }
                                             
                                             if(debug) {
-                                                logger->print() << "|\033[38;5;94m000134\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.heading_ranges.elements[h].end.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.heading_ranges.elements[h].end: " <<
+                                                logger->print() << "|" << tools::brown("000134") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.heading_ranges.elements[h].end.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.heading_ranges.elements[h].end: " <<
                                                              ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.heading_ranges.elements[h].end.value << " (" << __aux64__ << ")";
                                             }
                                     }
@@ -3010,7 +3010,7 @@ namespace wind
                                     uint8_t* _ext_flag_83 = (uint8_t*) buffer++;  // Read ext flag from ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.dangerous_objects.
                                     
                                     if(debug) {
-                                        logger->print() << "|\033[38;5;94m000135\033[0m| Reading ext flag from ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.dangerous_objects.: " << int(*_ext_flag_83);
+                                        logger->print() << "|" << tools::brown("000135") << "| Reading ext flag from ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.dangerous_objects.: " << int(*_ext_flag_83);
                                     }
                                     
                                     int16_t* _tmp_133 = (int16_t*)buffer;
@@ -3020,17 +3020,17 @@ namespace wind
                                     int _if__tmp_133 = __aux64__;
                                     
                                     if(debug) {
-                                        logger->print() << "|\033[38;5;94m000136\033[0m| SequenceOf ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.dangerous_objects. size: " << int(__aux64__);
+                                        logger->print() << "|" << tools::brown("000136") << "| SequenceOf ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.dangerous_objects. size: " << int(__aux64__);
                                     }
                                     
                                     // ******************* MIN validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.dangerous_objects.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.dangerous_objects.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                         return false;
                                     }
                                     // ******************* MAX validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ > 4) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.dangerous_objects.value' " << (__aux64__) << " exceeds max allowable (4); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.dangerous_objects.value' " << (__aux64__) << " exceeds max allowable (4); message dropped.";
                                         return false;
                                     }
                                     
@@ -3046,18 +3046,18 @@ namespace wind
                                         ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.dangerous_objects.elements[i].value = __aux64__;
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000137\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.dangerous_objects.elements[i].value) << 
+                                            logger->print() << "|" << tools::brown("000137") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.dangerous_objects.elements[i].value) << 
                                                          " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.dangerous_objects.elements[i].value: " << ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.dangerous_objects.elements[i].value;
                                         }
                                         
                                         // ******************* MIN validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.dangerous_objects.elements[i].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.dangerous_objects.elements[i].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                             return false;
                                         }
                                         // ******************* MAX validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ > 65535) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.dangerous_objects.elements[i].value' " << (__aux64__) << " exceeds max allowable (65535); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.dangerous_objects.elements[i].value' " << (__aux64__) << " exceeds max allowable (65535); message dropped.";
                                             return false;
                                         }
                                         
@@ -3081,17 +3081,17 @@ namespace wind
                                         
                                         // ******************* MIN validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ < -160) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.longitudinal_range.minimum.value' " << (__aux64__) << " is less than allowable (-160); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.longitudinal_range.minimum.value' " << (__aux64__) << " is less than allowable (-160); message dropped.";
                                             return false;
                                         }
                                         // ******************* MAX validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ > 161) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.longitudinal_range.minimum.value' " << (__aux64__) << " exceeds max allowable (161); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.longitudinal_range.minimum.value' " << (__aux64__) << " exceeds max allowable (161); message dropped.";
                                             return false;
                                         }
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000138\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.longitudinal_range.minimum.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.longitudinal_range.minimum: " <<
+                                            logger->print() << "|" << tools::brown("000138") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.longitudinal_range.minimum.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.longitudinal_range.minimum: " <<
                                                          ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.longitudinal_range.minimum.value << " (" << __aux64__ << ")";
                                         }
                                         
@@ -3107,17 +3107,17 @@ namespace wind
                                         
                                         // ******************* MIN validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ < -160) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.longitudinal_range.maximum.value' " << (__aux64__) << " is less than allowable (-160); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.longitudinal_range.maximum.value' " << (__aux64__) << " is less than allowable (-160); message dropped.";
                                             return false;
                                         }
                                         // ******************* MAX validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ > 161) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.longitudinal_range.maximum.value' " << (__aux64__) << " exceeds max allowable (161); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.longitudinal_range.maximum.value' " << (__aux64__) << " exceeds max allowable (161); message dropped.";
                                             return false;
                                         }
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000139\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.longitudinal_range.maximum.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.longitudinal_range.maximum: " <<
+                                            logger->print() << "|" << tools::brown("000139") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.longitudinal_range.maximum.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.longitudinal_range.maximum: " <<
                                                          ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.longitudinal_range.maximum.value << " (" << __aux64__ << ")";
                                         }
                                     
@@ -3138,17 +3138,17 @@ namespace wind
                                         
                                         // ******************* MIN validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ < -160) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_right_range.minimum.value' " << (__aux64__) << " is less than allowable (-160); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_right_range.minimum.value' " << (__aux64__) << " is less than allowable (-160); message dropped.";
                                             return false;
                                         }
                                         // ******************* MAX validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ > 161) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_right_range.minimum.value' " << (__aux64__) << " exceeds max allowable (161); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_right_range.minimum.value' " << (__aux64__) << " exceeds max allowable (161); message dropped.";
                                             return false;
                                         }
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000140\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_right_range.minimum.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_right_range.minimum: " <<
+                                            logger->print() << "|" << tools::brown("000140") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_right_range.minimum.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_right_range.minimum: " <<
                                                          ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_right_range.minimum.value << " (" << __aux64__ << ")";
                                         }
                                         
@@ -3164,17 +3164,17 @@ namespace wind
                                         
                                         // ******************* MIN validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ < -160) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_right_range.maximum.value' " << (__aux64__) << " is less than allowable (-160); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_right_range.maximum.value' " << (__aux64__) << " is less than allowable (-160); message dropped.";
                                             return false;
                                         }
                                         // ******************* MAX validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ > 161) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_right_range.maximum.value' " << (__aux64__) << " exceeds max allowable (161); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_right_range.maximum.value' " << (__aux64__) << " exceeds max allowable (161); message dropped.";
                                             return false;
                                         }
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000141\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_right_range.maximum.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_right_range.maximum: " <<
+                                            logger->print() << "|" << tools::brown("000141") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_right_range.maximum.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_right_range.maximum: " <<
                                                          ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_right_range.maximum.value << " (" << __aux64__ << ")";
                                         }
                                     
@@ -3195,17 +3195,17 @@ namespace wind
                                         
                                         // ******************* MIN validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ < -160) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_left_range.minimum.value' " << (__aux64__) << " is less than allowable (-160); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_left_range.minimum.value' " << (__aux64__) << " is less than allowable (-160); message dropped.";
                                             return false;
                                         }
                                         // ******************* MAX validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ > 161) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_left_range.minimum.value' " << (__aux64__) << " exceeds max allowable (161); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_left_range.minimum.value' " << (__aux64__) << " exceeds max allowable (161); message dropped.";
                                             return false;
                                         }
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000142\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_left_range.minimum.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_left_range.minimum: " <<
+                                            logger->print() << "|" << tools::brown("000142") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_left_range.minimum.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_left_range.minimum: " <<
                                                          ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_left_range.minimum.value << " (" << __aux64__ << ")";
                                         }
                                         
@@ -3221,17 +3221,17 @@ namespace wind
                                         
                                         // ******************* MIN validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ < -160) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_left_range.maximum.value' " << (__aux64__) << " is less than allowable (-160); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_left_range.maximum.value' " << (__aux64__) << " is less than allowable (-160); message dropped.";
                                             return false;
                                         }
                                         // ******************* MAX validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ > 161) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_left_range.maximum.value' " << (__aux64__) << " exceeds max allowable (161); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_left_range.maximum.value' " << (__aux64__) << " exceeds max allowable (161); message dropped.";
                                             return false;
                                         }
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000143\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_left_range.maximum.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_left_range.maximum: " <<
+                                            logger->print() << "|" << tools::brown("000143") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_left_range.maximum.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_left_range.maximum: " <<
                                                          ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].proper_response.lateral_left_range.maximum.value << " (" << __aux64__ << ")";
                                         }
                                 
@@ -3248,17 +3248,17 @@ namespace wind
                                     int _if__tmp_141 = __aux64__;
                                     
                                     if(debug) {
-                                        logger->print() << "|\033[38;5;94m000144\033[0m| SequenceOf ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].rss_route[0]. size: " << int(__aux64__);
+                                        logger->print() << "|" << tools::brown("000144") << "| SequenceOf ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].rss_route[0]. size: " << int(__aux64__);
                                     }
                                     
                                     // ******************* MIN validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ < 1) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].rss_route[0].value' " << (__aux64__) << " is less than allowable (1); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].rss_route[0].value' " << (__aux64__) << " is less than allowable (1); message dropped.";
                                         return false;
                                     }
                                     // ******************* MAX validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ > 4) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].rss_route[0].value' " << (__aux64__) << " exceeds max allowable (4); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].rss_route[0].value' " << (__aux64__) << " exceeds max allowable (4); message dropped.";
                                         return false;
                                     }
                                     
@@ -3284,17 +3284,17 @@ namespace wind
                                             
                                             // ******************* MIN validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ < -131071) {
-                                                logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].rss_route[0].elements[j].delta_latitude.value' " << (__aux64__) << " is less than allowable (-131071); message dropped.";
+                                                logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].rss_route[0].elements[j].delta_latitude.value' " << (__aux64__) << " is less than allowable (-131071); message dropped.";
                                                 return false;
                                             }
                                             // ******************* MAX validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ > 131072) {
-                                                logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].rss_route[0].elements[j].delta_latitude.value' " << (__aux64__) << " exceeds max allowable (131072); message dropped.";
+                                                logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].rss_route[0].elements[j].delta_latitude.value' " << (__aux64__) << " exceeds max allowable (131072); message dropped.";
                                                 return false;
                                             }
                                             
                                             if(debug) {
-                                                logger->print() << "|\033[38;5;94m000145\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].rss_route[0].elements[j].delta_latitude.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].rss_route[0].elements[j].delta_latitude: " <<
+                                                logger->print() << "|" << tools::brown("000145") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].rss_route[0].elements[j].delta_latitude.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].rss_route[0].elements[j].delta_latitude: " <<
                                                              ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].rss_route[0].elements[j].delta_latitude.value << " (" << __aux64__ << ")";
                                             }
                                             
@@ -3310,17 +3310,17 @@ namespace wind
                                             
                                             // ******************* MIN validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ < -131071) {
-                                                logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].rss_route[0].elements[j].delta_longitude.value' " << (__aux64__) << " is less than allowable (-131071); message dropped.";
+                                                logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].rss_route[0].elements[j].delta_longitude.value' " << (__aux64__) << " is less than allowable (-131071); message dropped.";
                                                 return false;
                                             }
                                             // ******************* MAX validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ > 131072) {
-                                                logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].rss_route[0].elements[j].delta_longitude.value' " << (__aux64__) << " exceeds max allowable (131072); message dropped.";
+                                                logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].rss_route[0].elements[j].delta_longitude.value' " << (__aux64__) << " exceeds max allowable (131072); message dropped.";
                                                 return false;
                                             }
                                             
                                             if(debug) {
-                                                logger->print() << "|\033[38;5;94m000146\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].rss_route[0].elements[j].delta_longitude.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].rss_route[0].elements[j].delta_longitude: " <<
+                                                logger->print() << "|" << tools::brown("000146") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].rss_route[0].elements[j].delta_longitude.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].rss_route[0].elements[j].delta_longitude: " <<
                                                              ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].rss_route[0].elements[j].delta_longitude.value << " (" << __aux64__ << ")";
                                             }
                                             
@@ -3336,17 +3336,17 @@ namespace wind
                                             
                                             // ******************* MIN validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ < -12700) {
-                                                logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].rss_route[0].elements[j].delta_altitude.value' " << (__aux64__) << " is less than allowable (-12700); message dropped.";
+                                                logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].rss_route[0].elements[j].delta_altitude.value' " << (__aux64__) << " is less than allowable (-12700); message dropped.";
                                                 return false;
                                             }
                                             // ******************* MAX validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ > 12800) {
-                                                logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].rss_route[0].elements[j].delta_altitude.value' " << (__aux64__) << " exceeds max allowable (12800); message dropped.";
+                                                logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].rss_route[0].elements[j].delta_altitude.value' " << (__aux64__) << " exceeds max allowable (12800); message dropped.";
                                                 return false;
                                             }
                                             
                                             if(debug) {
-                                                logger->print() << "|\033[38;5;94m000147\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].rss_route[0].elements[j].delta_altitude.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].rss_route[0].elements[j].delta_altitude: " <<
+                                                logger->print() << "|" << tools::brown("000147") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].rss_route[0].elements[j].delta_altitude.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].rss_route[0].elements[j].delta_altitude: " <<
                                                              ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].rss_route[0].elements[j].delta_altitude.value << " (" << __aux64__ << ")";
                                             }
                                     }
@@ -3376,17 +3376,17 @@ namespace wind
                                         
                                         // ******************* MIN validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_heading.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_heading.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                             return false;
                                         }
                                         // ******************* MAX validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ > 3601) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_heading.value' " << (__aux64__) << " exceeds max allowable (3601); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_heading.value' " << (__aux64__) << " exceeds max allowable (3601); message dropped.";
                                             return false;
                                         }
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000148\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_heading.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_heading: " <<
+                                            logger->print() << "|" << tools::brown("000148") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_heading.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_heading: " <<
                                                          ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_heading.value << " (" << __aux64__ << ")";
                                         }
                                         
@@ -3399,18 +3399,18 @@ namespace wind
                                         ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_radius.value = __aux64__;
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000149\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_radius.value) << 
+                                            logger->print() << "|" << tools::brown("000149") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_radius.value) << 
                                                          " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_radius.value: " << ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_radius.value;
                                         }
                                         
                                         // ******************* MIN validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ < -1023) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_radius.value' " << (__aux64__) << " is less than allowable (-1023); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_radius.value' " << (__aux64__) << " is less than allowable (-1023); message dropped.";
                                             return false;
                                         }
                                         // ******************* MAX validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ > 1023) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_radius.value' " << (__aux64__) << " exceeds max allowable (1023); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_radius.value' " << (__aux64__) << " exceeds max allowable (1023); message dropped.";
                                             return false;
                                         }
                                         
@@ -3425,17 +3425,17 @@ namespace wind
                                         
                                         // ******************* MIN validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_heading_delta.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_heading_delta.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                             return false;
                                         }
                                         // ******************* MAX validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ > 3601) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_heading_delta.value' " << (__aux64__) << " exceeds max allowable (3601); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_heading_delta.value' " << (__aux64__) << " exceeds max allowable (3601); message dropped.";
                                             return false;
                                         }
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000150\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_heading_delta.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_heading_delta: " <<
+                                            logger->print() << "|" << tools::brown("000150") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_heading_delta.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_heading_delta: " <<
                                                          ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_heading_delta.value << " (" << __aux64__ << ")";
                                         }
                                         
@@ -3451,17 +3451,17 @@ namespace wind
                                         
                                         // ******************* MIN validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ < -16383) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_speed_lon.value' " << (__aux64__) << " is less than allowable (-16383); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_speed_lon.value' " << (__aux64__) << " is less than allowable (-16383); message dropped.";
                                             return false;
                                         }
                                         // ******************* MAX validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ > 16383) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_speed_lon.value' " << (__aux64__) << " exceeds max allowable (16383); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_speed_lon.value' " << (__aux64__) << " exceeds max allowable (16383); message dropped.";
                                             return false;
                                         }
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000151\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_speed_lon.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_speed_lon: " <<
+                                            logger->print() << "|" << tools::brown("000151") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_speed_lon.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_speed_lon: " <<
                                                          ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_speed_lon.value << " (" << __aux64__ << ")";
                                         }
                                         
@@ -3477,17 +3477,17 @@ namespace wind
                                         
                                         // ******************* MIN validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ < -16383) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_speed_lat.value' " << (__aux64__) << " is less than allowable (-16383); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_speed_lat.value' " << (__aux64__) << " is less than allowable (-16383); message dropped.";
                                             return false;
                                         }
                                         // ******************* MAX validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ > 16383) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_speed_lat.value' " << (__aux64__) << " exceeds max allowable (16383); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_speed_lat.value' " << (__aux64__) << " exceeds max allowable (16383); message dropped.";
                                             return false;
                                         }
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000152\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_speed_lat.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_speed_lat: " <<
+                                            logger->print() << "|" << tools::brown("000152") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_speed_lat.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_speed_lat: " <<
                                                          ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_speed_lat.value << " (" << __aux64__ << ")";
                                         }
                                         
@@ -3503,17 +3503,17 @@ namespace wind
                                         
                                         // ******************* MIN validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ < -160) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_accel_lon.value' " << (__aux64__) << " is less than allowable (-160); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_accel_lon.value' " << (__aux64__) << " is less than allowable (-160); message dropped.";
                                             return false;
                                         }
                                         // ******************* MAX validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ > 161) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_accel_lon.value' " << (__aux64__) << " exceeds max allowable (161); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_accel_lon.value' " << (__aux64__) << " exceeds max allowable (161); message dropped.";
                                             return false;
                                         }
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000153\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_accel_lon.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_accel_lon: " <<
+                                            logger->print() << "|" << tools::brown("000153") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_accel_lon.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_accel_lon: " <<
                                                          ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_accel_lon.value << " (" << __aux64__ << ")";
                                         }
                                         
@@ -3529,17 +3529,17 @@ namespace wind
                                         
                                         // ******************* MIN validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ < -160) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_accel_lat.value' " << (__aux64__) << " is less than allowable (-160); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_accel_lat.value' " << (__aux64__) << " is less than allowable (-160); message dropped.";
                                             return false;
                                         }
                                         // ******************* MAX validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ > 161) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_accel_lat.value' " << (__aux64__) << " exceeds max allowable (161); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_accel_lat.value' " << (__aux64__) << " exceeds max allowable (161); message dropped.";
                                             return false;
                                         }
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000154\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_accel_lat.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_accel_lat: " <<
+                                            logger->print() << "|" << tools::brown("000154") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_accel_lat.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_accel_lat: " <<
                                                          ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].route_accel_lat.value << " (" << __aux64__ << ")";
                                         }
                                         
@@ -3555,17 +3555,17 @@ namespace wind
                                         
                                         // ******************* MIN validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ < -160) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].avg_route_accel_lon.value' " << (__aux64__) << " is less than allowable (-160); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].avg_route_accel_lon.value' " << (__aux64__) << " is less than allowable (-160); message dropped.";
                                             return false;
                                         }
                                         // ******************* MAX validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ > 161) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].avg_route_accel_lon.value' " << (__aux64__) << " exceeds max allowable (161); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].avg_route_accel_lon.value' " << (__aux64__) << " exceeds max allowable (161); message dropped.";
                                             return false;
                                         }
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000155\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].avg_route_accel_lon.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].avg_route_accel_lon: " <<
+                                            logger->print() << "|" << tools::brown("000155") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].avg_route_accel_lon.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].avg_route_accel_lon: " <<
                                                          ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].avg_route_accel_lon.value << " (" << __aux64__ << ")";
                                         }
                                         
@@ -3581,17 +3581,17 @@ namespace wind
                                         
                                         // ******************* MIN validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ < -160) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].avg_route_accel_lat.value' " << (__aux64__) << " is less than allowable (-160); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].avg_route_accel_lat.value' " << (__aux64__) << " is less than allowable (-160); message dropped.";
                                             return false;
                                         }
                                         // ******************* MAX validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ > 161) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].avg_route_accel_lat.value' " << (__aux64__) << " exceeds max allowable (161); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].avg_route_accel_lat.value' " << (__aux64__) << " exceeds max allowable (161); message dropped.";
                                             return false;
                                         }
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000156\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].avg_route_accel_lat.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].avg_route_accel_lat: " <<
+                                            logger->print() << "|" << tools::brown("000156") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].avg_route_accel_lat.value) << " epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].avg_route_accel_lat: " <<
                                                          ros->epu_to_vehicle.epu_high_frequency_container.safety[0].elements[e].rss_results.elements[f].vehicle_route_state[0].avg_route_accel_lat.value << " (" << __aux64__ << ")";
                                         }
                                 }
@@ -3608,7 +3608,7 @@ namespace wind
                 uint8_t* _ext_flag_101 = (uint8_t*) buffer++;  // Read ext flag from ros->epu_to_vehicle.epu_low_frequency_container[0].
                 
                 if(debug) {
-                    logger->print() << "|\033[38;5;94m000157\033[0m| Reading ext flag from ros->epu_to_vehicle.epu_low_frequency_container[0].: " << int(*_ext_flag_101);
+                    logger->print() << "|" << tools::brown("000157") << "| Reading ext flag from ros->epu_to_vehicle.epu_low_frequency_container[0].: " << int(*_ext_flag_101);
                 }
                 
                 if(*(buffer++)) { 
@@ -3616,7 +3616,7 @@ namespace wind
                     ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_capabilities.push_back(_tmp_154);
                 
                     if(debug)
-                        logger->print() << "|\033[38;5;94m000158\033[0m| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_capabilities " << tools::green("present");
+                        logger->print() << "|" << tools::brown("000158") << "| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_capabilities " << tools::green("present");
                 }
                 
                 // Field name: epu_section_dimensions
@@ -3631,7 +3631,7 @@ namespace wind
                     uint8_t* _ext_flag_102 = (uint8_t*) buffer++;  // Read ext flag from ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.
                     
                     if(debug) {
-                        logger->print() << "|\033[38;5;94m000159\033[0m| Reading ext flag from ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.: " << int(*_ext_flag_102);
+                        logger->print() << "|" << tools::brown("000159") << "| Reading ext flag from ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.: " << int(*_ext_flag_102);
                     }
                     
                     int16_t* _tmp_155 = (int16_t*)buffer;
@@ -3642,17 +3642,17 @@ namespace wind
                     int _if__tmp_155 = __aux64__;
                     
                     if(debug) {
-                        logger->print() << "|\033[38;5;94m000160\033[0m| SequenceOf ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes. size: " << int(__aux64__);
+                        logger->print() << "|" << tools::brown("000160") << "| SequenceOf ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes. size: " << int(__aux64__);
                     }
                     
                     // ******************* MIN validator *******************
                     if(VALIDATORS_ENABLED && __aux64__ < 1) {
-                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.value' " << (__aux64__) << " is less than allowable (1); message dropped.";
+                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.value' " << (__aux64__) << " is less than allowable (1); message dropped.";
                         return false;
                     }
                     // ******************* MAX validator *******************
                     if(VALIDATORS_ENABLED && __aux64__ > 4) {
-                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.value' " << (__aux64__) << " exceeds max allowable (4); message dropped.";
+                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.value' " << (__aux64__) << " exceeds max allowable (4); message dropped.";
                         return false;
                     }
                     
@@ -3690,21 +3690,21 @@ namespace wind
                                     ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].shape_reference_point.push_back(_tmp_157);
                                 
                                     if(debug)
-                                        logger->print() << "|\033[38;5;94m000161\033[0m| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].shape_reference_point " << tools::green("present");
+                                        logger->print() << "|" << tools::brown("000161") << "| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].shape_reference_point " << tools::green("present");
                                 }
                                 if(*(buffer++)) { 
                                     its_container_v4_etsi_its_cdd_msgs::msg::CartesianAngleValue _tmp_158;
                                     ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].orientation.push_back(_tmp_158);
                                 
                                     if(debug)
-                                        logger->print() << "|\033[38;5;94m000162\033[0m| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].orientation " << tools::green("present");
+                                        logger->print() << "|" << tools::brown("000162") << "| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].orientation " << tools::green("present");
                                 }
                                 if(*(buffer++)) { 
                                     its_container_v4_etsi_its_cdd_msgs::msg::StandardLength12b _tmp_159;
                                     ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].height.push_back(_tmp_159);
                                 
                                     if(debug)
-                                        logger->print() << "|\033[38;5;94m000163\033[0m| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].height " << tools::green("present");
+                                        logger->print() << "|" << tools::brown("000163") << "| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].height " << tools::green("present");
                                 }
                                 
                                 if(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].shape_reference_point.size() != 0) {
@@ -3718,7 +3718,7 @@ namespace wind
                                             ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].shape_reference_point[0].z_coordinate.push_back(_tmp_160);
                                         
                                             if(debug)
-                                                logger->print() << "|\033[38;5;94m000164\033[0m| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].shape_reference_point[0].z_coordinate " << tools::green("present");
+                                                logger->print() << "|" << tools::brown("000164") << "| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].shape_reference_point[0].z_coordinate " << tools::green("present");
                                         }
                                         
                                         // Field name: x_coordinate
@@ -3733,17 +3733,17 @@ namespace wind
                                         
                                         // ******************* MIN validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ < -32768) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].shape_reference_point[0].x_coordinate.value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].shape_reference_point[0].x_coordinate.value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
                                             return false;
                                         }
                                         // ******************* MAX validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ > 32767) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].shape_reference_point[0].x_coordinate.value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].shape_reference_point[0].x_coordinate.value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
                                             return false;
                                         }
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000165\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].shape_reference_point[0].x_coordinate.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].shape_reference_point[0].x_coordinate: " <<
+                                            logger->print() << "|" << tools::brown("000165") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].shape_reference_point[0].x_coordinate.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].shape_reference_point[0].x_coordinate: " <<
                                                          ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].shape_reference_point[0].x_coordinate.value << " (" << __aux64__ << ")";
                                         }
                                         
@@ -3759,17 +3759,17 @@ namespace wind
                                         
                                         // ******************* MIN validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ < -32768) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].shape_reference_point[0].y_coordinate.value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].shape_reference_point[0].y_coordinate.value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
                                             return false;
                                         }
                                         // ******************* MAX validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ > 32767) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].shape_reference_point[0].y_coordinate.value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].shape_reference_point[0].y_coordinate.value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
                                             return false;
                                         }
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000166\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].shape_reference_point[0].y_coordinate.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].shape_reference_point[0].y_coordinate: " <<
+                                            logger->print() << "|" << tools::brown("000166") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].shape_reference_point[0].y_coordinate.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].shape_reference_point[0].y_coordinate: " <<
                                                          ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].shape_reference_point[0].y_coordinate.value << " (" << __aux64__ << ")";
                                         }
                                         
@@ -3786,17 +3786,17 @@ namespace wind
                                             
                                             // ******************* MIN validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ < -32768) {
-                                                logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].shape_reference_point[0].z_coordinate[0].value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
+                                                logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].shape_reference_point[0].z_coordinate[0].value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
                                                 return false;
                                             }
                                             // ******************* MAX validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ > 32767) {
-                                                logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].shape_reference_point[0].z_coordinate[0].value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
+                                                logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].shape_reference_point[0].z_coordinate[0].value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
                                                 return false;
                                             }
                                             
                                             if(debug) {
-                                                logger->print() << "|\033[38;5;94m000167\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].shape_reference_point[0].z_coordinate[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].shape_reference_point[0].z_coordinate[0]: " <<
+                                                logger->print() << "|" << tools::brown("000167") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].shape_reference_point[0].z_coordinate[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].shape_reference_point[0].z_coordinate[0]: " <<
                                                              ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].shape_reference_point[0].z_coordinate[0].value << " (" << __aux64__ << ")";
                                             }
                                         }
@@ -3813,17 +3813,17 @@ namespace wind
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].semi_length.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].semi_length.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 4095) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].semi_length.value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].semi_length.value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
                                     return false;
                                 }
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000168\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].semi_length.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].semi_length: " <<
+                                    logger->print() << "|" << tools::brown("000168") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].semi_length.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].semi_length: " <<
                                                  ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].semi_length.value << " (" << __aux64__ << ")";
                                 }
                                 
@@ -3838,17 +3838,17 @@ namespace wind
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].semi_breadth.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].semi_breadth.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 4095) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].semi_breadth.value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].semi_breadth.value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
                                     return false;
                                 }
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000169\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].semi_breadth.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].semi_breadth: " <<
+                                    logger->print() << "|" << tools::brown("000169") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].semi_breadth.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].semi_breadth: " <<
                                                  ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].semi_breadth.value << " (" << __aux64__ << ")";
                                 }
                                 
@@ -3864,17 +3864,17 @@ namespace wind
                                     
                                     // ******************* MIN validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].orientation[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].orientation[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                         return false;
                                     }
                                     // ******************* MAX validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ > 3601) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].orientation[0].value' " << (__aux64__) << " exceeds max allowable (3601); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].orientation[0].value' " << (__aux64__) << " exceeds max allowable (3601); message dropped.";
                                         return false;
                                     }
                                     
                                     if(debug) {
-                                        logger->print() << "|\033[38;5;94m000170\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].orientation[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].orientation[0]: " <<
+                                        logger->print() << "|" << tools::brown("000170") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].orientation[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].orientation[0]: " <<
                                                      ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].orientation[0].value << " (" << __aux64__ << ")";
                                     }
                                 }
@@ -3891,17 +3891,17 @@ namespace wind
                                     
                                     // ******************* MIN validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].height[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].height[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                         return false;
                                     }
                                     // ******************* MAX validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ > 4095) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].height[0].value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].height[0].value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
                                         return false;
                                     }
                                     
                                     if(debug) {
-                                        logger->print() << "|\033[38;5;94m000171\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].height[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].height[0]: " <<
+                                        logger->print() << "|" << tools::brown("000171") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].height[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].height[0]: " <<
                                                      ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].rectangular[0].height[0].value << " (" << __aux64__ << ")";
                                     }
                                 }
@@ -3920,14 +3920,14 @@ namespace wind
                                     ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].shape_reference_point.push_back(_tmp_169);
                                 
                                     if(debug)
-                                        logger->print() << "|\033[38;5;94m000172\033[0m| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].shape_reference_point " << tools::green("present");
+                                        logger->print() << "|" << tools::brown("000172") << "| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].shape_reference_point " << tools::green("present");
                                 }
                                 if(*(buffer++)) { 
                                     its_container_v4_etsi_its_cdd_msgs::msg::StandardLength12b _tmp_170;
                                     ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].height.push_back(_tmp_170);
                                 
                                     if(debug)
-                                        logger->print() << "|\033[38;5;94m000173\033[0m| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].height " << tools::green("present");
+                                        logger->print() << "|" << tools::brown("000173") << "| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].height " << tools::green("present");
                                 }
                                 
                                 if(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].shape_reference_point.size() != 0) {
@@ -3941,7 +3941,7 @@ namespace wind
                                             ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].shape_reference_point[0].z_coordinate.push_back(_tmp_171);
                                         
                                             if(debug)
-                                                logger->print() << "|\033[38;5;94m000174\033[0m| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].shape_reference_point[0].z_coordinate " << tools::green("present");
+                                                logger->print() << "|" << tools::brown("000174") << "| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].shape_reference_point[0].z_coordinate " << tools::green("present");
                                         }
                                         
                                         // Field name: x_coordinate
@@ -3956,17 +3956,17 @@ namespace wind
                                         
                                         // ******************* MIN validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ < -32768) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].shape_reference_point[0].x_coordinate.value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].shape_reference_point[0].x_coordinate.value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
                                             return false;
                                         }
                                         // ******************* MAX validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ > 32767) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].shape_reference_point[0].x_coordinate.value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].shape_reference_point[0].x_coordinate.value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
                                             return false;
                                         }
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000175\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].shape_reference_point[0].x_coordinate.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].shape_reference_point[0].x_coordinate: " <<
+                                            logger->print() << "|" << tools::brown("000175") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].shape_reference_point[0].x_coordinate.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].shape_reference_point[0].x_coordinate: " <<
                                                          ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].shape_reference_point[0].x_coordinate.value << " (" << __aux64__ << ")";
                                         }
                                         
@@ -3982,17 +3982,17 @@ namespace wind
                                         
                                         // ******************* MIN validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ < -32768) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].shape_reference_point[0].y_coordinate.value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].shape_reference_point[0].y_coordinate.value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
                                             return false;
                                         }
                                         // ******************* MAX validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ > 32767) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].shape_reference_point[0].y_coordinate.value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].shape_reference_point[0].y_coordinate.value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
                                             return false;
                                         }
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000176\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].shape_reference_point[0].y_coordinate.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].shape_reference_point[0].y_coordinate: " <<
+                                            logger->print() << "|" << tools::brown("000176") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].shape_reference_point[0].y_coordinate.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].shape_reference_point[0].y_coordinate: " <<
                                                          ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].shape_reference_point[0].y_coordinate.value << " (" << __aux64__ << ")";
                                         }
                                         
@@ -4009,17 +4009,17 @@ namespace wind
                                             
                                             // ******************* MIN validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ < -32768) {
-                                                logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].shape_reference_point[0].z_coordinate[0].value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
+                                                logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].shape_reference_point[0].z_coordinate[0].value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
                                                 return false;
                                             }
                                             // ******************* MAX validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ > 32767) {
-                                                logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].shape_reference_point[0].z_coordinate[0].value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
+                                                logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].shape_reference_point[0].z_coordinate[0].value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
                                                 return false;
                                             }
                                             
                                             if(debug) {
-                                                logger->print() << "|\033[38;5;94m000177\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].shape_reference_point[0].z_coordinate[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].shape_reference_point[0].z_coordinate[0]: " <<
+                                                logger->print() << "|" << tools::brown("000177") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].shape_reference_point[0].z_coordinate[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].shape_reference_point[0].z_coordinate[0]: " <<
                                                              ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].shape_reference_point[0].z_coordinate[0].value << " (" << __aux64__ << ")";
                                             }
                                         }
@@ -4036,17 +4036,17 @@ namespace wind
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].radius.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].radius.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 4095) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].radius.value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].radius.value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
                                     return false;
                                 }
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000178\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].radius.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].radius: " <<
+                                    logger->print() << "|" << tools::brown("000178") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].radius.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].radius: " <<
                                                  ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].radius.value << " (" << __aux64__ << ")";
                                 }
                                 
@@ -4062,17 +4062,17 @@ namespace wind
                                     
                                     // ******************* MIN validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].height[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].height[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                         return false;
                                     }
                                     // ******************* MAX validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ > 4095) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].height[0].value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].height[0].value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
                                         return false;
                                     }
                                     
                                     if(debug) {
-                                        logger->print() << "|\033[38;5;94m000179\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].height[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].height[0]: " <<
+                                        logger->print() << "|" << tools::brown("000179") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].height[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].height[0]: " <<
                                                      ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].circular[0].height[0].value << " (" << __aux64__ << ")";
                                     }
                                 }
@@ -4091,14 +4091,14 @@ namespace wind
                                     ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].shape_reference_point.push_back(_tmp_178);
                                 
                                     if(debug)
-                                        logger->print() << "|\033[38;5;94m000180\033[0m| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].shape_reference_point " << tools::green("present");
+                                        logger->print() << "|" << tools::brown("000180") << "| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].shape_reference_point " << tools::green("present");
                                 }
                                 if(*(buffer++)) { 
                                     its_container_v4_etsi_its_cdd_msgs::msg::StandardLength12b _tmp_179;
                                     ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].height.push_back(_tmp_179);
                                 
                                     if(debug)
-                                        logger->print() << "|\033[38;5;94m000181\033[0m| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].height " << tools::green("present");
+                                        logger->print() << "|" << tools::brown("000181") << "| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].height " << tools::green("present");
                                 }
                                 
                                 if(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].shape_reference_point.size() != 0) {
@@ -4112,7 +4112,7 @@ namespace wind
                                             ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].shape_reference_point[0].z_coordinate.push_back(_tmp_180);
                                         
                                             if(debug)
-                                                logger->print() << "|\033[38;5;94m000182\033[0m| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].shape_reference_point[0].z_coordinate " << tools::green("present");
+                                                logger->print() << "|" << tools::brown("000182") << "| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].shape_reference_point[0].z_coordinate " << tools::green("present");
                                         }
                                         
                                         // Field name: x_coordinate
@@ -4127,17 +4127,17 @@ namespace wind
                                         
                                         // ******************* MIN validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ < -32768) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].shape_reference_point[0].x_coordinate.value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].shape_reference_point[0].x_coordinate.value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
                                             return false;
                                         }
                                         // ******************* MAX validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ > 32767) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].shape_reference_point[0].x_coordinate.value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].shape_reference_point[0].x_coordinate.value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
                                             return false;
                                         }
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000183\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].shape_reference_point[0].x_coordinate.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].shape_reference_point[0].x_coordinate: " <<
+                                            logger->print() << "|" << tools::brown("000183") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].shape_reference_point[0].x_coordinate.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].shape_reference_point[0].x_coordinate: " <<
                                                          ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].shape_reference_point[0].x_coordinate.value << " (" << __aux64__ << ")";
                                         }
                                         
@@ -4153,17 +4153,17 @@ namespace wind
                                         
                                         // ******************* MIN validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ < -32768) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].shape_reference_point[0].y_coordinate.value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].shape_reference_point[0].y_coordinate.value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
                                             return false;
                                         }
                                         // ******************* MAX validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ > 32767) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].shape_reference_point[0].y_coordinate.value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].shape_reference_point[0].y_coordinate.value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
                                             return false;
                                         }
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000184\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].shape_reference_point[0].y_coordinate.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].shape_reference_point[0].y_coordinate: " <<
+                                            logger->print() << "|" << tools::brown("000184") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].shape_reference_point[0].y_coordinate.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].shape_reference_point[0].y_coordinate: " <<
                                                          ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].shape_reference_point[0].y_coordinate.value << " (" << __aux64__ << ")";
                                         }
                                         
@@ -4180,17 +4180,17 @@ namespace wind
                                             
                                             // ******************* MIN validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ < -32768) {
-                                                logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].shape_reference_point[0].z_coordinate[0].value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
+                                                logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].shape_reference_point[0].z_coordinate[0].value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
                                                 return false;
                                             }
                                             // ******************* MAX validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ > 32767) {
-                                                logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].shape_reference_point[0].z_coordinate[0].value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
+                                                logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].shape_reference_point[0].z_coordinate[0].value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
                                                 return false;
                                             }
                                             
                                             if(debug) {
-                                                logger->print() << "|\033[38;5;94m000185\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].shape_reference_point[0].z_coordinate[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].shape_reference_point[0].z_coordinate[0]: " <<
+                                                logger->print() << "|" << tools::brown("000185") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].shape_reference_point[0].z_coordinate[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].shape_reference_point[0].z_coordinate[0]: " <<
                                                              ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].shape_reference_point[0].z_coordinate[0].value << " (" << __aux64__ << ")";
                                             }
                                         }
@@ -4203,7 +4203,7 @@ namespace wind
                                 uint8_t* _ext_flag_119 = (uint8_t*) buffer++;  // Read ext flag from ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].polygon.
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000186\033[0m| Reading ext flag from ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].polygon.: " << int(*_ext_flag_119);
+                                    logger->print() << "|" << tools::brown("000186") << "| Reading ext flag from ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].polygon.: " << int(*_ext_flag_119);
                                 }
                                 
                                 int16_t* _tmp_184 = (int16_t*)buffer;
@@ -4214,17 +4214,17 @@ namespace wind
                                 int _if__tmp_184 = __aux64__;
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000187\033[0m| SequenceOf ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].polygon. size: " << int(__aux64__);
+                                    logger->print() << "|" << tools::brown("000187") << "| SequenceOf ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].polygon. size: " << int(__aux64__);
                                 }
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 1) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].polygon.value' " << (__aux64__) << " is less than allowable (1); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].polygon.value' " << (__aux64__) << " is less than allowable (1); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 16) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].polygon.value' " << (__aux64__) << " exceeds max allowable (16); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].polygon.value' " << (__aux64__) << " exceeds max allowable (16); message dropped.";
                                     return false;
                                 }
                                 
@@ -4242,7 +4242,7 @@ namespace wind
                                             ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].polygon.elements[l].z_coordinate.push_back(_tmp_185);
                                         
                                             if(debug)
-                                                logger->print() << "|\033[38;5;94m000188\033[0m| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].polygon.elements[l].z_coordinate " << tools::green("present");
+                                                logger->print() << "|" << tools::brown("000188") << "| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].polygon.elements[l].z_coordinate " << tools::green("present");
                                         }
                                         
                                         // Field name: x_coordinate
@@ -4257,17 +4257,17 @@ namespace wind
                                         
                                         // ******************* MIN validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ < -32768) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].polygon.elements[l].x_coordinate.value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].polygon.elements[l].x_coordinate.value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
                                             return false;
                                         }
                                         // ******************* MAX validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ > 32767) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].polygon.elements[l].x_coordinate.value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].polygon.elements[l].x_coordinate.value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
                                             return false;
                                         }
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000189\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].polygon.elements[l].x_coordinate.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].polygon.elements[l].x_coordinate: " <<
+                                            logger->print() << "|" << tools::brown("000189") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].polygon.elements[l].x_coordinate.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].polygon.elements[l].x_coordinate: " <<
                                                          ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].polygon.elements[l].x_coordinate.value << " (" << __aux64__ << ")";
                                         }
                                         
@@ -4283,17 +4283,17 @@ namespace wind
                                         
                                         // ******************* MIN validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ < -32768) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].polygon.elements[l].y_coordinate.value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].polygon.elements[l].y_coordinate.value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
                                             return false;
                                         }
                                         // ******************* MAX validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ > 32767) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].polygon.elements[l].y_coordinate.value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].polygon.elements[l].y_coordinate.value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
                                             return false;
                                         }
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000190\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].polygon.elements[l].y_coordinate.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].polygon.elements[l].y_coordinate: " <<
+                                            logger->print() << "|" << tools::brown("000190") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].polygon.elements[l].y_coordinate.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].polygon.elements[l].y_coordinate: " <<
                                                          ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].polygon.elements[l].y_coordinate.value << " (" << __aux64__ << ")";
                                         }
                                         
@@ -4310,17 +4310,17 @@ namespace wind
                                             
                                             // ******************* MIN validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ < -32768) {
-                                                logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].polygon.elements[l].z_coordinate[0].value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
+                                                logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].polygon.elements[l].z_coordinate[0].value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
                                                 return false;
                                             }
                                             // ******************* MAX validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ > 32767) {
-                                                logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].polygon.elements[l].z_coordinate[0].value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
+                                                logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].polygon.elements[l].z_coordinate[0].value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
                                                 return false;
                                             }
                                             
                                             if(debug) {
-                                                logger->print() << "|\033[38;5;94m000191\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].polygon.elements[l].z_coordinate[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].polygon.elements[l].z_coordinate[0]: " <<
+                                                logger->print() << "|" << tools::brown("000191") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].polygon.elements[l].z_coordinate[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].polygon.elements[l].z_coordinate[0]: " <<
                                                              ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].polygon.elements[l].z_coordinate[0].value << " (" << __aux64__ << ")";
                                             }
                                         }
@@ -4338,17 +4338,17 @@ namespace wind
                                     
                                     // ******************* MIN validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].height[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].height[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                         return false;
                                     }
                                     // ******************* MAX validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ > 4095) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].height[0].value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].height[0].value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
                                         return false;
                                     }
                                     
                                     if(debug) {
-                                        logger->print() << "|\033[38;5;94m000192\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].height[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].height[0]: " <<
+                                        logger->print() << "|" << tools::brown("000192") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].height[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].height[0]: " <<
                                                      ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].polygonal[0].height[0].value << " (" << __aux64__ << ")";
                                     }
                                 }
@@ -4369,21 +4369,21 @@ namespace wind
                                     ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].shape_reference_point.push_back(_tmp_191);
                                 
                                     if(debug)
-                                        logger->print() << "|\033[38;5;94m000193\033[0m| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].shape_reference_point " << tools::green("present");
+                                        logger->print() << "|" << tools::brown("000193") << "| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].shape_reference_point " << tools::green("present");
                                 }
                                 if(*(buffer++)) { 
                                     its_container_v4_etsi_its_cdd_msgs::msg::CartesianAngleValue _tmp_192;
                                     ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].orientation.push_back(_tmp_192);
                                 
                                     if(debug)
-                                        logger->print() << "|\033[38;5;94m000194\033[0m| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].orientation " << tools::green("present");
+                                        logger->print() << "|" << tools::brown("000194") << "| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].orientation " << tools::green("present");
                                 }
                                 if(*(buffer++)) { 
                                     its_container_v4_etsi_its_cdd_msgs::msg::StandardLength12b _tmp_193;
                                     ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].height.push_back(_tmp_193);
                                 
                                     if(debug)
-                                        logger->print() << "|\033[38;5;94m000195\033[0m| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].height " << tools::green("present");
+                                        logger->print() << "|" << tools::brown("000195") << "| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].height " << tools::green("present");
                                 }
                                 
                                 if(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].shape_reference_point.size() != 0) {
@@ -4397,7 +4397,7 @@ namespace wind
                                             ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].shape_reference_point[0].z_coordinate.push_back(_tmp_194);
                                         
                                             if(debug)
-                                                logger->print() << "|\033[38;5;94m000196\033[0m| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].shape_reference_point[0].z_coordinate " << tools::green("present");
+                                                logger->print() << "|" << tools::brown("000196") << "| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].shape_reference_point[0].z_coordinate " << tools::green("present");
                                         }
                                         
                                         // Field name: x_coordinate
@@ -4412,17 +4412,17 @@ namespace wind
                                         
                                         // ******************* MIN validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ < -32768) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].shape_reference_point[0].x_coordinate.value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].shape_reference_point[0].x_coordinate.value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
                                             return false;
                                         }
                                         // ******************* MAX validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ > 32767) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].shape_reference_point[0].x_coordinate.value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].shape_reference_point[0].x_coordinate.value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
                                             return false;
                                         }
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000197\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].shape_reference_point[0].x_coordinate.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].shape_reference_point[0].x_coordinate: " <<
+                                            logger->print() << "|" << tools::brown("000197") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].shape_reference_point[0].x_coordinate.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].shape_reference_point[0].x_coordinate: " <<
                                                          ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].shape_reference_point[0].x_coordinate.value << " (" << __aux64__ << ")";
                                         }
                                         
@@ -4438,17 +4438,17 @@ namespace wind
                                         
                                         // ******************* MIN validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ < -32768) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].shape_reference_point[0].y_coordinate.value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].shape_reference_point[0].y_coordinate.value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
                                             return false;
                                         }
                                         // ******************* MAX validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ > 32767) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].shape_reference_point[0].y_coordinate.value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].shape_reference_point[0].y_coordinate.value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
                                             return false;
                                         }
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000198\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].shape_reference_point[0].y_coordinate.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].shape_reference_point[0].y_coordinate: " <<
+                                            logger->print() << "|" << tools::brown("000198") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].shape_reference_point[0].y_coordinate.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].shape_reference_point[0].y_coordinate: " <<
                                                          ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].shape_reference_point[0].y_coordinate.value << " (" << __aux64__ << ")";
                                         }
                                         
@@ -4465,17 +4465,17 @@ namespace wind
                                             
                                             // ******************* MIN validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ < -32768) {
-                                                logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].shape_reference_point[0].z_coordinate[0].value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
+                                                logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].shape_reference_point[0].z_coordinate[0].value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
                                                 return false;
                                             }
                                             // ******************* MAX validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ > 32767) {
-                                                logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].shape_reference_point[0].z_coordinate[0].value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
+                                                logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].shape_reference_point[0].z_coordinate[0].value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
                                                 return false;
                                             }
                                             
                                             if(debug) {
-                                                logger->print() << "|\033[38;5;94m000199\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].shape_reference_point[0].z_coordinate[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].shape_reference_point[0].z_coordinate[0]: " <<
+                                                logger->print() << "|" << tools::brown("000199") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].shape_reference_point[0].z_coordinate[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].shape_reference_point[0].z_coordinate[0]: " <<
                                                              ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].shape_reference_point[0].z_coordinate[0].value << " (" << __aux64__ << ")";
                                             }
                                         }
@@ -4492,17 +4492,17 @@ namespace wind
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].semi_major_axis_length.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].semi_major_axis_length.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 4095) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].semi_major_axis_length.value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].semi_major_axis_length.value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
                                     return false;
                                 }
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000200\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].semi_major_axis_length.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].semi_major_axis_length: " <<
+                                    logger->print() << "|" << tools::brown("000200") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].semi_major_axis_length.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].semi_major_axis_length: " <<
                                                  ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].semi_major_axis_length.value << " (" << __aux64__ << ")";
                                 }
                                 
@@ -4517,17 +4517,17 @@ namespace wind
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].semi_minor_axis_length.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].semi_minor_axis_length.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 4095) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].semi_minor_axis_length.value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].semi_minor_axis_length.value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
                                     return false;
                                 }
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000201\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].semi_minor_axis_length.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].semi_minor_axis_length: " <<
+                                    logger->print() << "|" << tools::brown("000201") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].semi_minor_axis_length.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].semi_minor_axis_length: " <<
                                                  ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].semi_minor_axis_length.value << " (" << __aux64__ << ")";
                                 }
                                 
@@ -4543,17 +4543,17 @@ namespace wind
                                     
                                     // ******************* MIN validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].orientation[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].orientation[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                         return false;
                                     }
                                     // ******************* MAX validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ > 3601) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].orientation[0].value' " << (__aux64__) << " exceeds max allowable (3601); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].orientation[0].value' " << (__aux64__) << " exceeds max allowable (3601); message dropped.";
                                         return false;
                                     }
                                     
                                     if(debug) {
-                                        logger->print() << "|\033[38;5;94m000202\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].orientation[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].orientation[0]: " <<
+                                        logger->print() << "|" << tools::brown("000202") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].orientation[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].orientation[0]: " <<
                                                      ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].orientation[0].value << " (" << __aux64__ << ")";
                                     }
                                 }
@@ -4570,17 +4570,17 @@ namespace wind
                                     
                                     // ******************* MIN validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].height[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].height[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                         return false;
                                     }
                                     // ******************* MAX validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ > 4095) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].height[0].value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].height[0].value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
                                         return false;
                                     }
                                     
                                     if(debug) {
-                                        logger->print() << "|\033[38;5;94m000203\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].height[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].height[0]: " <<
+                                        logger->print() << "|" << tools::brown("000203") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].height[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].height[0]: " <<
                                                      ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].elliptical[0].height[0].value << " (" << __aux64__ << ")";
                                     }
                                 }
@@ -4602,21 +4602,21 @@ namespace wind
                                     ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].shape_reference_point.push_back(_tmp_203);
                                 
                                     if(debug)
-                                        logger->print() << "|\033[38;5;94m000204\033[0m| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].shape_reference_point " << tools::green("present");
+                                        logger->print() << "|" << tools::brown("000204") << "| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].shape_reference_point " << tools::green("present");
                                 }
                                 if(*(buffer++)) { 
                                     its_container_v4_etsi_its_cdd_msgs::msg::CartesianAngleValue _tmp_204;
                                     ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].vertical_opening_angle_start.push_back(_tmp_204);
                                 
                                     if(debug)
-                                        logger->print() << "|\033[38;5;94m000205\033[0m| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].vertical_opening_angle_start " << tools::green("present");
+                                        logger->print() << "|" << tools::brown("000205") << "| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].vertical_opening_angle_start " << tools::green("present");
                                 }
                                 if(*(buffer++)) { 
                                     its_container_v4_etsi_its_cdd_msgs::msg::CartesianAngleValue _tmp_205;
                                     ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].vertical_opening_angle_end.push_back(_tmp_205);
                                 
                                     if(debug)
-                                        logger->print() << "|\033[38;5;94m000206\033[0m| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].vertical_opening_angle_end " << tools::green("present");
+                                        logger->print() << "|" << tools::brown("000206") << "| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].vertical_opening_angle_end " << tools::green("present");
                                 }
                                 
                                 if(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].shape_reference_point.size() != 0) {
@@ -4630,7 +4630,7 @@ namespace wind
                                             ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].shape_reference_point[0].z_coordinate.push_back(_tmp_206);
                                         
                                             if(debug)
-                                                logger->print() << "|\033[38;5;94m000207\033[0m| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].shape_reference_point[0].z_coordinate " << tools::green("present");
+                                                logger->print() << "|" << tools::brown("000207") << "| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].shape_reference_point[0].z_coordinate " << tools::green("present");
                                         }
                                         
                                         // Field name: x_coordinate
@@ -4645,17 +4645,17 @@ namespace wind
                                         
                                         // ******************* MIN validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ < -32768) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].shape_reference_point[0].x_coordinate.value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].shape_reference_point[0].x_coordinate.value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
                                             return false;
                                         }
                                         // ******************* MAX validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ > 32767) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].shape_reference_point[0].x_coordinate.value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].shape_reference_point[0].x_coordinate.value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
                                             return false;
                                         }
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000208\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].shape_reference_point[0].x_coordinate.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].shape_reference_point[0].x_coordinate: " <<
+                                            logger->print() << "|" << tools::brown("000208") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].shape_reference_point[0].x_coordinate.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].shape_reference_point[0].x_coordinate: " <<
                                                          ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].shape_reference_point[0].x_coordinate.value << " (" << __aux64__ << ")";
                                         }
                                         
@@ -4671,17 +4671,17 @@ namespace wind
                                         
                                         // ******************* MIN validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ < -32768) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].shape_reference_point[0].y_coordinate.value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].shape_reference_point[0].y_coordinate.value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
                                             return false;
                                         }
                                         // ******************* MAX validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ > 32767) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].shape_reference_point[0].y_coordinate.value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].shape_reference_point[0].y_coordinate.value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
                                             return false;
                                         }
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000209\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].shape_reference_point[0].y_coordinate.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].shape_reference_point[0].y_coordinate: " <<
+                                            logger->print() << "|" << tools::brown("000209") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].shape_reference_point[0].y_coordinate.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].shape_reference_point[0].y_coordinate: " <<
                                                          ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].shape_reference_point[0].y_coordinate.value << " (" << __aux64__ << ")";
                                         }
                                         
@@ -4698,17 +4698,17 @@ namespace wind
                                             
                                             // ******************* MIN validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ < -32768) {
-                                                logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].shape_reference_point[0].z_coordinate[0].value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
+                                                logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].shape_reference_point[0].z_coordinate[0].value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
                                                 return false;
                                             }
                                             // ******************* MAX validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ > 32767) {
-                                                logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].shape_reference_point[0].z_coordinate[0].value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
+                                                logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].shape_reference_point[0].z_coordinate[0].value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
                                                 return false;
                                             }
                                             
                                             if(debug) {
-                                                logger->print() << "|\033[38;5;94m000210\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].shape_reference_point[0].z_coordinate[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].shape_reference_point[0].z_coordinate[0]: " <<
+                                                logger->print() << "|" << tools::brown("000210") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].shape_reference_point[0].z_coordinate[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].shape_reference_point[0].z_coordinate[0]: " <<
                                                              ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].shape_reference_point[0].z_coordinate[0].value << " (" << __aux64__ << ")";
                                             }
                                         }
@@ -4725,17 +4725,17 @@ namespace wind
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].range.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].range.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 4095) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].range.value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].range.value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
                                     return false;
                                 }
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000211\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].range.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].range: " <<
+                                    logger->print() << "|" << tools::brown("000211") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].range.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].range: " <<
                                                  ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].range.value << " (" << __aux64__ << ")";
                                 }
                                 
@@ -4750,17 +4750,17 @@ namespace wind
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].horizontal_opening_angle_start.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].horizontal_opening_angle_start.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 3601) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].horizontal_opening_angle_start.value' " << (__aux64__) << " exceeds max allowable (3601); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].horizontal_opening_angle_start.value' " << (__aux64__) << " exceeds max allowable (3601); message dropped.";
                                     return false;
                                 }
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000212\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].horizontal_opening_angle_start.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].horizontal_opening_angle_start: " <<
+                                    logger->print() << "|" << tools::brown("000212") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].horizontal_opening_angle_start.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].horizontal_opening_angle_start: " <<
                                                  ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].horizontal_opening_angle_start.value << " (" << __aux64__ << ")";
                                 }
                                 
@@ -4775,17 +4775,17 @@ namespace wind
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].horizontal_opening_angle_end.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].horizontal_opening_angle_end.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 3601) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].horizontal_opening_angle_end.value' " << (__aux64__) << " exceeds max allowable (3601); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].horizontal_opening_angle_end.value' " << (__aux64__) << " exceeds max allowable (3601); message dropped.";
                                     return false;
                                 }
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000213\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].horizontal_opening_angle_end.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].horizontal_opening_angle_end: " <<
+                                    logger->print() << "|" << tools::brown("000213") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].horizontal_opening_angle_end.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].horizontal_opening_angle_end: " <<
                                                  ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].horizontal_opening_angle_end.value << " (" << __aux64__ << ")";
                                 }
                                 
@@ -4801,17 +4801,17 @@ namespace wind
                                     
                                     // ******************* MIN validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].vertical_opening_angle_start[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].vertical_opening_angle_start[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                         return false;
                                     }
                                     // ******************* MAX validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ > 3601) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].vertical_opening_angle_start[0].value' " << (__aux64__) << " exceeds max allowable (3601); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].vertical_opening_angle_start[0].value' " << (__aux64__) << " exceeds max allowable (3601); message dropped.";
                                         return false;
                                     }
                                     
                                     if(debug) {
-                                        logger->print() << "|\033[38;5;94m000214\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].vertical_opening_angle_start[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].vertical_opening_angle_start[0]: " <<
+                                        logger->print() << "|" << tools::brown("000214") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].vertical_opening_angle_start[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].vertical_opening_angle_start[0]: " <<
                                                      ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].vertical_opening_angle_start[0].value << " (" << __aux64__ << ")";
                                     }
                                 }
@@ -4828,17 +4828,17 @@ namespace wind
                                     
                                     // ******************* MIN validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].vertical_opening_angle_end[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].vertical_opening_angle_end[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                         return false;
                                     }
                                     // ******************* MAX validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ > 3601) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].vertical_opening_angle_end[0].value' " << (__aux64__) << " exceeds max allowable (3601); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].vertical_opening_angle_end[0].value' " << (__aux64__) << " exceeds max allowable (3601); message dropped.";
                                         return false;
                                     }
                                     
                                     if(debug) {
-                                        logger->print() << "|\033[38;5;94m000215\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].vertical_opening_angle_end[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].vertical_opening_angle_end[0]: " <<
+                                        logger->print() << "|" << tools::brown("000215") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].vertical_opening_angle_end[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].vertical_opening_angle_end[0]: " <<
                                                      ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial[0].vertical_opening_angle_end[0].value << " (" << __aux64__ << ")";
                                     }
                                 }
@@ -4859,7 +4859,7 @@ namespace wind
                                     ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].z_coordinate.push_back(_tmp_216);
                                 
                                     if(debug)
-                                        logger->print() << "|\033[38;5;94m000216\033[0m| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].z_coordinate " << tools::green("present");
+                                        logger->print() << "|" << tools::brown("000216") << "| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].z_coordinate " << tools::green("present");
                                 }
                                 
                                 // Field name: ref_point_id
@@ -4870,18 +4870,18 @@ namespace wind
                                 ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].ref_point_id.value = __aux64__;
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000217\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].ref_point_id.value) << 
+                                    logger->print() << "|" << tools::brown("000217") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].ref_point_id.value) << 
                                                  " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].ref_point_id.value: " << static_cast<int>(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].ref_point_id.value);
                                 }
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].ref_point_id.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].ref_point_id.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 255) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].ref_point_id.value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].ref_point_id.value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
                                     return false;
                                 }
                                 
@@ -4897,17 +4897,17 @@ namespace wind
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < -3094) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].x_coordinate.value' " << (__aux64__) << " is less than allowable (-3094); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].x_coordinate.value' " << (__aux64__) << " is less than allowable (-3094); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 1001) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].x_coordinate.value' " << (__aux64__) << " exceeds max allowable (1001); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].x_coordinate.value' " << (__aux64__) << " exceeds max allowable (1001); message dropped.";
                                     return false;
                                 }
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000218\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].x_coordinate.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].x_coordinate: " <<
+                                    logger->print() << "|" << tools::brown("000218") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].x_coordinate.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].x_coordinate: " <<
                                                  ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].x_coordinate.value << " (" << __aux64__ << ")";
                                 }
                                 
@@ -4923,17 +4923,17 @@ namespace wind
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < -3094) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].y_coordinate.value' " << (__aux64__) << " is less than allowable (-3094); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].y_coordinate.value' " << (__aux64__) << " is less than allowable (-3094); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 1001) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].y_coordinate.value' " << (__aux64__) << " exceeds max allowable (1001); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].y_coordinate.value' " << (__aux64__) << " exceeds max allowable (1001); message dropped.";
                                     return false;
                                 }
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000219\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].y_coordinate.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].y_coordinate: " <<
+                                    logger->print() << "|" << tools::brown("000219") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].y_coordinate.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].y_coordinate: " <<
                                                  ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].y_coordinate.value << " (" << __aux64__ << ")";
                                 }
                                 
@@ -4950,17 +4950,17 @@ namespace wind
                                     
                                     // ******************* MIN validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ < -3094) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].z_coordinate[0].value' " << (__aux64__) << " is less than allowable (-3094); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].z_coordinate[0].value' " << (__aux64__) << " is less than allowable (-3094); message dropped.";
                                         return false;
                                     }
                                     // ******************* MAX validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ > 1001) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].z_coordinate[0].value' " << (__aux64__) << " exceeds max allowable (1001); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].z_coordinate[0].value' " << (__aux64__) << " exceeds max allowable (1001); message dropped.";
                                         return false;
                                     }
                                     
                                     if(debug) {
-                                        logger->print() << "|\033[38;5;94m000220\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].z_coordinate[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].z_coordinate[0]: " <<
+                                        logger->print() << "|" << tools::brown("000220") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].z_coordinate[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].z_coordinate[0]: " <<
                                                      ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].z_coordinate[0].value << " (" << __aux64__ << ")";
                                     }
                                 }
@@ -4972,7 +4972,7 @@ namespace wind
                                 uint8_t* _ext_flag_142 = (uint8_t*) buffer++;  // Read ext flag from ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000221\033[0m| Reading ext flag from ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.: " << int(*_ext_flag_142);
+                                    logger->print() << "|" << tools::brown("000221") << "| Reading ext flag from ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.: " << int(*_ext_flag_142);
                                 }
                                 
                                 int16_t* _tmp_221 = (int16_t*)buffer;
@@ -4983,17 +4983,17 @@ namespace wind
                                 int _if__tmp_221 = __aux64__;
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000222\033[0m| SequenceOf ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list. size: " << int(__aux64__);
+                                    logger->print() << "|" << tools::brown("000222") << "| SequenceOf ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list. size: " << int(__aux64__);
                                 }
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 1) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.value' " << (__aux64__) << " is less than allowable (1); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.value' " << (__aux64__) << " is less than allowable (1); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 16) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.value' " << (__aux64__) << " exceeds max allowable (16); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.value' " << (__aux64__) << " exceeds max allowable (16); message dropped.";
                                     return false;
                                 }
                                 
@@ -5013,14 +5013,14 @@ namespace wind
                                             ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].vertical_opening_angle_start.push_back(_tmp_222);
                                         
                                             if(debug)
-                                                logger->print() << "|\033[38;5;94m000223\033[0m| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].vertical_opening_angle_start " << tools::green("present");
+                                                logger->print() << "|" << tools::brown("000223") << "| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].vertical_opening_angle_start " << tools::green("present");
                                         }
                                         if(*(buffer++)) { 
                                             its_container_v4_etsi_its_cdd_msgs::msg::CartesianAngleValue _tmp_223;
                                             ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].vertical_opening_angle_end.push_back(_tmp_223);
                                         
                                             if(debug)
-                                                logger->print() << "|\033[38;5;94m000224\033[0m| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].vertical_opening_angle_end " << tools::green("present");
+                                                logger->print() << "|" << tools::brown("000224") << "| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].vertical_opening_angle_end " << tools::green("present");
                                         }
                                         
                                         // Field name: range
@@ -5034,17 +5034,17 @@ namespace wind
                                         
                                         // ******************* MIN validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].range.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].range.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                             return false;
                                         }
                                         // ******************* MAX validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ > 4095) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].range.value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].range.value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
                                             return false;
                                         }
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000225\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].range.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].range: " <<
+                                            logger->print() << "|" << tools::brown("000225") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].range.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].range: " <<
                                                          ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].range.value << " (" << __aux64__ << ")";
                                         }
                                         
@@ -5059,17 +5059,17 @@ namespace wind
                                         
                                         // ******************* MIN validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].horizontal_opening_angle_start.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].horizontal_opening_angle_start.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                             return false;
                                         }
                                         // ******************* MAX validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ > 3601) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].horizontal_opening_angle_start.value' " << (__aux64__) << " exceeds max allowable (3601); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].horizontal_opening_angle_start.value' " << (__aux64__) << " exceeds max allowable (3601); message dropped.";
                                             return false;
                                         }
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000226\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].horizontal_opening_angle_start.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].horizontal_opening_angle_start: " <<
+                                            logger->print() << "|" << tools::brown("000226") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].horizontal_opening_angle_start.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].horizontal_opening_angle_start: " <<
                                                          ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].horizontal_opening_angle_start.value << " (" << __aux64__ << ")";
                                         }
                                         
@@ -5084,17 +5084,17 @@ namespace wind
                                         
                                         // ******************* MIN validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].horizontal_opening_angle_end.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].horizontal_opening_angle_end.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                             return false;
                                         }
                                         // ******************* MAX validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ > 3601) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].horizontal_opening_angle_end.value' " << (__aux64__) << " exceeds max allowable (3601); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].horizontal_opening_angle_end.value' " << (__aux64__) << " exceeds max allowable (3601); message dropped.";
                                             return false;
                                         }
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000227\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].horizontal_opening_angle_end.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].horizontal_opening_angle_end: " <<
+                                            logger->print() << "|" << tools::brown("000227") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].horizontal_opening_angle_end.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].horizontal_opening_angle_end: " <<
                                                          ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].horizontal_opening_angle_end.value << " (" << __aux64__ << ")";
                                         }
                                         
@@ -5110,17 +5110,17 @@ namespace wind
                                             
                                             // ******************* MIN validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                                logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].vertical_opening_angle_start[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                                logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].vertical_opening_angle_start[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                                 return false;
                                             }
                                             // ******************* MAX validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ > 3601) {
-                                                logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].vertical_opening_angle_start[0].value' " << (__aux64__) << " exceeds max allowable (3601); message dropped.";
+                                                logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].vertical_opening_angle_start[0].value' " << (__aux64__) << " exceeds max allowable (3601); message dropped.";
                                                 return false;
                                             }
                                             
                                             if(debug) {
-                                                logger->print() << "|\033[38;5;94m000228\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].vertical_opening_angle_start[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].vertical_opening_angle_start[0]: " <<
+                                                logger->print() << "|" << tools::brown("000228") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].vertical_opening_angle_start[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].vertical_opening_angle_start[0]: " <<
                                                              ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].vertical_opening_angle_start[0].value << " (" << __aux64__ << ")";
                                             }
                                         }
@@ -5137,17 +5137,17 @@ namespace wind
                                             
                                             // ******************* MIN validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                                logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].vertical_opening_angle_end[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                                logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].vertical_opening_angle_end[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                                 return false;
                                             }
                                             // ******************* MAX validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ > 3601) {
-                                                logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].vertical_opening_angle_end[0].value' " << (__aux64__) << " exceeds max allowable (3601); message dropped.";
+                                                logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].vertical_opening_angle_end[0].value' " << (__aux64__) << " exceeds max allowable (3601); message dropped.";
                                                 return false;
                                             }
                                             
                                             if(debug) {
-                                                logger->print() << "|\033[38;5;94m000229\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].vertical_opening_angle_end[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].vertical_opening_angle_end[0]: " <<
+                                                logger->print() << "|" << tools::brown("000229") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].vertical_opening_angle_end[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].vertical_opening_angle_end[0]: " <<
                                                              ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.included_shapes.elements[k].radial_shapes[0].radial_shapes_list.elements[m].vertical_opening_angle_end[0].value << " (" << __aux64__ << ")";
                                             }
                                         }
@@ -5167,7 +5167,7 @@ namespace wind
                     uint8_t* _ext_flag_148 = (uint8_t*) buffer++;  // Read ext flag from ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.
                     
                     if(debug) {
-                        logger->print() << "|\033[38;5;94m000230\033[0m| Reading ext flag from ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.: " << int(*_ext_flag_148);
+                        logger->print() << "|" << tools::brown("000230") << "| Reading ext flag from ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.: " << int(*_ext_flag_148);
                     }
                     
                     int16_t* _tmp_230 = (int16_t*)buffer;
@@ -5177,17 +5177,17 @@ namespace wind
                     int _if__tmp_230 = __aux64__;
                     
                     if(debug) {
-                        logger->print() << "|\033[38;5;94m000231\033[0m| SequenceOf ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes. size: " << int(__aux64__);
+                        logger->print() << "|" << tools::brown("000231") << "| SequenceOf ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes. size: " << int(__aux64__);
                     }
                     
                     // ******************* MIN validator *******************
                     if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                         return false;
                     }
                     // ******************* MAX validator *******************
                     if(VALIDATORS_ENABLED && __aux64__ > 4) {
-                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.value' " << (__aux64__) << " exceeds max allowable (4); message dropped.";
+                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.value' " << (__aux64__) << " exceeds max allowable (4); message dropped.";
                         return false;
                     }
                     
@@ -5225,21 +5225,21 @@ namespace wind
                                     ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].shape_reference_point.push_back(_tmp_232);
                                 
                                     if(debug)
-                                        logger->print() << "|\033[38;5;94m000232\033[0m| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].shape_reference_point " << tools::green("present");
+                                        logger->print() << "|" << tools::brown("000232") << "| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].shape_reference_point " << tools::green("present");
                                 }
                                 if(*(buffer++)) { 
                                     its_container_v4_etsi_its_cdd_msgs::msg::CartesianAngleValue _tmp_233;
                                     ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].orientation.push_back(_tmp_233);
                                 
                                     if(debug)
-                                        logger->print() << "|\033[38;5;94m000233\033[0m| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].orientation " << tools::green("present");
+                                        logger->print() << "|" << tools::brown("000233") << "| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].orientation " << tools::green("present");
                                 }
                                 if(*(buffer++)) { 
                                     its_container_v4_etsi_its_cdd_msgs::msg::StandardLength12b _tmp_234;
                                     ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].height.push_back(_tmp_234);
                                 
                                     if(debug)
-                                        logger->print() << "|\033[38;5;94m000234\033[0m| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].height " << tools::green("present");
+                                        logger->print() << "|" << tools::brown("000234") << "| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].height " << tools::green("present");
                                 }
                                 
                                 if(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].shape_reference_point.size() != 0) {
@@ -5253,7 +5253,7 @@ namespace wind
                                             ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].shape_reference_point[0].z_coordinate.push_back(_tmp_235);
                                         
                                             if(debug)
-                                                logger->print() << "|\033[38;5;94m000235\033[0m| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].shape_reference_point[0].z_coordinate " << tools::green("present");
+                                                logger->print() << "|" << tools::brown("000235") << "| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].shape_reference_point[0].z_coordinate " << tools::green("present");
                                         }
                                         
                                         // Field name: x_coordinate
@@ -5268,17 +5268,17 @@ namespace wind
                                         
                                         // ******************* MIN validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ < -32768) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].shape_reference_point[0].x_coordinate.value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].shape_reference_point[0].x_coordinate.value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
                                             return false;
                                         }
                                         // ******************* MAX validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ > 32767) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].shape_reference_point[0].x_coordinate.value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].shape_reference_point[0].x_coordinate.value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
                                             return false;
                                         }
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000236\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].shape_reference_point[0].x_coordinate.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].shape_reference_point[0].x_coordinate: " <<
+                                            logger->print() << "|" << tools::brown("000236") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].shape_reference_point[0].x_coordinate.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].shape_reference_point[0].x_coordinate: " <<
                                                          ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].shape_reference_point[0].x_coordinate.value << " (" << __aux64__ << ")";
                                         }
                                         
@@ -5294,17 +5294,17 @@ namespace wind
                                         
                                         // ******************* MIN validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ < -32768) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].shape_reference_point[0].y_coordinate.value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].shape_reference_point[0].y_coordinate.value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
                                             return false;
                                         }
                                         // ******************* MAX validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ > 32767) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].shape_reference_point[0].y_coordinate.value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].shape_reference_point[0].y_coordinate.value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
                                             return false;
                                         }
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000237\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].shape_reference_point[0].y_coordinate.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].shape_reference_point[0].y_coordinate: " <<
+                                            logger->print() << "|" << tools::brown("000237") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].shape_reference_point[0].y_coordinate.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].shape_reference_point[0].y_coordinate: " <<
                                                          ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].shape_reference_point[0].y_coordinate.value << " (" << __aux64__ << ")";
                                         }
                                         
@@ -5321,17 +5321,17 @@ namespace wind
                                             
                                             // ******************* MIN validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ < -32768) {
-                                                logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].shape_reference_point[0].z_coordinate[0].value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
+                                                logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].shape_reference_point[0].z_coordinate[0].value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
                                                 return false;
                                             }
                                             // ******************* MAX validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ > 32767) {
-                                                logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].shape_reference_point[0].z_coordinate[0].value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
+                                                logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].shape_reference_point[0].z_coordinate[0].value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
                                                 return false;
                                             }
                                             
                                             if(debug) {
-                                                logger->print() << "|\033[38;5;94m000238\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].shape_reference_point[0].z_coordinate[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].shape_reference_point[0].z_coordinate[0]: " <<
+                                                logger->print() << "|" << tools::brown("000238") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].shape_reference_point[0].z_coordinate[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].shape_reference_point[0].z_coordinate[0]: " <<
                                                              ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].shape_reference_point[0].z_coordinate[0].value << " (" << __aux64__ << ")";
                                             }
                                         }
@@ -5348,17 +5348,17 @@ namespace wind
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].semi_length.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].semi_length.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 4095) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].semi_length.value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].semi_length.value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
                                     return false;
                                 }
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000239\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].semi_length.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].semi_length: " <<
+                                    logger->print() << "|" << tools::brown("000239") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].semi_length.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].semi_length: " <<
                                                  ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].semi_length.value << " (" << __aux64__ << ")";
                                 }
                                 
@@ -5373,17 +5373,17 @@ namespace wind
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].semi_breadth.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].semi_breadth.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 4095) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].semi_breadth.value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].semi_breadth.value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
                                     return false;
                                 }
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000240\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].semi_breadth.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].semi_breadth: " <<
+                                    logger->print() << "|" << tools::brown("000240") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].semi_breadth.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].semi_breadth: " <<
                                                  ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].semi_breadth.value << " (" << __aux64__ << ")";
                                 }
                                 
@@ -5399,17 +5399,17 @@ namespace wind
                                     
                                     // ******************* MIN validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].orientation[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].orientation[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                         return false;
                                     }
                                     // ******************* MAX validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ > 3601) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].orientation[0].value' " << (__aux64__) << " exceeds max allowable (3601); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].orientation[0].value' " << (__aux64__) << " exceeds max allowable (3601); message dropped.";
                                         return false;
                                     }
                                     
                                     if(debug) {
-                                        logger->print() << "|\033[38;5;94m000241\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].orientation[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].orientation[0]: " <<
+                                        logger->print() << "|" << tools::brown("000241") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].orientation[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].orientation[0]: " <<
                                                      ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].orientation[0].value << " (" << __aux64__ << ")";
                                     }
                                 }
@@ -5426,17 +5426,17 @@ namespace wind
                                     
                                     // ******************* MIN validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].height[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].height[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                         return false;
                                     }
                                     // ******************* MAX validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ > 4095) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].height[0].value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].height[0].value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
                                         return false;
                                     }
                                     
                                     if(debug) {
-                                        logger->print() << "|\033[38;5;94m000242\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].height[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].height[0]: " <<
+                                        logger->print() << "|" << tools::brown("000242") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].height[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].height[0]: " <<
                                                      ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].rectangular[0].height[0].value << " (" << __aux64__ << ")";
                                     }
                                 }
@@ -5455,14 +5455,14 @@ namespace wind
                                     ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].shape_reference_point.push_back(_tmp_244);
                                 
                                     if(debug)
-                                        logger->print() << "|\033[38;5;94m000243\033[0m| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].shape_reference_point " << tools::green("present");
+                                        logger->print() << "|" << tools::brown("000243") << "| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].shape_reference_point " << tools::green("present");
                                 }
                                 if(*(buffer++)) { 
                                     its_container_v4_etsi_its_cdd_msgs::msg::StandardLength12b _tmp_245;
                                     ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].height.push_back(_tmp_245);
                                 
                                     if(debug)
-                                        logger->print() << "|\033[38;5;94m000244\033[0m| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].height " << tools::green("present");
+                                        logger->print() << "|" << tools::brown("000244") << "| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].height " << tools::green("present");
                                 }
                                 
                                 if(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].shape_reference_point.size() != 0) {
@@ -5476,7 +5476,7 @@ namespace wind
                                             ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].shape_reference_point[0].z_coordinate.push_back(_tmp_246);
                                         
                                             if(debug)
-                                                logger->print() << "|\033[38;5;94m000245\033[0m| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].shape_reference_point[0].z_coordinate " << tools::green("present");
+                                                logger->print() << "|" << tools::brown("000245") << "| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].shape_reference_point[0].z_coordinate " << tools::green("present");
                                         }
                                         
                                         // Field name: x_coordinate
@@ -5491,17 +5491,17 @@ namespace wind
                                         
                                         // ******************* MIN validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ < -32768) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].shape_reference_point[0].x_coordinate.value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].shape_reference_point[0].x_coordinate.value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
                                             return false;
                                         }
                                         // ******************* MAX validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ > 32767) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].shape_reference_point[0].x_coordinate.value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].shape_reference_point[0].x_coordinate.value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
                                             return false;
                                         }
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000246\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].shape_reference_point[0].x_coordinate.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].shape_reference_point[0].x_coordinate: " <<
+                                            logger->print() << "|" << tools::brown("000246") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].shape_reference_point[0].x_coordinate.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].shape_reference_point[0].x_coordinate: " <<
                                                          ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].shape_reference_point[0].x_coordinate.value << " (" << __aux64__ << ")";
                                         }
                                         
@@ -5517,17 +5517,17 @@ namespace wind
                                         
                                         // ******************* MIN validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ < -32768) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].shape_reference_point[0].y_coordinate.value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].shape_reference_point[0].y_coordinate.value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
                                             return false;
                                         }
                                         // ******************* MAX validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ > 32767) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].shape_reference_point[0].y_coordinate.value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].shape_reference_point[0].y_coordinate.value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
                                             return false;
                                         }
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000247\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].shape_reference_point[0].y_coordinate.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].shape_reference_point[0].y_coordinate: " <<
+                                            logger->print() << "|" << tools::brown("000247") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].shape_reference_point[0].y_coordinate.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].shape_reference_point[0].y_coordinate: " <<
                                                          ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].shape_reference_point[0].y_coordinate.value << " (" << __aux64__ << ")";
                                         }
                                         
@@ -5544,17 +5544,17 @@ namespace wind
                                             
                                             // ******************* MIN validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ < -32768) {
-                                                logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].shape_reference_point[0].z_coordinate[0].value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
+                                                logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].shape_reference_point[0].z_coordinate[0].value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
                                                 return false;
                                             }
                                             // ******************* MAX validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ > 32767) {
-                                                logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].shape_reference_point[0].z_coordinate[0].value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
+                                                logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].shape_reference_point[0].z_coordinate[0].value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
                                                 return false;
                                             }
                                             
                                             if(debug) {
-                                                logger->print() << "|\033[38;5;94m000248\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].shape_reference_point[0].z_coordinate[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].shape_reference_point[0].z_coordinate[0]: " <<
+                                                logger->print() << "|" << tools::brown("000248") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].shape_reference_point[0].z_coordinate[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].shape_reference_point[0].z_coordinate[0]: " <<
                                                              ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].shape_reference_point[0].z_coordinate[0].value << " (" << __aux64__ << ")";
                                             }
                                         }
@@ -5571,17 +5571,17 @@ namespace wind
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].radius.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].radius.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 4095) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].radius.value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].radius.value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
                                     return false;
                                 }
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000249\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].radius.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].radius: " <<
+                                    logger->print() << "|" << tools::brown("000249") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].radius.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].radius: " <<
                                                  ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].radius.value << " (" << __aux64__ << ")";
                                 }
                                 
@@ -5597,17 +5597,17 @@ namespace wind
                                     
                                     // ******************* MIN validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].height[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].height[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                         return false;
                                     }
                                     // ******************* MAX validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ > 4095) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].height[0].value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].height[0].value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
                                         return false;
                                     }
                                     
                                     if(debug) {
-                                        logger->print() << "|\033[38;5;94m000250\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].height[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].height[0]: " <<
+                                        logger->print() << "|" << tools::brown("000250") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].height[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].height[0]: " <<
                                                      ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].circular[0].height[0].value << " (" << __aux64__ << ")";
                                     }
                                 }
@@ -5626,14 +5626,14 @@ namespace wind
                                     ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].shape_reference_point.push_back(_tmp_253);
                                 
                                     if(debug)
-                                        logger->print() << "|\033[38;5;94m000251\033[0m| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].shape_reference_point " << tools::green("present");
+                                        logger->print() << "|" << tools::brown("000251") << "| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].shape_reference_point " << tools::green("present");
                                 }
                                 if(*(buffer++)) { 
                                     its_container_v4_etsi_its_cdd_msgs::msg::StandardLength12b _tmp_254;
                                     ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].height.push_back(_tmp_254);
                                 
                                     if(debug)
-                                        logger->print() << "|\033[38;5;94m000252\033[0m| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].height " << tools::green("present");
+                                        logger->print() << "|" << tools::brown("000252") << "| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].height " << tools::green("present");
                                 }
                                 
                                 if(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].shape_reference_point.size() != 0) {
@@ -5647,7 +5647,7 @@ namespace wind
                                             ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].shape_reference_point[0].z_coordinate.push_back(_tmp_255);
                                         
                                             if(debug)
-                                                logger->print() << "|\033[38;5;94m000253\033[0m| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].shape_reference_point[0].z_coordinate " << tools::green("present");
+                                                logger->print() << "|" << tools::brown("000253") << "| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].shape_reference_point[0].z_coordinate " << tools::green("present");
                                         }
                                         
                                         // Field name: x_coordinate
@@ -5662,17 +5662,17 @@ namespace wind
                                         
                                         // ******************* MIN validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ < -32768) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].shape_reference_point[0].x_coordinate.value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].shape_reference_point[0].x_coordinate.value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
                                             return false;
                                         }
                                         // ******************* MAX validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ > 32767) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].shape_reference_point[0].x_coordinate.value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].shape_reference_point[0].x_coordinate.value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
                                             return false;
                                         }
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000254\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].shape_reference_point[0].x_coordinate.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].shape_reference_point[0].x_coordinate: " <<
+                                            logger->print() << "|" << tools::brown("000254") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].shape_reference_point[0].x_coordinate.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].shape_reference_point[0].x_coordinate: " <<
                                                          ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].shape_reference_point[0].x_coordinate.value << " (" << __aux64__ << ")";
                                         }
                                         
@@ -5688,17 +5688,17 @@ namespace wind
                                         
                                         // ******************* MIN validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ < -32768) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].shape_reference_point[0].y_coordinate.value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].shape_reference_point[0].y_coordinate.value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
                                             return false;
                                         }
                                         // ******************* MAX validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ > 32767) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].shape_reference_point[0].y_coordinate.value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].shape_reference_point[0].y_coordinate.value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
                                             return false;
                                         }
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000255\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].shape_reference_point[0].y_coordinate.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].shape_reference_point[0].y_coordinate: " <<
+                                            logger->print() << "|" << tools::brown("000255") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].shape_reference_point[0].y_coordinate.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].shape_reference_point[0].y_coordinate: " <<
                                                          ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].shape_reference_point[0].y_coordinate.value << " (" << __aux64__ << ")";
                                         }
                                         
@@ -5715,17 +5715,17 @@ namespace wind
                                             
                                             // ******************* MIN validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ < -32768) {
-                                                logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].shape_reference_point[0].z_coordinate[0].value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
+                                                logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].shape_reference_point[0].z_coordinate[0].value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
                                                 return false;
                                             }
                                             // ******************* MAX validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ > 32767) {
-                                                logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].shape_reference_point[0].z_coordinate[0].value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
+                                                logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].shape_reference_point[0].z_coordinate[0].value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
                                                 return false;
                                             }
                                             
                                             if(debug) {
-                                                logger->print() << "|\033[38;5;94m000256\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].shape_reference_point[0].z_coordinate[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].shape_reference_point[0].z_coordinate[0]: " <<
+                                                logger->print() << "|" << tools::brown("000256") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].shape_reference_point[0].z_coordinate[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].shape_reference_point[0].z_coordinate[0]: " <<
                                                              ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].shape_reference_point[0].z_coordinate[0].value << " (" << __aux64__ << ")";
                                             }
                                         }
@@ -5738,7 +5738,7 @@ namespace wind
                                 uint8_t* _ext_flag_165 = (uint8_t*) buffer++;  // Read ext flag from ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].polygon.
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000257\033[0m| Reading ext flag from ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].polygon.: " << int(*_ext_flag_165);
+                                    logger->print() << "|" << tools::brown("000257") << "| Reading ext flag from ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].polygon.: " << int(*_ext_flag_165);
                                 }
                                 
                                 int16_t* _tmp_259 = (int16_t*)buffer;
@@ -5749,17 +5749,17 @@ namespace wind
                                 int _if__tmp_259 = __aux64__;
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000258\033[0m| SequenceOf ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].polygon. size: " << int(__aux64__);
+                                    logger->print() << "|" << tools::brown("000258") << "| SequenceOf ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].polygon. size: " << int(__aux64__);
                                 }
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 1) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].polygon.value' " << (__aux64__) << " is less than allowable (1); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].polygon.value' " << (__aux64__) << " is less than allowable (1); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 16) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].polygon.value' " << (__aux64__) << " exceeds max allowable (16); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].polygon.value' " << (__aux64__) << " exceeds max allowable (16); message dropped.";
                                     return false;
                                 }
                                 
@@ -5777,7 +5777,7 @@ namespace wind
                                             ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].polygon.elements[o].z_coordinate.push_back(_tmp_260);
                                         
                                             if(debug)
-                                                logger->print() << "|\033[38;5;94m000259\033[0m| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].polygon.elements[o].z_coordinate " << tools::green("present");
+                                                logger->print() << "|" << tools::brown("000259") << "| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].polygon.elements[o].z_coordinate " << tools::green("present");
                                         }
                                         
                                         // Field name: x_coordinate
@@ -5792,17 +5792,17 @@ namespace wind
                                         
                                         // ******************* MIN validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ < -32768) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].polygon.elements[o].x_coordinate.value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].polygon.elements[o].x_coordinate.value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
                                             return false;
                                         }
                                         // ******************* MAX validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ > 32767) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].polygon.elements[o].x_coordinate.value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].polygon.elements[o].x_coordinate.value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
                                             return false;
                                         }
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000260\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].polygon.elements[o].x_coordinate.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].polygon.elements[o].x_coordinate: " <<
+                                            logger->print() << "|" << tools::brown("000260") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].polygon.elements[o].x_coordinate.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].polygon.elements[o].x_coordinate: " <<
                                                          ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].polygon.elements[o].x_coordinate.value << " (" << __aux64__ << ")";
                                         }
                                         
@@ -5818,17 +5818,17 @@ namespace wind
                                         
                                         // ******************* MIN validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ < -32768) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].polygon.elements[o].y_coordinate.value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].polygon.elements[o].y_coordinate.value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
                                             return false;
                                         }
                                         // ******************* MAX validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ > 32767) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].polygon.elements[o].y_coordinate.value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].polygon.elements[o].y_coordinate.value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
                                             return false;
                                         }
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000261\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].polygon.elements[o].y_coordinate.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].polygon.elements[o].y_coordinate: " <<
+                                            logger->print() << "|" << tools::brown("000261") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].polygon.elements[o].y_coordinate.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].polygon.elements[o].y_coordinate: " <<
                                                          ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].polygon.elements[o].y_coordinate.value << " (" << __aux64__ << ")";
                                         }
                                         
@@ -5845,17 +5845,17 @@ namespace wind
                                             
                                             // ******************* MIN validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ < -32768) {
-                                                logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].polygon.elements[o].z_coordinate[0].value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
+                                                logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].polygon.elements[o].z_coordinate[0].value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
                                                 return false;
                                             }
                                             // ******************* MAX validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ > 32767) {
-                                                logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].polygon.elements[o].z_coordinate[0].value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
+                                                logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].polygon.elements[o].z_coordinate[0].value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
                                                 return false;
                                             }
                                             
                                             if(debug) {
-                                                logger->print() << "|\033[38;5;94m000262\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].polygon.elements[o].z_coordinate[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].polygon.elements[o].z_coordinate[0]: " <<
+                                                logger->print() << "|" << tools::brown("000262") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].polygon.elements[o].z_coordinate[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].polygon.elements[o].z_coordinate[0]: " <<
                                                              ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].polygon.elements[o].z_coordinate[0].value << " (" << __aux64__ << ")";
                                             }
                                         }
@@ -5873,17 +5873,17 @@ namespace wind
                                     
                                     // ******************* MIN validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].height[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].height[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                         return false;
                                     }
                                     // ******************* MAX validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ > 4095) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].height[0].value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].height[0].value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
                                         return false;
                                     }
                                     
                                     if(debug) {
-                                        logger->print() << "|\033[38;5;94m000263\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].height[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].height[0]: " <<
+                                        logger->print() << "|" << tools::brown("000263") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].height[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].height[0]: " <<
                                                      ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].polygonal[0].height[0].value << " (" << __aux64__ << ")";
                                     }
                                 }
@@ -5904,21 +5904,21 @@ namespace wind
                                     ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].shape_reference_point.push_back(_tmp_266);
                                 
                                     if(debug)
-                                        logger->print() << "|\033[38;5;94m000264\033[0m| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].shape_reference_point " << tools::green("present");
+                                        logger->print() << "|" << tools::brown("000264") << "| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].shape_reference_point " << tools::green("present");
                                 }
                                 if(*(buffer++)) { 
                                     its_container_v4_etsi_its_cdd_msgs::msg::CartesianAngleValue _tmp_267;
                                     ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].orientation.push_back(_tmp_267);
                                 
                                     if(debug)
-                                        logger->print() << "|\033[38;5;94m000265\033[0m| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].orientation " << tools::green("present");
+                                        logger->print() << "|" << tools::brown("000265") << "| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].orientation " << tools::green("present");
                                 }
                                 if(*(buffer++)) { 
                                     its_container_v4_etsi_its_cdd_msgs::msg::StandardLength12b _tmp_268;
                                     ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].height.push_back(_tmp_268);
                                 
                                     if(debug)
-                                        logger->print() << "|\033[38;5;94m000266\033[0m| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].height " << tools::green("present");
+                                        logger->print() << "|" << tools::brown("000266") << "| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].height " << tools::green("present");
                                 }
                                 
                                 if(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].shape_reference_point.size() != 0) {
@@ -5932,7 +5932,7 @@ namespace wind
                                             ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].shape_reference_point[0].z_coordinate.push_back(_tmp_269);
                                         
                                             if(debug)
-                                                logger->print() << "|\033[38;5;94m000267\033[0m| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].shape_reference_point[0].z_coordinate " << tools::green("present");
+                                                logger->print() << "|" << tools::brown("000267") << "| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].shape_reference_point[0].z_coordinate " << tools::green("present");
                                         }
                                         
                                         // Field name: x_coordinate
@@ -5947,17 +5947,17 @@ namespace wind
                                         
                                         // ******************* MIN validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ < -32768) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].shape_reference_point[0].x_coordinate.value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].shape_reference_point[0].x_coordinate.value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
                                             return false;
                                         }
                                         // ******************* MAX validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ > 32767) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].shape_reference_point[0].x_coordinate.value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].shape_reference_point[0].x_coordinate.value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
                                             return false;
                                         }
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000268\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].shape_reference_point[0].x_coordinate.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].shape_reference_point[0].x_coordinate: " <<
+                                            logger->print() << "|" << tools::brown("000268") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].shape_reference_point[0].x_coordinate.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].shape_reference_point[0].x_coordinate: " <<
                                                          ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].shape_reference_point[0].x_coordinate.value << " (" << __aux64__ << ")";
                                         }
                                         
@@ -5973,17 +5973,17 @@ namespace wind
                                         
                                         // ******************* MIN validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ < -32768) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].shape_reference_point[0].y_coordinate.value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].shape_reference_point[0].y_coordinate.value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
                                             return false;
                                         }
                                         // ******************* MAX validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ > 32767) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].shape_reference_point[0].y_coordinate.value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].shape_reference_point[0].y_coordinate.value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
                                             return false;
                                         }
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000269\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].shape_reference_point[0].y_coordinate.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].shape_reference_point[0].y_coordinate: " <<
+                                            logger->print() << "|" << tools::brown("000269") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].shape_reference_point[0].y_coordinate.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].shape_reference_point[0].y_coordinate: " <<
                                                          ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].shape_reference_point[0].y_coordinate.value << " (" << __aux64__ << ")";
                                         }
                                         
@@ -6000,17 +6000,17 @@ namespace wind
                                             
                                             // ******************* MIN validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ < -32768) {
-                                                logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].shape_reference_point[0].z_coordinate[0].value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
+                                                logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].shape_reference_point[0].z_coordinate[0].value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
                                                 return false;
                                             }
                                             // ******************* MAX validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ > 32767) {
-                                                logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].shape_reference_point[0].z_coordinate[0].value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
+                                                logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].shape_reference_point[0].z_coordinate[0].value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
                                                 return false;
                                             }
                                             
                                             if(debug) {
-                                                logger->print() << "|\033[38;5;94m000270\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].shape_reference_point[0].z_coordinate[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].shape_reference_point[0].z_coordinate[0]: " <<
+                                                logger->print() << "|" << tools::brown("000270") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].shape_reference_point[0].z_coordinate[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].shape_reference_point[0].z_coordinate[0]: " <<
                                                              ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].shape_reference_point[0].z_coordinate[0].value << " (" << __aux64__ << ")";
                                             }
                                         }
@@ -6027,17 +6027,17 @@ namespace wind
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].semi_major_axis_length.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].semi_major_axis_length.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 4095) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].semi_major_axis_length.value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].semi_major_axis_length.value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
                                     return false;
                                 }
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000271\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].semi_major_axis_length.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].semi_major_axis_length: " <<
+                                    logger->print() << "|" << tools::brown("000271") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].semi_major_axis_length.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].semi_major_axis_length: " <<
                                                  ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].semi_major_axis_length.value << " (" << __aux64__ << ")";
                                 }
                                 
@@ -6052,17 +6052,17 @@ namespace wind
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].semi_minor_axis_length.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].semi_minor_axis_length.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 4095) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].semi_minor_axis_length.value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].semi_minor_axis_length.value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
                                     return false;
                                 }
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000272\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].semi_minor_axis_length.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].semi_minor_axis_length: " <<
+                                    logger->print() << "|" << tools::brown("000272") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].semi_minor_axis_length.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].semi_minor_axis_length: " <<
                                                  ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].semi_minor_axis_length.value << " (" << __aux64__ << ")";
                                 }
                                 
@@ -6078,17 +6078,17 @@ namespace wind
                                     
                                     // ******************* MIN validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].orientation[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].orientation[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                         return false;
                                     }
                                     // ******************* MAX validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ > 3601) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].orientation[0].value' " << (__aux64__) << " exceeds max allowable (3601); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].orientation[0].value' " << (__aux64__) << " exceeds max allowable (3601); message dropped.";
                                         return false;
                                     }
                                     
                                     if(debug) {
-                                        logger->print() << "|\033[38;5;94m000273\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].orientation[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].orientation[0]: " <<
+                                        logger->print() << "|" << tools::brown("000273") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].orientation[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].orientation[0]: " <<
                                                      ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].orientation[0].value << " (" << __aux64__ << ")";
                                     }
                                 }
@@ -6105,17 +6105,17 @@ namespace wind
                                     
                                     // ******************* MIN validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].height[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].height[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                         return false;
                                     }
                                     // ******************* MAX validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ > 4095) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].height[0].value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].height[0].value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
                                         return false;
                                     }
                                     
                                     if(debug) {
-                                        logger->print() << "|\033[38;5;94m000274\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].height[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].height[0]: " <<
+                                        logger->print() << "|" << tools::brown("000274") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].height[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].height[0]: " <<
                                                      ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].elliptical[0].height[0].value << " (" << __aux64__ << ")";
                                     }
                                 }
@@ -6137,21 +6137,21 @@ namespace wind
                                     ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].shape_reference_point.push_back(_tmp_278);
                                 
                                     if(debug)
-                                        logger->print() << "|\033[38;5;94m000275\033[0m| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].shape_reference_point " << tools::green("present");
+                                        logger->print() << "|" << tools::brown("000275") << "| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].shape_reference_point " << tools::green("present");
                                 }
                                 if(*(buffer++)) { 
                                     its_container_v4_etsi_its_cdd_msgs::msg::CartesianAngleValue _tmp_279;
                                     ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].vertical_opening_angle_start.push_back(_tmp_279);
                                 
                                     if(debug)
-                                        logger->print() << "|\033[38;5;94m000276\033[0m| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].vertical_opening_angle_start " << tools::green("present");
+                                        logger->print() << "|" << tools::brown("000276") << "| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].vertical_opening_angle_start " << tools::green("present");
                                 }
                                 if(*(buffer++)) { 
                                     its_container_v4_etsi_its_cdd_msgs::msg::CartesianAngleValue _tmp_280;
                                     ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].vertical_opening_angle_end.push_back(_tmp_280);
                                 
                                     if(debug)
-                                        logger->print() << "|\033[38;5;94m000277\033[0m| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].vertical_opening_angle_end " << tools::green("present");
+                                        logger->print() << "|" << tools::brown("000277") << "| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].vertical_opening_angle_end " << tools::green("present");
                                 }
                                 
                                 if(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].shape_reference_point.size() != 0) {
@@ -6165,7 +6165,7 @@ namespace wind
                                             ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].shape_reference_point[0].z_coordinate.push_back(_tmp_281);
                                         
                                             if(debug)
-                                                logger->print() << "|\033[38;5;94m000278\033[0m| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].shape_reference_point[0].z_coordinate " << tools::green("present");
+                                                logger->print() << "|" << tools::brown("000278") << "| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].shape_reference_point[0].z_coordinate " << tools::green("present");
                                         }
                                         
                                         // Field name: x_coordinate
@@ -6180,17 +6180,17 @@ namespace wind
                                         
                                         // ******************* MIN validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ < -32768) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].shape_reference_point[0].x_coordinate.value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].shape_reference_point[0].x_coordinate.value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
                                             return false;
                                         }
                                         // ******************* MAX validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ > 32767) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].shape_reference_point[0].x_coordinate.value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].shape_reference_point[0].x_coordinate.value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
                                             return false;
                                         }
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000279\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].shape_reference_point[0].x_coordinate.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].shape_reference_point[0].x_coordinate: " <<
+                                            logger->print() << "|" << tools::brown("000279") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].shape_reference_point[0].x_coordinate.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].shape_reference_point[0].x_coordinate: " <<
                                                          ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].shape_reference_point[0].x_coordinate.value << " (" << __aux64__ << ")";
                                         }
                                         
@@ -6206,17 +6206,17 @@ namespace wind
                                         
                                         // ******************* MIN validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ < -32768) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].shape_reference_point[0].y_coordinate.value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].shape_reference_point[0].y_coordinate.value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
                                             return false;
                                         }
                                         // ******************* MAX validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ > 32767) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].shape_reference_point[0].y_coordinate.value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].shape_reference_point[0].y_coordinate.value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
                                             return false;
                                         }
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000280\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].shape_reference_point[0].y_coordinate.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].shape_reference_point[0].y_coordinate: " <<
+                                            logger->print() << "|" << tools::brown("000280") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].shape_reference_point[0].y_coordinate.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].shape_reference_point[0].y_coordinate: " <<
                                                          ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].shape_reference_point[0].y_coordinate.value << " (" << __aux64__ << ")";
                                         }
                                         
@@ -6233,17 +6233,17 @@ namespace wind
                                             
                                             // ******************* MIN validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ < -32768) {
-                                                logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].shape_reference_point[0].z_coordinate[0].value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
+                                                logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].shape_reference_point[0].z_coordinate[0].value' " << (__aux64__) << " is less than allowable (-32768); message dropped.";
                                                 return false;
                                             }
                                             // ******************* MAX validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ > 32767) {
-                                                logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].shape_reference_point[0].z_coordinate[0].value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
+                                                logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].shape_reference_point[0].z_coordinate[0].value' " << (__aux64__) << " exceeds max allowable (32767); message dropped.";
                                                 return false;
                                             }
                                             
                                             if(debug) {
-                                                logger->print() << "|\033[38;5;94m000281\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].shape_reference_point[0].z_coordinate[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].shape_reference_point[0].z_coordinate[0]: " <<
+                                                logger->print() << "|" << tools::brown("000281") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].shape_reference_point[0].z_coordinate[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].shape_reference_point[0].z_coordinate[0]: " <<
                                                              ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].shape_reference_point[0].z_coordinate[0].value << " (" << __aux64__ << ")";
                                             }
                                         }
@@ -6260,17 +6260,17 @@ namespace wind
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].range.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].range.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 4095) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].range.value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].range.value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
                                     return false;
                                 }
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000282\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].range.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].range: " <<
+                                    logger->print() << "|" << tools::brown("000282") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].range.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].range: " <<
                                                  ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].range.value << " (" << __aux64__ << ")";
                                 }
                                 
@@ -6285,17 +6285,17 @@ namespace wind
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].horizontal_opening_angle_start.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].horizontal_opening_angle_start.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 3601) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].horizontal_opening_angle_start.value' " << (__aux64__) << " exceeds max allowable (3601); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].horizontal_opening_angle_start.value' " << (__aux64__) << " exceeds max allowable (3601); message dropped.";
                                     return false;
                                 }
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000283\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].horizontal_opening_angle_start.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].horizontal_opening_angle_start: " <<
+                                    logger->print() << "|" << tools::brown("000283") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].horizontal_opening_angle_start.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].horizontal_opening_angle_start: " <<
                                                  ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].horizontal_opening_angle_start.value << " (" << __aux64__ << ")";
                                 }
                                 
@@ -6310,17 +6310,17 @@ namespace wind
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].horizontal_opening_angle_end.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].horizontal_opening_angle_end.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 3601) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].horizontal_opening_angle_end.value' " << (__aux64__) << " exceeds max allowable (3601); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].horizontal_opening_angle_end.value' " << (__aux64__) << " exceeds max allowable (3601); message dropped.";
                                     return false;
                                 }
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000284\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].horizontal_opening_angle_end.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].horizontal_opening_angle_end: " <<
+                                    logger->print() << "|" << tools::brown("000284") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].horizontal_opening_angle_end.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].horizontal_opening_angle_end: " <<
                                                  ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].horizontal_opening_angle_end.value << " (" << __aux64__ << ")";
                                 }
                                 
@@ -6336,17 +6336,17 @@ namespace wind
                                     
                                     // ******************* MIN validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].vertical_opening_angle_start[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].vertical_opening_angle_start[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                         return false;
                                     }
                                     // ******************* MAX validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ > 3601) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].vertical_opening_angle_start[0].value' " << (__aux64__) << " exceeds max allowable (3601); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].vertical_opening_angle_start[0].value' " << (__aux64__) << " exceeds max allowable (3601); message dropped.";
                                         return false;
                                     }
                                     
                                     if(debug) {
-                                        logger->print() << "|\033[38;5;94m000285\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].vertical_opening_angle_start[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].vertical_opening_angle_start[0]: " <<
+                                        logger->print() << "|" << tools::brown("000285") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].vertical_opening_angle_start[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].vertical_opening_angle_start[0]: " <<
                                                      ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].vertical_opening_angle_start[0].value << " (" << __aux64__ << ")";
                                     }
                                 }
@@ -6363,17 +6363,17 @@ namespace wind
                                     
                                     // ******************* MIN validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].vertical_opening_angle_end[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].vertical_opening_angle_end[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                         return false;
                                     }
                                     // ******************* MAX validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ > 3601) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].vertical_opening_angle_end[0].value' " << (__aux64__) << " exceeds max allowable (3601); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].vertical_opening_angle_end[0].value' " << (__aux64__) << " exceeds max allowable (3601); message dropped.";
                                         return false;
                                     }
                                     
                                     if(debug) {
-                                        logger->print() << "|\033[38;5;94m000286\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].vertical_opening_angle_end[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].vertical_opening_angle_end[0]: " <<
+                                        logger->print() << "|" << tools::brown("000286") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].vertical_opening_angle_end[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].vertical_opening_angle_end[0]: " <<
                                                      ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial[0].vertical_opening_angle_end[0].value << " (" << __aux64__ << ")";
                                     }
                                 }
@@ -6394,7 +6394,7 @@ namespace wind
                                     ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].z_coordinate.push_back(_tmp_291);
                                 
                                     if(debug)
-                                        logger->print() << "|\033[38;5;94m000287\033[0m| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].z_coordinate " << tools::green("present");
+                                        logger->print() << "|" << tools::brown("000287") << "| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].z_coordinate " << tools::green("present");
                                 }
                                 
                                 // Field name: ref_point_id
@@ -6405,18 +6405,18 @@ namespace wind
                                 ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].ref_point_id.value = __aux64__;
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000288\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].ref_point_id.value) << 
+                                    logger->print() << "|" << tools::brown("000288") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].ref_point_id.value) << 
                                                  " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].ref_point_id.value: " << static_cast<int>(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].ref_point_id.value);
                                 }
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].ref_point_id.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].ref_point_id.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 255) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].ref_point_id.value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].ref_point_id.value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
                                     return false;
                                 }
                                 
@@ -6432,17 +6432,17 @@ namespace wind
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < -3094) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].x_coordinate.value' " << (__aux64__) << " is less than allowable (-3094); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].x_coordinate.value' " << (__aux64__) << " is less than allowable (-3094); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 1001) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].x_coordinate.value' " << (__aux64__) << " exceeds max allowable (1001); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].x_coordinate.value' " << (__aux64__) << " exceeds max allowable (1001); message dropped.";
                                     return false;
                                 }
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000289\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].x_coordinate.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].x_coordinate: " <<
+                                    logger->print() << "|" << tools::brown("000289") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].x_coordinate.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].x_coordinate: " <<
                                                  ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].x_coordinate.value << " (" << __aux64__ << ")";
                                 }
                                 
@@ -6458,17 +6458,17 @@ namespace wind
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < -3094) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].y_coordinate.value' " << (__aux64__) << " is less than allowable (-3094); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].y_coordinate.value' " << (__aux64__) << " is less than allowable (-3094); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 1001) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].y_coordinate.value' " << (__aux64__) << " exceeds max allowable (1001); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].y_coordinate.value' " << (__aux64__) << " exceeds max allowable (1001); message dropped.";
                                     return false;
                                 }
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000290\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].y_coordinate.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].y_coordinate: " <<
+                                    logger->print() << "|" << tools::brown("000290") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].y_coordinate.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].y_coordinate: " <<
                                                  ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].y_coordinate.value << " (" << __aux64__ << ")";
                                 }
                                 
@@ -6485,17 +6485,17 @@ namespace wind
                                     
                                     // ******************* MIN validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ < -3094) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].z_coordinate[0].value' " << (__aux64__) << " is less than allowable (-3094); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].z_coordinate[0].value' " << (__aux64__) << " is less than allowable (-3094); message dropped.";
                                         return false;
                                     }
                                     // ******************* MAX validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ > 1001) {
-                                        logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].z_coordinate[0].value' " << (__aux64__) << " exceeds max allowable (1001); message dropped.";
+                                        logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].z_coordinate[0].value' " << (__aux64__) << " exceeds max allowable (1001); message dropped.";
                                         return false;
                                     }
                                     
                                     if(debug) {
-                                        logger->print() << "|\033[38;5;94m000291\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].z_coordinate[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].z_coordinate[0]: " <<
+                                        logger->print() << "|" << tools::brown("000291") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].z_coordinate[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].z_coordinate[0]: " <<
                                                      ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].z_coordinate[0].value << " (" << __aux64__ << ")";
                                     }
                                 }
@@ -6507,7 +6507,7 @@ namespace wind
                                 uint8_t* _ext_flag_188 = (uint8_t*) buffer++;  // Read ext flag from ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000292\033[0m| Reading ext flag from ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.: " << int(*_ext_flag_188);
+                                    logger->print() << "|" << tools::brown("000292") << "| Reading ext flag from ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.: " << int(*_ext_flag_188);
                                 }
                                 
                                 int16_t* _tmp_296 = (int16_t*)buffer;
@@ -6518,17 +6518,17 @@ namespace wind
                                 int _if__tmp_296 = __aux64__;
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000293\033[0m| SequenceOf ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list. size: " << int(__aux64__);
+                                    logger->print() << "|" << tools::brown("000293") << "| SequenceOf ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list. size: " << int(__aux64__);
                                 }
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 1) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.value' " << (__aux64__) << " is less than allowable (1); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.value' " << (__aux64__) << " is less than allowable (1); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 16) {
-                                    logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.value' " << (__aux64__) << " exceeds max allowable (16); message dropped.";
+                                    logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.value' " << (__aux64__) << " exceeds max allowable (16); message dropped.";
                                     return false;
                                 }
                                 
@@ -6548,14 +6548,14 @@ namespace wind
                                             ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].vertical_opening_angle_start.push_back(_tmp_297);
                                         
                                             if(debug)
-                                                logger->print() << "|\033[38;5;94m000294\033[0m| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].vertical_opening_angle_start " << tools::green("present");
+                                                logger->print() << "|" << tools::brown("000294") << "| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].vertical_opening_angle_start " << tools::green("present");
                                         }
                                         if(*(buffer++)) { 
                                             its_container_v4_etsi_its_cdd_msgs::msg::CartesianAngleValue _tmp_298;
                                             ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].vertical_opening_angle_end.push_back(_tmp_298);
                                         
                                             if(debug)
-                                                logger->print() << "|\033[38;5;94m000295\033[0m| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].vertical_opening_angle_end " << tools::green("present");
+                                                logger->print() << "|" << tools::brown("000295") << "| ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].vertical_opening_angle_end " << tools::green("present");
                                         }
                                         
                                         // Field name: range
@@ -6569,17 +6569,17 @@ namespace wind
                                         
                                         // ******************* MIN validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].range.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].range.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                             return false;
                                         }
                                         // ******************* MAX validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ > 4095) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].range.value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].range.value' " << (__aux64__) << " exceeds max allowable (4095); message dropped.";
                                             return false;
                                         }
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000296\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].range.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].range: " <<
+                                            logger->print() << "|" << tools::brown("000296") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].range.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].range: " <<
                                                          ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].range.value << " (" << __aux64__ << ")";
                                         }
                                         
@@ -6594,17 +6594,17 @@ namespace wind
                                         
                                         // ******************* MIN validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].horizontal_opening_angle_start.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].horizontal_opening_angle_start.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                             return false;
                                         }
                                         // ******************* MAX validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ > 3601) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].horizontal_opening_angle_start.value' " << (__aux64__) << " exceeds max allowable (3601); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].horizontal_opening_angle_start.value' " << (__aux64__) << " exceeds max allowable (3601); message dropped.";
                                             return false;
                                         }
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000297\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].horizontal_opening_angle_start.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].horizontal_opening_angle_start: " <<
+                                            logger->print() << "|" << tools::brown("000297") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].horizontal_opening_angle_start.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].horizontal_opening_angle_start: " <<
                                                          ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].horizontal_opening_angle_start.value << " (" << __aux64__ << ")";
                                         }
                                         
@@ -6619,17 +6619,17 @@ namespace wind
                                         
                                         // ******************* MIN validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].horizontal_opening_angle_end.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].horizontal_opening_angle_end.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                             return false;
                                         }
                                         // ******************* MAX validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ > 3601) {
-                                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].horizontal_opening_angle_end.value' " << (__aux64__) << " exceeds max allowable (3601); message dropped.";
+                                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].horizontal_opening_angle_end.value' " << (__aux64__) << " exceeds max allowable (3601); message dropped.";
                                             return false;
                                         }
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000298\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].horizontal_opening_angle_end.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].horizontal_opening_angle_end: " <<
+                                            logger->print() << "|" << tools::brown("000298") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].horizontal_opening_angle_end.value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].horizontal_opening_angle_end: " <<
                                                          ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].horizontal_opening_angle_end.value << " (" << __aux64__ << ")";
                                         }
                                         
@@ -6645,17 +6645,17 @@ namespace wind
                                             
                                             // ******************* MIN validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                                logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].vertical_opening_angle_start[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                                logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].vertical_opening_angle_start[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                                 return false;
                                             }
                                             // ******************* MAX validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ > 3601) {
-                                                logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].vertical_opening_angle_start[0].value' " << (__aux64__) << " exceeds max allowable (3601); message dropped.";
+                                                logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].vertical_opening_angle_start[0].value' " << (__aux64__) << " exceeds max allowable (3601); message dropped.";
                                                 return false;
                                             }
                                             
                                             if(debug) {
-                                                logger->print() << "|\033[38;5;94m000299\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].vertical_opening_angle_start[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].vertical_opening_angle_start[0]: " <<
+                                                logger->print() << "|" << tools::brown("000299") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].vertical_opening_angle_start[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].vertical_opening_angle_start[0]: " <<
                                                              ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].vertical_opening_angle_start[0].value << " (" << __aux64__ << ")";
                                             }
                                         }
@@ -6672,17 +6672,17 @@ namespace wind
                                             
                                             // ******************* MIN validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                                logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].vertical_opening_angle_end[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                                logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].vertical_opening_angle_end[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                                 return false;
                                             }
                                             // ******************* MAX validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ > 3601) {
-                                                logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].vertical_opening_angle_end[0].value' " << (__aux64__) << " exceeds max allowable (3601); message dropped.";
+                                                logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].vertical_opening_angle_end[0].value' " << (__aux64__) << " exceeds max allowable (3601); message dropped.";
                                                 return false;
                                             }
                                             
                                             if(debug) {
-                                                logger->print() << "|\033[38;5;94m000300\033[0m| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].vertical_opening_angle_end[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].vertical_opening_angle_end[0]: " <<
+                                                logger->print() << "|" << tools::brown("000300") << "| " << tools::getTypeName(ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].vertical_opening_angle_end[0].value) << " epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].vertical_opening_angle_end[0]: " <<
                                                              ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_dimensions.excluded_shapes.elements[n].radial_shapes[0].radial_shapes_list.elements[p].vertical_opening_angle_end[0].value << " (" << __aux64__ << ")";
                                             }
                                         }
@@ -6704,7 +6704,7 @@ namespace wind
                         uint8_t* _ext_flag_194 = (uint8_t*) buffer++;  // Read ext flag from ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_capabilities[0].
                         
                         if(debug) {
-                            logger->print() << "|\033[38;5;94m000301\033[0m| Reading ext flag from ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_capabilities[0].: " << int(*_ext_flag_194);
+                            logger->print() << "|" << tools::brown("000301") << "| Reading ext flag from ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_capabilities[0].: " << int(*_ext_flag_194);
                         }
                         
                         
@@ -6728,7 +6728,7 @@ namespace wind
                         uint8_t* _ext_flag_195 = (uint8_t*) buffer++;  // Read ext flag from ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_capabilities[0].sensor_types.
                         
                         if(debug) {
-                            logger->print() << "|\033[38;5;94m000302\033[0m| Reading ext flag from ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_capabilities[0].sensor_types.: " << int(*_ext_flag_195);
+                            logger->print() << "|" << tools::brown("000302") << "| Reading ext flag from ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_capabilities[0].sensor_types.: " << int(*_ext_flag_195);
                         }
                         
                         uint8_t* _tmp_306 = (uint8_t*)buffer;
@@ -6736,7 +6736,7 @@ namespace wind
                         buffer += 1;
                         
                         if(debug)
-                            logger->print() << "|\033[38;5;94m000303\033[0m| epu_to_vehicle.epu_low_frequency_container[0].epu_section_capabilities[0].sensor_types.value: " << __aux64__;
+                            logger->print() << "|" << tools::brown("000303") << "| epu_to_vehicle.epu_low_frequency_container[0].epu_section_capabilities[0].sensor_types.value: " << __aux64__;
                         
                         int _if__tmp_306 = __aux64__;
                         for(int r = 0; r < _if__tmp_306; r++) {
@@ -6748,12 +6748,12 @@ namespace wind
                         
                         // ******************* MIN validator *******************
                         if(VALIDATORS_ENABLED && __aux64__ < 16) {
-                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_capabilities[0].sensor_types.value' " << (__aux64__) << " is less than allowable (16); message dropped.";
+                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_capabilities[0].sensor_types.value' " << (__aux64__) << " is less than allowable (16); message dropped.";
                             return false;
                         }
                         // ******************* MAX validator *******************
                         if(VALIDATORS_ENABLED && __aux64__ > 16) {
-                            logger->warning() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_capabilities[0].sensor_types.value' " << (__aux64__) << " exceeds max allowable (16); message dropped.";
+                            logger->error() << "Error: Value in 'epu_to_vehicle.epu_low_frequency_container[0].epu_section_capabilities[0].sensor_types.value' " << (__aux64__) << " exceeds max allowable (16); message dropped.";
                             return false;
                         }
                         if(*_ext_flag_194) { // from ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_capabilities[0]. 
@@ -6761,7 +6761,7 @@ namespace wind
                             bool _array_5[*_tmp_307];
                             
                             if(debug)
-                                logger->print() << "|\033[38;5;94m000304\033[0m| Reading number of exts from ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_capabilities[0].: " << static_cast<unsigned int>(*_tmp_307);
+                                logger->print() << "|" << tools::brown("000304") << "| Reading number of exts from ros->epu_to_vehicle.epu_low_frequency_container[0].epu_section_capabilities[0].: " << static_cast<unsigned int>(*_tmp_307);
                             
                             // Extensions bytemap
                             for(int i = 0; i < *_tmp_307; i++)
@@ -6786,7 +6786,7 @@ namespace wind
                     bool _array_6[*_tmp_309];
                     
                     if(debug)
-                        logger->print() << "|\033[38;5;94m000305\033[0m| Reading number of exts from ros->epu_to_vehicle.epu_low_frequency_container[0].: " << static_cast<unsigned int>(*_tmp_309);
+                        logger->print() << "|" << tools::brown("000305") << "| Reading number of exts from ros->epu_to_vehicle.epu_low_frequency_container[0].: " << static_cast<unsigned int>(*_tmp_309);
                     
                     // Extensions bytemap
                     for(int i = 0; i < *_tmp_309; i++)

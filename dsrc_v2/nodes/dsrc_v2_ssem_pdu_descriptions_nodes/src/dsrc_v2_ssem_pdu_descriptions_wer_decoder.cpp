@@ -63,18 +63,18 @@ namespace wind
         ros->hheader.protocol_version.value = __aux64__;
         
         if(debug) {
-            logger->print() << "|\033[38;5;94m000000\033[0m| " << tools::getTypeName(ros->hheader.protocol_version.value) << 
+            logger->print() << "|" << tools::brown("000000") << "| " << tools::getTypeName(ros->hheader.protocol_version.value) << 
                          " hheader.protocol_version.value: " << static_cast<int>(ros->hheader.protocol_version.value);
         }
         
         // ******************* MIN validator *******************
         if(VALIDATORS_ENABLED && __aux64__ < 0) {
-            logger->warning() << "Error: Value in 'hheader.protocol_version.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+            logger->error() << "Error: Value in 'hheader.protocol_version.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
             return false;
         }
         // ******************* MAX validator *******************
         if(VALIDATORS_ENABLED && __aux64__ > 255) {
-            logger->warning() << "Error: Value in 'hheader.protocol_version.value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
+            logger->error() << "Error: Value in 'hheader.protocol_version.value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
             return false;
         }
         
@@ -86,18 +86,18 @@ namespace wind
         ros->hheader.message_id.value = __aux64__;
         
         if(debug) {
-            logger->print() << "|\033[38;5;94m000001\033[0m| " << tools::getTypeName(ros->hheader.message_id.value) << 
+            logger->print() << "|" << tools::brown("000001") << "| " << tools::getTypeName(ros->hheader.message_id.value) << 
                          " hheader.message_id.value: " << static_cast<int>(ros->hheader.message_id.value);
         }
         
         // ******************* MIN validator *******************
         if(VALIDATORS_ENABLED && __aux64__ < 0) {
-            logger->warning() << "Error: Value in 'hheader.message_id.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+            logger->error() << "Error: Value in 'hheader.message_id.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
             return false;
         }
         // ******************* MAX validator *******************
         if(VALIDATORS_ENABLED && __aux64__ > 255) {
-            logger->warning() << "Error: Value in 'hheader.message_id.value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
+            logger->error() << "Error: Value in 'hheader.message_id.value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
             return false;
         }
         
@@ -109,18 +109,18 @@ namespace wind
         ros->hheader.station_id.value = __aux64__;
         
         if(debug) {
-            logger->print() << "|\033[38;5;94m000002\033[0m| " << tools::getTypeName(ros->hheader.station_id.value) << 
+            logger->print() << "|" << tools::brown("000002") << "| " << tools::getTypeName(ros->hheader.station_id.value) << 
                          " hheader.station_id.value: " << ros->hheader.station_id.value;
         }
         
         // ******************* MIN validator *******************
         if(VALIDATORS_ENABLED && __aux64__ < 0) {
-            logger->warning() << "Error: Value in 'hheader.station_id.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+            logger->error() << "Error: Value in 'hheader.station_id.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
             return false;
         }
         // ******************* MAX validator *******************
         if(VALIDATORS_ENABLED && __aux64__ > 4294967295) {
-            logger->warning() << "Error: Value in 'hheader.station_id.value' " << (__aux64__) << " exceeds max allowable (4294967295); message dropped.";
+            logger->error() << "Error: Value in 'hheader.station_id.value' " << (__aux64__) << " exceeds max allowable (4294967295); message dropped.";
             return false;
         }
     
@@ -135,7 +135,7 @@ namespace wind
         uint8_t* _ext_flag_1 = (uint8_t*) buffer++;  // Read ext flag from ros->ssm.
         
         if(debug) {
-            logger->print() << "|\033[38;5;94m000003\033[0m| Reading ext flag from ros->ssm.: " << int(*_ext_flag_1);
+            logger->print() << "|" << tools::brown("000003") << "| Reading ext flag from ros->ssm.: " << int(*_ext_flag_1);
         }
         
         if(*(buffer++)) { 
@@ -143,21 +143,21 @@ namespace wind
             ros->ssm.time_stamp.push_back(_tmp_4);
         
             if(debug)
-                logger->print() << "|\033[38;5;94m000004\033[0m| ros->ssm.time_stamp " << tools::green("present");
+                logger->print() << "|" << tools::brown("000004") << "| ros->ssm.time_stamp " << tools::green("present");
         }
         if(*(buffer++)) { 
             dsrc_v2_dsrc_msgs::msg::MsgCount _tmp_5;
             ros->ssm.sequence_number.push_back(_tmp_5);
         
             if(debug)
-                logger->print() << "|\033[38;5;94m000005\033[0m| ros->ssm.sequence_number " << tools::green("present");
+                logger->print() << "|" << tools::brown("000005") << "| ros->ssm.sequence_number " << tools::green("present");
         }
         if(*(buffer++)) { 
             dsrc_v2_dsrc_msgs::msg::SignalStatusMessageRegional _tmp_6;
             ros->ssm.regional.push_back(_tmp_6);
         
             if(debug)
-                logger->print() << "|\033[38;5;94m000006\033[0m| ros->ssm.regional " << tools::green("present");
+                logger->print() << "|" << tools::brown("000006") << "| ros->ssm.regional " << tools::green("present");
         }
         
         if(ros->ssm.time_stamp.size() != 0) {
@@ -169,18 +169,18 @@ namespace wind
             ros->ssm.time_stamp[0].value = __aux64__;
             
             if(debug) {
-                logger->print() << "|\033[38;5;94m000007\033[0m| " << tools::getTypeName(ros->ssm.time_stamp[0].value) << 
+                logger->print() << "|" << tools::brown("000007") << "| " << tools::getTypeName(ros->ssm.time_stamp[0].value) << 
                              " ssm.time_stamp[0].value: " << ros->ssm.time_stamp[0].value;
             }
             
             // ******************* MIN validator *******************
             if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                logger->warning() << "Error: Value in 'ssm.time_stamp[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                logger->error() << "Error: Value in 'ssm.time_stamp[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                 return false;
             }
             // ******************* MAX validator *******************
             if(VALIDATORS_ENABLED && __aux64__ > 527040) {
-                logger->warning() << "Error: Value in 'ssm.time_stamp[0].value' " << (__aux64__) << " exceeds max allowable (527040); message dropped.";
+                logger->error() << "Error: Value in 'ssm.time_stamp[0].value' " << (__aux64__) << " exceeds max allowable (527040); message dropped.";
                 return false;
             }
         }
@@ -193,18 +193,18 @@ namespace wind
         ros->ssm.second.value = __aux64__;
         
         if(debug) {
-            logger->print() << "|\033[38;5;94m000008\033[0m| " << tools::getTypeName(ros->ssm.second.value) << 
+            logger->print() << "|" << tools::brown("000008") << "| " << tools::getTypeName(ros->ssm.second.value) << 
                          " ssm.second.value: " << ros->ssm.second.value;
         }
         
         // ******************* MIN validator *******************
         if(VALIDATORS_ENABLED && __aux64__ < 0) {
-            logger->warning() << "Error: Value in 'ssm.second.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+            logger->error() << "Error: Value in 'ssm.second.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
             return false;
         }
         // ******************* MAX validator *******************
         if(VALIDATORS_ENABLED && __aux64__ > 65535) {
-            logger->warning() << "Error: Value in 'ssm.second.value' " << (__aux64__) << " exceeds max allowable (65535); message dropped.";
+            logger->error() << "Error: Value in 'ssm.second.value' " << (__aux64__) << " exceeds max allowable (65535); message dropped.";
             return false;
         }
         
@@ -217,18 +217,18 @@ namespace wind
             ros->ssm.sequence_number[0].value = __aux64__;
             
             if(debug) {
-                logger->print() << "|\033[38;5;94m000009\033[0m| " << tools::getTypeName(ros->ssm.sequence_number[0].value) << 
+                logger->print() << "|" << tools::brown("000009") << "| " << tools::getTypeName(ros->ssm.sequence_number[0].value) << 
                              " ssm.sequence_number[0].value: " << static_cast<int>(ros->ssm.sequence_number[0].value);
             }
             
             // ******************* MIN validator *******************
             if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                logger->warning() << "Error: Value in 'ssm.sequence_number[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                logger->error() << "Error: Value in 'ssm.sequence_number[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                 return false;
             }
             // ******************* MAX validator *******************
             if(VALIDATORS_ENABLED && __aux64__ > 127) {
-                logger->warning() << "Error: Value in 'ssm.sequence_number[0].value' " << (__aux64__) << " exceeds max allowable (127); message dropped.";
+                logger->error() << "Error: Value in 'ssm.sequence_number[0].value' " << (__aux64__) << " exceeds max allowable (127); message dropped.";
                 return false;
             }
         }
@@ -245,17 +245,17 @@ namespace wind
         int _if__tmp_10 = __aux64__;
         
         if(debug) {
-            logger->print() << "|\033[38;5;94m000010\033[0m| SequenceOf ros->ssm.status. size: " << int(__aux64__);
+            logger->print() << "|" << tools::brown("000010") << "| SequenceOf ros->ssm.status. size: " << int(__aux64__);
         }
         
         // ******************* MIN validator *******************
         if(VALIDATORS_ENABLED && __aux64__ < 1) {
-            logger->warning() << "Error: Value in 'ssm.status.value' " << (__aux64__) << " is less than allowable (1); message dropped.";
+            logger->error() << "Error: Value in 'ssm.status.value' " << (__aux64__) << " is less than allowable (1); message dropped.";
             return false;
         }
         // ******************* MAX validator *******************
         if(VALIDATORS_ENABLED && __aux64__ > 32) {
-            logger->warning() << "Error: Value in 'ssm.status.value' " << (__aux64__) << " exceeds max allowable (32); message dropped.";
+            logger->error() << "Error: Value in 'ssm.status.value' " << (__aux64__) << " exceeds max allowable (32); message dropped.";
             return false;
         }
         
@@ -273,7 +273,7 @@ namespace wind
                 uint8_t* _ext_flag_2 = (uint8_t*) buffer++;  // Read ext flag from ros->ssm.status.elements[a].
                 
                 if(debug) {
-                    logger->print() << "|\033[38;5;94m000011\033[0m| Reading ext flag from ros->ssm.status.elements[a].: " << int(*_ext_flag_2);
+                    logger->print() << "|" << tools::brown("000011") << "| Reading ext flag from ros->ssm.status.elements[a].: " << int(*_ext_flag_2);
                 }
                 
                 if(*(buffer++)) { 
@@ -281,7 +281,7 @@ namespace wind
                     ros->ssm.status.elements[a].regional.push_back(_tmp_11);
                 
                     if(debug)
-                        logger->print() << "|\033[38;5;94m000012\033[0m| ros->ssm.status.elements[a].regional " << tools::green("present");
+                        logger->print() << "|" << tools::brown("000012") << "| ros->ssm.status.elements[a].regional " << tools::green("present");
                 }
                 
                 // Field name: sequence_number
@@ -292,18 +292,18 @@ namespace wind
                 ros->ssm.status.elements[a].sequence_number.value = __aux64__;
                 
                 if(debug) {
-                    logger->print() << "|\033[38;5;94m000013\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sequence_number.value) << 
+                    logger->print() << "|" << tools::brown("000013") << "| " << tools::getTypeName(ros->ssm.status.elements[a].sequence_number.value) << 
                                  " ssm.status.elements[a].sequence_number.value: " << static_cast<int>(ros->ssm.status.elements[a].sequence_number.value);
                 }
                 
                 // ******************* MIN validator *******************
                 if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                    logger->warning() << "Error: Value in 'ssm.status.elements[a].sequence_number.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                    logger->error() << "Error: Value in 'ssm.status.elements[a].sequence_number.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                     return false;
                 }
                 // ******************* MAX validator *******************
                 if(VALIDATORS_ENABLED && __aux64__ > 127) {
-                    logger->warning() << "Error: Value in 'ssm.status.elements[a].sequence_number.value' " << (__aux64__) << " exceeds max allowable (127); message dropped.";
+                    logger->error() << "Error: Value in 'ssm.status.elements[a].sequence_number.value' " << (__aux64__) << " exceeds max allowable (127); message dropped.";
                     return false;
                 }
                 
@@ -316,7 +316,7 @@ namespace wind
                         ros->ssm.status.elements[a].id.region.push_back(_tmp_13);
                     
                         if(debug)
-                            logger->print() << "|\033[38;5;94m000014\033[0m| ros->ssm.status.elements[a].id.region " << tools::green("present");
+                            logger->print() << "|" << tools::brown("000014") << "| ros->ssm.status.elements[a].id.region " << tools::green("present");
                     }
                     
                     if(ros->ssm.status.elements[a].id.region.size() != 0) {
@@ -328,18 +328,18 @@ namespace wind
                         ros->ssm.status.elements[a].id.region[0].value = __aux64__;
                         
                         if(debug) {
-                            logger->print() << "|\033[38;5;94m000015\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].id.region[0].value) << 
+                            logger->print() << "|" << tools::brown("000015") << "| " << tools::getTypeName(ros->ssm.status.elements[a].id.region[0].value) << 
                                          " ssm.status.elements[a].id.region[0].value: " << ros->ssm.status.elements[a].id.region[0].value;
                         }
                         
                         // ******************* MIN validator *******************
                         if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                            logger->warning() << "Error: Value in 'ssm.status.elements[a].id.region[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                            logger->error() << "Error: Value in 'ssm.status.elements[a].id.region[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                             return false;
                         }
                         // ******************* MAX validator *******************
                         if(VALIDATORS_ENABLED && __aux64__ > 65535) {
-                            logger->warning() << "Error: Value in 'ssm.status.elements[a].id.region[0].value' " << (__aux64__) << " exceeds max allowable (65535); message dropped.";
+                            logger->error() << "Error: Value in 'ssm.status.elements[a].id.region[0].value' " << (__aux64__) << " exceeds max allowable (65535); message dropped.";
                             return false;
                         }
                     }
@@ -352,18 +352,18 @@ namespace wind
                     ros->ssm.status.elements[a].id.id.value = __aux64__;
                     
                     if(debug) {
-                        logger->print() << "|\033[38;5;94m000016\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].id.id.value) << 
+                        logger->print() << "|" << tools::brown("000016") << "| " << tools::getTypeName(ros->ssm.status.elements[a].id.id.value) << 
                                      " ssm.status.elements[a].id.id.value: " << ros->ssm.status.elements[a].id.id.value;
                     }
                     
                     // ******************* MIN validator *******************
                     if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                        logger->warning() << "Error: Value in 'ssm.status.elements[a].id.id.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                        logger->error() << "Error: Value in 'ssm.status.elements[a].id.id.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                         return false;
                     }
                     // ******************* MAX validator *******************
                     if(VALIDATORS_ENABLED && __aux64__ > 65535) {
-                        logger->warning() << "Error: Value in 'ssm.status.elements[a].id.id.value' " << (__aux64__) << " exceeds max allowable (65535); message dropped.";
+                        logger->error() << "Error: Value in 'ssm.status.elements[a].id.id.value' " << (__aux64__) << " exceeds max allowable (65535); message dropped.";
                         return false;
                     }
                 
@@ -379,17 +379,17 @@ namespace wind
                 int _if__tmp_16 = __aux64__;
                 
                 if(debug) {
-                    logger->print() << "|\033[38;5;94m000017\033[0m| SequenceOf ros->ssm.status.elements[a].sig_status. size: " << int(__aux64__);
+                    logger->print() << "|" << tools::brown("000017") << "| SequenceOf ros->ssm.status.elements[a].sig_status. size: " << int(__aux64__);
                 }
                 
                 // ******************* MIN validator *******************
                 if(VALIDATORS_ENABLED && __aux64__ < 1) {
-                    logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.value' " << (__aux64__) << " is less than allowable (1); message dropped.";
+                    logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.value' " << (__aux64__) << " is less than allowable (1); message dropped.";
                     return false;
                 }
                 // ******************* MAX validator *******************
                 if(VALIDATORS_ENABLED && __aux64__ > 32) {
-                    logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.value' " << (__aux64__) << " exceeds max allowable (32); message dropped.";
+                    logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.value' " << (__aux64__) << " exceeds max allowable (32); message dropped.";
                     return false;
                 }
                 
@@ -411,7 +411,7 @@ namespace wind
                         uint8_t* _ext_flag_3 = (uint8_t*) buffer++;  // Read ext flag from ros->ssm.status.elements[a].sig_status.elements[b].
                         
                         if(debug) {
-                            logger->print() << "|\033[38;5;94m000018\033[0m| Reading ext flag from ros->ssm.status.elements[a].sig_status.elements[b].: " << int(*_ext_flag_3);
+                            logger->print() << "|" << tools::brown("000018") << "| Reading ext flag from ros->ssm.status.elements[a].sig_status.elements[b].: " << int(*_ext_flag_3);
                         }
                         
                         if(*(buffer++)) { 
@@ -419,42 +419,42 @@ namespace wind
                             ros->ssm.status.elements[a].sig_status.elements[b].requester.push_back(_tmp_17);
                         
                             if(debug)
-                                logger->print() << "|\033[38;5;94m000019\033[0m| ros->ssm.status.elements[a].sig_status.elements[b].requester " << tools::green("present");
+                                logger->print() << "|" << tools::brown("000019") << "| ros->ssm.status.elements[a].sig_status.elements[b].requester " << tools::green("present");
                         }
                         if(*(buffer++)) { 
                             dsrc_v2_dsrc_msgs::msg::IntersectionAccessPoint _tmp_18;
                             ros->ssm.status.elements[a].sig_status.elements[b].outbound_on.push_back(_tmp_18);
                         
                             if(debug)
-                                logger->print() << "|\033[38;5;94m000020\033[0m| ros->ssm.status.elements[a].sig_status.elements[b].outbound_on " << tools::green("present");
+                                logger->print() << "|" << tools::brown("000020") << "| ros->ssm.status.elements[a].sig_status.elements[b].outbound_on " << tools::green("present");
                         }
                         if(*(buffer++)) { 
                             dsrc_v2_dsrc_msgs::msg::MinuteOfTheYear _tmp_19;
                             ros->ssm.status.elements[a].sig_status.elements[b].minute.push_back(_tmp_19);
                         
                             if(debug)
-                                logger->print() << "|\033[38;5;94m000021\033[0m| ros->ssm.status.elements[a].sig_status.elements[b].minute " << tools::green("present");
+                                logger->print() << "|" << tools::brown("000021") << "| ros->ssm.status.elements[a].sig_status.elements[b].minute " << tools::green("present");
                         }
                         if(*(buffer++)) { 
                             dsrc_v2_dsrc_msgs::msg::DSecond _tmp_20;
                             ros->ssm.status.elements[a].sig_status.elements[b].second.push_back(_tmp_20);
                         
                             if(debug)
-                                logger->print() << "|\033[38;5;94m000022\033[0m| ros->ssm.status.elements[a].sig_status.elements[b].second " << tools::green("present");
+                                logger->print() << "|" << tools::brown("000022") << "| ros->ssm.status.elements[a].sig_status.elements[b].second " << tools::green("present");
                         }
                         if(*(buffer++)) { 
                             dsrc_v2_dsrc_msgs::msg::DSecond _tmp_21;
                             ros->ssm.status.elements[a].sig_status.elements[b].duration.push_back(_tmp_21);
                         
                             if(debug)
-                                logger->print() << "|\033[38;5;94m000023\033[0m| ros->ssm.status.elements[a].sig_status.elements[b].duration " << tools::green("present");
+                                logger->print() << "|" << tools::brown("000023") << "| ros->ssm.status.elements[a].sig_status.elements[b].duration " << tools::green("present");
                         }
                         if(*(buffer++)) { 
                             dsrc_v2_dsrc_msgs::msg::SignalStatusPackageRegional _tmp_22;
                             ros->ssm.status.elements[a].sig_status.elements[b].regional.push_back(_tmp_22);
                         
                             if(debug)
-                                logger->print() << "|\033[38;5;94m000024\033[0m| ros->ssm.status.elements[a].sig_status.elements[b].regional " << tools::green("present");
+                                logger->print() << "|" << tools::brown("000024") << "| ros->ssm.status.elements[a].sig_status.elements[b].regional " << tools::green("present");
                         }
                         
                         if(ros->ssm.status.elements[a].sig_status.elements[b].requester.size() != 0) {
@@ -469,7 +469,7 @@ namespace wind
                                 uint8_t* _ext_flag_4 = (uint8_t*) buffer++;  // Read ext flag from ros->ssm.status.elements[a].sig_status.elements[b].requester[0].
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000025\033[0m| Reading ext flag from ros->ssm.status.elements[a].sig_status.elements[b].requester[0].: " << int(*_ext_flag_4);
+                                    logger->print() << "|" << tools::brown("000025") << "| Reading ext flag from ros->ssm.status.elements[a].sig_status.elements[b].requester[0].: " << int(*_ext_flag_4);
                                 }
                                 
                                 if(*(buffer++)) { 
@@ -477,14 +477,14 @@ namespace wind
                                     ros->ssm.status.elements[a].sig_status.elements[b].requester[0].role.push_back(_tmp_23);
                                 
                                     if(debug)
-                                        logger->print() << "|\033[38;5;94m000026\033[0m| ros->ssm.status.elements[a].sig_status.elements[b].requester[0].role " << tools::green("present");
+                                        logger->print() << "|" << tools::brown("000026") << "| ros->ssm.status.elements[a].sig_status.elements[b].requester[0].role " << tools::green("present");
                                 }
                                 if(*(buffer++)) { 
                                     dsrc_v2_dsrc_msgs::msg::RequestorType _tmp_24;
                                     ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data.push_back(_tmp_24);
                                 
                                     if(debug)
-                                        logger->print() << "|\033[38;5;94m000027\033[0m| ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data " << tools::green("present");
+                                        logger->print() << "|" << tools::brown("000027") << "| ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data " << tools::green("present");
                                 }
                                 
                                 // Field name: id
@@ -521,18 +521,18 @@ namespace wind
                                     ros->ssm.status.elements[a].sig_status.elements[b].requester[0].id.station_id[0].value = __aux64__;
                                     
                                     if(debug) {
-                                        logger->print() << "|\033[38;5;94m000028\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].id.station_id[0].value) << 
+                                        logger->print() << "|" << tools::brown("000028") << "| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].id.station_id[0].value) << 
                                                      " ssm.status.elements[a].sig_status.elements[b].requester[0].id.station_id[0].value: " << ros->ssm.status.elements[a].sig_status.elements[b].requester[0].id.station_id[0].value;
                                     }
                                     
                                     // ******************* MIN validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                        logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].id.station_id[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                        logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].id.station_id[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                         return false;
                                     }
                                     // ******************* MAX validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ > 4294967295) {
-                                        logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].id.station_id[0].value' " << (__aux64__) << " exceeds max allowable (4294967295); message dropped.";
+                                        logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].id.station_id[0].value' " << (__aux64__) << " exceeds max allowable (4294967295); message dropped.";
                                         return false;
                                     }
                                 }
@@ -550,18 +550,18 @@ namespace wind
                                 ros->ssm.status.elements[a].sig_status.elements[b].requester[0].request.value = __aux64__;
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000029\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].request.value) << 
+                                    logger->print() << "|" << tools::brown("000029") << "| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].request.value) << 
                                                  " ssm.status.elements[a].sig_status.elements[b].requester[0].request.value: " << static_cast<int>(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].request.value);
                                 }
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                    logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].request.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                    logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].request.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 255) {
-                                    logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].request.value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
+                                    logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].request.value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
                                     return false;
                                 }
                                 
@@ -573,18 +573,18 @@ namespace wind
                                 ros->ssm.status.elements[a].sig_status.elements[b].requester[0].sequence_number.value = __aux64__;
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000030\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].sequence_number.value) << 
+                                    logger->print() << "|" << tools::brown("000030") << "| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].sequence_number.value) << 
                                                  " ssm.status.elements[a].sig_status.elements[b].requester[0].sequence_number.value: " << static_cast<int>(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].sequence_number.value);
                                 }
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                    logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].sequence_number.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                    logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].sequence_number.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 127) {
-                                    logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].sequence_number.value' " << (__aux64__) << " exceeds max allowable (127); message dropped.";
+                                    logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].sequence_number.value' " << (__aux64__) << " exceeds max allowable (127); message dropped.";
                                     return false;
                                 }
                                 
@@ -595,7 +595,7 @@ namespace wind
                                     uint8_t* _ext_flag_6 = (uint8_t*) buffer++;  // Read ext flag from ros->ssm.status.elements[a].sig_status.elements[b].requester[0].role[0].
                                     
                                     if(debug) {
-                                        logger->print() << "|\033[38;5;94m000031\033[0m| Reading ext flag from ros->ssm.status.elements[a].sig_status.elements[b].requester[0].role[0].: " << int(*_ext_flag_6);
+                                        logger->print() << "|" << tools::brown("000031") << "| Reading ext flag from ros->ssm.status.elements[a].sig_status.elements[b].requester[0].role[0].: " << int(*_ext_flag_6);
                                     }
                                     
                                     uint8_t* _tmp_31 = (uint8_t*) buffer++;
@@ -604,18 +604,18 @@ namespace wind
                                     ros->ssm.status.elements[a].sig_status.elements[b].requester[0].role[0].value = __aux64__;
                                     // ******************* MIN validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                        logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].role[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                        logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].role[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                         return false;
                                     }
                                     // ******************* MAX validator *******************
                                     if(VALIDATORS_ENABLED && __aux64__ > 22) {
-                                        logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].role[0].value' " << (__aux64__) << " exceeds max allowable (22); message dropped.";
+                                        logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].role[0].value' " << (__aux64__) << " exceeds max allowable (22); message dropped.";
                                         return false;
                                     }
                                     
                                     
                                     if(debug) {
-                                        logger->print() << "|\033[38;5;94m000032\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].role[0].value) << 
+                                        logger->print() << "|" << tools::brown("000032") << "| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].role[0].value) << 
                                                      " ssm.status.elements[a].sig_status.elements[b].requester[0].role[0].value: " << static_cast<int>(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].role[0].value);
                                     }
                                 }
@@ -633,7 +633,7 @@ namespace wind
                                         uint8_t* _ext_flag_7 = (uint8_t*) buffer++;  // Read ext flag from ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000033\033[0m| Reading ext flag from ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].: " << int(*_ext_flag_7);
+                                            logger->print() << "|" << tools::brown("000033") << "| Reading ext flag from ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].: " << int(*_ext_flag_7);
                                         }
                                         
                                         if(*(buffer++)) { 
@@ -641,35 +641,35 @@ namespace wind
                                             ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].subrole.push_back(_tmp_32);
                                         
                                             if(debug)
-                                                logger->print() << "|\033[38;5;94m000034\033[0m| ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].subrole " << tools::green("present");
+                                                logger->print() << "|" << tools::brown("000034") << "| ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].subrole " << tools::green("present");
                                         }
                                         if(*(buffer++)) { 
                                             dsrc_v2_dsrc_msgs::msg::RequestImportanceLevel _tmp_33;
                                             ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].request.push_back(_tmp_33);
                                         
                                             if(debug)
-                                                logger->print() << "|\033[38;5;94m000035\033[0m| ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].request " << tools::green("present");
+                                                logger->print() << "|" << tools::brown("000035") << "| ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].request " << tools::green("present");
                                         }
                                         if(*(buffer++)) { 
                                             dsrc_v2_electronicregistrationidentificationvehicledatamodule_msgs::msg::Iso3833VehicleType _tmp_34;
                                             ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].iso3883.push_back(_tmp_34);
                                         
                                             if(debug)
-                                                logger->print() << "|\033[38;5;94m000036\033[0m| ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].iso3883 " << tools::green("present");
+                                                logger->print() << "|" << tools::brown("000036") << "| ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].iso3883 " << tools::green("present");
                                         }
                                         if(*(buffer++)) { 
                                             dsrc_v2_dsrc_msgs::msg::VehicleType _tmp_35;
                                             ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].hpms_type.push_back(_tmp_35);
                                         
                                             if(debug)
-                                                logger->print() << "|\033[38;5;94m000037\033[0m| ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].hpms_type " << tools::green("present");
+                                                logger->print() << "|" << tools::brown("000037") << "| ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].hpms_type " << tools::green("present");
                                         }
                                         if(*(buffer++)) { 
                                             dsrc_v2_dsrc_msgs::msg::RegionalExtension _tmp_36;
                                             ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].regional.push_back(_tmp_36);
                                         
                                             if(debug)
-                                                logger->print() << "|\033[38;5;94m000038\033[0m| ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].regional " << tools::green("present");
+                                                logger->print() << "|" << tools::brown("000038") << "| ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].regional " << tools::green("present");
                                         }
                                         
                                         // Field name: role
@@ -678,7 +678,7 @@ namespace wind
                                         uint8_t* _ext_flag_8 = (uint8_t*) buffer++;  // Read ext flag from ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].role.
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000039\033[0m| Reading ext flag from ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].role.: " << int(*_ext_flag_8);
+                                            logger->print() << "|" << tools::brown("000039") << "| Reading ext flag from ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].role.: " << int(*_ext_flag_8);
                                         }
                                         
                                         uint8_t* _tmp_37 = (uint8_t*) buffer++;
@@ -687,18 +687,18 @@ namespace wind
                                         ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].role.value = __aux64__;
                                         // ******************* MIN validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                            logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].role.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                            logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].role.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                             return false;
                                         }
                                         // ******************* MAX validator *******************
                                         if(VALIDATORS_ENABLED && __aux64__ > 22) {
-                                            logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].role.value' " << (__aux64__) << " exceeds max allowable (22); message dropped.";
+                                            logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].role.value' " << (__aux64__) << " exceeds max allowable (22); message dropped.";
                                             return false;
                                         }
                                         
                                         
                                         if(debug) {
-                                            logger->print() << "|\033[38;5;94m000040\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].role.value) << 
+                                            logger->print() << "|" << tools::brown("000040") << "| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].role.value) << 
                                                          " ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].role.value: " << static_cast<int>(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].role.value);
                                         }
                                         
@@ -712,18 +712,18 @@ namespace wind
                                             ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].subrole[0].value = __aux64__;
                                             // ******************* MIN validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                                logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].subrole[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                                logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].subrole[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                                 return false;
                                             }
                                             // ******************* MAX validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ > 15) {
-                                                logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].subrole[0].value' " << (__aux64__) << " exceeds max allowable (15); message dropped.";
+                                                logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].subrole[0].value' " << (__aux64__) << " exceeds max allowable (15); message dropped.";
                                                 return false;
                                             }
                                             
                                             
                                             if(debug) {
-                                                logger->print() << "|\033[38;5;94m000041\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].subrole[0].value) << 
+                                                logger->print() << "|" << tools::brown("000041") << "| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].subrole[0].value) << 
                                                              " ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].subrole[0].value: " << static_cast<int>(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].subrole[0].value);
                                             }
                                         }
@@ -738,18 +738,18 @@ namespace wind
                                             ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].request[0].value = __aux64__;
                                             // ******************* MIN validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                                logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].request[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                                logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].request[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                                 return false;
                                             }
                                             // ******************* MAX validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ > 15) {
-                                                logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].request[0].value' " << (__aux64__) << " exceeds max allowable (15); message dropped.";
+                                                logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].request[0].value' " << (__aux64__) << " exceeds max allowable (15); message dropped.";
                                                 return false;
                                             }
                                             
                                             
                                             if(debug) {
-                                                logger->print() << "|\033[38;5;94m000042\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].request[0].value) << 
+                                                logger->print() << "|" << tools::brown("000042") << "| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].request[0].value) << 
                                                              " ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].request[0].value: " << static_cast<int>(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].request[0].value);
                                             }
                                         }
@@ -763,18 +763,18 @@ namespace wind
                                             ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].iso3883[0].value = __aux64__;
                                             
                                             if(debug) {
-                                                logger->print() << "|\033[38;5;94m000043\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].iso3883[0].value) << 
+                                                logger->print() << "|" << tools::brown("000043") << "| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].iso3883[0].value) << 
                                                              " ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].iso3883[0].value: " << static_cast<int>(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].iso3883[0].value);
                                             }
                                             
                                             // ******************* MIN validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                                logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].iso3883[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                                logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].iso3883[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                                 return false;
                                             }
                                             // ******************* MAX validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ > 255) {
-                                                logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].iso3883[0].value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
+                                                logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].iso3883[0].value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
                                                 return false;
                                             }
                                         }
@@ -786,7 +786,7 @@ namespace wind
                                             uint8_t* _ext_flag_11 = (uint8_t*) buffer++;  // Read ext flag from ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].hpms_type[0].
                                             
                                             if(debug) {
-                                                logger->print() << "|\033[38;5;94m000044\033[0m| Reading ext flag from ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].hpms_type[0].: " << int(*_ext_flag_11);
+                                                logger->print() << "|" << tools::brown("000044") << "| Reading ext flag from ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].hpms_type[0].: " << int(*_ext_flag_11);
                                             }
                                             
                                             uint8_t* _tmp_41 = (uint8_t*) buffer++;
@@ -795,18 +795,18 @@ namespace wind
                                             ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].hpms_type[0].value = __aux64__;
                                             // ******************* MIN validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                                logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].hpms_type[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                                logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].hpms_type[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                                 return false;
                                             }
                                             // ******************* MAX validator *******************
                                             if(VALIDATORS_ENABLED && __aux64__ > 15) {
-                                                logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].hpms_type[0].value' " << (__aux64__) << " exceeds max allowable (15); message dropped.";
+                                                logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].hpms_type[0].value' " << (__aux64__) << " exceeds max allowable (15); message dropped.";
                                                 return false;
                                             }
                                             
                                             
                                             if(debug) {
-                                                logger->print() << "|\033[38;5;94m000045\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].hpms_type[0].value) << 
+                                                logger->print() << "|" << tools::brown("000045") << "| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].hpms_type[0].value) << 
                                                              " ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].hpms_type[0].value: " << static_cast<int>(ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].hpms_type[0].value);
                                             }
                                         }
@@ -817,7 +817,7 @@ namespace wind
                                             bool _array_1[*_tmp_42];
                                             
                                             if(debug)
-                                                logger->print() << "|\033[38;5;94m000046\033[0m| Reading number of exts from ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].: " << static_cast<unsigned int>(*_tmp_42);
+                                                logger->print() << "|" << tools::brown("000046") << "| Reading number of exts from ros->ssm.status.elements[a].sig_status.elements[b].requester[0].type_data[0].: " << static_cast<unsigned int>(*_tmp_42);
                                             
                                             // Extensions bytemap
                                             for(int i = 0; i < *_tmp_42; i++)
@@ -842,7 +842,7 @@ namespace wind
                                     bool _array_2[*_tmp_44];
                                     
                                     if(debug)
-                                        logger->print() << "|\033[38;5;94m000047\033[0m| Reading number of exts from ros->ssm.status.elements[a].sig_status.elements[b].requester[0].: " << static_cast<unsigned int>(*_tmp_44);
+                                        logger->print() << "|" << tools::brown("000047") << "| Reading number of exts from ros->ssm.status.elements[a].sig_status.elements[b].requester[0].: " << static_cast<unsigned int>(*_tmp_44);
                                     
                                     // Extensions bytemap
                                     for(int i = 0; i < *_tmp_44; i++)
@@ -886,18 +886,18 @@ namespace wind
                             ros->ssm.status.elements[a].sig_status.elements[b].inbound_on.lane[0].value = __aux64__;
                             
                             if(debug) {
-                                logger->print() << "|\033[38;5;94m000048\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].inbound_on.lane[0].value) << 
+                                logger->print() << "|" << tools::brown("000048") << "| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].inbound_on.lane[0].value) << 
                                              " ssm.status.elements[a].sig_status.elements[b].inbound_on.lane[0].value: " << static_cast<int>(ros->ssm.status.elements[a].sig_status.elements[b].inbound_on.lane[0].value);
                             }
                             
                             // ******************* MIN validator *******************
                             if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].inbound_on.lane[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].inbound_on.lane[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                 return false;
                             }
                             // ******************* MAX validator *******************
                             if(VALIDATORS_ENABLED && __aux64__ > 255) {
-                                logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].inbound_on.lane[0].value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
+                                logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].inbound_on.lane[0].value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
                                 return false;
                             }
                         }
@@ -913,18 +913,18 @@ namespace wind
                             ros->ssm.status.elements[a].sig_status.elements[b].inbound_on.approach[0].value = __aux64__;
                             
                             if(debug) {
-                                logger->print() << "|\033[38;5;94m000049\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].inbound_on.approach[0].value) << 
+                                logger->print() << "|" << tools::brown("000049") << "| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].inbound_on.approach[0].value) << 
                                              " ssm.status.elements[a].sig_status.elements[b].inbound_on.approach[0].value: " << static_cast<int>(ros->ssm.status.elements[a].sig_status.elements[b].inbound_on.approach[0].value);
                             }
                             
                             // ******************* MIN validator *******************
                             if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].inbound_on.approach[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].inbound_on.approach[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                 return false;
                             }
                             // ******************* MAX validator *******************
                             if(VALIDATORS_ENABLED && __aux64__ > 15) {
-                                logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].inbound_on.approach[0].value' " << (__aux64__) << " exceeds max allowable (15); message dropped.";
+                                logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].inbound_on.approach[0].value' " << (__aux64__) << " exceeds max allowable (15); message dropped.";
                                 return false;
                             }
                         }
@@ -940,18 +940,18 @@ namespace wind
                             ros->ssm.status.elements[a].sig_status.elements[b].inbound_on.connection[0].value = __aux64__;
                             
                             if(debug) {
-                                logger->print() << "|\033[38;5;94m000050\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].inbound_on.connection[0].value) << 
+                                logger->print() << "|" << tools::brown("000050") << "| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].inbound_on.connection[0].value) << 
                                              " ssm.status.elements[a].sig_status.elements[b].inbound_on.connection[0].value: " << static_cast<int>(ros->ssm.status.elements[a].sig_status.elements[b].inbound_on.connection[0].value);
                             }
                             
                             // ******************* MIN validator *******************
                             if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].inbound_on.connection[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].inbound_on.connection[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                 return false;
                             }
                             // ******************* MAX validator *******************
                             if(VALIDATORS_ENABLED && __aux64__ > 255) {
-                                logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].inbound_on.connection[0].value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
+                                logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].inbound_on.connection[0].value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
                                 return false;
                             }
                         }
@@ -985,18 +985,18 @@ namespace wind
                                 ros->ssm.status.elements[a].sig_status.elements[b].outbound_on[0].lane[0].value = __aux64__;
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000051\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].outbound_on[0].lane[0].value) << 
+                                    logger->print() << "|" << tools::brown("000051") << "| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].outbound_on[0].lane[0].value) << 
                                                  " ssm.status.elements[a].sig_status.elements[b].outbound_on[0].lane[0].value: " << static_cast<int>(ros->ssm.status.elements[a].sig_status.elements[b].outbound_on[0].lane[0].value);
                                 }
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                    logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].outbound_on[0].lane[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                    logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].outbound_on[0].lane[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 255) {
-                                    logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].outbound_on[0].lane[0].value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
+                                    logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].outbound_on[0].lane[0].value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
                                     return false;
                                 }
                             }
@@ -1012,18 +1012,18 @@ namespace wind
                                 ros->ssm.status.elements[a].sig_status.elements[b].outbound_on[0].approach[0].value = __aux64__;
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000052\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].outbound_on[0].approach[0].value) << 
+                                    logger->print() << "|" << tools::brown("000052") << "| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].outbound_on[0].approach[0].value) << 
                                                  " ssm.status.elements[a].sig_status.elements[b].outbound_on[0].approach[0].value: " << static_cast<int>(ros->ssm.status.elements[a].sig_status.elements[b].outbound_on[0].approach[0].value);
                                 }
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                    logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].outbound_on[0].approach[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                    logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].outbound_on[0].approach[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 15) {
-                                    logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].outbound_on[0].approach[0].value' " << (__aux64__) << " exceeds max allowable (15); message dropped.";
+                                    logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].outbound_on[0].approach[0].value' " << (__aux64__) << " exceeds max allowable (15); message dropped.";
                                     return false;
                                 }
                             }
@@ -1039,18 +1039,18 @@ namespace wind
                                 ros->ssm.status.elements[a].sig_status.elements[b].outbound_on[0].connection[0].value = __aux64__;
                                 
                                 if(debug) {
-                                    logger->print() << "|\033[38;5;94m000053\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].outbound_on[0].connection[0].value) << 
+                                    logger->print() << "|" << tools::brown("000053") << "| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].outbound_on[0].connection[0].value) << 
                                                  " ssm.status.elements[a].sig_status.elements[b].outbound_on[0].connection[0].value: " << static_cast<int>(ros->ssm.status.elements[a].sig_status.elements[b].outbound_on[0].connection[0].value);
                                 }
                                 
                                 // ******************* MIN validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                    logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].outbound_on[0].connection[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                    logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].outbound_on[0].connection[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                     return false;
                                 }
                                 // ******************* MAX validator *******************
                                 if(VALIDATORS_ENABLED && __aux64__ > 255) {
-                                    logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].outbound_on[0].connection[0].value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
+                                    logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].outbound_on[0].connection[0].value' " << (__aux64__) << " exceeds max allowable (255); message dropped.";
                                     return false;
                                 }
                             }
@@ -1070,18 +1070,18 @@ namespace wind
                             ros->ssm.status.elements[a].sig_status.elements[b].minute[0].value = __aux64__;
                             
                             if(debug) {
-                                logger->print() << "|\033[38;5;94m000054\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].minute[0].value) << 
+                                logger->print() << "|" << tools::brown("000054") << "| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].minute[0].value) << 
                                              " ssm.status.elements[a].sig_status.elements[b].minute[0].value: " << ros->ssm.status.elements[a].sig_status.elements[b].minute[0].value;
                             }
                             
                             // ******************* MIN validator *******************
                             if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].minute[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].minute[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                 return false;
                             }
                             // ******************* MAX validator *******************
                             if(VALIDATORS_ENABLED && __aux64__ > 527040) {
-                                logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].minute[0].value' " << (__aux64__) << " exceeds max allowable (527040); message dropped.";
+                                logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].minute[0].value' " << (__aux64__) << " exceeds max allowable (527040); message dropped.";
                                 return false;
                             }
                         }
@@ -1095,18 +1095,18 @@ namespace wind
                             ros->ssm.status.elements[a].sig_status.elements[b].second[0].value = __aux64__;
                             
                             if(debug) {
-                                logger->print() << "|\033[38;5;94m000055\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].second[0].value) << 
+                                logger->print() << "|" << tools::brown("000055") << "| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].second[0].value) << 
                                              " ssm.status.elements[a].sig_status.elements[b].second[0].value: " << ros->ssm.status.elements[a].sig_status.elements[b].second[0].value;
                             }
                             
                             // ******************* MIN validator *******************
                             if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].second[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].second[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                 return false;
                             }
                             // ******************* MAX validator *******************
                             if(VALIDATORS_ENABLED && __aux64__ > 65535) {
-                                logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].second[0].value' " << (__aux64__) << " exceeds max allowable (65535); message dropped.";
+                                logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].second[0].value' " << (__aux64__) << " exceeds max allowable (65535); message dropped.";
                                 return false;
                             }
                         }
@@ -1120,18 +1120,18 @@ namespace wind
                             ros->ssm.status.elements[a].sig_status.elements[b].duration[0].value = __aux64__;
                             
                             if(debug) {
-                                logger->print() << "|\033[38;5;94m000056\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].duration[0].value) << 
+                                logger->print() << "|" << tools::brown("000056") << "| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].duration[0].value) << 
                                              " ssm.status.elements[a].sig_status.elements[b].duration[0].value: " << ros->ssm.status.elements[a].sig_status.elements[b].duration[0].value;
                             }
                             
                             // ******************* MIN validator *******************
                             if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                                logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].duration[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                                logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].duration[0].value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                                 return false;
                             }
                             // ******************* MAX validator *******************
                             if(VALIDATORS_ENABLED && __aux64__ > 65535) {
-                                logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].duration[0].value' " << (__aux64__) << " exceeds max allowable (65535); message dropped.";
+                                logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].duration[0].value' " << (__aux64__) << " exceeds max allowable (65535); message dropped.";
                                 return false;
                             }
                         }
@@ -1142,7 +1142,7 @@ namespace wind
                         uint8_t* _ext_flag_14 = (uint8_t*) buffer++;  // Read ext flag from ros->ssm.status.elements[a].sig_status.elements[b].status.
                         
                         if(debug) {
-                            logger->print() << "|\033[38;5;94m000057\033[0m| Reading ext flag from ros->ssm.status.elements[a].sig_status.elements[b].status.: " << int(*_ext_flag_14);
+                            logger->print() << "|" << tools::brown("000057") << "| Reading ext flag from ros->ssm.status.elements[a].sig_status.elements[b].status.: " << int(*_ext_flag_14);
                         }
                         
                         uint8_t* _tmp_63 = (uint8_t*) buffer++;
@@ -1151,18 +1151,18 @@ namespace wind
                         ros->ssm.status.elements[a].sig_status.elements[b].status.value = __aux64__;
                         // ******************* MIN validator *******************
                         if(VALIDATORS_ENABLED && __aux64__ < 0) {
-                            logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].status.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
+                            logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].status.value' " << (__aux64__) << " is less than allowable (0); message dropped.";
                             return false;
                         }
                         // ******************* MAX validator *******************
                         if(VALIDATORS_ENABLED && __aux64__ > 7) {
-                            logger->warning() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].status.value' " << (__aux64__) << " exceeds max allowable (7); message dropped.";
+                            logger->error() << "Error: Value in 'ssm.status.elements[a].sig_status.elements[b].status.value' " << (__aux64__) << " exceeds max allowable (7); message dropped.";
                             return false;
                         }
                         
                         
                         if(debug) {
-                            logger->print() << "|\033[38;5;94m000058\033[0m| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].status.value) << 
+                            logger->print() << "|" << tools::brown("000058") << "| " << tools::getTypeName(ros->ssm.status.elements[a].sig_status.elements[b].status.value) << 
                                          " ssm.status.elements[a].sig_status.elements[b].status.value: " << static_cast<int>(ros->ssm.status.elements[a].sig_status.elements[b].status.value);
                         }
                         
@@ -1172,7 +1172,7 @@ namespace wind
                             bool _array_3[*_tmp_64];
                             
                             if(debug)
-                                logger->print() << "|\033[38;5;94m000059\033[0m| Reading number of exts from ros->ssm.status.elements[a].sig_status.elements[b].: " << static_cast<unsigned int>(*_tmp_64);
+                                logger->print() << "|" << tools::brown("000059") << "| Reading number of exts from ros->ssm.status.elements[a].sig_status.elements[b].: " << static_cast<unsigned int>(*_tmp_64);
                             
                             // Extensions bytemap
                             for(int i = 0; i < *_tmp_64; i++)
@@ -1199,7 +1199,7 @@ namespace wind
                     bool _array_4[*_tmp_66];
                     
                     if(debug)
-                        logger->print() << "|\033[38;5;94m000060\033[0m| Reading number of exts from ros->ssm.status.elements[a].: " << static_cast<unsigned int>(*_tmp_66);
+                        logger->print() << "|" << tools::brown("000060") << "| Reading number of exts from ros->ssm.status.elements[a].: " << static_cast<unsigned int>(*_tmp_66);
                     
                     // Extensions bytemap
                     for(int i = 0; i < *_tmp_66; i++)
@@ -1226,7 +1226,7 @@ namespace wind
             bool _array_5[*_tmp_68];
             
             if(debug)
-                logger->print() << "|\033[38;5;94m000061\033[0m| Reading number of exts from ros->ssm.: " << static_cast<unsigned int>(*_tmp_68);
+                logger->print() << "|" << tools::brown("000061") << "| Reading number of exts from ros->ssm.: " << static_cast<unsigned int>(*_tmp_68);
             
             // Extensions bytemap
             for(int i = 0; i < *_tmp_68; i++)
