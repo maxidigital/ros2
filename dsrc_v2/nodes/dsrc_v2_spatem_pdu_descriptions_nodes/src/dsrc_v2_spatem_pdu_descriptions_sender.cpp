@@ -66,7 +66,7 @@ wind::wind_ros::Sender_dsrc_v2_spatem_pdu_descriptions::callback(
 		return;
 	busy_ = true;
 
-    slogger_->print() << "Received SPATEM message on '" << tools::green(topic_) << "' topic";
+    slogger_->print() << "SPATEM message received on topic '" << tools::green(topic_) << "'";
     int buf_len = encoder_->encode(msg, &buff_[REQUEST_HEADER_SIZE_]);
     if(buf_len == -1) {
         failed_++;

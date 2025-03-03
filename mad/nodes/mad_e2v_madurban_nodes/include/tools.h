@@ -226,6 +226,11 @@ std::string yellow(const std::string& text) {
 }
 
 inline
+std::string magenta(const std::string& text) {
+    return MAGENTA + text + RESET;
+}
+
+inline
 std::string orange(const std::string& text) {
     return ORANGE + text + RESET;
 }

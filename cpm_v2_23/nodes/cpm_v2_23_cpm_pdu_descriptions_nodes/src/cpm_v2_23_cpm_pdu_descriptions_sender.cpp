@@ -66,7 +66,7 @@ wind::wind_ros::Sender_cpm_v2_23_cpm_pdu_descriptions::callback(
 		return;
 	busy_ = true;
 
-    slogger_->print() << "Received CollectivePerceptionMessage message on '" << tools::green(topic_) << "' topic";
+    slogger_->print() << "CollectivePerceptionMessage message received on topic '" << tools::green(topic_) << "'";
     int buf_len = encoder_->encode(msg, &buff_[REQUEST_HEADER_SIZE_]);
     if(buf_len == -1) {
         failed_++;

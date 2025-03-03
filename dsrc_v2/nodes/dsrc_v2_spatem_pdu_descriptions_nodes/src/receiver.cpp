@@ -37,10 +37,7 @@
 #include <disk_logger.h>
 #include <screen_logger.h>
 #include <dsrc_v2_spatem_pdu_descriptions_receiver.h>
-//#include <message_rate_tracker.h>
 #include <functional>
-
-
 
 /**
  *
@@ -78,25 +75,36 @@ public:
         if(buf_size < 2)
             return;
 
-        //rate_tracker_.incrementCount();
-        //slogger_->print() << "Current message rate: " << tools::green((rate_tracker_.getCurrentRateFormatted())) << " msgs/sec";
-
         const int INDICATION_HEADER_SIZE = 52;
         const int REQUEST_HEADER_SIZE    = 44;
 
         const uint8_t *buffer        = (const uint8_t *) buf;
+        
+        if (buffer[1] >= 2) {
+            slogger_->print() << "Error: Invalid message type in buffer[1]";
+            return;
+        }
+        
         int8_t offset                = int(buffer[1]) ? INDICATION_HEADER_SIZE : REQUEST_HEADER_SIZE;
 
-        if(buf_size < offset + 32) // Wind header len + its container header len
+        // Check buffer size
+        const size_t MIN_PAYLOAD_SIZE = 6;   // its container header len
+        size_t min_required_size = offset + MIN_PAYLOAD_SIZE;
+    
+        if (buf_size < min_required_size) {
+            slogger_->error() << "Error: Buffer too small. Got " << buf_size
+                                    << " bytes, need at least " << min_required_size;            
             return;
+        }
 
-        unsigned int protocolVersion = int(buffer[0 + offset]);
-        unsigned int messageId       = int(buffer[1 + offset]);
+        // Extract message ID and protocol version
+        unsigned int protocol_version = int(buffer[0 + offset]);
+        unsigned int message_id       = int(buffer[1 + offset]);
 
         if(int(buffer[1]))
-            slogger_->print() << "Incoming INDICATION msgId(" << messageId << ":" << protocolVersion << ") headerLen(" << int(offset) << ") payloadLen(" << tools::white(std::to_string((buf_size - offset))) << ")";
+            slogger_->print() << "Incoming INDICATION msgId(" << message_id << ":" << protocol_version << ") headerLen(" << int(offset) << ") payloadLen(" << tools::white(std::to_string((buf_size - offset))) << ")";
         else
-            slogger_->print() << "Incoming REQUEST msgId(" << messageId << ":" << protocolVersion << ") headerLen(" << int(offset) << ") payloadLen(" << tools::white(std::to_string((buf_size - offset))) << ")";
+            slogger_->print() << "Incoming REQUEST msgId(" << message_id << ":" << protocol_version << ") headerLen(" << int(offset) << ") payloadLen(" << tools::white(std::to_string((buf_size - offset))) << ")";
 
         if(show_hex_) {
             slogger_->print() << "Header:  " << tools::bufferToHex(buffer, offset);
@@ -107,7 +115,7 @@ public:
             dlogger_->log("payload", tools::bufferToHex(buffer + offset, buf_size - offset));
         }
 
-        if(messageId == MESSAGE_ID && protocolVersion == PROTOCOL_VERSION) {
+        if(message_id == MESSAGE_ID && protocol_version == PROTOCOL_VERSION) {
             receiver_->incoming_message(buf);
         } else {
 			slogger_->print(tools::yellow("Ignoring message"));

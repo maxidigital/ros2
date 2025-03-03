@@ -57,8 +57,7 @@ namespace wind_ros
 		 */
         #if WIND_ROS_VERSION == 1
 		Receiver_cpm_v2_23_cpm_pdu_descriptions() : node_handle_("~"),
-			publisher_(nullptr),
-			mirror_publisher_(nullptr),
+			publisher_(nullptr),			
 			messages_counter_(0),
 			slogger_(nullptr),
 			//slogger_(new ScreenLogger()),
@@ -78,15 +77,15 @@ namespace wind_ros
 		 * Destructor
 		 */
         ~Receiver_cpm_v2_23_cpm_pdu_descriptions() {
+            if (decoder_) {
+                delete decoder_;
+            }
+			
 			#if WIND_ROS_VERSION == 1
             if (publisher_) {
                 delete publisher_;
                 publisher_ = nullptr;
-            }
-            if (mirror_publisher_) {
-                delete mirror_publisher_;
-                mirror_publisher_ = nullptr;
-            }
+            }            
 			#endif
         }
 	
@@ -115,11 +114,9 @@ namespace wind_ros
     private:        	
 		#if WIND_ROS_VERSION == 1
 		  ros::NodeHandle node_handle_;
-		  ros::Publisher* publisher_;
-		  ros::Publisher* mirror_publisher_;		  		 
+		  ros::Publisher* publisher_;		  
 		#else
-		  rclcpp::Publisher<cpm_v2_23_cpm_pdu_descriptions_msgs::msg::CollectivePerceptionMessage>::SharedPtr publisher_;
-          rclcpp::Publisher<cpm_v2_23_cpm_pdu_descriptions_msgs::msg::CollectivePerceptionMessage>::SharedPtr mirror_publisher_;
+		  rclcpp::Publisher<cpm_v2_23_cpm_pdu_descriptions_msgs::msg::CollectivePerceptionMessage>::SharedPtr publisher_;          
 		#endif
         
         std::string     topic_;

@@ -27,78 +27,93 @@
  */
 #include <denm_v2_23_denm_pdu_description_receiver.h>
 
+namespace {
+    // Buffer positions
+    constexpr size_t FLAG_POSITION = 2;
+    constexpr size_t TEST_FLAG_BIT = 0;
+    //constexpr size_t MIRROR_FLAG_BIT = 1;
+        
+	// Relative offset postions for the header
+    constexpr size_t PROTOCOL_VERSION_POS = 0;
+    constexpr size_t MESSAGE_ID_POS = 1;
+    constexpr size_t STATION_ID_START_POS = 2;            
+}
 
 void
-wind::wind_ros::Receiver_denm_v2_23_denm_pdu_description::start() {
-	
-	decoder_ = new wind::decoder_denm_v2_23_denm_pdu_description::WerDecoder(slogger_, debug_);
-			
+wind::wind_ros::Receiver_denm_v2_23_denm_pdu_description::start() 
+{	
+    decoder_ = new wind::decoder_denm_v2_23_denm_pdu_description::WerDecoder(slogger_, debug_);
+
     #if WIND_ROS_VERSION == 1      	  
-      publisher_        = new ros::Publisher(node_handle_.advertise<denm_v2_23_denm_pdu_description_msgs::DENM>(topic_, 0));
-      mirror_publisher_ = new ros::Publisher(node_handle_.advertise<denm_v2_23_denm_pdu_description_msgs::DENM>(SENDER_ROS_TOPIC, 0));	  	 
+        publisher_        = new ros::Publisher(node_handle_.advertise<denm_v2_23_denm_pdu_description_msgs::DENM>(topic_, 0));
+        //mirror_publisher_ = new ros::Publisher(node_handle_.advertise<denm_v2_23_denm_pdu_description_msgs::DENM>(SENDER_ROS_TOPIC, 0));	  	 
     #else
-      publisher_         = create_publisher<denm_v2_23_denm_pdu_description_msgs::msg::DENM>(topic_, 10);
-      mirror_publisher_  = create_publisher<denm_v2_23_denm_pdu_description_msgs::msg::DENM>(SENDER_ROS_TOPIC, 10);
+        publisher_         = create_publisher<denm_v2_23_denm_pdu_description_msgs::msg::DENM>(topic_, 10);
+        //mirror_publisher_  = create_publisher<denm_v2_23_denm_pdu_description_msgs::msg::DENM>(SENDER_ROS_TOPIC, 10);
     #endif
 }
 
 /**
- * For msgId(14) protocolVersion(1)
+ * 
  */
 void
 wind::wind_ros::Receiver_denm_v2_23_denm_pdu_description::incoming_message(const void* buf)
-{	
-	if(busy_)
+{
+    if (!buf) {
+        slogger_->print() << "Error: Received null buffer";
+        return;
+    }
+    
+    if(busy_)
         return;
     busy_ = true;
 	
     const uint8_t *buffer = (const uint8_t *)buf;
-    
-    uint8_t offset = int(buffer[1]) ? INDICATION_HEADER_SIZE : REQUEST_HEADER_SIZE;
-    
-    unsigned int protocolVersion = int(buffer[0 + offset]);
-    unsigned int messageId       = int(buffer[1 + offset]);
-    uint32_t stationId = (static_cast<uint32_t>(buffer[2 + offset]) << 24) |
-                         (static_cast<uint32_t>(buffer[3 + offset]) << 16) |
-                         (static_cast<uint32_t>(buffer[4 + offset]) << 8)  |
-                          static_cast<uint32_t>(buffer[5 + offset]);
-						  
-    if(messageId == 1 && protocolVersion == 2) {
-        uint8_t flags = buffer[2];
-        int bit0      = flags & 1;              // test message flag
-        int bit1      = (flags >> 1) & 1;       // mirror flag
-        slogger_->print() << "Incoming DENM: counter(" << ++messages_counter_ << ")";
+	        
+    uint8_t offset = int(buffer[1]) ? INDICATION_HEADER_SIZE : REQUEST_HEADER_SIZE;        
+
+    try {    
+        unsigned int protocolVersion = int(buffer[PROTOCOL_VERSION_POS + offset]);
+        unsigned int messageId       = int(buffer[MESSAGE_ID_POS + offset]);
         
-        if(bit0 && bit1)
-            slogger_->print() << "[TEST][MIRROR]_______IN_______";
-        else if(bit0)
-            slogger_->print() << "[TEST] ________IN_______";
-        else if(bit1)
-            slogger_->print() << "[MIRROR] ________IN_______";
-    
+        uint32_t station_id = (static_cast<uint32_t>(buffer[STATION_ID_START_POS + 3 + offset]) << 24) |
+                                    (static_cast<uint32_t>(buffer[STATION_ID_START_POS + 2 + offset]) << 16) |
+                                    (static_cast<uint32_t>(buffer[STATION_ID_START_POS + 1 + offset]) << 8)  |
+                                    static_cast<uint32_t>(buffer[STATION_ID_START_POS + offset]);
+
+        uint8_t flags = buffer[FLAG_POSITION];
+        int bit0      = flags & 1;                 // test message flag
+        //int bit1      = (flags >> 1) & 1;       // mirror flag        // deprecated
+            
         #if WIND_ROS_VERSION == 1    
-          denm_v2_23_denm_pdu_description_msgs::DENM msg;
+            denm_v2_23_denm_pdu_description_msgs::DENM msg;
         #else
-           denm_v2_23_denm_pdu_description_msgs::msg::DENM msg;
+            denm_v2_23_denm_pdu_description_msgs::msg::DENM msg;
         #endif
-		
-		bool decoded = decoder_->decode(&msg, &buffer[offset]);
+        
+        slogger_->print() << "Decoding DENM: msgId("      << messageId   << ":" << protocolVersion << 
+                                ") #("      << ++messages_counter_ << 
+                                ") stationId("      << station_id << 
+                                ") test("           << bit0      << ")";
+
+        bool decoded = decoder_->decode(&msg, &buffer[offset]);
         if(decoded)
         {
-            slogger_->print() << "Incoming DENM: msgId("      << messageId   << ":" << protocolVersion << 
-			                    ") stationId("      << stationId << 
-                                ") test("           << bit0      << 
-                                ") mirror("         << bit1      << 
-                                ")";
-            if(bit1) {
-                slogger_->print() << "Publishing DENM on topic " << SENDER_ROS_TOPIC;
-                mirror_publisher_->publish(msg);
-            } else {
-                slogger_->print() << "Publishing DENM on topic " << MAGENTA << topic_ << RESET;
-                publisher_->publish(msg);
-            }
+            if(debug_)
+                slogger_->print() << "Decoding " << tools::green("successfull");
+            
+            slogger_->print() << "Publishing " << tools::bold("DENM") << " on topic " << tools::magenta(topic_);
+            publisher_->publish(msg);        
         }
+        else {
+            slogger_->error() << "Error: Failed to decode message";
+        }
+    
+    } catch (const std::exception& e) {
+        slogger_->error() << "Exception while processing message: " << e.what();
+    } catch (...) {
+        slogger_->error() << "Unknown exception while processing message";
     }
-	
-	busy_ = false;
+    
+    busy_ = false;
 }
